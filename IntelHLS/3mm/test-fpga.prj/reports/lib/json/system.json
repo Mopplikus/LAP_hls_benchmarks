@@ -1,0 +1,116 @@
+{
+  "nodes":
+  [
+    {
+      "name":"kernel_3mm"
+      , "id":2239395960
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"Stream Read"
+          , "id":2239645680
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"kernel_3mm.B1.start"
+              , "Width":"448 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+                , "line":14
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Write"
+          , "id":2239860816
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"kernel_3mm.B23"
+              , "Width":"1 bit"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+                , "line":73
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"call.kernel_3mm"
+      , "id":2238902928
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"448 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"448 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+    , {
+      "name":"return.kernel_3mm"
+      , "id":2238904672
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":2238902928
+      , "to":2239645680
+    }
+    , {
+      "from":2239860816
+      , "to":2238904672
+    }
+    , {
+      "from":2239645680
+      , "to":2239860816
+    }
+  ]
+}

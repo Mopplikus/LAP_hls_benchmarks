@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.03.14.13:54:30"
+ date="2023.04.04.21:14:33"
  outputDirectory="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/">
  <perimeter>
   <parameter
@@ -51,18 +51,6 @@
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_MAP"
-     type="AddressMap"
-     defaultValue=""
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_WIDTH"
-     type="AddressWidthType"
-     defaultValue="-1"
-     onHdl="0"
-     affectsHdl="1" />
   <interface name="clock" kind="clock" start="0">
    <property name="clockRate" value="0" />
    <property name="externallyDriven" value="false" />
@@ -94,82 +82,14 @@
    <property name="prSafe" value="false" />
    <port name="returndata" direction="output" role="data" width="32" />
   </interface>
-  <interface name="A" kind="conduit" start="0">
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="prSafe" value="false" />
-   <port name="A" direction="input" role="data" width="64" />
-  </interface>
-  <interface name="B" kind="conduit" start="0">
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="prSafe" value="false" />
-   <port name="B" direction="input" role="data" width="64" />
-  </interface>
-  <interface name="avmm_0_rw" kind="avalon" start="1">
-   <property name="adaptsTo" value="" />
-   <property name="addressGroup" value="0" />
-   <property name="addressUnits" value="SYMBOLS" />
-   <property name="alwaysBurstMaxBurst" value="false" />
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="bitsPerSymbol" value="8" />
-   <property name="burstOnBurstBoundariesOnly" value="false" />
-   <property name="burstcountUnits" value="WORDS" />
-   <property name="constantBurstBehavior" value="false" />
-   <property name="dBSBigEndian" value="false" />
-   <property name="doStreamReads" value="false" />
-   <property name="doStreamWrites" value="false" />
-   <property name="holdTime" value="0" />
-   <property name="interleaveBursts" value="false" />
-   <property name="isAsynchronous" value="false" />
-   <property name="isBigEndian" value="false" />
-   <property name="isReadable" value="false" />
-   <property name="isWriteable" value="false" />
-   <property name="linewrapBursts" value="false" />
-   <property name="maxAddressWidth" value="32" />
-   <property name="maximumPendingReadTransactions" value="0" />
-   <property name="maximumPendingWriteTransactions" value="0" />
-   <property name="minimumReadLatency" value="1" />
-   <property name="minimumResponseLatency" value="1" />
-   <property name="prSafe" value="false" />
-   <property name="readLatency" value="1" />
-   <property name="readWaitTime" value="0" />
-   <property name="registerIncomingSignals" value="false" />
-   <property name="registerOutgoingSignals" value="false" />
-   <property name="setupTime" value="0" />
-   <property name="timingUnits" value="Cycles" />
-   <property name="waitrequestAllowance" value="0" />
-   <property name="writeWaitTime" value="0" />
-   <port name="avmm_0_rw_address" direction="output" role="address" width="64" />
-   <port
-       name="avmm_0_rw_byteenable"
-       direction="output"
-       role="byteenable"
-       width="8" />
-   <port name="avmm_0_rw_read" direction="output" role="read" width="1" />
-   <port
-       name="avmm_0_rw_readdata"
-       direction="input"
-       role="readdata"
-       width="64" />
-   <port name="avmm_0_rw_write" direction="output" role="write" width="1" />
-   <port
-       name="avmm_0_rw_writedata"
-       direction="output"
-       role="writedata"
-       width="64" />
-  </interface>
  </perimeter>
  <entity kind="example" version="1.0" name="example">
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="10AX115U1F45I1SG" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_MAP" value="" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="1" />
   <generatedFiles>
@@ -321,109 +241,13 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ffwdsrc.v"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ffwddst.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_top.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_permute_address.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_pipelined.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_enabled.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_basic_coalescer.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_simple.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_streaming.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_burst_host.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_bursting_load_stores.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_non_aligned_write.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_read_cache.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_atomic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_prefetch_block.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_wide_wrapper.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_streaming_prefetch.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_aligned_burst_coalesced_lsu.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_toggle_detect.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_debug_mem.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_burst_coalesced_pipelined_write.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_burst_coalesced_pipelined_read.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_fifo_stall_valid_lookahead.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_global_load_store.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_burst_coalescer.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_coalescer_dynamic_timeout.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_data_aligner.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_read_cache.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_read_data_alignment.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_unaligned_controller.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_word_coalescer.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_write_data_alignment.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ffwddst.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_iowr.sv"
@@ -489,19 +313,13 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_p1024f32_unnamed_3_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_p1024f32_unnamed_4_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iord_bl_call_unnamed_example2_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iord_bl_call_unnamed_example2_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c0_in_wt_entry_s_c0_enter1_example0.sv"
@@ -513,10 +331,10 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_example0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going5_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_notexitcond6_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_notexitcond8_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B1_start_branch.sv"
@@ -531,40 +349,43 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_bb_B2_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_mem_unnamed_5_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_readdata_reg_unnamed_5_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_mem_unnamed_6_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_readdata_reg_unnamed_6_example1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B2_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c0_in_for_body_s_c0_enter82_example1.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c0_in_for_body_s_c0_enter102_example1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo0000s_c0_exit10_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo0000s_c0_exit12_example0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c0_in_for_body_s_c0_enter82_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo0000ample1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_p1024f32_a121_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo00002_example1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_p1024f32_b132_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c0_in_for_body_s_c0_enter102_example0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00003a0054c2a6344c246w65.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00006uq0cp0ju20cp0jo0ouz.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00016uq0cp0ju20cp0jo0ouz.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_f32_unnamed_3_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i32_i_011_pop7_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_f32_s_017_pop8_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i32_i_018_pop7_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i4_cleanups_pop10_0.sv"
@@ -576,13 +397,16 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i8_fpga_indvars_iv_pop6_0.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_f32_s_017_push8_0.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_lastiniteration_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i32_i_011_push7_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i32_i_018_push7_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i4_cleanups_push10_0.sv"
@@ -594,34 +418,7 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i8_fpga_indvars_iv_push6_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c1_in_for_body_s_c1_enter_example6.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c1_out_fo0000y_s_c1_exit_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c1_out_fo0000ample1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c1_out_fo0000t_example1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c1_in_for_body_s_c1_enter_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c1_in_for_body00003a0054c2a6344c246w65.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_f32_unnamed_7_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_f32_s_010_pop8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_f32_s_010_push8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c1_in_for_body00002463a0054c2a6342iyc5.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00002463a0054c2a6342iyc5.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B2_branch.sv"
@@ -636,10 +433,10 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iowr_bl_return_unnamed_example10_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iowr_bl_return_unnamed_example5_example0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_f32_unnamed_9_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_f32_unnamed_4_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
@@ -654,10 +451,10 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B3_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going5_1_sr.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going7_1_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going5_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going7_1_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -673,33 +470,6 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_bb_B3_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_internal.v"
@@ -830,109 +600,13 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ffwdsrc.v"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ffwddst.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_top.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_permute_address.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_pipelined.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_enabled.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_basic_coalescer.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_simple.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_streaming.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_burst_host.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_bursting_load_stores.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_non_aligned_write.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_read_cache.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_atomic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_prefetch_block.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_wide_wrapper.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_streaming_prefetch.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_aligned_burst_coalesced_lsu.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_toggle_detect.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_debug_mem.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_burst_coalesced_pipelined_write.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/lsu_burst_coalesced_pipelined_read.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_fifo_stall_valid_lookahead.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_global_load_store.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_burst_coalescer.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_coalescer_dynamic_timeout.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_data_aligner.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_read_cache.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_read_data_alignment.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_unaligned_controller.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_word_coalescer.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_write_data_alignment.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ffwddst.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/hld_iowr.sv"
@@ -998,19 +672,13 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_p1024f32_unnamed_3_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_p1024f32_unnamed_4_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iord_bl_call_unnamed_example2_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iord_bl_call_unnamed_example2_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c0_in_wt_entry_s_c0_enter1_example0.sv"
@@ -1022,10 +690,10 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_example0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going5_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_notexitcond6_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_notexitcond8_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B1_start_branch.sv"
@@ -1040,40 +708,43 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_bb_B2_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_mem_unnamed_5_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_readdata_reg_unnamed_5_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_mem_unnamed_6_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_readdata_reg_unnamed_6_example1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B2_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c0_in_for_body_s_c0_enter82_example1.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c0_in_for_body_s_c0_enter102_example1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo0000s_c0_exit10_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo0000s_c0_exit12_example0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c0_in_for_body_s_c0_enter82_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo0000ample1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_p1024f32_a121_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c0_out_fo00002_example1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_p1024f32_b132_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c0_in_for_body_s_c0_enter102_example0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00003a0054c2a6344c246w65.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00006uq0cp0ju20cp0jo0ouz.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00016uq0cp0ju20cp0jo0ouz.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_f32_unnamed_3_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i32_i_011_pop7_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_f32_s_017_pop8_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i32_i_018_pop7_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i4_cleanups_pop10_0.sv"
@@ -1085,13 +756,16 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_i8_fpga_indvars_iv_pop6_0.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_f32_s_017_push8_0.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_lastiniteration_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i32_i_011_push7_0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i32_i_018_push7_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i4_cleanups_push10_0.sv"
@@ -1103,34 +777,7 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_i8_fpga_indvars_iv_push6_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_s_c1_in_for_body_s_c1_enter_example6.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c1_out_fo0000y_s_c1_exit_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c1_out_fo0000ample1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_sfc_exit_s_c1_out_fo0000t_example1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_sfc_logic_s_c1_in_for_body_s_c1_enter_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c1_in_for_body00003a0054c2a6344c246w65.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_source_f32_unnamed_7_example0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pop_f32_s_010_pop8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_f32_s_010_push8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c1_in_for_body00002463a0054c2a6342iyc5.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_flt_i_sfc_logic_s_c0_in_for_body00002463a0054c2a6342iyc5.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B2_branch.sv"
@@ -1145,10 +792,10 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iowr_bl_return_unnamed_example10_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_iowr_bl_return_unnamed_example5_example0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_f32_unnamed_9_example0.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_ffwd_dest_f32_unnamed_4_example0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
@@ -1163,10 +810,10 @@
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_B3_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going5_1_sr.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going7_1_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going5_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going7_1_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -1182,33 +829,6 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_bb_B3_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/example/test-fpga.prj/components/example/example/example_internal_10/synth/example_internal.v"

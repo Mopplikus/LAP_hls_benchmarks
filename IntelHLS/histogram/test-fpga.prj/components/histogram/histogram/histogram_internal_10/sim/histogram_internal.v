@@ -400,7 +400,7 @@ module histogram_internal
       logic local_icm_arb_read [1][2];
       logic local_icm_arb_write [1][2];
       logic local_icm_arb_burstcount [1][2];
-      logic [6:0] local_icm_arb_address [1][2];
+      logic [9:0] local_icm_arb_address [1][2];
       logic [31:0] local_icm_arb_writedata [1][2];
       logic [3:0] local_icm_arb_byteenable [1][2];
       logic local_icm_arb_stall [1][2];
@@ -457,7 +457,7 @@ module histogram_internal
             logic port_enable [1:2];
             logic port_read [1:2];
             logic port_write [1:2];
-            logic [6:0] port_address [1:2];
+            logic [9:0] port_address [1:2];
             logic [31:0] port_writedata [1:2];
             logic [3:0] port_byteenable [1:2];
             logic port_waitrequest [1:2];
@@ -468,7 +468,7 @@ module histogram_internal
             acl_mem1x
             #(
                .INTENDED_DEVICE_FAMILY("Arria 10"),
-               .DEPTH_WORDS(128),
+               .DEPTH_WORDS(1024),
                .WIDTH(32),
                .MEM_LATENCY(3),
                .ASYNC_RESET(1),
@@ -515,7 +515,7 @@ module histogram_internal
             logic b_arb_read [1];
             logic b_arb_write [1];
             logic b_arb_burstcount [1];
-            logic [6:0] b_arb_address [1];
+            logic [9:0] b_arb_address [1];
             logic [31:0] b_arb_writedata [1];
             logic [3:0] b_arb_byteenable [1];
             logic b_arb_stall [1];
@@ -529,7 +529,7 @@ module histogram_internal
             #(
                .DATA_W(32),
                .BURSTCOUNT_W(1),
-               .ADDRESS_W(7),
+               .ADDRESS_W(10),
                .BYTEENA_W(4),
                .NUM_BANKS(1)
             )
@@ -576,7 +576,7 @@ module histogram_internal
             logic icm_in_arb_read [1];
             logic icm_in_arb_write [1];
             logic icm_in_arb_burstcount [1];
-            logic [6:0] icm_in_arb_address [1];
+            logic [9:0] icm_in_arb_address [1];
             logic [31:0] icm_in_arb_writedata [1];
             logic [3:0] icm_in_arb_byteenable [1];
             logic icm_in_arb_stall [1];
@@ -588,7 +588,7 @@ module histogram_internal
             logic icm_out_arb_read;
             logic icm_out_arb_write;
             logic icm_out_arb_burstcount;
-            logic [6:0] icm_out_arb_address;
+            logic [9:0] icm_out_arb_address;
             logic [31:0] icm_out_arb_writedata;
             logic [3:0] icm_out_arb_byteenable;
             logic icm_out_arb_stall;
@@ -608,8 +608,8 @@ module histogram_internal
             assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of histogram_internal_ic_18074945177286407557
-            histogram_internal_ic_18074945177286407557 data_ic
+            // INST data_ic of histogram_internal_ic_13830461541539336706
+            histogram_internal_ic_13830461541539336706 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -661,7 +661,7 @@ module histogram_internal
             logic icm_in_arb_read [1];
             logic icm_in_arb_write [1];
             logic icm_in_arb_burstcount [1];
-            logic [6:0] icm_in_arb_address [1];
+            logic [9:0] icm_in_arb_address [1];
             logic [31:0] icm_in_arb_writedata [1];
             logic [3:0] icm_in_arb_byteenable [1];
             logic icm_in_arb_stall [1];
@@ -673,7 +673,7 @@ module histogram_internal
             logic icm_out_arb_read;
             logic icm_out_arb_write;
             logic icm_out_arb_burstcount;
-            logic [6:0] icm_out_arb_address;
+            logic [9:0] icm_out_arb_address;
             logic [31:0] icm_out_arb_writedata;
             logic [3:0] icm_out_arb_byteenable;
             logic icm_out_arb_stall;
@@ -693,8 +693,8 @@ module histogram_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of histogram_internal_ic_1308630933056187501
-            histogram_internal_ic_1308630933056187501 data_ic
+            // INST data_ic of histogram_internal_ic_17240874513320749926
+            histogram_internal_ic_17240874513320749926 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -751,7 +751,7 @@ module histogram_internal
       logic local_icm_arb_read [1][2];
       logic local_icm_arb_write [1][2];
       logic local_icm_arb_burstcount [1][2];
-      logic [6:0] local_icm_arb_address [1][2];
+      logic [9:0] local_icm_arb_address [1][2];
       logic [31:0] local_icm_arb_writedata [1][2];
       logic [3:0] local_icm_arb_byteenable [1][2];
       logic local_icm_arb_stall [1][2];
@@ -808,7 +808,7 @@ module histogram_internal
             logic port_enable [1:2];
             logic port_read [1:2];
             logic port_write [1:2];
-            logic [6:0] port_address [1:2];
+            logic [9:0] port_address [1:2];
             logic [31:0] port_writedata [1:2];
             logic [3:0] port_byteenable [1:2];
             logic port_waitrequest [1:2];
@@ -819,7 +819,7 @@ module histogram_internal
             acl_mem1x
             #(
                .INTENDED_DEVICE_FAMILY("Arria 10"),
-               .DEPTH_WORDS(128),
+               .DEPTH_WORDS(1024),
                .WIDTH(32),
                .MEM_LATENCY(3),
                .ASYNC_RESET(1),
@@ -866,7 +866,7 @@ module histogram_internal
             logic b_arb_read [1];
             logic b_arb_write [1];
             logic b_arb_burstcount [1];
-            logic [6:0] b_arb_address [1];
+            logic [9:0] b_arb_address [1];
             logic [31:0] b_arb_writedata [1];
             logic [3:0] b_arb_byteenable [1];
             logic b_arb_stall [1];
@@ -880,7 +880,7 @@ module histogram_internal
             #(
                .DATA_W(32),
                .BURSTCOUNT_W(1),
-               .ADDRESS_W(7),
+               .ADDRESS_W(10),
                .BYTEENA_W(4),
                .NUM_BANKS(1)
             )
@@ -927,7 +927,7 @@ module histogram_internal
             logic icm_in_arb_read [1];
             logic icm_in_arb_write [1];
             logic icm_in_arb_burstcount [1];
-            logic [6:0] icm_in_arb_address [1];
+            logic [9:0] icm_in_arb_address [1];
             logic [31:0] icm_in_arb_writedata [1];
             logic [3:0] icm_in_arb_byteenable [1];
             logic icm_in_arb_stall [1];
@@ -939,7 +939,7 @@ module histogram_internal
             logic icm_out_arb_read;
             logic icm_out_arb_write;
             logic icm_out_arb_burstcount;
-            logic [6:0] icm_out_arb_address;
+            logic [9:0] icm_out_arb_address;
             logic [31:0] icm_out_arb_writedata;
             logic [3:0] icm_out_arb_byteenable;
             logic icm_out_arb_stall;
@@ -959,8 +959,8 @@ module histogram_internal
             assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of histogram_internal_ic_18074945177286407557
-            histogram_internal_ic_18074945177286407557 data_ic
+            // INST data_ic of histogram_internal_ic_13830461541539336706
+            histogram_internal_ic_13830461541539336706 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -1012,7 +1012,7 @@ module histogram_internal
             logic icm_in_arb_read [1];
             logic icm_in_arb_write [1];
             logic icm_in_arb_burstcount [1];
-            logic [6:0] icm_in_arb_address [1];
+            logic [9:0] icm_in_arb_address [1];
             logic [31:0] icm_in_arb_writedata [1];
             logic [3:0] icm_in_arb_byteenable [1];
             logic icm_in_arb_stall [1];
@@ -1024,7 +1024,7 @@ module histogram_internal
             logic icm_out_arb_read;
             logic icm_out_arb_write;
             logic icm_out_arb_burstcount;
-            logic [6:0] icm_out_arb_address;
+            logic [9:0] icm_out_arb_address;
             logic [31:0] icm_out_arb_writedata;
             logic [3:0] icm_out_arb_byteenable;
             logic icm_out_arb_stall;
@@ -1044,8 +1044,8 @@ module histogram_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of histogram_internal_ic_1308630933056187501
-            histogram_internal_ic_1308630933056187501 data_ic
+            // INST data_ic of histogram_internal_ic_17240874513320749926
+            histogram_internal_ic_17240874513320749926 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -1102,7 +1102,7 @@ module histogram_internal
       logic local_icm_arb_read [1][4];
       logic local_icm_arb_write [1][4];
       logic local_icm_arb_burstcount [1][4];
-      logic [6:0] local_icm_arb_address [1][4];
+      logic [9:0] local_icm_arb_address [1][4];
       logic [31:0] local_icm_arb_writedata [1][4];
       logic [3:0] local_icm_arb_byteenable [1][4];
       logic local_icm_arb_stall [1][4];
@@ -1159,7 +1159,7 @@ module histogram_internal
             logic port_enable [1:2];
             logic port_read [1:2];
             logic port_write [1:2];
-            logic [6:0] port_address [1:2];
+            logic [9:0] port_address [1:2];
             logic [31:0] port_writedata [1:2];
             logic [3:0] port_byteenable [1:2];
             logic port_waitrequest [1:2];
@@ -1170,7 +1170,7 @@ module histogram_internal
             acl_mem1x
             #(
                .INTENDED_DEVICE_FAMILY("Arria 10"),
-               .DEPTH_WORDS(128),
+               .DEPTH_WORDS(1024),
                .WIDTH(32),
                .MEM_LATENCY(1),
                .ASYNC_RESET(1),
@@ -1217,7 +1217,7 @@ module histogram_internal
             logic b_arb_read [1];
             logic b_arb_write [1];
             logic b_arb_burstcount [1];
-            logic [6:0] b_arb_address [1];
+            logic [9:0] b_arb_address [1];
             logic [31:0] b_arb_writedata [1];
             logic [3:0] b_arb_byteenable [1];
             logic b_arb_stall [1];
@@ -1231,7 +1231,7 @@ module histogram_internal
             #(
                .DATA_W(32),
                .BURSTCOUNT_W(1),
-               .ADDRESS_W(7),
+               .ADDRESS_W(10),
                .BYTEENA_W(4),
                .NUM_BANKS(1)
             )
@@ -1278,7 +1278,7 @@ module histogram_internal
             logic icm_in_arb_read [2];
             logic icm_in_arb_write [2];
             logic icm_in_arb_burstcount [2];
-            logic [6:0] icm_in_arb_address [2];
+            logic [9:0] icm_in_arb_address [2];
             logic [31:0] icm_in_arb_writedata [2];
             logic [3:0] icm_in_arb_byteenable [2];
             logic icm_in_arb_stall [2];
@@ -1290,7 +1290,7 @@ module histogram_internal
             logic icm_out_arb_read;
             logic icm_out_arb_write;
             logic icm_out_arb_burstcount;
-            logic [6:0] icm_out_arb_address;
+            logic [9:0] icm_out_arb_address;
             logic [31:0] icm_out_arb_writedata;
             logic [3:0] icm_out_arb_byteenable;
             logic icm_out_arb_stall;
@@ -1322,8 +1322,8 @@ module histogram_internal
             assign router[2].b_wrp_ack[0] = icm_in_wrp_ack[1];
             assign router[2].b_rrp_datavalid[0] = icm_in_rrp_datavalid[1];
             assign router[2].b_rrp_data[0] = icm_in_rrp_data[1];
-            // INST data_ic of histogram_internal_ic_11691045612900694419
-            histogram_internal_ic_11691045612900694419 data_ic
+            // INST data_ic of histogram_internal_ic_10295715645886237553
+            histogram_internal_ic_10295715645886237553 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -1375,7 +1375,7 @@ module histogram_internal
             logic icm_in_arb_read [2];
             logic icm_in_arb_write [2];
             logic icm_in_arb_burstcount [2];
-            logic [6:0] icm_in_arb_address [2];
+            logic [9:0] icm_in_arb_address [2];
             logic [31:0] icm_in_arb_writedata [2];
             logic [3:0] icm_in_arb_byteenable [2];
             logic icm_in_arb_stall [2];
@@ -1387,7 +1387,7 @@ module histogram_internal
             logic icm_out_arb_read;
             logic icm_out_arb_write;
             logic icm_out_arb_burstcount;
-            logic [6:0] icm_out_arb_address;
+            logic [9:0] icm_out_arb_address;
             logic [31:0] icm_out_arb_writedata;
             logic [3:0] icm_out_arb_byteenable;
             logic icm_out_arb_stall;
@@ -1419,8 +1419,8 @@ module histogram_internal
             assign router[3].b_wrp_ack[0] = icm_in_wrp_ack[1];
             assign router[3].b_rrp_datavalid[0] = icm_in_rrp_datavalid[1];
             assign router[3].b_rrp_data[0] = icm_in_rrp_data[1];
-            // INST data_ic of histogram_internal_ic_11567289287605665893
-            histogram_internal_ic_11567289287605665893 data_ic
+            // INST data_ic of histogram_internal_ic_989345936481159714
+            histogram_internal_ic_989345936481159714 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -1763,9 +1763,9 @@ module histogram_internal_ic_5272295805250791862
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE histogram_internal_ic_18074945177286407557
+// MODULE histogram_internal_ic_13830461541539336706
 /////////////////////////////////////////////////////////////////
-module histogram_internal_ic_18074945177286407557
+module histogram_internal_ic_13830461541539336706
 (
    input logic clock,
    input logic resetn,
@@ -1775,7 +1775,7 @@ module histogram_internal_ic_18074945177286407557
    input logic m_arb_read [1],
    input logic m_arb_write [1],
    input logic m_arb_burstcount [1],
-   input logic [6:0] m_arb_address [1],
+   input logic [9:0] m_arb_address [1],
    input logic [31:0] m_arb_writedata [1],
    input logic [3:0] m_arb_byteenable [1],
    output logic m_arb_stall [1],
@@ -1788,7 +1788,7 @@ module histogram_internal_ic_18074945177286407557
    output logic mout_arb_read,
    output logic mout_arb_write,
    output logic mout_arb_burstcount,
-   output logic [6:0] mout_arb_address,
+   output logic [9:0] mout_arb_address,
    output logic [31:0] mout_arb_writedata,
    output logic [3:0] mout_arb_byteenable,
    output logic mout_arb_id,
@@ -1806,7 +1806,7 @@ module histogram_internal_ic_18074945177286407557
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m_intf();
@@ -1814,7 +1814,7 @@ module histogram_internal_ic_18074945177286407557
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) arb_intf();
@@ -1834,7 +1834,7 @@ module histogram_internal_ic_18074945177286407557
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1),
             .NUM_READ_HOSTS(0),
@@ -1874,7 +1874,7 @@ module histogram_internal_ic_18074945177286407557
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) in_arb_intf();
@@ -1882,7 +1882,7 @@ module histogram_internal_ic_18074945177286407557
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) out_arb_intf();
@@ -1901,7 +1901,7 @@ module histogram_internal_ic_18074945177286407557
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1),
          .NUM_READ_HOSTS(0),
@@ -1958,9 +1958,9 @@ module histogram_internal_ic_18074945177286407557
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE histogram_internal_ic_1308630933056187501
+// MODULE histogram_internal_ic_17240874513320749926
 /////////////////////////////////////////////////////////////////
-module histogram_internal_ic_1308630933056187501
+module histogram_internal_ic_17240874513320749926
 (
    input logic clock,
    input logic resetn,
@@ -1970,7 +1970,7 @@ module histogram_internal_ic_1308630933056187501
    input logic m_arb_read [1],
    input logic m_arb_write [1],
    input logic m_arb_burstcount [1],
-   input logic [6:0] m_arb_address [1],
+   input logic [9:0] m_arb_address [1],
    input logic [31:0] m_arb_writedata [1],
    input logic [3:0] m_arb_byteenable [1],
    output logic m_arb_stall [1],
@@ -1983,7 +1983,7 @@ module histogram_internal_ic_1308630933056187501
    output logic mout_arb_read,
    output logic mout_arb_write,
    output logic mout_arb_burstcount,
-   output logic [6:0] mout_arb_address,
+   output logic [9:0] mout_arb_address,
    output logic [31:0] mout_arb_writedata,
    output logic [3:0] mout_arb_byteenable,
    output logic mout_arb_id,
@@ -2001,7 +2001,7 @@ module histogram_internal_ic_1308630933056187501
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m_intf();
@@ -2009,7 +2009,7 @@ module histogram_internal_ic_1308630933056187501
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) arb_intf();
@@ -2029,7 +2029,7 @@ module histogram_internal_ic_1308630933056187501
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1),
             .NUM_READ_HOSTS(1),
@@ -2069,7 +2069,7 @@ module histogram_internal_ic_1308630933056187501
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) in_arb_intf();
@@ -2077,7 +2077,7 @@ module histogram_internal_ic_1308630933056187501
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) out_arb_intf();
@@ -2096,7 +2096,7 @@ module histogram_internal_ic_1308630933056187501
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1),
          .NUM_READ_HOSTS(1),
@@ -2154,9 +2154,9 @@ module histogram_internal_ic_1308630933056187501
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE histogram_internal_ic_11691045612900694419
+// MODULE histogram_internal_ic_10295715645886237553
 /////////////////////////////////////////////////////////////////
-module histogram_internal_ic_11691045612900694419
+module histogram_internal_ic_10295715645886237553
 (
    input logic clock,
    input logic resetn,
@@ -2166,7 +2166,7 @@ module histogram_internal_ic_11691045612900694419
    input logic m_arb_read [2],
    input logic m_arb_write [2],
    input logic m_arb_burstcount [2],
-   input logic [6:0] m_arb_address [2],
+   input logic [9:0] m_arb_address [2],
    input logic [31:0] m_arb_writedata [2],
    input logic [3:0] m_arb_byteenable [2],
    output logic m_arb_stall [2],
@@ -2179,7 +2179,7 @@ module histogram_internal_ic_11691045612900694419
    output logic mout_arb_read,
    output logic mout_arb_write,
    output logic mout_arb_burstcount,
-   output logic [6:0] mout_arb_address,
+   output logic [9:0] mout_arb_address,
    output logic [31:0] mout_arb_writedata,
    output logic [3:0] mout_arb_byteenable,
    output logic mout_arb_id,
@@ -2197,7 +2197,7 @@ module histogram_internal_ic_11691045612900694419
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m_intf();
@@ -2205,7 +2205,7 @@ module histogram_internal_ic_11691045612900694419
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) arb_intf();
@@ -2225,7 +2225,7 @@ module histogram_internal_ic_11691045612900694419
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1),
             .NUM_READ_HOSTS(0),
@@ -2265,7 +2265,7 @@ module histogram_internal_ic_11691045612900694419
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) in_arb_intf();
@@ -2273,7 +2273,7 @@ module histogram_internal_ic_11691045612900694419
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) out_arb_intf();
@@ -2292,7 +2292,7 @@ module histogram_internal_ic_11691045612900694419
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1),
          .NUM_READ_HOSTS(0),
@@ -2343,7 +2343,7 @@ module histogram_internal_ic_11691045612900694419
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m0_intf();
@@ -2351,7 +2351,7 @@ module histogram_internal_ic_11691045612900694419
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m1_intf();
@@ -2359,7 +2359,7 @@ module histogram_internal_ic_11691045612900694419
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) mout_intf();
@@ -2369,7 +2369,7 @@ module histogram_internal_ic_11691045612900694419
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1),
             .PIPELINE("none"),
@@ -2410,9 +2410,9 @@ module histogram_internal_ic_11691045612900694419
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE histogram_internal_ic_11567289287605665893
+// MODULE histogram_internal_ic_989345936481159714
 /////////////////////////////////////////////////////////////////
-module histogram_internal_ic_11567289287605665893
+module histogram_internal_ic_989345936481159714
 (
    input logic clock,
    input logic resetn,
@@ -2422,7 +2422,7 @@ module histogram_internal_ic_11567289287605665893
    input logic m_arb_read [2],
    input logic m_arb_write [2],
    input logic m_arb_burstcount [2],
-   input logic [6:0] m_arb_address [2],
+   input logic [9:0] m_arb_address [2],
    input logic [31:0] m_arb_writedata [2],
    input logic [3:0] m_arb_byteenable [2],
    output logic m_arb_stall [2],
@@ -2435,7 +2435,7 @@ module histogram_internal_ic_11567289287605665893
    output logic mout_arb_read,
    output logic mout_arb_write,
    output logic mout_arb_burstcount,
-   output logic [6:0] mout_arb_address,
+   output logic [9:0] mout_arb_address,
    output logic [31:0] mout_arb_writedata,
    output logic [3:0] mout_arb_byteenable,
    output logic mout_arb_id,
@@ -2453,7 +2453,7 @@ module histogram_internal_ic_11567289287605665893
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m_intf();
@@ -2461,7 +2461,7 @@ module histogram_internal_ic_11567289287605665893
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) arb_intf();
@@ -2481,7 +2481,7 @@ module histogram_internal_ic_11567289287605665893
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1),
             .NUM_READ_HOSTS(2),
@@ -2521,7 +2521,7 @@ module histogram_internal_ic_11567289287605665893
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) in_arb_intf();
@@ -2529,7 +2529,7 @@ module histogram_internal_ic_11567289287605665893
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) out_arb_intf();
@@ -2548,7 +2548,7 @@ module histogram_internal_ic_11567289287605665893
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(7),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1),
          .NUM_READ_HOSTS(2),
@@ -2601,7 +2601,7 @@ module histogram_internal_ic_11567289287605665893
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m0_intf();
@@ -2609,7 +2609,7 @@ module histogram_internal_ic_11567289287605665893
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m1_intf();
@@ -2617,7 +2617,7 @@ module histogram_internal_ic_11567289287605665893
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) mout_intf();
@@ -2627,7 +2627,7 @@ module histogram_internal_ic_11567289287605665893
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(7),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1),
             .PIPELINE("none"),

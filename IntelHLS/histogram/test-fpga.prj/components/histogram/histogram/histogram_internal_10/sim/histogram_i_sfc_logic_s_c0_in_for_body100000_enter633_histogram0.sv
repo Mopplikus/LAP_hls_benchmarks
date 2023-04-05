@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_sfc_logic_s_c0_in_for_body10_histograms_c0_enter633_histogram0
 // Created for function/kernel histogram
-// SystemVerilog created on Tue Apr  4 14:08:06 2023
+// SystemVerilog created on Tue Apr  4 22:51:31 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -195,30 +195,30 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     wire [0:0] i_unnamed_histogram38_q;
     wire [32:0] bgTrunc_i_fpga_indvars_iv_next8_histogram35_sel_x_b;
     wire [31:0] bgTrunc_i_inc21_histogram31_sel_x_b;
-    wire [9:0] i_arrayidx125_histogram0_add_x_a;
-    wire [9:0] i_arrayidx125_histogram0_add_x_b;
-    logic [9:0] i_arrayidx125_histogram0_add_x_o;
-    wire [9:0] i_arrayidx125_histogram0_add_x_q;
+    wire [12:0] i_arrayidx125_histogram0_add_x_a;
+    wire [12:0] i_arrayidx125_histogram0_add_x_b;
+    logic [12:0] i_arrayidx125_histogram0_add_x_o;
+    wire [12:0] i_arrayidx125_histogram0_add_x_q;
     wire [63:0] i_arrayidx125_histogram0_append_upper_bits_x_q;
-    wire [6:0] i_arrayidx125_histogram0_narrow_x_b;
-    wire [8:0] i_arrayidx125_histogram0_shift_join_x_q;
-    wire [8:0] i_arrayidx125_histogram0_dupName_0_trunc_sel_x_b;
-    wire [8:0] i_arrayidx125_histogram0_dupName_2_trunc_sel_x_b;
-    wire [9:0] i_arrayidx146_histogram0_add_x_a;
-    wire [9:0] i_arrayidx146_histogram0_add_x_b;
-    logic [9:0] i_arrayidx146_histogram0_add_x_o;
-    wire [9:0] i_arrayidx146_histogram0_add_x_q;
+    wire [9:0] i_arrayidx125_histogram0_narrow_x_b;
+    wire [11:0] i_arrayidx125_histogram0_shift_join_x_q;
+    wire [11:0] i_arrayidx125_histogram0_dupName_0_trunc_sel_x_b;
+    wire [11:0] i_arrayidx125_histogram0_dupName_2_trunc_sel_x_b;
+    wire [12:0] i_arrayidx146_histogram0_add_x_a;
+    wire [12:0] i_arrayidx146_histogram0_add_x_b;
+    logic [12:0] i_arrayidx146_histogram0_add_x_o;
+    wire [12:0] i_arrayidx146_histogram0_add_x_q;
     wire [63:0] i_arrayidx146_histogram0_append_upper_bits_x_q;
-    wire [8:0] i_arrayidx146_histogram0_dupName_2_trunc_sel_x_b;
-    wire [9:0] i_arrayidx167_histogram0_add_x_a;
-    wire [9:0] i_arrayidx167_histogram0_add_x_b;
-    logic [9:0] i_arrayidx167_histogram0_add_x_o;
-    wire [9:0] i_arrayidx167_histogram0_add_x_q;
+    wire [11:0] i_arrayidx146_histogram0_dupName_2_trunc_sel_x_b;
+    wire [12:0] i_arrayidx167_histogram0_add_x_a;
+    wire [12:0] i_arrayidx167_histogram0_add_x_b;
+    logic [12:0] i_arrayidx167_histogram0_add_x_o;
+    wire [12:0] i_arrayidx167_histogram0_add_x_q;
     wire [63:0] i_arrayidx167_histogram0_append_upper_bits_x_q;
-    wire [6:0] i_arrayidx167_histogram0_narrow_x_b;
-    wire [8:0] i_arrayidx167_histogram0_shift_join_x_q;
-    wire [8:0] i_arrayidx167_histogram0_dupName_0_trunc_sel_x_b;
-    wire [8:0] i_arrayidx167_histogram0_dupName_2_trunc_sel_x_b;
+    wire [9:0] i_arrayidx167_histogram0_narrow_x_b;
+    wire [11:0] i_arrayidx167_histogram0_shift_join_x_q;
+    wire [11:0] i_arrayidx167_histogram0_dupName_0_trunc_sel_x_b;
+    wire [11:0] i_arrayidx167_histogram0_dupName_2_trunc_sel_x_b;
     wire [0:0] i_first_cleanup28_histogram3_sel_x_b;
     wire [63:0] i_idxprom11_histogram18_sel_x_b;
     wire [63:0] i_idxprom15_histogram24_sel_x_b;
@@ -246,12 +246,12 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     wire [3:0] rightShiftStage0Idx1_uid196_i_next_initerations22_histogram0_shift_x_q;
     wire [0:0] rightShiftStage0_uid198_i_next_initerations22_histogram0_shift_x_s;
     reg [3:0] rightShiftStage0_uid198_i_next_initerations22_histogram0_shift_x_q;
-    wire [54:0] i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_b;
-    wire [8:0] i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_c;
-    wire [54:0] i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_b;
-    wire [8:0] i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_c;
-    wire [54:0] i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_b;
-    wire [8:0] i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_c;
+    wire [51:0] i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_b;
+    wire [11:0] i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_c;
+    wire [51:0] i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_b;
+    wire [11:0] i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_c;
+    wire [51:0] i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_b;
+    wire [11:0] i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_c;
     reg [0:0] redist0_sync_together92_aunroll_x_in_c0_eni162_1_tpl_4_q;
     reg [0:0] redist0_sync_together92_aunroll_x_in_c0_eni162_1_tpl_4_delay_0;
     reg [0:0] redist0_sync_together92_aunroll_x_in_c0_eni162_1_tpl_4_delay_1;
@@ -272,7 +272,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     reg [0:0] redist5_sync_together92_aunroll_x_in_i_valid_11_delay_1;
     reg [0:0] redist5_sync_together92_aunroll_x_in_i_valid_11_delay_2;
     reg [0:0] redist6_sync_together92_aunroll_x_in_i_valid_12_q;
-    reg [8:0] redist7_i_arrayidx125_histogram0_shift_join_x_q_1_q;
+    reg [11:0] redist7_i_arrayidx125_histogram0_shift_join_x_q_1_q;
     reg [0:0] redist8_i_masked32_histogram44_q_9_q;
     reg [0:0] redist9_i_llvm_fpga_pipeline_keep_going23_histogram6_out_data_out_9_q;
     reg [0:0] redist10_i_first_cleanup_xor29_or_histogram20_q_1_q;
@@ -752,8 +752,8 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     assign c_histogram_feature_pmem_q = $unsigned(64'b0100000001000000000000000000000000000000000000000000000000000000);
 
     // i_arrayidx125_histogram0_upper_bits_x_merged_bit_select(BITSELECT,199)@5
-    assign i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_feature_pmem_q[63:9];
-    assign i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_feature_pmem_q[8:0];
+    assign i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_feature_pmem_q[63:12];
+    assign i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_feature_pmem_q[11:0];
 
     // c_i32_070(CONSTANT,28)
     assign c_i32_070_q = $unsigned(32'b00000000000000000000000000000000);
@@ -842,10 +842,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     assign i_idxprom11_histogram18_vt_join_q = {c_i32_070_q, i_idxprom11_histogram18_vt_select_31_b};
 
     // i_arrayidx125_histogram0_dupName_0_trunc_sel_x(BITSELECT,120)@5
-    assign i_arrayidx125_histogram0_dupName_0_trunc_sel_x_b = i_idxprom11_histogram18_vt_join_q[8:0];
+    assign i_arrayidx125_histogram0_dupName_0_trunc_sel_x_b = i_idxprom11_histogram18_vt_join_q[11:0];
 
     // i_arrayidx125_histogram0_narrow_x(BITSELECT,113)@5
-    assign i_arrayidx125_histogram0_narrow_x_b = i_arrayidx125_histogram0_dupName_0_trunc_sel_x_b[6:0];
+    assign i_arrayidx125_histogram0_narrow_x_b = i_arrayidx125_histogram0_dupName_0_trunc_sel_x_b[9:0];
 
     // i_arrayidx125_histogram0_shift_join_x(BITJOIN,114)@5
     assign i_arrayidx125_histogram0_shift_join_x_q = {i_arrayidx125_histogram0_narrow_x_b, i_arrayidx125_histogram19_vt_const_1_q};
@@ -854,10 +854,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     assign i_arrayidx125_histogram0_add_x_a = {1'b0, i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_c};
     assign i_arrayidx125_histogram0_add_x_b = {1'b0, i_arrayidx125_histogram0_shift_join_x_q};
     assign i_arrayidx125_histogram0_add_x_o = $unsigned(i_arrayidx125_histogram0_add_x_a) + $unsigned(i_arrayidx125_histogram0_add_x_b);
-    assign i_arrayidx125_histogram0_add_x_q = i_arrayidx125_histogram0_add_x_o[9:0];
+    assign i_arrayidx125_histogram0_add_x_q = i_arrayidx125_histogram0_add_x_o[12:0];
 
     // i_arrayidx125_histogram0_dupName_2_trunc_sel_x(BITSELECT,121)@5
-    assign i_arrayidx125_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx125_histogram0_add_x_q[8:0];
+    assign i_arrayidx125_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx125_histogram0_add_x_q[11:0];
 
     // i_arrayidx125_histogram0_append_upper_bits_x(BITJOIN,111)@5
     assign i_arrayidx125_histogram0_append_upper_bits_x_q = {i_arrayidx125_histogram0_upper_bits_x_merged_bit_select_b, i_arrayidx125_histogram0_dupName_2_trunc_sel_x_b};
@@ -946,8 +946,8 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     assign c_histogram_weight_pmem_q = $unsigned(64'b0100000001000001000000000000000000000000000000000000000000000000);
 
     // i_arrayidx146_histogram0_upper_bits_x_merged_bit_select(BITSELECT,201)@6
-    assign i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_weight_pmem_q[63:9];
-    assign i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_weight_pmem_q[8:0];
+    assign i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_weight_pmem_q[63:12];
+    assign i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_weight_pmem_q[11:0];
 
     // redist7_i_arrayidx125_histogram0_shift_join_x_q_1(DELAY,209)
     always @ (posedge clock or negedge resetn)
@@ -966,10 +966,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     assign i_arrayidx146_histogram0_add_x_a = {1'b0, i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_c};
     assign i_arrayidx146_histogram0_add_x_b = {1'b0, redist7_i_arrayidx125_histogram0_shift_join_x_q_1_q};
     assign i_arrayidx146_histogram0_add_x_o = $unsigned(i_arrayidx146_histogram0_add_x_a) + $unsigned(i_arrayidx146_histogram0_add_x_b);
-    assign i_arrayidx146_histogram0_add_x_q = i_arrayidx146_histogram0_add_x_o[9:0];
+    assign i_arrayidx146_histogram0_add_x_q = i_arrayidx146_histogram0_add_x_o[12:0];
 
     // i_arrayidx146_histogram0_dupName_2_trunc_sel_x(BITSELECT,133)@6
-    assign i_arrayidx146_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx146_histogram0_add_x_q[8:0];
+    assign i_arrayidx146_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx146_histogram0_add_x_q[11:0];
 
     // i_arrayidx146_histogram0_append_upper_bits_x(BITJOIN,123)@6
     assign i_arrayidx146_histogram0_append_upper_bits_x_q = {i_arrayidx146_histogram0_upper_bits_x_merged_bit_select_b, i_arrayidx146_histogram0_dupName_2_trunc_sel_x_b};
@@ -1407,17 +1407,17 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     assign c_histogram_hist_pmem_q = $unsigned(64'b0100000001000010000000000000000000000000000000000000000000000000);
 
     // i_arrayidx167_histogram0_upper_bits_x_merged_bit_select(BITSELECT,200)@9
-    assign i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_hist_pmem_q[63:9];
-    assign i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_hist_pmem_q[8:0];
+    assign i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_hist_pmem_q[63:12];
+    assign i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_hist_pmem_q[11:0];
 
     // i_idxprom15_histogram24_sel_x(BITSELECT,152)@9
     assign i_idxprom15_histogram24_sel_x_b = $unsigned({{32{i_llvm_fpga_mem_lm1_histogram21_out_o_readdata[31]}}, i_llvm_fpga_mem_lm1_histogram21_out_o_readdata[31:0]});
 
     // i_arrayidx167_histogram0_dupName_0_trunc_sel_x(BITSELECT,144)@9
-    assign i_arrayidx167_histogram0_dupName_0_trunc_sel_x_b = i_idxprom15_histogram24_sel_x_b[8:0];
+    assign i_arrayidx167_histogram0_dupName_0_trunc_sel_x_b = i_idxprom15_histogram24_sel_x_b[11:0];
 
     // i_arrayidx167_histogram0_narrow_x(BITSELECT,137)@9
-    assign i_arrayidx167_histogram0_narrow_x_b = i_arrayidx167_histogram0_dupName_0_trunc_sel_x_b[6:0];
+    assign i_arrayidx167_histogram0_narrow_x_b = i_arrayidx167_histogram0_dupName_0_trunc_sel_x_b[9:0];
 
     // i_arrayidx167_histogram0_shift_join_x(BITJOIN,138)@9
     assign i_arrayidx167_histogram0_shift_join_x_q = {i_arrayidx167_histogram0_narrow_x_b, i_arrayidx125_histogram19_vt_const_1_q};
@@ -1426,10 +1426,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body100000_enter633_histogram0 (
     assign i_arrayidx167_histogram0_add_x_a = {1'b0, i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_c};
     assign i_arrayidx167_histogram0_add_x_b = {1'b0, i_arrayidx167_histogram0_shift_join_x_q};
     assign i_arrayidx167_histogram0_add_x_o = $unsigned(i_arrayidx167_histogram0_add_x_a) + $unsigned(i_arrayidx167_histogram0_add_x_b);
-    assign i_arrayidx167_histogram0_add_x_q = i_arrayidx167_histogram0_add_x_o[9:0];
+    assign i_arrayidx167_histogram0_add_x_q = i_arrayidx167_histogram0_add_x_o[12:0];
 
     // i_arrayidx167_histogram0_dupName_2_trunc_sel_x(BITSELECT,145)@9
-    assign i_arrayidx167_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx167_histogram0_add_x_q[8:0];
+    assign i_arrayidx167_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx167_histogram0_add_x_q[11:0];
 
     // i_arrayidx167_histogram0_append_upper_bits_x(BITJOIN,135)@9
     assign i_arrayidx167_histogram0_append_upper_bits_x_q = {i_arrayidx167_histogram0_upper_bits_x_merged_bit_select_b, i_arrayidx167_histogram0_dupName_2_trunc_sel_x_b};

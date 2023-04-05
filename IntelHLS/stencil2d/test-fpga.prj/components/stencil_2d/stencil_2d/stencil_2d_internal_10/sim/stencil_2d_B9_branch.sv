@@ -16,31 +16,15 @@
 
 // SystemVerilog created from stencil_2d_B9_branch
 // Created for function/kernel stencil_2d
-// SystemVerilog created on Wed Mar 29 16:57:07 2023
+// SystemVerilog created on Tue Apr  4 22:01:35 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module stencil_2d_B9_branch (
-    input wire [0:0] in_c0_exe10284,
-    input wire [0:0] in_c0_exe11285,
-    input wire [0:0] in_c0_exe12286,
-    input wire [0:0] in_c0_exe13287,
-    input wire [31:0] in_c0_exe14288,
-    input wire [0:0] in_c0_exe15289,
-    input wire [0:0] in_c0_exe8282,
-    input wire [31:0] in_c0_exe9283,
-    input wire [31:0] in_c1_exe1,
+    input wire [0:0] in_c0_exe52615,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_c0_exe10284,
-    output wire [0:0] out_c0_exe11285,
-    output wire [0:0] out_c0_exe12286,
-    output wire [0:0] out_c0_exe13287,
-    output wire [31:0] out_c0_exe14288,
-    output wire [0:0] out_c0_exe15289,
-    output wire [31:0] out_c0_exe9283,
-    output wire [31:0] out_c1_exe1,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
     output wire [0:0] out_valid_out_1,
@@ -49,15 +33,7 @@ module stencil_2d_B9_branch (
     );
 
     wire [0:0] VCC_q;
-    reg [0:0] c0_exe10284_reg_q;
-    reg [0:0] c0_exe11285_reg_q;
-    reg [0:0] c0_exe12286_reg_q;
-    reg [0:0] c0_exe13287_reg_q;
-    reg [31:0] c0_exe14288_reg_q;
-    reg [0:0] c0_exe15289_reg_q;
-    wire [0:0] c0_exe8282_cmp_q;
-    reg [31:0] c0_exe9283_reg_q;
-    reg [31:0] c1_exe1_reg_q;
+    wire [0:0] c0_exe52615_cmp_q;
     wire [0:0] not_stall_in_0_q;
     wire [0:0] not_stall_in_1_q;
     wire [0:0] not_valid_0_q;
@@ -72,19 +48,16 @@ module stencil_2d_B9_branch (
     wire [0:0] valid_out_1_and_q;
 
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
-
-    // not_stall_in_1(LOGICAL,24)
+    // not_stall_in_1(LOGICAL,8)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // c0_exe8282_cmp(LOGICAL,8)
-    assign c0_exe8282_cmp_q = ~ (in_c0_exe8282);
+    // c0_exe52615_cmp(LOGICAL,2)
+    assign c0_exe52615_cmp_q = ~ (in_c0_exe52615);
 
-    // valid_out_1_and(LOGICAL,45)
-    assign valid_out_1_and_q = in_valid_in & c0_exe8282_cmp_q;
+    // valid_out_1_and(LOGICAL,21)
+    assign valid_out_1_and_q = in_valid_in & c0_exe52615_cmp_q;
 
-    // valid_1_reg(REG,43)
+    // valid_1_reg(REG,19)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -97,19 +70,19 @@ module stencil_2d_B9_branch (
         end
     end
 
-    // not_valid_1(LOGICAL,26)
+    // not_valid_1(LOGICAL,10)
     assign not_valid_1_q = ~ (valid_1_reg_q);
 
-    // not_valid_or_not_stall_1(LOGICAL,28)
+    // not_valid_or_not_stall_1(LOGICAL,12)
     assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
 
-    // not_stall_in_0(LOGICAL,23)
+    // not_stall_in_0(LOGICAL,7)
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
-    // valid_out_0_and(LOGICAL,44)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe8282;
+    // valid_out_0_and(LOGICAL,20)
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe52615;
 
-    // valid_0_reg(REG,42)
+    // valid_0_reg(REG,18)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -122,153 +95,28 @@ module stencil_2d_B9_branch (
         end
     end
 
-    // not_valid_0(LOGICAL,25)
+    // not_valid_0(LOGICAL,9)
     assign not_valid_0_q = ~ (valid_0_reg_q);
 
-    // not_valid_or_not_stall_0(LOGICAL,27)
+    // not_valid_or_not_stall_0(LOGICAL,11)
     assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
 
-    // stencil_2d_B9_branch_enable(LOGICAL,40)
+    // stencil_2d_B9_branch_enable(LOGICAL,16)
     assign stencil_2d_B9_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
 
-    // c0_exe10284_reg(REG,2)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe10284_reg_q <= $unsigned(1'b0);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe10284_reg_q <= in_c0_exe10284;
-        end
-    end
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
 
-    // out_c0_exe10284(GPOUT,29)
-    assign out_c0_exe10284 = c0_exe10284_reg_q;
-
-    // c0_exe11285_reg(REG,3)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe11285_reg_q <= $unsigned(1'b0);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe11285_reg_q <= in_c0_exe11285;
-        end
-    end
-
-    // out_c0_exe11285(GPOUT,30)
-    assign out_c0_exe11285 = c0_exe11285_reg_q;
-
-    // c0_exe12286_reg(REG,4)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe12286_reg_q <= $unsigned(1'b0);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe12286_reg_q <= in_c0_exe12286;
-        end
-    end
-
-    // out_c0_exe12286(GPOUT,31)
-    assign out_c0_exe12286 = c0_exe12286_reg_q;
-
-    // c0_exe13287_reg(REG,5)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe13287_reg_q <= $unsigned(1'b0);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe13287_reg_q <= in_c0_exe13287;
-        end
-    end
-
-    // out_c0_exe13287(GPOUT,32)
-    assign out_c0_exe13287 = c0_exe13287_reg_q;
-
-    // c0_exe14288_reg(REG,6)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe14288_reg_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe14288_reg_q <= in_c0_exe14288;
-        end
-    end
-
-    // out_c0_exe14288(GPOUT,33)
-    assign out_c0_exe14288 = c0_exe14288_reg_q;
-
-    // c0_exe15289_reg(REG,7)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe15289_reg_q <= $unsigned(1'b0);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe15289_reg_q <= in_c0_exe15289;
-        end
-    end
-
-    // out_c0_exe15289(GPOUT,34)
-    assign out_c0_exe15289 = c0_exe15289_reg_q;
-
-    // c0_exe9283_reg(REG,9)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe9283_reg_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe9283_reg_q <= in_c0_exe9283;
-        end
-    end
-
-    // out_c0_exe9283(GPOUT,35)
-    assign out_c0_exe9283 = c0_exe9283_reg_q;
-
-    // c1_exe1_reg(REG,10)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c1_exe1_reg_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (stencil_2d_B9_branch_enable_q == 1'b1)
-        begin
-            c1_exe1_reg_q <= in_c1_exe1;
-        end
-    end
-
-    // out_c1_exe1(GPOUT,36)
-    assign out_c1_exe1 = c1_exe1_reg_q;
-
-    // stencil_2d_B9_branch_enable_not(LOGICAL,41)
+    // stencil_2d_B9_branch_enable_not(LOGICAL,17)
     assign stencil_2d_B9_branch_enable_not_q = ~ (stencil_2d_B9_branch_enable_q);
 
-    // out_stall_out(GPOUT,37)
+    // out_stall_out(GPOUT,13)
     assign out_stall_out = stencil_2d_B9_branch_enable_not_q;
 
-    // out_valid_out_0(GPOUT,38)
+    // out_valid_out_0(GPOUT,14)
     assign out_valid_out_0 = valid_0_reg_q;
 
-    // out_valid_out_1(GPOUT,39)
+    // out_valid_out_1(GPOUT,15)
     assign out_valid_out_1 = valid_1_reg_q;
 
 endmodule

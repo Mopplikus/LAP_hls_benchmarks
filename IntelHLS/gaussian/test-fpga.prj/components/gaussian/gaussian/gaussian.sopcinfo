@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="gaussian" kind="gaussian" version="1.0" fabric="QSYS">
  <!-- Format version 21.4 67 (Future versions may contain additional information.) -->
- <!-- 2023.03.29.19:23:40 -->
+ <!-- 2023.04.04.21:39:31 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -132,7 +132,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>hls.cosim.name</name>
-   <value>_Z8gaussianPiPA20_i</value>
+   <value>_Z8gaussianPA20_i</value>
   </assignment>
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
@@ -374,13 +374,13 @@ parameters are a RESULT of the module parameters. -->
     <role>stall</role>
    </port>
   </interface>
-  <interface name="c" kind="conduit_end" version="21.4">
+  <interface name="A_r" kind="conduit_end" version="21.4">
    <!-- The connection points exposed by a module instance for the
 particular module parameters. Connection points and their
 parameters are a RESULT of the module parameters. -->
    <assignment>
     <name>hls.cosim.name</name>
-    <value>c</value>
+    <value>A_r</value>
    </assignment>
    <parameter name="associatedClock">
     <type>java.lang.String</type>
@@ -425,64 +425,7 @@ parameters are a RESULT of the module parameters. -->
    <type>conduit</type>
    <isStart>false</isStart>
    <port>
-    <name>c</name>
-    <direction>Input</direction>
-    <width>64</width>
-    <role>data</role>
-   </port>
-  </interface>
-  <interface name="A" kind="conduit_end" version="21.4">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <assignment>
-    <name>hls.cosim.name</name>
-    <value>A</value>
-   </assignment>
-   <parameter name="associatedClock">
-    <type>java.lang.String</type>
-    <value>clock</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="associatedReset">
-    <type>java.lang.String</type>
-    <value>reset</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="prSafe">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>conduit</type>
-   <isStart>false</isStart>
-   <port>
-    <name>A</name>
+    <name>A_r</name>
     <direction>Input</direction>
     <width>64</width>
     <role>data</role>
@@ -845,7 +788,7 @@ parameters are a RESULT of the module parameters. -->
   <version>21.4</version>
  </plugin>
  <plugin>
-  <instanceCount>4</instanceCount>
+  <instanceCount>3</instanceCount>
   <name>conduit_end</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>

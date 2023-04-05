@@ -16,14 +16,14 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i1_notexitcond32_stencil_2d0
 // Created for function/kernel stencil_2d
-// SystemVerilog created on Wed Mar 29 16:57:06 2023
+// SystemVerilog created on Tue Apr  4 22:01:34 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module stencil_2d_i_llvm_fpga_push_i1_notexitcond32_0 (
-    input wire [0:0] in_feedback_stall_in_9,
-    output wire [0:0] out_feedback_out_9,
-    output wire [0:0] out_feedback_valid_out_9,
+    input wire [0:0] in_feedback_stall_in_5,
+    output wire [0:0] out_feedback_out_5,
+    output wire [0:0] out_feedback_valid_out_5,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_data_in,
@@ -77,7 +77,7 @@ module stencil_2d_i_llvm_fpga_push_i1_notexitcond32_0 (
     // i_llvm_fpga_push_i1_notexitcond32_stencil_2d1(EXTIFACE,9)@1
     assign i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_data_in = element_extension2_q[0:0];
     assign i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_dir = VCC_q;
-    assign i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_feedback_stall_in = in_feedback_stall_in_9;
+    assign i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_feedback_stall_in = in_feedback_stall_in_5;
     assign i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_predicate = GND_q;
     assign i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_stall_in = in_stall_in;
     assign i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_valid_in = in_valid_in;
@@ -121,8 +121,8 @@ module stencil_2d_i_llvm_fpga_push_i1_notexitcond32_0 (
     );
 
     // feedback_sync_out(GPOUT,8)
-    assign out_feedback_out_9 = i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_feedback_out;
-    assign out_feedback_valid_out_9 = i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_feedback_valid_out;
+    assign out_feedback_out_5 = i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_feedback_out;
+    assign out_feedback_valid_out_5 = i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_feedback_valid_out;
 
     // sync_out(GPOUT,11)@1
     assign out_stall_out = i_llvm_fpga_push_i1_notexitcond32_stencil_2d1_stall_out;

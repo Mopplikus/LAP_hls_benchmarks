@@ -6,15 +6,6 @@ module quartus_compile (
 	, output logic [0:0] stencil_2d_done
 	, input logic [0:0] stencil_2d_stall
 	, output logic [31:0] stencil_2d_returndata
-	, input logic [63:0] stencil_2d_orig
-	, input logic [63:0] stencil_2d_sol
-	, input logic [63:0] stencil_2d_filter
-	, output logic [63:0] stencil_2d_avmm_0_rw_address
-	, output logic [7:0] stencil_2d_avmm_0_rw_byteenable
-	, output logic [0:0] stencil_2d_avmm_0_rw_read
-	, input logic [63:0] stencil_2d_avmm_0_rw_readdata
-	, output logic [0:0] stencil_2d_avmm_0_rw_write
-	, output logic [63:0] stencil_2d_avmm_0_rw_writedata
 	);
 
 	logic [0:0] stencil_2d_start_reg;
@@ -22,15 +13,6 @@ module quartus_compile (
 	logic [0:0] stencil_2d_done_reg;
 	logic [0:0] stencil_2d_stall_reg;
 	logic [31:0] stencil_2d_returndata_reg;
-	logic [63:0] stencil_2d_orig_reg;
-	logic [63:0] stencil_2d_sol_reg;
-	logic [63:0] stencil_2d_filter_reg;
-	logic [63:0] stencil_2d_avmm_0_rw_address_reg;
-	logic [7:0] stencil_2d_avmm_0_rw_byteenable_reg;
-	logic [0:0] stencil_2d_avmm_0_rw_read_reg;
-	logic [63:0] stencil_2d_avmm_0_rw_readdata_reg;
-	logic [0:0] stencil_2d_avmm_0_rw_write_reg;
-	logic [63:0] stencil_2d_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -39,15 +21,6 @@ module quartus_compile (
 		stencil_2d_done <= stencil_2d_done_reg;
 		stencil_2d_stall_reg <= stencil_2d_stall;
 		stencil_2d_returndata <= stencil_2d_returndata_reg;
-		stencil_2d_orig_reg <= stencil_2d_orig;
-		stencil_2d_sol_reg <= stencil_2d_sol;
-		stencil_2d_filter_reg <= stencil_2d_filter;
-		stencil_2d_avmm_0_rw_address <= stencil_2d_avmm_0_rw_address_reg;
-		stencil_2d_avmm_0_rw_byteenable <= stencil_2d_avmm_0_rw_byteenable_reg;
-		stencil_2d_avmm_0_rw_read <= stencil_2d_avmm_0_rw_read_reg;
-		stencil_2d_avmm_0_rw_readdata_reg <= stencil_2d_avmm_0_rw_readdata;
-		stencil_2d_avmm_0_rw_write <= stencil_2d_avmm_0_rw_write_reg;
-		stencil_2d_avmm_0_rw_writedata <= stencil_2d_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -69,15 +42,6 @@ module quartus_compile (
 		, .done(stencil_2d_done_reg)
 		, .stall(stencil_2d_stall_reg)
 		, .returndata(stencil_2d_returndata_reg)
-		, .orig(stencil_2d_orig_reg)
-		, .sol(stencil_2d_sol_reg)
-		, .filter(stencil_2d_filter_reg)
-		, .avmm_0_rw_address(stencil_2d_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(stencil_2d_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(stencil_2d_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(stencil_2d_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(stencil_2d_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(stencil_2d_avmm_0_rw_writedata_reg)
 	);
 
 

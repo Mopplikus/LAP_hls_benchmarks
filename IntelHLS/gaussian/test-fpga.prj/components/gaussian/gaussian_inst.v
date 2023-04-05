@@ -17,10 +17,8 @@ gaussian gaussian_inst (
   // Interface: return (conduit source)
   .done                ( ), // 1-bit valid output
   .stall               ( ), // 1-bit stall input
-  // Interface: c (conduit sink)
-  .c                   ( ), // 64-bit data input
-  // Interface: A (conduit sink)
-  .A                   ( ), // 64-bit data input
+  // Interface: A_r (conduit sink)
+  .A_r                 ( ), // 64-bit data input
   // Interface: avmm_0_rw (avalon start)
   .avmm_0_rw_address   ( ), // 64-bit address output
   .avmm_0_rw_byteenable( ), // 8-bit byteenable output

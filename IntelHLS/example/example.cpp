@@ -7,14 +7,22 @@
 
 using namespace ihc;
 
-component float example(float A[], float B[])
+component float example()
 {
+    hls_memory hls_singlepump float A[N];
+    hls_memory hls_singlepump float B[N];
+
+    int i;
+    INIT:for(i = 0; i < N; i++)
+    {
+        A[i] = (float) (i % 3);
+        B[i] = (float) (i % 4);
+    }
 
     float d = 0.0;
     float s = 0.0;
 
-    int i = 0;
-    for(i = i; i < N; i++)
+    WORK:for(i = 0; i < N; i++)
     {
         d = A[i] - B[i];
         if(d >= 0)
@@ -28,17 +36,7 @@ component float example(float A[], float B[])
 
 int main()
 {
-    float A[N];
-    float B[N];
-
-    int i;
-    for(i = 0; i < N; i++)
-    {
-        A[i] = (float) (i % 3);
-        B[i] = (float) (i % 4);
-    }
-
-    float result = example(A, B);
+    float result = example();
 
     if(result == TARGET_VALUE)
     {

@@ -12,7 +12,7 @@ namespace eval stencil_2d_cfan {
   
   proc get_design_files {QSYS_SIMDIR} {
     set design_files [dict create]
-    dict set design_files "stencil_2d_cfan_avalon_conduit_fanout_10_joescla.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/stencil_2d_cfan_avalon_conduit_fanout_10_joescla.sv"
+    dict set design_files "stencil_2d_cfan_avalon_conduit_fanout_10_wcpjniy.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/stencil_2d_cfan_avalon_conduit_fanout_10_wcpjniy.sv"
     dict set design_files "stencil_2d_cfan.v"                                   "$QSYS_SIMDIR/stencil_2d_cfan.v"                                                                  
     return $design_files
   }

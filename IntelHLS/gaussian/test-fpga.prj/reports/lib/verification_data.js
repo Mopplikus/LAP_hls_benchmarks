@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"gaussian"
       , "data":
-      ['1', '67820,67820,67820', 'n/a,n/a,n/a']
+      ['1', '17284,17284,17284', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '67820,67820,67820', 'n/a,n/a,n/a']
+      ['1', '17284,17284,17284', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

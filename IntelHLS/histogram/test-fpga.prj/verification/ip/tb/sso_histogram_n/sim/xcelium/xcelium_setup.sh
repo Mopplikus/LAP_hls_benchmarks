@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.4 67 linux 2023.04.04.14:08:48
+# ACDS 21.4 67 linux 2023.04.04.22:52:13
 
 # ----------------------------------------
 # xcelium - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.04.04.14:08:48
+# ACDS 21.4 67 linux 2023.04.04.22:52:13
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sso_histogram_n.sso_histogram_n"

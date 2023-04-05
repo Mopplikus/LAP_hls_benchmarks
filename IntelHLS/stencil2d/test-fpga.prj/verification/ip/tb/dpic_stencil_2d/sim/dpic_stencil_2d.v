@@ -25,7 +25,7 @@ module dpic_stencil_2d (
 
 	hls_sim_component_dpi_controller #(
 		.COMPONENT_NAME               ("stencil_2d"),
-		.COMPONENT_MANGLED_NAME       ("_Z10stencil_2dPiS_S_"),
+		.COMPONENT_MANGLED_NAME       ("_Z10stencil_2dv"),
 		.RETURN_DATAWIDTH             (32),
 		.COMPONENT_NUM_AGENTS         (0),
 		.COMPONENT_HAS_AGENT_RETURN   (0),

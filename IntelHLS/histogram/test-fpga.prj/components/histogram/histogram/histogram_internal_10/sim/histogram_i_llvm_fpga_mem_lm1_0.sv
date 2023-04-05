@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_lm1_histogram0
 // Created for function/kernel histogram
-// SystemVerilog created on Tue Apr  4 14:08:06 2023
+// SystemVerilog created on Tue Apr  4 22:51:31 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -153,7 +153,7 @@ module histogram_i_llvm_fpga_mem_lm1_0 (
     assign i_llvm_fpga_mem_lm1_histogram1_o_valid[0] = i_llvm_fpga_mem_lm1_histogram1_o_valid_bitsignaltemp;
     assign i_llvm_fpga_mem_lm1_histogram1_o_writeack[0] = i_llvm_fpga_mem_lm1_histogram1_o_writeack_bitsignaltemp;
     lsu_top #(
-        .ABITS_PER_LMEM_BANK(9),
+        .ABITS_PER_LMEM_BANK(12),
         .ADDRSPACE(64),
         .ALIGNMENT_BYTES(4),
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),

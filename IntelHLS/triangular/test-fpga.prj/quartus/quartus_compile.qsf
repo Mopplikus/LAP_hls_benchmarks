@@ -14,8 +14,8 @@ set_global_assignment -name IP_FILE ../components/triangular/triangular.ip
 set_global_assignment -name SYSTEMVERILOG_FILE quartus_compile.sv
 
 # Partitions are used to separate the component logic from the project harness when tallying area results
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id component_partition
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id component_partition
+# Obsolete assignment in <Version 21.4> "set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id component_partition"
+# Obsolete assignment in <Version 21.4> "set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id component_partition"
 set_instance_assignment -name PARTITION component_triangular -to "triangular:triangular_inst"
 
 # No need to generate a bitstream for this compile so save time by skipping the assembler
@@ -26,3 +26,6 @@ set_global_assignment -name FLOW_DISABLE_ASSEMBLER ON
 # This assignment configures all component I/Os as virtual pins to more accurately
 # model placement and routing in a larger system
 set_instance_assignment -name VIRTUAL_PIN ON -to *
+set_global_assignment -name LAST_QUARTUS_VERSION "21.4.0 Pro Edition"
+set_global_assignment -name OPTIMIZATION_MODE "SUPERIOR PERFORMANCE"
+set_global_assignment -name FAST_PRESERVE OFF -entity quartus_compile

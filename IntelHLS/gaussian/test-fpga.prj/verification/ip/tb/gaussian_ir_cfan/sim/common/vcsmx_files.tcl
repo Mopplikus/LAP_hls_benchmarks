@@ -19,7 +19,7 @@ namespace eval gaussian_ir_cfan {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/gaussian_ir_cfan_avalon_conduit_fanout_10_kcgql6q.sv\"  -work avalon_conduit_fanout_10"
+    lappend design_files "vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/gaussian_ir_cfan_avalon_conduit_fanout_10_kjtx3wq.sv\"  -work avalon_conduit_fanout_10"
     lappend design_files "vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/gaussian_ir_cfan.v\"  -work gaussian_ir_cfan"                                                                                    
     return $design_files
   }

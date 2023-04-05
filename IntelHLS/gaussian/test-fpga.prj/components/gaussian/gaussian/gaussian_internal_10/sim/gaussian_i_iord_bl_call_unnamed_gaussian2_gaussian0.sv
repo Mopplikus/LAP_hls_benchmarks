@@ -16,12 +16,12 @@
 
 // SystemVerilog created from i_iord_bl_call_gaussian_unnamed_gaussian2_gaussian0
 // Created for function/kernel gaussian
-// SystemVerilog created on Wed Mar 29 19:22:58 2023
+// SystemVerilog created on Tue Apr  4 21:38:49 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0 (
-    input wire [127:0] in_iord_bl_call_gaussian_i_fifodata,
+    input wire [63:0] in_iord_bl_call_gaussian_i_fifodata,
     input wire [0:0] in_iord_bl_call_gaussian_i_fifovalid,
     output wire [0:0] out_iord_bl_call_gaussian_o_fifoalmost_full,
     input wire [0:0] in_i_stall,
@@ -30,7 +30,6 @@ module gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0 (
     input wire [0:0] in_i_valid,
     output wire [0:0] out_iord_bl_call_gaussian_o_fifoready,
     output wire [63:0] out_o_data_0_tpl,
-    output wire [63:0] out_o_data_1_tpl,
     output wire [0:0] out_o_valid,
     input wire clock,
     input wire resetn
@@ -38,7 +37,7 @@ module gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0 (
 
     wire [0:0] GND_q;
     wire [31:0] c32_0_q;
-    wire [127:0] iord_i_fifodata;
+    wire [63:0] iord_i_fifodata;
     wire [0:0] iord_i_fifoempty;
     wire iord_i_fifoempty_bitsignaltemp;
     wire [0:0] iord_i_fifoendofpacket;
@@ -54,7 +53,7 @@ module gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0 (
     wire iord_i_stall_bitsignaltemp;
     wire [0:0] iord_i_valid;
     wire iord_i_valid_bitsignaltemp;
-    wire [127:0] iord_o_data;
+    wire [63:0] iord_o_data;
     wire [0:0] iord_o_fifoalmost_full;
     wire iord_o_fifoalmost_full_bitsignaltemp;
     wire [0:0] iord_o_fifoready;
@@ -64,8 +63,6 @@ module gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0 (
     wire [0:0] iord_o_valid;
     wire iord_o_valid_bitsignaltemp;
     wire [31:0] iord_profile_total_fifo_size_incr;
-    wire [63:0] ip_dsdk_adapt_bitselect2_b;
-    wire [63:0] ip_dsdk_adapt_bitselect4_b;
 
 
     // c32_0(CONSTANT,3)
@@ -106,7 +103,7 @@ module gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0 (
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),
         .ASYNC_RESET(1),
         .CUTPATHS(0),
-        .DATA_WIDTH(128),
+        .DATA_WIDTH(64),
         .EMPTY_WIDTH(0),
         .NON_BLOCKING(0),
         .NO_PREDICATION(1),
@@ -131,24 +128,17 @@ module gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0 (
         .resetn(resetn)
     );
 
-    // regfree_osync(GPOUT,12)
+    // regfree_osync(GPOUT,10)
     assign out_iord_bl_call_gaussian_o_fifoalmost_full = iord_o_fifoalmost_full;
 
-    // sync_out(GPOUT,14)@20000000
+    // sync_out(GPOUT,12)@20000000
     assign out_o_stall = iord_o_stall;
 
-    // dupName_0_regfree_osync_x(GPOUT,16)
+    // dupName_0_regfree_osync_x(GPOUT,14)
     assign out_iord_bl_call_gaussian_o_fifoready = iord_o_fifoready;
 
-    // ip_dsdk_adapt_bitselect4(BITSELECT,7)
-    assign ip_dsdk_adapt_bitselect4_b = iord_o_data[127:64];
-
-    // ip_dsdk_adapt_bitselect2(BITSELECT,6)
-    assign ip_dsdk_adapt_bitselect2_b = iord_o_data[63:0];
-
-    // dupName_0_sync_out_aunroll_x(GPOUT,17)@2
-    assign out_o_data_0_tpl = ip_dsdk_adapt_bitselect2_b;
-    assign out_o_data_1_tpl = ip_dsdk_adapt_bitselect4_b;
+    // dupName_0_sync_out_aunroll_x(GPOUT,15)@2
+    assign out_o_data_0_tpl = iord_o_data;
     assign out_o_valid = iord_o_valid;
 
 endmodule

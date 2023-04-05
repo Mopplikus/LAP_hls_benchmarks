@@ -4,12 +4,25 @@
 
 using namespace ihc;
 
-component int stencil_2d (int orig[900], int sol[900], int filter[10])
+component int stencil_2d ()
 {
+	hls_memory hls_singlepump int orig[900];
+	hls_memory hls_singlepump int sol[900];
+	hls_memory hls_singlepump int filter[10];
+
+	INIT_1:for(int j = 0; j < 900; ++j)
+	{
+		orig[j] = 35 * j % 100; 
+	}
+	INIT_2:for(int j = 0; j < 10; ++j)
+	{
+		filter[j] = 42 * j % 100; 
+	}
+
     int temp = 0;
 	int mul = 0;
 
-	for (int r=0; r < 28; r++) 
+	WORK:for (int r=0; r < 28; r++) 
 	{
 		for (int c=0; c< 28; c++) 
 		{
@@ -29,28 +42,12 @@ component int stencil_2d (int orig[900], int sol[900], int filter[10])
 
 	return temp;
 }
-
-#define AMOUNT_OF_TEST 1
 #define TARGET_VALUE 23580
 
 int main(void)
-{
-	int orig[AMOUNT_OF_TEST][900];
-	int sol[AMOUNT_OF_TEST][900];
-	int filter[AMOUNT_OF_TEST][10];
-
-
-	for(int i = 0; i < AMOUNT_OF_TEST; ++i){
-		for(int j = 0; j < 900; ++j){
-			orig[i][j] = 35 * j % 100; 
-		}
-        for(int j = 0; j < 10; ++j){
-			filter[i][j] = 42 * j % 100; 
-		}
-	}
-    
+{    
 	int i = 0;
-	int out = stencil_2d(orig[i], sol[i], filter[i]);
+	int out = stencil_2d();
 
 	if(out == TARGET_VALUE)
 	{

@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_source_i32_unnamed_gaussian6_gaussian0
 // Created for function/kernel gaussian
-// SystemVerilog created on Wed Mar 29 19:22:58 2023
+// SystemVerilog created on Tue Apr  4 21:38:49 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -64,7 +64,7 @@ module gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_6_gaussian0 (
     // sync_out(GPOUT,6)@20000000
     assign out_stall_out = in_stall_in;
 
-    // dupName_0_sync_out_x(GPOUT,8)@1
+    // dupName_0_sync_out_x(GPOUT,8)@3
     assign out_valid_out = in_valid_in;
 
 endmodule

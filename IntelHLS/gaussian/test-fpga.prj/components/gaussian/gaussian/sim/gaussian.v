@@ -10,8 +10,7 @@ module gaussian (
 		output wire        busy,                 //          .stall
 		output wire        done,                 //    return.valid
 		input  wire        stall,                //          .stall
-		input  wire [63:0] c,                    //         c.data
-		input  wire [63:0] A,                    //         A.data
+		input  wire [63:0] A_r,                  //       A_r.data
 		output wire [63:0] avmm_0_rw_address,    // avmm_0_rw.address
 		output wire [7:0]  avmm_0_rw_byteenable, //          .byteenable
 		output wire        avmm_0_rw_read,       //          .read
@@ -27,8 +26,7 @@ module gaussian (
 		.busy                 (busy),                 //  output,   width = 1,          .stall
 		.done                 (done),                 //  output,   width = 1,    return.valid
 		.stall                (stall),                //   input,   width = 1,          .stall
-		.c                    (c),                    //   input,  width = 64,         c.data
-		.A                    (A),                    //   input,  width = 64,         A.data
+		.A_r                  (A_r),                  //   input,  width = 64,       A_r.data
 		.avmm_0_rw_address    (avmm_0_rw_address),    //  output,  width = 64, avmm_0_rw.address
 		.avmm_0_rw_byteenable (avmm_0_rw_byteenable), //  output,   width = 8,          .byteenable
 		.avmm_0_rw_read       (avmm_0_rw_read),       //  output,   width = 1,          .read

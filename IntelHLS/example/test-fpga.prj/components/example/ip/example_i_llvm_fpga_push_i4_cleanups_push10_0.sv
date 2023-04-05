@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i4_cleanups_push10_example0
 // Created for function/kernel example
-// SystemVerilog created on Tue Mar 14 13:54:07 2023
+// SystemVerilog created on Tue Apr  4 21:14:17 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -66,10 +66,10 @@ module example_i_llvm_fpga_push_i4_cleanups_push10_0 (
     // c_i4_03(CONSTANT,4)
     assign c_i4_03_q = $unsigned(4'b0000);
 
-    // element_extension2(BITJOIN,5)@3
+    // element_extension2(BITJOIN,5)@12
     assign element_extension2_q = {c_i4_03_q, in_data_in};
 
-    // i_llvm_fpga_push_i4_cleanups_push10_example1(EXTIFACE,8)@3
+    // i_llvm_fpga_push_i4_cleanups_push10_example1(EXTIFACE,8)@12
     assign i_llvm_fpga_push_i4_cleanups_push10_example1_data_in = element_extension2_q;
     assign i_llvm_fpga_push_i4_cleanups_push10_example1_dir = in_keep_going;
     assign i_llvm_fpga_push_i4_cleanups_push10_example1_feedback_stall_in = in_feedback_stall_in_10;
@@ -92,7 +92,7 @@ module example_i_llvm_fpga_push_i4_cleanups_push10_0 (
         .STYLE("REGULAR"),
         .ASYNC_RESET(1),
         .DATA_WIDTH(8),
-        .ENABLED(1),
+        .ENABLED(0),
         .RAM_FIFO_DEPTH_INC(0),
         .STALLFREE(1),
         .SYNCHRONIZE_RESET(0)
@@ -116,13 +116,13 @@ module example_i_llvm_fpga_push_i4_cleanups_push10_0 (
     assign out_feedback_out_10 = i_llvm_fpga_push_i4_cleanups_push10_example1_feedback_out;
     assign out_feedback_valid_out_10 = i_llvm_fpga_push_i4_cleanups_push10_example1_feedback_valid_out;
 
-    // sync_out(GPOUT,10)@3
+    // sync_out(GPOUT,10)@12
     assign out_stall_out = i_llvm_fpga_push_i4_cleanups_push10_example1_stall_out;
 
-    // adapt_scalar_trunc4_sel_x(BITSELECT,12)@3
+    // adapt_scalar_trunc4_sel_x(BITSELECT,12)@12
     assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_push_i4_cleanups_push10_example1_data_out[3:0];
 
-    // dupName_0_sync_out_x(GPOUT,13)@3
+    // dupName_0_sync_out_x(GPOUT,13)@12
     assign out_data_out = adapt_scalar_trunc4_sel_x_b;
     assign out_valid_out = i_llvm_fpga_push_i4_cleanups_push10_example1_valid_out;
 

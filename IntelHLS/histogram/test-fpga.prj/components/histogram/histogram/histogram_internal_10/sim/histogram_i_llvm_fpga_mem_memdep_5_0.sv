@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_memdep_5_histogram0
 // Created for function/kernel histogram
-// SystemVerilog created on Tue Apr  4 14:08:06 2023
+// SystemVerilog created on Tue Apr  4 22:51:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -109,13 +109,13 @@ module histogram_i_llvm_fpga_mem_memdep_5_0 (
     // c_i3_08(CONSTANT,9)
     assign c_i3_08_q = $unsigned(3'b000);
 
-    // addr_trunc_sel_x(BITSELECT,18)@3
+    // addr_trunc_sel_x(BITSELECT,18)@8
     assign addr_trunc_sel_x_b = in_i_address[31:0];
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_memdep_5_histogram1(EXTIFACE,13)@3 + 1
+    // i_llvm_fpga_mem_memdep_5_histogram1(EXTIFACE,13)@8 + 1
     assign i_llvm_fpga_mem_memdep_5_histogram1_avm_readdata = in_memdep_5_histogram_avm_readdata;
     assign i_llvm_fpga_mem_memdep_5_histogram1_avm_readdatavalid = in_memdep_5_histogram_avm_readdatavalid;
     assign i_llvm_fpga_mem_memdep_5_histogram1_avm_waitrequest = in_memdep_5_histogram_avm_waitrequest;
@@ -151,7 +151,7 @@ module histogram_i_llvm_fpga_mem_memdep_5_0 (
     assign i_llvm_fpga_mem_memdep_5_histogram1_o_valid[0] = i_llvm_fpga_mem_memdep_5_histogram1_o_valid_bitsignaltemp;
     assign i_llvm_fpga_mem_memdep_5_histogram1_o_writeack[0] = i_llvm_fpga_mem_memdep_5_histogram1_o_writeack_bitsignaltemp;
     lsu_top #(
-        .ABITS_PER_LMEM_BANK(9),
+        .ABITS_PER_LMEM_BANK(12),
         .ADDRSPACE(66),
         .ALIGNMENT_BYTES(4),
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),
@@ -231,10 +231,10 @@ module histogram_i_llvm_fpga_mem_memdep_5_0 (
     assign out_memdep_5_histogram_avm_byteenable = i_llvm_fpga_mem_memdep_5_histogram1_avm_byteenable;
     assign out_memdep_5_histogram_avm_burstcount = i_llvm_fpga_mem_memdep_5_histogram1_avm_burstcount;
 
-    // sync_out(GPOUT,16)@4
+    // sync_out(GPOUT,16)@9
     assign out_o_stall = i_llvm_fpga_mem_memdep_5_histogram1_o_stall;
 
-    // dupName_0_sync_out_x(GPOUT,19)@4
+    // dupName_0_sync_out_x(GPOUT,19)@9
     assign out_o_valid = i_llvm_fpga_mem_memdep_5_histogram1_o_valid;
     assign out_o_writeack = i_llvm_fpga_mem_memdep_5_histogram1_o_writeack;
 

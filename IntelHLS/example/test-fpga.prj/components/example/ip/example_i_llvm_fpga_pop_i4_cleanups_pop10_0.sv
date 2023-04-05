@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pop_i4_cleanups_pop10_example0
 // Created for function/kernel example
-// SystemVerilog created on Tue Mar 14 13:54:07 2023
+// SystemVerilog created on Tue Apr  4 21:14:17 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -63,10 +63,10 @@ module example_i_llvm_fpga_pop_i4_cleanups_pop10_0 (
     // c_i4_03(CONSTANT,3)
     assign c_i4_03_q = $unsigned(4'b0000);
 
-    // element_extension2(BITJOIN,4)@3
+    // element_extension2(BITJOIN,4)@12
     assign element_extension2_q = {c_i4_03_q, in_data_in};
 
-    // i_llvm_fpga_pop_i4_cleanups_pop10_example1(EXTIFACE,7)@3
+    // i_llvm_fpga_pop_i4_cleanups_pop10_example1(EXTIFACE,7)@12
     assign i_llvm_fpga_pop_i4_cleanups_pop10_example1_data_in = element_extension2_q;
     assign i_llvm_fpga_pop_i4_cleanups_pop10_example1_dir = in_dir;
     assign i_llvm_fpga_pop_i4_cleanups_pop10_example1_feedback_in = in_feedback_in_10;
@@ -108,13 +108,13 @@ module example_i_llvm_fpga_pop_i4_cleanups_pop10_0 (
     // feedback_sync_out(GPOUT,6)
     assign out_feedback_stall_out_10 = i_llvm_fpga_pop_i4_cleanups_pop10_example1_feedback_stall_out;
 
-    // sync_out(GPOUT,9)@3
+    // sync_out(GPOUT,9)@12
     assign out_stall_out = i_llvm_fpga_pop_i4_cleanups_pop10_example1_stall_out;
 
-    // adapt_scalar_trunc4_sel_x(BITSELECT,11)@3
+    // adapt_scalar_trunc4_sel_x(BITSELECT,11)@12
     assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_pop_i4_cleanups_pop10_example1_data_out[3:0];
 
-    // dupName_0_sync_out_x(GPOUT,12)@3
+    // dupName_0_sync_out_x(GPOUT,12)@12
     assign out_data_out = adapt_scalar_trunc4_sel_x_b;
     assign out_valid_out = i_llvm_fpga_pop_i4_cleanups_pop10_example1_valid_out;
 

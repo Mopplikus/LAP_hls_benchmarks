@@ -25,7 +25,7 @@ module dpic_gaussian (
 
 	hls_sim_component_dpi_controller #(
 		.COMPONENT_NAME               ("gaussian"),
-		.COMPONENT_MANGLED_NAME       ("_Z8gaussianPiPA20_i"),
+		.COMPONENT_MANGLED_NAME       ("_Z8gaussianPA20_i"),
 		.RETURN_DATAWIDTH             (64),
 		.COMPONENT_NUM_AGENTS         (0),
 		.COMPONENT_HAS_AGENT_RETURN   (0),

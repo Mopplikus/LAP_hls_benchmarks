@@ -1,0 +1,116 @@
+{
+  "nodes":
+  [
+    {
+      "name":"kernel_2mm"
+      , "id":300917352
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"Stream Write"
+          , "id":301287216
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"kernel_2mm.B17"
+              , "Width":"1 bit"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/2mm/kernel_2mm.cpp"
+                , "line":66
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Read"
+          , "id":301076112
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"kernel_2mm.B1.start"
+              , "Width":"320 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/2mm/kernel_2mm.cpp"
+                , "line":15
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"return.kernel_2mm"
+      , "id":300430480
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+    , {
+      "name":"call.kernel_2mm"
+      , "id":300598704
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"320 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"320 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":301287216
+      , "to":300430480
+    }
+    , {
+      "from":300598704
+      , "to":301076112
+    }
+    , {
+      "from":301076112
+      , "to":301287216
+    }
+  ]
+}

@@ -6,45 +6,24 @@
 module tb (
 	);
 
-	wire  [63:0] stencil_2d_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:avs_readdata -> stencil_2d_inst:avmm_0_rw_readdata
-	wire  [63:0] stencil_2d_inst_avmm_0_rw_address;                                                            // stencil_2d_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:avs_address
-	wire   [7:0] stencil_2d_inst_avmm_0_rw_byteenable;                                                         // stencil_2d_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:avs_byteenable
-	wire         stencil_2d_inst_avmm_0_rw_read;                                                               // stencil_2d_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:avs_read
-	wire         stencil_2d_inst_avmm_0_rw_write;                                                              // stencil_2d_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:avs_write
-	wire  [63:0] stencil_2d_inst_avmm_0_rw_writedata;                                                          // stencil_2d_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                                   // clock_reset_inst:clock -> [component_dpi_controller_stencil_2d_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:clock, stencil_2d_inst:clock, stream_source_dpi_bfm_stencil_2d_filter_inst:clock, stream_source_dpi_bfm_stencil_2d_orig_inst:clock, stream_source_dpi_bfm_stencil_2d_sol_inst:clock]
-	wire         clock_reset_inst_clock2x_clk;                                                                 // clock_reset_inst:clock2x -> [component_dpi_controller_stencil_2d_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_stencil_2d_filter_inst:clock2x, stream_source_dpi_bfm_stencil_2d_orig_inst:clock2x, stream_source_dpi_bfm_stencil_2d_sol_inst:clock2x]
-	wire         component_dpi_controller_stencil_2d_inst_component_call_valid;                                // component_dpi_controller_stencil_2d_inst:start -> stencil_2d_inst:start
-	wire         stencil_2d_inst_call_stall;                                                                   // stencil_2d_inst:busy -> component_dpi_controller_stencil_2d_inst:busy
-	wire         component_dpi_controller_stencil_2d_inst_component_done_conduit;                              // component_dpi_controller_stencil_2d_inst:component_done -> concatenate_component_done_inst:in_conduit_0
-	wire   [0:0] main_dpi_controller_inst_component_enabled_conduit;                                           // main_dpi_controller_inst:component_enabled -> split_component_start_inst:in_conduit
-	wire         component_dpi_controller_stencil_2d_inst_component_wait_for_stream_writes_conduit;            // component_dpi_controller_stencil_2d_inst:component_wait_for_stream_writes -> concatenate_component_wait_for_stream_writes_inst:in_conduit_0
-	wire         component_dpi_controller_stencil_2d_inst_dpi_control_bind_conduit;                            // component_dpi_controller_stencil_2d_inst:bind_interfaces -> stencil_2d_component_dpi_controller_bind_conduit_fanout_inst:in_conduit
-	wire         component_dpi_controller_stencil_2d_inst_dpi_control_enable_conduit;                          // component_dpi_controller_stencil_2d_inst:enable_interfaces -> stencil_2d_component_dpi_controller_enable_conduit_fanout_inst:in_conduit
-	wire         concatenate_component_done_inst_out_conduit_conduit;                                          // concatenate_component_done_inst:out_conduit -> main_dpi_controller_inst:component_done
-	wire         concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit;                        // concatenate_component_wait_for_stream_writes_inst:out_conduit -> main_dpi_controller_inst:component_wait_for_stream_writes
-	wire         split_component_start_inst_out_conduit_0_conduit;                                             // split_component_start_inst:out_conduit_0 -> component_dpi_controller_stencil_2d_inst:component_enabled
-	wire         stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit;           // stencil_2d_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_stencil_2d_orig_inst:do_bind
-	wire         stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit;         // stencil_2d_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_stencil_2d_orig_inst:enable
-	wire         stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_0_conduit; // stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_stencil_2d_orig_inst:source_ready
-	wire         stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit;           // stencil_2d_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_stencil_2d_sol_inst:do_bind
-	wire         stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit;         // stencil_2d_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_stencil_2d_sol_inst:enable
-	wire         stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_1_conduit; // stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_stencil_2d_sol_inst:source_ready
-	wire         stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit;           // stencil_2d_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_stencil_2d_filter_inst:do_bind
-	wire         stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit;         // stencil_2d_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_stencil_2d_filter_inst:enable
-	wire         stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_2_conduit; // stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_stencil_2d_filter_inst:source_ready
-	wire         stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit;           // stencil_2d_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:do_bind
-	wire         stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit;         // stencil_2d_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:enable
-	wire         component_dpi_controller_stencil_2d_inst_read_implicit_streams_conduit;                       // component_dpi_controller_stencil_2d_inst:read_implicit_streams -> stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
-	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                                  // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
-	wire         stencil_2d_inst_return_valid;                                                                 // stencil_2d_inst:done -> component_dpi_controller_stencil_2d_inst:done
-	wire         component_dpi_controller_stencil_2d_inst_component_return_stall;                              // component_dpi_controller_stencil_2d_inst:stall -> stencil_2d_inst:stall
-	wire  [31:0] stencil_2d_inst_returndata_data;                                                              // stencil_2d_inst:returndata -> component_dpi_controller_stencil_2d_inst:returndata
-	wire  [63:0] stream_source_dpi_bfm_stencil_2d_filter_inst_source_data_data;                                // stream_source_dpi_bfm_stencil_2d_filter_inst:source_data -> stencil_2d_inst:filter
-	wire  [63:0] stream_source_dpi_bfm_stencil_2d_orig_inst_source_data_data;                                  // stream_source_dpi_bfm_stencil_2d_orig_inst:source_data -> stencil_2d_inst:orig
-	wire  [63:0] stream_source_dpi_bfm_stencil_2d_sol_inst_source_data_data;                                   // stream_source_dpi_bfm_stencil_2d_sol_inst:source_data -> stencil_2d_inst:sol
-	wire         clock_reset_inst_reset_reset;                                                                 // clock_reset_inst:resetn -> [component_dpi_controller_stencil_2d_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst:reset_n, stencil_2d_inst:resetn, stream_source_dpi_bfm_stencil_2d_filter_inst:resetn, stream_source_dpi_bfm_stencil_2d_orig_inst:resetn, stream_source_dpi_bfm_stencil_2d_sol_inst:resetn]
-	wire         component_dpi_controller_stencil_2d_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_stencil_2d_inst:done_irq
+	wire         clock_reset_inst_clock_clk;                                                        // clock_reset_inst:clock -> [component_dpi_controller_stencil_2d_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, stencil_2d_inst:clock]
+	wire         clock_reset_inst_clock2x_clk;                                                      // clock_reset_inst:clock2x -> [component_dpi_controller_stencil_2d_inst:clock2x, main_dpi_controller_inst:clock2x]
+	wire         component_dpi_controller_stencil_2d_inst_component_call_valid;                     // component_dpi_controller_stencil_2d_inst:start -> stencil_2d_inst:start
+	wire         stencil_2d_inst_call_stall;                                                        // stencil_2d_inst:busy -> component_dpi_controller_stencil_2d_inst:busy
+	wire         component_dpi_controller_stencil_2d_inst_component_done_conduit;                   // component_dpi_controller_stencil_2d_inst:component_done -> concatenate_component_done_inst:in_conduit_0
+	wire   [0:0] main_dpi_controller_inst_component_enabled_conduit;                                // main_dpi_controller_inst:component_enabled -> split_component_start_inst:in_conduit
+	wire         component_dpi_controller_stencil_2d_inst_component_wait_for_stream_writes_conduit; // component_dpi_controller_stencil_2d_inst:component_wait_for_stream_writes -> concatenate_component_wait_for_stream_writes_inst:in_conduit_0
+	wire         component_dpi_controller_stencil_2d_inst_dpi_control_bind_conduit;                 // component_dpi_controller_stencil_2d_inst:bind_interfaces -> stencil_2d_component_dpi_controller_bind_conduit_fanout_inst:in_conduit
+	wire         component_dpi_controller_stencil_2d_inst_dpi_control_enable_conduit;               // component_dpi_controller_stencil_2d_inst:enable_interfaces -> stencil_2d_component_dpi_controller_enable_conduit_fanout_inst:in_conduit
+	wire         concatenate_component_done_inst_out_conduit_conduit;                               // concatenate_component_done_inst:out_conduit -> main_dpi_controller_inst:component_done
+	wire         concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit;             // concatenate_component_wait_for_stream_writes_inst:out_conduit -> main_dpi_controller_inst:component_wait_for_stream_writes
+	wire         split_component_start_inst_out_conduit_0_conduit;                                  // split_component_start_inst:out_conduit_0 -> component_dpi_controller_stencil_2d_inst:component_enabled
+	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                       // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
+	wire         stencil_2d_inst_return_valid;                                                      // stencil_2d_inst:done -> component_dpi_controller_stencil_2d_inst:done
+	wire         component_dpi_controller_stencil_2d_inst_component_return_stall;                   // component_dpi_controller_stencil_2d_inst:stall -> stencil_2d_inst:stall
+	wire  [31:0] stencil_2d_inst_returndata_data;                                                   // stencil_2d_inst:returndata -> component_dpi_controller_stencil_2d_inst:returndata
+	wire         clock_reset_inst_reset_reset;                                                      // clock_reset_inst:resetn -> [component_dpi_controller_stencil_2d_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, stencil_2d_inst:resetn]
+	wire         component_dpi_controller_stencil_2d_inst_component_irq_irq;                        // irq_mapper:sender_irq -> component_dpi_controller_stencil_2d_inst:done_irq
 
 	clock_reset clock_reset_inst (
 		.clock         (clock_reset_inst_clock_clk),                  //  output,  width = 1,      clock.clk
@@ -63,7 +42,7 @@ module tb (
 		.component_done                   (component_dpi_controller_stencil_2d_inst_component_done_conduit),                   //  output,   width = 1,                   component_done.conduit
 		.component_wait_for_stream_writes (component_dpi_controller_stencil_2d_inst_component_wait_for_stream_writes_conduit), //  output,   width = 1, component_wait_for_stream_writes.conduit
 		.agent_busy                       (),                                                                                  //   input,   width = 1,                       agent_busy.conduit
-		.read_implicit_streams            (component_dpi_controller_stencil_2d_inst_read_implicit_streams_conduit),            //  output,   width = 1,            read_implicit_streams.conduit
+		.read_implicit_streams            (),                                                                                  //  output,   width = 1,            read_implicit_streams.conduit
 		.readback_from_agents             (),                                                                                  //  output,   width = 1,             readback_from_agents.conduit
 		.start                            (component_dpi_controller_stencil_2d_inst_component_call_valid),                     //  output,   width = 1,                   component_call.valid
 		.busy                             (stencil_2d_inst_call_stall),                                                        //   input,   width = 1,                                 .stall
@@ -93,97 +72,27 @@ module tb (
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
 	);
 
-	mm_agent_stencil_2d_avmm_0_rw mm_agent_dpi_bfm_stencil_2d_avmm_0_rw_inst (
-		.do_bind        (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                           //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                         //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (stencil_2d_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (stencil_2d_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (stencil_2d_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (stencil_2d_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (stencil_2d_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (stencil_2d_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
-	);
-
 	sp_cstart split_component_start_inst (
 		.in_conduit    (main_dpi_controller_inst_component_enabled_conduit), //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (split_component_start_inst_out_conduit_0_conduit)    //  output,  width = 1, out_conduit_0.conduit
 	);
 
 	stencil_2d_cfan stencil_2d_component_dpi_controller_bind_conduit_fanout_inst (
-		.in_conduit    (component_dpi_controller_stencil_2d_inst_dpi_control_bind_conduit),                  //   input,  width = 1,    in_conduit.conduit
-		.out_conduit_0 (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
+		.in_conduit (component_dpi_controller_stencil_2d_inst_dpi_control_bind_conduit)  //   input,  width = 1, in_conduit.conduit
 	);
 
 	stencil_2d_en_cfan stencil_2d_component_dpi_controller_enable_conduit_fanout_inst (
-		.in_conduit    (component_dpi_controller_stencil_2d_inst_dpi_control_enable_conduit),                  //   input,  width = 1,    in_conduit.conduit
-		.out_conduit_0 (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
-	);
-
-	stencil_2d_ir_cfan stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst (
-		.in_conduit    (component_dpi_controller_stencil_2d_inst_read_implicit_streams_conduit),                       //   input,  width = 1,    in_conduit.conduit
-		.out_conduit_0 (stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
+		.in_conduit (component_dpi_controller_stencil_2d_inst_dpi_control_enable_conduit)  //   input,  width = 1, in_conduit.conduit
 	);
 
 	stencil_2d stencil_2d_inst (
-		.clock                (clock_reset_inst_clock_clk),                                      //   input,   width = 1,      clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                                    //   input,   width = 1,      reset.reset_n
-		.start                (component_dpi_controller_stencil_2d_inst_component_call_valid),   //   input,   width = 1,       call.valid
-		.busy                 (stencil_2d_inst_call_stall),                                      //  output,   width = 1,           .stall
-		.done                 (stencil_2d_inst_return_valid),                                    //  output,   width = 1,     return.valid
-		.stall                (component_dpi_controller_stencil_2d_inst_component_return_stall), //   input,   width = 1,           .stall
-		.returndata           (stencil_2d_inst_returndata_data),                                 //  output,  width = 32, returndata.data
-		.orig                 (stream_source_dpi_bfm_stencil_2d_orig_inst_source_data_data),     //   input,  width = 64,       orig.data
-		.sol                  (stream_source_dpi_bfm_stencil_2d_sol_inst_source_data_data),      //   input,  width = 64,        sol.data
-		.filter               (stream_source_dpi_bfm_stencil_2d_filter_inst_source_data_data),   //   input,  width = 64,     filter.data
-		.avmm_0_rw_address    (stencil_2d_inst_avmm_0_rw_address),                               //  output,  width = 64,  avmm_0_rw.address
-		.avmm_0_rw_byteenable (stencil_2d_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,           .byteenable
-		.avmm_0_rw_read       (stencil_2d_inst_avmm_0_rw_read),                                  //  output,   width = 1,           .read
-		.avmm_0_rw_readdata   (stencil_2d_inst_avmm_0_rw_readdata),                              //   input,  width = 64,           .readdata
-		.avmm_0_rw_write      (stencil_2d_inst_avmm_0_rw_write),                                 //  output,   width = 1,           .write
-		.avmm_0_rw_writedata  (stencil_2d_inst_avmm_0_rw_writedata)                              //  output,  width = 64,           .writedata
-	);
-
-	sso_stencil_2d_filter stream_source_dpi_bfm_stencil_2d_filter_inst (
-		.clock        (clock_reset_inst_clock_clk),                                                                   //   input,   width = 1,              clock.clk
-		.resetn       (clock_reset_inst_reset_reset),                                                                 //   input,   width = 1,              reset.reset_n
-		.clock2x      (clock_reset_inst_clock2x_clk),                                                                 //   input,   width = 1,            clock2x.clk
-		.do_bind      (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit),           //   input,   width = 1,   dpi_control_bind.conduit
-		.enable       (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit),         //   input,   width = 1, dpi_control_enable.conduit
-		.source_data  (stream_source_dpi_bfm_stencil_2d_filter_inst_source_data_data),                                //  output,  width = 64,        source_data.data
-		.source_ready (stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_2_conduit), //   input,   width = 1,       source_ready.conduit
-		.source_valid ()                                                                                              //  output,   width = 1,             source.conduit
-	);
-
-	sso_stencil_2d_orig stream_source_dpi_bfm_stencil_2d_orig_inst (
-		.clock        (clock_reset_inst_clock_clk),                                                                   //   input,   width = 1,              clock.clk
-		.resetn       (clock_reset_inst_reset_reset),                                                                 //   input,   width = 1,              reset.reset_n
-		.clock2x      (clock_reset_inst_clock2x_clk),                                                                 //   input,   width = 1,            clock2x.clk
-		.do_bind      (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit),           //   input,   width = 1,   dpi_control_bind.conduit
-		.enable       (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit),         //   input,   width = 1, dpi_control_enable.conduit
-		.source_data  (stream_source_dpi_bfm_stencil_2d_orig_inst_source_data_data),                                  //  output,  width = 64,        source_data.data
-		.source_ready (stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_0_conduit), //   input,   width = 1,       source_ready.conduit
-		.source_valid ()                                                                                              //  output,   width = 1,             source.conduit
-	);
-
-	sso_stencil_2d_sol stream_source_dpi_bfm_stencil_2d_sol_inst (
-		.clock        (clock_reset_inst_clock_clk),                                                                   //   input,   width = 1,              clock.clk
-		.resetn       (clock_reset_inst_reset_reset),                                                                 //   input,   width = 1,              reset.reset_n
-		.clock2x      (clock_reset_inst_clock2x_clk),                                                                 //   input,   width = 1,            clock2x.clk
-		.do_bind      (stencil_2d_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit),           //   input,   width = 1,   dpi_control_bind.conduit
-		.enable       (stencil_2d_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit),         //   input,   width = 1, dpi_control_enable.conduit
-		.source_data  (stream_source_dpi_bfm_stencil_2d_sol_inst_source_data_data),                                   //  output,  width = 64,        source_data.data
-		.source_ready (stencil_2d_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_1_conduit), //   input,   width = 1,       source_ready.conduit
-		.source_valid ()                                                                                              //  output,   width = 1,             source.conduit
+		.clock      (clock_reset_inst_clock_clk),                                      //   input,   width = 1,      clock.clk
+		.resetn     (clock_reset_inst_reset_reset),                                    //   input,   width = 1,      reset.reset_n
+		.start      (component_dpi_controller_stencil_2d_inst_component_call_valid),   //   input,   width = 1,       call.valid
+		.busy       (stencil_2d_inst_call_stall),                                      //  output,   width = 1,           .stall
+		.done       (stencil_2d_inst_return_valid),                                    //  output,   width = 1,     return.valid
+		.stall      (component_dpi_controller_stencil_2d_inst_component_return_stall), //   input,   width = 1,           .stall
+		.returndata (stencil_2d_inst_returndata_data)                                  //  output,  width = 32, returndata.data
 	);
 
 	tb_altera_irq_mapper_1920_trjgw7i irq_mapper (

@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"example"
       , "data":
-      ['1', '325,325,325', 'n/a,n/a,n/a']
+      ['1', '321,321,321', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '325,325,325', 'n/a,n/a,n/a']
+      ['1', '321,321,321', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

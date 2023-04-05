@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <iostream>
 
-#define N 100
+#define N 1000
 
 using namespace ihc;
 

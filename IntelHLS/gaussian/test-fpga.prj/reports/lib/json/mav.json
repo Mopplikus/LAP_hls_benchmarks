@@ -27,14 +27,14 @@
           [
             {
               "type":"inst"
-              , "id":11
+              , "id":19
               , "name":"Stream Read"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":9
+                    , "line":7
                   }
                 ]
               ]
@@ -42,7 +42,7 @@
               [
                 {
                   "type":"table"
-                  , "Width":"128 bits"
+                  , "Width":"64 bits"
                   , "Depth":"0"
                   , "Stall-free":"No"
                   , "Start Cycle":"2"
@@ -66,7 +66,7 @@
             }
             , {
               "type":"inst"
-              , "id":19
+              , "id":31
               , "name":"Loop Input"
               , "debug":
               [
@@ -83,13 +83,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"22"
+                  , "Loops To":"40"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":20
+              , "id":32
               , "name":"End"
               , "details":
               [
@@ -122,12 +122,7 @@
           [
             {
               "type":"table"
-              , "Latency":"1"
-              , "II":"n/a"
-              , "Subloops":"Yes"
-              , "Pipelined":"No"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Exit which branches back to loop. "
+              , "Latency":"0"
             }
           ]
         }
@@ -139,14 +134,539 @@
           [
             {
               "type":"inst"
-              , "id":13
+              , "id":21
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":13
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"c"
+                  , "Start Cycle":"2"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":33
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":12
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"7"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":34
+              , "name":"End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"6"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"6"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":7
+          , "name":"gaussian.B4"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":8
+          , "name":"gaussian.B5"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":22
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":15
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"A"
+                  , "Start Cycle":"3"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":35
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":14
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"36"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":36
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"7"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"7"
+              , "II":"1"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":""
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":9
+          , "name":"gaussian.B6"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"1"
+              , "II":"n/a"
+              , "Subloops":"Yes"
+              , "Pipelined":"No"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":10
+          , "name":"gaussian.B7"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":11
+          , "name":"gaussian.B8"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"3"
+              , "II":"n/a"
+              , "Subloops":"Yes"
+              , "Pipelined":"No"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"9"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":12
+          , "name":"gaussian.B9"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"6"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"13"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":13
+          , "name":"gaussian.B10"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":14
+          , "name":"gaussian.B11"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":23
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":26
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"c"
+                  , "Start Cycle":"2"
+                  , "Latency":"3"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":24
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":26
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"A"
+                  , "Start Cycle":"7"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":25
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":26
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"A"
+                  , "Start Cycle":"5"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":26
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":26
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"A"
+                  , "Start Cycle":"9"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":37
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                    , "line":24
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"38"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":38
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"13"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"13"
+              , "II":"5"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Loop is pipelined with II of 5. See Loops Analysis for more information."
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":15
+          , "name":"gaussian.B12"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"5"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"17"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":16
+          , "name":"gaussian.B13"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":27
               , "name":"Stream Write"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":30
+                    , "line":41
                   }
                 ]
               ]
@@ -178,7 +698,7 @@
             }
             , {
               "type":"inst"
-              , "id":21
+              , "id":39
               , "name":"Begin"
               , "details":
               [
@@ -191,7 +711,7 @@
             }
             , {
               "type":"inst"
-              , "id":22
+              , "id":40
               , "name":"Loop End"
               , "details":
               [
@@ -218,44 +738,8 @@
         }
         , {
           "type":"bb"
-          , "id":7
-          , "name":"gaussian.B4"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"3"
-              , "II":"n/a"
-              , "Subloops":"Yes"
-              , "Pipelined":"No"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-              , "Loops To":"5"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":8
-          , "name":"gaussian.B5"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"6"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-              , "Loops To":"9"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":9
-          , "name":"gaussian.B6"
+          , "id":17
+          , "name":"gaussian.B14"
           , "details":
           [
             {
@@ -271,20 +755,20 @@
         }
         , {
           "type":"bb"
-          , "id":10
-          , "name":"gaussian.B7"
+          , "id":18
+          , "name":"gaussian.B15"
           , "children":
           [
             {
               "type":"inst"
-              , "id":15
+              , "id":29
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":22
+                    , "line":38
                   }
                 ]
               ]
@@ -293,11 +777,11 @@
                 {
                   "type":"table"
                   , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
                   , "Loads from":"A"
-                  , "Start Cycle":"7"
-                  , "Latency":"31"
+                  , "Start Cycle":"4"
+                  , "Latency":"1"
                   , "Reference":
                   [
                     {
@@ -317,94 +801,14 @@
             }
             , {
               "type":"inst"
-              , "id":16
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":22
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Loads from":"c"
-                  , "Start Cycle":"3"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":17
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":22
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Loads from":"A"
-                  , "Start Cycle":"3"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":18
+              , "id":30
               , "name":"Store"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":22
+                    , "line":38
                   }
                 ]
               ]
@@ -413,11 +817,11 @@
                 {
                   "type":"table"
                   , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Stores to":"A"
-                  , "Start Cycle":"39"
-                  , "Latency":"31"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"A_r"
+                  , "Start Cycle":"6"
+                  , "Latency":"3"
                   , "Reference":
                   [
                     {
@@ -437,14 +841,14 @@
             }
             , {
               "type":"inst"
-              , "id":23
+              , "id":41
               , "name":"Loop Input"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":18
+                    , "line":36
                   }
                 ]
               ]
@@ -454,19 +858,19 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"24"
+                  , "Loops To":"42"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":24
+              , "id":42
               , "name":"Loop End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"70"
+                  , "Start Cycle":"12"
                   , "Latency":"1"
                 }
               ]
@@ -476,12 +880,105 @@
           [
             {
               "type":"table"
-              , "Latency":"70"
-              , "II":"68"
+              , "Latency":"12"
+              , "II":"1"
               , "Subloops":"No"
               , "Pipelined":"Yes"
               , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Loop is pipelined with II of 68. See Loops Analysis for more information."
+              , "Loop Info":""
+            }
+          ]
+        }
+        , {
+          "type":"memtype"
+          , "id":44
+          , "name":"Local Memory"
+          , "children":
+          [
+            {
+              "type":"memsys"
+              , "id":45
+              , "name":"c"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"gaussian.cpp"
+                    , "line":9
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Requested size":"80 bytes"
+                  , "Implemented size":"128 bytes"
+                  , "Number of banks":"1"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"32 words"
+                  , "Number of replicates":"1"
+                  , "Number of private copies":"1"
+                  , "User defined Attributes":"hls_memory; hls_singlepump; "
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual : Local Variables in Components"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html#xzx1468871996419"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"memsys"
+              , "id":49
+              , "name":"A"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"gaussian.cpp"
+                    , "line":10
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Requested size":"1600 bytes"
+                  , "Implemented size":"4096 bytes"
+                  , "Number of banks":"1"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"512 words"
+                  , "Number of replicates":"2"
+                  , "Number of private copies":"1"
+                  , "Additional Information":"For each bank, 2 replicates were created to efficiently support multiple accesses"
+                  , "User defined Attributes":"hls_memory; hls_singlepump; "
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual : Local Variables in Components"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html#xzx1468871996419"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -495,14 +992,14 @@
       [
         {
           "type":"memsys"
-          , "id":27
+          , "id":56
           , "name":"0"
           , "details":
           [
             {
               "type":"table"
               , "Number of banks":"1"
-              , "Arguments from gaussian":"c, A"
+              , "Arguments from gaussian":"A_r"
             }
           ]
         }
@@ -510,14 +1007,14 @@
     }
     , {
       "type":"stream"
-      , "id":12
+      , "id":20
       , "name":"call.gaussian"
       , "debug":
       [
         [
           {
             "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-            , "line":9
+            , "line":7
           }
         ]
       ]
@@ -525,9 +1022,9 @@
       [
         {
           "type":"table"
-          , "Width":"128 bits"
+          , "Width":"64 bits"
           , "Depth":"0"
-          , "Bits per symbol":"128 bits"
+          , "Bits per symbol":"64 bits"
           , "Uses Packets":"No"
           , "Uses Empty":"No"
           , "First symbol in high order bits":"No"
@@ -538,14 +1035,14 @@
     }
     , {
       "type":"stream"
-      , "id":14
+      , "id":28
       , "name":"return.gaussian"
       , "debug":
       [
         [
           {
             "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-            , "line":9
+            , "line":7
           }
         ]
       ]
@@ -566,44 +1063,14 @@
     }
     , {
       "type":"interface"
-      , "id":26
-      , "name":"A"
+      , "id":43
+      , "name":"A_r"
       , "debug":
       [
         [
           {
             "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-            , "line":9
-          }
-        ]
-      ]
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Stable":"No"
-          , "Data width":"64"
-          , "Address width":"64"
-          , "Address Space":"0"
-          , "Latency":"1"
-          , "ReadWrite Mode":"readwrite"
-          , "Maximum burst":"1"
-          , "Wait request":"0"
-          , "Alignment":"0"
-          , "Component":"gaussian"
-        }
-      ]
-    }
-    , {
-      "type":"interface"
-      , "id":25
-      , "name":"c"
-      , "debug":
-      [
-        [
-          {
-            "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-            , "line":9
+            , "line":7
           }
         ]
       ]
@@ -628,136 +1095,212 @@
   , "links":
   [
     {
-      "from":12
-      , "to":11
-    }
-    , {
-      "from":13
-      , "to":14
-    }
-    , {
-      "from":25
-      , "to":11
-    }
-    , {
-      "from":26
-      , "to":11
-    }
-    , {
-      "from":22
-      , "to":19
-    }
-    , {
-      "from":3
-      , "to":19
-    }
-    , {
-      "from":11
-      , "to":20
-    }
-    , {
-      "from":9
-      , "to":5
-    }
-    , {
-      "from":5
-      , "to":21
-    }
-    , {
-      "from":13
-      , "to":22
-    }
-    , {
-      "from":5
-      , "to":7
-    }
-    , {
       "from":20
-      , "to":7
+      , "to":19
     }
     , {
-      "from":9
-      , "to":8
+      "from":27
+      , "to":28
     }
     , {
-      "from":7
-      , "to":8
+      "from":43
+      , "to":19
     }
     , {
-      "from":24
-      , "to":9
-    }
-    , {
-      "from":24
+      "from":45
       , "to":23
-    }
-    , {
-      "from":8
-      , "to":23
-    }
-    , {
-      "from":18
-      , "to":24
-    }
-    , {
-      "from":15
-      , "to":24
-    }
-    , {
-      "from":16
-      , "to":24
-    }
-    , {
-      "from":17
-      , "to":24
-    }
-    , {
-      "from":19
-      , "to":11
     }
     , {
       "from":21
+      , "to":45
+    }
+    , {
+      "from":49
+      , "to":24
+    }
+    , {
+      "from":49
+      , "to":29
+    }
+    , {
+      "from":49
+      , "to":25
+    }
+    , {
+      "from":26
+      , "to":49
+    }
+    , {
+      "from":22
+      , "to":49
+    }
+    , {
+      "from":40
+      , "to":31
+    }
+    , {
+      "from":3
+      , "to":31
+    }
+    , {
+      "from":19
+      , "to":32
+    }
+    , {
+      "from":7
+      , "to":5
+    }
+    , {
+      "from":7
+      , "to":33
+    }
+    , {
+      "from":32
+      , "to":33
+    }
+    , {
+      "from":21
+      , "to":34
+    }
+    , {
+      "from":36
+      , "to":7
+    }
+    , {
+      "from":36
+      , "to":35
+    }
+    , {
+      "from":34
+      , "to":35
+    }
+    , {
+      "from":22
+      , "to":36
+    }
+    , {
+      "from":13
+      , "to":9
+    }
+    , {
+      "from":9
+      , "to":10
+    }
+    , {
+      "from":9
+      , "to":11
+    }
+    , {
+      "from":5
+      , "to":11
+    }
+    , {
+      "from":13
+      , "to":12
+    }
+    , {
+      "from":11
+      , "to":12
+    }
+    , {
+      "from":38
       , "to":13
     }
     , {
-      "from":23
-      , "to":15
+      "from":38
+      , "to":37
     }
     , {
-      "from":23
-      , "to":16
+      "from":12
+      , "to":37
     }
     , {
-      "from":23
-      , "to":17
-    }
-    , {
-      "from":15
-      , "to":18
-    }
-    , {
-      "from":16
-      , "to":18
+      "from":26
+      , "to":38
     }
     , {
       "from":17
-      , "to":18
-    }
-    , {
-      "from":27
       , "to":15
     }
     , {
-      "from":18
-      , "to":27
+      "from":10
+      , "to":15
+    }
+    , {
+      "from":17
+      , "to":39
     }
     , {
       "from":27
+      , "to":40
+    }
+    , {
+      "from":42
       , "to":17
     }
     , {
-      "from":27
-      , "to":16
+      "from":42
+      , "to":41
+    }
+    , {
+      "from":15
+      , "to":41
+    }
+    , {
+      "from":30
+      , "to":42
+    }
+    , {
+      "from":31
+      , "to":19
+    }
+    , {
+      "from":33
+      , "to":21
+    }
+    , {
+      "from":35
+      , "to":22
+    }
+    , {
+      "from":37
+      , "to":23
+    }
+    , {
+      "from":37
+      , "to":24
+    }
+    , {
+      "from":37
+      , "to":25
+    }
+    , {
+      "from":24
+      , "to":26
+    }
+    , {
+      "from":23
+      , "to":26
+    }
+    , {
+      "from":25
+      , "to":26
+    }
+    , {
+      "from":39
+      , "to":27
+    }
+    , {
+      "from":41
+      , "to":29
+    }
+    , {
+      "from":29
+      , "to":30
+    }
+    , {
+      "from":30
+      , "to":56
     }
   ]
 }

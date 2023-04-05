@@ -1,21 +1,21 @@
 {
-  "2776815488":
+  "1168367120":
   {
     "nodes":
     [
       {
-        "name":"Cluster 1"
-        , "id":2780388416
+        "name":"Cluster 0"
+        , "id":1172572304
         , "start":"1.00"
-        , "end":"5.00"
+        , "end":"1.00"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body4_gaussians_c0_enter567_gaussian1"
-            , "Cluster Type":"Stall-Free"
+            , "Cluster Name":"i_sfc_s_c0_in_wt_entry_gaussians_c0_enter8_gaussian0"
+            , "Cluster Type":"Stall-Enable"
             , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"4"
+            , "Cluster Latency":"0"
           }
         ]
         , "type":"cluster"
@@ -23,31 +23,14 @@
         [
           {
             "name":"Logic"
-            , "id":2780395168
+            , "id":1172578896
             , "subtype":"entry"
             , "details":
             [
               {
                 "type":"table"
                 , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"1"
-              }
-            ]
-            , "type":"inst"
-          }
-          , {
-            "name":"Exit"
-            , "id":2780641936
-            , "subtype":"exit"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Start Cycle":"2"
-                , "Latency":"3"
-                , "Exit FIFO Depth":"32"
-                , "Exit FIFO Width":"192"
-                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                , "Cluster Logic Latency":"0"
               }
             ]
             , "type":"inst"
@@ -55,1538 +38,25 @@
         ]
       }
       , {
-        "name":"Loop Orch"
-        , "id":2790196224
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Global variable"
-        , "id":2799387472
-        , "start":"5.00"
-        , "end":"6.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Global variable"
-            , "Start Cycle":"5"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":2780395168
-        , "to":2780641936
-      }
-      , {
-        "from":2790196224
-        , "to":2780395168
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2790196224
-        , "to":2780395168
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2780641936
-        , "to":2799387472
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"192"
-          }
-        ]
-      }
-    ]
-  }
-  , "2776815568":
-  {
-    "nodes":
-    [
-      {
-        "name":"Input"
-        , "id":2780482032
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Input"
-            , "Preceding Blocks":"gaussian.B7"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Feedback"
-        , "id":2785790624
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"push"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Global variable"
-            , "Feedback FIFO Depth":"2"
-            , "Feedback FIFO Width":"1"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-    ]
-  }
-  , "2776815648":
-  {
-    "nodes":
-    [
-      {
-        "name":"Loop Orch"
-        , "id":2780037920
-        , "start":"70.00"
-        , "end":"71.00"
-        , "subtype":"push"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2780127408
+        "name":"FFwd Src"
+        , "id":1178908432
         , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Loop Input"
-        , "id":2780556304
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Input"
-            , "Preceding Blocks":"gaussian.B7, gaussian.B5"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":2780994304
-        , "start":"69.00"
-        , "end":"69.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"69"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":2781231520
-        , "start":"7.00"
-        , "end":"39.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"7"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Or"
-        , "id":2781993632
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"1-bit Or"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Global variable"
-        , "id":2782141664
-        , "start":"1.00"
         , "end":"2.00"
-        , "subtype":"pop"
+        , "subtype":"ffwdSource"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Global variable"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Feedback"
-        , "id":2782342560
-        , "start":"69.00"
-        , "end":"70.00"
-        , "subtype":"push"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Global variable"
-            , "Feedback FIFO Depth":"70"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"69"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Or"
-        , "id":2782405152
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"1-bit Or"
-            , "Start Cycle":"3"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"2"
             , "Latency":"0"
           }
         ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
         , "type":"inst"
       }
       , {
-        "name":"LD"
-        , "id":2782405504
-        , "start":"3.00"
-        , "end":"35.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"3"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Xor"
-        , "id":2784701264
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"1-bit Xor"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2785057424
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2786273024
-        , "start":"1.00"
-        , "end":"2.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Global variable"
-        , "id":2789923584
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Global variable"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":2790203248
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Global variable"
-        , "id":2790449408
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Global variable"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"*"
-        , "id":2791823136
-        , "start":"35.00"
-        , "end":"38.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Multiply"
-            , "Start Cycle":"35"
-            , "Latency":"3"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"-"
-        , "id":2791823488
-        , "start":"39.00"
-        , "end":"39.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Subtract"
-            , "Start Cycle":"39"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":2791823840
-        , "start":"39.00"
-        , "end":"70.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"39"
-            , "Latency":"31"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Global variable"
-        , "id":2792304224
-        , "start":"68.00"
-        , "end":"69.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Global variable"
-            , "Start Cycle":"68"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Feedback"
-        , "id":2793276448
-        , "start":"69.00"
-        , "end":"70.00"
-        , "subtype":"push"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Global variable"
-            , "Feedback FIFO Depth":"70"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"69"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":2794195712
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":2794696928
-        , "start":"3.00"
-        , "end":"35.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"3"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2797938192
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Feedback"
-        , "id":2800082544
-        , "start":"70.00"
-        , "end":"71.00"
-        , "subtype":"push"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Global variable"
-            , "Feedback FIFO Depth":"70"
-            , "Feedback FIFO Width":"1"
-            , "Start Cycle":"70"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":2800267888
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":22
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2800359552
-        , "start":"68.00"
-        , "end":"69.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"68"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2801000160
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Feedback"
-        , "id":2801068992
-        , "start":"69.00"
-        , "end":"70.00"
-        , "subtype":"push"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Global variable"
-            , "Feedback FIFO Depth":"70"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"69"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":2780037920
-        , "to":2781231520
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2781993632
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2782141664
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2782342560
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2782405152
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2789923584
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2790449408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2792304224
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2793276448
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2800082544
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780037920
-        , "to":2801068992
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780127408
-        , "to":2784701264
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780556304
-        , "to":2792304224
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2780994304
-        , "to":2782342560
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2781231520
-        , "to":2791823488
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2780556304
-        , "to":2780037920
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2780556304
-        , "to":2782141664
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2781993632
-        , "to":2781231520
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2781993632
-        , "to":2782405504
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2781993632
-        , "to":2791823840
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2781993632
-        , "to":2794696928
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2782141664
-        , "to":2790203248
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2782141664
-        , "to":2793276448
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2782342560
-        , "to":2790449408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2782405152
-        , "to":2782405504
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2782405152
-        , "to":2794696928
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2782405504
-        , "to":2791823136
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2784701264
-        , "to":2781993632
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2785057424
-        , "to":2794195712
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":2786273024
-        , "to":2794195712
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2786273024
-        , "to":2800267888
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2789923584
-        , "to":2782405152
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2790203248
-        , "to":2781231520
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":2790203248
-        , "to":2791823840
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":2790449408
-        , "to":2780994304
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2790449408
-        , "to":2790203248
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2790449408
-        , "to":2800267888
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2791823136
-        , "to":2791823488
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2791823488
-        , "to":2791823840
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2791823840
-        , "to":2800082544
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2792304224
-        , "to":2801068992
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2793276448
-        , "to":2782141664
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2794195712
-        , "to":2782405504
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":2794696928
-        , "to":2791823136
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2797938192
-        , "to":2800267888
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":2800082544
-        , "to":2789923584
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800267888
-        , "to":2794696928
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2780037920
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2781231520
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2781993632
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2782342560
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2782405152
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2793276448
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2800082544
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2800359552
-        , "to":2801068992
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2801000160
-        , "to":2790203248
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":2801068992
-        , "to":2792304224
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-    ]
-  }
-  , "2776882592":
-  {
-    "nodes":
-    [
-      {
         "name":"?"
-        , "id":2779814464
+        , "id":1183175216
         , "start":"1.00"
         , "end":"2.00"
         , "subtype":"pop"
@@ -1605,15 +75,1389 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":9
+              , "line":7
             }
           ]
         ]
         , "type":"inst"
       }
       , {
+        "name":"RD"
+        , "id":1183203904
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Stream Read"
+            , "Width":"64 bits"
+            , "Depth":"0"
+            , "Stream Name":"call.gaussian"
+            , "Stall-free":"No"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":7
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":1183175216
+        , "to":1183203904
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1183203904
+        , "to":1178908432
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+    ]
+  }
+  , "1168367200":
+  {
+    "nodes":
+    [
+    ]
+    , "links":
+    [
+    ]
+  }
+  , "1168367280":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 1"
+        , "id":1172863952
+        , "start":"1.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body_gaussians_c0_enter1219_gaussian1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"5"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":1172870656
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"2"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":1173127152
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"3"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"192"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Loop Input"
+        , "id":1193766320
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"gaussian.B4, gaussian.B1.start"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":12
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":1172870656
+        , "to":1173127152
+      }
+      , {
+        "from":1193766320
+        , "to":1172870656
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "1168367360":
+  {
+    "nodes":
+    [
+      {
+        "name":"Input"
+        , "id":1192887712
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"gaussian.B5"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+    ]
+  }
+  , "1168367440":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 2"
+        , "id":1173296064
+        , "start":"1.00"
+        , "end":"7.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body6_gaussians_c0_enter12611_gaussian1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"6"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":1173302512
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"3"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":1173759488
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"4"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"32"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Loop Input"
+        , "id":1201558032
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"gaussian.B5, gaussian.B3"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":1173302512
+        , "to":1173759488
+      }
+      , {
+        "from":1201558032
+        , "to":1173302512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":1201558032
+        , "to":1173302512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1201558032
+        , "to":1173302512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "1168367520":
+  {
+    "nodes":
+    [
+      {
+        "name":"FFwd Dest"
+        , "id":1177782720
+        , "start":"0.00"
+        , "end":"1.00"
+        , "subtype":"ffwdDest"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"0"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":1178019680
+        , "start":"0.00"
+        , "end":"1.00"
+        , "subtype":"ffwdDest"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"0"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":1179164064
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":1182259216
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"-1 (0xFFFFFFFF)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":1182261808
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":1182263104
+        , "start":"1.00"
+        , "end":"1.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":1183610752
+        , "start":"0.00"
+        , "end":"1.00"
+        , "subtype":"ffwdDest"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"0"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Input"
+        , "id":1201561968
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"gaussian.B10"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":1177782720
+        , "to":1182261808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1182259216
+        , "to":1182263104
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1182261808
+        , "to":1179164064
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183610752
+        , "to":1182259216
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+    ]
+  }
+  , "1168367600":
+  {
+    "nodes":
+    [
+    ]
+    , "links":
+    [
+    ]
+  }
+  , "1168367680":
+  {
+    "nodes":
+    [
+      {
+        "name":"FFwd Src"
+        , "id":1172917488
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":1174253648
+        , "start":"2.00"
+        , "end":"3.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":1174293232
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":1174407648
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"33-bit Integer Add"
+            , "Constant Operand":"-1 (0x1FFFFFFFF)"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":1175517904
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":1176368016
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":1177673776
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"ffwdDest"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":1181371376
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"ffwdDest"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Input"
+        , "id":1182010320
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"gaussian.B6, gaussian.B2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":1182730000
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":1183194160
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Compare"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":1183421616
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":1183600320
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":1183601568
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Compare"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":1183607008
+        , "start":"3.00"
+        , "end":"3.00"
+        , "subtype":"ffwdSource"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":22
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":1183619488
+        , "start":"2.00"
+        , "end":"3.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":1183620736
+        , "start":"2.00"
+        , "end":"2.00"
+        , "subtype":"select"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Select"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":1174253648
+        , "to":1183421616
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1174293232
+        , "to":1172917488
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1174293232
+        , "to":1183601568
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1174407648
+        , "to":1175517904
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":1177673776
+        , "to":1183619488
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1181371376
+        , "to":1183620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1182010320
+        , "to":1183619488
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1182010320
+        , "to":1183620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1183194160
+        , "to":1174253648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1183421616
+        , "to":1174407648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183601568
+        , "to":1183607008
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1183619488
+        , "to":1182730000
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183619488
+        , "to":1183421616
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183620736
+        , "to":1174253648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183620736
+        , "to":1183194160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183620736
+        , "to":1183600320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1182010320
+        , "to":1174293232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1182010320
+        , "to":1176368016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+    ]
+  }
+  , "1168367760":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 3"
+        , "id":1174187600
+        , "start":"1.00"
+        , "end":"5.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body21_gaussians_c0_enter13712_gaussian1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"4"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":1174194480
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"1"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":1174439808
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"2"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"192"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"A"
+        , "id":1183201120
+        , "start":"5.00"
+        , "end":"6.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"A"
+            , "Start Cycle":"5"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Orch"
+        , "id":1183535584
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":19
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":1174194480
+        , "to":1174439808
+      }
+      , {
+        "from":1174439808
+        , "to":1183201120
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"192"
+          }
+        ]
+      }
+      , {
+        "from":1183535584
+        , "to":1174194480
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1183535584
+        , "to":1174194480
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+    ]
+  }
+  , "1168874736":
+  {
+    "nodes":
+    [
+      {
+        "name":"?"
+        , "id":1183205296
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
         "name":"Feedback"
-        , "id":2798421168
+        , "id":1183210496
         , "start":"1.00"
         , "end":"2.00"
         , "subtype":"push"
@@ -1634,7 +1478,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":9
+              , "line":7
             }
           ]
         ]
@@ -1644,8 +1488,8 @@
     , "links":
     [
       {
-        "from":2798421168
-        , "to":2779814464
+        "from":1183210496
+        , "to":1183205296
         , "details":
         [
           {
@@ -1656,23 +1500,75 @@
       }
     ]
   }
-  , "2776882672":
+  , "1168889760":
   {
     "nodes":
     [
       {
-        "name":"Cluster 0"
-        , "id":2779691040
-        , "start":"1.00"
+        "name":"Feedback"
+        , "id":1183189984
+        , "start":"0.00"
         , "end":"1.00"
+        , "subtype":"push"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_wt_entry_gaussians_c0_enter6_gaussian0"
-            , "Cluster Type":"Stall-Enable"
+            , "Instruction":"Feedback Write"
+            , "Variable":"A"
+            , "Feedback FIFO Depth":"2"
+            , "Feedback FIFO Width":"1"
+            , "Start Cycle":"0"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Input"
+        , "id":1183609504
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"gaussian.B11"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+    ]
+  }
+  , "1168889840":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 4"
+        , "id":1174735264
+        , "start":"1.00"
+        , "end":"13.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body25_gaussians_c0_enter15014_gaussian1"
+            , "Cluster Type":"Stall-Free"
             , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"0"
+            , "Cluster Latency":"12"
           }
         ]
         , "type":"cluster"
@@ -1680,14 +1576,31 @@
         [
           {
             "name":"Logic"
-            , "id":2779697936
+            , "id":1174743264
             , "subtype":"entry"
             , "details":
             [
               {
                 "type":"table"
                 , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"0"
+                , "Cluster Logic Latency":"9"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":1175643568
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"10"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"128"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
               }
             ]
             , "type":"inst"
@@ -1695,93 +1608,16 @@
         ]
       }
       , {
-        "name":"?"
-        , "id":2782049840
-        , "start":"1.00"
-        , "end":"2.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":9
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2782112608
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2789982304
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"RD"
-        , "id":2799325392
-        , "start":"2.00"
-        , "end":"2.00"
+        "name":"Loop Input"
+        , "id":1183141856
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Stream Read"
-            , "Width":"128 bits"
-            , "Depth":"0"
-            , "Stream Name":"call.gaussian"
-            , "Stall-free":"No"
-            , "Start Cycle":"2"
-            , "Latency":"0"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"gaussian.B11, gaussian.B9"
           }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":9
-            }
-          ]
         ]
         , "type":"inst"
       }
@@ -1789,8 +1625,12 @@
     , "links":
     [
       {
-        "from":2782049840
-        , "to":2799325392
+        "from":1174743264
+        , "to":1175643568
+      }
+      , {
+        "from":1183141856
+        , "to":1174743264
         , "details":
         [
           {
@@ -1800,60 +1640,138 @@
         ]
       }
       , {
-        "from":2799325392
-        , "to":2782112608
+        "from":1183141856
+        , "to":1174743264
         , "details":
         [
           {
             "type":"table"
-            , "Width":"128"
+            , "Width":"1"
           }
         ]
       }
       , {
-        "from":2799325392
-        , "to":2789982304
+        "from":1183141856
+        , "to":1174743264
         , "details":
         [
           {
             "type":"table"
-            , "Width":"128"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183141856
+        , "to":1174743264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1183141856
+        , "to":1174743264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183141856
+        , "to":1174743264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":1183141856
+        , "to":1174743264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
           }
         ]
       }
     ]
   }
-  , "2776882752":
+  , "1168889920":
   {
     "nodes":
     [
       {
-        "name":"Input"
-        , "id":2781336224
+        "name":"Cluster 5"
+        , "id":1175780464
+        , "start":"1.00"
+        , "end":"5.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_cond55_preheader_gaussians_c0_enter16810_gaussian1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"4"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":1175787504
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"1"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":1175942400
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"2"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"64"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Loop Input"
+        , "id":1173490096
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Input"
-            , "Preceding Blocks":"gaussian.B6"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2785209648
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"gaussian.B14, gaussian.B7"
           }
         ]
         , "debug":
@@ -1861,165 +1779,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2785217968
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2785451920
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2785460080
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":2785716768
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":2792078224
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"-1 (0xFFFFFFFF)"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2797848320
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
+              , "line":34
             }
           ]
         ]
@@ -2029,58 +1789,29 @@
     , "links":
     [
       {
-        "from":2785209648
-        , "to":2792078224
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
+        "from":1175787504
+        , "to":1175942400
       }
       , {
-        "from":2785716768
-        , "to":2785451920
+        "from":1173490096
+        , "to":1175787504
         , "details":
         [
           {
             "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2792078224
-        , "to":2785460080
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2797848320
-        , "to":2785716768
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
+            , "Width":"1"
           }
         ]
       }
     ]
   }
-  , "2776882832":
+  , "1168890000":
   {
     "nodes":
     [
       {
         "name":"WR"
-        , "id":2785823472
+        , "id":1181581568
         , "start":"0.00"
         , "end":"0.00"
         , "subtype":"default"
@@ -2102,7 +1833,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":30
+              , "line":41
             }
           ]
         ]
@@ -2110,7 +1841,7 @@
       }
       , {
         "name":"Feedback"
-        , "id":2785831632
+        , "id":1194386080
         , "start":"0.00"
         , "end":"1.00"
         , "subtype":"push"
@@ -2132,8 +1863,8 @@
     , "links":
     [
       {
-        "from":2785823472
-        , "to":2785831632
+        "from":1181581568
+        , "to":1194386080
         , "details":
         [
           {
@@ -2144,448 +1875,95 @@
       }
     ]
   }
-  , "2776882912":
+  , "1168890080":
   {
     "nodes":
     [
       {
-        "name":"Select"
-        , "id":2779629408
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"select"
+        "name":"Input"
+        , "id":1183211888
+        , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Select"
-            , "Start Cycle":"2"
-            , "Latency":"1"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"gaussian.B15"
           }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
         ]
         , "type":"inst"
       }
+    ]
+    , "links":
+    [
+    ]
+  }
+  , "1168890160":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 6"
+        , "id":1176202272
+        , "start":"1.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body58_gaussians_c0_enter18013_gaussian1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"1"
+            , "Cluster Latency":"11"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":1176208976
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Latency":"8"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":1176751008
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"9"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"32"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
       , {
         "name":"Loop Input"
-        , "id":2781621008
+        , "id":1183206688
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Loop Input"
-            , "Preceding Blocks":"gaussian.B2, gaussian.B1.start"
+            , "Preceding Blocks":"gaussian.B15, gaussian.B12"
           }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":2782663744
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Compare"
-        , "id":2782677024
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Compare"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2782867312
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2785201408
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2785234864
-        , "start":"1.00"
-        , "end":"2.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Select"
-        , "id":2785260496
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"select"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Select"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2785314816
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Compare"
-        , "id":2785322896
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Compare"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2785536496
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":2785700608
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"33-bit Integer Add"
-            , "Constant Operand":"-1 (0x1FFFFFFFF)"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Select"
-        , "id":2785724928
-        , "start":"2.00"
-        , "end":"3.00"
-        , "subtype":"select"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Select"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":2785749696
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":14
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":2785757776
-        , "start":"1.00"
-        , "end":"2.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2785897072
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":2787394592
-        , "start":"3.00"
-        , "end":"3.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-              , "line":11
-            }
-          ]
         ]
         , "type":"inst"
       }
@@ -2593,19 +1971,12 @@
     , "links":
     [
       {
-        "from":2779629408
-        , "to":2785749696
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
+        "from":1176208976
+        , "to":1176751008
       }
       , {
-        "from":2781621008
-        , "to":2785260496
+        "from":1183206688
+        , "to":1176208976
         , "details":
         [
           {
@@ -2615,178 +1986,24 @@
         ]
       }
       , {
-        "from":2781621008
-        , "to":2785724928
+        "from":1183206688
+        , "to":1176208976
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":1183206688
+        , "to":1176208976
         , "details":
         [
           {
             "type":"table"
             , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2782663744
-        , "to":2782867312
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2782663744
-        , "to":2785322896
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2782677024
-        , "to":2779629408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2785234864
-        , "to":2785724928
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2785260496
-        , "to":2779629408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2785260496
-        , "to":2782677024
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2785260496
-        , "to":2785897072
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2785322896
-        , "to":2785201408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":2785700608
-        , "to":2785314816
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":2785724928
-        , "to":2785749696
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2785724928
-        , "to":2787394592
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2785749696
-        , "to":2785700608
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2785757776
-        , "to":2785260496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2781621008
-        , "to":2782663744
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":2781621008
-        , "to":2785536496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
           }
         ]
       }

@@ -23,8 +23,7 @@ module gaussian_internal
 (
    input logic clock,
    input logic resetn,
-   input logic [63:0] c,
-   input logic [63:0] A,
+   input logic [63:0] A_r,
    input logic start,
    output logic busy,
    output logic done,
@@ -42,93 +41,164 @@ module gaussian_internal
    input logic avmm_0_rw_writeack
 );
    genvar __i;
-   logic avmm_0_global_avm_enable [4];
-   logic avmm_0_global_avm_read [4];
-   logic avmm_0_global_avm_write [4];
-   logic [63:0] avmm_0_global_avm_address [4];
-   logic [63:0] avmm_0_global_avm_writedata [4];
-   logic [7:0] avmm_0_global_avm_byteenable [4];
-   logic avmm_0_global_avm_waitrequest [4];
-   logic [63:0] avmm_0_global_avm_readdata [4];
-   logic avmm_0_global_avm_readdatavalid [4];
-   logic avmm_0_global_avm_burstcount [4];
-   logic avmm_0_global_avm_writeack [4];
+   genvar __j;
+   genvar __k;
+   logic avmm_0_global_avm_enable [1];
+   logic avmm_0_global_avm_read [1];
+   logic avmm_0_global_avm_write [1];
+   logic [63:0] avmm_0_global_avm_address [1];
+   logic [63:0] avmm_0_global_avm_writedata [1];
+   logic [7:0] avmm_0_global_avm_byteenable [1];
+   logic avmm_0_global_avm_waitrequest [1];
+   logic [63:0] avmm_0_global_avm_readdata [1];
+   logic avmm_0_global_avm_readdatavalid [1];
+   logic avmm_0_global_avm_burstcount [1];
+   logic avmm_0_global_avm_writeack [1];
+   logic local_avm_aspace64_enable [1][2];
+   logic local_avm_aspace64_read [1][2];
+   logic local_avm_aspace64_write [1][2];
+   logic [31:0] local_avm_aspace64_address [1][2];
+   logic [31:0] local_avm_aspace64_writedata [1][2];
+   logic [3:0] local_avm_aspace64_byteenable [1][2];
+   logic local_avm_aspace64_waitrequest [1][2];
+   logic [31:0] local_avm_aspace64_readdata [1][2];
+   logic local_avm_aspace64_readdatavalid [1][2];
+   logic local_avm_aspace64_burstcount [1][2];
+   logic local_avm_aspace64_writeack [1][2];
+   logic local_avm_aspace65_enable [1][5];
+   logic local_avm_aspace65_read [1][5];
+   logic local_avm_aspace65_write [1][5];
+   logic [31:0] local_avm_aspace65_address [1][5];
+   logic [31:0] local_avm_aspace65_writedata [1][5];
+   logic [3:0] local_avm_aspace65_byteenable [1][5];
+   logic local_avm_aspace65_waitrequest [1][5];
+   logic [31:0] local_avm_aspace65_readdata [1][5];
+   logic local_avm_aspace65_readdatavalid [1][5];
+   logic local_avm_aspace65_burstcount [1][5];
+   logic local_avm_aspace65_writeack [1][5];
 
    // INST gaussian_internal of gaussian_function_wrapper
    gaussian_function_wrapper gaussian_internal
    (
       .clock(clock),
       .resetn(resetn),
-      .c(c),
-      .A(A),
+      .A_r(A_r),
       .start(start),
       .busy(busy),
       .done(done),
       .stall(stall),
+      // AVM avm_unnamed_gaussian16_gaussian
+      .avm_unnamed_gaussian16_gaussian_enable(avmm_0_global_avm_enable[0]),
+      .avm_unnamed_gaussian16_gaussian_read(avmm_0_global_avm_read[0]),
+      .avm_unnamed_gaussian16_gaussian_write(avmm_0_global_avm_write[0]),
+      .avm_unnamed_gaussian16_gaussian_address(avmm_0_global_avm_address[0]),
+      .avm_unnamed_gaussian16_gaussian_writedata(avmm_0_global_avm_writedata[0]),
+      .avm_unnamed_gaussian16_gaussian_byteenable(avmm_0_global_avm_byteenable[0]),
+      .avm_unnamed_gaussian16_gaussian_waitrequest(avmm_0_global_avm_waitrequest[0]),
+      .avm_unnamed_gaussian16_gaussian_readdata(avmm_0_global_avm_readdata[0]),
+      .avm_unnamed_gaussian16_gaussian_readdatavalid(avmm_0_global_avm_readdatavalid[0]),
+      .avm_unnamed_gaussian16_gaussian_burstcount(avmm_0_global_avm_burstcount[0]),
+      .avm_unnamed_gaussian16_gaussian_writeack(avmm_0_global_avm_writeack[0]),
       // AVM avm_lm1_gaussian
-      .avm_lm1_gaussian_enable(avmm_0_global_avm_enable[0]),
-      .avm_lm1_gaussian_read(avmm_0_global_avm_read[0]),
-      .avm_lm1_gaussian_write(avmm_0_global_avm_write[0]),
-      .avm_lm1_gaussian_address(avmm_0_global_avm_address[0]),
-      .avm_lm1_gaussian_writedata(avmm_0_global_avm_writedata[0]),
-      .avm_lm1_gaussian_byteenable(avmm_0_global_avm_byteenable[0]),
-      .avm_lm1_gaussian_waitrequest(avmm_0_global_avm_waitrequest[0]),
-      .avm_lm1_gaussian_readdata(avmm_0_global_avm_readdata[0]),
-      .avm_lm1_gaussian_readdatavalid(avmm_0_global_avm_readdatavalid[0]),
-      .avm_lm1_gaussian_burstcount(avmm_0_global_avm_burstcount[0]),
-      .avm_lm1_gaussian_writeack(avmm_0_global_avm_writeack[0]),
-      // AVM avm_lm32_gaussian
-      .avm_lm32_gaussian_enable(avmm_0_global_avm_enable[1]),
-      .avm_lm32_gaussian_read(avmm_0_global_avm_read[1]),
-      .avm_lm32_gaussian_write(avmm_0_global_avm_write[1]),
-      .avm_lm32_gaussian_address(avmm_0_global_avm_address[1]),
-      .avm_lm32_gaussian_writedata(avmm_0_global_avm_writedata[1]),
-      .avm_lm32_gaussian_byteenable(avmm_0_global_avm_byteenable[1]),
-      .avm_lm32_gaussian_waitrequest(avmm_0_global_avm_waitrequest[1]),
-      .avm_lm32_gaussian_readdata(avmm_0_global_avm_readdata[1]),
-      .avm_lm32_gaussian_readdatavalid(avmm_0_global_avm_readdatavalid[1]),
-      .avm_lm32_gaussian_burstcount(avmm_0_global_avm_burstcount[1]),
-      .avm_lm32_gaussian_writeack(avmm_0_global_avm_writeack[1]),
-      // AVM avm_lm53_gaussian
-      .avm_lm53_gaussian_enable(avmm_0_global_avm_enable[2]),
-      .avm_lm53_gaussian_read(avmm_0_global_avm_read[2]),
-      .avm_lm53_gaussian_write(avmm_0_global_avm_write[2]),
-      .avm_lm53_gaussian_address(avmm_0_global_avm_address[2]),
-      .avm_lm53_gaussian_writedata(avmm_0_global_avm_writedata[2]),
-      .avm_lm53_gaussian_byteenable(avmm_0_global_avm_byteenable[2]),
-      .avm_lm53_gaussian_waitrequest(avmm_0_global_avm_waitrequest[2]),
-      .avm_lm53_gaussian_readdata(avmm_0_global_avm_readdata[2]),
-      .avm_lm53_gaussian_readdatavalid(avmm_0_global_avm_readdatavalid[2]),
-      .avm_lm53_gaussian_burstcount(avmm_0_global_avm_burstcount[2]),
-      .avm_lm53_gaussian_writeack(avmm_0_global_avm_writeack[2]),
+      .avm_lm1_gaussian_enable(local_avm_aspace64_enable[0][0]),
+      .avm_lm1_gaussian_read(local_avm_aspace64_read[0][0]),
+      .avm_lm1_gaussian_write(local_avm_aspace64_write[0][0]),
+      .avm_lm1_gaussian_address(local_avm_aspace64_address[0][0]),
+      .avm_lm1_gaussian_writedata(local_avm_aspace64_writedata[0][0]),
+      .avm_lm1_gaussian_byteenable(local_avm_aspace64_byteenable[0][0]),
+      .avm_lm1_gaussian_waitrequest(local_avm_aspace64_waitrequest[0][0]),
+      .avm_lm1_gaussian_readdata(local_avm_aspace64_readdata[0][0]),
+      .avm_lm1_gaussian_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
+      .avm_lm1_gaussian_burstcount(local_avm_aspace64_burstcount[0][0]),
+      .avm_lm1_gaussian_writeack(local_avm_aspace64_writeack[0][0]),
       // AVM avm_memdep_gaussian
-      .avm_memdep_gaussian_enable(avmm_0_global_avm_enable[3]),
-      .avm_memdep_gaussian_read(avmm_0_global_avm_read[3]),
-      .avm_memdep_gaussian_write(avmm_0_global_avm_write[3]),
-      .avm_memdep_gaussian_address(avmm_0_global_avm_address[3]),
-      .avm_memdep_gaussian_writedata(avmm_0_global_avm_writedata[3]),
-      .avm_memdep_gaussian_byteenable(avmm_0_global_avm_byteenable[3]),
-      .avm_memdep_gaussian_waitrequest(avmm_0_global_avm_waitrequest[3]),
-      .avm_memdep_gaussian_readdata(avmm_0_global_avm_readdata[3]),
-      .avm_memdep_gaussian_readdatavalid(avmm_0_global_avm_readdatavalid[3]),
-      .avm_memdep_gaussian_burstcount(avmm_0_global_avm_burstcount[3]),
-      .avm_memdep_gaussian_writeack(avmm_0_global_avm_writeack[3])
+      .avm_memdep_gaussian_enable(local_avm_aspace64_enable[0][1]),
+      .avm_memdep_gaussian_read(local_avm_aspace64_read[0][1]),
+      .avm_memdep_gaussian_write(local_avm_aspace64_write[0][1]),
+      .avm_memdep_gaussian_address(local_avm_aspace64_address[0][1]),
+      .avm_memdep_gaussian_writedata(local_avm_aspace64_writedata[0][1]),
+      .avm_memdep_gaussian_byteenable(local_avm_aspace64_byteenable[0][1]),
+      .avm_memdep_gaussian_waitrequest(local_avm_aspace64_waitrequest[0][1]),
+      .avm_memdep_gaussian_readdata(local_avm_aspace64_readdata[0][1]),
+      .avm_memdep_gaussian_readdatavalid(local_avm_aspace64_readdatavalid[0][1]),
+      .avm_memdep_gaussian_burstcount(local_avm_aspace64_burstcount[0][1]),
+      .avm_memdep_gaussian_writeack(local_avm_aspace64_writeack[0][1]),
+      // AVM avm_lm113_gaussian
+      .avm_lm113_gaussian_enable(local_avm_aspace65_enable[0][0]),
+      .avm_lm113_gaussian_read(local_avm_aspace65_read[0][0]),
+      .avm_lm113_gaussian_write(local_avm_aspace65_write[0][0]),
+      .avm_lm113_gaussian_address(local_avm_aspace65_address[0][0]),
+      .avm_lm113_gaussian_writedata(local_avm_aspace65_writedata[0][0]),
+      .avm_lm113_gaussian_byteenable(local_avm_aspace65_byteenable[0][0]),
+      .avm_lm113_gaussian_waitrequest(local_avm_aspace65_waitrequest[0][0]),
+      .avm_lm113_gaussian_readdata(local_avm_aspace65_readdata[0][0]),
+      .avm_lm113_gaussian_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
+      .avm_lm113_gaussian_burstcount(local_avm_aspace65_burstcount[0][0]),
+      .avm_lm113_gaussian_writeack(local_avm_aspace65_writeack[0][0]),
+      // AVM avm_lm92_gaussian
+      .avm_lm92_gaussian_enable(local_avm_aspace65_enable[0][1]),
+      .avm_lm92_gaussian_read(local_avm_aspace65_read[0][1]),
+      .avm_lm92_gaussian_write(local_avm_aspace65_write[0][1]),
+      .avm_lm92_gaussian_address(local_avm_aspace65_address[0][1]),
+      .avm_lm92_gaussian_writedata(local_avm_aspace65_writedata[0][1]),
+      .avm_lm92_gaussian_byteenable(local_avm_aspace65_byteenable[0][1]),
+      .avm_lm92_gaussian_waitrequest(local_avm_aspace65_waitrequest[0][1]),
+      .avm_lm92_gaussian_readdata(local_avm_aspace65_readdata[0][1]),
+      .avm_lm92_gaussian_readdatavalid(local_avm_aspace65_readdatavalid[0][1]),
+      .avm_lm92_gaussian_burstcount(local_avm_aspace65_burstcount[0][1]),
+      .avm_lm92_gaussian_writeack(local_avm_aspace65_writeack[0][1]),
+      // AVM avm_memdep_4_gaussian
+      .avm_memdep_4_gaussian_enable(local_avm_aspace65_enable[0][2]),
+      .avm_memdep_4_gaussian_read(local_avm_aspace65_read[0][2]),
+      .avm_memdep_4_gaussian_write(local_avm_aspace65_write[0][2]),
+      .avm_memdep_4_gaussian_address(local_avm_aspace65_address[0][2]),
+      .avm_memdep_4_gaussian_writedata(local_avm_aspace65_writedata[0][2]),
+      .avm_memdep_4_gaussian_byteenable(local_avm_aspace65_byteenable[0][2]),
+      .avm_memdep_4_gaussian_waitrequest(local_avm_aspace65_waitrequest[0][2]),
+      .avm_memdep_4_gaussian_readdata(local_avm_aspace65_readdata[0][2]),
+      .avm_memdep_4_gaussian_readdatavalid(local_avm_aspace65_readdatavalid[0][2]),
+      .avm_memdep_4_gaussian_burstcount(local_avm_aspace65_burstcount[0][2]),
+      .avm_memdep_4_gaussian_writeack(local_avm_aspace65_writeack[0][2]),
+      // AVM avm_memdep_5_gaussian
+      .avm_memdep_5_gaussian_enable(local_avm_aspace65_enable[0][3]),
+      .avm_memdep_5_gaussian_read(local_avm_aspace65_read[0][3]),
+      .avm_memdep_5_gaussian_write(local_avm_aspace65_write[0][3]),
+      .avm_memdep_5_gaussian_address(local_avm_aspace65_address[0][3]),
+      .avm_memdep_5_gaussian_writedata(local_avm_aspace65_writedata[0][3]),
+      .avm_memdep_5_gaussian_byteenable(local_avm_aspace65_byteenable[0][3]),
+      .avm_memdep_5_gaussian_waitrequest(local_avm_aspace65_waitrequest[0][3]),
+      .avm_memdep_5_gaussian_readdata(local_avm_aspace65_readdata[0][3]),
+      .avm_memdep_5_gaussian_readdatavalid(local_avm_aspace65_readdatavalid[0][3]),
+      .avm_memdep_5_gaussian_burstcount(local_avm_aspace65_burstcount[0][3]),
+      .avm_memdep_5_gaussian_writeack(local_avm_aspace65_writeack[0][3]),
+      // AVM avm_unnamed_gaussian15_gaussian
+      .avm_unnamed_gaussian15_gaussian_enable(local_avm_aspace65_enable[0][4]),
+      .avm_unnamed_gaussian15_gaussian_read(local_avm_aspace65_read[0][4]),
+      .avm_unnamed_gaussian15_gaussian_write(local_avm_aspace65_write[0][4]),
+      .avm_unnamed_gaussian15_gaussian_address(local_avm_aspace65_address[0][4]),
+      .avm_unnamed_gaussian15_gaussian_writedata(local_avm_aspace65_writedata[0][4]),
+      .avm_unnamed_gaussian15_gaussian_byteenable(local_avm_aspace65_byteenable[0][4]),
+      .avm_unnamed_gaussian15_gaussian_waitrequest(local_avm_aspace65_waitrequest[0][4]),
+      .avm_unnamed_gaussian15_gaussian_readdata(local_avm_aspace65_readdata[0][4]),
+      .avm_unnamed_gaussian15_gaussian_readdatavalid(local_avm_aspace65_readdatavalid[0][4]),
+      .avm_unnamed_gaussian15_gaussian_burstcount(local_avm_aspace65_burstcount[0][4]),
+      .avm_unnamed_gaussian15_gaussian_writeack(local_avm_aspace65_writeack[0][4])
    );
 
    generate
    begin:avmm_0_
-      logic avmm_0_icm_in_arb_request [4];
-      logic avmm_0_icm_in_arb_enable [4];
-      logic avmm_0_icm_in_arb_read [4];
-      logic avmm_0_icm_in_arb_write [4];
-      logic avmm_0_icm_in_arb_burstcount [4];
-      logic [60:0] avmm_0_icm_in_arb_address [4];
-      logic [63:0] avmm_0_icm_in_arb_writedata [4];
-      logic [7:0] avmm_0_icm_in_arb_byteenable [4];
-      logic avmm_0_icm_in_arb_stall [4];
-      logic avmm_0_icm_in_wrp_ack [4];
-      logic avmm_0_icm_in_rrp_datavalid [4];
-      logic [63:0] avmm_0_icm_in_rrp_data [4];
+      logic avmm_0_icm_in_arb_request [1];
+      logic avmm_0_icm_in_arb_enable [1];
+      logic avmm_0_icm_in_arb_read [1];
+      logic avmm_0_icm_in_arb_write [1];
+      logic avmm_0_icm_in_arb_burstcount [1];
+      logic [60:0] avmm_0_icm_in_arb_address [1];
+      logic [63:0] avmm_0_icm_in_arb_writedata [1];
+      logic [7:0] avmm_0_icm_in_arb_byteenable [1];
+      logic avmm_0_icm_in_arb_stall [1];
+      logic avmm_0_icm_in_wrp_ack [1];
+      logic avmm_0_icm_in_rrp_datavalid [1];
+      logic [63:0] avmm_0_icm_in_rrp_data [1];
       logic icm_out_0_rw_arb_request [1];
       logic icm_out_0_rw_arb_enable [1];
       logic icm_out_0_rw_arb_read [1];
@@ -137,25 +207,25 @@ module gaussian_internal
       logic [60:0] icm_out_0_rw_arb_address [1];
       logic [63:0] icm_out_0_rw_arb_writedata [1];
       logic [7:0] icm_out_0_rw_arb_byteenable [1];
-      logic [1:0] icm_out_0_rw_arb_id [1];
+      logic icm_out_0_rw_arb_id [1];
       logic icm_out_0_rw_arb_stall [1];
       logic icm_out_0_rw_wrp_ack [1];
       logic icm_out_0_rw_rrp_datavalid [1];
       logic [63:0] icm_out_0_rw_rrp_data [1];
-      logic icm_routedavmm_0_rw_arb_request [4];
-      logic icm_routedavmm_0_rw_arb_enable [4];
-      logic icm_routedavmm_0_rw_arb_read [4];
-      logic icm_routedavmm_0_rw_arb_write [4];
-      logic icm_routedavmm_0_rw_arb_burstcount [4];
-      logic [60:0] icm_routedavmm_0_rw_arb_address [4];
-      logic [63:0] icm_routedavmm_0_rw_arb_writedata [4];
-      logic [7:0] icm_routedavmm_0_rw_arb_byteenable [4];
-      logic icm_routedavmm_0_rw_arb_stall [4];
-      logic icm_routedavmm_0_rw_wrp_ack [4];
-      logic icm_routedavmm_0_rw_rrp_datavalid [4];
-      logic [63:0] icm_routedavmm_0_rw_rrp_data [4];
+      logic icm_routedavmm_0_rw_arb_request [1];
+      logic icm_routedavmm_0_rw_arb_enable [1];
+      logic icm_routedavmm_0_rw_arb_read [1];
+      logic icm_routedavmm_0_rw_arb_write [1];
+      logic icm_routedavmm_0_rw_arb_burstcount [1];
+      logic [60:0] icm_routedavmm_0_rw_arb_address [1];
+      logic [63:0] icm_routedavmm_0_rw_arb_writedata [1];
+      logic [7:0] icm_routedavmm_0_rw_arb_byteenable [1];
+      logic icm_routedavmm_0_rw_arb_stall [1];
+      logic icm_routedavmm_0_rw_wrp_ack [1];
+      logic icm_routedavmm_0_rw_rrp_datavalid [1];
+      logic [63:0] icm_routedavmm_0_rw_rrp_data [1];
 
-      for( __i = 0; __i < 4; __i = __i + 1 )
+      for( __i = 0; __i < 1; __i = __i + 1 )
       begin:t
          // INST avmm_0_avm_to_ic of acl_avm_to_ic
          acl_avm_to_ic
@@ -197,8 +267,8 @@ module gaussian_internal
 
       end
 
-      // INST global_icavmm_0_rw of gaussian_internal_ic_2408045022197231008
-      gaussian_internal_ic_2408045022197231008 global_icavmm_0_rw
+      // INST global_icavmm_0_rw of gaussian_internal_ic_5272295805250791862
+      gaussian_internal_ic_5272295805250791862 global_icavmm_0_rw
       (
          .clock(clock),
          .resetn(resetn),
@@ -231,7 +301,7 @@ module gaussian_internal
          .mout_rrp_data(icm_out_0_rw_rrp_data[0])
       );
 
-      for( __i = 0; __i < 4; __i = __i + 1 )
+      for( __i = 0; __i < 1; __i = __i + 1 )
       begin:mavmm_0_rw
          assign icm_routedavmm_0_rw_arb_request[__i] = avmm_0_icm_in_arb_request[__i];
          assign icm_routedavmm_0_rw_arb_enable[__i] = avmm_0_icm_in_arb_enable[__i];
@@ -258,7 +328,7 @@ module gaussian_internal
          .USE_WRITE_ACK(0),
          .NO_IDLE_STALL(0),
          .ENABLE_WAITREQUEST_ALLOWANCE(0),
-         .ID_W(2),
+         .ID_W(1),
          .ASYNC_RESET(1),
          .SYNCHRONIZE_RESET(0)
       )
@@ -297,28 +367,972 @@ module gaussian_internal
    end
    endgenerate
 
+   generate
+   begin:local_mem_system_aspace64
+      logic local_icm_arb_request [1][2];
+      logic local_icm_arb_enable [1][2];
+      logic local_icm_arb_read [1][2];
+      logic local_icm_arb_write [1][2];
+      logic local_icm_arb_burstcount [1][2];
+      logic [4:0] local_icm_arb_address [1][2];
+      logic [31:0] local_icm_arb_writedata [1][2];
+      logic [3:0] local_icm_arb_byteenable [1][2];
+      logic local_icm_arb_stall [1][2];
+      logic local_icm_wrp_ack [1][2];
+      logic local_icm_rrp_datavalid [1][2];
+      logic [31:0] local_icm_rrp_data [1][2];
+
+      for( __i = 0; __i < 1; __i = __i + 1 )
+      begin:local_mem_group
+         for( __j = 0; __j < 2; __j = __j + 1 )
+         begin:host
+            // INST avm_to_ic of acl_avm_to_ic
+            acl_avm_to_ic
+            #(
+               .DATA_W(32),
+               .WRITEDATA_W(32),
+               .BURSTCOUNT_W(1),
+               .ADDRESS_W(32),
+               .BYTEENA_W(4)
+            )
+            avm_to_ic
+            (
+               // AVM avm
+               .avm_enable(local_avm_aspace64_enable[__i][__j]),
+               .avm_read(local_avm_aspace64_read[__i][__j]),
+               .avm_write(local_avm_aspace64_write[__i][__j]),
+               .avm_address(local_avm_aspace64_address[__i][__j]),
+               .avm_writedata(local_avm_aspace64_writedata[__i][__j]),
+               .avm_byteenable(local_avm_aspace64_byteenable[__i][__j]),
+               .avm_waitrequest(local_avm_aspace64_waitrequest[__i][__j]),
+               .avm_readdata(local_avm_aspace64_readdata[__i][__j]),
+               .avm_readdatavalid(local_avm_aspace64_readdatavalid[__i][__j]),
+               .avm_burstcount(local_avm_aspace64_burstcount[__i][__j]),
+               .avm_writeack(local_avm_aspace64_writeack[__i][__j]),
+               // ICM ic
+               .ic_arb_request(local_icm_arb_request[__i][__j]),
+               .ic_arb_enable(local_icm_arb_enable[__i][__j]),
+               .ic_arb_read(local_icm_arb_read[__i][__j]),
+               .ic_arb_write(local_icm_arb_write[__i][__j]),
+               .ic_arb_burstcount(local_icm_arb_burstcount[__i][__j]),
+               .ic_arb_address(local_icm_arb_address[__i][__j]),
+               .ic_arb_writedata(local_icm_arb_writedata[__i][__j]),
+               .ic_arb_byteenable(local_icm_arb_byteenable[__i][__j]),
+               .ic_arb_stall(local_icm_arb_stall[__i][__j]),
+               .ic_wrp_ack(local_icm_wrp_ack[__i][__j]),
+               .ic_rrp_datavalid(local_icm_rrp_datavalid[__i][__j]),
+               .ic_rrp_data(local_icm_rrp_data[__i][__j])
+            );
+
+         end
+
+         for( __j = 0; __j < 1; __j = __j + 1 )
+         begin:bank
+            logic port_enable [1:2];
+            logic port_read [1:2];
+            logic port_write [1:2];
+            logic [4:0] port_address [1:2];
+            logic [31:0] port_writedata [1:2];
+            logic [3:0] port_byteenable [1:2];
+            logic port_waitrequest [1:2];
+            logic [31:0] port_readdata [1:2];
+            logic port_readdatavalid [1:2];
+
+            // INST mem0 of acl_mem1x
+            acl_mem1x
+            #(
+               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .DEPTH_WORDS(32),
+               .WIDTH(32),
+               .MEM_LATENCY(3),
+               .ASYNC_RESET(1),
+               .SYNCHRONIZE_RESET(0),
+               .ENABLED(0),
+               .RDW_MODE("DONT_CARE"),
+               .RAM_OPERATION_MODE("DUAL_PORT"),
+               .MINIMIZE_MEMORY_USAGE(0),
+               .USE_BYTEENA(0),
+               .RAM_BLOCK_TYPE("AUTO")
+            )
+            mem0
+            (
+               .clk(clock),
+               .resetn(resetn),
+               // AVS avs_port1
+               .avs_port1_enable(port_enable[1]),
+               .avs_port1_read(port_read[1]),
+               .avs_port1_write(port_write[1]),
+               .avs_port1_address(port_address[1]),
+               .avs_port1_writedata(port_writedata[1]),
+               .avs_port1_byteenable(port_byteenable[1]),
+               .avs_port1_waitrequest(port_waitrequest[1]),
+               .avs_port1_readdata(port_readdata[1]),
+               .avs_port1_readdatavalid(port_readdatavalid[1]),
+               // AVS avs_port2
+               .avs_port2_enable(port_enable[2]),
+               .avs_port2_read(port_read[2]),
+               .avs_port2_write(port_write[2]),
+               .avs_port2_address(port_address[2]),
+               .avs_port2_writedata(port_writedata[2]),
+               .avs_port2_byteenable(port_byteenable[2]),
+               .avs_port2_waitrequest(port_waitrequest[2]),
+               .avs_port2_readdata(port_readdata[2]),
+               .avs_port2_readdatavalid(port_readdatavalid[2])
+            );
+
+         end
+
+         for( __j = 0; __j < 2; __j = __j + 1 )
+         begin:router
+            logic b_arb_request [1];
+            logic b_arb_enable [1];
+            logic b_arb_read [1];
+            logic b_arb_write [1];
+            logic b_arb_burstcount [1];
+            logic [4:0] b_arb_address [1];
+            logic [31:0] b_arb_writedata [1];
+            logic [3:0] b_arb_byteenable [1];
+            logic b_arb_stall [1];
+            logic b_wrp_ack [1];
+            logic b_rrp_datavalid [1];
+            logic [31:0] b_rrp_data [1];
+            logic bank_select;
+
+            // INST router of acl_ic_local_mem_router
+            acl_ic_local_mem_router
+            #(
+               .DATA_W(32),
+               .BURSTCOUNT_W(1),
+               .ADDRESS_W(5),
+               .BYTEENA_W(4),
+               .NUM_BANKS(1)
+            )
+            router
+            (
+               .clock(clock),
+               .resetn(resetn),
+               .bank_select(bank_select),
+               // ICM m
+               .m_arb_request(local_icm_arb_request[__i][__j]),
+               .m_arb_enable(local_icm_arb_enable[__i][__j]),
+               .m_arb_read(local_icm_arb_read[__i][__j]),
+               .m_arb_write(local_icm_arb_write[__i][__j]),
+               .m_arb_burstcount(local_icm_arb_burstcount[__i][__j]),
+               .m_arb_address(local_icm_arb_address[__i][__j]),
+               .m_arb_writedata(local_icm_arb_writedata[__i][__j]),
+               .m_arb_byteenable(local_icm_arb_byteenable[__i][__j]),
+               .m_arb_stall(local_icm_arb_stall[__i][__j]),
+               .m_wrp_ack(local_icm_wrp_ack[__i][__j]),
+               .m_rrp_datavalid(local_icm_rrp_datavalid[__i][__j]),
+               .m_rrp_data(local_icm_rrp_data[__i][__j]),
+               // ICM b
+               .b_arb_request(b_arb_request),
+               .b_arb_enable(b_arb_enable),
+               .b_arb_read(b_arb_read),
+               .b_arb_write(b_arb_write),
+               .b_arb_burstcount(b_arb_burstcount),
+               .b_arb_address(b_arb_address),
+               .b_arb_writedata(b_arb_writedata),
+               .b_arb_byteenable(b_arb_byteenable),
+               .b_arb_stall(b_arb_stall),
+               .b_wrp_ack(b_wrp_ack),
+               .b_rrp_datavalid(b_rrp_datavalid),
+               .b_rrp_data(b_rrp_data)
+            );
+
+            assign bank_select = 1'b1;
+         end
+
+         for( __j = 0; __j < 1; __j = __j + 1 )
+         begin:port1bank0
+            logic icm_in_arb_request [1];
+            logic icm_in_arb_enable [1];
+            logic icm_in_arb_read [1];
+            logic icm_in_arb_write [1];
+            logic icm_in_arb_burstcount [1];
+            logic [4:0] icm_in_arb_address [1];
+            logic [31:0] icm_in_arb_writedata [1];
+            logic [3:0] icm_in_arb_byteenable [1];
+            logic icm_in_arb_stall [1];
+            logic icm_in_wrp_ack [1];
+            logic icm_in_rrp_datavalid [1];
+            logic [31:0] icm_in_rrp_data [1];
+            logic icm_out_arb_request;
+            logic icm_out_arb_enable;
+            logic icm_out_arb_read;
+            logic icm_out_arb_write;
+            logic icm_out_arb_burstcount;
+            logic [4:0] icm_out_arb_address;
+            logic [31:0] icm_out_arb_writedata;
+            logic [3:0] icm_out_arb_byteenable;
+            logic icm_out_arb_stall;
+            logic icm_out_wrp_ack;
+            logic icm_out_rrp_datavalid;
+            logic [31:0] icm_out_rrp_data;
+
+            assign icm_in_arb_request[0] = router[1].b_arb_request[0];
+            assign icm_in_arb_enable[0] = router[1].b_arb_enable[0];
+            assign icm_in_arb_read[0] = router[1].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[1].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[1].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[1].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[1].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[1].b_arb_byteenable[0];
+            assign router[1].b_arb_stall[0] = icm_in_arb_stall[0];
+            assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
+            assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
+            assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
+            // INST data_ic of gaussian_internal_ic_15077825521590485233
+            gaussian_internal_ic_15077825521590485233 data_ic
+            (
+               .clock(clock),
+               .resetn(resetn),
+               // ICM m
+               .m_arb_request(icm_in_arb_request),
+               .m_arb_enable(icm_in_arb_enable),
+               .m_arb_read(icm_in_arb_read),
+               .m_arb_write(icm_in_arb_write),
+               .m_arb_burstcount(icm_in_arb_burstcount),
+               .m_arb_address(icm_in_arb_address),
+               .m_arb_writedata(icm_in_arb_writedata),
+               .m_arb_byteenable(icm_in_arb_byteenable),
+               .m_arb_stall(icm_in_arb_stall),
+               .m_wrp_ack(icm_in_wrp_ack),
+               .m_rrp_datavalid(icm_in_rrp_datavalid),
+               .m_rrp_data(icm_in_rrp_data),
+               // ICM mout
+               .mout_arb_request(icm_out_arb_request),
+               .mout_arb_enable(icm_out_arb_enable),
+               .mout_arb_read(icm_out_arb_read),
+               .mout_arb_write(icm_out_arb_write),
+               .mout_arb_burstcount(icm_out_arb_burstcount),
+               .mout_arb_address(icm_out_arb_address),
+               .mout_arb_writedata(icm_out_arb_writedata),
+               .mout_arb_byteenable(icm_out_arb_byteenable),
+               .mout_arb_id(),
+               .mout_arb_stall(icm_out_arb_stall),
+               .mout_wrp_ack(icm_out_wrp_ack),
+               .mout_rrp_datavalid(icm_out_rrp_datavalid),
+               .mout_rrp_data(icm_out_rrp_data)
+            );
+
+            assign bank[0].port_enable[1] = icm_out_arb_enable;
+            assign bank[0].port_read[1] = icm_out_arb_read;
+            assign bank[0].port_write[1] = icm_out_arb_write;
+            assign bank[0].port_address[1] = icm_out_arb_address;
+            assign bank[0].port_writedata[1] = icm_out_arb_writedata;
+            assign bank[0].port_byteenable[1] = icm_out_arb_byteenable;
+            assign icm_out_arb_stall = bank[0].port_waitrequest[1];
+            assign icm_out_rrp_data = bank[0].port_readdata[1];
+            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[1];
+            assign icm_out_wrp_ack = 'b0;
+         end
+
+         for( __j = 0; __j < 1; __j = __j + 1 )
+         begin:port2bank0
+            logic icm_in_arb_request [1];
+            logic icm_in_arb_enable [1];
+            logic icm_in_arb_read [1];
+            logic icm_in_arb_write [1];
+            logic icm_in_arb_burstcount [1];
+            logic [4:0] icm_in_arb_address [1];
+            logic [31:0] icm_in_arb_writedata [1];
+            logic [3:0] icm_in_arb_byteenable [1];
+            logic icm_in_arb_stall [1];
+            logic icm_in_wrp_ack [1];
+            logic icm_in_rrp_datavalid [1];
+            logic [31:0] icm_in_rrp_data [1];
+            logic icm_out_arb_request;
+            logic icm_out_arb_enable;
+            logic icm_out_arb_read;
+            logic icm_out_arb_write;
+            logic icm_out_arb_burstcount;
+            logic [4:0] icm_out_arb_address;
+            logic [31:0] icm_out_arb_writedata;
+            logic [3:0] icm_out_arb_byteenable;
+            logic icm_out_arb_stall;
+            logic icm_out_wrp_ack;
+            logic icm_out_rrp_datavalid;
+            logic [31:0] icm_out_rrp_data;
+
+            assign icm_in_arb_request[0] = router[0].b_arb_request[0];
+            assign icm_in_arb_enable[0] = router[0].b_arb_enable[0];
+            assign icm_in_arb_read[0] = router[0].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[0].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[0].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[0].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[0].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[0].b_arb_byteenable[0];
+            assign router[0].b_arb_stall[0] = icm_in_arb_stall[0];
+            assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
+            assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
+            assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
+            // INST data_ic of gaussian_internal_ic_3514991575227646363
+            gaussian_internal_ic_3514991575227646363 data_ic
+            (
+               .clock(clock),
+               .resetn(resetn),
+               // ICM m
+               .m_arb_request(icm_in_arb_request),
+               .m_arb_enable(icm_in_arb_enable),
+               .m_arb_read(icm_in_arb_read),
+               .m_arb_write(icm_in_arb_write),
+               .m_arb_burstcount(icm_in_arb_burstcount),
+               .m_arb_address(icm_in_arb_address),
+               .m_arb_writedata(icm_in_arb_writedata),
+               .m_arb_byteenable(icm_in_arb_byteenable),
+               .m_arb_stall(icm_in_arb_stall),
+               .m_wrp_ack(icm_in_wrp_ack),
+               .m_rrp_datavalid(icm_in_rrp_datavalid),
+               .m_rrp_data(icm_in_rrp_data),
+               // ICM mout
+               .mout_arb_request(icm_out_arb_request),
+               .mout_arb_enable(icm_out_arb_enable),
+               .mout_arb_read(icm_out_arb_read),
+               .mout_arb_write(icm_out_arb_write),
+               .mout_arb_burstcount(icm_out_arb_burstcount),
+               .mout_arb_address(icm_out_arb_address),
+               .mout_arb_writedata(icm_out_arb_writedata),
+               .mout_arb_byteenable(icm_out_arb_byteenable),
+               .mout_arb_id(),
+               .mout_arb_stall(icm_out_arb_stall),
+               .mout_wrp_ack(icm_out_wrp_ack),
+               .mout_rrp_datavalid(icm_out_rrp_datavalid),
+               .mout_rrp_data(icm_out_rrp_data)
+            );
+
+            assign bank[0].port_enable[2] = icm_out_arb_enable;
+            assign bank[0].port_read[2] = icm_out_arb_read;
+            assign bank[0].port_write[2] = icm_out_arb_write;
+            assign bank[0].port_address[2] = icm_out_arb_address;
+            assign bank[0].port_writedata[2] = icm_out_arb_writedata;
+            assign bank[0].port_byteenable[2] = icm_out_arb_byteenable;
+            assign icm_out_arb_stall = bank[0].port_waitrequest[2];
+            assign icm_out_rrp_data = bank[0].port_readdata[2];
+            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[2];
+            assign icm_out_wrp_ack = 'b0;
+         end
+
+      end
+
+   end
+   endgenerate
+
+   generate
+   begin:local_mem_system_aspace65
+      logic local_icm_arb_request [1][5];
+      logic local_icm_arb_enable [1][5];
+      logic local_icm_arb_read [1][5];
+      logic local_icm_arb_write [1][5];
+      logic local_icm_arb_burstcount [1][5];
+      logic [8:0] local_icm_arb_address [1][5];
+      logic [31:0] local_icm_arb_writedata [1][5];
+      logic [3:0] local_icm_arb_byteenable [1][5];
+      logic local_icm_arb_stall [1][5];
+      logic local_icm_wrp_ack [1][5];
+      logic local_icm_rrp_datavalid [1][5];
+      logic [31:0] local_icm_rrp_data [1][5];
+
+      for( __j = 0; __j < 1; __j = __j + 1 )
+      begin:local_mem_group
+         for( __k = 0; __k < 5; __k = __k + 1 )
+         begin:host
+            // INST avm_to_ic of acl_avm_to_ic
+            acl_avm_to_ic
+            #(
+               .DATA_W(32),
+               .WRITEDATA_W(32),
+               .BURSTCOUNT_W(1),
+               .ADDRESS_W(32),
+               .BYTEENA_W(4)
+            )
+            avm_to_ic
+            (
+               // AVM avm
+               .avm_enable(local_avm_aspace65_enable[__j][__k]),
+               .avm_read(local_avm_aspace65_read[__j][__k]),
+               .avm_write(local_avm_aspace65_write[__j][__k]),
+               .avm_address(local_avm_aspace65_address[__j][__k]),
+               .avm_writedata(local_avm_aspace65_writedata[__j][__k]),
+               .avm_byteenable(local_avm_aspace65_byteenable[__j][__k]),
+               .avm_waitrequest(local_avm_aspace65_waitrequest[__j][__k]),
+               .avm_readdata(local_avm_aspace65_readdata[__j][__k]),
+               .avm_readdatavalid(local_avm_aspace65_readdatavalid[__j][__k]),
+               .avm_burstcount(local_avm_aspace65_burstcount[__j][__k]),
+               .avm_writeack(local_avm_aspace65_writeack[__j][__k]),
+               // ICM ic
+               .ic_arb_request(local_icm_arb_request[__j][__k]),
+               .ic_arb_enable(local_icm_arb_enable[__j][__k]),
+               .ic_arb_read(local_icm_arb_read[__j][__k]),
+               .ic_arb_write(local_icm_arb_write[__j][__k]),
+               .ic_arb_burstcount(local_icm_arb_burstcount[__j][__k]),
+               .ic_arb_address(local_icm_arb_address[__j][__k]),
+               .ic_arb_writedata(local_icm_arb_writedata[__j][__k]),
+               .ic_arb_byteenable(local_icm_arb_byteenable[__j][__k]),
+               .ic_arb_stall(local_icm_arb_stall[__j][__k]),
+               .ic_wrp_ack(local_icm_wrp_ack[__j][__k]),
+               .ic_rrp_datavalid(local_icm_rrp_datavalid[__j][__k]),
+               .ic_rrp_data(local_icm_rrp_data[__j][__k])
+            );
+
+         end
+
+         for( __k = 0; __k < 1; __k = __k + 1 )
+         begin:bank
+            logic port_enable [1:4];
+            logic port_read [1:4];
+            logic port_write [1:4];
+            logic [8:0] port_address [1:4];
+            logic [31:0] port_writedata [1:4];
+            logic [3:0] port_byteenable [1:4];
+            logic port_waitrequest [1:4];
+            logic [31:0] port_readdata [1:4];
+            logic port_readdatavalid [1:4];
+
+            // INST mem0 of acl_mem1x
+            acl_mem1x
+            #(
+               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .DEPTH_WORDS(512),
+               .WIDTH(32),
+               .MEM_LATENCY(1),
+               .ASYNC_RESET(1),
+               .SYNCHRONIZE_RESET(0),
+               .ENABLED(0),
+               .RDW_MODE("DONT_CARE"),
+               .RAM_OPERATION_MODE("DUAL_PORT"),
+               .MINIMIZE_MEMORY_USAGE(0),
+               .USE_BYTEENA(0),
+               .RAM_BLOCK_TYPE("AUTO")
+            )
+            mem0
+            (
+               .clk(clock),
+               .resetn(resetn),
+               // AVS avs_port1
+               .avs_port1_enable(port_enable[1]),
+               .avs_port1_read(port_read[1]),
+               .avs_port1_write(port_write[1]),
+               .avs_port1_address(port_address[1]),
+               .avs_port1_writedata(port_writedata[1]),
+               .avs_port1_byteenable(port_byteenable[1]),
+               .avs_port1_waitrequest(port_waitrequest[1]),
+               .avs_port1_readdata(port_readdata[1]),
+               .avs_port1_readdatavalid(port_readdatavalid[1]),
+               // AVS avs_port2
+               .avs_port2_enable(port_enable[2]),
+               .avs_port2_read(port_read[2]),
+               .avs_port2_write(port_write[2]),
+               .avs_port2_address(port_address[2]),
+               .avs_port2_writedata(port_writedata[2]),
+               .avs_port2_byteenable(port_byteenable[2]),
+               .avs_port2_waitrequest(port_waitrequest[2]),
+               .avs_port2_readdata(port_readdata[2]),
+               .avs_port2_readdatavalid(port_readdatavalid[2])
+            );
+
+            // INST mem1 of acl_mem1x
+            acl_mem1x
+            #(
+               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .DEPTH_WORDS(512),
+               .WIDTH(32),
+               .MEM_LATENCY(1),
+               .ASYNC_RESET(1),
+               .SYNCHRONIZE_RESET(0),
+               .ENABLED(0),
+               .RDW_MODE("DONT_CARE"),
+               .RAM_OPERATION_MODE("DUAL_PORT"),
+               .MINIMIZE_MEMORY_USAGE(0),
+               .USE_BYTEENA(0),
+               .RAM_BLOCK_TYPE("AUTO")
+            )
+            mem1
+            (
+               .clk(clock),
+               .resetn(resetn),
+               // AVS avs_port1
+               .avs_port1_enable(port_enable[3]),
+               .avs_port1_read(port_read[3]),
+               .avs_port1_write(port_write[3]),
+               .avs_port1_address(port_address[3]),
+               .avs_port1_writedata(port_writedata[3]),
+               .avs_port1_byteenable(port_byteenable[3]),
+               .avs_port1_waitrequest(port_waitrequest[3]),
+               .avs_port1_readdata(port_readdata[3]),
+               .avs_port1_readdatavalid(port_readdatavalid[3]),
+               // AVS avs_port2
+               .avs_port2_enable(port_enable[4]),
+               .avs_port2_read(port_read[4]),
+               .avs_port2_write(port_write[4]),
+               .avs_port2_address(port_address[4]),
+               .avs_port2_writedata(port_writedata[4]),
+               .avs_port2_byteenable(port_byteenable[4]),
+               .avs_port2_waitrequest(port_waitrequest[4]),
+               .avs_port2_readdata(port_readdata[4]),
+               .avs_port2_readdatavalid(port_readdatavalid[4])
+            );
+
+         end
+
+         for( __k = 0; __k < 5; __k = __k + 1 )
+         begin:router
+            logic b_arb_request [1];
+            logic b_arb_enable [1];
+            logic b_arb_read [1];
+            logic b_arb_write [1];
+            logic b_arb_burstcount [1];
+            logic [8:0] b_arb_address [1];
+            logic [31:0] b_arb_writedata [1];
+            logic [3:0] b_arb_byteenable [1];
+            logic b_arb_stall [1];
+            logic b_wrp_ack [1];
+            logic b_rrp_datavalid [1];
+            logic [31:0] b_rrp_data [1];
+            logic bank_select;
+
+            // INST router of acl_ic_local_mem_router
+            acl_ic_local_mem_router
+            #(
+               .DATA_W(32),
+               .BURSTCOUNT_W(1),
+               .ADDRESS_W(9),
+               .BYTEENA_W(4),
+               .NUM_BANKS(1)
+            )
+            router
+            (
+               .clock(clock),
+               .resetn(resetn),
+               .bank_select(bank_select),
+               // ICM m
+               .m_arb_request(local_icm_arb_request[__j][__k]),
+               .m_arb_enable(local_icm_arb_enable[__j][__k]),
+               .m_arb_read(local_icm_arb_read[__j][__k]),
+               .m_arb_write(local_icm_arb_write[__j][__k]),
+               .m_arb_burstcount(local_icm_arb_burstcount[__j][__k]),
+               .m_arb_address(local_icm_arb_address[__j][__k]),
+               .m_arb_writedata(local_icm_arb_writedata[__j][__k]),
+               .m_arb_byteenable(local_icm_arb_byteenable[__j][__k]),
+               .m_arb_stall(local_icm_arb_stall[__j][__k]),
+               .m_wrp_ack(local_icm_wrp_ack[__j][__k]),
+               .m_rrp_datavalid(local_icm_rrp_datavalid[__j][__k]),
+               .m_rrp_data(local_icm_rrp_data[__j][__k]),
+               // ICM b
+               .b_arb_request(b_arb_request),
+               .b_arb_enable(b_arb_enable),
+               .b_arb_read(b_arb_read),
+               .b_arb_write(b_arb_write),
+               .b_arb_burstcount(b_arb_burstcount),
+               .b_arb_address(b_arb_address),
+               .b_arb_writedata(b_arb_writedata),
+               .b_arb_byteenable(b_arb_byteenable),
+               .b_arb_stall(b_arb_stall),
+               .b_wrp_ack(b_wrp_ack),
+               .b_rrp_datavalid(b_rrp_datavalid),
+               .b_rrp_data(b_rrp_data)
+            );
+
+            assign bank_select = 1'b1;
+         end
+
+         for( __k = 0; __k < 1; __k = __k + 1 )
+         begin:port1bank0
+            logic icm_in_arb_request [2];
+            logic icm_in_arb_enable [2];
+            logic icm_in_arb_read [2];
+            logic icm_in_arb_write [2];
+            logic icm_in_arb_burstcount [2];
+            logic [8:0] icm_in_arb_address [2];
+            logic [31:0] icm_in_arb_writedata [2];
+            logic [3:0] icm_in_arb_byteenable [2];
+            logic icm_in_arb_stall [2];
+            logic icm_in_wrp_ack [2];
+            logic icm_in_rrp_datavalid [2];
+            logic [31:0] icm_in_rrp_data [2];
+            logic icm_out_arb_request;
+            logic icm_out_arb_enable;
+            logic icm_out_arb_read;
+            logic icm_out_arb_write;
+            logic icm_out_arb_burstcount;
+            logic [8:0] icm_out_arb_address;
+            logic [31:0] icm_out_arb_writedata;
+            logic [3:0] icm_out_arb_byteenable;
+            logic icm_out_arb_stall;
+            logic icm_out_wrp_ack;
+            logic icm_out_rrp_datavalid;
+            logic [31:0] icm_out_rrp_data;
+
+            assign icm_in_arb_request[0] = router[2].b_arb_request[0];
+            assign icm_in_arb_enable[0] = router[2].b_arb_enable[0];
+            assign icm_in_arb_read[0] = router[2].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[2].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[2].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[2].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[2].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[2].b_arb_byteenable[0];
+            assign router[2].b_arb_stall[0] = icm_in_arb_stall[0];
+            assign router[2].b_wrp_ack[0] = icm_in_wrp_ack[0];
+            assign router[2].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
+            assign router[2].b_rrp_data[0] = icm_in_rrp_data[0];
+            assign icm_in_arb_request[1] = router[3].b_arb_request[0];
+            assign icm_in_arb_enable[1] = router[3].b_arb_enable[0];
+            assign icm_in_arb_read[1] = router[3].b_arb_read[0];
+            assign icm_in_arb_write[1] = router[3].b_arb_write[0];
+            assign icm_in_arb_burstcount[1] = router[3].b_arb_burstcount[0];
+            assign icm_in_arb_address[1] = router[3].b_arb_address[0];
+            assign icm_in_arb_writedata[1] = router[3].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[1] = router[3].b_arb_byteenable[0];
+            assign router[3].b_arb_stall[0] = icm_in_arb_stall[1];
+            assign router[3].b_wrp_ack[0] = icm_in_wrp_ack[1];
+            assign router[3].b_rrp_datavalid[0] = icm_in_rrp_datavalid[1];
+            assign router[3].b_rrp_data[0] = icm_in_rrp_data[1];
+            // INST data_ic of gaussian_internal_ic_16263598144285338271
+            gaussian_internal_ic_16263598144285338271 data_ic
+            (
+               .clock(clock),
+               .resetn(resetn),
+               // ICM m
+               .m_arb_request(icm_in_arb_request),
+               .m_arb_enable(icm_in_arb_enable),
+               .m_arb_read(icm_in_arb_read),
+               .m_arb_write(icm_in_arb_write),
+               .m_arb_burstcount(icm_in_arb_burstcount),
+               .m_arb_address(icm_in_arb_address),
+               .m_arb_writedata(icm_in_arb_writedata),
+               .m_arb_byteenable(icm_in_arb_byteenable),
+               .m_arb_stall(icm_in_arb_stall),
+               .m_wrp_ack(icm_in_wrp_ack),
+               .m_rrp_datavalid(icm_in_rrp_datavalid),
+               .m_rrp_data(icm_in_rrp_data),
+               // ICM mout
+               .mout_arb_request(icm_out_arb_request),
+               .mout_arb_enable(icm_out_arb_enable),
+               .mout_arb_read(icm_out_arb_read),
+               .mout_arb_write(icm_out_arb_write),
+               .mout_arb_burstcount(icm_out_arb_burstcount),
+               .mout_arb_address(icm_out_arb_address),
+               .mout_arb_writedata(icm_out_arb_writedata),
+               .mout_arb_byteenable(icm_out_arb_byteenable),
+               .mout_arb_id(),
+               .mout_arb_stall(icm_out_arb_stall),
+               .mout_wrp_ack(icm_out_wrp_ack),
+               .mout_rrp_datavalid(icm_out_rrp_datavalid),
+               .mout_rrp_data(icm_out_rrp_data)
+            );
+
+            assign bank[0].port_enable[1] = icm_out_arb_enable;
+            assign bank[0].port_read[1] = icm_out_arb_read;
+            assign bank[0].port_write[1] = icm_out_arb_write;
+            assign bank[0].port_address[1] = icm_out_arb_address;
+            assign bank[0].port_writedata[1] = icm_out_arb_writedata;
+            assign bank[0].port_byteenable[1] = icm_out_arb_byteenable;
+            assign icm_out_arb_stall = bank[0].port_waitrequest[1];
+            assign icm_out_rrp_data = bank[0].port_readdata[1];
+            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[1];
+            assign icm_out_wrp_ack = 'b0;
+         end
+
+         for( __k = 0; __k < 1; __k = __k + 1 )
+         begin:port2bank0
+            logic icm_in_arb_request [2];
+            logic icm_in_arb_enable [2];
+            logic icm_in_arb_read [2];
+            logic icm_in_arb_write [2];
+            logic icm_in_arb_burstcount [2];
+            logic [8:0] icm_in_arb_address [2];
+            logic [31:0] icm_in_arb_writedata [2];
+            logic [3:0] icm_in_arb_byteenable [2];
+            logic icm_in_arb_stall [2];
+            logic icm_in_wrp_ack [2];
+            logic icm_in_rrp_datavalid [2];
+            logic [31:0] icm_in_rrp_data [2];
+            logic icm_out_arb_request;
+            logic icm_out_arb_enable;
+            logic icm_out_arb_read;
+            logic icm_out_arb_write;
+            logic icm_out_arb_burstcount;
+            logic [8:0] icm_out_arb_address;
+            logic [31:0] icm_out_arb_writedata;
+            logic [3:0] icm_out_arb_byteenable;
+            logic icm_out_arb_stall;
+            logic icm_out_wrp_ack;
+            logic icm_out_rrp_datavalid;
+            logic [31:0] icm_out_rrp_data;
+
+            assign icm_in_arb_request[0] = router[1].b_arb_request[0];
+            assign icm_in_arb_enable[0] = router[1].b_arb_enable[0];
+            assign icm_in_arb_read[0] = router[1].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[1].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[1].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[1].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[1].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[1].b_arb_byteenable[0];
+            assign router[1].b_arb_stall[0] = icm_in_arb_stall[0];
+            assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
+            assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
+            assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
+            assign icm_in_arb_request[1] = router[4].b_arb_request[0];
+            assign icm_in_arb_enable[1] = router[4].b_arb_enable[0];
+            assign icm_in_arb_read[1] = router[4].b_arb_read[0];
+            assign icm_in_arb_write[1] = router[4].b_arb_write[0];
+            assign icm_in_arb_burstcount[1] = router[4].b_arb_burstcount[0];
+            assign icm_in_arb_address[1] = router[4].b_arb_address[0];
+            assign icm_in_arb_writedata[1] = router[4].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[1] = router[4].b_arb_byteenable[0];
+            assign router[4].b_arb_stall[0] = icm_in_arb_stall[1];
+            assign router[4].b_wrp_ack[0] = icm_in_wrp_ack[1];
+            assign router[4].b_rrp_datavalid[0] = icm_in_rrp_datavalid[1];
+            assign router[4].b_rrp_data[0] = icm_in_rrp_data[1];
+            // INST data_ic of gaussian_internal_ic_3876351599500887222
+            gaussian_internal_ic_3876351599500887222 data_ic
+            (
+               .clock(clock),
+               .resetn(resetn),
+               // ICM m
+               .m_arb_request(icm_in_arb_request),
+               .m_arb_enable(icm_in_arb_enable),
+               .m_arb_read(icm_in_arb_read),
+               .m_arb_write(icm_in_arb_write),
+               .m_arb_burstcount(icm_in_arb_burstcount),
+               .m_arb_address(icm_in_arb_address),
+               .m_arb_writedata(icm_in_arb_writedata),
+               .m_arb_byteenable(icm_in_arb_byteenable),
+               .m_arb_stall(icm_in_arb_stall),
+               .m_wrp_ack(icm_in_wrp_ack),
+               .m_rrp_datavalid(icm_in_rrp_datavalid),
+               .m_rrp_data(icm_in_rrp_data),
+               // ICM mout
+               .mout_arb_request(icm_out_arb_request),
+               .mout_arb_enable(icm_out_arb_enable),
+               .mout_arb_read(icm_out_arb_read),
+               .mout_arb_write(icm_out_arb_write),
+               .mout_arb_burstcount(icm_out_arb_burstcount),
+               .mout_arb_address(icm_out_arb_address),
+               .mout_arb_writedata(icm_out_arb_writedata),
+               .mout_arb_byteenable(icm_out_arb_byteenable),
+               .mout_arb_id(),
+               .mout_arb_stall(icm_out_arb_stall),
+               .mout_wrp_ack(icm_out_wrp_ack),
+               .mout_rrp_datavalid(icm_out_rrp_datavalid),
+               .mout_rrp_data(icm_out_rrp_data)
+            );
+
+            assign bank[0].port_enable[2] = icm_out_arb_enable;
+            assign bank[0].port_read[2] = icm_out_arb_read;
+            assign bank[0].port_write[2] = icm_out_arb_write;
+            assign bank[0].port_address[2] = icm_out_arb_address;
+            assign bank[0].port_writedata[2] = icm_out_arb_writedata;
+            assign bank[0].port_byteenable[2] = icm_out_arb_byteenable;
+            assign icm_out_arb_stall = bank[0].port_waitrequest[2];
+            assign icm_out_rrp_data = bank[0].port_readdata[2];
+            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[2];
+            assign icm_out_wrp_ack = 'b0;
+         end
+
+         for( __k = 0; __k < 1; __k = __k + 1 )
+         begin:port3bank0
+            logic icm_in_arb_request [2];
+            logic icm_in_arb_enable [2];
+            logic icm_in_arb_read [2];
+            logic icm_in_arb_write [2];
+            logic icm_in_arb_burstcount [2];
+            logic [8:0] icm_in_arb_address [2];
+            logic [31:0] icm_in_arb_writedata [2];
+            logic [3:0] icm_in_arb_byteenable [2];
+            logic icm_in_arb_stall [2];
+            logic icm_in_wrp_ack [2];
+            logic icm_in_rrp_datavalid [2];
+            logic [31:0] icm_in_rrp_data [2];
+            logic icm_out_arb_request;
+            logic icm_out_arb_enable;
+            logic icm_out_arb_read;
+            logic icm_out_arb_write;
+            logic icm_out_arb_burstcount;
+            logic [8:0] icm_out_arb_address;
+            logic [31:0] icm_out_arb_writedata;
+            logic [3:0] icm_out_arb_byteenable;
+            logic icm_out_arb_stall;
+            logic icm_out_wrp_ack;
+            logic icm_out_rrp_datavalid;
+            logic [31:0] icm_out_rrp_data;
+
+            // Replicated store outputs from interconnect not connected to router
+            assign icm_in_arb_enable[0] = router[2].b_arb_enable[0];
+            assign icm_in_arb_request[0] = router[2].b_arb_request[0];
+            assign icm_in_arb_read[0] = router[2].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[2].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[2].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[2].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[2].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[2].b_arb_byteenable[0];
+            // Replicated store outputs from interconnect not connected to router
+            assign icm_in_arb_enable[1] = router[3].b_arb_enable[0];
+            assign icm_in_arb_request[1] = router[3].b_arb_request[0];
+            assign icm_in_arb_read[1] = router[3].b_arb_read[0];
+            assign icm_in_arb_write[1] = router[3].b_arb_write[0];
+            assign icm_in_arb_burstcount[1] = router[3].b_arb_burstcount[0];
+            assign icm_in_arb_address[1] = router[3].b_arb_address[0];
+            assign icm_in_arb_writedata[1] = router[3].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[1] = router[3].b_arb_byteenable[0];
+            // INST data_ic of gaussian_internal_ic_16263598144285338271
+            gaussian_internal_ic_16263598144285338271 data_ic
+            (
+               .clock(clock),
+               .resetn(resetn),
+               // ICM m
+               .m_arb_request(icm_in_arb_request),
+               .m_arb_enable(icm_in_arb_enable),
+               .m_arb_read(icm_in_arb_read),
+               .m_arb_write(icm_in_arb_write),
+               .m_arb_burstcount(icm_in_arb_burstcount),
+               .m_arb_address(icm_in_arb_address),
+               .m_arb_writedata(icm_in_arb_writedata),
+               .m_arb_byteenable(icm_in_arb_byteenable),
+               .m_arb_stall(icm_in_arb_stall),
+               .m_wrp_ack(icm_in_wrp_ack),
+               .m_rrp_datavalid(icm_in_rrp_datavalid),
+               .m_rrp_data(icm_in_rrp_data),
+               // ICM mout
+               .mout_arb_request(icm_out_arb_request),
+               .mout_arb_enable(icm_out_arb_enable),
+               .mout_arb_read(icm_out_arb_read),
+               .mout_arb_write(icm_out_arb_write),
+               .mout_arb_burstcount(icm_out_arb_burstcount),
+               .mout_arb_address(icm_out_arb_address),
+               .mout_arb_writedata(icm_out_arb_writedata),
+               .mout_arb_byteenable(icm_out_arb_byteenable),
+               .mout_arb_id(),
+               .mout_arb_stall(icm_out_arb_stall),
+               .mout_wrp_ack(icm_out_wrp_ack),
+               .mout_rrp_datavalid(icm_out_rrp_datavalid),
+               .mout_rrp_data(icm_out_rrp_data)
+            );
+
+            assign bank[0].port_enable[3] = icm_out_arb_enable;
+            assign bank[0].port_read[3] = icm_out_arb_read;
+            assign bank[0].port_write[3] = icm_out_arb_write;
+            assign bank[0].port_address[3] = icm_out_arb_address;
+            assign bank[0].port_writedata[3] = icm_out_arb_writedata;
+            assign bank[0].port_byteenable[3] = icm_out_arb_byteenable;
+            assign icm_out_arb_stall = bank[0].port_waitrequest[3];
+            assign icm_out_rrp_data = bank[0].port_readdata[3];
+            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[3];
+            assign icm_out_wrp_ack = 'b0;
+         end
+
+         for( __k = 0; __k < 1; __k = __k + 1 )
+         begin:port4bank0
+            logic icm_in_arb_request [1];
+            logic icm_in_arb_enable [1];
+            logic icm_in_arb_read [1];
+            logic icm_in_arb_write [1];
+            logic icm_in_arb_burstcount [1];
+            logic [8:0] icm_in_arb_address [1];
+            logic [31:0] icm_in_arb_writedata [1];
+            logic [3:0] icm_in_arb_byteenable [1];
+            logic icm_in_arb_stall [1];
+            logic icm_in_wrp_ack [1];
+            logic icm_in_rrp_datavalid [1];
+            logic [31:0] icm_in_rrp_data [1];
+            logic icm_out_arb_request;
+            logic icm_out_arb_enable;
+            logic icm_out_arb_read;
+            logic icm_out_arb_write;
+            logic icm_out_arb_burstcount;
+            logic [8:0] icm_out_arb_address;
+            logic [31:0] icm_out_arb_writedata;
+            logic [3:0] icm_out_arb_byteenable;
+            logic icm_out_arb_stall;
+            logic icm_out_wrp_ack;
+            logic icm_out_rrp_datavalid;
+            logic [31:0] icm_out_rrp_data;
+
+            assign icm_in_arb_request[0] = router[0].b_arb_request[0];
+            assign icm_in_arb_enable[0] = router[0].b_arb_enable[0];
+            assign icm_in_arb_read[0] = router[0].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[0].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[0].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[0].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[0].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[0].b_arb_byteenable[0];
+            assign router[0].b_arb_stall[0] = icm_in_arb_stall[0];
+            assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
+            assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
+            assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
+            // INST data_ic of gaussian_internal_ic_2097089478639511620
+            gaussian_internal_ic_2097089478639511620 data_ic
+            (
+               .clock(clock),
+               .resetn(resetn),
+               // ICM m
+               .m_arb_request(icm_in_arb_request),
+               .m_arb_enable(icm_in_arb_enable),
+               .m_arb_read(icm_in_arb_read),
+               .m_arb_write(icm_in_arb_write),
+               .m_arb_burstcount(icm_in_arb_burstcount),
+               .m_arb_address(icm_in_arb_address),
+               .m_arb_writedata(icm_in_arb_writedata),
+               .m_arb_byteenable(icm_in_arb_byteenable),
+               .m_arb_stall(icm_in_arb_stall),
+               .m_wrp_ack(icm_in_wrp_ack),
+               .m_rrp_datavalid(icm_in_rrp_datavalid),
+               .m_rrp_data(icm_in_rrp_data),
+               // ICM mout
+               .mout_arb_request(icm_out_arb_request),
+               .mout_arb_enable(icm_out_arb_enable),
+               .mout_arb_read(icm_out_arb_read),
+               .mout_arb_write(icm_out_arb_write),
+               .mout_arb_burstcount(icm_out_arb_burstcount),
+               .mout_arb_address(icm_out_arb_address),
+               .mout_arb_writedata(icm_out_arb_writedata),
+               .mout_arb_byteenable(icm_out_arb_byteenable),
+               .mout_arb_id(),
+               .mout_arb_stall(icm_out_arb_stall),
+               .mout_wrp_ack(icm_out_wrp_ack),
+               .mout_rrp_datavalid(icm_out_rrp_datavalid),
+               .mout_rrp_data(icm_out_rrp_data)
+            );
+
+            assign bank[0].port_enable[4] = icm_out_arb_enable;
+            assign bank[0].port_read[4] = icm_out_arb_read;
+            assign bank[0].port_write[4] = icm_out_arb_write;
+            assign bank[0].port_address[4] = icm_out_arb_address;
+            assign bank[0].port_writedata[4] = icm_out_arb_writedata;
+            assign bank[0].port_byteenable[4] = icm_out_arb_byteenable;
+            assign icm_out_arb_stall = bank[0].port_waitrequest[4];
+            assign icm_out_rrp_data = bank[0].port_readdata[4];
+            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[4];
+            assign icm_out_wrp_ack = 'b0;
+         end
+
+      end
+
+   end
+   endgenerate
+
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE gaussian_internal_ic_2408045022197231008
+// MODULE gaussian_internal_ic_5272295805250791862
 /////////////////////////////////////////////////////////////////
-module gaussian_internal_ic_2408045022197231008
+module gaussian_internal_ic_5272295805250791862
 (
    input logic clock,
    input logic resetn,
    // ICM m
-   input logic m_arb_request [4],
-   input logic m_arb_enable [4],
-   input logic m_arb_read [4],
-   input logic m_arb_write [4],
-   input logic m_arb_burstcount [4],
-   input logic [60:0] m_arb_address [4],
-   input logic [63:0] m_arb_writedata [4],
-   input logic [7:0] m_arb_byteenable [4],
-   output logic m_arb_stall [4],
-   output logic m_wrp_ack [4],
-   output logic m_rrp_datavalid [4],
-   output logic [63:0] m_rrp_data [4],
+   input logic m_arb_request [1],
+   input logic m_arb_enable [1],
+   input logic m_arb_read [1],
+   input logic m_arb_write [1],
+   input logic m_arb_burstcount [1],
+   input logic [60:0] m_arb_address [1],
+   input logic [63:0] m_arb_writedata [1],
+   input logic [7:0] m_arb_byteenable [1],
+   output logic m_arb_stall [1],
+   output logic m_wrp_ack [1],
+   output logic m_rrp_datavalid [1],
+   output logic [63:0] m_rrp_data [1],
    // ICM mout
    output logic mout_arb_request,
    output logic mout_arb_enable,
@@ -328,7 +1342,7 @@ module gaussian_internal_ic_2408045022197231008
    output logic [60:0] mout_arb_address,
    output logic [63:0] mout_arb_writedata,
    output logic [7:0] mout_arb_byteenable,
-   output logic [1:0] mout_arb_id,
+   output logic mout_arb_id,
    input logic mout_arb_stall,
    input logic mout_wrp_ack,
    input logic mout_rrp_datavalid,
@@ -336,16 +1350,16 @@ module gaussian_internal_ic_2408045022197231008
 );
    genvar __i;
    generate
-      for( __i = 0; __i < 4; __i = __i + 1 )
+      for( __i = 0; __i < 1; __i = __i + 1 )
       begin:m
-         logic [1:0] id;
+         logic id;
          acl_ic_host_intf
          #(
             .DATA_W(64),
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2)
+            .ID_W(1)
          ) m_intf();
          acl_arb_intf
          #(
@@ -353,16 +1367,16 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2)
+            .ID_W(1)
          ) arb_intf();
          acl_ic_wrp_intf
          #(
-            .ID_W(2)
+            .ID_W(1)
          ) wrp_intf();
          acl_ic_rrp_intf
          #(
             .DATA_W(64),
-            .ID_W(2)
+            .ID_W(1)
          ) rrp_intf();
 
          assign id = __i;
@@ -373,9 +1387,9 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2),
-            .NUM_READ_HOSTS(4),
-            .NUM_WRITE_HOSTS(4),
+            .ID_W(1),
+            .NUM_READ_HOSTS(1),
+            .NUM_WRITE_HOSTS(1),
             .ID(__i)
          )
          m_endp
@@ -413,7 +1427,7 @@ module gaussian_internal_ic_2408045022197231008
          .BURSTCOUNT_W(1),
          .ADDRESS_W(61),
          .BYTEENA_W(8),
-         .ID_W(2)
+         .ID_W(1)
       ) in_arb_intf();
       acl_arb_intf
       #(
@@ -421,16 +1435,16 @@ module gaussian_internal_ic_2408045022197231008
          .BURSTCOUNT_W(1),
          .ADDRESS_W(61),
          .BYTEENA_W(8),
-         .ID_W(2)
+         .ID_W(1)
       ) out_arb_intf();
       acl_ic_wrp_intf
       #(
-         .ID_W(2)
+         .ID_W(1)
       ) wrp_intf();
       acl_ic_rrp_intf
       #(
          .DATA_W(64),
-         .ID_W(2)
+         .ID_W(1)
       ) rrp_intf();
 
       // INST s_endp of acl_ic_agent_endpoint
@@ -440,9 +1454,9 @@ module gaussian_internal_ic_2408045022197231008
          .BURSTCOUNT_W(1),
          .ADDRESS_W(61),
          .BYTEENA_W(8),
-         .ID_W(2),
-         .NUM_READ_HOSTS(4),
-         .NUM_WRITE_HOSTS(4),
+         .ID_W(1),
+         .NUM_READ_HOSTS(1),
+         .NUM_WRITE_HOSTS(1),
          .PIPELINE_RETURN_PATHS(1),
          .WRP_FIFO_DEPTH(0),
          .RRP_FIFO_DEPTH(64),
@@ -472,12 +1486,6 @@ module gaussian_internal_ic_2408045022197231008
    begin:wrp
       assign m[0].wrp_intf.ack = s.wrp_intf.ack;
       assign m[0].wrp_intf.id = s.wrp_intf.id;
-      assign m[1].wrp_intf.ack = s.wrp_intf.ack;
-      assign m[1].wrp_intf.id = s.wrp_intf.id;
-      assign m[2].wrp_intf.ack = s.wrp_intf.ack;
-      assign m[2].wrp_intf.id = s.wrp_intf.id;
-      assign m[3].wrp_intf.ack = s.wrp_intf.ack;
-      assign m[3].wrp_intf.id = s.wrp_intf.id;
    end
    endgenerate
 
@@ -486,75 +1494,11 @@ module gaussian_internal_ic_2408045022197231008
       assign m[0].rrp_intf.datavalid = s.rrp_intf.datavalid;
       assign m[0].rrp_intf.data = s.rrp_intf.data;
       assign m[0].rrp_intf.id = s.rrp_intf.id;
-      assign m[1].rrp_intf.datavalid = s.rrp_intf.datavalid;
-      assign m[1].rrp_intf.data = s.rrp_intf.data;
-      assign m[1].rrp_intf.id = s.rrp_intf.id;
-      assign m[2].rrp_intf.datavalid = s.rrp_intf.datavalid;
-      assign m[2].rrp_intf.data = s.rrp_intf.data;
-      assign m[2].rrp_intf.id = s.rrp_intf.id;
-      assign m[3].rrp_intf.datavalid = s.rrp_intf.datavalid;
-      assign m[3].rrp_intf.data = s.rrp_intf.data;
-      assign m[3].rrp_intf.id = s.rrp_intf.id;
    end
    endgenerate
 
    generate
-      for( __i = 0; __i < 3; __i = __i + 1 )
-      begin:a
-         acl_arb_intf
-         #(
-            .DATA_W(64),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(61),
-            .BYTEENA_W(8),
-            .ID_W(2)
-         ) m0_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(64),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(61),
-            .BYTEENA_W(8),
-            .ID_W(2)
-         ) m1_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(64),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(61),
-            .BYTEENA_W(8),
-            .ID_W(2)
-         ) mout_intf();
-
-         // INST a of acl_arb2
-         acl_arb2
-         #(
-            .DATA_W(64),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(61),
-            .BYTEENA_W(8),
-            .ID_W(2),
-            .PIPELINE("none"),
-            .KEEP_LAST_GRANT(1),
-            .NO_STALL_NETWORK(0),
-            .ASYNC_RESET(1),
-            .SYNCHRONIZE_RESET(0)
-         )
-         a
-         (
-            .clock(clock),
-            .resetn(resetn),
-            .m0_intf(m0_intf),
-            .m1_intf(m1_intf),
-            .mout_intf(mout_intf)
-         );
-
-      end
-
-   endgenerate
-
-   generate
-      for( __i = 0; __i < 5; __i = __i + 1 )
+      for( __i = 0; __i < 2; __i = __i + 1 )
       begin:dp
          acl_arb_intf
          #(
@@ -562,7 +1506,7 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2)
+            .ID_W(1)
          ) in_intf();
          acl_arb_intf
          #(
@@ -570,7 +1514,7 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2)
+            .ID_W(1)
          ) out_intf();
 
          // INST dp of acl_arb_pipeline_reg
@@ -580,7 +1524,7 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2),
+            .ID_W(1),
             .ASYNC_RESET(1),
             .SYNCHRONIZE_RESET(0)
          )
@@ -605,7 +1549,7 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2)
+            .ID_W(1)
          ) in_intf();
          acl_arb_intf
          #(
@@ -613,7 +1557,7 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2)
+            .ID_W(1)
          ) out_intf();
 
          // INST sp of acl_arb_staging_reg
@@ -623,7 +1567,7 @@ module gaussian_internal_ic_2408045022197231008
             .BURSTCOUNT_W(1),
             .ADDRESS_W(61),
             .BYTEENA_W(8),
-            .ID_W(2),
+            .ID_W(1),
             .ASYNC_RESET(1),
             .SYNCHRONIZE_RESET(0)
          )
@@ -653,27 +1597,1110 @@ module gaussian_internal_ic_2408045022197231008
    assign sp[0].out_intf.stall = dp[0].in_intf.stall;
    assign sp[0].in_intf.req = s.out_arb_intf.req;
    assign s.out_arb_intf.stall = sp[0].in_intf.stall;
-   assign s.in_arb_intf.req = a[2].mout_intf.req;
-   assign a[2].mout_intf.stall = s.in_arb_intf.stall;
-   assign a[2].m0_intf.req = a[0].mout_intf.req;
-   assign a[0].mout_intf.stall = a[2].m0_intf.stall;
-   assign a[2].m1_intf.req = a[1].mout_intf.req;
-   assign a[1].mout_intf.stall = a[2].m1_intf.stall;
-   assign a[0].m0_intf.req = dp[1].out_intf.req;
-   assign dp[1].out_intf.stall = a[0].m0_intf.stall;
-   assign a[0].m1_intf.req = dp[2].out_intf.req;
-   assign dp[2].out_intf.stall = a[0].m1_intf.stall;
-   assign a[1].m0_intf.req = dp[3].out_intf.req;
-   assign dp[3].out_intf.stall = a[1].m0_intf.stall;
-   assign a[1].m1_intf.req = dp[4].out_intf.req;
-   assign dp[4].out_intf.stall = a[1].m1_intf.stall;
+   assign s.in_arb_intf.req = dp[1].out_intf.req;
+   assign dp[1].out_intf.stall = s.in_arb_intf.stall;
    assign dp[1].in_intf.req = m[0].arb_intf.req;
    assign m[0].arb_intf.stall = dp[1].in_intf.stall;
-   assign dp[2].in_intf.req = m[1].arb_intf.req;
-   assign m[1].arb_intf.stall = dp[2].in_intf.stall;
-   assign dp[3].in_intf.req = m[2].arb_intf.req;
-   assign m[2].arb_intf.stall = dp[3].in_intf.stall;
-   assign dp[4].in_intf.req = m[3].arb_intf.req;
-   assign m[3].arb_intf.stall = dp[4].in_intf.stall;
+endmodule
+
+/////////////////////////////////////////////////////////////////
+// MODULE gaussian_internal_ic_15077825521590485233
+/////////////////////////////////////////////////////////////////
+module gaussian_internal_ic_15077825521590485233
+(
+   input logic clock,
+   input logic resetn,
+   // ICM m
+   input logic m_arb_request [1],
+   input logic m_arb_enable [1],
+   input logic m_arb_read [1],
+   input logic m_arb_write [1],
+   input logic m_arb_burstcount [1],
+   input logic [4:0] m_arb_address [1],
+   input logic [31:0] m_arb_writedata [1],
+   input logic [3:0] m_arb_byteenable [1],
+   output logic m_arb_stall [1],
+   output logic m_wrp_ack [1],
+   output logic m_rrp_datavalid [1],
+   output logic [31:0] m_rrp_data [1],
+   // ICM mout
+   output logic mout_arb_request,
+   output logic mout_arb_enable,
+   output logic mout_arb_read,
+   output logic mout_arb_write,
+   output logic mout_arb_burstcount,
+   output logic [4:0] mout_arb_address,
+   output logic [31:0] mout_arb_writedata,
+   output logic [3:0] mout_arb_byteenable,
+   output logic mout_arb_id,
+   input logic mout_arb_stall,
+   input logic mout_wrp_ack,
+   input logic mout_rrp_datavalid,
+   input logic [31:0] mout_rrp_data
+);
+   genvar __i;
+   generate
+      for( __i = 0; __i < 1; __i = __i + 1 )
+      begin:m
+         logic id;
+         acl_ic_host_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(5),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(5),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) arb_intf();
+         acl_ic_wrp_intf
+         #(
+            .ID_W(1)
+         ) wrp_intf();
+         acl_ic_rrp_intf
+         #(
+            .DATA_W(32),
+            .ID_W(1)
+         ) rrp_intf();
+
+         assign id = __i;
+         // INST m_endp of acl_ic_host_endpoint
+         acl_ic_host_endpoint
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(5),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .NUM_READ_HOSTS(0),
+            .NUM_WRITE_HOSTS(1),
+            .ID(__i)
+         )
+         m_endp
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m_intf(m_intf),
+            .arb_intf(arb_intf),
+            .wrp_intf(wrp_intf),
+            .rrp_intf(rrp_intf)
+         );
+
+         assign m_intf.arb.req.request = m_arb_request[__i];
+         assign m_intf.arb.req.enable = m_arb_enable[__i];
+         assign m_intf.arb.req.read = m_arb_read[__i];
+         assign m_intf.arb.req.write = m_arb_write[__i];
+         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
+         assign m_intf.arb.req.address = m_arb_address[__i];
+         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
+         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
+         assign m_arb_stall[__i] = m_intf.arb.stall;
+         assign m_wrp_ack[__i] = m_intf.wrp.ack;
+         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
+         assign m_rrp_data[__i] = m_intf.rrp.data;
+         assign m_intf.arb.req.id = id;
+      end
+
+   endgenerate
+
+   generate
+   begin:s
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(5),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) in_arb_intf();
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(5),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) out_arb_intf();
+      acl_ic_wrp_intf
+      #(
+         .ID_W(1)
+      ) wrp_intf();
+      acl_ic_rrp_intf
+      #(
+         .DATA_W(32),
+         .ID_W(1)
+      ) rrp_intf();
+
+      // INST s_endp of acl_ic_agent_endpoint
+      acl_ic_agent_endpoint
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(5),
+         .BYTEENA_W(4),
+         .ID_W(1),
+         .NUM_READ_HOSTS(0),
+         .NUM_WRITE_HOSTS(1),
+         .PIPELINE_RETURN_PATHS(0),
+         .WRP_FIFO_DEPTH(0),
+         .RRP_FIFO_DEPTH(0),
+         .RRP_USE_LL_FIFO(1),
+         .AGENT_FIXED_LATENCY(3),
+         .SEPARATE_READ_WRITE_STALLS(0),
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
+      )
+      s_endp
+      (
+         .clock(clock),
+         .resetn(resetn),
+         .m_intf(in_arb_intf),
+         .s_intf(out_arb_intf),
+         .s_readdatavalid(mout_rrp_datavalid),
+         .s_readdata(mout_rrp_data),
+         .s_writeack(mout_wrp_ack),
+         .wrp_intf(wrp_intf),
+         .rrp_intf(rrp_intf)
+      );
+
+   end
+   endgenerate
+
+   generate
+   begin:wrp
+      assign m[0].wrp_intf.ack = s.wrp_intf.ack;
+      assign m[0].wrp_intf.id = s.wrp_intf.id;
+   end
+   endgenerate
+
+   generate
+   begin:rrp
+   end
+   endgenerate
+
+   assign mout_arb_request = s.out_arb_intf.req.request;
+   assign mout_arb_enable = s.out_arb_intf.req.enable;
+   assign mout_arb_read = s.out_arb_intf.req.read;
+   assign mout_arb_write = s.out_arb_intf.req.write;
+   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
+   assign mout_arb_address = s.out_arb_intf.req.address;
+   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
+   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
+   assign mout_arb_id = s.out_arb_intf.req.id;
+   assign s.out_arb_intf.stall = mout_arb_stall;
+   assign s.in_arb_intf.req = m[0].arb_intf.req;
+   assign m[0].arb_intf.stall = s.in_arb_intf.stall;
+endmodule
+
+/////////////////////////////////////////////////////////////////
+// MODULE gaussian_internal_ic_3514991575227646363
+/////////////////////////////////////////////////////////////////
+module gaussian_internal_ic_3514991575227646363
+(
+   input logic clock,
+   input logic resetn,
+   // ICM m
+   input logic m_arb_request [1],
+   input logic m_arb_enable [1],
+   input logic m_arb_read [1],
+   input logic m_arb_write [1],
+   input logic m_arb_burstcount [1],
+   input logic [4:0] m_arb_address [1],
+   input logic [31:0] m_arb_writedata [1],
+   input logic [3:0] m_arb_byteenable [1],
+   output logic m_arb_stall [1],
+   output logic m_wrp_ack [1],
+   output logic m_rrp_datavalid [1],
+   output logic [31:0] m_rrp_data [1],
+   // ICM mout
+   output logic mout_arb_request,
+   output logic mout_arb_enable,
+   output logic mout_arb_read,
+   output logic mout_arb_write,
+   output logic mout_arb_burstcount,
+   output logic [4:0] mout_arb_address,
+   output logic [31:0] mout_arb_writedata,
+   output logic [3:0] mout_arb_byteenable,
+   output logic mout_arb_id,
+   input logic mout_arb_stall,
+   input logic mout_wrp_ack,
+   input logic mout_rrp_datavalid,
+   input logic [31:0] mout_rrp_data
+);
+   genvar __i;
+   generate
+      for( __i = 0; __i < 1; __i = __i + 1 )
+      begin:m
+         logic id;
+         acl_ic_host_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(5),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(5),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) arb_intf();
+         acl_ic_wrp_intf
+         #(
+            .ID_W(1)
+         ) wrp_intf();
+         acl_ic_rrp_intf
+         #(
+            .DATA_W(32),
+            .ID_W(1)
+         ) rrp_intf();
+
+         assign id = __i;
+         // INST m_endp of acl_ic_host_endpoint
+         acl_ic_host_endpoint
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(5),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .NUM_READ_HOSTS(1),
+            .NUM_WRITE_HOSTS(0),
+            .ID(__i)
+         )
+         m_endp
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m_intf(m_intf),
+            .arb_intf(arb_intf),
+            .wrp_intf(wrp_intf),
+            .rrp_intf(rrp_intf)
+         );
+
+         assign m_intf.arb.req.request = m_arb_request[__i];
+         assign m_intf.arb.req.enable = m_arb_enable[__i];
+         assign m_intf.arb.req.read = m_arb_read[__i];
+         assign m_intf.arb.req.write = m_arb_write[__i];
+         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
+         assign m_intf.arb.req.address = m_arb_address[__i];
+         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
+         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
+         assign m_arb_stall[__i] = m_intf.arb.stall;
+         assign m_wrp_ack[__i] = m_intf.wrp.ack;
+         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
+         assign m_rrp_data[__i] = m_intf.rrp.data;
+         assign m_intf.arb.req.id = id;
+      end
+
+   endgenerate
+
+   generate
+   begin:s
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(5),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) in_arb_intf();
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(5),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) out_arb_intf();
+      acl_ic_wrp_intf
+      #(
+         .ID_W(1)
+      ) wrp_intf();
+      acl_ic_rrp_intf
+      #(
+         .DATA_W(32),
+         .ID_W(1)
+      ) rrp_intf();
+
+      // INST s_endp of acl_ic_agent_endpoint
+      acl_ic_agent_endpoint
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(5),
+         .BYTEENA_W(4),
+         .ID_W(1),
+         .NUM_READ_HOSTS(1),
+         .NUM_WRITE_HOSTS(0),
+         .PIPELINE_RETURN_PATHS(0),
+         .WRP_FIFO_DEPTH(0),
+         .RRP_FIFO_DEPTH(0),
+         .RRP_USE_LL_FIFO(1),
+         .AGENT_FIXED_LATENCY(3),
+         .SEPARATE_READ_WRITE_STALLS(0),
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
+      )
+      s_endp
+      (
+         .clock(clock),
+         .resetn(resetn),
+         .m_intf(in_arb_intf),
+         .s_intf(out_arb_intf),
+         .s_readdatavalid(mout_rrp_datavalid),
+         .s_readdata(mout_rrp_data),
+         .s_writeack(mout_wrp_ack),
+         .wrp_intf(wrp_intf),
+         .rrp_intf(rrp_intf)
+      );
+
+   end
+   endgenerate
+
+   generate
+   begin:wrp
+   end
+   endgenerate
+
+   generate
+   begin:rrp
+      assign m[0].rrp_intf.datavalid = s.rrp_intf.datavalid;
+      assign m[0].rrp_intf.data = s.rrp_intf.data;
+      assign m[0].rrp_intf.id = s.rrp_intf.id;
+   end
+   endgenerate
+
+   assign mout_arb_request = s.out_arb_intf.req.request;
+   assign mout_arb_enable = s.out_arb_intf.req.enable;
+   assign mout_arb_read = s.out_arb_intf.req.read;
+   assign mout_arb_write = s.out_arb_intf.req.write;
+   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
+   assign mout_arb_address = s.out_arb_intf.req.address;
+   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
+   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
+   assign mout_arb_id = s.out_arb_intf.req.id;
+   assign s.out_arb_intf.stall = mout_arb_stall;
+   assign s.in_arb_intf.req = m[0].arb_intf.req;
+   assign m[0].arb_intf.stall = s.in_arb_intf.stall;
+endmodule
+
+/////////////////////////////////////////////////////////////////
+// MODULE gaussian_internal_ic_16263598144285338271
+/////////////////////////////////////////////////////////////////
+module gaussian_internal_ic_16263598144285338271
+(
+   input logic clock,
+   input logic resetn,
+   // ICM m
+   input logic m_arb_request [2],
+   input logic m_arb_enable [2],
+   input logic m_arb_read [2],
+   input logic m_arb_write [2],
+   input logic m_arb_burstcount [2],
+   input logic [8:0] m_arb_address [2],
+   input logic [31:0] m_arb_writedata [2],
+   input logic [3:0] m_arb_byteenable [2],
+   output logic m_arb_stall [2],
+   output logic m_wrp_ack [2],
+   output logic m_rrp_datavalid [2],
+   output logic [31:0] m_rrp_data [2],
+   // ICM mout
+   output logic mout_arb_request,
+   output logic mout_arb_enable,
+   output logic mout_arb_read,
+   output logic mout_arb_write,
+   output logic mout_arb_burstcount,
+   output logic [8:0] mout_arb_address,
+   output logic [31:0] mout_arb_writedata,
+   output logic [3:0] mout_arb_byteenable,
+   output logic mout_arb_id,
+   input logic mout_arb_stall,
+   input logic mout_wrp_ack,
+   input logic mout_rrp_datavalid,
+   input logic [31:0] mout_rrp_data
+);
+   genvar __i;
+   generate
+      for( __i = 0; __i < 2; __i = __i + 1 )
+      begin:m
+         logic id;
+         acl_ic_host_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) arb_intf();
+         acl_ic_wrp_intf
+         #(
+            .ID_W(1)
+         ) wrp_intf();
+         acl_ic_rrp_intf
+         #(
+            .DATA_W(32),
+            .ID_W(1)
+         ) rrp_intf();
+
+         assign id = __i;
+         // INST m_endp of acl_ic_host_endpoint
+         acl_ic_host_endpoint
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .NUM_READ_HOSTS(0),
+            .NUM_WRITE_HOSTS(2),
+            .ID(__i)
+         )
+         m_endp
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m_intf(m_intf),
+            .arb_intf(arb_intf),
+            .wrp_intf(wrp_intf),
+            .rrp_intf(rrp_intf)
+         );
+
+         assign m_intf.arb.req.request = m_arb_request[__i];
+         assign m_intf.arb.req.enable = m_arb_enable[__i];
+         assign m_intf.arb.req.read = m_arb_read[__i];
+         assign m_intf.arb.req.write = m_arb_write[__i];
+         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
+         assign m_intf.arb.req.address = m_arb_address[__i];
+         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
+         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
+         assign m_arb_stall[__i] = m_intf.arb.stall;
+         assign m_wrp_ack[__i] = m_intf.wrp.ack;
+         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
+         assign m_rrp_data[__i] = m_intf.rrp.data;
+         assign m_intf.arb.req.id = id;
+      end
+
+   endgenerate
+
+   generate
+   begin:s
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) in_arb_intf();
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) out_arb_intf();
+      acl_ic_wrp_intf
+      #(
+         .ID_W(1)
+      ) wrp_intf();
+      acl_ic_rrp_intf
+      #(
+         .DATA_W(32),
+         .ID_W(1)
+      ) rrp_intf();
+
+      // INST s_endp of acl_ic_agent_endpoint
+      acl_ic_agent_endpoint
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1),
+         .NUM_READ_HOSTS(0),
+         .NUM_WRITE_HOSTS(2),
+         .PIPELINE_RETURN_PATHS(0),
+         .WRP_FIFO_DEPTH(0),
+         .RRP_FIFO_DEPTH(0),
+         .RRP_USE_LL_FIFO(1),
+         .AGENT_FIXED_LATENCY(1),
+         .SEPARATE_READ_WRITE_STALLS(0),
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
+      )
+      s_endp
+      (
+         .clock(clock),
+         .resetn(resetn),
+         .m_intf(in_arb_intf),
+         .s_intf(out_arb_intf),
+         .s_readdatavalid(mout_rrp_datavalid),
+         .s_readdata(mout_rrp_data),
+         .s_writeack(mout_wrp_ack),
+         .wrp_intf(wrp_intf),
+         .rrp_intf(rrp_intf)
+      );
+
+   end
+   endgenerate
+
+   generate
+   begin:wrp
+      assign m[0].wrp_intf.ack = s.wrp_intf.ack;
+      assign m[0].wrp_intf.id = s.wrp_intf.id;
+      assign m[1].wrp_intf.ack = s.wrp_intf.ack;
+      assign m[1].wrp_intf.id = s.wrp_intf.id;
+   end
+   endgenerate
+
+   generate
+   begin:rrp
+   end
+   endgenerate
+
+   generate
+      for( __i = 0; __i < 1; __i = __i + 1 )
+      begin:a
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m0_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m1_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) mout_intf();
+
+         // INST a of acl_arb2
+         acl_arb2
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .PIPELINE("none"),
+            .KEEP_LAST_GRANT(1),
+            .NO_STALL_NETWORK(0),
+            .ASYNC_RESET(1),
+            .SYNCHRONIZE_RESET(0)
+         )
+         a
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m0_intf(m0_intf),
+            .m1_intf(m1_intf),
+            .mout_intf(mout_intf)
+         );
+
+      end
+
+   endgenerate
+
+   assign mout_arb_request = s.out_arb_intf.req.request;
+   assign mout_arb_enable = s.out_arb_intf.req.enable;
+   assign mout_arb_read = s.out_arb_intf.req.read;
+   assign mout_arb_write = s.out_arb_intf.req.write;
+   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
+   assign mout_arb_address = s.out_arb_intf.req.address;
+   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
+   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
+   assign mout_arb_id = s.out_arb_intf.req.id;
+   assign s.out_arb_intf.stall = mout_arb_stall;
+   assign s.in_arb_intf.req = a[0].mout_intf.req;
+   assign a[0].mout_intf.stall = s.in_arb_intf.stall;
+   assign a[0].m0_intf.req = m[0].arb_intf.req;
+   assign m[0].arb_intf.stall = a[0].m0_intf.stall;
+   assign a[0].m1_intf.req = m[1].arb_intf.req;
+   assign m[1].arb_intf.stall = a[0].m1_intf.stall;
+endmodule
+
+/////////////////////////////////////////////////////////////////
+// MODULE gaussian_internal_ic_3876351599500887222
+/////////////////////////////////////////////////////////////////
+module gaussian_internal_ic_3876351599500887222
+(
+   input logic clock,
+   input logic resetn,
+   // ICM m
+   input logic m_arb_request [2],
+   input logic m_arb_enable [2],
+   input logic m_arb_read [2],
+   input logic m_arb_write [2],
+   input logic m_arb_burstcount [2],
+   input logic [8:0] m_arb_address [2],
+   input logic [31:0] m_arb_writedata [2],
+   input logic [3:0] m_arb_byteenable [2],
+   output logic m_arb_stall [2],
+   output logic m_wrp_ack [2],
+   output logic m_rrp_datavalid [2],
+   output logic [31:0] m_rrp_data [2],
+   // ICM mout
+   output logic mout_arb_request,
+   output logic mout_arb_enable,
+   output logic mout_arb_read,
+   output logic mout_arb_write,
+   output logic mout_arb_burstcount,
+   output logic [8:0] mout_arb_address,
+   output logic [31:0] mout_arb_writedata,
+   output logic [3:0] mout_arb_byteenable,
+   output logic mout_arb_id,
+   input logic mout_arb_stall,
+   input logic mout_wrp_ack,
+   input logic mout_rrp_datavalid,
+   input logic [31:0] mout_rrp_data
+);
+   genvar __i;
+   generate
+      for( __i = 0; __i < 2; __i = __i + 1 )
+      begin:m
+         logic id;
+         acl_ic_host_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) arb_intf();
+         acl_ic_wrp_intf
+         #(
+            .ID_W(1)
+         ) wrp_intf();
+         acl_ic_rrp_intf
+         #(
+            .DATA_W(32),
+            .ID_W(1)
+         ) rrp_intf();
+
+         assign id = __i;
+         // INST m_endp of acl_ic_host_endpoint
+         acl_ic_host_endpoint
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .NUM_READ_HOSTS(2),
+            .NUM_WRITE_HOSTS(0),
+            .ID(__i)
+         )
+         m_endp
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m_intf(m_intf),
+            .arb_intf(arb_intf),
+            .wrp_intf(wrp_intf),
+            .rrp_intf(rrp_intf)
+         );
+
+         assign m_intf.arb.req.request = m_arb_request[__i];
+         assign m_intf.arb.req.enable = m_arb_enable[__i];
+         assign m_intf.arb.req.read = m_arb_read[__i];
+         assign m_intf.arb.req.write = m_arb_write[__i];
+         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
+         assign m_intf.arb.req.address = m_arb_address[__i];
+         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
+         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
+         assign m_arb_stall[__i] = m_intf.arb.stall;
+         assign m_wrp_ack[__i] = m_intf.wrp.ack;
+         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
+         assign m_rrp_data[__i] = m_intf.rrp.data;
+         assign m_intf.arb.req.id = id;
+      end
+
+   endgenerate
+
+   generate
+   begin:s
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) in_arb_intf();
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) out_arb_intf();
+      acl_ic_wrp_intf
+      #(
+         .ID_W(1)
+      ) wrp_intf();
+      acl_ic_rrp_intf
+      #(
+         .DATA_W(32),
+         .ID_W(1)
+      ) rrp_intf();
+
+      // INST s_endp of acl_ic_agent_endpoint
+      acl_ic_agent_endpoint
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1),
+         .NUM_READ_HOSTS(2),
+         .NUM_WRITE_HOSTS(0),
+         .PIPELINE_RETURN_PATHS(0),
+         .WRP_FIFO_DEPTH(0),
+         .RRP_FIFO_DEPTH(0),
+         .RRP_USE_LL_FIFO(1),
+         .AGENT_FIXED_LATENCY(1),
+         .SEPARATE_READ_WRITE_STALLS(0),
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
+      )
+      s_endp
+      (
+         .clock(clock),
+         .resetn(resetn),
+         .m_intf(in_arb_intf),
+         .s_intf(out_arb_intf),
+         .s_readdatavalid(mout_rrp_datavalid),
+         .s_readdata(mout_rrp_data),
+         .s_writeack(mout_wrp_ack),
+         .wrp_intf(wrp_intf),
+         .rrp_intf(rrp_intf)
+      );
+
+   end
+   endgenerate
+
+   generate
+   begin:wrp
+   end
+   endgenerate
+
+   generate
+   begin:rrp
+      assign m[0].rrp_intf.datavalid = s.rrp_intf.datavalid;
+      assign m[0].rrp_intf.data = s.rrp_intf.data;
+      assign m[0].rrp_intf.id = s.rrp_intf.id;
+      assign m[1].rrp_intf.datavalid = s.rrp_intf.datavalid;
+      assign m[1].rrp_intf.data = s.rrp_intf.data;
+      assign m[1].rrp_intf.id = s.rrp_intf.id;
+   end
+   endgenerate
+
+   generate
+      for( __i = 0; __i < 1; __i = __i + 1 )
+      begin:a
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m0_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m1_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) mout_intf();
+
+         // INST a of acl_arb2
+         acl_arb2
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .PIPELINE("none"),
+            .KEEP_LAST_GRANT(1),
+            .NO_STALL_NETWORK(0),
+            .ASYNC_RESET(1),
+            .SYNCHRONIZE_RESET(0)
+         )
+         a
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m0_intf(m0_intf),
+            .m1_intf(m1_intf),
+            .mout_intf(mout_intf)
+         );
+
+      end
+
+   endgenerate
+
+   assign mout_arb_request = s.out_arb_intf.req.request;
+   assign mout_arb_enable = s.out_arb_intf.req.enable;
+   assign mout_arb_read = s.out_arb_intf.req.read;
+   assign mout_arb_write = s.out_arb_intf.req.write;
+   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
+   assign mout_arb_address = s.out_arb_intf.req.address;
+   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
+   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
+   assign mout_arb_id = s.out_arb_intf.req.id;
+   assign s.out_arb_intf.stall = mout_arb_stall;
+   assign s.in_arb_intf.req = a[0].mout_intf.req;
+   assign a[0].mout_intf.stall = s.in_arb_intf.stall;
+   assign a[0].m0_intf.req = m[0].arb_intf.req;
+   assign m[0].arb_intf.stall = a[0].m0_intf.stall;
+   assign a[0].m1_intf.req = m[1].arb_intf.req;
+   assign m[1].arb_intf.stall = a[0].m1_intf.stall;
+endmodule
+
+/////////////////////////////////////////////////////////////////
+// MODULE gaussian_internal_ic_2097089478639511620
+/////////////////////////////////////////////////////////////////
+module gaussian_internal_ic_2097089478639511620
+(
+   input logic clock,
+   input logic resetn,
+   // ICM m
+   input logic m_arb_request [1],
+   input logic m_arb_enable [1],
+   input logic m_arb_read [1],
+   input logic m_arb_write [1],
+   input logic m_arb_burstcount [1],
+   input logic [8:0] m_arb_address [1],
+   input logic [31:0] m_arb_writedata [1],
+   input logic [3:0] m_arb_byteenable [1],
+   output logic m_arb_stall [1],
+   output logic m_wrp_ack [1],
+   output logic m_rrp_datavalid [1],
+   output logic [31:0] m_rrp_data [1],
+   // ICM mout
+   output logic mout_arb_request,
+   output logic mout_arb_enable,
+   output logic mout_arb_read,
+   output logic mout_arb_write,
+   output logic mout_arb_burstcount,
+   output logic [8:0] mout_arb_address,
+   output logic [31:0] mout_arb_writedata,
+   output logic [3:0] mout_arb_byteenable,
+   output logic mout_arb_id,
+   input logic mout_arb_stall,
+   input logic mout_wrp_ack,
+   input logic mout_rrp_datavalid,
+   input logic [31:0] mout_rrp_data
+);
+   genvar __i;
+   generate
+      for( __i = 0; __i < 1; __i = __i + 1 )
+      begin:m
+         logic id;
+         acl_ic_host_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) arb_intf();
+         acl_ic_wrp_intf
+         #(
+            .ID_W(1)
+         ) wrp_intf();
+         acl_ic_rrp_intf
+         #(
+            .DATA_W(32),
+            .ID_W(1)
+         ) rrp_intf();
+
+         assign id = __i;
+         // INST m_endp of acl_ic_host_endpoint
+         acl_ic_host_endpoint
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(9),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .NUM_READ_HOSTS(1),
+            .NUM_WRITE_HOSTS(0),
+            .ID(__i)
+         )
+         m_endp
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m_intf(m_intf),
+            .arb_intf(arb_intf),
+            .wrp_intf(wrp_intf),
+            .rrp_intf(rrp_intf)
+         );
+
+         assign m_intf.arb.req.request = m_arb_request[__i];
+         assign m_intf.arb.req.enable = m_arb_enable[__i];
+         assign m_intf.arb.req.read = m_arb_read[__i];
+         assign m_intf.arb.req.write = m_arb_write[__i];
+         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
+         assign m_intf.arb.req.address = m_arb_address[__i];
+         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
+         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
+         assign m_arb_stall[__i] = m_intf.arb.stall;
+         assign m_wrp_ack[__i] = m_intf.wrp.ack;
+         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
+         assign m_rrp_data[__i] = m_intf.rrp.data;
+         assign m_intf.arb.req.id = id;
+      end
+
+   endgenerate
+
+   generate
+   begin:s
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) in_arb_intf();
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) out_arb_intf();
+      acl_ic_wrp_intf
+      #(
+         .ID_W(1)
+      ) wrp_intf();
+      acl_ic_rrp_intf
+      #(
+         .DATA_W(32),
+         .ID_W(1)
+      ) rrp_intf();
+
+      // INST s_endp of acl_ic_agent_endpoint
+      acl_ic_agent_endpoint
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(9),
+         .BYTEENA_W(4),
+         .ID_W(1),
+         .NUM_READ_HOSTS(1),
+         .NUM_WRITE_HOSTS(0),
+         .PIPELINE_RETURN_PATHS(0),
+         .WRP_FIFO_DEPTH(0),
+         .RRP_FIFO_DEPTH(0),
+         .RRP_USE_LL_FIFO(1),
+         .AGENT_FIXED_LATENCY(1),
+         .SEPARATE_READ_WRITE_STALLS(0),
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
+      )
+      s_endp
+      (
+         .clock(clock),
+         .resetn(resetn),
+         .m_intf(in_arb_intf),
+         .s_intf(out_arb_intf),
+         .s_readdatavalid(mout_rrp_datavalid),
+         .s_readdata(mout_rrp_data),
+         .s_writeack(mout_wrp_ack),
+         .wrp_intf(wrp_intf),
+         .rrp_intf(rrp_intf)
+      );
+
+   end
+   endgenerate
+
+   generate
+   begin:wrp
+   end
+   endgenerate
+
+   generate
+   begin:rrp
+      assign m[0].rrp_intf.datavalid = s.rrp_intf.datavalid;
+      assign m[0].rrp_intf.data = s.rrp_intf.data;
+      assign m[0].rrp_intf.id = s.rrp_intf.id;
+   end
+   endgenerate
+
+   assign mout_arb_request = s.out_arb_intf.req.request;
+   assign mout_arb_enable = s.out_arb_intf.req.enable;
+   assign mout_arb_read = s.out_arb_intf.req.read;
+   assign mout_arb_write = s.out_arb_intf.req.write;
+   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
+   assign mout_arb_address = s.out_arb_intf.req.address;
+   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
+   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
+   assign mout_arb_id = s.out_arb_intf.req.id;
+   assign s.out_arb_intf.stall = mout_arb_stall;
+   assign s.in_arb_intf.req = m[0].arb_intf.req;
+   assign m[0].arb_intf.stall = s.in_arb_intf.stall;
 endmodule
 

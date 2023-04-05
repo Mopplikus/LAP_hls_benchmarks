@@ -25,7 +25,7 @@ module dpic_example (
 
 	hls_sim_component_dpi_controller #(
 		.COMPONENT_NAME               ("example"),
-		.COMPONENT_MANGLED_NAME       ("_Z7examplePfS_"),
+		.COMPONENT_MANGLED_NAME       ("_Z7examplev"),
 		.RETURN_DATAWIDTH             (32),
 		.COMPONENT_NUM_AGENTS         (0),
 		.COMPONENT_HAS_AGENT_RETURN   (0),

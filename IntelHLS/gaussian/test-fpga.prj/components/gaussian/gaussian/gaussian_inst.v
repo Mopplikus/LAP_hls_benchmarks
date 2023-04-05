@@ -5,8 +5,7 @@
 		.busy                 (_connected_to_busy_),                 //  output,   width = 1,          .stall
 		.done                 (_connected_to_done_),                 //  output,   width = 1,    return.valid
 		.stall                (_connected_to_stall_),                //   input,   width = 1,          .stall
-		.c                    (_connected_to_c_),                    //   input,  width = 64,         c.data
-		.A                    (_connected_to_A_),                    //   input,  width = 64,         A.data
+		.A_r                  (_connected_to_A_r_),                  //   input,  width = 64,       A_r.data
 		.avmm_0_rw_address    (_connected_to_avmm_0_rw_address_),    //  output,  width = 64, avmm_0_rw.address
 		.avmm_0_rw_byteenable (_connected_to_avmm_0_rw_byteenable_), //  output,   width = 8,          .byteenable
 		.avmm_0_rw_read       (_connected_to_avmm_0_rw_read_),       //  output,   width = 1,          .read

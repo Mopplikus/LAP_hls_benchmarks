@@ -16,17 +16,17 @@
 
 // SystemVerilog created from gaussian_B6_branch
 // Created for function/kernel gaussian
-// SystemVerilog created on Wed Mar 29 19:22:58 2023
+// SystemVerilog created on Tue Apr  4 21:38:49 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module gaussian_B6_branch (
-    input wire [31:0] in_add40_push173,
-    input wire [0:0] in_notcmp3142_pop205,
+    input wire [31:0] in_c0_exe41643,
+    input wire [0:0] in_cmp193337,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [31:0] out_add40_push173,
+    output wire [31:0] out_c0_exe41643,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
     output wire [0:0] out_valid_out_1,
@@ -35,7 +35,8 @@ module gaussian_B6_branch (
     );
 
     wire [0:0] VCC_q;
-    reg [31:0] add40_push173_reg_q;
+    reg [31:0] c0_exe41643_reg_q;
+    wire [0:0] cmp193337_cmp_q;
     wire [0:0] gaussian_B6_branch_enable_q;
     wire [0:0] gaussian_B6_branch_enable_not_q;
     wire [0:0] not_stall_in_0_q;
@@ -44,7 +45,6 @@ module gaussian_B6_branch (
     wire [0:0] not_valid_1_q;
     wire [0:0] not_valid_or_not_stall_0_q;
     wire [0:0] not_valid_or_not_stall_1_q;
-    wire [0:0] notcmp3142_pop205_cmp_q;
     reg [0:0] valid_0_reg_q;
     reg [0:0] valid_1_reg_q;
     wire [0:0] valid_out_0_and_q;
@@ -54,14 +54,14 @@ module gaussian_B6_branch (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // not_stall_in_1(LOGICAL,11)
+    // not_stall_in_1(LOGICAL,12)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // notcmp3142_pop205_cmp(LOGICAL,16)
-    assign notcmp3142_pop205_cmp_q = ~ (in_notcmp3142_pop205);
+    // cmp193337_cmp(LOGICAL,3)
+    assign cmp193337_cmp_q = ~ (in_cmp193337);
 
     // valid_out_1_and(LOGICAL,24)
-    assign valid_out_1_and_q = in_valid_in & notcmp3142_pop205_cmp_q;
+    assign valid_out_1_and_q = in_valid_in & cmp193337_cmp_q;
 
     // valid_1_reg(REG,22)
     always @ (posedge clock or negedge resetn)
@@ -76,17 +76,17 @@ module gaussian_B6_branch (
         end
     end
 
-    // not_valid_1(LOGICAL,13)
+    // not_valid_1(LOGICAL,14)
     assign not_valid_1_q = ~ (valid_1_reg_q);
 
-    // not_valid_or_not_stall_1(LOGICAL,15)
+    // not_valid_or_not_stall_1(LOGICAL,16)
     assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
 
-    // not_stall_in_0(LOGICAL,10)
+    // not_stall_in_0(LOGICAL,11)
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
     // valid_out_0_and(LOGICAL,23)
-    assign valid_out_0_and_q = in_valid_in & in_notcmp3142_pop205;
+    assign valid_out_0_and_q = in_valid_in & in_cmp193337;
 
     // valid_0_reg(REG,21)
     always @ (posedge clock or negedge resetn)
@@ -101,32 +101,32 @@ module gaussian_B6_branch (
         end
     end
 
-    // not_valid_0(LOGICAL,12)
+    // not_valid_0(LOGICAL,13)
     assign not_valid_0_q = ~ (valid_0_reg_q);
 
-    // not_valid_or_not_stall_0(LOGICAL,14)
+    // not_valid_or_not_stall_0(LOGICAL,15)
     assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
 
-    // gaussian_B6_branch_enable(LOGICAL,3)
+    // gaussian_B6_branch_enable(LOGICAL,4)
     assign gaussian_B6_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
 
-    // add40_push173_reg(REG,2)
+    // c0_exe41643_reg(REG,2)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            add40_push173_reg_q <= $unsigned(32'b00000000000000000000000000000000);
+            c0_exe41643_reg_q <= $unsigned(32'b00000000000000000000000000000000);
         end
         else if (gaussian_B6_branch_enable_q == 1'b1)
         begin
-            add40_push173_reg_q <= in_add40_push173;
+            c0_exe41643_reg_q <= in_c0_exe41643;
         end
     end
 
-    // out_add40_push173(GPOUT,17)
-    assign out_add40_push173 = add40_push173_reg_q;
+    // out_c0_exe41643(GPOUT,17)
+    assign out_c0_exe41643 = c0_exe41643_reg_q;
 
-    // gaussian_B6_branch_enable_not(LOGICAL,4)
+    // gaussian_B6_branch_enable_not(LOGICAL,5)
     assign gaussian_B6_branch_enable_not_q = ~ (gaussian_B6_branch_enable_q);
 
     // out_stall_out(GPOUT,18)

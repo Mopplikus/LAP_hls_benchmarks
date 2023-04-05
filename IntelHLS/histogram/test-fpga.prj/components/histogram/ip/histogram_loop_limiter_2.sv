@@ -16,7 +16,7 @@
 
 // SystemVerilog created from loop_limiter_histogram2
 // Created for function/kernel histogram
-// SystemVerilog created on Tue Apr  4 14:08:06 2023
+// SystemVerilog created on Tue Apr  4 22:51:31 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -62,7 +62,7 @@ module histogram_loop_limiter_2 (
         .EXIT_WIDTH(1),
         .SYNCHRONIZE_RESET(0),
         .THRESHOLD(1),
-        .THRESHOLD_NO_DELAY(1)
+        .THRESHOLD_NO_DELAY(0)
     ) thelimiter (
         .i_stall(limiter_i_stall_bitsignaltemp),
         .i_stall_exit(limiter_i_stall_exit_bitsignaltemp),

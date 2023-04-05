@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pipeline_keep_going_example0
 // Created for function/kernel example
-// SystemVerilog created on Tue Mar 14 13:54:07 2023
+// SystemVerilog created on Tue Apr  4 21:14:17 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -118,7 +118,7 @@ module example_i_llvm_fpga_pipeline_keep_going_0 (
     acl_pipeline #(
         .FIFO_DEPTH(1),
         .ASYNC_RESET(1),
-        .ENABLED(1),
+        .ENABLED(0),
         .STYLE("SPECULATIVE"),
         .SYNCHRONIZE_RESET(0)
     ) thei_llvm_fpga_pipeline_keep_going_example1 (

@@ -4,41 +4,23 @@
 
 `timescale 1 ps / 1 ps
 module stencil_2d (
-		input  wire        clock,                //      clock.clk
-		input  wire        resetn,               //      reset.reset_n
-		input  wire        start,                //       call.valid
-		output wire        busy,                 //           .stall
-		output wire        done,                 //     return.valid
-		input  wire        stall,                //           .stall
-		output wire [31:0] returndata,           // returndata.data
-		input  wire [63:0] orig,                 //       orig.data
-		input  wire [63:0] sol,                  //        sol.data
-		input  wire [63:0] filter,               //     filter.data
-		output wire [63:0] avmm_0_rw_address,    //  avmm_0_rw.address
-		output wire [7:0]  avmm_0_rw_byteenable, //           .byteenable
-		output wire        avmm_0_rw_read,       //           .read
-		input  wire [63:0] avmm_0_rw_readdata,   //           .readdata
-		output wire        avmm_0_rw_write,      //           .write
-		output wire [63:0] avmm_0_rw_writedata   //           .writedata
+		input  wire        clock,      //      clock.clk
+		input  wire        resetn,     //      reset.reset_n
+		input  wire        start,      //       call.valid
+		output wire        busy,       //           .stall
+		output wire        done,       //     return.valid
+		input  wire        stall,      //           .stall
+		output wire [31:0] returndata  // returndata.data
 	);
 
 	stencil_2d_internal stencil_2d_internal_inst (
-		.clock                (clock),                //   input,   width = 1,      clock.clk
-		.resetn               (resetn),               //   input,   width = 1,      reset.reset_n
-		.start                (start),                //   input,   width = 1,       call.valid
-		.busy                 (busy),                 //  output,   width = 1,           .stall
-		.done                 (done),                 //  output,   width = 1,     return.valid
-		.stall                (stall),                //   input,   width = 1,           .stall
-		.returndata           (returndata),           //  output,  width = 32, returndata.data
-		.orig                 (orig),                 //   input,  width = 64,       orig.data
-		.sol                  (sol),                  //   input,  width = 64,        sol.data
-		.filter               (filter),               //   input,  width = 64,     filter.data
-		.avmm_0_rw_address    (avmm_0_rw_address),    //  output,  width = 64,  avmm_0_rw.address
-		.avmm_0_rw_byteenable (avmm_0_rw_byteenable), //  output,   width = 8,           .byteenable
-		.avmm_0_rw_read       (avmm_0_rw_read),       //  output,   width = 1,           .read
-		.avmm_0_rw_readdata   (avmm_0_rw_readdata),   //   input,  width = 64,           .readdata
-		.avmm_0_rw_write      (avmm_0_rw_write),      //  output,   width = 1,           .write
-		.avmm_0_rw_writedata  (avmm_0_rw_writedata)   //  output,  width = 64,           .writedata
+		.clock      (clock),      //   input,   width = 1,      clock.clk
+		.resetn     (resetn),     //   input,   width = 1,      reset.reset_n
+		.start      (start),      //   input,   width = 1,       call.valid
+		.busy       (busy),       //  output,   width = 1,           .stall
+		.done       (done),       //  output,   width = 1,     return.valid
+		.stall      (stall),      //   input,   width = 1,           .stall
+		.returndata (returndata)  //  output,  width = 32, returndata.data
 	);
 
 endmodule

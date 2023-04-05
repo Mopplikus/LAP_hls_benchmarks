@@ -16,20 +16,23 @@
 
 // SystemVerilog created from gaussian_B5_merge
 // Created for function/kernel gaussian
-// SystemVerilog created on Wed Mar 29 19:22:58 2023
+// SystemVerilog created on Tue Apr  4 21:38:49 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module gaussian_B5_merge (
-    input wire [31:0] in_add44_0,
-    input wire [31:0] in_add44_1,
-    input wire [0:0] in_forked21_0,
-    input wire [0:0] in_forked21_1,
+    input wire [0:0] in_forked68_0,
+    input wire [0:0] in_forked68_1,
+    input wire [63:0] in_idxprom103_0,
+    input wire [63:0] in_idxprom103_1,
+    input wire [0:0] in_notcmp83104_0,
+    input wire [0:0] in_notcmp83104_1,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
     input wire [0:0] in_valid_in_1,
-    output wire [31:0] out_add44,
-    output wire [0:0] out_forked21,
+    output wire [0:0] out_forked68,
+    output wire [63:0] out_idxprom103,
+    output wire [0:0] out_notcmp83104,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_stall_out_1,
     output wire [0:0] out_valid_out,
@@ -38,10 +41,12 @@ module gaussian_B5_merge (
     );
 
     wire [0:0] VCC_q;
-    wire [0:0] add44_mux_s;
-    reg [31:0] add44_mux_q;
-    wire [0:0] forked21_mux_s;
-    reg [0:0] forked21_mux_q;
+    wire [0:0] forked68_mux_s;
+    reg [0:0] forked68_mux_q;
+    wire [0:0] idxprom103_mux_s;
+    reg [63:0] idxprom103_mux_q;
+    wire [0:0] notcmp83104_mux_s;
+    reg [0:0] notcmp83104_mux_q;
     wire [0:0] stall_out_q;
     wire [0:0] stall_out_1_specific_q;
     wire [0:0] valid_or_q;
@@ -50,50 +55,64 @@ module gaussian_B5_merge (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // add44_mux(MUX,2)
-    assign add44_mux_s = in_valid_in_0;
-    always @(add44_mux_s or in_add44_1 or in_add44_0)
+    // forked68_mux(MUX,2)
+    assign forked68_mux_s = in_valid_in_0;
+    always @(forked68_mux_s or in_forked68_1 or in_forked68_0)
     begin
-        unique case (add44_mux_s)
-            1'b0 : add44_mux_q = in_add44_1;
-            1'b1 : add44_mux_q = in_add44_0;
-            default : add44_mux_q = 32'b0;
+        unique case (forked68_mux_s)
+            1'b0 : forked68_mux_q = in_forked68_1;
+            1'b1 : forked68_mux_q = in_forked68_0;
+            default : forked68_mux_q = 1'b0;
         endcase
     end
 
-    // out_add44(GPOUT,11)
-    assign out_add44 = add44_mux_q;
+    // out_forked68(GPOUT,14)
+    assign out_forked68 = forked68_mux_q;
 
-    // forked21_mux(MUX,3)
-    assign forked21_mux_s = in_valid_in_0;
-    always @(forked21_mux_s or in_forked21_1 or in_forked21_0)
+    // idxprom103_mux(MUX,3)
+    assign idxprom103_mux_s = in_valid_in_0;
+    always @(idxprom103_mux_s or in_idxprom103_1 or in_idxprom103_0)
     begin
-        unique case (forked21_mux_s)
-            1'b0 : forked21_mux_q = in_forked21_1;
-            1'b1 : forked21_mux_q = in_forked21_0;
-            default : forked21_mux_q = 1'b0;
+        unique case (idxprom103_mux_s)
+            1'b0 : idxprom103_mux_q = in_idxprom103_1;
+            1'b1 : idxprom103_mux_q = in_idxprom103_0;
+            default : idxprom103_mux_q = 64'b0;
         endcase
     end
 
-    // out_forked21(GPOUT,12)
-    assign out_forked21 = forked21_mux_q;
+    // out_idxprom103(GPOUT,15)
+    assign out_idxprom103 = idxprom103_mux_q;
 
-    // valid_or(LOGICAL,18)
+    // notcmp83104_mux(MUX,13)
+    assign notcmp83104_mux_s = in_valid_in_0;
+    always @(notcmp83104_mux_s or in_notcmp83104_1 or in_notcmp83104_0)
+    begin
+        unique case (notcmp83104_mux_s)
+            1'b0 : notcmp83104_mux_q = in_notcmp83104_1;
+            1'b1 : notcmp83104_mux_q = in_notcmp83104_0;
+            default : notcmp83104_mux_q = 1'b0;
+        endcase
+    end
+
+    // out_notcmp83104(GPOUT,16)
+    assign out_notcmp83104 = notcmp83104_mux_q;
+
+    // valid_or(LOGICAL,22)
     assign valid_or_q = in_valid_in_0 | in_valid_in_1;
 
-    // stall_out(LOGICAL,16)
+    // stall_out(LOGICAL,20)
     assign stall_out_q = valid_or_q & in_stall_in;
 
-    // out_stall_out_0(GPOUT,13)
+    // out_stall_out_0(GPOUT,17)
     assign out_stall_out_0 = stall_out_q;
 
-    // stall_out_1_specific(LOGICAL,17)
+    // stall_out_1_specific(LOGICAL,21)
     assign stall_out_1_specific_q = in_valid_in_0 | stall_out_q;
 
-    // out_stall_out_1(GPOUT,14)
+    // out_stall_out_1(GPOUT,18)
     assign out_stall_out_1 = stall_out_1_specific_q;
 
-    // out_valid_out(GPOUT,15)
+    // out_valid_out(GPOUT,19)
     assign out_valid_out = valid_or_q;
 
 endmodule

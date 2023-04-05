@@ -1,1 +1,1 @@
-var infoJSON={"compileInfo":{"nodes":[{"command":"i++ gaussian.cpp -v -march=Arria 10 -o test-fpga","family":"Arria10, 10AX115U1F45I1SG","id":1,"name":"./test-fpga","product":"HLS","quartus":"21.4.0 Build 67 Pro","time":"Wed Mar 29 19:23:16 2023","version":"21.4.0 Build 53.1"}]}};
+var infoJSON={"compileInfo":{"nodes":[{"command":"i++ gaussian.cpp -v -march=Arria 10 -o test-fpga","family":"Arria10, 10AX115U1F45I1SG","id":1,"name":"./test-fpga","product":"HLS","quartus":"21.4.0 Build 67 Pro","time":"Tue Apr  4 21:39:07 2023","version":"21.4.0 Build 53.1"}]}};

@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_sfc_logic_s_c0_in_for_body_histograms_c0_enter582_histogram0
 // Created for function/kernel histogram
-// SystemVerilog created on Tue Apr  4 14:08:06 2023
+// SystemVerilog created on Tue Apr  4 22:51:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -77,11 +77,11 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     wire [63:0] c_histogram_feature_pmem_q;
     wire [63:0] c_histogram_hist_pmem_q;
     wire [63:0] c_histogram_weight_pmem_q;
+    wire [10:0] c_i11_158_q;
+    wire [10:0] c_i11_99856_q;
     wire [31:0] c_i32_053_q;
     wire [31:0] c_i32_154_q;
     wire [3:0] c_i4_750_q;
-    wire [7:0] c_i8_158_q;
-    wire [7:0] c_i8_9856_q;
     wire [32:0] i_add_histogram13_a;
     wire [32:0] i_add_histogram13_b;
     logic [32:0] i_add_histogram13_o;
@@ -97,10 +97,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     wire [2:0] i_cleanups_shl46_histogram5_vt_select_3_b;
     wire [31:0] i_conv_histogram19_out_primWireOut;
     wire [0:0] i_first_cleanup_xor48_histogram4_q;
-    wire [8:0] i_fpga_indvars_iv_next_histogram32_a;
-    wire [8:0] i_fpga_indvars_iv_next_histogram32_b;
-    logic [8:0] i_fpga_indvars_iv_next_histogram32_o;
-    wire [8:0] i_fpga_indvars_iv_next_histogram32_q;
+    wire [11:0] i_fpga_indvars_iv_next_histogram32_a;
+    wire [11:0] i_fpga_indvars_iv_next_histogram32_b;
+    logic [11:0] i_fpga_indvars_iv_next_histogram32_o;
+    wire [11:0] i_fpga_indvars_iv_next_histogram32_q;
     wire [63:0] i_idxprom_histogram15_vt_join_q;
     wire [31:0] i_idxprom_histogram15_vt_select_31_b;
     wire [31:0] i_llvm_fpga_mem_memdep_4_histogram21_out_memdep_4_histogram_avm_address;
@@ -130,14 +130,16 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     wire [0:0] i_llvm_fpga_pipeline_keep_going42_histogram6_out_initeration_stall_out;
     wire [0:0] i_llvm_fpga_pipeline_keep_going42_histogram6_out_not_exitcond_stall_out;
     wire [0:0] i_llvm_fpga_pipeline_keep_going42_histogram6_out_pipeline_valid_out;
+    wire [10:0] i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24_out_data_out;
+    wire [0:0] i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24_out_feedback_stall_out_10;
     wire [31:0] i_llvm_fpga_pop_i32_i_023_pop11_histogram12_out_data_out;
     wire [0:0] i_llvm_fpga_pop_i32_i_023_pop11_histogram12_out_feedback_stall_out_11;
     wire [3:0] i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2_out_data_out;
     wire [0:0] i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2_out_feedback_stall_out_13;
     wire [3:0] i_llvm_fpga_pop_i4_initerations40_pop12_histogram7_out_data_out;
     wire [0:0] i_llvm_fpga_pop_i4_initerations40_pop12_histogram7_out_feedback_stall_out_12;
-    wire [7:0] i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24_out_data_out;
-    wire [0:0] i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24_out_feedback_stall_out_10;
+    wire [15:0] i_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33_out_feedback_out_10;
+    wire [0:0] i_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33_out_feedback_valid_out_10;
     wire [0:0] i_llvm_fpga_push_i1_lastiniteration44_histogram11_out_feedback_out_6;
     wire [0:0] i_llvm_fpga_push_i1_lastiniteration44_histogram11_out_feedback_valid_out_6;
     wire [0:0] i_llvm_fpga_push_i1_notexitcond52_histogram28_out_feedback_out_7;
@@ -148,8 +150,6 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     wire [0:0] i_llvm_fpga_push_i4_cleanups45_push13_histogram31_out_feedback_valid_out_13;
     wire [7:0] i_llvm_fpga_push_i4_initerations40_push12_histogram9_out_feedback_out_12;
     wire [0:0] i_llvm_fpga_push_i4_initerations40_push12_histogram9_out_feedback_valid_out_12;
-    wire [7:0] i_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33_out_feedback_out_10;
-    wire [0:0] i_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33_out_feedback_valid_out_10;
     wire [0:0] i_masked51_histogram34_qi;
     reg [0:0] i_masked51_histogram34_q;
     wire [31:0] i_mul_histogram18_vt_join_q;
@@ -161,28 +161,28 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     wire [0:0] i_notcmp38_histogram27_q;
     wire [0:0] i_or49_histogram29_q;
     wire [31:0] bgTrunc_i_add_histogram13_sel_x_b;
-    wire [7:0] bgTrunc_i_fpga_indvars_iv_next_histogram32_sel_x_b;
-    wire [9:0] i_arrayidx1_histogram0_add_x_a;
-    wire [9:0] i_arrayidx1_histogram0_add_x_b;
-    logic [9:0] i_arrayidx1_histogram0_add_x_o;
-    wire [9:0] i_arrayidx1_histogram0_add_x_q;
+    wire [10:0] bgTrunc_i_fpga_indvars_iv_next_histogram32_sel_x_b;
+    wire [12:0] i_arrayidx1_histogram0_add_x_a;
+    wire [12:0] i_arrayidx1_histogram0_add_x_b;
+    logic [12:0] i_arrayidx1_histogram0_add_x_o;
+    wire [12:0] i_arrayidx1_histogram0_add_x_q;
     wire [63:0] i_arrayidx1_histogram0_append_upper_bits_x_q;
-    wire [6:0] i_arrayidx1_histogram0_narrow_x_b;
-    wire [8:0] i_arrayidx1_histogram0_shift_join_x_q;
-    wire [8:0] i_arrayidx1_histogram0_dupName_0_trunc_sel_x_b;
-    wire [8:0] i_arrayidx1_histogram0_dupName_2_trunc_sel_x_b;
-    wire [9:0] i_arrayidx52_histogram0_add_x_a;
-    wire [9:0] i_arrayidx52_histogram0_add_x_b;
-    logic [9:0] i_arrayidx52_histogram0_add_x_o;
-    wire [9:0] i_arrayidx52_histogram0_add_x_q;
+    wire [9:0] i_arrayidx1_histogram0_narrow_x_b;
+    wire [11:0] i_arrayidx1_histogram0_shift_join_x_q;
+    wire [11:0] i_arrayidx1_histogram0_dupName_0_trunc_sel_x_b;
+    wire [11:0] i_arrayidx1_histogram0_dupName_2_trunc_sel_x_b;
+    wire [12:0] i_arrayidx52_histogram0_add_x_a;
+    wire [12:0] i_arrayidx52_histogram0_add_x_b;
+    logic [12:0] i_arrayidx52_histogram0_add_x_o;
+    wire [12:0] i_arrayidx52_histogram0_add_x_q;
     wire [63:0] i_arrayidx52_histogram0_append_upper_bits_x_q;
-    wire [8:0] i_arrayidx52_histogram0_dupName_2_trunc_sel_x_b;
-    wire [9:0] i_arrayidx73_histogram0_add_x_a;
-    wire [9:0] i_arrayidx73_histogram0_add_x_b;
-    logic [9:0] i_arrayidx73_histogram0_add_x_o;
-    wire [9:0] i_arrayidx73_histogram0_add_x_q;
+    wire [11:0] i_arrayidx52_histogram0_dupName_2_trunc_sel_x_b;
+    wire [12:0] i_arrayidx73_histogram0_add_x_a;
+    wire [12:0] i_arrayidx73_histogram0_add_x_b;
+    logic [12:0] i_arrayidx73_histogram0_add_x_o;
+    wire [12:0] i_arrayidx73_histogram0_add_x_q;
     wire [63:0] i_arrayidx73_histogram0_append_upper_bits_x_q;
-    wire [8:0] i_arrayidx73_histogram0_dupName_2_trunc_sel_x_b;
+    wire [11:0] i_arrayidx73_histogram0_dupName_2_trunc_sel_x_b;
     wire [0:0] i_first_cleanup47_histogram3_sel_x_b;
     wire [63:0] i_idxprom_histogram15_sel_x_b;
     wire [0:0] i_last_initeration43_histogram10_sel_x_b;
@@ -210,25 +210,21 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     wire [3:0] rightShiftStage0Idx1_uid185_i_next_initerations41_histogram0_shift_x_q;
     wire [0:0] rightShiftStage0_uid187_i_next_initerations41_histogram0_shift_x_s;
     reg [3:0] rightShiftStage0_uid187_i_next_initerations41_histogram0_shift_x_q;
-    wire [54:0] i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_b;
-    wire [8:0] i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_c;
-    wire [54:0] i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_b;
-    wire [8:0] i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_c;
-    wire [54:0] i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_b;
-    wire [8:0] i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_c;
-    reg [0:0] redist0_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q;
-    reg [0:0] redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q;
-    reg [0:0] redist2_sync_together73_aunroll_x_in_i_valid_1_q;
-    reg [0:0] redist3_sync_together73_aunroll_x_in_i_valid_2_q;
-    reg [0:0] redist4_sync_together73_aunroll_x_in_i_valid_6_q;
-    reg [0:0] redist4_sync_together73_aunroll_x_in_i_valid_6_delay_0;
-    reg [0:0] redist4_sync_together73_aunroll_x_in_i_valid_6_delay_1;
-    reg [0:0] redist4_sync_together73_aunroll_x_in_i_valid_6_delay_2;
-    reg [0:0] redist5_sync_together73_aunroll_x_in_i_valid_7_q;
-    reg [8:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_q;
-    reg [8:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_0;
-    reg [8:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_1;
-    reg [8:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_2;
+    wire [51:0] i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_b;
+    wire [11:0] i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_c;
+    wire [51:0] i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_b;
+    wire [11:0] i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_c;
+    wire [51:0] i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_b;
+    wire [11:0] i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_c;
+    reg [0:0] redist0_valid_fanout_reg0_q_1_q;
+    reg [0:0] redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q;
+    reg [0:0] redist2_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q;
+    reg [0:0] redist3_sync_together73_aunroll_x_in_i_valid_1_q;
+    reg [0:0] redist4_sync_together73_aunroll_x_in_i_valid_2_q;
+    reg [0:0] redist5_sync_together73_aunroll_x_in_i_valid_6_q;
+    reg [0:0] redist5_sync_together73_aunroll_x_in_i_valid_6_delay_0;
+    reg [0:0] redist5_sync_together73_aunroll_x_in_i_valid_6_delay_1;
+    reg [0:0] redist5_sync_together73_aunroll_x_in_i_valid_6_delay_2;
     reg [0:0] redist7_i_masked51_histogram34_q_6_q;
     reg [0:0] redist7_i_masked51_histogram34_q_6_delay_0;
     reg [0:0] redist7_i_masked51_histogram34_q_6_delay_1;
@@ -243,7 +239,24 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     reg [0:0] redist12_i_first_cleanup_xor48_histogram4_q_5_delay_1;
     reg [0:0] redist12_i_first_cleanup_xor48_histogram4_q_5_delay_2;
     reg [0:0] redist12_i_first_cleanup_xor48_histogram4_q_5_delay_3;
-    reg [8:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_outputreg0_q;
+    reg [11:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_outputreg0_q;
+    wire redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_reset0;
+    wire [11:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_ia;
+    wire [1:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_aa;
+    wire [1:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_ab;
+    wire [11:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_iq;
+    wire [11:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_q;
+    wire [1:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_q;
+    (* preserve *) reg [1:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i;
+    (* preserve *) reg redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_eq;
+    reg [1:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_wraddr_q;
+    wire [1:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_last_q;
+    wire [0:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmp_q;
+    (* dont_merge *) reg [0:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmpReg_q;
+    wire [0:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_notEnable_q;
+    wire [0:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_nor_q;
+    (* dont_merge *) reg [0:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_sticky_ena_q;
+    wire [0:0] redist6_i_arrayidx1_histogram0_shift_join_x_q_5_enaAnd_q;
 
 
     // GND(CONSTANT,0)
@@ -252,29 +265,29 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // redist2_sync_together73_aunroll_x_in_i_valid_1(DELAY,193)
+    // redist3_sync_together73_aunroll_x_in_i_valid_1(DELAY,194)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist2_sync_together73_aunroll_x_in_i_valid_1_q <= '0;
+            redist3_sync_together73_aunroll_x_in_i_valid_1_q <= '0;
         end
         else
         begin
-            redist2_sync_together73_aunroll_x_in_i_valid_1_q <= $unsigned(in_i_valid);
+            redist3_sync_together73_aunroll_x_in_i_valid_1_q <= $unsigned(in_i_valid);
         end
     end
 
-    // redist3_sync_together73_aunroll_x_in_i_valid_2(DELAY,194)
+    // redist4_sync_together73_aunroll_x_in_i_valid_2(DELAY,195)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist3_sync_together73_aunroll_x_in_i_valid_2_q <= '0;
+            redist4_sync_together73_aunroll_x_in_i_valid_2_q <= '0;
         end
         else
         begin
-            redist3_sync_together73_aunroll_x_in_i_valid_2_q <= $unsigned(redist2_sync_together73_aunroll_x_in_i_valid_1_q);
+            redist4_sync_together73_aunroll_x_in_i_valid_2_q <= $unsigned(redist3_sync_together73_aunroll_x_in_i_valid_1_q);
         end
     end
 
@@ -348,7 +361,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         endcase
     end
 
-    // i_llvm_fpga_push_i4_cleanups45_push13_histogram31(BLACKBOX,65)@3
+    // i_llvm_fpga_push_i4_cleanups45_push13_histogram31(BLACKBOX,66)@3
     // out out_feedback_out_13@20000000
     // out out_feedback_valid_out_13@20000000
     histogram_i_llvm_fpga_push_i4_cleanups45_push13_0 thei_llvm_fpga_push_i4_cleanups45_push13_histogram31 (
@@ -356,7 +369,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         .in_feedback_stall_in_13(i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2_out_feedback_stall_out_13),
         .in_keep_going42(redist10_i_llvm_fpga_pipeline_keep_going42_histogram6_out_data_out_2_q),
         .in_stall_in(GND_q),
-        .in_valid_in(redist3_sync_together73_aunroll_x_in_i_valid_2_q),
+        .in_valid_in(redist4_sync_together73_aunroll_x_in_i_valid_2_q),
         .out_data_out(),
         .out_feedback_out_13(i_llvm_fpga_push_i4_cleanups45_push13_histogram31_out_feedback_out_13),
         .out_feedback_valid_out_13(i_llvm_fpga_push_i4_cleanups45_push13_histogram31_out_feedback_valid_out_13),
@@ -366,45 +379,45 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         .resetn(resetn)
     );
 
-    // redist0_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1(DELAY,191)
+    // redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1(DELAY,192)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist0_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q <= '0;
+            redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q <= '0;
         end
         else
         begin
-            redist0_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q <= $unsigned(in_c0_eni1_1_tpl);
+            redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q <= $unsigned(in_c0_eni1_1_tpl);
         end
     end
 
-    // redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2(DELAY,192)
+    // redist2_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2(DELAY,193)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q <= '0;
+            redist2_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q <= '0;
         end
         else
         begin
-            redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q <= $unsigned(redist0_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q);
+            redist2_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q <= $unsigned(redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q);
         end
     end
 
-    // c_i4_750(CONSTANT,26)
+    // c_i4_750(CONSTANT,28)
     assign c_i4_750_q = $unsigned(4'b0111);
 
-    // i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2(BLACKBOX,59)@3
+    // i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2(BLACKBOX,60)@3
     // out out_feedback_stall_out_13@20000000
     histogram_i_llvm_fpga_pop_i4_cleanups45_pop13_0 thei_llvm_fpga_pop_i4_cleanups45_pop13_histogram2 (
         .in_data_in(c_i4_750_q),
-        .in_dir(redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q),
+        .in_dir(redist2_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q),
         .in_feedback_in_13(i_llvm_fpga_push_i4_cleanups45_push13_histogram31_out_feedback_out_13),
         .in_feedback_valid_in_13(i_llvm_fpga_push_i4_cleanups45_push13_histogram31_out_feedback_valid_out_13),
         .in_predicate(GND_q),
         .in_stall_in(GND_q),
-        .in_valid_in(redist3_sync_together73_aunroll_x_in_i_valid_2_q),
+        .in_valid_in(redist4_sync_together73_aunroll_x_in_i_valid_2_q),
         .out_data_out(i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2_out_data_out),
         .out_feedback_stall_out_13(i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2_out_feedback_stall_out_13),
         .out_stall_out(),
@@ -416,51 +429,51 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     // i_first_cleanup47_histogram3_sel_x(BITSELECT,132)@3
     assign i_first_cleanup47_histogram3_sel_x_b = i_llvm_fpga_pop_i4_cleanups45_pop13_histogram2_out_data_out[0:0];
 
-    // c_i8_158(CONSTANT,27)
-    assign c_i8_158_q = $unsigned(8'b11111111);
+    // c_i11_158(CONSTANT,8)
+    assign c_i11_158_q = $unsigned(11'b11111111111);
 
     // i_fpga_indvars_iv_next_histogram32(ADD,48)@3
-    assign i_fpga_indvars_iv_next_histogram32_a = {1'b0, i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24_out_data_out};
-    assign i_fpga_indvars_iv_next_histogram32_b = {1'b0, c_i8_158_q};
+    assign i_fpga_indvars_iv_next_histogram32_a = {1'b0, i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24_out_data_out};
+    assign i_fpga_indvars_iv_next_histogram32_b = {1'b0, c_i11_158_q};
     assign i_fpga_indvars_iv_next_histogram32_o = $unsigned(i_fpga_indvars_iv_next_histogram32_a) + $unsigned(i_fpga_indvars_iv_next_histogram32_b);
-    assign i_fpga_indvars_iv_next_histogram32_q = i_fpga_indvars_iv_next_histogram32_o[8:0];
+    assign i_fpga_indvars_iv_next_histogram32_q = i_fpga_indvars_iv_next_histogram32_o[11:0];
 
     // bgTrunc_i_fpga_indvars_iv_next_histogram32_sel_x(BITSELECT,85)@3
-    assign bgTrunc_i_fpga_indvars_iv_next_histogram32_sel_x_b = i_fpga_indvars_iv_next_histogram32_q[7:0];
+    assign bgTrunc_i_fpga_indvars_iv_next_histogram32_sel_x_b = i_fpga_indvars_iv_next_histogram32_q[10:0];
 
-    // i_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33(BLACKBOX,67)@3
+    // i_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33(BLACKBOX,62)@3
     // out out_feedback_out_10@20000000
     // out out_feedback_valid_out_10@20000000
-    histogram_i_llvm_fpga_push_i8_fpga_indvars_iv_push10_0 thei_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33 (
+    histogram_i_llvm_fpga_push_i11_fpga_indvars_iv_push10_0 thei_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33 (
         .in_data_in(bgTrunc_i_fpga_indvars_iv_next_histogram32_sel_x_b),
-        .in_feedback_stall_in_10(i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24_out_feedback_stall_out_10),
+        .in_feedback_stall_in_10(i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24_out_feedback_stall_out_10),
         .in_keep_going42(redist10_i_llvm_fpga_pipeline_keep_going42_histogram6_out_data_out_2_q),
         .in_stall_in(GND_q),
-        .in_valid_in(redist3_sync_together73_aunroll_x_in_i_valid_2_q),
+        .in_valid_in(redist4_sync_together73_aunroll_x_in_i_valid_2_q),
         .out_data_out(),
-        .out_feedback_out_10(i_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33_out_feedback_out_10),
-        .out_feedback_valid_out_10(i_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33_out_feedback_valid_out_10),
+        .out_feedback_out_10(i_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33_out_feedback_out_10),
+        .out_feedback_valid_out_10(i_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33_out_feedback_valid_out_10),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // c_i8_9856(CONSTANT,28)
-    assign c_i8_9856_q = $unsigned(8'b01100010);
+    // c_i11_99856(CONSTANT,9)
+    assign c_i11_99856_q = $unsigned(11'b01111100110);
 
-    // i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24(BLACKBOX,61)@3
+    // i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24(BLACKBOX,58)@3
     // out out_feedback_stall_out_10@20000000
-    histogram_i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_0 thei_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24 (
-        .in_data_in(c_i8_9856_q),
-        .in_dir(redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q),
-        .in_feedback_in_10(i_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33_out_feedback_out_10),
-        .in_feedback_valid_in_10(i_llvm_fpga_push_i8_fpga_indvars_iv_push10_histogram33_out_feedback_valid_out_10),
+    histogram_i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_0 thei_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24 (
+        .in_data_in(c_i11_99856_q),
+        .in_dir(redist2_sync_together73_aunroll_x_in_c0_eni1_1_tpl_2_q),
+        .in_feedback_in_10(i_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33_out_feedback_out_10),
+        .in_feedback_valid_in_10(i_llvm_fpga_push_i11_fpga_indvars_iv_push10_histogram33_out_feedback_valid_out_10),
         .in_predicate(GND_q),
         .in_stall_in(GND_q),
-        .in_valid_in(redist3_sync_together73_aunroll_x_in_i_valid_2_q),
-        .out_data_out(i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24_out_data_out),
-        .out_feedback_stall_out_10(i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24_out_feedback_stall_out_10),
+        .in_valid_in(redist4_sync_together73_aunroll_x_in_i_valid_2_q),
+        .out_data_out(i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24_out_data_out),
+        .out_feedback_stall_out_10(i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24_out_feedback_stall_out_10),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -468,9 +481,9 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     );
 
     // i_exitcond_histogram25_cmp_nsign(LOGICAL,163)@3
-    assign i_exitcond_histogram25_cmp_nsign_q = $unsigned(~ (i_llvm_fpga_pop_i8_fpga_indvars_iv_pop10_histogram24_out_data_out[7:7]));
+    assign i_exitcond_histogram25_cmp_nsign_q = $unsigned(~ (i_llvm_fpga_pop_i11_fpga_indvars_iv_pop10_histogram24_out_data_out[10:10]));
 
-    // i_llvm_fpga_push_i1_notexitcond52_histogram28(BLACKBOX,63)@3
+    // i_llvm_fpga_push_i1_notexitcond52_histogram28(BLACKBOX,64)@3
     // out out_feedback_out_7@20000000
     // out out_feedback_valid_out_7@20000000
     histogram_i_llvm_fpga_push_i1_notexitcond52_0 thei_llvm_fpga_push_i1_notexitcond52_histogram28 (
@@ -478,7 +491,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         .in_feedback_stall_in_7(i_llvm_fpga_pipeline_keep_going42_histogram6_out_not_exitcond_stall_out),
         .in_first_cleanup47(i_first_cleanup47_histogram3_sel_x_b),
         .in_stall_in(GND_q),
-        .in_valid_in(redist3_sync_together73_aunroll_x_in_i_valid_2_q),
+        .in_valid_in(redist4_sync_together73_aunroll_x_in_i_valid_2_q),
         .out_data_out(),
         .out_feedback_out_7(i_llvm_fpga_push_i1_notexitcond52_histogram28_out_feedback_out_7),
         .out_feedback_valid_out_7(i_llvm_fpga_push_i1_notexitcond52_histogram28_out_feedback_valid_out_7),
@@ -533,7 +546,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         end
     end
 
-    // i_llvm_fpga_push_i4_initerations40_push12_histogram9(BLACKBOX,66)@2
+    // i_llvm_fpga_push_i4_initerations40_push12_histogram9(BLACKBOX,67)@2
     // out out_feedback_out_12@20000000
     // out out_feedback_valid_out_12@20000000
     histogram_i_llvm_fpga_push_i4_initerations40_push12_0 thei_llvm_fpga_push_i4_initerations40_push12_histogram9 (
@@ -551,11 +564,11 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         .resetn(resetn)
     );
 
-    // i_llvm_fpga_pop_i4_initerations40_pop12_histogram7(BLACKBOX,60)@2
+    // i_llvm_fpga_pop_i4_initerations40_pop12_histogram7(BLACKBOX,61)@2
     // out out_feedback_stall_out_12@20000000
     histogram_i_llvm_fpga_pop_i4_initerations40_pop12_0 thei_llvm_fpga_pop_i4_initerations40_pop12_histogram7 (
         .in_data_in(c_i4_750_q),
-        .in_dir(redist0_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q),
+        .in_dir(redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q),
         .in_feedback_in_12(i_llvm_fpga_push_i4_initerations40_push12_histogram9_out_feedback_out_12),
         .in_feedback_valid_in_12(i_llvm_fpga_push_i4_initerations40_push12_histogram9_out_feedback_valid_out_12),
         .in_predicate(GND_q),
@@ -589,7 +602,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     // i_last_initeration43_histogram10_sel_x(BITSELECT,134)@2
     assign i_last_initeration43_histogram10_sel_x_b = i_next_initerations41_histogram8_vt_join_q[0:0];
 
-    // i_llvm_fpga_push_i1_lastiniteration44_histogram11(BLACKBOX,62)@2
+    // i_llvm_fpga_push_i1_lastiniteration44_histogram11(BLACKBOX,63)@2
     // out out_feedback_out_6@20000000
     // out out_feedback_valid_out_6@20000000
     histogram_i_llvm_fpga_push_i1_lastiniteration44_0 thei_llvm_fpga_push_i1_lastiniteration44_histogram11 (
@@ -641,7 +654,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     // pipeline_valid_out_sync(GPOUT,81)
     assign out_pipeline_valid_out = i_llvm_fpga_pipeline_keep_going42_histogram6_out_pipeline_valid_out;
 
-    // c_i32_154(CONSTANT,24)
+    // c_i32_154(CONSTANT,26)
     assign c_i32_154_q = $unsigned(32'b00000000000000000000000000000001);
 
     // valid_fanout_reg4(REG,149)@1 + 1
@@ -666,11 +679,11 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         end
         else
         begin
-            valid_fanout_reg5_q <= $unsigned(redist2_sync_together73_aunroll_x_in_i_valid_1_q);
+            valid_fanout_reg5_q <= $unsigned(redist3_sync_together73_aunroll_x_in_i_valid_1_q);
         end
     end
 
-    // i_llvm_fpga_push_i32_i_023_push11_histogram14(BLACKBOX,64)@3
+    // i_llvm_fpga_push_i32_i_023_push11_histogram14(BLACKBOX,65)@3
     // out out_feedback_out_11@20000000
     // out out_feedback_valid_out_11@20000000
     histogram_i_llvm_fpga_push_i32_i_023_push11_0 thei_llvm_fpga_push_i32_i_023_push11_histogram14 (
@@ -688,14 +701,14 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         .resetn(resetn)
     );
 
-    // c_i32_053(CONSTANT,23)
+    // c_i32_053(CONSTANT,25)
     assign c_i32_053_q = $unsigned(32'b00000000000000000000000000000000);
 
-    // i_llvm_fpga_pop_i32_i_023_pop11_histogram12(BLACKBOX,58)@2
+    // i_llvm_fpga_pop_i32_i_023_pop11_histogram12(BLACKBOX,59)@2
     // out out_feedback_stall_out_11@20000000
     histogram_i_llvm_fpga_pop_i32_i_023_pop11_0 thei_llvm_fpga_pop_i32_i_023_pop11_histogram12 (
         .in_data_in(c_i32_053_q),
-        .in_dir(redist0_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q),
+        .in_dir(redist1_sync_together73_aunroll_x_in_c0_eni1_1_tpl_1_q),
         .in_feedback_in_11(i_llvm_fpga_push_i32_i_023_push11_histogram14_out_feedback_out_11),
         .in_feedback_valid_in_11(i_llvm_fpga_push_i32_i_023_push11_histogram14_out_feedback_valid_out_11),
         .in_predicate(GND_q),
@@ -740,7 +753,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         end
         else
         begin
-            valid_fanout_reg6_q <= $unsigned(redist2_sync_together73_aunroll_x_in_i_valid_1_q);
+            valid_fanout_reg6_q <= $unsigned(redist3_sync_together73_aunroll_x_in_i_valid_1_q);
         end
     end
 
@@ -748,8 +761,8 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     assign c_histogram_feature_pmem_q = $unsigned(64'b0100000001000000000000000000000000000000000000000000000000000000);
 
     // i_arrayidx1_histogram0_upper_bits_x_merged_bit_select(BITSELECT,188)@3
-    assign i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_feature_pmem_q[63:9];
-    assign i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_feature_pmem_q[8:0];
+    assign i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_feature_pmem_q[63:12];
+    assign i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_feature_pmem_q[11:0];
 
     // i_idxprom_histogram15_sel_x(BITSELECT,133)@3
     assign i_idxprom_histogram15_sel_x_b = {32'b00000000000000000000000000000000, redist8_i_llvm_fpga_pop_i32_i_023_pop11_histogram12_out_data_out_1_q[31:0]};
@@ -761,10 +774,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     assign i_idxprom_histogram15_vt_join_q = {c_i32_053_q, i_idxprom_histogram15_vt_select_31_b};
 
     // i_arrayidx1_histogram0_dupName_0_trunc_sel_x(BITSELECT,102)@3
-    assign i_arrayidx1_histogram0_dupName_0_trunc_sel_x_b = i_idxprom_histogram15_vt_join_q[8:0];
+    assign i_arrayidx1_histogram0_dupName_0_trunc_sel_x_b = i_idxprom_histogram15_vt_join_q[11:0];
 
     // i_arrayidx1_histogram0_narrow_x(BITSELECT,95)@3
-    assign i_arrayidx1_histogram0_narrow_x_b = i_arrayidx1_histogram0_dupName_0_trunc_sel_x_b[6:0];
+    assign i_arrayidx1_histogram0_narrow_x_b = i_arrayidx1_histogram0_dupName_0_trunc_sel_x_b[9:0];
 
     // i_arrayidx1_histogram0_shift_join_x(BITJOIN,96)@3
     assign i_arrayidx1_histogram0_shift_join_x_q = {i_arrayidx1_histogram0_narrow_x_b, i_arrayidx1_histogram16_vt_const_1_q};
@@ -773,10 +786,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     assign i_arrayidx1_histogram0_add_x_a = {1'b0, i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_c};
     assign i_arrayidx1_histogram0_add_x_b = {1'b0, i_arrayidx1_histogram0_shift_join_x_q};
     assign i_arrayidx1_histogram0_add_x_o = $unsigned(i_arrayidx1_histogram0_add_x_a) + $unsigned(i_arrayidx1_histogram0_add_x_b);
-    assign i_arrayidx1_histogram0_add_x_q = i_arrayidx1_histogram0_add_x_o[9:0];
+    assign i_arrayidx1_histogram0_add_x_q = i_arrayidx1_histogram0_add_x_o[12:0];
 
     // i_arrayidx1_histogram0_dupName_2_trunc_sel_x(BITSELECT,103)@3
-    assign i_arrayidx1_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx1_histogram0_add_x_q[8:0];
+    assign i_arrayidx1_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx1_histogram0_add_x_q[11:0];
 
     // i_arrayidx1_histogram0_append_upper_bits_x(BITJOIN,93)@3
     assign i_arrayidx1_histogram0_append_upper_bits_x_q = {i_arrayidx1_histogram0_upper_bits_x_merged_bit_select_b, i_arrayidx1_histogram0_dupName_2_trunc_sel_x_b};
@@ -868,22 +881,22 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         .resetn(resetn)
     );
 
-    // redist4_sync_together73_aunroll_x_in_i_valid_6(DELAY,195)
+    // redist5_sync_together73_aunroll_x_in_i_valid_6(DELAY,196)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist4_sync_together73_aunroll_x_in_i_valid_6_delay_0 <= '0;
-            redist4_sync_together73_aunroll_x_in_i_valid_6_delay_1 <= '0;
-            redist4_sync_together73_aunroll_x_in_i_valid_6_delay_2 <= '0;
-            redist4_sync_together73_aunroll_x_in_i_valid_6_q <= '0;
+            redist5_sync_together73_aunroll_x_in_i_valid_6_delay_0 <= '0;
+            redist5_sync_together73_aunroll_x_in_i_valid_6_delay_1 <= '0;
+            redist5_sync_together73_aunroll_x_in_i_valid_6_delay_2 <= '0;
+            redist5_sync_together73_aunroll_x_in_i_valid_6_q <= '0;
         end
         else
         begin
-            redist4_sync_together73_aunroll_x_in_i_valid_6_delay_0 <= $unsigned(redist3_sync_together73_aunroll_x_in_i_valid_2_q);
-            redist4_sync_together73_aunroll_x_in_i_valid_6_delay_1 <= redist4_sync_together73_aunroll_x_in_i_valid_6_delay_0;
-            redist4_sync_together73_aunroll_x_in_i_valid_6_delay_2 <= redist4_sync_together73_aunroll_x_in_i_valid_6_delay_1;
-            redist4_sync_together73_aunroll_x_in_i_valid_6_q <= redist4_sync_together73_aunroll_x_in_i_valid_6_delay_2;
+            redist5_sync_together73_aunroll_x_in_i_valid_6_delay_0 <= $unsigned(redist4_sync_together73_aunroll_x_in_i_valid_2_q);
+            redist5_sync_together73_aunroll_x_in_i_valid_6_delay_1 <= redist5_sync_together73_aunroll_x_in_i_valid_6_delay_0;
+            redist5_sync_together73_aunroll_x_in_i_valid_6_delay_2 <= redist5_sync_together73_aunroll_x_in_i_valid_6_delay_1;
+            redist5_sync_together73_aunroll_x_in_i_valid_6_q <= redist5_sync_together73_aunroll_x_in_i_valid_6_delay_2;
         end
     end
 
@@ -896,7 +909,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         end
         else
         begin
-            valid_fanout_reg7_q <= $unsigned(redist4_sync_together73_aunroll_x_in_i_valid_6_q);
+            valid_fanout_reg7_q <= $unsigned(redist5_sync_together73_aunroll_x_in_i_valid_6_q);
         end
     end
 
@@ -925,27 +938,153 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     assign c_histogram_weight_pmem_q = $unsigned(64'b0100000001000001000000000000000000000000000000000000000000000000);
 
     // i_arrayidx52_histogram0_upper_bits_x_merged_bit_select(BITSELECT,190)@8
-    assign i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_weight_pmem_q[63:9];
-    assign i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_weight_pmem_q[8:0];
+    assign i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_weight_pmem_q[63:12];
+    assign i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_weight_pmem_q[11:0];
 
-    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5(DELAY,197)
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_notEnable(LOGICAL,211)
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_notEnable_q = $unsigned(~ (VCC_q));
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_nor(LOGICAL,212)
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_nor_q = ~ (redist6_i_arrayidx1_histogram0_shift_join_x_q_5_notEnable_q | redist6_i_arrayidx1_histogram0_shift_join_x_q_5_sticky_ena_q);
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_last(CONSTANT,208)
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_last_q = $unsigned(2'b01);
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmp(LOGICAL,209)
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmp_q = $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_last_q == redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_q ? 1'b1 : 1'b0);
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmpReg(REG,210)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_0 <= '0;
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_1 <= '0;
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_2 <= '0;
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_q <= '0;
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmpReg_q <= $unsigned(1'b0);
         end
         else
         begin
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_0 <= $unsigned(i_arrayidx1_histogram0_shift_join_x_q);
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_1 <= redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_0;
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_2 <= redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_1;
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_q <= redist6_i_arrayidx1_histogram0_shift_join_x_q_5_delay_2;
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmpReg_q <= $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmp_q);
         end
     end
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_sticky_ena(REG,213)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_sticky_ena_q <= $unsigned(1'b0);
+        end
+        else if (redist6_i_arrayidx1_histogram0_shift_join_x_q_5_nor_q == 1'b1)
+        begin
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_sticky_ena_q <= $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_cmpReg_q);
+        end
+    end
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_enaAnd(LOGICAL,214)
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_enaAnd_q = redist6_i_arrayidx1_histogram0_shift_join_x_q_5_sticky_ena_q & VCC_q;
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt(COUNTER,206)
+    // low=0, high=2, step=1, init=0
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i <= 2'd0;
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_eq <= 1'b0;
+        end
+        else
+        begin
+            if (redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i == 2'd1)
+            begin
+                redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_eq <= 1'b1;
+            end
+            else
+            begin
+                redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_eq <= 1'b0;
+            end
+            if (redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_eq == 1'b1)
+            begin
+                redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i <= $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i) + $unsigned(2'd2);
+            end
+            else
+            begin
+                redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i <= $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i) + $unsigned(2'd1);
+            end
+        end
+    end
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_q = redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_i[1:0];
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_wraddr(REG,207)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_wraddr_q <= $unsigned(2'b10);
+        end
+        else
+        begin
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_wraddr_q <= $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_q);
+        end
+    end
+
+    // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem(DUALMEM,205)
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_ia = $unsigned(i_arrayidx1_histogram0_shift_join_x_q);
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_aa = redist6_i_arrayidx1_histogram0_shift_join_x_q_5_wraddr_q;
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_ab = redist6_i_arrayidx1_histogram0_shift_join_x_q_5_rdcnt_q;
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_reset0 = ~ (resetn);
+    altera_syncram #(
+        .ram_block_type("MLAB"),
+        .operation_mode("DUAL_PORT"),
+        .width_a(12),
+        .widthad_a(2),
+        .numwords_a(3),
+        .width_b(12),
+        .widthad_b(2),
+        .numwords_b(3),
+        .lpm_type("altera_syncram"),
+        .width_byteena_a(1),
+        .address_reg_b("CLOCK0"),
+        .indata_reg_b("CLOCK0"),
+        .rdcontrol_reg_b("CLOCK0"),
+        .byteena_reg_b("CLOCK0"),
+        .outdata_reg_b("CLOCK1"),
+        .outdata_aclr_b("CLEAR1"),
+        .clock_enable_input_a("NORMAL"),
+        .clock_enable_input_b("NORMAL"),
+        .clock_enable_output_b("NORMAL"),
+        .read_during_write_mode_mixed_ports("DONT_CARE"),
+        .power_up_uninitialized("TRUE"),
+        .intended_device_family("Arria 10")
+    ) redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_dmem (
+        .clocken1(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_enaAnd_q[0]),
+        .clocken0(1'b1),
+        .clock0(clock),
+        .aclr1(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_reset0),
+        .clock1(clock),
+        .address_a(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_aa),
+        .data_a(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_ia),
+        .wren_a(VCC_q[0]),
+        .address_b(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_ab),
+        .q_b(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_iq),
+        .wren_b(),
+        .rden_a(),
+        .rden_b(),
+        .data_b(),
+        .clocken2(),
+        .clocken3(),
+        .aclr0(),
+        .addressstall_a(),
+        .addressstall_b(),
+        .byteena_a(),
+        .byteena_b(),
+        .eccencbypass(),
+        .eccencparity(),
+        .sclr(),
+        .address2_a(),
+        .address2_b(),
+        .q_a(),
+        .eccstatus()
+    );
+    assign redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_q = redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_iq[11:0];
 
     // redist6_i_arrayidx1_histogram0_shift_join_x_q_5_outputreg0(DELAY,204)
     always @ (posedge clock or negedge resetn)
@@ -956,7 +1095,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         end
         else
         begin
-            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_outputreg0_q <= $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_q);
+            redist6_i_arrayidx1_histogram0_shift_join_x_q_5_outputreg0_q <= $unsigned(redist6_i_arrayidx1_histogram0_shift_join_x_q_5_mem_q);
         end
     end
 
@@ -964,10 +1103,10 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     assign i_arrayidx52_histogram0_add_x_a = {1'b0, i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_c};
     assign i_arrayidx52_histogram0_add_x_b = {1'b0, redist6_i_arrayidx1_histogram0_shift_join_x_q_5_outputreg0_q};
     assign i_arrayidx52_histogram0_add_x_o = $unsigned(i_arrayidx52_histogram0_add_x_a) + $unsigned(i_arrayidx52_histogram0_add_x_b);
-    assign i_arrayidx52_histogram0_add_x_q = i_arrayidx52_histogram0_add_x_o[9:0];
+    assign i_arrayidx52_histogram0_add_x_q = i_arrayidx52_histogram0_add_x_o[12:0];
 
     // i_arrayidx52_histogram0_dupName_2_trunc_sel_x(BITSELECT,115)@8
-    assign i_arrayidx52_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx52_histogram0_add_x_q[8:0];
+    assign i_arrayidx52_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx52_histogram0_add_x_q[11:0];
 
     // i_arrayidx52_histogram0_append_upper_bits_x(BITJOIN,105)@8
     assign i_arrayidx52_histogram0_append_upper_bits_x_q = {i_arrayidx52_histogram0_upper_bits_x_merged_bit_select_b, i_arrayidx52_histogram0_dupName_2_trunc_sel_x_b};
@@ -1026,7 +1165,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     // c_float_0_000000e_0055(FLOATCONSTANT,4)
     assign c_float_0_000000e_0055_q = $unsigned(32'b00000000000000000000000000000000);
 
-    // valid_fanout_reg8(REG,153)@2 + 1
+    // valid_fanout_reg8(REG,153)@7 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1035,36 +1174,36 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         end
         else
         begin
-            valid_fanout_reg8_q <= $unsigned(redist2_sync_together73_aunroll_x_in_i_valid_1_q);
+            valid_fanout_reg8_q <= $unsigned(redist5_sync_together73_aunroll_x_in_i_valid_6_q);
         end
     end
 
     // c_histogram_hist_pmem(CONSTANT,6)
     assign c_histogram_hist_pmem_q = $unsigned(64'b0100000001000010000000000000000000000000000000000000000000000000);
 
-    // i_arrayidx73_histogram0_upper_bits_x_merged_bit_select(BITSELECT,189)@3
-    assign i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_hist_pmem_q[63:9];
-    assign i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_hist_pmem_q[8:0];
+    // i_arrayidx73_histogram0_upper_bits_x_merged_bit_select(BITSELECT,189)@8
+    assign i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_b = c_histogram_hist_pmem_q[63:12];
+    assign i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_c = c_histogram_hist_pmem_q[11:0];
 
-    // i_arrayidx73_histogram0_add_x(ADD,116)@3
+    // i_arrayidx73_histogram0_add_x(ADD,116)@8
     assign i_arrayidx73_histogram0_add_x_a = {1'b0, i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_c};
-    assign i_arrayidx73_histogram0_add_x_b = {1'b0, i_arrayidx1_histogram0_shift_join_x_q};
+    assign i_arrayidx73_histogram0_add_x_b = {1'b0, redist6_i_arrayidx1_histogram0_shift_join_x_q_5_outputreg0_q};
     assign i_arrayidx73_histogram0_add_x_o = $unsigned(i_arrayidx73_histogram0_add_x_a) + $unsigned(i_arrayidx73_histogram0_add_x_b);
-    assign i_arrayidx73_histogram0_add_x_q = i_arrayidx73_histogram0_add_x_o[9:0];
+    assign i_arrayidx73_histogram0_add_x_q = i_arrayidx73_histogram0_add_x_o[12:0];
 
-    // i_arrayidx73_histogram0_dupName_2_trunc_sel_x(BITSELECT,127)@3
-    assign i_arrayidx73_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx73_histogram0_add_x_q[8:0];
+    // i_arrayidx73_histogram0_dupName_2_trunc_sel_x(BITSELECT,127)@8
+    assign i_arrayidx73_histogram0_dupName_2_trunc_sel_x_b = i_arrayidx73_histogram0_add_x_q[11:0];
 
-    // i_arrayidx73_histogram0_append_upper_bits_x(BITJOIN,117)@3
+    // i_arrayidx73_histogram0_append_upper_bits_x(BITJOIN,117)@8
     assign i_arrayidx73_histogram0_append_upper_bits_x_q = {i_arrayidx73_histogram0_upper_bits_x_merged_bit_select_b, i_arrayidx73_histogram0_dupName_2_trunc_sel_x_b};
 
-    // i_arrayidx73_histogram22_vt_select_63(BITSELECT,40)@3
+    // i_arrayidx73_histogram22_vt_select_63(BITSELECT,40)@8
     assign i_arrayidx73_histogram22_vt_select_63_b = i_arrayidx73_histogram0_append_upper_bits_x_q[63:2];
 
-    // i_arrayidx73_histogram22_vt_join(BITJOIN,39)@3
+    // i_arrayidx73_histogram22_vt_join(BITJOIN,39)@8
     assign i_arrayidx73_histogram22_vt_join_q = {i_arrayidx73_histogram22_vt_select_63_b, i_arrayidx1_histogram16_vt_const_1_q};
 
-    // i_llvm_fpga_mem_memdep_5_histogram23(BLACKBOX,55)@3
+    // i_llvm_fpga_mem_memdep_5_histogram23(BLACKBOX,55)@8
     // out out_memdep_5_histogram_avm_address@20000000
     // out out_memdep_5_histogram_avm_burstcount@20000000
     // out out_memdep_5_histogram_avm_byteenable@20000000
@@ -1072,13 +1211,13 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     // out out_memdep_5_histogram_avm_read@20000000
     // out out_memdep_5_histogram_avm_write@20000000
     // out out_memdep_5_histogram_avm_writedata@20000000
-    // out out_o_stall@4
-    // out out_o_valid@4
-    // out out_o_writeack@4
+    // out out_o_stall@9
+    // out out_o_valid@9
+    // out out_o_writeack@9
     histogram_i_llvm_fpga_mem_memdep_5_0 thei_llvm_fpga_mem_memdep_5_histogram23 (
         .in_flush(in_flush),
         .in_i_address(i_arrayidx73_histogram22_vt_join_q),
-        .in_i_predicate(i_first_cleanup_xor48_histogram4_q),
+        .in_i_predicate(redist12_i_first_cleanup_xor48_histogram4_q_5_q),
         .in_i_stall(GND_q),
         .in_i_valid(valid_fanout_reg8_q),
         .in_i_writedata(c_float_0_000000e_0055_q),
@@ -1109,20 +1248,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     assign out_memdep_5_histogram_avm_byteenable = i_llvm_fpga_mem_memdep_5_histogram23_out_memdep_5_histogram_avm_byteenable;
     assign out_memdep_5_histogram_avm_burstcount = i_llvm_fpga_mem_memdep_5_histogram23_out_memdep_5_histogram_avm_burstcount;
 
-    // redist5_sync_together73_aunroll_x_in_i_valid_7(DELAY,196)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            redist5_sync_together73_aunroll_x_in_i_valid_7_q <= '0;
-        end
-        else
-        begin
-            redist5_sync_together73_aunroll_x_in_i_valid_7_q <= $unsigned(redist4_sync_together73_aunroll_x_in_i_valid_6_q);
-        end
-    end
-
-    // valid_fanout_reg0(REG,145)@8 + 1
+    // valid_fanout_reg0(REG,145)@7 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -1131,7 +1257,20 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
         end
         else
         begin
-            valid_fanout_reg0_q <= $unsigned(redist5_sync_together73_aunroll_x_in_i_valid_7_q);
+            valid_fanout_reg0_q <= $unsigned(redist5_sync_together73_aunroll_x_in_i_valid_6_q);
+        end
+    end
+
+    // redist0_valid_fanout_reg0_q_1(DELAY,191)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist0_valid_fanout_reg0_q_1_q <= '0;
+        end
+        else
+        begin
+            redist0_valid_fanout_reg0_q_1_q <= $unsigned(valid_fanout_reg0_q);
         end
     end
 
@@ -1169,7 +1308,7 @@ module histogram_i_sfc_logic_s_c0_in_for_body_s_c0_enter582_histogram0 (
     assign out_c0_exi2_0_tpl = GND_q;
     assign out_c0_exi2_1_tpl = redist11_i_llvm_fpga_pipeline_keep_going42_histogram6_out_data_out_8_q;
     assign out_c0_exi2_2_tpl = redist7_i_masked51_histogram34_q_6_q;
-    assign out_o_valid = valid_fanout_reg0_q;
+    assign out_o_valid = redist0_valid_fanout_reg0_q_1_q;
     assign out_unnamed_histogram1 = GND_q;
 
 endmodule

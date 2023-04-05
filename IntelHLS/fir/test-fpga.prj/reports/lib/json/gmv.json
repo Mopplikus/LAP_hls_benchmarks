@@ -1,0 +1,199 @@
+{
+  "nodes":
+  [
+    {
+      "name":"0"
+      , "id":1
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Interleaving":"Yes"
+          , "Interleave Size":"4095 MBs"
+          , "Channels":"1 channel"
+          , "Maximum bandwidth the BSP can deliver":"0.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+          , "Channel 0_Width (bits)":"64"
+        }
+      ]
+      , "type":"memsys"
+      , "children":
+      [
+        {
+          "name":"0"
+          , "id":3
+          , "type":"bb"
+        }
+      ]
+    }
+    , {
+      "name":"Memory Controller"
+      , "id":2
+      , "parent":"1"
+      , "bw":"0.00"
+      , "num_channels":"1"
+      , "interleave":"1"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Maximum bandwidth the BSP can deliver":"0.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+        }
+      ]
+      , "type":"bb"
+    }
+    , {
+      "name":"Global Memory Interconnect"
+      , "id":4
+      , "parent":"1"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"SHARE"
+          , "id":5
+          , "type":"arb"
+        }
+        , {
+          "name":"Read Interconnect"
+          , "id":6
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Name":"0"
+              , "Interconnect Style":"tree"
+              , "Reads":"2"
+            }
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Read Interconnect Router"
+          , "id":7
+          , "details":
+          [
+            {
+              "type":"table"
+              , "User specified num-reorder flag":"1"
+            }
+          ]
+          , "type":"memsys"
+          , "children":
+          [
+            {
+              "name":"Bus 0"
+              , "id":11
+              , "type":"memsys"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Global Memory Loads"
+      , "id":8
+      , "parent":"1"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"LD"
+          , "id":9
+          , "kwidth":"32"
+          , "mwidth":"64"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"2"
+              , "Latency":"31 cycles"
+              , "Width":"32 bits"
+              , "0_Width":"64 bits"
+              , "Uses Caching":"No"
+              , "LSU Style":"PIPELINED"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/fir/fir.cpp"
+                , "line":15
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":10
+          , "kwidth":"32"
+          , "mwidth":"64"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"2"
+              , "Latency":"31 cycles"
+              , "Width":"32 bits"
+              , "0_Width":"64 bits"
+              , "Uses Caching":"No"
+              , "LSU Style":"PIPELINED"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/fir/fir.cpp"
+                , "line":16
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":3
+      , "to":2
+    }
+    , {
+      "from":2
+      , "to":3
+    }
+    , {
+      "from":6
+      , "to":5
+    }
+    , {
+      "from":5
+      , "to":2
+    }
+    , {
+      "from":9
+      , "to":6
+    }
+    , {
+      "from":10
+      , "to":6
+    }
+    , {
+      "from":2
+      , "to":11
+    }
+    , {
+      "from":11
+      , "to":9
+      , "reverse":1
+    }
+    , {
+      "from":11
+      , "to":10
+      , "reverse":1
+    }
+  ]
+}

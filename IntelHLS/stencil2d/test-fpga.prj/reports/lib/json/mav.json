@@ -27,7 +27,7 @@
           [
             {
               "type":"inst"
-              , "id":13
+              , "id":17
               , "name":"Stream Read"
               , "debug":
               [
@@ -42,7 +42,7 @@
               [
                 {
                   "type":"table"
-                  , "Width":"192 bits"
+                  , "Width":"1 bit"
                   , "Depth":"0"
                   , "Stall-free":"No"
                   , "Start Cycle":"2"
@@ -66,7 +66,7 @@
             }
             , {
               "type":"inst"
-              , "id":20
+              , "id":26
               , "name":"Loop Input"
               , "debug":
               [
@@ -83,13 +83,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"23"
+                  , "Loops To":"33"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":21
+              , "id":27
               , "name":"End"
               , "details":
               [
@@ -122,13 +122,7 @@
           [
             {
               "type":"table"
-              , "Latency":"7"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-              , "Loops To":"8"
+              , "Latency":"0"
             }
           ]
         }
@@ -140,14 +134,236 @@
           [
             {
               "type":"inst"
-              , "id":15
+              , "id":19
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                    , "line":15
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"orig"
+                  , "Start Cycle":"17"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":28
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                    , "line":13
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"29"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":29
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"21"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"21"
+              , "II":"1"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":""
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":7
+          , "name":"stencil_2d.B4"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":8
+          , "name":"stencil_2d.B5"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":20
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                    , "line":19
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"filter"
+                  , "Start Cycle":"17"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":30
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                    , "line":17
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"31"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":31
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"21"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"21"
+              , "II":"1"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":""
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":9
+          , "name":"stencil_2d.B6"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"6"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"12"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":10
+          , "name":"stencil_2d.B7"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":21
               , "name":"Stream Write"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                    , "line":30
+                    , "line":43
                   }
                 ]
               ]
@@ -179,7 +395,7 @@
             }
             , {
               "type":"inst"
-              , "id":22
+              , "id":32
               , "name":"Begin"
               , "details":
               [
@@ -192,7 +408,7 @@
             }
             , {
               "type":"inst"
-              , "id":23
+              , "id":33
               , "name":"Loop End"
               , "details":
               [
@@ -219,26 +435,26 @@
         }
         , {
           "type":"bb"
-          , "id":7
-          , "name":"stencil_2d.B4"
+          , "id":11
+          , "name":"stencil_2d.B8"
           , "details":
           [
             {
               "type":"table"
-              , "Latency":"6"
+              , "Latency":"5"
               , "II":"1"
               , "Subloops":"Yes"
               , "Pipelined":"Yes"
               , "Fmax Bottlenecks":"No"
               , "Loop Info":"Entry to loop. "
-              , "Loops To":"25"
+              , "Loops To":"35"
             }
           ]
         }
         , {
           "type":"bb"
-          , "id":8
-          , "name":"stencil_2d.B5"
+          , "id":12
+          , "name":"stencil_2d.B9"
           , "details":
           [
             {
@@ -254,8 +470,8 @@
         }
         , {
           "type":"bb"
-          , "id":9
-          , "name":"stencil_2d.B6"
+          , "id":13
+          , "name":"stencil_2d.B10"
           , "details":
           [
             {
@@ -266,26 +482,26 @@
               , "Pipelined":"Yes"
               , "Fmax Bottlenecks":"No"
               , "Loop Info":"Entry to loop. "
-              , "Loops To":"11"
+              , "Loops To":"15"
             }
           ]
         }
         , {
           "type":"bb"
-          , "id":10
-          , "name":"stencil_2d.B7"
+          , "id":14
+          , "name":"stencil_2d.B11"
           , "children":
           [
             {
               "type":"inst"
-              , "id":17
+              , "id":23
               , "name":"Store"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                    , "line":25
+                    , "line":38
                   }
                 ]
               ]
@@ -294,10 +510,11 @@
                 {
                   "type":"table"
                   , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"1"
-                  , "Latency":"31"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"sol"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
                   , "Reference":
                   [
                     {
@@ -317,7 +534,7 @@
             }
             , {
               "type":"inst"
-              , "id":24
+              , "id":34
               , "name":"Begin"
               , "details":
               [
@@ -330,13 +547,13 @@
             }
             , {
               "type":"inst"
-              , "id":25
+              , "id":35
               , "name":"End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"32"
+                  , "Start Cycle":"1"
                   , "Latency":"1"
                 }
               ]
@@ -346,7 +563,7 @@
           [
             {
               "type":"table"
-              , "Latency":"32"
+              , "Latency":"1"
               , "II":"1"
               , "Subloops":"Yes"
               , "Pipelined":"Yes"
@@ -357,8 +574,8 @@
         }
         , {
           "type":"bb"
-          , "id":11
-          , "name":"stencil_2d.B8"
+          , "id":15
+          , "name":"stencil_2d.B12"
           , "details":
           [
             {
@@ -374,20 +591,20 @@
         }
         , {
           "type":"bb"
-          , "id":12
-          , "name":"stencil_2d.B9"
+          , "id":16
+          , "name":"stencil_2d.B13"
           , "children":
           [
             {
               "type":"inst"
-              , "id":18
+              , "id":24
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                    , "line":21
+                    , "line":34
                   }
                 ]
               ]
@@ -396,10 +613,11 @@
                 {
                   "type":"table"
                   , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"6"
-                  , "Latency":"31"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"filter"
+                  , "Start Cycle":"3"
+                  , "Latency":"3"
                   , "Reference":
                   [
                     {
@@ -419,14 +637,14 @@
             }
             , {
               "type":"inst"
-              , "id":19
+              , "id":25
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                    , "line":21
+                    , "line":34
                   }
                 ]
               ]
@@ -435,10 +653,11 @@
                 {
                   "type":"table"
                   , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"6"
-                  , "Latency":"31"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"orig"
+                  , "Start Cycle":"3"
+                  , "Latency":"3"
                   , "Reference":
                   [
                     {
@@ -458,14 +677,14 @@
             }
             , {
               "type":"inst"
-              , "id":26
+              , "id":36
               , "name":"Loop Input"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                    , "line":19
+                    , "line":32
                   }
                 ]
               ]
@@ -475,19 +694,19 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"27"
+                  , "Loops To":"37"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":27
+              , "id":37
               , "name":"Loop End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"42"
+                  , "Start Cycle":"14"
                   , "Latency":"1"
                 }
               ]
@@ -497,7 +716,7 @@
           [
             {
               "type":"table"
-              , "Latency":"42"
+              , "Latency":"14"
               , "II":"1"
               , "Subloops":"No"
               , "Pipelined":"Yes"
@@ -506,24 +725,137 @@
             }
           ]
         }
-      ]
-    }
-    , {
-      "type":"memtype"
-      , "id":1
-      , "name":"System Memory"
-      , "children":
-      [
-        {
-          "type":"memsys"
-          , "id":31
-          , "name":"0"
-          , "details":
+        , {
+          "type":"memtype"
+          , "id":38
+          , "name":"Local Memory"
+          , "children":
           [
             {
-              "type":"table"
-              , "Number of banks":"1"
-              , "Arguments from stencil_2d":"orig, sol, filter"
+              "type":"memsys"
+              , "id":39
+              , "name":"orig"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"stencil2d.cpp"
+                    , "line":9
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Requested size":"3600 bytes"
+                  , "Implemented size":"4096 bytes"
+                  , "Number of banks":"1"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"1024 words"
+                  , "Number of replicates":"1"
+                  , "Number of private copies":"1"
+                  , "User defined Attributes":"hls_memory; hls_singlepump; "
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual : Local Variables in Components"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html#xzx1468871996419"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"memsys"
+              , "id":43
+              , "name":"sol"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"stencil2d.cpp"
+                    , "line":10
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Requested size":"3600 bytes"
+                  , "Implemented size":"4096 bytes"
+                  , "Number of banks":"1"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"1024 words"
+                  , "Number of replicates":"1"
+                  , "Number of private copies":"1"
+                  , "User defined Attributes":"hls_memory; hls_singlepump; "
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual : Local Variables in Components"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html#xzx1468871996419"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"memsys"
+              , "id":46
+              , "name":"filter"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"stencil2d.cpp"
+                    , "line":11
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Requested size":"40 bytes"
+                  , "Implemented size":"64 bytes"
+                  , "Number of banks":"1"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"16 words"
+                  , "Number of replicates":"1"
+                  , "Number of private copies":"1"
+                  , "User defined Attributes":"hls_memory; hls_singlepump; "
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual : Local Variables in Components"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html#xzx1468871996419"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -531,7 +863,7 @@
     }
     , {
       "type":"stream"
-      , "id":14
+      , "id":18
       , "name":"call.stencil_2d"
       , "debug":
       [
@@ -546,9 +878,9 @@
       [
         {
           "type":"table"
-          , "Width":"192 bits"
+          , "Width":"1 bit"
           , "Depth":"0"
-          , "Bits per symbol":"192 bits"
+          , "Bits per symbol":"1 bit"
           , "Uses Packets":"No"
           , "Uses Empty":"No"
           , "First symbol in high order bits":"No"
@@ -559,7 +891,7 @@
     }
     , {
       "type":"stream"
-      , "id":16
+      , "id":22
       , "name":"return.stencil_2d"
       , "debug":
       [
@@ -585,161 +917,83 @@
         }
       ]
     }
-    , {
-      "type":"interface"
-      , "id":30
-      , "name":"filter"
-      , "debug":
-      [
-        [
-          {
-            "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-            , "line":7
-          }
-        ]
-      ]
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Stable":"No"
-          , "Data width":"64"
-          , "Address width":"64"
-          , "Address Space":"0"
-          , "Latency":"1"
-          , "ReadWrite Mode":"readwrite"
-          , "Maximum burst":"1"
-          , "Wait request":"0"
-          , "Alignment":"0"
-          , "Component":"stencil_2d"
-        }
-      ]
-    }
-    , {
-      "type":"interface"
-      , "id":28
-      , "name":"orig"
-      , "debug":
-      [
-        [
-          {
-            "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-            , "line":7
-          }
-        ]
-      ]
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Stable":"No"
-          , "Data width":"64"
-          , "Address width":"64"
-          , "Address Space":"0"
-          , "Latency":"1"
-          , "ReadWrite Mode":"readwrite"
-          , "Maximum burst":"1"
-          , "Wait request":"0"
-          , "Alignment":"0"
-          , "Component":"stencil_2d"
-        }
-      ]
-    }
-    , {
-      "type":"interface"
-      , "id":29
-      , "name":"sol"
-      , "debug":
-      [
-        [
-          {
-            "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-            , "line":7
-          }
-        ]
-      ]
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Stable":"No"
-          , "Data width":"64"
-          , "Address width":"64"
-          , "Address Space":"0"
-          , "Latency":"1"
-          , "ReadWrite Mode":"readwrite"
-          , "Maximum burst":"1"
-          , "Wait request":"0"
-          , "Alignment":"0"
-          , "Component":"stencil_2d"
-        }
-      ]
-    }
   ]
   , "links":
   [
     {
-      "from":14
-      , "to":13
-    }
-    , {
-      "from":15
-      , "to":16
-    }
-    , {
-      "from":28
-      , "to":13
-    }
-    , {
-      "from":29
-      , "to":13
-    }
-    , {
-      "from":30
-      , "to":13
-    }
-    , {
-      "from":23
-      , "to":20
-    }
-    , {
-      "from":3
-      , "to":20
-    }
-    , {
-      "from":13
-      , "to":21
-    }
-    , {
-      "from":8
-      , "to":5
+      "from":18
+      , "to":17
     }
     , {
       "from":21
-      , "to":5
-    }
-    , {
-      "from":8
       , "to":22
     }
     , {
-      "from":15
-      , "to":23
+      "from":39
+      , "to":25
     }
     , {
-      "from":25
+      "from":19
+      , "to":39
+    }
+    , {
+      "from":23
+      , "to":43
+    }
+    , {
+      "from":46
+      , "to":24
+    }
+    , {
+      "from":20
+      , "to":46
+    }
+    , {
+      "from":33
+      , "to":26
+    }
+    , {
+      "from":3
+      , "to":26
+    }
+    , {
+      "from":17
+      , "to":27
+    }
+    , {
+      "from":29
+      , "to":5
+    }
+    , {
+      "from":29
+      , "to":28
+    }
+    , {
+      "from":27
+      , "to":28
+    }
+    , {
+      "from":19
+      , "to":29
+    }
+    , {
+      "from":31
       , "to":7
+    }
+    , {
+      "from":31
+      , "to":30
     }
     , {
       "from":5
-      , "to":7
+      , "to":30
     }
     , {
-      "from":25
-      , "to":8
+      "from":20
+      , "to":31
     }
     , {
-      "from":11
+      "from":12
       , "to":9
     }
     , {
@@ -747,64 +1001,88 @@
       , "to":9
     }
     , {
-      "from":11
-      , "to":24
+      "from":12
+      , "to":32
     }
     , {
-      "from":17
-      , "to":25
+      "from":21
+      , "to":33
     }
     , {
-      "from":27
+      "from":35
       , "to":11
     }
     , {
-      "from":27
-      , "to":26
-    }
-    , {
       "from":9
-      , "to":26
+      , "to":11
     }
     , {
-      "from":18
-      , "to":27
+      "from":35
+      , "to":12
     }
     , {
-      "from":19
-      , "to":27
-    }
-    , {
-      "from":20
+      "from":15
       , "to":13
     }
     , {
-      "from":22
+      "from":11
+      , "to":13
+    }
+    , {
+      "from":15
+      , "to":34
+    }
+    , {
+      "from":23
+      , "to":35
+    }
+    , {
+      "from":37
       , "to":15
     }
     , {
+      "from":37
+      , "to":36
+    }
+    , {
+      "from":13
+      , "to":36
+    }
+    , {
       "from":24
+      , "to":37
+    }
+    , {
+      "from":25
+      , "to":37
+    }
+    , {
+      "from":26
       , "to":17
     }
     , {
-      "from":26
-      , "to":18
-    }
-    , {
-      "from":26
+      "from":28
       , "to":19
     }
     , {
-      "from":31
-      , "to":19
+      "from":30
+      , "to":20
     }
     , {
-      "from":17
-      , "to":31
+      "from":32
+      , "to":21
     }
     , {
-      "from":31
-      , "to":18
+      "from":34
+      , "to":23
+    }
+    , {
+      "from":36
+      , "to":24
+    }
+    , {
+      "from":36
+      , "to":25
     }
   ]
 }

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.4 67 linux 2023.03.14.13:55:14
+# ACDS 21.4 67 linux 2023.04.04.21:14:58
 
 # ----------------------------------------
 # xcelium - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.03.14.13:55:14
+# ACDS 21.4 67 linux 2023.04.04.21:14:58
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="cat_cwfsw.cat_cwfsw"

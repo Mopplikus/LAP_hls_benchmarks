@@ -3,19 +3,19 @@
   [
     {
       "name":"stencil_2d"
-      , "id":496016312
+      , "id":3720915496
       , "type":"component"
       , "children":
       [
         {
           "name":"Stream Read"
-          , "id":496081456
+          , "id":3721044880
           , "details":
           [
             {
               "type":"table"
               , "Basic Block":"stencil_2d.B1.start"
-              , "Width":"192 bits"
+              , "Width":"1 bit"
               , "Depth":"0"
               , "Stall-free":"No"
               , "Latency":"0"
@@ -34,12 +34,12 @@
         }
         , {
           "name":"Stream Write"
-          , "id":496128704
+          , "id":3721208192
           , "details":
           [
             {
               "type":"table"
-              , "Basic Block":"stencil_2d.B3"
+              , "Basic Block":"stencil_2d.B7"
               , "Width":"32 bits"
               , "Depth":"0"
               , "Stall-free":"No"
@@ -51,7 +51,7 @@
             [
               {
                 "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                , "line":30
+                , "line":43
               }
             ]
           ]
@@ -60,27 +60,8 @@
       ]
     }
     , {
-      "name":"call.stencil_2d"
-      , "id":495566192
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Width":"192 bits"
-          , "Depth":"0"
-          , "Ready Latency":"0"
-          , "Bits per Symbol":"192 bits"
-          , "Uses Packets":"No"
-          , "Uses Valid":"Yes"
-          , "Uses Empty":"No"
-          , "First symbol in high order bits":"No"
-        }
-      ]
-      , "type":"stream"
-    }
-    , {
       "name":"return.stencil_2d"
-      , "id":495706816
+      , "id":3720428912
       , "details":
       [
         {
@@ -97,20 +78,39 @@
       ]
       , "type":"stream"
     }
+    , {
+      "name":"call.stencil_2d"
+      , "id":3720431488
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
   ]
   , "links":
   [
     {
-      "from":495566192
-      , "to":496081456
+      "from":3721208192
+      , "to":3720428912
     }
     , {
-      "from":496128704
-      , "to":495706816
+      "from":3720431488
+      , "to":3721044880
     }
     , {
-      "from":496081456
-      , "to":496128704
+      "from":3721044880
+      , "to":3721208192
     }
   ]
 }

@@ -1,0 +1,266 @@
+// ------------------------------------------------------------------------- 
+// High Level Design Compiler for Intel(R) FPGAs Version 21.4 (Release Build #53.1)
+// 
+// Legal Notice: Copyright 2021 Intel Corporation.  All rights reserved.
+// Your use of  Intel Corporation's design tools,  logic functions and other
+// software and  tools, and its AMPP partner logic functions, and any output
+// files any  of the foregoing (including  device programming  or simulation
+// files), and  any associated  documentation  or information  are expressly
+// subject  to the terms and  conditions of the  Intel FPGA Software License
+// Agreement, Intel MegaCore Function License Agreement, or other applicable
+// license agreement,  including,  without limitation,  that your use is for
+// the  sole  purpose of  programming  logic devices  manufactured by  Intel
+// and  sold by Intel  or its authorized  distributors. Please refer  to the
+// applicable agreement for further details.
+// ---------------------------------------------------------------------------
+
+// SystemVerilog created from bb_kernel_3mm_B15
+// Created for function/kernel kernel_3mm
+// SystemVerilog created on Wed Apr  5 01:38:03 2023
+
+
+(* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
+module kernel_3mm_bb_B15 (
+    input wire [0:0] in_flush,
+    input wire [0:0] in_forked160_0,
+    input wire [0:0] in_forked160_1,
+    input wire [31:0] in_i_394_pop31219_0,
+    input wire [31:0] in_i_394_pop31219_1,
+    input wire [0:0] in_notcmp75216_0,
+    input wire [0:0] in_notcmp75216_1,
+    input wire [0:0] in_stall_in_0,
+    input wire [31:0] in_unnamed_kernel_3mm25_kernel_3mm_avm_readdata,
+    input wire [0:0] in_unnamed_kernel_3mm25_kernel_3mm_avm_readdatavalid,
+    input wire [0:0] in_unnamed_kernel_3mm25_kernel_3mm_avm_waitrequest,
+    input wire [0:0] in_unnamed_kernel_3mm25_kernel_3mm_avm_writeack,
+    input wire [0:0] in_valid_in_0,
+    input wire [0:0] in_valid_in_1,
+    output wire [31:0] out_c0_exe10403,
+    output wire [31:0] out_c0_exe1394,
+    output wire [63:0] out_c0_exe2395,
+    output wire [63:0] out_c0_exe3396,
+    output wire [63:0] out_c0_exe4397,
+    output wire [31:0] out_c0_exe5398,
+    output wire [0:0] out_c0_exe7400,
+    output wire [0:0] out_c0_exe8401,
+    output wire [0:0] out_c0_exe9402,
+    output wire [0:0] out_exiting_stall_out,
+    output wire [0:0] out_exiting_valid_out,
+    output wire [0:0] out_stall_out_0,
+    output wire [0:0] out_stall_out_1,
+    output wire [31:0] out_unnamed_kernel_3mm25_kernel_3mm_avm_address,
+    output wire [0:0] out_unnamed_kernel_3mm25_kernel_3mm_avm_burstcount,
+    output wire [3:0] out_unnamed_kernel_3mm25_kernel_3mm_avm_byteenable,
+    output wire [0:0] out_unnamed_kernel_3mm25_kernel_3mm_avm_enable,
+    output wire [0:0] out_unnamed_kernel_3mm25_kernel_3mm_avm_read,
+    output wire [0:0] out_unnamed_kernel_3mm25_kernel_3mm_avm_write,
+    output wire [31:0] out_unnamed_kernel_3mm25_kernel_3mm_avm_writedata,
+    output wire [0:0] out_valid_in_0,
+    output wire [0:0] out_valid_in_1,
+    output wire [0:0] out_valid_out_0,
+    input wire [0:0] in_pipeline_stall_in,
+    output wire [0:0] out_pipeline_valid_out,
+    input wire clock,
+    input wire resetn
+    );
+
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_stall_out;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_valid_out;
+    wire [31:0] bb_kernel_3mm_B15_stall_region_out_c0_exe10403;
+    wire [31:0] bb_kernel_3mm_B15_stall_region_out_c0_exe1394;
+    wire [63:0] bb_kernel_3mm_B15_stall_region_out_c0_exe2395;
+    wire [63:0] bb_kernel_3mm_B15_stall_region_out_c0_exe3396;
+    wire [63:0] bb_kernel_3mm_B15_stall_region_out_c0_exe4397;
+    wire [31:0] bb_kernel_3mm_B15_stall_region_out_c0_exe5398;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_c0_exe7400;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_c0_exe8401;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_c0_exe9402;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_pipeline_valid_out;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_stall_out;
+    wire [31:0] bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_address;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_burstcount;
+    wire [3:0] bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_byteenable;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_enable;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_read;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_write;
+    wire [31:0] bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_writedata;
+    wire [0:0] bb_kernel_3mm_B15_stall_region_out_valid_out;
+    wire [31:0] kernel_3mm_B15_branch_out_c0_exe10403;
+    wire [31:0] kernel_3mm_B15_branch_out_c0_exe1394;
+    wire [63:0] kernel_3mm_B15_branch_out_c0_exe2395;
+    wire [63:0] kernel_3mm_B15_branch_out_c0_exe3396;
+    wire [63:0] kernel_3mm_B15_branch_out_c0_exe4397;
+    wire [31:0] kernel_3mm_B15_branch_out_c0_exe5398;
+    wire [0:0] kernel_3mm_B15_branch_out_c0_exe7400;
+    wire [0:0] kernel_3mm_B15_branch_out_c0_exe8401;
+    wire [0:0] kernel_3mm_B15_branch_out_c0_exe9402;
+    wire [0:0] kernel_3mm_B15_branch_out_stall_out;
+    wire [0:0] kernel_3mm_B15_branch_out_valid_out_0;
+    wire [0:0] kernel_3mm_B15_merge_out_forked160;
+    wire [31:0] kernel_3mm_B15_merge_out_i_394_pop31219;
+    wire [0:0] kernel_3mm_B15_merge_out_notcmp75216;
+    wire [0:0] kernel_3mm_B15_merge_out_stall_out_0;
+    wire [0:0] kernel_3mm_B15_merge_out_stall_out_1;
+    wire [0:0] kernel_3mm_B15_merge_out_valid_out;
+
+
+    // kernel_3mm_B15_merge(BLACKBOX,18)
+    kernel_3mm_B15_merge thekernel_3mm_B15_merge (
+        .in_forked160_0(in_forked160_0),
+        .in_forked160_1(in_forked160_1),
+        .in_i_394_pop31219_0(in_i_394_pop31219_0),
+        .in_i_394_pop31219_1(in_i_394_pop31219_1),
+        .in_notcmp75216_0(in_notcmp75216_0),
+        .in_notcmp75216_1(in_notcmp75216_1),
+        .in_stall_in(bb_kernel_3mm_B15_stall_region_out_stall_out),
+        .in_valid_in_0(in_valid_in_0),
+        .in_valid_in_1(in_valid_in_1),
+        .out_forked160(kernel_3mm_B15_merge_out_forked160),
+        .out_i_394_pop31219(kernel_3mm_B15_merge_out_i_394_pop31219),
+        .out_notcmp75216(kernel_3mm_B15_merge_out_notcmp75216),
+        .out_stall_out_0(kernel_3mm_B15_merge_out_stall_out_0),
+        .out_stall_out_1(kernel_3mm_B15_merge_out_stall_out_1),
+        .out_valid_out(kernel_3mm_B15_merge_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // bb_kernel_3mm_B15_stall_region(BLACKBOX,2)
+    kernel_3mm_bb_B15_stall_region thebb_kernel_3mm_B15_stall_region (
+        .in_flush(in_flush),
+        .in_forked160(kernel_3mm_B15_merge_out_forked160),
+        .in_i_394_pop31219(kernel_3mm_B15_merge_out_i_394_pop31219),
+        .in_notcmp75216(kernel_3mm_B15_merge_out_notcmp75216),
+        .in_pipeline_stall_in(in_pipeline_stall_in),
+        .in_stall_in(kernel_3mm_B15_branch_out_stall_out),
+        .in_unnamed_kernel_3mm25_kernel_3mm_avm_readdata(in_unnamed_kernel_3mm25_kernel_3mm_avm_readdata),
+        .in_unnamed_kernel_3mm25_kernel_3mm_avm_readdatavalid(in_unnamed_kernel_3mm25_kernel_3mm_avm_readdatavalid),
+        .in_unnamed_kernel_3mm25_kernel_3mm_avm_waitrequest(in_unnamed_kernel_3mm25_kernel_3mm_avm_waitrequest),
+        .in_unnamed_kernel_3mm25_kernel_3mm_avm_writeack(in_unnamed_kernel_3mm25_kernel_3mm_avm_writeack),
+        .in_valid_in(kernel_3mm_B15_merge_out_valid_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_stall_out(bb_kernel_3mm_B15_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_stall_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_valid_out(bb_kernel_3mm_B15_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_valid_out),
+        .out_c0_exe10403(bb_kernel_3mm_B15_stall_region_out_c0_exe10403),
+        .out_c0_exe1394(bb_kernel_3mm_B15_stall_region_out_c0_exe1394),
+        .out_c0_exe2395(bb_kernel_3mm_B15_stall_region_out_c0_exe2395),
+        .out_c0_exe3396(bb_kernel_3mm_B15_stall_region_out_c0_exe3396),
+        .out_c0_exe4397(bb_kernel_3mm_B15_stall_region_out_c0_exe4397),
+        .out_c0_exe5398(bb_kernel_3mm_B15_stall_region_out_c0_exe5398),
+        .out_c0_exe7400(bb_kernel_3mm_B15_stall_region_out_c0_exe7400),
+        .out_c0_exe8401(bb_kernel_3mm_B15_stall_region_out_c0_exe8401),
+        .out_c0_exe9402(bb_kernel_3mm_B15_stall_region_out_c0_exe9402),
+        .out_pipeline_valid_out(bb_kernel_3mm_B15_stall_region_out_pipeline_valid_out),
+        .out_stall_out(bb_kernel_3mm_B15_stall_region_out_stall_out),
+        .out_unnamed_kernel_3mm25_kernel_3mm_avm_address(bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_address),
+        .out_unnamed_kernel_3mm25_kernel_3mm_avm_burstcount(bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_burstcount),
+        .out_unnamed_kernel_3mm25_kernel_3mm_avm_byteenable(bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_byteenable),
+        .out_unnamed_kernel_3mm25_kernel_3mm_avm_enable(bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_enable),
+        .out_unnamed_kernel_3mm25_kernel_3mm_avm_read(bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_read),
+        .out_unnamed_kernel_3mm25_kernel_3mm_avm_write(bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_write),
+        .out_unnamed_kernel_3mm25_kernel_3mm_avm_writedata(bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_writedata),
+        .out_valid_out(bb_kernel_3mm_B15_stall_region_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // kernel_3mm_B15_branch(BLACKBOX,17)
+    kernel_3mm_B15_branch thekernel_3mm_B15_branch (
+        .in_c0_exe10403(bb_kernel_3mm_B15_stall_region_out_c0_exe10403),
+        .in_c0_exe1394(bb_kernel_3mm_B15_stall_region_out_c0_exe1394),
+        .in_c0_exe2395(bb_kernel_3mm_B15_stall_region_out_c0_exe2395),
+        .in_c0_exe3396(bb_kernel_3mm_B15_stall_region_out_c0_exe3396),
+        .in_c0_exe4397(bb_kernel_3mm_B15_stall_region_out_c0_exe4397),
+        .in_c0_exe5398(bb_kernel_3mm_B15_stall_region_out_c0_exe5398),
+        .in_c0_exe7400(bb_kernel_3mm_B15_stall_region_out_c0_exe7400),
+        .in_c0_exe8401(bb_kernel_3mm_B15_stall_region_out_c0_exe8401),
+        .in_c0_exe9402(bb_kernel_3mm_B15_stall_region_out_c0_exe9402),
+        .in_stall_in_0(in_stall_in_0),
+        .in_valid_in(bb_kernel_3mm_B15_stall_region_out_valid_out),
+        .out_c0_exe10403(kernel_3mm_B15_branch_out_c0_exe10403),
+        .out_c0_exe1394(kernel_3mm_B15_branch_out_c0_exe1394),
+        .out_c0_exe2395(kernel_3mm_B15_branch_out_c0_exe2395),
+        .out_c0_exe3396(kernel_3mm_B15_branch_out_c0_exe3396),
+        .out_c0_exe4397(kernel_3mm_B15_branch_out_c0_exe4397),
+        .out_c0_exe5398(kernel_3mm_B15_branch_out_c0_exe5398),
+        .out_c0_exe7400(kernel_3mm_B15_branch_out_c0_exe7400),
+        .out_c0_exe8401(kernel_3mm_B15_branch_out_c0_exe8401),
+        .out_c0_exe9402(kernel_3mm_B15_branch_out_c0_exe9402),
+        .out_stall_out(kernel_3mm_B15_branch_out_stall_out),
+        .out_valid_out_0(kernel_3mm_B15_branch_out_valid_out_0),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // out_c0_exe10403(GPOUT,19)
+    assign out_c0_exe10403 = kernel_3mm_B15_branch_out_c0_exe10403;
+
+    // out_c0_exe1394(GPOUT,20)
+    assign out_c0_exe1394 = kernel_3mm_B15_branch_out_c0_exe1394;
+
+    // out_c0_exe2395(GPOUT,21)
+    assign out_c0_exe2395 = kernel_3mm_B15_branch_out_c0_exe2395;
+
+    // out_c0_exe3396(GPOUT,22)
+    assign out_c0_exe3396 = kernel_3mm_B15_branch_out_c0_exe3396;
+
+    // out_c0_exe4397(GPOUT,23)
+    assign out_c0_exe4397 = kernel_3mm_B15_branch_out_c0_exe4397;
+
+    // out_c0_exe5398(GPOUT,24)
+    assign out_c0_exe5398 = kernel_3mm_B15_branch_out_c0_exe5398;
+
+    // out_c0_exe7400(GPOUT,25)
+    assign out_c0_exe7400 = kernel_3mm_B15_branch_out_c0_exe7400;
+
+    // out_c0_exe8401(GPOUT,26)
+    assign out_c0_exe8401 = kernel_3mm_B15_branch_out_c0_exe8401;
+
+    // out_c0_exe9402(GPOUT,27)
+    assign out_c0_exe9402 = kernel_3mm_B15_branch_out_c0_exe9402;
+
+    // out_exiting_stall_out(GPOUT,28)
+    assign out_exiting_stall_out = bb_kernel_3mm_B15_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_stall_out;
+
+    // out_exiting_valid_out(GPOUT,29)
+    assign out_exiting_valid_out = bb_kernel_3mm_B15_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going72_kernel_3mm2_exiting_valid_out;
+
+    // out_stall_out_0(GPOUT,30)
+    assign out_stall_out_0 = kernel_3mm_B15_merge_out_stall_out_0;
+
+    // out_stall_out_1(GPOUT,31)
+    assign out_stall_out_1 = kernel_3mm_B15_merge_out_stall_out_1;
+
+    // out_unnamed_kernel_3mm25_kernel_3mm_avm_address(GPOUT,32)
+    assign out_unnamed_kernel_3mm25_kernel_3mm_avm_address = bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_address;
+
+    // out_unnamed_kernel_3mm25_kernel_3mm_avm_burstcount(GPOUT,33)
+    assign out_unnamed_kernel_3mm25_kernel_3mm_avm_burstcount = bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_burstcount;
+
+    // out_unnamed_kernel_3mm25_kernel_3mm_avm_byteenable(GPOUT,34)
+    assign out_unnamed_kernel_3mm25_kernel_3mm_avm_byteenable = bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_byteenable;
+
+    // out_unnamed_kernel_3mm25_kernel_3mm_avm_enable(GPOUT,35)
+    assign out_unnamed_kernel_3mm25_kernel_3mm_avm_enable = bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_enable;
+
+    // out_unnamed_kernel_3mm25_kernel_3mm_avm_read(GPOUT,36)
+    assign out_unnamed_kernel_3mm25_kernel_3mm_avm_read = bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_read;
+
+    // out_unnamed_kernel_3mm25_kernel_3mm_avm_write(GPOUT,37)
+    assign out_unnamed_kernel_3mm25_kernel_3mm_avm_write = bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_write;
+
+    // out_unnamed_kernel_3mm25_kernel_3mm_avm_writedata(GPOUT,38)
+    assign out_unnamed_kernel_3mm25_kernel_3mm_avm_writedata = bb_kernel_3mm_B15_stall_region_out_unnamed_kernel_3mm25_kernel_3mm_avm_writedata;
+
+    // out_valid_in_0(GPOUT,39)
+    assign out_valid_in_0 = in_valid_in_0;
+
+    // out_valid_in_1(GPOUT,40)
+    assign out_valid_in_1 = in_valid_in_1;
+
+    // out_valid_out_0(GPOUT,41)
+    assign out_valid_out_0 = kernel_3mm_B15_branch_out_valid_out_0;
+
+    // pipeline_valid_out_sync(GPOUT,43)
+    assign out_pipeline_valid_out = bb_kernel_3mm_B15_stall_region_out_pipeline_valid_out;
+
+endmodule
