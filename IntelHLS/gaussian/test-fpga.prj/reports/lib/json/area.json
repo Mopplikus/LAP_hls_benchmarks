@@ -1,0 +1,1153 @@
+{
+  "columns":
+  ["", "ALUTs", "FFs", "RAMs", "DSPs", "MLABs", "Details"]
+  , "debug_enabled":"true"
+  , "type":"module"
+  , "total_percent":
+  [0.537611, 0.382608, 0.195868, 0.663472, 0.131752]
+  , "total":
+  [2509, 3347, 18, 2, 38]
+  , "name":"System"
+  , "max_resources":
+  [854400, 1708800, 2713, 1518, 42720]
+  , "children":
+  [
+    {
+      "name":"gaussian"
+      , "compute_units":1
+      , "type":"function"
+      , "total_percent":
+      [0.537611, 0.382608, 0.195868, 0.663472, 0.131752]
+      , "total_kernel_resources":
+      [2509, 3347, 18, 1.5, 38]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Number of compute units: 1"
+        }
+        , {
+          "type":"brief"
+          , "text":"1 compute unit."
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"Component call"
+          , "type":"resource"
+          , "data":
+          [0, 0, 0, 0, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Stream implemented 128 bits wide with a buffer size of 0 elements."
+            }
+            , {
+              "type":"brief"
+              , "text":"128b wide with 0 elements."
+            }
+          ]
+        }
+        , {
+          "name":"Component return"
+          , "type":"resource"
+          , "data":
+          [0, 0, 0, 0, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Stream implemented 1 bit wide with a buffer size of 0 elements."
+            }
+            , {
+              "type":"brief"
+              , "text":"1b wide with 0 elements."
+            }
+          ]
+        }
+        , {
+          "name":"Variable: \n - 'i' (gaussian.cpp:14)"
+          , "type":"resource"
+          , "data":
+          [7, 36, 0, 0, 0]
+          , "debug":
+          [
+            [
+              {
+                "filename":"gaussian.cpp"
+                , "line":14
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Type: Register"
+            }
+            , {
+              "type":"text"
+              , "text":"1 register of width 32 bits and depth 1"
+            }
+            , {
+              "type":"brief"
+              , "text":"Register,\n1 reg, 32 width by 1 depth"
+            }
+          ]
+        }
+        , {
+          "name":"Variable: \n - 'k' (gaussian.cpp:18)"
+          , "type":"resource"
+          , "data":
+          [116, 133, 1, 0, 0]
+          , "debug":
+          [
+            [
+              {
+                "filename":"gaussian.cpp"
+                , "line":18
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Type: Register"
+            }
+            , {
+              "type":"text"
+              , "text":"1 register of width 32 bits and depth 71"
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":" Depth was increased by a factor of 68 due to a loop initiation interval of 68."
+                }
+                , {
+                  "type":"text"
+                  , "text":" Each register is implemented in a RAM-based FIFO and consumes 1 RAM"
+                }
+              ]
+            }
+            , {
+              "type":"brief"
+              , "text":"Register,\n1 reg, 32 width by 71 depth"
+            }
+          ]
+        }
+        , {
+          "name":"gaussian.B1.start"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [1, 128, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1, 128, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [14, 9, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:9"
+                  , "type":"resource"
+                  , "data":
+                  [14, 9, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":9
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [1, 0, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:9"
+                  , "type":"resource"
+                  , "data":
+                  [1, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":9
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Stream Read"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"gaussian.B2"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [16, 96, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [16, 32, 0, 0, 0]
+                }
+                , {
+                  "name":"gaussian.cpp:11"
+                  , "type":"resource"
+                  , "data":
+                  [0, 64, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":11
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:14"
+                  , "type":"resource"
+                  , "data":
+                  [1, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":14
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"FFwd Destination"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"gaussian.B3"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [5, 8, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [5, 8, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:30"
+                  , "type":"resource"
+                  , "data":
+                  [3, 2, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":30
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Stream Write"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3, 2, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"gaussian.B4"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [36, 227, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [33, 65, 0, 0, 0]
+                }
+                , {
+                  "name":"gaussian.cpp:11"
+                  , "type":"resource"
+                  , "data":
+                  [2, 96, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":11
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"gaussian.cpp:14"
+                  , "type":"resource"
+                  , "data":
+                  [1, 66, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":14
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:11"
+                  , "type":"resource"
+                  , "data":
+                  [48, 32, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":11
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Select"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [48, 32, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"gaussian.cpp:14"
+                  , "type":"resource"
+                  , "data":
+                  [134, 34, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":14
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [32, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [70, 2, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"gaussian.B5"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [33, 100, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [33, 100, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [32, 82, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:11"
+                  , "type":"resource"
+                  , "data":
+                  [7, 37, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":11
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"gaussian.cpp:14"
+                  , "type":"resource"
+                  , "data":
+                  [17, 43, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":14
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"gaussian.cpp:22"
+                  , "type":"resource"
+                  , "data":
+                  [8, 2, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":22
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [8, 6, 0, 0, 5]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:11"
+                  , "type":"resource"
+                  , "data":
+                  [11, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":11
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"33-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [11, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"gaussian.cpp:14"
+                  , "type":"resource"
+                  , "data":
+                  [54, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":14
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"1-bit And"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [26, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"33-bit Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [27, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"gaussian.B6"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [27, 19, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:22"
+                  , "type":"resource"
+                  , "data":
+                  [27, 19, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":22
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"gaussian.B7"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [540, 753, 9, 0, 4]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [540, 753, 9, 0, 4]
+                }
+              ]
+            }
+            , {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [445, 545, 8, 0, 3]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:14"
+                  , "type":"resource"
+                  , "data":
+                  [223, 304, 4, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":14
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"gaussian.cpp:18"
+                  , "type":"resource"
+                  , "data":
+                  [116, 121, 4, 0, 1]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":18
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"gaussian.cpp:22"
+                  , "type":"resource"
+                  , "data":
+                  [106, 120, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":22
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"gaussian.cpp:14"
+                  , "type":"resource"
+                  , "data":
+                  [2.5, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":14
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"1-bit Or"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [0.5, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"FFwd Destination"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [2, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"gaussian.cpp:18"
+                  , "type":"resource"
+                  , "data":
+                  [11.5, 3, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":18
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"1-bit And"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [2, 1, 0, 0, 0]
+                    }
+                    , {
+                      "name":"1-bit Or"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [1.5, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"2-bit Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [2, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"6-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [2, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Iteration Initiation"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [4, 2, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"gaussian.cpp:22"
+                  , "type":"resource"
+                  , "data":
+                  [962, 1134, 0, 1.5, 26]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                        , "line":22
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"1-bit Or"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [82, 199, 0, 1.5, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 0, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [753, 663, 0, 0, 21]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Pipelined LSU"
+                        }
+                        , {
+                          "type":"brief"
+                          , "text":"Pipelined LSU"
+                        }
+                      ]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [94, 272, 0, 0, 5]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Pipelined LSU"
+                        }
+                        , {
+                          "type":"brief"
+                          , "text":"Pipelined LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

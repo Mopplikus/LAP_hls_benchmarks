@@ -1,0 +1,243 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"?"
+      , "id":4294967295
+      , "src":"2308565008"
+      , "dst":"2314619168"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"example.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"example.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: example.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                  , "line":"17"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":2308565008
+          , "start":"1.00"
+          , "parent":"example.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":10
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"example.B2"
+          , "id":2309325600
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2314619168
+          , "end":"2.00"
+          , "parent":"example.B3"
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2309325600
+          , "to":2309325600
+        }
+        , {
+          "from":2308565008
+          , "to":2309325600
+        }
+        , {
+          "from":2309325600
+          , "to":2314619168
+        }
+        , {
+          "from":2308565008
+          , "to":2314619168
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"'s'"
+      , "id":4294967295
+      , "src":"2309075392"
+      , "dst":"2311346752"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"example.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"'s'"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"240.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"f32 +(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Select(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"'s'"
+          , "id":2309075392
+          , "start":"38.00"
+          , "parent":"example.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":14
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 +"
+          , "id":2309512640
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Select"
+          , "id":2309512992
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2311346752
+          , "end":"41.00"
+          , "parent":"example.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2309075392
+          , "to":2309512640
+        }
+        , {
+          "from":2309075392
+          , "to":2309512992
+        }
+        , {
+          "from":2309512640
+          , "to":2309512992
+        }
+        , {
+          "from":2309512992
+          , "to":2311346752
+        }
+        , {
+          "from":2309075392
+          , "to":2311346752
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler***********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Version 2.0 - Build 1.0 ************************************
+******************************************************************
+
+synthesis_optimized.tcl
+Done 
+set input file: example.cpp
+current input filename: ./src/example.cpp
+Done 
+Synthesize
+compile example.cpp . Andrea: arg1:  example.cpp arg2: . arg3 arg4
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/clang -emit-llvm -S   -c src/example.cpp -o .example.cpp.ll
+rm: cannot remove '*.s': No such file or directory
+0Time elapsed: 1e-06s.
+; ModuleID = '.example.cpp_mem2reg_constprop_simplifycfg_die.ll'
+source_filename = "src/example.cpp"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+; Function Attrs: noinline nounwind uwtable
+define float @_Z7examplePfS_(float* %A, float* %B) #0 {
+block1:
+  br label %block2
+
+block2:                                           ; preds = %block2, %block1
+  %i.02 = phi i32 [ 0, %block1 ], [ %inc, %block2 ]
+  %s.01 = phi float [ 0.000000e+00, %block1 ], [ %s.1, %block2 ]
+  %"2" = zext i32 %i.02 to i64
+  %arrayidx = getelementptr inbounds float, float* %A, i64 %"2"
+  %"3" = load float, float* %arrayidx, align 4
+  %"4" = zext i32 %i.02 to i64
+  %arrayidx2 = getelementptr inbounds float, float* %B, i64 %"4"
+  %"5" = load float, float* %arrayidx2, align 4
+  %sub = fsub float %"3", %"5"
+  %cmp3 = fcmp oge float %sub, 0.000000e+00
+  %add = fadd float %s.01, %sub
+  %s.1 = select i1 %cmp3, float %add, float %s.01
+  %inc = add nuw nsw i32 %i.02, 1
+  %cmp = icmp ult i32 %inc, 100
+  br i1 %cmp, label %block2, label %block3
+
+block3:                                           ; preds = %block2
+  ret float %s.1
+}
+
+; Function Attrs: noinline norecurse nounwind uwtable
+define i32 @main() #1 {
+entry:
+  %A = alloca [1 x [100 x float]], align 16
+  %B = alloca [1 x [100 x float]], align 16
+  call void @srand(i32 15) #3
+  br label %for.body
+
+for.body:                                         ; preds = %for.inc15, %entry
+  br label %for.body3
+
+for.body3:                                        ; preds = %for.body3, %for.body
+  %i.02 = phi i32 [ 0, %for.body ], [ %inc, %for.body3 ]
+  %call = call i32 @rand() #3
+  %conv = sitofp i32 %call to float
+  %div4 = fdiv float %conv, 0x41B99999A0000000
+  %0 = zext i32 %i.02 to i64
+  %1 = getelementptr inbounds [1 x [100 x float]], [1 x [100 x float]]* %A, i64 0, i64 0, i64 %0
+  store float %div4, float* %1, align 4
+  %call7 = call i32 @rand() #3
+  %conv8 = sitofp i32 %call7 to float
+  %div10 = fdiv float %conv8, 0x41B99999A0000000
+  %2 = zext i32 %i.02 to i64
+  %3 = getelementptr inbounds [1 x [100 x float]], [1 x [100 x float]]* %B, i64 0, i64 0, i64 %2
+  store float %div10, float* %3, align 4
+  %inc = add nuw nsw i32 %i.02, 1
+  %cmp2 = icmp ult i32 %inc, 100
+  br i1 %cmp2, label %for.body3, label %for.inc15
+
+for.inc15:                                        ; preds = %for.body3
+  br i1 false, label %for.body, label %for.end17
+
+for.end17:                                        ; preds = %for.inc15
+  br label %for.body21
+
+for.body21:                                       ; preds = %for.body21, %for.end17
+  %i18.01 = phi i32 [ 0, %for.end17 ], [ %inc29, %for.body21 ]
+  %4 = zext i32 %i18.01 to i64
+  %arraydecay = getelementptr inbounds [1 x [100 x float]], [1 x [100 x float]]* %A, i64 0, i64 %4, i64 0
+  %5 = zext i32 %i18.01 to i64
+  %arraydecay26 = getelementptr inbounds [1 x [100 x float]], [1 x [100 x float]]* %B, i64 0, i64 %5, i64 0
+  %call27 = call float @_Z7examplePfS_(float* nonnull %arraydecay, float* nonnull %arraydecay26)
+  %inc29 = add nuw nsw i32 %i18.01, 1
+  br i1 false, label %for.body21, label %for.end30
+
+for.end30:                                        ; preds = %for.body21
+  ret i32 0
+}
+
+; Function Attrs: nounwind
+declare void @srand(i32) #2
+
+; Function Attrs: nounwind
+declare i32 @rand() #2
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline norecurse nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 6.0.1 (http://llvm.org/git/clang.git 2f27999df400d17b33cdd412fdd606a88208dfcc) (http://llvm.org/git/llvm.git 5136df4d089a086b70d452160ad5451861269498)"}
+OptimizeBitwidth : Optimization of function _Z7examplePfS_ finished in 2 iterations.
+Printing stats (for more details on states for each individual value, use dumpInfos).
+Saved bits during forward passes : 100
+Saved bits during backward passes : 0
+Saved bits in constants : 87
+Used bits after OB : 391, vs. Originaly used bits : 578
+ => Reduction of used bits : 6.764706e+01
+
+
+Done 
+Done 
+Optimize
+buffers buffers -filename=./reports/example -period=5 ****************************************
+dataflow graph name: ./reports/example
+milp solver: cbc
+delay: 0, period: 5
+timeout: 180
+set optimization: true
+first MG optimization: false
+****************************************
+===================
+READING BB DOT FILE
+===================
+Reading graph name...
+Reading set of nodes...
+Reading set of edges between nodes...
+Setting entry and exit BB...
+	Entry: BB1, Exit: BB3
+Setting BB frequencies...
+BB1 : 1
+BB2 : 100
+BB3 : 1
+
+Adding elastic buffers with period=5 and buffer_delay=0
+
+======================
+ADDING ELASTIC BUFFERS
+======================
+Extracting marked graphs
+--------------------------
+Iteration 1
+ILP time: [ms] 32 
+Arcs in the CFDFC:
+	2->2:99
+Updating frequencies...
+Storing CFDFC and corresponding Marked Graph...
+--------------------------
+Iteration 2
+ILP time: [ms] 33 
+Arcs in the CFDFC:
+No new MG can be extracted to increase coverage.
+
+*******************
+Covered Frequency = 99, Total Frequency = 101, Coverage = 0.980198
+*******************
+
+determining buffer from/to MC_LSQ units to/from loads.
+----------------------
+buffers on MG borders
+----------------------
+Adding buffer in branch_0:out1 -> phi_1:in2 | slots: 1, trans: 0 | BB1 -> BB2
+Adding buffer in branch_1:out1 -> phi_2:in2 | slots: 1, trans: 0 | BB1 -> BB2
+Adding buffer in branch_2:out2 -> phi_n0:in1 | slots: 1, trans: 0 | BB2 -> BB3
+Adding buffer in branchC_4:out1 -> phiC_1:in1 | slots: 1, trans: 0 | BB1 -> BB2
+Adding buffer in branchC_5:out2 -> phiC_2:in1 | slots: 1, trans: 0 | BB2 -> BB3
+
+Calculating disjoint sets of CFDFCs...
+	initialize
+	union
+	get set of unique dsu numbers
+	merge and get sub-components
+Total number of Extracted Disjoint CFDFCs: 1
+Adding Marked Graphs from CFDFCs...
+
+-------------------------------
+Initiating MILP for MG number 0
+-------------------------------
+ creating throughput vars for sub_mg0
+Solving MILP for elastic buffers: MG 0
+Milp time for MG 0: [ms] 517 
+
+************************
+*** Throughput for MG 0 in disjoint MG 0: 1.00 ***
+************************
+Adding buffer in phi_1:out1 -> fork_0:in1 | slots: 2, trans: 0 | BB2 -> BB2 (inner)
+Adding buffer in phi_2:out1 -> fork_1:in1 | slots: 2, trans: 0 | BB2 -> BB2 (inner)
+Adding buffer in fork_2:out2 -> fadd_11:in2 | slots: 2, trans: 1 | BB2 -> BB2 (inner)
+Adding buffer in fork_6:out2 -> branch_2:in2 | slots: 14, trans: 1 | BB2 -> BB2 (inner)
+Adding buffer in phiC_1:out1 -> branchC_5:in1 | slots: 2, trans: 0 | BB2 -> BB2 (inner)
+Adding buffer in fork_11:out2 -> phi_2:in1 | slots: 14, trans: 1 | BB2 -> BB2 (inner)
+
+*** Throughput achieved in sub MG 0: 1.00 ***
+
+--------------------------------------
+Initiating MILP for remaining channels
+--------------------------------------
+Solving MILP for channels not covered by MGs
+Milp time for remaining channels: [ms] 67 
+
+***************************
+Total MILP time: [ms] 584
+***************************
+INSTANTIATE
+cp ./reports/example_graph_buf.dot ./_input/example_graph.dot 
+cp ./reports/example_bbgraph_buf.dot ./_input/example_bbgraph.dot 
+cp ./reports/example_bbgraph_buf.dot ./_tmp/out_bbgraph.dot
+Executing min
+example
+===================
+READING BB DOT FILE
+===================
+Reading graph name...
+Reading set of nodes...
+Reading set of edges between nodes...
+Setting entry and exit BB...
+	Entry: BB1, Exit: BB3
+Setting BB frequencies...
+BB1 : 1
+BB2 : 100
+BB3 : 1
+
+running MILP with timeout : 100
+intra set sharing for mul_op
+intra set sharing for fmul_op
+intra set sharing for fsub_op
+intra set sharing for fadd_op
+intra set sharing for fdiv_op
+intra set sharing for sdiv_op
+inter set sharing for mul_op
+inter set sharing for fmul_op
+inter set sharing for fsub_op
+inter set sharing for fadd_op
+inter set sharing for fdiv_op
+inter set sharing for sdiv_op
+checking final throughputs == initial throughputs
+checking throughput
+===================
+READING BB DOT FILE
+===================
+Reading graph name...
+Reading set of nodes...
+Reading set of edges between nodes...
+Setting entry and exit BB...
+	Entry: BB1, Exit: BB3
+Setting BB frequencies...
+BB1 : 1
+BB2 : 100
+BB3 : 1
+
+Merge groups of type OPERATOR
+- Shared components in BB 2 : 
+	- At index 0, fadd_11
+Expected to find 1 block of type FORK but found 0 in BB 2
+did not find a forkC, creating one 
+Merge groups of type OPERATOR
+- Shared components in BB 2 : 
+	- At index 0, fsub_9
+running MILP with timeout : 300
+Throughput unharmed
+===================
+READING BB DOT FILE
+===================
+Reading graph name...
+Reading set of nodes...
+Reading set of edges between nodes...
+Setting entry and exit BB...
+	Entry: BB1, Exit: BB3
+Setting BB frequencies...
+BB1 : 1
+BB2 : 100
+BB3 : 1
+
+removing buffer _Buffer_12 from fsub_9 with slots 1 and transparency 1
+Removing _Buffer_12
+removing buffer _Buffer_13 from fadd_11 with slots 13 and transparency 1
+Removing _Buffer_13
+removing additional_fork_cp0
+Removing additional_fork_cp0
+Merge groups of type OPERATOR
+- Shared components in BB 2 : 
+	- At index 0, fadd_11
+Merge groups of type OPERATOR
+- Shared components in BB 2 : 
+	- At index 0, fsub_9
+Done
+resource_minimization min example
+cp ./_output/example_graph.dot ./reports/example_area_optimized.dot
+Done 
+Write hdl
+write_hdl  . ./reports/example_area_optimized
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler **********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Dot to VHDL Generator***************************************
+******************************************************************
+Parsing ./reports/example_area_optimized.dot
+
+Report Modules 
++--------------------------------------------------------------------------+
+|   Node_ID|                Name|         Module_type|    Inputs|   Outputs|
++--------------------------------------------------------------------------+
+|         0|        brCst_block1|            Constant|         1|         1|
+|         1|               cst_0|            Constant|         1|         1|
+|         2|               cst_1|            Constant|         1|         1|
+|         3|            branch_0|              Branch|         2|         2|
+|         4|            branch_1|              Branch|         2|         2|
+|         5|              fork_5|                Fork|         1|         3|
+|         6|             start_0|               Entry|         1|         1|
+|         7|             forkC_8|                Fork|         1|         4|
+|         8|           branchC_4|              Branch|         2|         2|
+|         9|            Buffer_3|              Buffer|         1|         1|
+|        10|            Buffer_2|              Buffer|         1|         1|
+|        11|            Buffer_1|              Buffer|         1|         1|
+|        12|           Buffer_11|               tFifo|         1|         1|
+|        13|           Buffer_10|              Buffer|         1|         1|
+|        14|            Buffer_9|               tFifo|         1|         1|
+|        15|               phi_1|                 Mux|         3|         1|
+|        16|               phi_2|                 Mux|         3|         1|
+|        17|              load_5|            Operator|         2|         2|
+|        18|              load_8|            Operator|         2|         2|
+|        19|              fsub_9|            Operator|         2|         1|
+|        20|               cst_2|            Constant|         1|         1|
+|        21|             fcmp_10|            Operator|         2|         1|
+|        22|             fadd_11|            Operator|         2|         1|
+|        23|            select_0|            Operator|         3|         1|
+|        24|               cst_3|            Constant|         1|         1|
+|        25|              add_12|            Operator|         2|         1|
+|        26|               cst_4|            Constant|         1|         1|
+|        27|             icmp_13|            Operator|         2|         1|
+|        28|              fork_0|                Fork|         1|         3|
+|        29|              fork_1|                Fork|         1|         2|
+|        30|              fork_2|                Fork|         1|         2|
+|        31|              fork_4|                Fork|         1|         2|
+|        32|            branch_2|              Branch|         2|         2|
+|        33|            branch_3|              Branch|         2|         2|
+|        34|              fork_6|                Fork|         1|         3|
+|        35|              phiC_1|          CntrlMerge|         2|         2|
+|        36|           branchC_5|              Branch|         2|         2|
+|        37|            source_0|              Source|         0|         1|
+|        38|            source_1|              Source|         0|         1|
+|        39|            source_2|              Source|         0|         1|
+|        40|             fork_11|                Fork|         1|         2|
+|        41|            Buffer_8|              Buffer|         1|         1|
+|        42|            Buffer_7|               tFifo|         1|         1|
+|        43|            Buffer_6|              Buffer|         1|         1|
+|        44|            Buffer_5|              Buffer|         1|         1|
+|        45|            Buffer_4|              Buffer|         1|         1|
+|        46|               ret_0|            Operator|         1|         1|
+|        47|              phi_n0|               Merge|         1|         1|
+|        48|              phiC_2|               Merge|         1|         1|
+|        49|                MC_A|                  MC|         4|         2|
+|        50|                MC_B|                  MC|         4|         2|
+|        51|               end_0|                Exit|         3|         1|
+|        52|              sink_0|                Sink|         1|         0|
+|        53|              sink_1|                Sink|         1|         0|
+|        54|              sink_2|                Sink|         1|         0|
+|        55|              sink_3|                Sink|         1|         0|
+|        56|              sink_4|                Sink|         1|         0|
++--------------------------------------------------------------------------+
+Generating ./reports/example_area_optimized.vhd
+
+Done
+
+
+
+Done 
+Exit...
+Goodbye!
+
+

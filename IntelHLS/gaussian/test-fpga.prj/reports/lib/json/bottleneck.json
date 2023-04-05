@@ -1,0 +1,558 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"?"
+      , "id":4294967295
+      , "src":"2782049840"
+      , "dst":"2785831632"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"gaussian.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"gaussian.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: gaussian.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"11"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: gaussian.B5(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"11"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: gaussian.B7(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"18"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: gaussian.B6(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"11"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: gaussian.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"11"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":2782049840
+          , "start":"1.00"
+          , "parent":"gaussian.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":9
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"gaussian.B4"
+          , "id":2786016432
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":11
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"gaussian.B5"
+          , "id":2781156864
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":11
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"gaussian.B7"
+          , "id":2799989184
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":18
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"gaussian.B6"
+          , "id":2800459040
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":11
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"gaussian.B2"
+          , "id":2780783776
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":11
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2785831632
+          , "end":"1.00"
+          , "parent":"gaussian.B3"
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2786016432
+          , "to":2781156864
+        }
+        , {
+          "from":2781156864
+          , "to":2799989184
+        }
+        , {
+          "from":2799989184
+          , "to":2799989184
+        }
+        , {
+          "from":2799989184
+          , "to":2800459040
+        }
+        , {
+          "from":2800459040
+          , "to":2780783776
+        }
+        , {
+          "from":2782049840
+          , "to":2786016432
+        }
+        , {
+          "from":2780783776
+          , "to":2785831632
+        }
+        , {
+          "from":2782049840
+          , "to":2785831632
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"2789923584"
+      , "dst":"2800082544"
+      , "type":"fMAX/II"
+      , "brief":"Memory dependency"
+      , "loop":"gaussian.B7"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Estimated fmax reduced to: ":"240.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"Or(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"22"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"LD(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"22"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"*(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"22"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"-(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"22"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"ST(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"22"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":2789923584
+          , "start":"2.00"
+          , "parent":"gaussian.B7"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Or"
+          , "id":2782405152
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":2782405504
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"*"
+          , "id":2791823136
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"-"
+          , "id":2791823488
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"ST"
+          , "id":2791823840
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2800082544
+          , "end":"71.00"
+          , "parent":"gaussian.B7"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2789923584
+          , "to":2782405152
+        }
+        , {
+          "from":2782405152
+          , "to":2782405504
+        }
+        , {
+          "from":2782405504
+          , "to":2791823136
+        }
+        , {
+          "from":2791823136
+          , "to":2791823488
+        }
+        , {
+          "from":2791823488
+          , "to":2791823840
+        }
+        , {
+          "from":2791823840
+          , "to":2800082544
+        }
+        , {
+          "from":2789923584
+          , "to":2800082544
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"2799387472"
+      , "dst":"2785790624"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"gaussian.B5"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: gaussian.B7(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                  , "line":"18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":2799387472
+          , "start":"5.00"
+          , "parent":"gaussian.B5"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"gaussian.B7"
+          , "id":2799989184
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":18
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2785790624
+          , "end":"1.00"
+          , "parent":"gaussian.B6"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2799989184
+          , "to":2799989184
+        }
+        , {
+          "from":2799387472
+          , "to":2799989184
+        }
+        , {
+          "from":2799989184
+          , "to":2785790624
+        }
+        , {
+          "from":2799387472
+          , "to":2785790624
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}
