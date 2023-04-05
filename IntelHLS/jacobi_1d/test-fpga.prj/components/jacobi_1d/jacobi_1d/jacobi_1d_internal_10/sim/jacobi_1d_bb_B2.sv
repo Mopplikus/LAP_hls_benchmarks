@@ -1,0 +1,134 @@
+// ------------------------------------------------------------------------- 
+// High Level Design Compiler for Intel(R) FPGAs Version 21.4 (Release Build #53.1)
+// 
+// Legal Notice: Copyright 2021 Intel Corporation.  All rights reserved.
+// Your use of  Intel Corporation's design tools,  logic functions and other
+// software and  tools, and its AMPP partner logic functions, and any output
+// files any  of the foregoing (including  device programming  or simulation
+// files), and  any associated  documentation  or information  are expressly
+// subject  to the terms and  conditions of the  Intel FPGA Software License
+// Agreement, Intel MegaCore Function License Agreement, or other applicable
+// license agreement,  including,  without limitation,  that your use is for
+// the  sole  purpose of  programming  logic devices  manufactured by  Intel
+// and  sold by Intel  or its authorized  distributors. Please refer  to the
+// applicable agreement for further details.
+// ---------------------------------------------------------------------------
+
+// SystemVerilog created from bb_jacobi_1d_B2
+// Created for function/kernel jacobi_1d
+// SystemVerilog created on Wed Apr  5 13:32:10 2023
+
+
+(* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
+module jacobi_1d_bb_B2 (
+    input wire [0:0] in_flush,
+    input wire [31:0] in_pre_pre1_jacobi_1d_avm_readdata,
+    input wire [0:0] in_pre_pre1_jacobi_1d_avm_readdatavalid,
+    input wire [0:0] in_pre_pre1_jacobi_1d_avm_waitrequest,
+    input wire [0:0] in_pre_pre1_jacobi_1d_avm_writeack,
+    input wire [0:0] in_stall_in_0,
+    input wire [0:0] in_valid_in_0,
+    output wire [31:0] out_intel_reserved_ffwd_3_0,
+    output wire [31:0] out_pre_pre1_jacobi_1d_avm_address,
+    output wire [0:0] out_pre_pre1_jacobi_1d_avm_burstcount,
+    output wire [3:0] out_pre_pre1_jacobi_1d_avm_byteenable,
+    output wire [0:0] out_pre_pre1_jacobi_1d_avm_enable,
+    output wire [0:0] out_pre_pre1_jacobi_1d_avm_read,
+    output wire [0:0] out_pre_pre1_jacobi_1d_avm_write,
+    output wire [31:0] out_pre_pre1_jacobi_1d_avm_writedata,
+    output wire [0:0] out_stall_out_0,
+    output wire [0:0] out_valid_out_0,
+    input wire clock,
+    input wire resetn
+    );
+
+    wire [31:0] bb_jacobi_1d_B2_stall_region_out_intel_reserved_ffwd_3_0;
+    wire [31:0] bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_address;
+    wire [0:0] bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_burstcount;
+    wire [3:0] bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_byteenable;
+    wire [0:0] bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_enable;
+    wire [0:0] bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_read;
+    wire [0:0] bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_write;
+    wire [31:0] bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_writedata;
+    wire [0:0] bb_jacobi_1d_B2_stall_region_out_stall_out;
+    wire [0:0] bb_jacobi_1d_B2_stall_region_out_valid_out;
+    wire [0:0] jacobi_1d_B2_branch_out_stall_out;
+    wire [0:0] jacobi_1d_B2_branch_out_valid_out_0;
+    wire [0:0] jacobi_1d_B2_merge_out_stall_out_0;
+    wire [0:0] jacobi_1d_B2_merge_out_valid_out;
+
+
+    // jacobi_1d_B2_merge(BLACKBOX,11)
+    jacobi_1d_B2_merge thejacobi_1d_B2_merge (
+        .in_stall_in(bb_jacobi_1d_B2_stall_region_out_stall_out),
+        .in_valid_in_0(in_valid_in_0),
+        .out_stall_out_0(jacobi_1d_B2_merge_out_stall_out_0),
+        .out_valid_out(jacobi_1d_B2_merge_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // jacobi_1d_B2_branch(BLACKBOX,10)
+    jacobi_1d_B2_branch thejacobi_1d_B2_branch (
+        .in_stall_in_0(in_stall_in_0),
+        .in_valid_in(bb_jacobi_1d_B2_stall_region_out_valid_out),
+        .out_stall_out(jacobi_1d_B2_branch_out_stall_out),
+        .out_valid_out_0(jacobi_1d_B2_branch_out_valid_out_0),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // bb_jacobi_1d_B2_stall_region(BLACKBOX,2)
+    jacobi_1d_bb_B2_stall_region thebb_jacobi_1d_B2_stall_region (
+        .in_flush(in_flush),
+        .in_pre_pre1_jacobi_1d_avm_readdata(in_pre_pre1_jacobi_1d_avm_readdata),
+        .in_pre_pre1_jacobi_1d_avm_readdatavalid(in_pre_pre1_jacobi_1d_avm_readdatavalid),
+        .in_pre_pre1_jacobi_1d_avm_waitrequest(in_pre_pre1_jacobi_1d_avm_waitrequest),
+        .in_pre_pre1_jacobi_1d_avm_writeack(in_pre_pre1_jacobi_1d_avm_writeack),
+        .in_stall_in(jacobi_1d_B2_branch_out_stall_out),
+        .in_valid_in(jacobi_1d_B2_merge_out_valid_out),
+        .out_intel_reserved_ffwd_3_0(bb_jacobi_1d_B2_stall_region_out_intel_reserved_ffwd_3_0),
+        .out_pre_pre1_jacobi_1d_avm_address(bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_address),
+        .out_pre_pre1_jacobi_1d_avm_burstcount(bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_burstcount),
+        .out_pre_pre1_jacobi_1d_avm_byteenable(bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_byteenable),
+        .out_pre_pre1_jacobi_1d_avm_enable(bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_enable),
+        .out_pre_pre1_jacobi_1d_avm_read(bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_read),
+        .out_pre_pre1_jacobi_1d_avm_write(bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_write),
+        .out_pre_pre1_jacobi_1d_avm_writedata(bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_writedata),
+        .out_stall_out(bb_jacobi_1d_B2_stall_region_out_stall_out),
+        .out_valid_out(bb_jacobi_1d_B2_stall_region_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // out_intel_reserved_ffwd_3_0(GPOUT,12)
+    assign out_intel_reserved_ffwd_3_0 = bb_jacobi_1d_B2_stall_region_out_intel_reserved_ffwd_3_0;
+
+    // out_pre_pre1_jacobi_1d_avm_address(GPOUT,13)
+    assign out_pre_pre1_jacobi_1d_avm_address = bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_address;
+
+    // out_pre_pre1_jacobi_1d_avm_burstcount(GPOUT,14)
+    assign out_pre_pre1_jacobi_1d_avm_burstcount = bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_burstcount;
+
+    // out_pre_pre1_jacobi_1d_avm_byteenable(GPOUT,15)
+    assign out_pre_pre1_jacobi_1d_avm_byteenable = bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_byteenable;
+
+    // out_pre_pre1_jacobi_1d_avm_enable(GPOUT,16)
+    assign out_pre_pre1_jacobi_1d_avm_enable = bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_enable;
+
+    // out_pre_pre1_jacobi_1d_avm_read(GPOUT,17)
+    assign out_pre_pre1_jacobi_1d_avm_read = bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_read;
+
+    // out_pre_pre1_jacobi_1d_avm_write(GPOUT,18)
+    assign out_pre_pre1_jacobi_1d_avm_write = bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_write;
+
+    // out_pre_pre1_jacobi_1d_avm_writedata(GPOUT,19)
+    assign out_pre_pre1_jacobi_1d_avm_writedata = bb_jacobi_1d_B2_stall_region_out_pre_pre1_jacobi_1d_avm_writedata;
+
+    // out_stall_out_0(GPOUT,20)
+    assign out_stall_out_0 = jacobi_1d_B2_merge_out_stall_out_0;
+
+    // out_valid_out_0(GPOUT,21)
+    assign out_valid_out_0 = jacobi_1d_B2_branch_out_valid_out_0;
+
+endmodule
