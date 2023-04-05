@@ -1,0 +1,1414 @@
+{
+  "nodes":
+  [
+    {
+      "type":"component"
+      , "id":2
+      , "name":"triangular"
+      , "children":
+      [
+        {
+          "type":"bb"
+          , "id":3
+          , "name":"triangular.B0.runOnce"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"2"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":4
+          , "name":"triangular.B1.start"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":17
+              , "name":"Stream Read"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":8
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"192 bits"
+                  , "Depth":"0"
+                  , "Stall-free":"No"
+                  , "Start Cycle":"2"
+                  , "Latency":"0"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":31
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":""
+                    , "line":0
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"40"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":32
+              , "name":"End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"2"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"2"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":5
+          , "name":"triangular.B2"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"2"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":6
+          , "name":"triangular.B3"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"5"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"34"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":7
+          , "name":"triangular.B4"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":19
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":19
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined"
+                  , "Stall-free":"No"
+                  , "Start Cycle":"1"
+                  , "Latency":"31"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":20
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":19
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"x_local"
+                  , "Start Cycle":"33"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":33
+              , "name":"Begin"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":34
+              , "name":"End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"34"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"34"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":8
+          , "name":"triangular.B5"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":21
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":17
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined"
+                  , "Stall-free":"No"
+                  , "Loads from":"A"
+                  , "Start Cycle":"4"
+                  , "Latency":"31"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":22
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":17
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"A_local"
+                  , "Start Cycle":"36"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":35
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":15
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"36"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":36
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"37"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"37"
+              , "II":"1"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":""
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":9
+          , "name":"triangular.B6"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":10
+          , "name":"triangular.B7"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":11
+          , "name":"triangular.B8"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"7"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"9"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":12
+          , "name":"triangular.B9"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":23
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":25
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"x_local"
+                  , "Start Cycle":"2"
+                  , "Latency":"3"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":24
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":25
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"A_local"
+                  , "Start Cycle":"5"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":25
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":25
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"A_local"
+                  , "Start Cycle":"8"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":26
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":25
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"A_local"
+                  , "Start Cycle":"9"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":37
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":22
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"38"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":38
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"13"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"13"
+              , "II":"5"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Loop is pipelined with II of 5. See Loops Analysis for more information."
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":13
+          , "name":"triangular.B10"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"5"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"15"
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":14
+          , "name":"triangular.B11"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":27
+              , "name":"Stream Write"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":36
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"1 bit"
+                  , "Depth":"0"
+                  , "Stall-free":"No"
+                  , "Start Cycle":"0"
+                  , "Latency":"0"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":39
+              , "name":"Begin"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":40
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":15
+          , "name":"triangular.B12"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"0"
+              , "II":"1"
+              , "Subloops":"Yes"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
+            }
+          ]
+        }
+        , {
+          "type":"bb"
+          , "id":16
+          , "name":"triangular.B13"
+          , "children":
+          [
+            {
+              "type":"inst"
+              , "id":29
+              , "name":"Load"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":33
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Loads from":"A_local"
+                  , "Start Cycle":"4"
+                  , "Latency":"1"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":30
+              , "name":"Store"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":33
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Width":"32 bits"
+                  , "Type":"Pipelined never-stall"
+                  , "Stall-free":"Yes"
+                  , "Stores to":"A"
+                  , "Start Cycle":"6"
+                  , "Latency":"3"
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":41
+              , "name":"Loop Input"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                    , "line":31
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"0"
+                  , "Latency":"1"
+                  , "Loops To":"42"
+                }
+              ]
+            }
+            , {
+              "type":"inst"
+              , "id":42
+              , "name":"Loop End"
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Start Cycle":"12"
+                  , "Latency":"1"
+                }
+              ]
+            }
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Latency":"12"
+              , "II":"1"
+              , "Subloops":"No"
+              , "Pipelined":"Yes"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":""
+            }
+          ]
+        }
+        , {
+          "type":"memtype"
+          , "id":46
+          , "name":"Local Memory"
+          , "children":
+          [
+            {
+              "type":"memsys"
+              , "id":47
+              , "name":"x_local"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"triangular.cpp"
+                    , "line":9
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Requested size":"400 bytes"
+                  , "Implemented size":"512 bytes"
+                  , "Number of banks":"1"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"128 words"
+                  , "Number of replicates":"1"
+                  , "Number of private copies":"1"
+                  , "User defined Attributes":"hls_memory; hls_singlepump; "
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual : Local Variables in Components"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html#xzx1468871996419"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+            , {
+              "type":"memsys"
+              , "id":51
+              , "name":"A_local"
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"triangular.cpp"
+                    , "line":10
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"table"
+                  , "Requested size":"40000 bytes"
+                  , "Implemented size":"131072 bytes"
+                  , "Number of banks":"1"
+                  , "Bank width":"32 bits"
+                  , "Bank depth":"16384 words"
+                  , "Number of replicates":"2"
+                  , "Number of private copies":"1"
+                  , "Additional Information":"For each bank, 2 replicates were created to efficiently support multiple accesses"
+                  , "User defined Attributes":"hls_memory; hls_singlepump; "
+                  , "Reference":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"See %L for more information"
+                      , "links":
+                      [
+                        {
+                          "guide":"Reference Manual : Local Variables in Components"
+                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html#xzx1468871996419"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "type":"memtype"
+      , "id":1
+      , "name":"System Memory"
+      , "children":
+      [
+        {
+          "type":"memsys"
+          , "id":58
+          , "name":"0"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Number of banks":"1"
+              , "Arguments from triangular":"x, A"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "type":"stream"
+      , "id":18
+      , "name":"call.triangular"
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+            , "line":8
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"192 bits"
+          , "Depth":"0"
+          , "Bits per symbol":"192 bits"
+          , "Uses Packets":"No"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+          , "Uses Valid":"Yes"
+          , "Ready Latency":"0"
+        }
+      ]
+    }
+    , {
+      "type":"stream"
+      , "id":28
+      , "name":"return.triangular"
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+            , "line":8
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Bits per symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+          , "Uses Ready":"Yes"
+          , "Ready Latency":"0"
+        }
+      ]
+    }
+    , {
+      "type":"interface"
+      , "id":44
+      , "name":"A"
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+            , "line":8
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Stable":"No"
+          , "Data width":"64"
+          , "Address width":"64"
+          , "Address Space":"0"
+          , "Latency":"1"
+          , "ReadWrite Mode":"readwrite"
+          , "Maximum burst":"1"
+          , "Wait request":"0"
+          , "Alignment":"0"
+          , "Component":"triangular"
+        }
+      ]
+    }
+    , {
+      "type":"interface"
+      , "id":45
+      , "name":"n"
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+            , "line":8
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Stable":"No"
+          , "Width":"32 bits"
+          , "Component":"triangular"
+        }
+      ]
+    }
+    , {
+      "type":"interface"
+      , "id":43
+      , "name":"x"
+      , "debug":
+      [
+        [
+          {
+            "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+            , "line":8
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Stable":"No"
+          , "Data width":"64"
+          , "Address width":"64"
+          , "Address Space":"0"
+          , "Latency":"1"
+          , "ReadWrite Mode":"readwrite"
+          , "Maximum burst":"1"
+          , "Wait request":"0"
+          , "Alignment":"0"
+          , "Component":"triangular"
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":18
+      , "to":17
+    }
+    , {
+      "from":27
+      , "to":28
+    }
+    , {
+      "from":43
+      , "to":17
+    }
+    , {
+      "from":44
+      , "to":17
+    }
+    , {
+      "from":45
+      , "to":17
+    }
+    , {
+      "from":47
+      , "to":23
+    }
+    , {
+      "from":20
+      , "to":47
+    }
+    , {
+      "from":51
+      , "to":24
+    }
+    , {
+      "from":51
+      , "to":29
+    }
+    , {
+      "from":51
+      , "to":25
+    }
+    , {
+      "from":22
+      , "to":51
+    }
+    , {
+      "from":26
+      , "to":51
+    }
+    , {
+      "from":40
+      , "to":31
+    }
+    , {
+      "from":3
+      , "to":31
+    }
+    , {
+      "from":17
+      , "to":32
+    }
+    , {
+      "from":34
+      , "to":5
+    }
+    , {
+      "from":34
+      , "to":6
+    }
+    , {
+      "from":32
+      , "to":6
+    }
+    , {
+      "from":36
+      , "to":33
+    }
+    , {
+      "from":19
+      , "to":34
+    }
+    , {
+      "from":20
+      , "to":34
+    }
+    , {
+      "from":36
+      , "to":35
+    }
+    , {
+      "from":6
+      , "to":35
+    }
+    , {
+      "from":21
+      , "to":36
+    }
+    , {
+      "from":22
+      , "to":36
+    }
+    , {
+      "from":38
+      , "to":9
+    }
+    , {
+      "from":9
+      , "to":10
+    }
+    , {
+      "from":9
+      , "to":11
+    }
+    , {
+      "from":5
+      , "to":11
+    }
+    , {
+      "from":38
+      , "to":37
+    }
+    , {
+      "from":11
+      , "to":37
+    }
+    , {
+      "from":26
+      , "to":38
+    }
+    , {
+      "from":15
+      , "to":13
+    }
+    , {
+      "from":10
+      , "to":13
+    }
+    , {
+      "from":15
+      , "to":39
+    }
+    , {
+      "from":27
+      , "to":40
+    }
+    , {
+      "from":42
+      , "to":15
+    }
+    , {
+      "from":42
+      , "to":41
+    }
+    , {
+      "from":13
+      , "to":41
+    }
+    , {
+      "from":30
+      , "to":42
+    }
+    , {
+      "from":31
+      , "to":17
+    }
+    , {
+      "from":33
+      , "to":19
+    }
+    , {
+      "from":19
+      , "to":20
+    }
+    , {
+      "from":35
+      , "to":21
+    }
+    , {
+      "from":21
+      , "to":22
+    }
+    , {
+      "from":37
+      , "to":23
+    }
+    , {
+      "from":37
+      , "to":24
+    }
+    , {
+      "from":37
+      , "to":25
+    }
+    , {
+      "from":25
+      , "to":26
+    }
+    , {
+      "from":23
+      , "to":26
+    }
+    , {
+      "from":24
+      , "to":26
+    }
+    , {
+      "from":39
+      , "to":27
+    }
+    , {
+      "from":41
+      , "to":29
+    }
+    , {
+      "from":29
+      , "to":30
+    }
+    , {
+      "from":30
+      , "to":58
+    }
+    , {
+      "from":58
+      , "to":21
+    }
+    , {
+      "from":58
+      , "to":19
+    }
+  ]
+}
