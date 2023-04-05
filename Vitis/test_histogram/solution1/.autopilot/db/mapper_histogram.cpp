@@ -237,43 +237,35 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void histogram(Byte<4>*, Byte<4>*, Byte<4>*, float, Byte<4>*);
-extern "C" void apatb_histogram_hw(volatile void * __xlx_apatb_param_feature, volatile void * __xlx_apatb_param_weight, volatile void * __xlx_apatb_param_hist, float __xlx_apatb_param_n, volatile void * __xlx_apatb_param_out_r) {
+extern "C" void histogram(Byte<4>*, Byte<4>*, Byte<4>*, float);
+extern "C" void apatb_histogram_hw(volatile void * __xlx_apatb_param_feature, volatile void * __xlx_apatb_param_weight, volatile void * __xlx_apatb_param_hist, float __xlx_apatb_param_n) {
 using hls::sim::createStream;
   // Collect __xlx_feature__tmp_vec
 std::vector<Byte<4>> __xlx_feature__tmp_vec;
-for (size_t i = 0; i < 100; ++i){
+for (size_t i = 0; i < 1000; ++i){
 __xlx_feature__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_feature)[i]);
 }
-  int __xlx_size_param_feature = 100;
+  int __xlx_size_param_feature = 1000;
   int __xlx_offset_param_feature = 0;
   int __xlx_offset_byte_param_feature = 0*4;
   // Collect __xlx_weight__tmp_vec
 std::vector<Byte<4>> __xlx_weight__tmp_vec;
-for (size_t i = 0; i < 100; ++i){
+for (size_t i = 0; i < 1000; ++i){
 __xlx_weight__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_weight)[i]);
 }
-  int __xlx_size_param_weight = 100;
+  int __xlx_size_param_weight = 1000;
   int __xlx_offset_param_weight = 0;
   int __xlx_offset_byte_param_weight = 0*4;
   // Collect __xlx_hist__tmp_vec
 std::vector<Byte<4>> __xlx_hist__tmp_vec;
-for (size_t i = 0; i < 100; ++i){
+for (size_t i = 0; i < 1000; ++i){
 __xlx_hist__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_hist)[i]);
 }
-  int __xlx_size_param_hist = 100;
+  int __xlx_size_param_hist = 1000;
   int __xlx_offset_param_hist = 0;
   int __xlx_offset_byte_param_hist = 0*4;
-  // Collect __xlx_out_r__tmp_vec
-std::vector<Byte<4>> __xlx_out_r__tmp_vec;
-for (size_t i = 0; i < 100; ++i){
-__xlx_out_r__tmp_vec.push_back(((Byte<4>*)__xlx_apatb_param_out_r)[i]);
-}
-  int __xlx_size_param_out_r = 100;
-  int __xlx_offset_param_out_r = 0;
-  int __xlx_offset_byte_param_out_r = 0*4;
   // DUT call
-  histogram(__xlx_feature__tmp_vec.data(), __xlx_weight__tmp_vec.data(), __xlx_hist__tmp_vec.data(), __xlx_apatb_param_n, __xlx_out_r__tmp_vec.data());
+  histogram(__xlx_feature__tmp_vec.data(), __xlx_weight__tmp_vec.data(), __xlx_hist__tmp_vec.data(), __xlx_apatb_param_n);
 // print __xlx_apatb_param_feature
 for (size_t i = 0; i < __xlx_size_param_feature; ++i) {
 ((Byte<4>*)__xlx_apatb_param_feature)[i] = __xlx_feature__tmp_vec[__xlx_offset_param_feature+i];
@@ -285,9 +277,5 @@ for (size_t i = 0; i < __xlx_size_param_weight; ++i) {
 // print __xlx_apatb_param_hist
 for (size_t i = 0; i < __xlx_size_param_hist; ++i) {
 ((Byte<4>*)__xlx_apatb_param_hist)[i] = __xlx_hist__tmp_vec[__xlx_offset_param_hist+i];
-}
-// print __xlx_apatb_param_out_r
-for (size_t i = 0; i < __xlx_size_param_out_r; ++i) {
-((Byte<4>*)__xlx_apatb_param_out_r)[i] = __xlx_out_r__tmp_vec[__xlx_offset_param_out_r+i];
 }
 }

@@ -4,33 +4,29 @@ target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:20
 target triple = "fpga64-xilinx-none"
 
 ; Function Attrs: argmemonly noinline
-define void @apatb_histogram_ir(i32* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="100" %feature, float* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="100" %weight, float* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="100" %hist, float %n, float* noalias nocapture nonnull "fpga.decayed.dim.hint"="100" %out) local_unnamed_addr #0 {
+define void @apatb_histogram_ir(i32* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="100" %feature, float* noalias nocapture nonnull readonly "fpga.decayed.dim.hint"="100" %weight, float* noalias nocapture nonnull "fpga.decayed.dim.hint"="100" %hist, float %n) local_unnamed_addr #0 {
 entry:
   %feature_copy = alloca [100 x i32], align 512
   %weight_copy = alloca [100 x float], align 512
   %hist_copy = alloca [100 x float], align 512
-  %out_copy = alloca [100 x float], align 512
   %0 = bitcast i32* %feature to [100 x i32]*
   %1 = bitcast float* %weight to [100 x float]*
   %2 = bitcast float* %hist to [100 x float]*
-  %3 = bitcast float* %out to [100 x float]*
-  call fastcc void @copy_in([100 x i32]* nonnull %0, [100 x i32]* nonnull align 512 %feature_copy, [100 x float]* nonnull %1, [100 x float]* nonnull align 512 %weight_copy, [100 x float]* nonnull %2, [100 x float]* nonnull align 512 %hist_copy, [100 x float]* nonnull %3, [100 x float]* nonnull align 512 %out_copy)
-  %4 = getelementptr inbounds [100 x i32], [100 x i32]* %feature_copy, i32 0, i32 0
-  %5 = getelementptr inbounds [100 x float], [100 x float]* %weight_copy, i32 0, i32 0
-  %6 = getelementptr inbounds [100 x float], [100 x float]* %hist_copy, i32 0, i32 0
-  %7 = getelementptr inbounds [100 x float], [100 x float]* %out_copy, i32 0, i32 0
-  call void @apatb_histogram_hw(i32* %4, float* %5, float* %6, float %n, float* %7)
-  call void @copy_back([100 x i32]* %0, [100 x i32]* %feature_copy, [100 x float]* %1, [100 x float]* %weight_copy, [100 x float]* %2, [100 x float]* %hist_copy, [100 x float]* %3, [100 x float]* %out_copy)
+  call fastcc void @copy_in([100 x i32]* nonnull %0, [100 x i32]* nonnull align 512 %feature_copy, [100 x float]* nonnull %1, [100 x float]* nonnull align 512 %weight_copy, [100 x float]* nonnull %2, [100 x float]* nonnull align 512 %hist_copy)
+  %3 = getelementptr inbounds [100 x i32], [100 x i32]* %feature_copy, i32 0, i32 0
+  %4 = getelementptr inbounds [100 x float], [100 x float]* %weight_copy, i32 0, i32 0
+  %5 = getelementptr inbounds [100 x float], [100 x float]* %hist_copy, i32 0, i32 0
+  call void @apatb_histogram_hw(i32* %3, float* %4, float* %5, float %n)
+  call void @copy_back([100 x i32]* %0, [100 x i32]* %feature_copy, [100 x float]* %1, [100 x float]* %weight_copy, [100 x float]* %2, [100 x float]* %hist_copy)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @copy_in([100 x i32]* noalias readonly, [100 x i32]* noalias align 512, [100 x float]* noalias readonly, [100 x float]* noalias align 512, [100 x float]* noalias readonly, [100 x float]* noalias align 512, [100 x float]* noalias readonly, [100 x float]* noalias align 512) unnamed_addr #1 {
+define internal fastcc void @copy_in([100 x i32]* noalias readonly, [100 x i32]* noalias align 512, [100 x float]* noalias readonly, [100 x float]* noalias align 512, [100 x float]* noalias readonly, [100 x float]* noalias align 512) unnamed_addr #1 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a100i32([100 x i32]* align 512 %1, [100 x i32]* %0)
   call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* align 512 %3, [100 x float]* %2)
   call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* align 512 %5, [100 x float]* %4)
-  call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* align 512 %7, [100 x float]* %6)
   ret void
 }
 
@@ -85,41 +81,38 @@ ret:                                              ; preds = %for.loop, %entry
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @copy_out([100 x i32]* noalias, [100 x i32]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512) unnamed_addr #3 {
+define internal fastcc void @copy_out([100 x i32]* noalias, [100 x i32]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512) unnamed_addr #3 {
 entry:
   call fastcc void @onebyonecpy_hls.p0a100i32([100 x i32]* %0, [100 x i32]* align 512 %1)
   call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* %2, [100 x float]* align 512 %3)
   call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* %4, [100 x float]* align 512 %5)
-  call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* %6, [100 x float]* align 512 %7)
   ret void
 }
 
-declare void @apatb_histogram_hw(i32*, float*, float*, float, float*)
+declare void @apatb_histogram_hw(i32*, float*, float*, float)
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @copy_back([100 x i32]* noalias, [100 x i32]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512) unnamed_addr #3 {
+define internal fastcc void @copy_back([100 x i32]* noalias, [100 x i32]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512, [100 x float]* noalias, [100 x float]* noalias readonly align 512) unnamed_addr #3 {
 entry:
-  call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* %6, [100 x float]* align 512 %7)
+  call fastcc void @onebyonecpy_hls.p0a100f32([100 x float]* %4, [100 x float]* align 512 %5)
   ret void
 }
 
-define void @histogram_hw_stub_wrapper(i32*, float*, float*, float, float*) #4 {
+define void @histogram_hw_stub_wrapper(i32*, float*, float*, float) #4 {
 entry:
-  %5 = bitcast i32* %0 to [100 x i32]*
-  %6 = bitcast float* %1 to [100 x float]*
-  %7 = bitcast float* %2 to [100 x float]*
-  %8 = bitcast float* %4 to [100 x float]*
-  call void @copy_out([100 x i32]* null, [100 x i32]* %5, [100 x float]* null, [100 x float]* %6, [100 x float]* null, [100 x float]* %7, [100 x float]* null, [100 x float]* %8)
-  %9 = bitcast [100 x i32]* %5 to i32*
-  %10 = bitcast [100 x float]* %6 to float*
-  %11 = bitcast [100 x float]* %7 to float*
-  %12 = bitcast [100 x float]* %8 to float*
-  call void @histogram_hw_stub(i32* %9, float* %10, float* %11, float %3, float* %12)
-  call void @copy_in([100 x i32]* null, [100 x i32]* %5, [100 x float]* null, [100 x float]* %6, [100 x float]* null, [100 x float]* %7, [100 x float]* null, [100 x float]* %8)
+  %4 = bitcast i32* %0 to [100 x i32]*
+  %5 = bitcast float* %1 to [100 x float]*
+  %6 = bitcast float* %2 to [100 x float]*
+  call void @copy_out([100 x i32]* null, [100 x i32]* %4, [100 x float]* null, [100 x float]* %5, [100 x float]* null, [100 x float]* %6)
+  %7 = bitcast [100 x i32]* %4 to i32*
+  %8 = bitcast [100 x float]* %5 to float*
+  %9 = bitcast [100 x float]* %6 to float*
+  call void @histogram_hw_stub(i32* %7, float* %8, float* %9, float %3)
+  call void @copy_in([100 x i32]* null, [100 x i32]* %4, [100 x float]* null, [100 x float]* %5, [100 x float]* null, [100 x float]* %6)
   ret void
 }
 
-declare void @histogram_hw_stub(i32*, float*, float*, float, float*)
+declare void @histogram_hw_stub(i32*, float*, float*, float)
 
 attributes #0 = { argmemonly noinline "fpga.wrapper.func"="wrapper" }
 attributes #1 = { argmemonly noinline norecurse "fpga.wrapper.func"="copyin" }

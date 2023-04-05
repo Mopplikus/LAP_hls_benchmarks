@@ -45,7 +45,7 @@ set TargetInfo xck24:-ubva530:-2LV-c
 set SourceFiles {sc {} c ../example.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/dynamatic_example/solution1/solution1.directive
-set TBFiles {verilog {../example_test.cpp ../result.golden.dat} bc {../example_test.cpp ../result.golden.dat} sc {../example_test.cpp ../result.golden.dat} vhdl {../example_test.cpp ../result.golden.dat} c {} cas {../example_test.cpp ../result.golden.dat}}
+set TBFiles {verilog {../result.golden.dat ../example_test.cpp} bc {../result.golden.dat ../example_test.cpp} sc {../result.golden.dat ../example_test.cpp} vhdl {../result.golden.dat ../example_test.cpp} c {} cas {../result.golden.dat ../example_test.cpp}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

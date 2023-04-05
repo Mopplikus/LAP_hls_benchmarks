@@ -1,0 +1,11 @@
+set SynModuleInfo {
+  {SRCNAME kernel_3mm_Pipeline_VITIS_LOOP_7_1_VITIS_LOOP_8_2 MODELNAME kernel_3mm_Pipeline_VITIS_LOOP_7_1_VITIS_LOOP_8_2 RTLNAME kernel_3mm_kernel_3mm_Pipeline_VITIS_LOOP_7_1_VITIS_LOOP_8_2
+    SUBMODULES {
+      {MODELNAME kernel_3mm_mul_32s_32s_32_1_1 RTLNAME kernel_3mm_mul_32s_32s_32_1_1 BINDTYPE op TYPE mul IMPL auto LATENCY 0 ALLOW_PRAGMA 1}
+      {MODELNAME kernel_3mm_flow_control_loop_pipe_sequential_init RTLNAME kernel_3mm_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME kernel_3mm_flow_control_loop_pipe_sequential_init_U}
+    }
+  }
+  {SRCNAME kernel_3mm_Pipeline_VITIS_LOOP_16_4_VITIS_LOOP_17_5 MODELNAME kernel_3mm_Pipeline_VITIS_LOOP_16_4_VITIS_LOOP_17_5 RTLNAME kernel_3mm_kernel_3mm_Pipeline_VITIS_LOOP_16_4_VITIS_LOOP_17_5}
+  {SRCNAME kernel_3mm_Pipeline_VITIS_LOOP_25_7_VITIS_LOOP_26_8 MODELNAME kernel_3mm_Pipeline_VITIS_LOOP_25_7_VITIS_LOOP_26_8 RTLNAME kernel_3mm_kernel_3mm_Pipeline_VITIS_LOOP_25_7_VITIS_LOOP_26_8}
+  {SRCNAME kernel_3mm MODELNAME kernel_3mm RTLNAME kernel_3mm IS_TOP 1}
+}

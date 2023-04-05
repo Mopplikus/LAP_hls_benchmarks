@@ -1,0 +1,150 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck24-ubva530-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xck24-ubva530-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: source ./getTanh/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.734 seconds; current allocated memory: 0.441 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 14.602 seconds; peak allocated memory: 87.184 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck24-ubva530-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xck24-ubva530-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: source ./getTanh/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.107 seconds; current allocated memory: 87.062 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.548 seconds; current allocated memory: 88.082 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.539 seconds; current allocated memory: 88.750 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.009 seconds; current allocated memory: 88.781 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.114 seconds; current allocated memory: 93.879 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.028 seconds; current allocated memory: 95.109 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_6_1' (../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:6) in function 'getTanh' automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:6:26) to (../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:6:18) in function 'getTanh'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.123 seconds; current allocated memory: 116.688 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.041 seconds; current allocated memory: 116.719 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'getTanh' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'getTanh' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_6_1'.
+WARNING: [HLS 200-880] The II Violation in module 'getTanh' (loop 'VITIS_LOOP_6_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 2, offset = 1) between 'store' operation ('A_addr_write_ln15', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:15) of variable 'result', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:10 on array 'A' and 'load' operation ('A_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:8) on array 'A'.
+WARNING: [HLS 200-880] The II Violation in module 'getTanh' (loop 'VITIS_LOOP_6_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 2, offset = 1) between 'store' operation ('A_addr_write_ln15', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:15) of variable 'result', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:10 on array 'A' and 'load' operation ('A_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:8) on array 'A'.
+WARNING: [HLS 200-880] The II Violation in module 'getTanh' (loop 'VITIS_LOOP_6_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 2, offset = 1) between 'store' operation ('A_addr_write_ln15', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:15) of variable 'result', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:10 on array 'A' and 'load' operation ('A_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:8) on array 'A'.
+WARNING: [HLS 200-880] The II Violation in module 'getTanh' (loop 'VITIS_LOOP_6_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('reuse_reg_write_ln10', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:10) of variable 'result', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:10 on local variable 'reuse_reg' and 'load' operation ('reuse_reg_load') on local variable 'reuse_reg'.
+WARNING: [HLS 200-880] The II Violation in module 'getTanh' (loop 'VITIS_LOOP_6_1'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 0) between 'store' operation ('reuse_reg_write_ln10', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:10) of variable 'result', ../../../../Documents/LAP_hls_benchmarks/Vitis/getTanh/getTanh.cpp:10 on local variable 'reuse_reg' and 'load' operation ('reuse_reg_load') on local variable 'reuse_reg'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 9, loop 'VITIS_LOOP_6_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.402 seconds; current allocated memory: 116.719 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.126 seconds; current allocated memory: 116.719 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'getTanh' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'getTanh/A' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'getTanh/addr' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'getTanh' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'getTanh' pipeline 'VITIS_LOOP_6_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'getTanh'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 118.113 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.53 seconds; current allocated memory: 124.355 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.445 seconds; current allocated memory: 127.082 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for getTanh.
+INFO: [VLOG 209-307] Generating Verilog RTL for getTanh.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 292.40 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 9.175 seconds; current allocated memory: 40.070 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 20.847 seconds; peak allocated memory: 127.184 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck24-ubva530-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xck24-ubva530-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: source ./getTanh/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: cosim_design -rtl vhdl 
+WARNING: [HLS 200-626] This design is unable to schedule all read ports in the first II cycle. The RTL testbench may treat the design as non-pipelined
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-322] Starting VHDL simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 22.605 seconds; current allocated memory: 5.629 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 34.281 seconds; peak allocated memory: 91.641 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck24-ubva530-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xck24-ubva530-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: source ./getTanh/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file getTanh/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 14.082 seconds; current allocated memory: 7.422 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 25.749 seconds; peak allocated memory: 94.863 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xck24-ubva530-2LV-c'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1464] Running solution command: config_export -vivado_clock=5
+INFO: [HLS 200-1510] Running: set_part xck24-ubva530-2LV-c 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog -vivado_clock 5 
+INFO: [HLS 200-1510] Running: source ./getTanh/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: export_design -flow impl -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...
+ERROR: [HLS 200-478] vivado returned an error 
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 162.186 seconds; current allocated memory: 8.930 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 173.893 seconds; peak allocated memory: 95.590 MB.

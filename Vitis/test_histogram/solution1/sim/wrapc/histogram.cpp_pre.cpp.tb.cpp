@@ -27883,56 +27883,44 @@ void histogram(
     din_feature feature[100],
     din_weight weight[100],
     din_hist hist[100],
-    din_n n,
-    dout_out out[100]);
+    din_n n);
 # 2 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram.cpp" 2
 
 void histogram(
     din_feature feature[100],
     din_weight weight[100],
     din_hist hist[100],
-    din_n n,
- dout_out out[100])
+    din_n n)
 {
  int i;
- float hist_local[100];
- LOOP_INIT:for(i = 0; i < 100; i++)
- {
-  hist_local[i] = hist[i];
- }
 
- LOOP_I:for(i = 0; i < n; i++)
+ LOOP_I:for(i = 0; i < 100 - 1; i++)
  {
   int m = feature[i];
   float wt = weight[i];
-  float x = hist_local[m];
-  hist_local[m] = x + wt;
- }
-
- LOOP_END:for(i = 0; i < 100; i++)
- {
-  out[i] = hist_local[i];
+  float x = hist[m];
+  hist[m] = x + wt;
  }
 }
 #ifndef HLS_FASTSIM
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_histogram_ir(int *, float *, float *, float, float *);
+void apatb_histogram_ir(int *, float *, float *, float);
 #ifdef __cplusplus
 extern "C"
 #endif
-void histogram_hw_stub(int *feature, float *weight, float *hist, float n, float *out){
-histogram(feature, weight, hist, n, out);
+void histogram_hw_stub(int *feature, float *weight, float *hist, float n){
+histogram(feature, weight, hist, n);
 return ;
 }
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_histogram_sw(int *feature, float *weight, float *hist, float n, float *out){
-apatb_histogram_ir(feature, weight, hist, n, out);
+void apatb_histogram_sw(int *feature, float *weight, float *hist, float n){
+apatb_histogram_ir(feature, weight, hist, n);
 return ;
 }
 #endif
-# 29 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram.cpp"
+# 18 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram.cpp"
 

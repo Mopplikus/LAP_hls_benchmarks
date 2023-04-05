@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="histogram_histogram,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck24-ubva530-2LV-c,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=4.456000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=1,HLS_SYN_DSP=0,HLS_SYN_FF=733,HLS_SYN_LUT=815,HLS_VERSION=2022_2}" *)
+(* CORE_GENERATION_INFO="histogram_histogram,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xck24-ubva530-2LV-c,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=4.828000,HLS_SYN_LAT=6997,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=471,HLS_SYN_LUT=451,HLS_VERSION=2022_2}" *)
 
 module histogram (
         ap_clk,
@@ -24,20 +24,19 @@ module histogram (
         weight_q0,
         hist_address0,
         hist_ce0,
+        hist_we0,
+        hist_d0,
         hist_q0,
-        n,
-        out_r_address0,
-        out_r_ce0,
-        out_r_we0,
-        out_r_d0
+        n
 );
 
-parameter    ap_ST_fsm_state1 = 6'd1;
-parameter    ap_ST_fsm_state2 = 6'd2;
-parameter    ap_ST_fsm_state3 = 6'd4;
-parameter    ap_ST_fsm_state4 = 6'd8;
-parameter    ap_ST_fsm_state5 = 6'd16;
-parameter    ap_ST_fsm_state6 = 6'd32;
+parameter    ap_ST_fsm_pp0_stage0 = 7'd1;
+parameter    ap_ST_fsm_pp0_stage1 = 7'd2;
+parameter    ap_ST_fsm_pp0_stage2 = 7'd4;
+parameter    ap_ST_fsm_pp0_stage3 = 7'd8;
+parameter    ap_ST_fsm_pp0_stage4 = 7'd16;
+parameter    ap_ST_fsm_pp0_stage5 = 7'd32;
+parameter    ap_ST_fsm_pp0_stage6 = 7'd64;
 
 input   ap_clk;
 input   ap_rst;
@@ -45,167 +44,144 @@ input   ap_start;
 output   ap_done;
 output   ap_idle;
 output   ap_ready;
-output  [6:0] feature_address0;
+output  [9:0] feature_address0;
 output   feature_ce0;
 input  [31:0] feature_q0;
-output  [6:0] weight_address0;
+output  [9:0] weight_address0;
 output   weight_ce0;
 input  [31:0] weight_q0;
-output  [6:0] hist_address0;
+output  [9:0] hist_address0;
 output   hist_ce0;
+output   hist_we0;
+output  [31:0] hist_d0;
 input  [31:0] hist_q0;
 input  [31:0] n;
-output  [6:0] out_r_address0;
-output   out_r_ce0;
-output   out_r_we0;
-output  [31:0] out_r_d0;
 
-reg ap_done;
 reg ap_idle;
-reg ap_ready;
+reg feature_ce0;
+reg weight_ce0;
+reg[9:0] hist_address0;
+reg hist_ce0;
+reg hist_we0;
 
-(* fsm_encoding = "none" *) reg   [5:0] ap_CS_fsm;
-wire    ap_CS_fsm_state1;
-wire    ap_CS_fsm_state3;
-wire   [0:0] or_ln17_fu_115_p2;
-reg   [0:0] or_ln17_reg_127;
-reg   [6:0] hist_local_address0;
-reg    hist_local_ce0;
-reg    hist_local_we0;
-reg   [31:0] hist_local_d0;
-wire   [31:0] hist_local_q0;
-wire    grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start;
-wire    grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_done;
-wire    grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_idle;
-wire    grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_ready;
-wire   [6:0] grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_address0;
-wire    grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_ce0;
-wire   [6:0] grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_address0;
-wire    grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_ce0;
-wire    grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_we0;
-wire   [31:0] grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_d0;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_ap_start;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_ap_done;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_ap_idle;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_ap_ready;
-wire   [6:0] grp_histogram_Pipeline_LOOP_I_fu_66_feature_address0;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_feature_ce0;
-wire   [6:0] grp_histogram_Pipeline_LOOP_I_fu_66_weight_address0;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_weight_ce0;
-wire   [6:0] grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_address0;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_ce0;
-wire    grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_we0;
-wire   [31:0] grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_d0;
-wire    grp_histogram_Pipeline_LOOP_END_fu_78_ap_start;
-wire    grp_histogram_Pipeline_LOOP_END_fu_78_ap_done;
-wire    grp_histogram_Pipeline_LOOP_END_fu_78_ap_idle;
-wire    grp_histogram_Pipeline_LOOP_END_fu_78_ap_ready;
-wire   [6:0] grp_histogram_Pipeline_LOOP_END_fu_78_hist_local_address0;
-wire    grp_histogram_Pipeline_LOOP_END_fu_78_hist_local_ce0;
-wire   [6:0] grp_histogram_Pipeline_LOOP_END_fu_78_out_r_address0;
-wire    grp_histogram_Pipeline_LOOP_END_fu_78_out_r_ce0;
-wire    grp_histogram_Pipeline_LOOP_END_fu_78_out_r_we0;
-wire   [31:0] grp_histogram_Pipeline_LOOP_END_fu_78_out_r_d0;
-reg    grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start_reg;
-wire    ap_CS_fsm_state2;
-reg    grp_histogram_Pipeline_LOOP_I_fu_66_ap_start_reg;
-wire    ap_CS_fsm_state4;
-reg    grp_histogram_Pipeline_LOOP_END_fu_78_ap_start_reg;
-wire    ap_CS_fsm_state5;
-wire    ap_CS_fsm_state6;
-wire   [31:0] bitcast_ln17_fu_85_p1;
-wire   [7:0] tmp_1_fu_89_p4;
-wire   [22:0] trunc_ln17_fu_99_p1;
-wire   [0:0] icmp_ln17_2_fu_109_p2;
-wire   [0:0] icmp_ln17_fu_103_p2;
-reg   [5:0] ap_NS_fsm;
-reg    ap_ST_fsm_state1_blk;
-reg    ap_ST_fsm_state2_blk;
-wire    ap_ST_fsm_state3_blk;
-reg    ap_ST_fsm_state4_blk;
-wire    ap_ST_fsm_state5_blk;
-reg    ap_ST_fsm_state6_blk;
+(* fsm_encoding = "none" *) reg   [6:0] ap_CS_fsm;
+wire    ap_CS_fsm_pp0_stage0;
+reg    ap_enable_reg_pp0_iter0;
+reg    ap_enable_reg_pp0_iter1;
+reg    ap_idle_pp0;
+wire    ap_CS_fsm_pp0_stage2;
+wire    ap_block_state3_pp0_stage2_iter0;
+wire    ap_block_state10_pp0_stage2_iter1;
+wire    ap_block_pp0_stage2_subdone;
+reg   [0:0] icmp_ln11_reg_213;
+reg    ap_condition_exit_pp0_iter0_stage2;
+wire    ap_loop_exit_ready;
+reg    ap_ready_int;
+wire    ap_CS_fsm_pp0_stage6;
+wire    ap_block_state7_pp0_stage6_iter0;
+wire    ap_block_pp0_stage6_subdone;
+wire    ap_block_state1_pp0_stage0_iter0;
+wire    ap_block_state8_pp0_stage0_iter1;
+wire    ap_block_pp0_stage0_11001;
+wire   [0:0] icmp_ln11_fu_123_p2;
+reg   [31:0] weight_load_reg_227;
+wire    ap_CS_fsm_pp0_stage1;
+wire    ap_block_state2_pp0_stage1_iter0;
+wire    ap_block_state9_pp0_stage1_iter1;
+wire    ap_block_pp0_stage1_11001;
+reg   [9:0] hist_addr_reg_232;
+reg   [9:0] hist_addr_reg_232_pp0_iter1_reg;
+wire   [0:0] addr_cmp_fu_154_p2;
+reg   [0:0] addr_cmp_reg_237;
+wire   [31:0] reuse_select_fu_168_p3;
+reg   [31:0] reuse_select_reg_242;
+wire    ap_block_pp0_stage2_11001;
+wire    ap_CS_fsm_pp0_stage3;
+wire    ap_block_state4_pp0_stage3_iter0;
+wire    ap_block_pp0_stage3_11001;
+wire   [31:0] grp_fu_101_p2;
+reg   [31:0] add_reg_257;
+reg    ap_enable_reg_pp0_iter0_reg;
+wire   [63:0] i_cast_fu_135_p1;
+wire    ap_block_pp0_stage0;
+wire   [63:0] zext_ln15_fu_146_p1;
+wire    ap_block_pp0_stage1;
+reg   [63:0] reuse_addr_reg_fu_50;
+wire    ap_loop_init;
+reg   [31:0] reuse_reg_fu_54;
+wire   [31:0] bitcast_ln16_fu_183_p1;
+reg   [31:0] ap_sig_allocacmp_reuse_reg_load;
+wire    ap_block_pp0_stage2;
+reg   [9:0] i_fu_58;
+wire   [9:0] add_ln11_fu_129_p2;
+reg   [9:0] ap_sig_allocacmp_i_1;
+wire   [31:0] grp_fu_101_p0;
+wire   [31:0] grp_fu_101_p1;
+wire    ap_block_pp0_stage3;
+reg    ap_done_reg;
+wire    ap_continue_int;
+reg    ap_done_int;
+reg   [6:0] ap_NS_fsm;
+wire    ap_block_pp0_stage0_subdone;
+reg    ap_idle_pp0_1to1;
+wire    ap_block_pp0_stage1_subdone;
+wire    ap_block_pp0_stage3_subdone;
+wire    ap_block_state5_pp0_stage4_iter0;
+wire    ap_block_pp0_stage4_subdone;
+wire    ap_block_pp0_stage4_11001;
+wire    ap_block_state6_pp0_stage5_iter0;
+wire    ap_block_pp0_stage5_subdone;
+wire    ap_block_pp0_stage5_11001;
+wire    ap_block_pp0_stage6_11001;
+wire    ap_enable_pp0;
+wire    ap_start_int;
+reg    ap_condition_175;
+reg    ap_condition_118;
+reg    ap_condition_307;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 6'd1;
-#0 grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start_reg = 1'b0;
-#0 grp_histogram_Pipeline_LOOP_I_fu_66_ap_start_reg = 1'b0;
-#0 grp_histogram_Pipeline_LOOP_END_fu_78_ap_start_reg = 1'b0;
+#0 ap_CS_fsm = 7'd1;
+#0 ap_enable_reg_pp0_iter1 = 1'b0;
+#0 ap_enable_reg_pp0_iter0_reg = 1'b0;
+#0 ap_done_reg = 1'b0;
 end
 
-histogram_hist_local_RAM_AUTO_1R1W #(
-    .DataWidth( 32 ),
-    .AddressRange( 100 ),
-    .AddressWidth( 7 ))
-hist_local_U(
+histogram_fadd_32ns_32ns_32_6_full_dsp_1 #(
+    .ID( 1 ),
+    .NUM_STAGE( 6 ),
+    .din0_WIDTH( 32 ),
+    .din1_WIDTH( 32 ),
+    .dout_WIDTH( 32 ))
+fadd_32ns_32ns_32_6_full_dsp_1_U1(
     .clk(ap_clk),
     .reset(ap_rst),
-    .address0(hist_local_address0),
-    .ce0(hist_local_ce0),
-    .we0(hist_local_we0),
-    .d0(hist_local_d0),
-    .q0(hist_local_q0)
+    .din0(grp_fu_101_p0),
+    .din1(grp_fu_101_p1),
+    .ce(1'b1),
+    .dout(grp_fu_101_p2)
 );
 
-histogram_histogram_Pipeline_LOOP_INIT grp_histogram_Pipeline_LOOP_INIT_fu_58(
+histogram_flow_control_loop_pipe flow_control_loop_pipe_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start),
-    .ap_done(grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_done),
-    .ap_idle(grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_idle),
-    .ap_ready(grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_ready),
-    .hist_address0(grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_address0),
-    .hist_ce0(grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_ce0),
-    .hist_q0(hist_q0),
-    .hist_local_address0(grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_address0),
-    .hist_local_ce0(grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_ce0),
-    .hist_local_we0(grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_we0),
-    .hist_local_d0(grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_d0)
-);
-
-histogram_histogram_Pipeline_LOOP_I grp_histogram_Pipeline_LOOP_I_fu_66(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_histogram_Pipeline_LOOP_I_fu_66_ap_start),
-    .ap_done(grp_histogram_Pipeline_LOOP_I_fu_66_ap_done),
-    .ap_idle(grp_histogram_Pipeline_LOOP_I_fu_66_ap_idle),
-    .ap_ready(grp_histogram_Pipeline_LOOP_I_fu_66_ap_ready),
-    .or_ln17_1(or_ln17_reg_127),
-    .n(n),
-    .feature_address0(grp_histogram_Pipeline_LOOP_I_fu_66_feature_address0),
-    .feature_ce0(grp_histogram_Pipeline_LOOP_I_fu_66_feature_ce0),
-    .feature_q0(feature_q0),
-    .weight_address0(grp_histogram_Pipeline_LOOP_I_fu_66_weight_address0),
-    .weight_ce0(grp_histogram_Pipeline_LOOP_I_fu_66_weight_ce0),
-    .weight_q0(weight_q0),
-    .hist_local_address0(grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_address0),
-    .hist_local_ce0(grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_ce0),
-    .hist_local_we0(grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_we0),
-    .hist_local_d0(grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_d0),
-    .hist_local_q0(hist_local_q0)
-);
-
-histogram_histogram_Pipeline_LOOP_END grp_histogram_Pipeline_LOOP_END_fu_78(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
-    .ap_start(grp_histogram_Pipeline_LOOP_END_fu_78_ap_start),
-    .ap_done(grp_histogram_Pipeline_LOOP_END_fu_78_ap_done),
-    .ap_idle(grp_histogram_Pipeline_LOOP_END_fu_78_ap_idle),
-    .ap_ready(grp_histogram_Pipeline_LOOP_END_fu_78_ap_ready),
-    .hist_local_address0(grp_histogram_Pipeline_LOOP_END_fu_78_hist_local_address0),
-    .hist_local_ce0(grp_histogram_Pipeline_LOOP_END_fu_78_hist_local_ce0),
-    .hist_local_q0(hist_local_q0),
-    .out_r_address0(grp_histogram_Pipeline_LOOP_END_fu_78_out_r_address0),
-    .out_r_ce0(grp_histogram_Pipeline_LOOP_END_fu_78_out_r_ce0),
-    .out_r_we0(grp_histogram_Pipeline_LOOP_END_fu_78_out_r_we0),
-    .out_r_d0(grp_histogram_Pipeline_LOOP_END_fu_78_out_r_d0)
+    .ap_start(ap_start),
+    .ap_ready(ap_ready),
+    .ap_done(ap_done),
+    .ap_start_int(ap_start_int),
+    .ap_loop_init(ap_loop_init),
+    .ap_ready_int(ap_ready_int),
+    .ap_loop_exit_ready(ap_condition_exit_pp0_iter0_stage2),
+    .ap_loop_exit_done(ap_done_int),
+    .ap_continue_int(ap_continue_int),
+    .ap_done_int(ap_done_int),
+    .ap_continue(1'b1)
 );
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_CS_fsm <= ap_ST_fsm_state1;
+        ap_CS_fsm <= ap_ST_fsm_pp0_stage0;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
     end
@@ -213,92 +189,121 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_histogram_Pipeline_LOOP_END_fu_78_ap_start_reg <= 1'b0;
+        ap_done_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state5)) begin
-            grp_histogram_Pipeline_LOOP_END_fu_78_ap_start_reg <= 1'b1;
-        end else if ((grp_histogram_Pipeline_LOOP_END_fu_78_ap_ready == 1'b1)) begin
-            grp_histogram_Pipeline_LOOP_END_fu_78_ap_start_reg <= 1'b0;
+        if ((ap_continue_int == 1'b1)) begin
+            ap_done_reg <= 1'b0;
+        end else if (((ap_loop_exit_ready == 1'b1) & (1'b0 == ap_block_pp0_stage2_subdone) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+            ap_done_reg <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start_reg <= 1'b0;
+        ap_enable_reg_pp0_iter0_reg <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-            grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start_reg <= 1'b1;
-        end else if ((grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_ready == 1'b1)) begin
-            grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start_reg <= 1'b0;
+        if ((1'b1 == ap_condition_exit_pp0_iter0_stage2)) begin
+            ap_enable_reg_pp0_iter0_reg <= 1'b0;
+        end else if ((1'b1 == ap_CS_fsm_pp0_stage0)) begin
+            ap_enable_reg_pp0_iter0_reg <= ap_start_int;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        grp_histogram_Pipeline_LOOP_I_fu_66_ap_start_reg <= 1'b0;
+        ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state3)) begin
-            grp_histogram_Pipeline_LOOP_I_fu_66_ap_start_reg <= 1'b1;
-        end else if ((grp_histogram_Pipeline_LOOP_I_fu_66_ap_ready == 1'b1)) begin
-            grp_histogram_Pipeline_LOOP_I_fu_66_ap_start_reg <= 1'b0;
+        if (((1'b0 == ap_block_pp0_stage2_subdone) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+            ap_enable_reg_pp0_iter1 <= 1'b0;
+        end else if (((1'b0 == ap_block_pp0_stage6_subdone) & (1'b1 == ap_CS_fsm_pp0_stage6))) begin
+            ap_enable_reg_pp0_iter1 <= ap_enable_reg_pp0_iter0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state3)) begin
-        or_ln17_reg_127 <= or_ln17_fu_115_p2;
+    if ((1'b1 == ap_condition_175)) begin
+        if ((icmp_ln11_fu_123_p2 == 1'd0)) begin
+            i_fu_58 <= add_ln11_fu_129_p2;
+        end else if ((ap_loop_init == 1'b1)) begin
+            i_fu_58 <= 10'd0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((ap_enable_reg_pp0_iter0 == 1'b1)) begin
+        if ((1'b1 == ap_condition_307)) begin
+            reuse_addr_reg_fu_50 <= 64'd18446744073709551615;
+        end else if ((1'b1 == ap_condition_118)) begin
+            reuse_addr_reg_fu_50 <= zext_ln15_fu_146_p1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
+        reuse_reg_fu_54 <= 32'd0;
+    end else if (((1'b0 == ap_block_pp0_stage2_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+        reuse_reg_fu_54 <= bitcast_ln16_fu_183_p1;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage1_11001) & (1'b1 == ap_CS_fsm_pp0_stage1))) begin
+        add_reg_257 <= grp_fu_101_p2;
+        hist_addr_reg_232_pp0_iter1_reg <= hist_addr_reg_232;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((icmp_ln11_reg_213 == 1'd0) & (1'b0 == ap_block_pp0_stage1_11001) & (1'b1 == ap_CS_fsm_pp0_stage1))) begin
+        addr_cmp_reg_237 <= addr_cmp_fu_154_p2;
+        hist_addr_reg_232 <= zext_ln15_fu_146_p1;
+        weight_load_reg_227 <= weight_q0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        icmp_ln11_reg_213 <= icmp_ln11_fu_123_p2;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((icmp_ln11_reg_213 == 1'd0) & (1'b0 == ap_block_pp0_stage2_11001) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+        reuse_select_reg_242 <= reuse_select_fu_168_p3;
     end
 end
 
 always @ (*) begin
-    if ((ap_start == 1'b0)) begin
-        ap_ST_fsm_state1_blk = 1'b1;
+    if (((icmp_ln11_reg_213 == 1'd1) & (1'b0 == ap_block_pp0_stage2_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+        ap_condition_exit_pp0_iter0_stage2 = 1'b1;
     end else begin
-        ap_ST_fsm_state1_blk = 1'b0;
+        ap_condition_exit_pp0_iter0_stage2 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_done == 1'b0)) begin
-        ap_ST_fsm_state2_blk = 1'b1;
+    if (((ap_loop_exit_ready == 1'b1) & (1'b0 == ap_block_pp0_stage2_subdone) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+        ap_done_int = 1'b1;
     end else begin
-        ap_ST_fsm_state2_blk = 1'b0;
+        ap_done_int = ap_done_reg;
     end
 end
 
-assign ap_ST_fsm_state3_blk = 1'b0;
-
 always @ (*) begin
-    if ((grp_histogram_Pipeline_LOOP_I_fu_66_ap_done == 1'b0)) begin
-        ap_ST_fsm_state4_blk = 1'b1;
+    if ((1'b1 == ap_CS_fsm_pp0_stage0)) begin
+        ap_enable_reg_pp0_iter0 = ap_start_int;
     end else begin
-        ap_ST_fsm_state4_blk = 1'b0;
-    end
-end
-
-assign ap_ST_fsm_state5_blk = 1'b0;
-
-always @ (*) begin
-    if ((grp_histogram_Pipeline_LOOP_END_fu_78_ap_done == 1'b0)) begin
-        ap_ST_fsm_state6_blk = 1'b1;
-    end else begin
-        ap_ST_fsm_state6_blk = 1'b0;
+        ap_enable_reg_pp0_iter0 = ap_enable_reg_pp0_iter0_reg;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) & (grp_histogram_Pipeline_LOOP_END_fu_78_ap_done == 1'b1))) begin
-        ap_done = 1'b1;
-    end else begin
-        ap_done = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
+    if (((ap_idle_pp0 == 1'b1) & (ap_start_int == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -306,91 +311,138 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state6) & (grp_histogram_Pipeline_LOOP_END_fu_78_ap_done == 1'b1))) begin
-        ap_ready = 1'b1;
+    if (((ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
+        ap_idle_pp0 = 1'b1;
     end else begin
-        ap_ready = 1'b0;
+        ap_idle_pp0 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        hist_local_address0 = grp_histogram_Pipeline_LOOP_END_fu_78_hist_local_address0;
-    end else if ((1'b1 == ap_CS_fsm_state4)) begin
-        hist_local_address0 = grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_address0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        hist_local_address0 = grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_address0;
+    if ((ap_enable_reg_pp0_iter1 == 1'b0)) begin
+        ap_idle_pp0_1to1 = 1'b1;
     end else begin
-        hist_local_address0 = 'bx;
+        ap_idle_pp0_1to1 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state6)) begin
-        hist_local_ce0 = grp_histogram_Pipeline_LOOP_END_fu_78_hist_local_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state4)) begin
-        hist_local_ce0 = grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_ce0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        hist_local_ce0 = grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_ce0;
+    if (((1'b0 == ap_block_pp0_stage6_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage6))) begin
+        ap_ready_int = 1'b1;
     end else begin
-        hist_local_ce0 = 1'b0;
+        ap_ready_int = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        hist_local_d0 = grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_d0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        hist_local_d0 = grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_d0;
+    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1))) begin
+        ap_sig_allocacmp_i_1 = 10'd0;
     end else begin
-        hist_local_d0 = 'bx;
+        ap_sig_allocacmp_i_1 = i_fu_58;
     end
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        hist_local_we0 = grp_histogram_Pipeline_LOOP_I_fu_66_hist_local_we0;
-    end else if ((1'b1 == ap_CS_fsm_state2)) begin
-        hist_local_we0 = grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_local_we0;
+    if (((1'b0 == ap_block_pp0_stage2) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+        ap_sig_allocacmp_reuse_reg_load = bitcast_ln16_fu_183_p1;
     end else begin
-        hist_local_we0 = 1'b0;
+        ap_sig_allocacmp_reuse_reg_load = reuse_reg_fu_54;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        feature_ce0 = 1'b1;
+    end else begin
+        feature_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage2) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+        hist_address0 = hist_addr_reg_232_pp0_iter1_reg;
+    end else if (((1'b0 == ap_block_pp0_stage1) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1))) begin
+        hist_address0 = zext_ln15_fu_146_p1;
+    end else begin
+        hist_address0 = 'bx;
+    end
+end
+
+always @ (*) begin
+    if ((((1'b0 == ap_block_pp0_stage2_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage2)) | ((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1)))) begin
+        hist_ce0 = 1'b1;
+    end else begin
+        hist_ce0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage2_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage2))) begin
+        hist_we0 = 1'b1;
+    end else begin
+        hist_we0 = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        weight_ce0 = 1'b1;
+    end else begin
+        weight_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
     case (ap_CS_fsm)
-        ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state2;
+        ap_ST_fsm_pp0_stage0 : begin
+            if ((~((ap_start_int == 1'b0) & (ap_idle_pp0_1to1 == 1'b1)) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage1;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state1;
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
             end
         end
-        ap_ST_fsm_state2 : begin
-            if (((grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
-                ap_NS_fsm = ap_ST_fsm_state3;
+        ap_ST_fsm_pp0_stage1 : begin
+            if ((1'b0 == ap_block_pp0_stage1_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage2;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state2;
+                ap_NS_fsm = ap_ST_fsm_pp0_stage1;
             end
         end
-        ap_ST_fsm_state3 : begin
-            ap_NS_fsm = ap_ST_fsm_state4;
-        end
-        ap_ST_fsm_state4 : begin
-            if (((grp_histogram_Pipeline_LOOP_I_fu_66_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state4))) begin
-                ap_NS_fsm = ap_ST_fsm_state5;
+        ap_ST_fsm_pp0_stage2 : begin
+            if ((1'b1 == ap_condition_exit_pp0_iter0_stage2)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end else if ((1'b0 == ap_block_pp0_stage2_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage3;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state4;
+                ap_NS_fsm = ap_ST_fsm_pp0_stage2;
             end
         end
-        ap_ST_fsm_state5 : begin
-            ap_NS_fsm = ap_ST_fsm_state6;
-        end
-        ap_ST_fsm_state6 : begin
-            if (((1'b1 == ap_CS_fsm_state6) & (grp_histogram_Pipeline_LOOP_END_fu_78_ap_done == 1'b1))) begin
-                ap_NS_fsm = ap_ST_fsm_state1;
+        ap_ST_fsm_pp0_stage3 : begin
+            if ((1'b0 == ap_block_pp0_stage3_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage4;
             end else begin
-                ap_NS_fsm = ap_ST_fsm_state6;
+                ap_NS_fsm = ap_ST_fsm_pp0_stage3;
+            end
+        end
+        ap_ST_fsm_pp0_stage4 : begin
+            if ((1'b0 == ap_block_pp0_stage4_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage5;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage4;
+            end
+        end
+        ap_ST_fsm_pp0_stage5 : begin
+            if ((1'b0 == ap_block_pp0_stage5_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage6;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage5;
+            end
+        end
+        ap_ST_fsm_pp0_stage6 : begin
+            if ((1'b0 == ap_block_pp0_stage6_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage6;
             end
         end
         default : begin
@@ -399,54 +451,110 @@ always @ (*) begin
     endcase
 end
 
-assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+assign add_ln11_fu_129_p2 = (ap_sig_allocacmp_i_1 + 10'd1);
 
-assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
+assign addr_cmp_fu_154_p2 = ((reuse_addr_reg_fu_50 == zext_ln15_fu_146_p1) ? 1'b1 : 1'b0);
 
-assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
+assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
-assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
+assign ap_CS_fsm_pp0_stage1 = ap_CS_fsm[32'd1];
 
-assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
+assign ap_CS_fsm_pp0_stage2 = ap_CS_fsm[32'd2];
 
-assign ap_CS_fsm_state6 = ap_CS_fsm[32'd5];
+assign ap_CS_fsm_pp0_stage3 = ap_CS_fsm[32'd3];
 
-assign bitcast_ln17_fu_85_p1 = n;
+assign ap_CS_fsm_pp0_stage6 = ap_CS_fsm[32'd6];
 
-assign feature_address0 = grp_histogram_Pipeline_LOOP_I_fu_66_feature_address0;
+assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
 
-assign feature_ce0 = grp_histogram_Pipeline_LOOP_I_fu_66_feature_ce0;
+assign ap_block_pp0_stage0_11001 = ~(1'b1 == 1'b1);
 
-assign grp_histogram_Pipeline_LOOP_END_fu_78_ap_start = grp_histogram_Pipeline_LOOP_END_fu_78_ap_start_reg;
+assign ap_block_pp0_stage0_subdone = ~(1'b1 == 1'b1);
 
-assign grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start = grp_histogram_Pipeline_LOOP_INIT_fu_58_ap_start_reg;
+assign ap_block_pp0_stage1 = ~(1'b1 == 1'b1);
 
-assign grp_histogram_Pipeline_LOOP_I_fu_66_ap_start = grp_histogram_Pipeline_LOOP_I_fu_66_ap_start_reg;
+assign ap_block_pp0_stage1_11001 = ~(1'b1 == 1'b1);
 
-assign hist_address0 = grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_address0;
+assign ap_block_pp0_stage1_subdone = ~(1'b1 == 1'b1);
 
-assign hist_ce0 = grp_histogram_Pipeline_LOOP_INIT_fu_58_hist_ce0;
+assign ap_block_pp0_stage2 = ~(1'b1 == 1'b1);
 
-assign icmp_ln17_2_fu_109_p2 = ((trunc_ln17_fu_99_p1 == 23'd0) ? 1'b1 : 1'b0);
+assign ap_block_pp0_stage2_11001 = ~(1'b1 == 1'b1);
 
-assign icmp_ln17_fu_103_p2 = ((tmp_1_fu_89_p4 != 8'd255) ? 1'b1 : 1'b0);
+assign ap_block_pp0_stage2_subdone = ~(1'b1 == 1'b1);
 
-assign or_ln17_fu_115_p2 = (icmp_ln17_fu_103_p2 | icmp_ln17_2_fu_109_p2);
+assign ap_block_pp0_stage3 = ~(1'b1 == 1'b1);
 
-assign out_r_address0 = grp_histogram_Pipeline_LOOP_END_fu_78_out_r_address0;
+assign ap_block_pp0_stage3_11001 = ~(1'b1 == 1'b1);
 
-assign out_r_ce0 = grp_histogram_Pipeline_LOOP_END_fu_78_out_r_ce0;
+assign ap_block_pp0_stage3_subdone = ~(1'b1 == 1'b1);
 
-assign out_r_d0 = grp_histogram_Pipeline_LOOP_END_fu_78_out_r_d0;
+assign ap_block_pp0_stage4_11001 = ~(1'b1 == 1'b1);
 
-assign out_r_we0 = grp_histogram_Pipeline_LOOP_END_fu_78_out_r_we0;
+assign ap_block_pp0_stage4_subdone = ~(1'b1 == 1'b1);
 
-assign tmp_1_fu_89_p4 = {{bitcast_ln17_fu_85_p1[30:23]}};
+assign ap_block_pp0_stage5_11001 = ~(1'b1 == 1'b1);
 
-assign trunc_ln17_fu_99_p1 = bitcast_ln17_fu_85_p1[22:0];
+assign ap_block_pp0_stage5_subdone = ~(1'b1 == 1'b1);
 
-assign weight_address0 = grp_histogram_Pipeline_LOOP_I_fu_66_weight_address0;
+assign ap_block_pp0_stage6_11001 = ~(1'b1 == 1'b1);
 
-assign weight_ce0 = grp_histogram_Pipeline_LOOP_I_fu_66_weight_ce0;
+assign ap_block_pp0_stage6_subdone = ~(1'b1 == 1'b1);
+
+assign ap_block_state10_pp0_stage2_iter1 = ~(1'b1 == 1'b1);
+
+assign ap_block_state1_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state2_pp0_stage1_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state3_pp0_stage2_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state4_pp0_stage3_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state5_pp0_stage4_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state6_pp0_stage5_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state7_pp0_stage6_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state8_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
+
+assign ap_block_state9_pp0_stage1_iter1 = ~(1'b1 == 1'b1);
+
+always @ (*) begin
+    ap_condition_118 = ((icmp_ln11_reg_213 == 1'd0) & (1'b0 == ap_block_pp0_stage1_11001) & (1'b1 == ap_CS_fsm_pp0_stage1));
+end
+
+always @ (*) begin
+    ap_condition_175 = ((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
+end
+
+always @ (*) begin
+    ap_condition_307 = ((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_loop_init == 1'b1));
+end
+
+assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
+
+assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage2;
+
+assign bitcast_ln16_fu_183_p1 = add_reg_257;
+
+assign feature_address0 = i_cast_fu_135_p1;
+
+assign grp_fu_101_p0 = reuse_select_reg_242;
+
+assign grp_fu_101_p1 = weight_load_reg_227;
+
+assign hist_d0 = add_reg_257;
+
+assign i_cast_fu_135_p1 = ap_sig_allocacmp_i_1;
+
+assign icmp_ln11_fu_123_p2 = ((ap_sig_allocacmp_i_1 == 10'd999) ? 1'b1 : 1'b0);
+
+assign reuse_select_fu_168_p3 = ((addr_cmp_reg_237[0:0] == 1'b1) ? ap_sig_allocacmp_reuse_reg_load : hist_q0);
+
+assign weight_address0 = i_cast_fu_135_p1;
+
+assign zext_ln15_fu_146_p1 = feature_q0;
 
 endmodule //histogram

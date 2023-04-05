@@ -8,5 +8,4 @@ extern "C" void AESL_WRAP_histogram (
 volatile void* feature,
 volatile void* weight,
 volatile void* hist,
-float n,
-volatile void* out_r);
+float n);

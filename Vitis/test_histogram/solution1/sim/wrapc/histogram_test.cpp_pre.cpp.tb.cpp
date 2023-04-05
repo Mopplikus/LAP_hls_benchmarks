@@ -27884,15 +27884,14 @@ typedef float dout_out;
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_histogram_sw(int *, float *, float *, float, float *);
+void apatb_histogram_sw(int *, float *, float *, float);
 #endif
 # 16 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram.h"
 void histogram(
     din_feature feature[100],
     din_weight weight[100],
     din_hist hist[100],
-    din_n n,
-    dout_out out[100]);
+    din_n n);
 # 2 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp" 2
 
 
@@ -27904,7 +27903,6 @@ int main()
  din_weight weight[100];
  din_n n = 100 - 1;
  din_hist hist[100];
- dout_out out[100];
 
  int i, j, retval = 0;
  ofstream FILE;
@@ -27920,17 +27918,17 @@ int main()
 #ifndef HLS_FASTSIM
 #define histogram apatb_histogram_sw
 #endif
-# 21 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp"
-histogram(feature, weight, hist, n, out);
+# 20 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp"
+histogram(feature, weight, hist, n);
 #undef histogram
-# 21 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp"
+# 20 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp"
 
 
  FILE.open("result.dat");
 
  for(j = 0; j < 100; j++)
  {
-  FILE << out[j] << endl;
+  FILE << hist[j] << endl;
  }
 
  FILE.close();
@@ -27949,5 +27947,5 @@ histogram(feature, weight, hist, n, out);
  return retval;
 }
 #endif
-# 44 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp"
+# 43 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp"
 

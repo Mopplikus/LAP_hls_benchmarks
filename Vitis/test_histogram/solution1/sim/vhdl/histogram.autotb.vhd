@@ -18,21 +18,16 @@ entity apatb_histogram_top is
        AUTOTB_TVIN_feature : STRING := "../tv/cdatafile/c.histogram.autotvin_feature.dat";
        AUTOTB_TVIN_weight : STRING := "../tv/cdatafile/c.histogram.autotvin_weight.dat";
        AUTOTB_TVIN_hist : STRING := "../tv/cdatafile/c.histogram.autotvin_hist.dat";
-       AUTOTB_TVIN_n : STRING := "../tv/cdatafile/c.histogram.autotvin_n.dat";
-       AUTOTB_TVIN_out_r : STRING := "../tv/cdatafile/c.histogram.autotvin_out_r.dat";
        AUTOTB_TVIN_feature_out_wrapc : STRING := "../tv/rtldatafile/rtl.histogram.autotvin_feature.dat";
        AUTOTB_TVIN_weight_out_wrapc : STRING := "../tv/rtldatafile/rtl.histogram.autotvin_weight.dat";
        AUTOTB_TVIN_hist_out_wrapc : STRING := "../tv/rtldatafile/rtl.histogram.autotvin_hist.dat";
-       AUTOTB_TVIN_n_out_wrapc : STRING := "../tv/rtldatafile/rtl.histogram.autotvin_n.dat";
-       AUTOTB_TVIN_out_r_out_wrapc : STRING := "../tv/rtldatafile/rtl.histogram.autotvin_out_r.dat";
-       AUTOTB_TVOUT_out_r : STRING := "../tv/cdatafile/c.histogram.autotvout_out_r.dat";
-       AUTOTB_TVOUT_out_r_out_wrapc : STRING := "../tv/rtldatafile/rtl.histogram.autotvout_out_r.dat";
+       AUTOTB_TVOUT_hist : STRING := "../tv/cdatafile/c.histogram.autotvout_hist.dat";
+       AUTOTB_TVOUT_hist_out_wrapc : STRING := "../tv/rtldatafile/rtl.histogram.autotvout_hist.dat";
       AUTOTB_LAT_RESULT_FILE    : STRING  := "histogram.result.lat.rb";
       AUTOTB_PER_RESULT_TRANS_FILE    : STRING  := "histogram.performance.result.transaction.xml";
       LENGTH_feature     : INTEGER := 100;
       LENGTH_hist     : INTEGER := 100;
       LENGTH_n     : INTEGER := 1;
-      LENGTH_out_r     : INTEGER := 100;
       LENGTH_weight     : INTEGER := 100;
 	    AUTOTB_TRANSACTION_NUM    : INTEGER := 1
 );
@@ -73,12 +68,10 @@ architecture behav of apatb_histogram_top is
   signal weight_q0 :  STD_LOGIC_VECTOR (31 DOWNTO 0);
   signal hist_address0 :  STD_LOGIC_VECTOR (6 DOWNTO 0);
   signal hist_ce0 :  STD_LOGIC;
+  signal hist_we0 :  STD_LOGIC;
+  signal hist_d0 :  STD_LOGIC_VECTOR (31 DOWNTO 0);
   signal hist_q0 :  STD_LOGIC_VECTOR (31 DOWNTO 0);
   signal n :  STD_LOGIC_VECTOR (31 DOWNTO 0);
-  signal out_r_address0 :  STD_LOGIC_VECTOR (6 DOWNTO 0);
-  signal out_r_ce0 :  STD_LOGIC;
-  signal out_r_we0 :  STD_LOGIC;
-  signal out_r_d0 :  STD_LOGIC_VECTOR (31 DOWNTO 0);
 
   signal ready_cnt : STD_LOGIC_VECTOR(31 DOWNTO 0);
   signal done_cnt	: STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -121,12 +114,10 @@ port (
     weight_q0 :  IN STD_LOGIC_VECTOR (31 DOWNTO 0);
     hist_address0 :  OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
     hist_ce0 :  OUT STD_LOGIC;
+    hist_we0 :  OUT STD_LOGIC;
+    hist_d0 :  OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
     hist_q0 :  IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-    n :  IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-    out_r_address0 :  OUT STD_LOGIC_VECTOR (6 DOWNTO 0);
-    out_r_ce0 :  OUT STD_LOGIC;
-    out_r_we0 :  OUT STD_LOGIC;
-    out_r_d0 :  OUT STD_LOGIC_VECTOR (31 DOWNTO 0));
+    n :  IN STD_LOGIC_VECTOR (31 DOWNTO 0));
 end component;
 
 signal arrayfeature_ce0, arrayfeature_ce1 : STD_LOGIC;
@@ -212,33 +203,6 @@ end component;
 
 -- The signal of port n
 shared variable AESL_REG_n : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
-signal arrayout_r_ce0, arrayout_r_ce1 : STD_LOGIC;
-signal arrayout_r_we0, arrayout_r_we1 : STD_LOGIC_VECTOR(3 downto 0);
-signal arrayout_r_address0, arrayout_r_address1 : STD_LOGIC_VECTOR(6 downto 0);
-signal arrayout_r_din0, arrayout_r_din1 : STD_LOGIC_VECTOR(31 downto 0);
-signal arrayout_r_dout0, arrayout_r_dout1 :  STD_LOGIC_VECTOR(31 downto 0);
-signal arrayout_r_ready : STD_LOGIC;
-signal arrayout_r_done : STD_LOGIC;
-
-component AESL_automem_out_r is
-  port(
-    clk        :  IN  STD_LOGIC;
-    rst        :  IN  STD_LOGIC;
-    ce0        :  IN  STD_LOGIC;
-    we0        :  IN  STD_LOGIC_VECTOR;
-    address0   :  IN  STD_LOGIC_VECTOR;
-    din0       :  IN  STD_LOGIC_VECTOR;
-    dout0      :  OUT STD_LOGIC_VECTOR;
-    ce1        :  IN  STD_LOGIC;
-    we1        :  IN  STD_LOGIC_VECTOR;
-    address1   :  IN  STD_LOGIC_VECTOR;
-    din1       :  IN  STD_LOGIC_VECTOR;
-    dout1      :  OUT STD_LOGIC_VECTOR;
-    ready	     :  IN  STD_LOGIC;
-    done	     :  IN  STD_LOGIC
-  );
-end component;
-
       procedure esl_read_token (file textfile: TEXT; textline: inout LINE; token: out STRING; token_len: out INTEGER) is
           variable whitespace : CHARACTER;
           variable i : INTEGER;
@@ -567,12 +531,10 @@ AESL_inst_histogram    :   histogram port map (
    weight_q0  =>  weight_q0,
    hist_address0  =>  hist_address0,
    hist_ce0  =>  hist_ce0,
+   hist_we0  =>  hist_we0,
+   hist_d0  =>  hist_d0,
    hist_q0  =>  hist_q0,
-   n  =>  n,
-   out_r_address0  =>  out_r_address0,
-   out_r_ce0  =>  out_r_ce0,
-   out_r_we0  =>  out_r_we0,
-   out_r_d0  =>  out_r_d0
+   n  =>  n
 );
 
 -- Assignment for control signal
@@ -687,12 +649,15 @@ AESL_inst_hist : AESL_automem_hist port map (
 arrayhist_address0 <= hist_address0;
 arrayhist_ce0 <= hist_ce0;
 hist_q0 <= arrayhist_dout0;
-arrayhist_we0 <= (others => '0');
-arrayhist_din0 <= (others => '0');
+arrayhist_we0(0) <= hist_we0;
+arrayhist_we0(1) <= hist_we0;
+arrayhist_we0(2) <= hist_we0;
+arrayhist_we0(3) <= hist_we0;
+arrayhist_din0 <= hist_d0;
 arrayhist_we1 <= (others => '0');
 arrayhist_din1 <= (others => '0');
-arrayhist_ready <=	ready;
-arrayhist_done <= '0';
+arrayhist_ready <= ready;
+arrayhist_done <= interface_done;
 
 gen_assign_n_proc : process
 begin
@@ -700,80 +665,6 @@ begin
   wait for 0.45 ns;
   n <= AESL_REG_n;
 end process;
-read_file_process_n : process
-  file        fp          :   TEXT;
-  variable    fstatus     :   FILE_OPEN_STATUS;
-  variable    token_line  :   LINE;
-  variable    token       :   STRING(1 to 152);
-  variable    i           :   INTEGER;
-  variable    transaction_finish  :   INTEGER;
-  variable    transaction_idx     :   INTEGER:= 0;
-  variable    rand        :   T_RANDINT     := init_rand(0);
-  variable    rint        :   INTEGER;
-begin
-    wait until AESL_reset = '0';
-    file_open(fstatus, fp, AUTOTB_TVIN_n, READ_MODE);
-    if(fstatus /= OPEN_OK) then
-        assert false report "Open file " & AUTOTB_TVIN_n & " failed!!!" severity note;
-        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
-    end if;
-    esl_read_token(fp, token_line, token);
-    if(token(1 to 13) /= "[[[runtime]]]") then
-        assert false report "ERROR: Simulation using HLS TB failed." severity failure;
-    end if;
-    esl_read_token(fp, token_line, token);
-    while(token(1 to 14) /= "[[[/runtime]]]") loop
-        if(token(1 to 15) /= "[[transaction]]") then
-            assert false report "ERROR: Simulation using HLS TB failed." severity failure;
-        end if;
-        esl_read_token(fp, token_line, token);  -- Skip transaction number
-        esl_read_token(fp, token_line, token);
-        wait for 0.2 ns;
-        while(ready_wire /= '1') loop
-            wait until AESL_clock'event and AESL_clock = '1';
-            wait for 0.2 ns;
-        end loop;
-        if(token(1 to 16) /= "[[/transaction]]") then
-            AESL_REG_n := esl_str2lv_hex(token, 32 );
-            esl_read_token(fp, token_line, token);
-        end if;
-        wait until AESL_clock'event and AESL_clock = '1';
-        esl_read_token(fp, token_line, token);
-    end loop;
-    file_close(fp);
-    wait;
-end process;
-
-AESL_inst_out_r : AESL_automem_out_r port map (
-    clk       =>  AESL_clock,
-    rst       =>  AESL_reset,
-    ce0       =>  arrayout_r_ce0,
-    we0       =>  arrayout_r_we0,
-    address0  =>  arrayout_r_address0,
-    din0      =>  arrayout_r_din0,
-    dout0     =>  arrayout_r_dout0,
-    ce1       =>  arrayout_r_ce1,
-    we1       =>  arrayout_r_we1,
-    address1  =>  arrayout_r_address1,
-    din1      =>  arrayout_r_din1,
-    dout1     =>  arrayout_r_dout1,
-    ready	    =>  arrayout_r_ready,
-    done	    =>  arrayout_r_done
-);
-
--- Assignment between dut and arrayout_r
-arrayout_r_address0 <= out_r_address0;
-arrayout_r_ce0 <= out_r_ce0;
-arrayout_r_we0(0) <= out_r_we0;
-arrayout_r_we0(1) <= out_r_we0;
-arrayout_r_we0(2) <= out_r_we0;
-arrayout_r_we0(3) <= out_r_we0;
-arrayout_r_din0 <= out_r_d0;
-arrayout_r_we1 <= (others => '0');
-arrayout_r_din1 <= (others => '0');
-arrayout_r_ready <= ready_initial or arrayout_r_done;
-arrayout_r_done <=	AESL_done_delay;
-
 generate_ready_cnt_proc : process(ready_initial, AESL_clock)
 begin
     if(AESL_clock'event and AESL_clock = '0') then
@@ -862,19 +753,23 @@ begin
   ce <= '1';
     wait until AESL_reset = '0';
   wait until (AESL_clock'event and AESL_clock = '1');
-  start <= '1';
-  while(ready_cnt /= AUTOTB_TRANSACTION_NUM) loop
-      wait until (AESL_clock'event and AESL_clock = '1');
-      if(AESL_ready = '1') then
-          start <= '0';
-          start <= '1';
-      end if;
-  end loop;
-  while (start = '1') loop
-      if(AESL_ready = '1') then
-          start <= '0';
+  while(true) loop
+      if(done_cnt /= AUTOTB_TRANSACTION_NUM) then
+      start <= '1';
       end if;
       wait until (AESL_clock'event and AESL_clock = '1');
+      while(AESL_ready /= '1') loop
+          wait until (AESL_clock'event and AESL_clock = '1');
+      end loop;
+      if(AESL_done /= '1') then
+          start <= '0';
+          while(AESL_done /= '1') loop
+              wait until (AESL_clock'event and AESL_clock = '1');
+          end loop;
+          wait until (AESL_clock'event and AESL_clock = '1');
+      end if;
+      start <= '0';
+      wait until (AESL_clock'event and AESL_clock = '0');
   end loop;
   wait;
 end process;
@@ -916,6 +811,7 @@ begin
   wait;
 end process;
 
+ready <= (ready_initial or AESL_done_delay);
 gen_ready_delay_n_last_proc : process(AESL_clock)
 begin
   if (AESL_clock'event and AESL_clock = '1') then
@@ -927,8 +823,7 @@ begin
   end if;
 end process;
 
-ready <= (ready_initial or AESL_ready_delay);
-ready_wire <= ready_initial or AESL_ready_delay;
+ready_wire <= (ready_initial or AESL_done_delay);
 done_delay_last_n <= '0' when done_cnt = AUTOTB_TRANSACTION_NUM else '1';
 
 gen_done_delay_proc : process(AESL_clock)
@@ -944,24 +839,17 @@ begin
   end if;
 end process;
 
-gen_interface_done : process(done_cnt, AESL_ready_delay, AESL_done_delay)
-begin
-    if(done_cnt < AUTOTB_TRANSACTION_NUM) then
-        interface_done <= AESL_ready_delay;
-    else
-        interface_done <= AESL_done_delay;
-    end if;
-end process;
+interface_done <= AESL_done_delay;
 -- Write "[[[runtime]]]" and "[[[/runtime]]]" for output transactor 
-write_output_transactor_out_r_runtime_proc : process
+write_output_transactor_hist_runtime_proc : process
   file        fp              :   TEXT;
   variable    fstatus         :   FILE_OPEN_STATUS;
   variable    token_line      :   LINE;
   variable    token           :   STRING(1 to 1024);
 begin
-    file_open(fstatus, fp, AUTOTB_TVOUT_out_r_out_wrapc, WRITE_MODE);
+    file_open(fstatus, fp, AUTOTB_TVOUT_hist_out_wrapc, WRITE_MODE);
     if(fstatus /= OPEN_OK) then
-        assert false report "Open file " & AUTOTB_TVOUT_out_r_out_wrapc & " failed!!!" severity note;
+        assert false report "Open file " & AUTOTB_TVOUT_hist_out_wrapc & " failed!!!" severity note;
         assert false report "ERROR: Simulation using HLS TB failed." severity failure;
     end if;
     write(token_line, string'("[[[runtime]]]"));
@@ -975,9 +863,9 @@ begin
     wait until AESL_clock'event and AESL_clock = '1';
     wait until AESL_clock'event and AESL_clock = '1';
     wait until AESL_clock'event and AESL_clock = '1';
-    file_open(fstatus, fp, AUTOTB_TVOUT_out_r_out_wrapc, APPEND_MODE);
+    file_open(fstatus, fp, AUTOTB_TVOUT_hist_out_wrapc, APPEND_MODE);
     if(fstatus /= OPEN_OK) then
-        assert false report "Open file " & AUTOTB_TVOUT_out_r_out_wrapc & " failed!!!" severity note;
+        assert false report "Open file " & AUTOTB_TVOUT_hist_out_wrapc & " failed!!!" severity note;
         assert false report "ERROR: Simulation using HLS TB failed." severity failure;
     end if;
     write(token_line, string'("[[[/runtime]]]"));
@@ -1013,6 +901,15 @@ begin
               AESL_mLatCnterOut(AESL_mLatCnterOut_addr) := AESL_clk_counter;
               AESL_mLatCnterOut_addr := AESL_mLatCnterOut_addr + 1;
               reported_stuck <= '0';
+          elsif (reported_stuck = '0' and reported_stuck_cnt < 4) then
+              if ( AESL_mLatCnterIn_addr > AESL_mLatCnterOut_addr ) then
+                  -- if ( AESL_clk_counter - AESL_mLatCnterIn(AESL_mLatCnterOut_addr) > 10000 and AESL_clk_counter - AESL_mLatCnterIn(AESL_mLatCnterOut_addr) > 10 * 697 ) then
+                  if ( AESL_clk_counter - AESL_mLatCnterIn(AESL_mLatCnterOut_addr) > 10000 and AESL_clk_counter - AESL_mLatCnterIn(AESL_mLatCnterOut_addr) > 10000000 ) then
+                      report "WARNING: The latency is much larger than expected. Simulation may be stuck.";
+                      reported_stuck <= '1';
+                      reported_stuck_cnt := reported_stuck_cnt + 1;
+                  end if;
+              end if;
           end if;
       end if;
   end if;

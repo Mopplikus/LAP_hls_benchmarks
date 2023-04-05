@@ -7,7 +7,7 @@ set CombLogicFlag 0
 set PipelineFlag 0
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
-set noPortSwitchingFlag 0
+set noPortSwitchingFlag 1
 set FloatingPointFlag 1
 set FftOrFirFlag 0
 set NbRWValue 0
@@ -45,7 +45,7 @@ set TargetInfo xck24:-ubva530:-2LV-c
 set SourceFiles {sc {} c ../histogram.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/solution1/solution1.directive
-set TBFiles {verilog {../result.golden.dat ../histogram_test.cpp} bc {../result.golden.dat ../histogram_test.cpp} sc {../result.golden.dat ../histogram_test.cpp} vhdl {../result.golden.dat ../histogram_test.cpp} c {} cas {../result.golden.dat ../histogram_test.cpp}}
+set TBFiles {verilog {../histogram_test.cpp ../result.golden.dat} bc {../histogram_test.cpp ../result.golden.dat} sc {../histogram_test.cpp ../result.golden.dat} vhdl {../histogram_test.cpp ../result.golden.dat} c {} cas {../histogram_test.cpp ../result.golden.dat}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

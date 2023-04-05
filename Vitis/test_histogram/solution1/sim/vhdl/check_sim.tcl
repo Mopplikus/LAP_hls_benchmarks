@@ -84,8 +84,6 @@ proc check_tvin_file {} {
          "c.histogram.autotvin_feature.dat"
          "c.histogram.autotvin_weight.dat"
          "c.histogram.autotvin_hist.dat"
-         "c.histogram.autotvin_n.dat"
-         "c.histogram.autotvin_out_r.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {
@@ -105,7 +103,7 @@ proc check_tvout_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
-         "rtl.histogram.autotvout_out_r.dat"
+         "rtl.histogram.autotvout_hist.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {

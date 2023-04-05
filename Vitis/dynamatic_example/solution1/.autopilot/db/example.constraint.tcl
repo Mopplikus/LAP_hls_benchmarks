@@ -3,7 +3,7 @@ set clock_constraint { \
     module example \
     port ap_clk \
     period 5 \
-    uncertainty 0.5 \
+    uncertainty 0 \
 }
 
 set all_path {}

@@ -34,7 +34,6 @@ int kernel_2mm(int alpha, int beta, int tmp[N][N], int A[N][N], int B[N][N], int
 }
 
 
-
 #define AMOUNT_OF_TEST 1
 
 int main(void){

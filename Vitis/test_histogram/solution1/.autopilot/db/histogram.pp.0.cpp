@@ -28062,41 +28062,33 @@ typedef float dout_out;
 
 
 __attribute__((sdx_kernel("histogram", 0))) void histogram(
-    din_feature feature[100],
-    din_weight weight[100],
-    din_hist hist[100],
-    din_n n,
-    dout_out out[100]);
+    din_feature feature[1000],
+    din_weight weight[1000],
+    din_hist hist[1000],
+    din_n n);
 # 2 "test_histogram/histogram.cpp" 2
 
 __attribute__((sdx_kernel("histogram", 0))) void histogram(
-    din_feature feature[100],
-    din_weight weight[100],
-    din_hist hist[100],
-    din_n n,
- dout_out out[100])
+    din_feature feature[1000],
+    din_weight weight[1000],
+    din_hist hist[1000],
+    din_n n)
 {
 #line 17 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=histogram
-# 9 "test_histogram/histogram.cpp"
+# 8 "test_histogram/histogram.cpp"
+
+#line 6 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/solution1/directives.tcl"
+#pragma HLSDIRECTIVE TOP name=histogram
+# 8 "test_histogram/histogram.cpp"
 
  int i;
- float hist_local[100];
- LOOP_INIT:for(i = 0; i < 100; i++)
- {
-  hist_local[i] = hist[i];
- }
 
- LOOP_I:for(i = 0; i < n; i++)
+ LOOP_I:for(i = 0; i < 1000 - 1; i++)
  {
   int m = feature[i];
   float wt = weight[i];
-  float x = hist_local[m];
-  hist_local[m] = x + wt;
- }
-
- LOOP_END:for(i = 0; i < 100; i++)
- {
-  out[i] = hist_local[i];
+  float x = hist[m];
+  hist[m] = x + wt;
  }
 }

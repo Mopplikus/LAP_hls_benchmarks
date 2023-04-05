@@ -27878,8 +27878,7 @@ void histogram(
     din_feature feature[100],
     din_weight weight[100],
     din_hist hist[100],
-    din_n n,
-    dout_out out[100]);
+    din_n n);
 # 2 "C:/Users/Elija/AppData/Roaming/Xilinx/Vitis/test_histogram/histogram_test.cpp" 2
 
 int main()
@@ -27888,7 +27887,6 @@ int main()
  din_weight weight[100];
  din_n n = 100 - 1;
  din_hist hist[100];
- dout_out out[100];
 
  int i, j, retval = 0;
  ofstream FILE;
@@ -27900,13 +27898,13 @@ int main()
   hist[i] = 0.0f;
  }
 
- histogram(feature, weight, hist, n, out);
+ histogram(feature, weight, hist, n);
 
  FILE.open("result.dat");
 
  for(j = 0; j < 100; j++)
  {
-  FILE << out[j] << endl;
+  FILE << hist[j] << endl;
  }
 
  FILE.close();

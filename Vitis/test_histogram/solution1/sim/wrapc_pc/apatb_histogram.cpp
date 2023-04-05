@@ -26,12 +26,10 @@ using namespace std;
 #define AUTOTB_TVOUT_hist "../tv/cdatafile/c.histogram.autotvout_hist.dat"
 #define AUTOTB_TVIN_n "../tv/cdatafile/c.histogram.autotvin_n.dat"
 #define AUTOTB_TVOUT_n "../tv/cdatafile/c.histogram.autotvout_n.dat"
-#define AUTOTB_TVIN_out_r "../tv/cdatafile/c.histogram.autotvin_out_r.dat"
-#define AUTOTB_TVOUT_out_r "../tv/cdatafile/c.histogram.autotvout_out_r.dat"
 
 
 // tvout file define:
-#define AUTOTB_TVOUT_PC_out_r "../tv/rtldatafile/rtl.histogram.autotvout_out_r.dat"
+#define AUTOTB_TVOUT_PC_hist "../tv/rtldatafile/rtl.histogram.autotvout_hist.dat"
 
 
 namespace hls::sim
@@ -956,10 +954,10 @@ namespace hls::sim
 
 
 extern "C"
-void histogram_hw_stub_wrapper(void*, void*, void*, float, void*);
+void histogram_hw_stub_wrapper(void*, void*, void*, float);
 
 extern "C"
-void apatb_histogram_hw(void* __xlx_apatb_param_feature, void* __xlx_apatb_param_weight, void* __xlx_apatb_param_hist, float __xlx_apatb_param_n, void* __xlx_apatb_param_out_r)
+void apatb_histogram_hw(void* __xlx_apatb_param_feature, void* __xlx_apatb_param_weight, void* __xlx_apatb_param_hist, float __xlx_apatb_param_n)
 {
   static hls::sim::Register port0 {
     .name = "n",
@@ -1030,8 +1028,17 @@ void apatb_histogram_hw(void* __xlx_apatb_param_feature, void* __xlx_apatb_param
     .hbm = false,
     .name = { "hist" },
 #ifdef POST_CHECK
+#ifdef USE_BINARY_TV_FILE
+    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_hist),
 #else
-    .owriter = nullptr,
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_hist),
+#endif
+#else
+#ifdef USE_BINARY_TV_FILE
+    .owriter = new hls::sim::Output(AUTOTB_TVOUT_hist),
+#else
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_hist),
+#endif
 #ifdef USE_BINARY_TV_FILE
     .iwriter = new hls::sim::Output(AUTOTB_TVIN_hist),
 #else
@@ -1042,46 +1049,13 @@ void apatb_histogram_hw(void* __xlx_apatb_param_feature, void* __xlx_apatb_param
   port3.param = { __xlx_apatb_param_hist };
   port3.depth = { 100 };
   port3.offset = {  };
-  port3.hasWrite = { false };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port4 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port4 {
-#endif
-    .width = 32,
-    .asize = 4,
-    .hbm = false,
-    .name = { "out_r" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_out_r),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_out_r),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_out_r),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_out_r),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_out_r),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_out_r),
-#endif
-#endif
-  };
-  port4.param = { __xlx_apatb_param_out_r };
-  port4.depth = { 100 };
-  port4.offset = {  };
-  port4.hasWrite = { true };
+  port3.hasWrite = { true };
 
   refine_signal_handler();
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port4);
+    check(port3);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     CodeState = DUMP_INPUTS;
@@ -1089,16 +1063,14 @@ void apatb_histogram_hw(void* __xlx_apatb_param_feature, void* __xlx_apatb_param
     dump(port1, port1.iwriter, tcl.AESL_transaction);
     dump(port2, port2.iwriter, tcl.AESL_transaction);
     dump(port3, port3.iwriter, tcl.AESL_transaction);
-    dump(port4, port4.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
     port2.doTCL(tcl);
     port3.doTCL(tcl);
-    port4.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    histogram_hw_stub_wrapper(__xlx_apatb_param_feature, __xlx_apatb_param_weight, __xlx_apatb_param_hist, __xlx_apatb_param_n, __xlx_apatb_param_out_r);
+    histogram_hw_stub_wrapper(__xlx_apatb_param_feature, __xlx_apatb_param_weight, __xlx_apatb_param_hist, __xlx_apatb_param_n);
     CodeState = DUMP_OUTPUTS;
-    dump(port4, port4.owriter, tcl.AESL_transaction);
+    dump(port3, port3.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

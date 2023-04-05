@@ -1,8 +1,8 @@
 # This script segment is generated automatically by AutoPilot
 
-set name example_faddfsub_32ns_32ns_32_7_full_dsp_1
+set name example_faddfsub_32ns_32ns_32_6_full_dsp_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fsub} IMPL {fulldsp} LATENCY 6 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {fsub} IMPL {fulldsp} LATENCY 5 ALLOW_PRAGMA 1
 }
 
 
