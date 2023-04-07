@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"histogram"
       , "data":
-      ['1', '7032,7032,7032', 'n/a,n/a,n/a']
+      ['1', '5009,5009,5009', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '7032,7032,7032', 'n/a,n/a,n/a']
+      ['1', '5009,5009,5009', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

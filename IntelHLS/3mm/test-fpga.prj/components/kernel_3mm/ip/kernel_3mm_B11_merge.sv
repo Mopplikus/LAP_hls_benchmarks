@@ -16,49 +16,141 @@
 
 // SystemVerilog created from kernel_3mm_B11_merge
 // Created for function/kernel kernel_3mm
-// SystemVerilog created on Wed Apr  5 01:38:02 2023
+// SystemVerilog created on Fri Apr  7 18:25:07 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module kernel_3mm_B11_merge (
-    input wire [31:0] in_c0_exe235911_0,
-    input wire [0:0] in_c0_exe436113_0,
-    input wire [0:0] in_c0_exe536214_0,
-    input wire [63:0] in_c0_exe636315_0,
+    input wire [0:0] in_forked114_0,
+    input wire [0:0] in_forked114_1,
+    input wire [31:0] in_i_252_pop30259_0,
+    input wire [31:0] in_i_252_pop30259_1,
+    input wire [0:0] in_memdep_phi7_pop21104_pop31262_0,
+    input wire [0:0] in_memdep_phi7_pop21104_pop31262_1,
+    input wire [0:0] in_memdep_phi7_pop21255_0,
+    input wire [0:0] in_memdep_phi7_pop21255_1,
+    input wire [0:0] in_notcmp31256_0,
+    input wire [0:0] in_notcmp31256_1,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
-    output wire [31:0] out_c0_exe235911,
-    output wire [0:0] out_c0_exe436113,
-    output wire [0:0] out_c0_exe536214,
-    output wire [63:0] out_c0_exe636315,
+    input wire [0:0] in_valid_in_1,
+    output wire [0:0] out_forked114,
+    output wire [31:0] out_i_252_pop30259,
+    output wire [0:0] out_memdep_phi7_pop21104_pop31262,
+    output wire [0:0] out_memdep_phi7_pop21255,
+    output wire [0:0] out_notcmp31256,
     output wire [0:0] out_stall_out_0,
+    output wire [0:0] out_stall_out_1,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
+    wire [0:0] VCC_q;
+    wire [0:0] forked114_mux_s;
+    reg [0:0] forked114_mux_q;
+    wire [0:0] i_252_pop30259_mux_s;
+    reg [31:0] i_252_pop30259_mux_q;
+    wire [0:0] memdep_phi7_pop21104_pop31262_mux_s;
+    reg [0:0] memdep_phi7_pop21104_pop31262_mux_q;
+    wire [0:0] memdep_phi7_pop21255_mux_s;
+    reg [0:0] memdep_phi7_pop21255_mux_q;
+    wire [0:0] notcmp31256_mux_s;
+    reg [0:0] notcmp31256_mux_q;
     wire [0:0] stall_out_q;
+    wire [0:0] stall_out_1_specific_q;
+    wire [0:0] valid_or_q;
 
 
-    // out_c0_exe235911(GPOUT,8)
-    assign out_c0_exe235911 = in_c0_exe235911_0;
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
 
-    // out_c0_exe436113(GPOUT,9)
-    assign out_c0_exe436113 = in_c0_exe436113_0;
+    // forked114_mux(MUX,2)
+    assign forked114_mux_s = in_valid_in_0;
+    always @(forked114_mux_s or in_forked114_1 or in_forked114_0)
+    begin
+        unique case (forked114_mux_s)
+            1'b0 : forked114_mux_q = in_forked114_1;
+            1'b1 : forked114_mux_q = in_forked114_0;
+            default : forked114_mux_q = 1'b0;
+        endcase
+    end
 
-    // out_c0_exe536214(GPOUT,10)
-    assign out_c0_exe536214 = in_c0_exe536214_0;
+    // out_forked114(GPOUT,20)
+    assign out_forked114 = forked114_mux_q;
 
-    // out_c0_exe636315(GPOUT,11)
-    assign out_c0_exe636315 = in_c0_exe636315_0;
+    // i_252_pop30259_mux(MUX,3)
+    assign i_252_pop30259_mux_s = in_valid_in_0;
+    always @(i_252_pop30259_mux_s or in_i_252_pop30259_1 or in_i_252_pop30259_0)
+    begin
+        unique case (i_252_pop30259_mux_s)
+            1'b0 : i_252_pop30259_mux_q = in_i_252_pop30259_1;
+            1'b1 : i_252_pop30259_mux_q = in_i_252_pop30259_0;
+            default : i_252_pop30259_mux_q = 32'b0;
+        endcase
+    end
 
-    // stall_out(LOGICAL,14)
-    assign stall_out_q = in_valid_in_0 & in_stall_in;
+    // out_i_252_pop30259(GPOUT,21)
+    assign out_i_252_pop30259 = i_252_pop30259_mux_q;
 
-    // out_stall_out_0(GPOUT,12)
+    // memdep_phi7_pop21104_pop31262_mux(MUX,17)
+    assign memdep_phi7_pop21104_pop31262_mux_s = in_valid_in_0;
+    always @(memdep_phi7_pop21104_pop31262_mux_s or in_memdep_phi7_pop21104_pop31262_1 or in_memdep_phi7_pop21104_pop31262_0)
+    begin
+        unique case (memdep_phi7_pop21104_pop31262_mux_s)
+            1'b0 : memdep_phi7_pop21104_pop31262_mux_q = in_memdep_phi7_pop21104_pop31262_1;
+            1'b1 : memdep_phi7_pop21104_pop31262_mux_q = in_memdep_phi7_pop21104_pop31262_0;
+            default : memdep_phi7_pop21104_pop31262_mux_q = 1'b0;
+        endcase
+    end
+
+    // out_memdep_phi7_pop21104_pop31262(GPOUT,22)
+    assign out_memdep_phi7_pop21104_pop31262 = memdep_phi7_pop21104_pop31262_mux_q;
+
+    // memdep_phi7_pop21255_mux(MUX,18)
+    assign memdep_phi7_pop21255_mux_s = in_valid_in_0;
+    always @(memdep_phi7_pop21255_mux_s or in_memdep_phi7_pop21255_1 or in_memdep_phi7_pop21255_0)
+    begin
+        unique case (memdep_phi7_pop21255_mux_s)
+            1'b0 : memdep_phi7_pop21255_mux_q = in_memdep_phi7_pop21255_1;
+            1'b1 : memdep_phi7_pop21255_mux_q = in_memdep_phi7_pop21255_0;
+            default : memdep_phi7_pop21255_mux_q = 1'b0;
+        endcase
+    end
+
+    // out_memdep_phi7_pop21255(GPOUT,23)
+    assign out_memdep_phi7_pop21255 = memdep_phi7_pop21255_mux_q;
+
+    // notcmp31256_mux(MUX,19)
+    assign notcmp31256_mux_s = in_valid_in_0;
+    always @(notcmp31256_mux_s or in_notcmp31256_1 or in_notcmp31256_0)
+    begin
+        unique case (notcmp31256_mux_s)
+            1'b0 : notcmp31256_mux_q = in_notcmp31256_1;
+            1'b1 : notcmp31256_mux_q = in_notcmp31256_0;
+            default : notcmp31256_mux_q = 1'b0;
+        endcase
+    end
+
+    // out_notcmp31256(GPOUT,24)
+    assign out_notcmp31256 = notcmp31256_mux_q;
+
+    // valid_or(LOGICAL,30)
+    assign valid_or_q = in_valid_in_0 | in_valid_in_1;
+
+    // stall_out(LOGICAL,28)
+    assign stall_out_q = valid_or_q & in_stall_in;
+
+    // out_stall_out_0(GPOUT,25)
     assign out_stall_out_0 = stall_out_q;
 
-    // out_valid_out(GPOUT,13)
-    assign out_valid_out = in_valid_in_0;
+    // stall_out_1_specific(LOGICAL,29)
+    assign stall_out_1_specific_q = in_valid_in_0 | stall_out_q;
+
+    // out_stall_out_1(GPOUT,26)
+    assign out_stall_out_1 = stall_out_1_specific_q;
+
+    // out_valid_out(GPOUT,27)
+    assign out_valid_out = valid_or_q;
 
 endmodule

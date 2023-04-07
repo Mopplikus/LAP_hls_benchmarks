@@ -16,126 +16,114 @@
 
 // SystemVerilog created from gaussian_B5_branch
 // Created for function/kernel gaussian
-// SystemVerilog created on Tue Apr  4 21:38:49 2023
+// SystemVerilog created on Fri Apr  7 17:25:52 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module gaussian_B5_branch (
-    input wire [0:0] in_c0_exe2133,
-    input wire [0:0] in_c0_exe3134,
+    input wire [31:0] in_c0_exe11,
+    input wire [31:0] in_c0_exe12,
+    input wire [31:0] in_c0_exe13,
+    input wire [0:0] in_c0_exe14,
+    input wire [32:0] in_c0_exe15,
+    input wire [31:0] in_c0_exe16,
+    input wire [0:0] in_c0_exe17,
+    input wire [0:0] in_c0_exe191,
+    input wire [0:0] in_c0_exe292,
+    input wire [0:0] in_c0_exe3,
+    input wire [31:0] in_c0_exe4,
+    input wire [0:0] in_c0_exe5,
+    input wire [31:0] in_c0_exe6,
+    input wire [31:0] in_c0_exe7,
+    input wire [31:0] in_c0_exe8,
+    input wire [31:0] in_c0_exe9,
+    input wire [0:0] in_memdep_phi_pop10,
     input wire [0:0] in_stall_in_0,
-    input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_c0_exe3134,
+    output wire [31:0] out_c0_exe11,
+    output wire [31:0] out_c0_exe12,
+    output wire [31:0] out_c0_exe13,
+    output wire [0:0] out_c0_exe14,
+    output wire [32:0] out_c0_exe15,
+    output wire [31:0] out_c0_exe16,
+    output wire [0:0] out_c0_exe17,
+    output wire [0:0] out_c0_exe191,
+    output wire [0:0] out_c0_exe292,
+    output wire [0:0] out_c0_exe3,
+    output wire [31:0] out_c0_exe4,
+    output wire [0:0] out_c0_exe5,
+    output wire [31:0] out_c0_exe6,
+    output wire [31:0] out_c0_exe7,
+    output wire [31:0] out_c0_exe8,
+    output wire [31:0] out_c0_exe9,
+    output wire [0:0] out_memdep_phi_pop10,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
-    output wire [0:0] out_valid_out_1,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] VCC_q;
-    wire [0:0] c0_exe2133_cmp_q;
-    reg [0:0] c0_exe3134_reg_q;
-    wire [0:0] gaussian_B5_branch_enable_q;
-    wire [0:0] gaussian_B5_branch_enable_not_q;
-    wire [0:0] not_stall_in_0_q;
-    wire [0:0] not_stall_in_1_q;
-    wire [0:0] not_valid_0_q;
-    wire [0:0] not_valid_1_q;
-    wire [0:0] not_valid_or_not_stall_0_q;
-    wire [0:0] not_valid_or_not_stall_1_q;
-    reg [0:0] valid_0_reg_q;
-    reg [0:0] valid_1_reg_q;
-    wire [0:0] valid_out_0_and_q;
-    wire [0:0] valid_out_1_and_q;
+    wire [0:0] stall_out_q;
 
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
+    // out_c0_exe11(GPOUT,21)
+    assign out_c0_exe11 = in_c0_exe11;
 
-    // not_stall_in_1(LOGICAL,12)
-    assign not_stall_in_1_q = ~ (in_stall_in_1);
+    // out_c0_exe12(GPOUT,22)
+    assign out_c0_exe12 = in_c0_exe12;
 
-    // c0_exe2133_cmp(LOGICAL,2)
-    assign c0_exe2133_cmp_q = ~ (in_c0_exe2133);
+    // out_c0_exe13(GPOUT,23)
+    assign out_c0_exe13 = in_c0_exe13;
 
-    // valid_out_1_and(LOGICAL,24)
-    assign valid_out_1_and_q = in_valid_in & c0_exe2133_cmp_q;
+    // out_c0_exe14(GPOUT,24)
+    assign out_c0_exe14 = in_c0_exe14;
 
-    // valid_1_reg(REG,22)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            valid_1_reg_q <= $unsigned(1'b0);
-        end
-        else if (gaussian_B5_branch_enable_q == 1'b1)
-        begin
-            valid_1_reg_q <= valid_out_1_and_q;
-        end
-    end
+    // out_c0_exe15(GPOUT,25)
+    assign out_c0_exe15 = in_c0_exe15;
 
-    // not_valid_1(LOGICAL,14)
-    assign not_valid_1_q = ~ (valid_1_reg_q);
+    // out_c0_exe16(GPOUT,26)
+    assign out_c0_exe16 = in_c0_exe16;
 
-    // not_valid_or_not_stall_1(LOGICAL,16)
-    assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
+    // out_c0_exe17(GPOUT,27)
+    assign out_c0_exe17 = in_c0_exe17;
 
-    // not_stall_in_0(LOGICAL,11)
-    assign not_stall_in_0_q = ~ (in_stall_in_0);
+    // out_c0_exe191(GPOUT,28)
+    assign out_c0_exe191 = in_c0_exe191;
 
-    // valid_out_0_and(LOGICAL,23)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe2133;
+    // out_c0_exe292(GPOUT,29)
+    assign out_c0_exe292 = in_c0_exe292;
 
-    // valid_0_reg(REG,21)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            valid_0_reg_q <= $unsigned(1'b0);
-        end
-        else if (gaussian_B5_branch_enable_q == 1'b1)
-        begin
-            valid_0_reg_q <= valid_out_0_and_q;
-        end
-    end
+    // out_c0_exe3(GPOUT,30)
+    assign out_c0_exe3 = in_c0_exe3;
 
-    // not_valid_0(LOGICAL,13)
-    assign not_valid_0_q = ~ (valid_0_reg_q);
+    // out_c0_exe4(GPOUT,31)
+    assign out_c0_exe4 = in_c0_exe4;
 
-    // not_valid_or_not_stall_0(LOGICAL,15)
-    assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
+    // out_c0_exe5(GPOUT,32)
+    assign out_c0_exe5 = in_c0_exe5;
 
-    // gaussian_B5_branch_enable(LOGICAL,4)
-    assign gaussian_B5_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
+    // out_c0_exe6(GPOUT,33)
+    assign out_c0_exe6 = in_c0_exe6;
 
-    // c0_exe3134_reg(REG,3)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe3134_reg_q <= $unsigned(1'b0);
-        end
-        else if (gaussian_B5_branch_enable_q == 1'b1)
-        begin
-            c0_exe3134_reg_q <= in_c0_exe3134;
-        end
-    end
+    // out_c0_exe7(GPOUT,34)
+    assign out_c0_exe7 = in_c0_exe7;
 
-    // out_c0_exe3134(GPOUT,17)
-    assign out_c0_exe3134 = c0_exe3134_reg_q;
+    // out_c0_exe8(GPOUT,35)
+    assign out_c0_exe8 = in_c0_exe8;
 
-    // gaussian_B5_branch_enable_not(LOGICAL,5)
-    assign gaussian_B5_branch_enable_not_q = ~ (gaussian_B5_branch_enable_q);
+    // out_c0_exe9(GPOUT,36)
+    assign out_c0_exe9 = in_c0_exe9;
 
-    // out_stall_out(GPOUT,18)
-    assign out_stall_out = gaussian_B5_branch_enable_not_q;
+    // out_memdep_phi_pop10(GPOUT,37)
+    assign out_memdep_phi_pop10 = in_memdep_phi_pop10;
 
-    // out_valid_out_0(GPOUT,19)
-    assign out_valid_out_0 = valid_0_reg_q;
+    // stall_out(LOGICAL,40)
+    assign stall_out_q = in_valid_in & in_stall_in_0;
 
-    // out_valid_out_1(GPOUT,20)
-    assign out_valid_out_1 = valid_1_reg_q;
+    // out_stall_out(GPOUT,38)
+    assign out_stall_out = stall_out_q;
+
+    // out_valid_out_0(GPOUT,39)
+    assign out_valid_out_0 = in_valid_in;
 
 endmodule

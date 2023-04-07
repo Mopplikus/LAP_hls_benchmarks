@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_iowr_bl_return_stencil_2d_unnamed_stencil_2d3_stencil_2d0
 // Created for function/kernel stencil_2d
-// SystemVerilog created on Tue Apr  4 22:01:35 2023
+// SystemVerilog created on Fri Apr  7 16:44:43 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)

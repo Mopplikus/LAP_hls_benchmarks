@@ -10,6 +10,7 @@ component void triangular( int x[N], int A[N][N] , int n) {
 	hls_memory hls_singlepump int A_local[N][N];
     int local_n = n;
 
+    /*
     INIT:for(int i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
@@ -17,7 +18,7 @@ component void triangular( int x[N], int A[N][N] , int n) {
             A_local[i][j] = A[i][j];
         }
         x_local[i] = x[i];
-    }
+    }*/
 
     WORK:for (int i=local_n-1; i>=0; i--) {
        // x[i] = A[i][n]/A[i][i];
@@ -26,6 +27,7 @@ component void triangular( int x[N], int A[N][N] , int n) {
         }
 	}
 
+    /*
     OUT:for(int i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
@@ -33,6 +35,7 @@ component void triangular( int x[N], int A[N][N] , int n) {
             A[i][j] = A_local[i][j];
         }
     }
+    */
 }
 
 void triangular_ref( int x[N], int A[N][N] , int n) {

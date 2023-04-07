@@ -12,12 +12,6 @@ module quartus_compile (
 	, input logic [63:0] kernel_3mm_E
 	, input logic [63:0] kernel_3mm_F
 	, input logic [63:0] kernel_3mm_G
-	, output logic [63:0] kernel_3mm_avmm_0_rw_address
-	, output logic [7:0] kernel_3mm_avmm_0_rw_byteenable
-	, output logic [0:0] kernel_3mm_avmm_0_rw_read
-	, input logic [63:0] kernel_3mm_avmm_0_rw_readdata
-	, output logic [0:0] kernel_3mm_avmm_0_rw_write
-	, output logic [63:0] kernel_3mm_avmm_0_rw_writedata
 	);
 
 	logic [0:0] kernel_3mm_start_reg;
@@ -31,12 +25,6 @@ module quartus_compile (
 	logic [63:0] kernel_3mm_E_reg;
 	logic [63:0] kernel_3mm_F_reg;
 	logic [63:0] kernel_3mm_G_reg;
-	logic [63:0] kernel_3mm_avmm_0_rw_address_reg;
-	logic [7:0] kernel_3mm_avmm_0_rw_byteenable_reg;
-	logic [0:0] kernel_3mm_avmm_0_rw_read_reg;
-	logic [63:0] kernel_3mm_avmm_0_rw_readdata_reg;
-	logic [0:0] kernel_3mm_avmm_0_rw_write_reg;
-	logic [63:0] kernel_3mm_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -51,12 +39,6 @@ module quartus_compile (
 		kernel_3mm_E_reg <= kernel_3mm_E;
 		kernel_3mm_F_reg <= kernel_3mm_F;
 		kernel_3mm_G_reg <= kernel_3mm_G;
-		kernel_3mm_avmm_0_rw_address <= kernel_3mm_avmm_0_rw_address_reg;
-		kernel_3mm_avmm_0_rw_byteenable <= kernel_3mm_avmm_0_rw_byteenable_reg;
-		kernel_3mm_avmm_0_rw_read <= kernel_3mm_avmm_0_rw_read_reg;
-		kernel_3mm_avmm_0_rw_readdata_reg <= kernel_3mm_avmm_0_rw_readdata;
-		kernel_3mm_avmm_0_rw_write <= kernel_3mm_avmm_0_rw_write_reg;
-		kernel_3mm_avmm_0_rw_writedata <= kernel_3mm_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -84,12 +66,6 @@ module quartus_compile (
 		, .E(kernel_3mm_E_reg)
 		, .F(kernel_3mm_F_reg)
 		, .G(kernel_3mm_G_reg)
-		, .avmm_0_rw_address(kernel_3mm_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(kernel_3mm_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(kernel_3mm_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(kernel_3mm_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(kernel_3mm_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(kernel_3mm_avmm_0_rw_writedata_reg)
 	);
 
 

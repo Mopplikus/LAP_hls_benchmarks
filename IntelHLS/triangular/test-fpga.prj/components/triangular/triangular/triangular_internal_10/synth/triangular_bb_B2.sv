@@ -16,54 +16,75 @@
 
 // SystemVerilog created from bb_triangular_B2
 // Created for function/kernel triangular
-// SystemVerilog created on Wed Apr  5 14:46:57 2023
+// SystemVerilog created on Fri Apr  7 16:28:14 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_bb_B2 (
-    input wire [31:0] in_c0_exe72_0,
-    input wire [31:0] in_intel_reserved_ffwd_2_0,
+    output wire [0:0] out_feedback_out_13,
+    input wire [0:0] in_feedback_stall_in_13,
+    output wire [0:0] out_feedback_valid_out_13,
+    input wire [0:0] in_c0_exe2771_0,
+    input wire [0:0] in_c0_exe4792_0,
+    input wire [31:0] in_c0_exe5804_0,
+    input wire [0:0] in_c0_exe6815_0,
     input wire [0:0] in_stall_in_0,
+    input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in_0,
-    input wire [0:0] in_wgl_10_enter_exit_stall_in,
-    input wire [0:0] in_wgl_10_enter_exit_valid_in,
-    output wire [31:0] out_c0_exe72,
-    output wire [0:0] out_intel_reserved_ffwd_3_0,
-    output wire [31:0] out_intel_reserved_ffwd_4_0,
-    output wire [32:0] out_intel_reserved_ffwd_5_0,
-    output wire [31:0] out_reorder_limiter_enter,
+    output wire [31:0] out_c0_exe5804,
+    output wire [0:0] out_stall_in_0,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_valid_out_0,
-    output wire [0:0] out_wgl_10_enter_exit_stall_out,
-    output wire [0:0] out_wgl_10_enter_exit_valid_out,
+    output wire [0:0] out_valid_out_1,
     input wire clock,
     input wire resetn
     );
 
-    wire [31:0] bb_triangular_B2_stall_region_out_c0_exe72;
-    wire [0:0] bb_triangular_B2_stall_region_out_intel_reserved_ffwd_3_0;
-    wire [31:0] bb_triangular_B2_stall_region_out_intel_reserved_ffwd_4_0;
-    wire [32:0] bb_triangular_B2_stall_region_out_intel_reserved_ffwd_5_0;
-    wire [31:0] bb_triangular_B2_stall_region_out_reorder_limiter_enter;
+    wire [0:0] bb_triangular_B2_stall_region_out_c0_exe4792;
+    wire [31:0] bb_triangular_B2_stall_region_out_c0_exe5804;
+    wire [0:0] bb_triangular_B2_stall_region_out_feedback_out_13;
+    wire [0:0] bb_triangular_B2_stall_region_out_feedback_valid_out_13;
     wire [0:0] bb_triangular_B2_stall_region_out_stall_out;
     wire [0:0] bb_triangular_B2_stall_region_out_valid_out;
-    wire [0:0] bb_triangular_B2_stall_region_out_wgl_10_enter_exit_stall_out;
-    wire [0:0] bb_triangular_B2_stall_region_out_wgl_10_enter_exit_valid_out;
-    wire [31:0] triangular_B2_branch_out_c0_exe72;
-    wire [31:0] triangular_B2_branch_out_reorder_limiter_enter;
+    wire [31:0] triangular_B2_branch_out_c0_exe5804;
     wire [0:0] triangular_B2_branch_out_stall_out;
     wire [0:0] triangular_B2_branch_out_valid_out_0;
-    wire [31:0] triangular_B2_merge_out_c0_exe72;
+    wire [0:0] triangular_B2_branch_out_valid_out_1;
+    wire [0:0] triangular_B2_merge_out_c0_exe2771;
+    wire [0:0] triangular_B2_merge_out_c0_exe4792;
+    wire [31:0] triangular_B2_merge_out_c0_exe5804;
+    wire [0:0] triangular_B2_merge_out_c0_exe6815;
     wire [0:0] triangular_B2_merge_out_stall_out_0;
     wire [0:0] triangular_B2_merge_out_valid_out;
 
 
+    // triangular_B2_branch(BLACKBOX,18)
+    triangular_B2_branch thetriangular_B2_branch (
+        .in_c0_exe4792(bb_triangular_B2_stall_region_out_c0_exe4792),
+        .in_c0_exe5804(bb_triangular_B2_stall_region_out_c0_exe5804),
+        .in_stall_in_0(in_stall_in_0),
+        .in_stall_in_1(in_stall_in_1),
+        .in_valid_in(bb_triangular_B2_stall_region_out_valid_out),
+        .out_c0_exe5804(triangular_B2_branch_out_c0_exe5804),
+        .out_stall_out(triangular_B2_branch_out_stall_out),
+        .out_valid_out_0(triangular_B2_branch_out_valid_out_0),
+        .out_valid_out_1(triangular_B2_branch_out_valid_out_1),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
     // triangular_B2_merge(BLACKBOX,19)
     triangular_B2_merge thetriangular_B2_merge (
-        .in_c0_exe72_0(in_c0_exe72_0),
+        .in_c0_exe2771_0(in_c0_exe2771_0),
+        .in_c0_exe4792_0(in_c0_exe4792_0),
+        .in_c0_exe5804_0(in_c0_exe5804_0),
+        .in_c0_exe6815_0(in_c0_exe6815_0),
         .in_stall_in(bb_triangular_B2_stall_region_out_stall_out),
         .in_valid_in_0(in_valid_in_0),
-        .out_c0_exe72(triangular_B2_merge_out_c0_exe72),
+        .out_c0_exe2771(triangular_B2_merge_out_c0_exe2771),
+        .out_c0_exe4792(triangular_B2_merge_out_c0_exe4792),
+        .out_c0_exe5804(triangular_B2_merge_out_c0_exe5804),
+        .out_c0_exe6815(triangular_B2_merge_out_c0_exe6815),
         .out_stall_out_0(triangular_B2_merge_out_stall_out_0),
         .out_valid_out(triangular_B2_merge_out_valid_out),
         .clock(clock),
@@ -72,64 +93,42 @@ module triangular_bb_B2 (
 
     // bb_triangular_B2_stall_region(BLACKBOX,2)
     triangular_bb_B2_stall_region thebb_triangular_B2_stall_region (
-        .in_c0_exe72(triangular_B2_merge_out_c0_exe72),
-        .in_intel_reserved_ffwd_2_0(in_intel_reserved_ffwd_2_0),
+        .in_c0_exe2771(triangular_B2_merge_out_c0_exe2771),
+        .in_c0_exe4792(triangular_B2_merge_out_c0_exe4792),
+        .in_c0_exe5804(triangular_B2_merge_out_c0_exe5804),
+        .in_c0_exe6815(triangular_B2_merge_out_c0_exe6815),
+        .in_feedback_stall_in_13(in_feedback_stall_in_13),
         .in_stall_in(triangular_B2_branch_out_stall_out),
         .in_valid_in(triangular_B2_merge_out_valid_out),
-        .in_wgl_10_enter_exit_stall_in(in_wgl_10_enter_exit_stall_in),
-        .in_wgl_10_enter_exit_valid_in(in_wgl_10_enter_exit_valid_in),
-        .out_c0_exe72(bb_triangular_B2_stall_region_out_c0_exe72),
-        .out_intel_reserved_ffwd_3_0(bb_triangular_B2_stall_region_out_intel_reserved_ffwd_3_0),
-        .out_intel_reserved_ffwd_4_0(bb_triangular_B2_stall_region_out_intel_reserved_ffwd_4_0),
-        .out_intel_reserved_ffwd_5_0(bb_triangular_B2_stall_region_out_intel_reserved_ffwd_5_0),
-        .out_reorder_limiter_enter(bb_triangular_B2_stall_region_out_reorder_limiter_enter),
+        .out_c0_exe4792(bb_triangular_B2_stall_region_out_c0_exe4792),
+        .out_c0_exe5804(bb_triangular_B2_stall_region_out_c0_exe5804),
+        .out_feedback_out_13(bb_triangular_B2_stall_region_out_feedback_out_13),
+        .out_feedback_valid_out_13(bb_triangular_B2_stall_region_out_feedback_valid_out_13),
         .out_stall_out(bb_triangular_B2_stall_region_out_stall_out),
         .out_valid_out(bb_triangular_B2_stall_region_out_valid_out),
-        .out_wgl_10_enter_exit_stall_out(bb_triangular_B2_stall_region_out_wgl_10_enter_exit_stall_out),
-        .out_wgl_10_enter_exit_valid_out(bb_triangular_B2_stall_region_out_wgl_10_enter_exit_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // triangular_B2_branch(BLACKBOX,18)
-    triangular_B2_branch thetriangular_B2_branch (
-        .in_c0_exe72(bb_triangular_B2_stall_region_out_c0_exe72),
-        .in_reorder_limiter_enter(bb_triangular_B2_stall_region_out_reorder_limiter_enter),
-        .in_stall_in_0(in_stall_in_0),
-        .in_valid_in(bb_triangular_B2_stall_region_out_valid_out),
-        .out_c0_exe72(triangular_B2_branch_out_c0_exe72),
-        .out_reorder_limiter_enter(triangular_B2_branch_out_reorder_limiter_enter),
-        .out_stall_out(triangular_B2_branch_out_stall_out),
-        .out_valid_out_0(triangular_B2_branch_out_valid_out_0),
-        .clock(clock),
-        .resetn(resetn)
-    );
+    // feedback_out_13_sync(GPOUT,3)
+    assign out_feedback_out_13 = bb_triangular_B2_stall_region_out_feedback_out_13;
 
-    // out_c0_exe72(GPOUT,9)
-    assign out_c0_exe72 = triangular_B2_branch_out_c0_exe72;
+    // feedback_valid_out_13_sync(GPOUT,5)
+    assign out_feedback_valid_out_13 = bb_triangular_B2_stall_region_out_feedback_valid_out_13;
 
-    // out_intel_reserved_ffwd_3_0(GPOUT,10)
-    assign out_intel_reserved_ffwd_3_0 = bb_triangular_B2_stall_region_out_intel_reserved_ffwd_3_0;
+    // out_c0_exe5804(GPOUT,13)
+    assign out_c0_exe5804 = triangular_B2_branch_out_c0_exe5804;
 
-    // out_intel_reserved_ffwd_4_0(GPOUT,11)
-    assign out_intel_reserved_ffwd_4_0 = bb_triangular_B2_stall_region_out_intel_reserved_ffwd_4_0;
+    // out_stall_in_0(GPOUT,14)
+    assign out_stall_in_0 = in_stall_in_0;
 
-    // out_intel_reserved_ffwd_5_0(GPOUT,12)
-    assign out_intel_reserved_ffwd_5_0 = bb_triangular_B2_stall_region_out_intel_reserved_ffwd_5_0;
-
-    // out_reorder_limiter_enter(GPOUT,13)
-    assign out_reorder_limiter_enter = triangular_B2_branch_out_reorder_limiter_enter;
-
-    // out_stall_out_0(GPOUT,14)
+    // out_stall_out_0(GPOUT,15)
     assign out_stall_out_0 = triangular_B2_merge_out_stall_out_0;
 
-    // out_valid_out_0(GPOUT,15)
+    // out_valid_out_0(GPOUT,16)
     assign out_valid_out_0 = triangular_B2_branch_out_valid_out_0;
 
-    // out_wgl_10_enter_exit_stall_out(GPOUT,16)
-    assign out_wgl_10_enter_exit_stall_out = bb_triangular_B2_stall_region_out_wgl_10_enter_exit_stall_out;
-
-    // out_wgl_10_enter_exit_valid_out(GPOUT,17)
-    assign out_wgl_10_enter_exit_valid_out = bb_triangular_B2_stall_region_out_wgl_10_enter_exit_valid_out;
+    // out_valid_out_1(GPOUT,17)
+    assign out_valid_out_1 = triangular_B2_branch_out_valid_out_1;
 
 endmodule

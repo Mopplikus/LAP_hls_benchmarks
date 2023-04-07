@@ -14,9 +14,9 @@
 // applicable agreement for further details.
 // ---------------------------------------------------------------------------
 
-// SystemVerilog created from i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm1_data_fifo
+// SystemVerilog created from i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm1_data_fifo
 // Created for function/kernel kernel_2mm
-// SystemVerilog created on Wed Apr  5 01:12:29 2023
+// SystemVerilog created on Fri Apr  7 18:35:51 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -50,18 +50,18 @@ module kernel_2mm_i_llvm_fpga_sfc_exit_s_c0_out0000ernel_2mm1_data_fifo (
     wire [7:0] element_extension3_q;
     wire [7:0] element_extension5_q;
     wire [7:0] element_extension7_q;
-    wire [63:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_data;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_stall;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_stall_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_valid;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_valid_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_almost_full;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_almost_full_bitsignaltemp;
-    wire [63:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_data;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_stall;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_stall_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_valid;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_valid_bitsignaltemp;
+    wire [63:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_data;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_stall;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_stall_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_valid;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_valid_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_almost_full;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_almost_full_bitsignaltemp;
+    wire [63:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_data;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_stall;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_stall_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_valid;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_valid_bitsignaltemp;
     wire [0:0] ip_dsdk_adapt_bitselect11_b;
     wire [0:0] ip_dsdk_adapt_bitselect13_b;
     wire [0:0] ip_dsdk_adapt_bitselect15_b;
@@ -86,15 +86,15 @@ module kernel_2mm_i_llvm_fpga_sfc_exit_s_c0_out0000ernel_2mm1_data_fifo (
     // dsdk_ip_adapt_bitjoin1(BITJOIN,9)
     assign dsdk_ip_adapt_bitjoin1_q = {in_i_data_3_tpl, c_i8_09_q, element_extension7_q, element_extension5_q, element_extension3_q};
 
-    // i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0(EXTIFACE,13)
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_data = dsdk_ip_adapt_bitjoin1_q;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_stall = in_i_stall;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_valid = in_i_valid;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_stall_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_stall[0];
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_valid_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_valid[0];
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_almost_full[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_almost_full_bitsignaltemp;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_stall[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_stall_bitsignaltemp;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_valid[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_valid_bitsignaltemp;
+    // i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0(EXTIFACE,13)
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_data = dsdk_ip_adapt_bitjoin1_q;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_stall = in_i_stall;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_valid = in_i_valid;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_stall_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_stall[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_valid_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_valid[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_almost_full[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_almost_full_bitsignaltemp;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_stall[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_stall_bitsignaltemp;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_valid[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_valid_bitsignaltemp;
     hld_fifo #(
         .DEPTH(32),
         .STYLE("ms"),
@@ -103,51 +103,51 @@ module kernel_2mm_i_llvm_fpga_sfc_exit_s_c0_out0000ernel_2mm1_data_fifo (
         .RESET_EXTERNALLY_HELD(1),
         .SYNCHRONIZE_RESET(0),
         .WIDTH(64)
-    ) thei_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0 (
+    ) thei_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0 (
         .i_data(dsdk_ip_adapt_bitjoin1_q),
-        .i_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_stall_bitsignaltemp),
-        .i_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_i_valid_bitsignaltemp),
-        .o_almost_full(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_almost_full_bitsignaltemp),
-        .o_data(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_data),
-        .o_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_stall_bitsignaltemp),
-        .o_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_valid_bitsignaltemp),
+        .i_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_stall_bitsignaltemp),
+        .i_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_i_valid_bitsignaltemp),
+        .o_almost_full(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_almost_full_bitsignaltemp),
+        .o_data(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_data),
+        .o_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_stall_bitsignaltemp),
+        .o_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_valid_bitsignaltemp),
         .clock(clock),
         .resetn(resetn)
     );
 
     // sync_out(GPOUT,20)@20000000
-    assign out_o_stall = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_stall;
+    assign out_o_stall = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_stall;
 
     // ip_dsdk_adapt_bitselect17(BITSELECT,17)
-    assign ip_dsdk_adapt_bitselect17_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_data[63:32];
+    assign ip_dsdk_adapt_bitselect17_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_data[63:32];
 
     // ip_dsdk_adapt_bitselect15(BITSELECT,16)
-    assign ip_dsdk_adapt_bitselect15_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_data[16:16];
+    assign ip_dsdk_adapt_bitselect15_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_data[16:16];
 
     // adapt_scalar_trunc16(ROUND,4)
     assign adapt_scalar_trunc16_in = ip_dsdk_adapt_bitselect15_b;
     assign adapt_scalar_trunc16_q = adapt_scalar_trunc16_in[0:0];
 
     // ip_dsdk_adapt_bitselect13(BITSELECT,15)
-    assign ip_dsdk_adapt_bitselect13_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_data[8:8];
+    assign ip_dsdk_adapt_bitselect13_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_data[8:8];
 
     // adapt_scalar_trunc14(ROUND,3)
     assign adapt_scalar_trunc14_in = ip_dsdk_adapt_bitselect13_b;
     assign adapt_scalar_trunc14_q = adapt_scalar_trunc14_in[0:0];
 
     // ip_dsdk_adapt_bitselect11(BITSELECT,14)
-    assign ip_dsdk_adapt_bitselect11_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_data[0:0];
+    assign ip_dsdk_adapt_bitselect11_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_data[0:0];
 
     // adapt_scalar_trunc12(ROUND,2)
     assign adapt_scalar_trunc12_in = ip_dsdk_adapt_bitselect11_b;
     assign adapt_scalar_trunc12_q = adapt_scalar_trunc12_in[0:0];
 
     // dupName_0_sync_out_aunroll_x(GPOUT,22)@20000003
-    assign out_o_almost_full = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_almost_full;
+    assign out_o_almost_full = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_almost_full;
     assign out_o_data_0_tpl = adapt_scalar_trunc12_q;
     assign out_o_data_1_tpl = adapt_scalar_trunc14_q;
     assign out_o_data_2_tpl = adapt_scalar_trunc16_q;
     assign out_o_data_3_tpl = ip_dsdk_adapt_bitselect17_b;
-    assign out_o_valid = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit184_kernel_2mm0_o_valid;
+    assign out_o_valid = i_llvm_fpga_sfc_exit_s_c0_out_for_body_kernel_2mms_c0_exit107_kernel_2mm0_o_valid;
 
 endmodule

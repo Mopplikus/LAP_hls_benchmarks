@@ -14,9 +14,9 @@
 // applicable agreement for further details.
 // ---------------------------------------------------------------------------
 
-// SystemVerilog created from flt_i_sfc_logic_s_c0_in_for_body11_gettanhs_c0_enter353_gettanh0_multBlock_typeSFloatIEEE_23_8_typeSFloatIEEE_23_8_typeSFloatIEEE_23_8_correctRounding_3f1on78ddeefeqfqsfwthw0n92nf3jlfmx010i10u10j10k10w10f10x10m10t10770p70970s70ce0wd0fd0rf06j0oj01l0lj04j0gk01p054cz5iwt7hrliwt7ztlcx26154c2463b0c2463a0054c2a6355y
+// SystemVerilog created from flt_i_sfc_logic_s_c0_in_for_body_gettanhs_c0_enter82_gettanh0_multBlock_typeSFloatIEEE_23_8_typeSFloatIEEE_23_8_typeSFloatIEEE_23_8_correctRounding_3f1o5a2ug8vce8cqacwbewne9jkfkmfwjx010i10u10j10k10w10f10x10m10h10u70d70q70a70z80ed0wd09f0td06j0il03j0lj0xk0ip054cz5iwt7hrliwt7ztlcx26154c2463b0c2463a0054c2a6355y
 // Created for function/kernel getTanh
-// SystemVerilog created on Tue Apr  4 23:44:29 2023
+// SystemVerilog created on Fri Apr  7 17:19:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)

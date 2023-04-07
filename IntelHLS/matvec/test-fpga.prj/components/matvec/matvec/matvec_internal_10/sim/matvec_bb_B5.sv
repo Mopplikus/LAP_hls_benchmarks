@@ -16,19 +16,25 @@
 
 // SystemVerilog created from bb_matvec_B5
 // Created for function/kernel matvec
-// SystemVerilog created on Wed Apr  5 15:28:29 2023
+// SystemVerilog created on Fri Apr  7 16:55:33 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module matvec_bb_B5 (
+    input wire [0:0] in_iowr_bl_return_matvec_i_fifoready,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_valid_in_0,
+    output wire [0:0] out_iowr_bl_return_matvec_o_fifodata,
+    output wire [0:0] out_iowr_bl_return_matvec_o_fifovalid,
+    output wire [0:0] out_stall_in_0,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_valid_out_0,
     input wire clock,
     input wire resetn
     );
 
+    wire [0:0] bb_matvec_B5_stall_region_out_iowr_bl_return_matvec_o_fifodata;
+    wire [0:0] bb_matvec_B5_stall_region_out_iowr_bl_return_matvec_o_fifovalid;
     wire [0:0] bb_matvec_B5_stall_region_out_stall_out;
     wire [0:0] bb_matvec_B5_stall_region_out_valid_out;
     wire [0:0] matvec_B5_branch_out_stall_out;
@@ -37,7 +43,17 @@ module matvec_bb_B5 (
     wire [0:0] matvec_B5_merge_out_valid_out;
 
 
-    // matvec_B5_branch(BLACKBOX,5)
+    // matvec_B5_merge(BLACKBOX,7)
+    matvec_B5_merge thematvec_B5_merge (
+        .in_stall_in(bb_matvec_B5_stall_region_out_stall_out),
+        .in_valid_in_0(in_valid_in_0),
+        .out_stall_out_0(matvec_B5_merge_out_stall_out_0),
+        .out_valid_out(matvec_B5_merge_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // matvec_B5_branch(BLACKBOX,6)
     matvec_B5_branch thematvec_B5_branch (
         .in_stall_in_0(in_stall_in_0),
         .in_valid_in(bb_matvec_B5_stall_region_out_valid_out),
@@ -49,28 +65,30 @@ module matvec_bb_B5 (
 
     // bb_matvec_B5_stall_region(BLACKBOX,2)
     matvec_bb_B5_stall_region thebb_matvec_B5_stall_region (
+        .in_iowr_bl_return_matvec_i_fifoready(in_iowr_bl_return_matvec_i_fifoready),
         .in_stall_in(matvec_B5_branch_out_stall_out),
         .in_valid_in(matvec_B5_merge_out_valid_out),
+        .out_iowr_bl_return_matvec_o_fifodata(bb_matvec_B5_stall_region_out_iowr_bl_return_matvec_o_fifodata),
+        .out_iowr_bl_return_matvec_o_fifovalid(bb_matvec_B5_stall_region_out_iowr_bl_return_matvec_o_fifovalid),
         .out_stall_out(bb_matvec_B5_stall_region_out_stall_out),
         .out_valid_out(bb_matvec_B5_stall_region_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // matvec_B5_merge(BLACKBOX,6)
-    matvec_B5_merge thematvec_B5_merge (
-        .in_stall_in(bb_matvec_B5_stall_region_out_stall_out),
-        .in_valid_in_0(in_valid_in_0),
-        .out_stall_out_0(matvec_B5_merge_out_stall_out_0),
-        .out_valid_out(matvec_B5_merge_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
+    // out_iowr_bl_return_matvec_o_fifodata(GPOUT,8)
+    assign out_iowr_bl_return_matvec_o_fifodata = bb_matvec_B5_stall_region_out_iowr_bl_return_matvec_o_fifodata;
 
-    // out_stall_out_0(GPOUT,7)
+    // out_iowr_bl_return_matvec_o_fifovalid(GPOUT,9)
+    assign out_iowr_bl_return_matvec_o_fifovalid = bb_matvec_B5_stall_region_out_iowr_bl_return_matvec_o_fifovalid;
+
+    // out_stall_in_0(GPOUT,10)
+    assign out_stall_in_0 = in_stall_in_0;
+
+    // out_stall_out_0(GPOUT,11)
     assign out_stall_out_0 = matvec_B5_merge_out_stall_out_0;
 
-    // out_valid_out_0(GPOUT,8)
+    // out_valid_out_0(GPOUT,12)
     assign out_valid_out_0 = matvec_B5_branch_out_valid_out_0;
 
 endmodule

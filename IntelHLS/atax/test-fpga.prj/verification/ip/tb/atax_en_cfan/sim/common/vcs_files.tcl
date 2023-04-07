@@ -12,7 +12,7 @@ namespace eval atax_en_cfan {
   
   proc get_design_files {QSYS_SIMDIR} {
     set design_files [dict create]
-    dict set design_files "atax_en_cfan_avalon_conduit_fanout_10_mhqe7za.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/atax_en_cfan_avalon_conduit_fanout_10_mhqe7za.sv"
+    dict set design_files "atax_en_cfan_avalon_conduit_fanout_10_joescla.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/atax_en_cfan_avalon_conduit_fanout_10_joescla.sv"
     dict set design_files "atax_en_cfan.v"                                   "$QSYS_SIMDIR/atax_en_cfan.v"                                                                  
     return $design_files
   }

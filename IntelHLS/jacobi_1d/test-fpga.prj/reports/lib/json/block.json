@@ -1,11 +1,11 @@
 {
-  "1383920080":
+  "1964513280":
   {
     "nodes":
     [
       {
         "name":"Cluster 0"
-        , "id":1387638576
+        , "id":1967156112
         , "start":"1.00"
         , "end":"1.00"
         , "details":
@@ -23,7 +23,7 @@
         [
           {
             "name":"Logic"
-            , "id":1387645472
+            , "id":1967163152
             , "subtype":"entry"
             , "details":
             [
@@ -38,55 +38,59 @@
         ]
       }
       , {
-        "name":"FFwd Src"
-        , "id":1387833104
+        "name":"Cluster 1"
+        , "id":1967370784
         , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
+        , "end":"10.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
+            , "Cluster Name":"i_sfc_s_c1_in_wt_entry_jacobi_1ds_c1_enter_jacobi_1d4"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"2"
+            , "Cluster Latency":"8"
           }
         ]
-        , "type":"inst"
-      }
-      , {
-        "name":"RD"
-        , "id":1392393136
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"default"
-        , "details":
+        , "type":"cluster"
+        , "children":
         [
           {
-            "type":"table"
-            , "Instruction":"Stream Read"
-            , "Width":"192 bits"
-            , "Depth":"0"
-            , "Stream Name":"call.jacobi_1d"
-            , "Stall-free":"No"
-            , "Start Cycle":"2"
-            , "Latency":"0"
+            "name":"Logic"
+            , "id":1967376528
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"2"
+                , "Cluster Logic Latency":"5"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":1967488560
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"7"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"32"
+                , "Exit FIFO Width":"8"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
           }
         ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":10
-            }
-          ]
-        ]
-        , "type":"inst"
       }
       , {
-        "name":"?"
-        , "id":1395860848
+        "name":"A_1_local"
+        , "id":1967347072
         , "start":"1.00"
         , "end":"2.00"
         , "subtype":"pop"
@@ -95,7 +99,7 @@
           {
             "type":"table"
             , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
+            , "Variable":"A_1_local"
             , "Start Cycle":"1"
             , "Latency":"1"
           }
@@ -112,36 +116,32 @@
         , "type":"inst"
       }
       , {
-        "name":"FFwd Src"
-        , "id":1396619312
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
+        "name":"RD"
+        , "id":1975851616
+        , "start":"10.00"
+        , "end":"10.00"
+        , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
+            , "Instruction":"Stream Read"
+            , "Width":"192 bits"
+            , "Depth":"0"
+            , "Stream Name":"call.jacobi_1d"
+            , "Stall-free":"No"
+            , "Start Cycle":"10"
             , "Latency":"0"
           }
         ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":1396620560
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
+        , "debug":
         [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+              , "line":10
+            }
+          ]
         ]
         , "type":"inst"
       }
@@ -149,41 +149,23 @@
     , "links":
     [
       {
-        "from":1392393136
-        , "to":1387833104
+        "from":1967376528
+        , "to":1967488560
+      }
+      , {
+        "from":1967347072
+        , "to":1975851616
         , "details":
         [
           {
             "type":"table"
-            , "Width":"192"
+            , "Width":"1"
           }
         ]
       }
       , {
-        "from":1392393136
-        , "to":1396619312
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"192"
-          }
-        ]
-      }
-      , {
-        "from":1392393136
-        , "to":1396620560
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"192"
-          }
-        ]
-      }
-      , {
-        "from":1395860848
-        , "to":1392393136
+        "from":1967347072
+        , "to":1967376528
         , "details":
         [
           {
@@ -194,583 +176,20 @@
       }
     ]
   }
-  , "1383920160":
-  {
-    "nodes":
-    [
-      {
-        "name":"Cluster 1"
-        , "id":1387920704
-        , "start":"0.00"
-        , "end":"8.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_cond15_preheader_jacobi_1ds_c0_enter70_jacobi_1d0"
-            , "Cluster Type":"Stall-Free"
-            , "Cluster Start Cycle":"0"
-            , "Cluster Latency":"8"
-          }
-        ]
-        , "type":"cluster"
-        , "children":
-        [
-          {
-            "name":"Logic"
-            , "id":1387928032
-            , "subtype":"entry"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Cluster Logic Start Cycle":"0"
-                , "Cluster Logic Latency":"5"
-              }
-            ]
-            , "type":"inst"
-          }
-          , {
-            "name":"Exit"
-            , "id":1388035616
-            , "subtype":"exit"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Start Cycle":"5"
-                , "Latency":"3"
-                , "Exit FIFO Depth":"32"
-                , "Exit FIFO Width":"8"
-                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-              }
-            ]
-            , "type":"inst"
-          }
-        ]
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":1387928032
-        , "to":1388035616
-      }
-    ]
-  }
-  , "1383920240":
+  , "1964513360":
   {
     "nodes":
     [
       {
         "name":"Cluster 2"
-        , "id":1388132416
-        , "start":"1.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body_jacobi_1ds_c0_enter723_jacobi_1d1"
-            , "Cluster Type":"Stall-Enable"
-            , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"1"
-          }
-        ]
-        , "type":"cluster"
-        , "children":
-        [
-          {
-            "name":"Logic"
-            , "id":1388138784
-            , "subtype":"entry"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"1"
-              }
-            ]
-            , "type":"inst"
-          }
-        ]
-      }
-      , {
-        "name":"LD"
-        , "id":1394692304
-        , "start":"2.00"
-        , "end":"34.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"2"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":1395835504
-        , "start":"2.00"
-        , "end":"34.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":19
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":1395886256
-        , "start":"2.00"
-        , "end":"34.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":1396196240
-        , "start":"2.00"
-        , "end":"34.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"2"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":20
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":1400211280
-        , "start":"34.00"
-        , "end":"35.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"34"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":20
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":1403886768
-        , "start":"2.00"
-        , "end":"34.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"2"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":19
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Loop Orch"
-        , "id":1408887216
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":16
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":1411150048
-        , "start":"2.00"
-        , "end":"34.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":20
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":1413362048
-        , "start":"34.00"
-        , "end":"35.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"34"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":19
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":1413528432
-        , "start":"34.00"
-        , "end":"35.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"34"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":1394692304
-        , "to":1413528432
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1394692304
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1395835504
-        , "to":1413362048
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1395835504
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1395886256
-        , "to":1413528432
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1395886256
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1396196240
-        , "to":1400211280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1396196240
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1400211280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1403886768
-        , "to":1413362048
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1403886768
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1408887216
-        , "to":1388138784
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1411150048
-        , "to":1400211280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1411150048
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1413362048
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":1388138784
-        , "to":1413528432
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-    ]
-  }
-  , "1383920320":
-  {
-    "nodes":
-    [
-      {
-        "name":"Cluster 3"
-        , "id":1389025344
+        , "id":1967563200
         , "start":"1.00"
         , "end":"1.00"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_cond18_preheader_jacobi_1ds_c0_enter774_jacobi_1d1"
+            , "Cluster Name":"i_sfc_s_c0_in_for_cond4_preheader_jacobi_1ds_c0_enter213_jacobi_1d1"
             , "Cluster Type":"Stall-Enable"
             , "Cluster Start Cycle":"1"
             , "Cluster Latency":"0"
@@ -781,7 +200,7 @@
         [
           {
             "name":"Logic"
-            , "id":1389032304
+            , "id":1967570160
             , "subtype":"entry"
             , "details":
             [
@@ -797,14 +216,14 @@
       }
       , {
         "name":"Loop Input"
-        , "id":1392225968
+        , "id":1971214000
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Loop Input"
-            , "Preceding Blocks":"jacobi_1d.B6, jacobi_1d.B2"
+            , "Preceding Blocks":"jacobi_1d.B4, jacobi_1d.B1.start"
           }
         ]
         , "debug":
@@ -822,8 +241,8 @@
     , "links":
     [
       {
-        "from":1392225968
-        , "to":1389032304
+        "from":1971214000
+        , "to":1967570160
         , "details":
         [
           {
@@ -834,20 +253,20 @@
       }
     ]
   }
-  , "1383920400":
+  , "1964513440":
   {
     "nodes":
     [
       {
-        "name":"Cluster 4"
-        , "id":1389290400
+        "name":"Cluster 3"
+        , "id":1967831440
         , "start":"1.00"
         , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body20_jacobi_1ds_c0_enter856_jacobi_1d1"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body6_jacobi_1ds_c0_enter264_jacobi_1d1"
             , "Cluster Type":"Stall-Free"
             , "Cluster Start Cycle":"1"
             , "Cluster Latency":"11"
@@ -858,7 +277,7 @@
         [
           {
             "name":"Logic"
-            , "id":1389297008
+            , "id":1967837936
             , "subtype":"entry"
             , "details":
             [
@@ -872,7 +291,7 @@
           }
           , {
             "name":"Exit"
-            , "id":1389968352
+            , "id":1968515632
             , "subtype":"exit"
             , "details":
             [
@@ -890,24 +309,16 @@
         ]
       }
       , {
-        "name":"Loop Orch"
-        , "id":1392345488
+        "name":"Loop Input"
+        , "id":1967346208
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"jacobi_1d.B3, jacobi_1d.B2"
           }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":31
-            }
-          ]
         ]
         , "type":"inst"
       }
@@ -915,12 +326,12 @@
     , "links":
     [
       {
-        "from":1389297008
-        , "to":1389968352
+        "from":1967837936
+        , "to":1968515632
       }
       , {
-        "from":1392345488
-        , "to":1389297008
+        "from":1967346208
+        , "to":1967837936
         , "details":
         [
           {
@@ -930,8 +341,8 @@
         ]
       }
       , {
-        "from":1392345488
-        , "to":1389297008
+        "from":1967346208
+        , "to":1967837936
         , "details":
         [
           {
@@ -942,20 +353,20 @@
       }
     ]
   }
-  , "1383920480":
+  , "1964513520":
   {
     "nodes":
     [
       {
         "name":"Input"
-        , "id":1395909088
+        , "id":1967348800
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Input"
-            , "Preceding Blocks":"jacobi_1d.B5"
+            , "Preceding Blocks":"jacobi_1d.B3"
           }
         ]
         , "type":"inst"
@@ -965,345 +376,13 @@
     [
     ]
   }
-  , "1383920560":
-  {
-    "nodes":
-    [
-    ]
-    , "links":
-    [
-    ]
-  }
-  , "1383920640":
-  {
-    "nodes":
-    [
-      {
-        "name":"Cluster 5"
-        , "id":1390292128
-        , "start":"64.00"
-        , "end":"69.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body49_jacobi_1ds_c0_enter965_jacobi_1d4"
-            , "Cluster Type":"Stall-Free"
-            , "Cluster Start Cycle":"64"
-            , "Cluster Latency":"5"
-          }
-        ]
-        , "type":"cluster"
-        , "children":
-        [
-          {
-            "name":"Logic"
-            , "id":1390298160
-            , "subtype":"entry"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Cluster Logic Start Cycle":"64"
-                , "Cluster Logic Latency":"2"
-              }
-            ]
-            , "type":"inst"
-          }
-          , {
-            "name":"Exit"
-            , "id":1390661600
-            , "subtype":"exit"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Start Cycle":"66"
-                , "Latency":"3"
-                , "Exit FIFO Depth":"32"
-                , "Exit FIFO Width":"320"
-                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-              }
-            ]
-            , "type":"inst"
-          }
-        ]
-      }
-      , {
-        "name":"Feedback"
-        , "id":1388472896
-        , "start":"131.00"
-        , "end":"132.00"
-        , "subtype":"push"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Global variable"
-            , "Feedback FIFO Depth":"2"
-            , "Feedback FIFO Width":"1"
-            , "Start Cycle":"131"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":40
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Loop Orch"
-        , "id":1396561120
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":37
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Global variable"
-        , "id":1398715072
-        , "start":"68.00"
-        , "end":"69.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Global variable"
-            , "Start Cycle":"68"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":40
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":1405137936
-        , "start":"100.00"
-        , "end":"131.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"100"
-            , "Latency":"31"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":40
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":1407888208
-        , "start":"69.00"
-        , "end":"100.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"69"
-            , "Latency":"31"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-              , "line":39
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":1390298160
-        , "to":1390661600
-      }
-      , {
-        "from":1388472896
-        , "to":1398715072
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1390661600
-        , "to":1388472896
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":1396561120
-        , "to":1388472896
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1396561120
-        , "to":1390298160
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1396561120
-        , "to":1398715072
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1390661600
-        , "to":1396561120
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":1398715072
-        , "to":1407888208
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1405137936
-        , "to":1388472896
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1390661600
-        , "to":1405137936
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":1407888208
-        , "to":1405137936
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":1390661600
-        , "to":1407888208
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-    ]
-  }
-  , "1383920720":
+  , "1964513600":
   {
     "nodes":
     [
       {
         "name":"Feedback"
-        , "id":1390312336
+        , "id":1969587120
         , "start":"0.00"
         , "end":"1.00"
         , "subtype":"push"
@@ -1312,7 +391,7 @@
           {
             "type":"table"
             , "Instruction":"Feedback Write"
-            , "Variable":"Unknown variable"
+            , "Variable":"A_1_local"
             , "Feedback FIFO Depth":"1"
             , "Feedback FIFO Width":"1"
             , "Start Cycle":"0"
@@ -1323,7 +402,7 @@
       }
       , {
         "name":"WR"
-        , "id":1400121248
+        , "id":1970551536
         , "start":"0.00"
         , "end":"0.00"
         , "subtype":"default"
@@ -1355,8 +434,8 @@
     , "links":
     [
       {
-        "from":1400121248
-        , "to":1390312336
+        "from":1970551536
+        , "to":1969587120
         , "details":
         [
           {
@@ -1367,13 +446,31 @@
       }
     ]
   }
-  , "1384404880":
+  , "1964567072":
   {
     "nodes":
     [
       {
+        "name":"?"
+        , "id":1967349664
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
         "name":"Feedback"
-        , "id":1395859600
+        , "id":1967351392
         , "start":"1.00"
         , "end":"2.00"
         , "subtype":"push"
@@ -1400,30 +497,12 @@
         ]
         , "type":"inst"
       }
-      , {
-        "name":"?"
-        , "id":1396618064
-        , "start":"1.00"
-        , "end":"2.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
     ]
     , "links":
     [
       {
-        "from":1395859600
-        , "to":1396618064
+        "from":1967351392
+        , "to":1967349664
         , "details":
         [
           {

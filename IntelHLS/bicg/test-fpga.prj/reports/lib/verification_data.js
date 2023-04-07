@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"bicg"
       , "data":
-      ['1', '2506,2506,2506', 'n/a,n/a,n/a']
+      ['1', '1420,1420,1420', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '2506,2506,2506', 'n/a,n/a,n/a']
+      ['1', '1420,1420,1420', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

@@ -15,6 +15,7 @@ component float getTanh () {
 	hls_memory hls_singlepump float A[N];
 	hls_memory hls_singlepump int addr[N];
     
+	/*
 	INIT:for(int j = 0; j < N; ++j)
 	{
 		A[j] = (float) j;
@@ -24,7 +25,7 @@ component float getTanh () {
 		{
 			A[j] = 0.0f;
 		}
-	}
+	}*/
 
 	float result, beta;
 	WORK:for(int i = 0; i < N; i++) {

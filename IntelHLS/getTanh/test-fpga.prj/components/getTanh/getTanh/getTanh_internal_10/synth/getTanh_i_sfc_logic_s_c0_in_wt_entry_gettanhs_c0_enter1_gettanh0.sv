@@ -16,13 +16,13 @@
 
 // SystemVerilog created from i_sfc_logic_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0
 // Created for function/kernel getTanh
-// SystemVerilog created on Tue Apr  4 23:44:28 2023
+// SystemVerilog created on Fri Apr  7 17:19:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module getTanh_i_sfc_logic_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0 (
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_valid_out,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_stall_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out,
     input wire [0:0] in_pipeline_stall_in,
     output wire [0:0] out_pipeline_valid_out,
     input wire [0:0] in_enable,
@@ -37,30 +37,30 @@ module getTanh_i_sfc_logic_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0 (
 
     wire [0:0] GND_q;
     wire [0:0] VCC_q;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going26_gettanh1_out_exiting_stall_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going26_gettanh1_out_exiting_valid_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going26_gettanh1_out_not_exitcond_stall_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going26_gettanh1_out_pipeline_valid_out;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_data_out;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_feedback_out_7;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_feedback_valid_out_7;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going4_gettanh1_out_exiting_stall_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going4_gettanh1_out_exiting_valid_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going4_gettanh1_out_not_exitcond_stall_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going4_gettanh1_out_pipeline_valid_out;
+    wire [0:0] i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_data_out;
+    wire [0:0] i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_feedback_out_5;
+    wire [0:0] i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_feedback_valid_out_5;
     wire [0:0] enable_stall_connector_not_enable_q;
 
 
     // enable_stall_connector_not_enable(LOGICAL,17)
     assign enable_stall_connector_not_enable_q = $unsigned(~ (in_enable));
 
-    // i_llvm_fpga_push_i1_notexitcond27_gettanh2(BLACKBOX,10)@1
-    // out out_feedback_out_7@20000000
-    // out out_feedback_valid_out_7@20000000
-    getTanh_i_llvm_fpga_push_i1_notexitcond27_gettanh0 thei_llvm_fpga_push_i1_notexitcond27_gettanh2 (
+    // i_llvm_fpga_push_i1_notexitcond5_gettanh2(BLACKBOX,10)@1
+    // out out_feedback_out_5@20000000
+    // out out_feedback_valid_out_5@20000000
+    getTanh_i_llvm_fpga_push_i1_notexitcond5_gettanh0 thei_llvm_fpga_push_i1_notexitcond5_gettanh2 (
         .in_data_in(VCC_q),
-        .in_feedback_stall_in_7(i_llvm_fpga_pipeline_keep_going26_gettanh1_out_not_exitcond_stall_out),
+        .in_feedback_stall_in_5(i_llvm_fpga_pipeline_keep_going4_gettanh1_out_not_exitcond_stall_out),
         .in_stall_in(enable_stall_connector_not_enable_q),
         .in_valid_in(in_i_valid),
-        .out_data_out(i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_data_out),
-        .out_feedback_out_7(i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_feedback_out_7),
-        .out_feedback_valid_out_7(i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_feedback_valid_out_7),
+        .out_data_out(i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_data_out),
+        .out_feedback_out_5(i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_feedback_out_5),
+        .out_feedback_valid_out_5(i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_feedback_valid_out_5),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -73,27 +73,27 @@ module getTanh_i_sfc_logic_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0 (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // i_llvm_fpga_pipeline_keep_going26_gettanh1(BLACKBOX,9)@1
+    // i_llvm_fpga_pipeline_keep_going4_gettanh1(BLACKBOX,9)@1
     // out out_exiting_stall_out@20000000
     // out out_exiting_valid_out@20000000
     // out out_initeration_stall_out@20000000
     // out out_not_exitcond_stall_out@20000000
     // out out_pipeline_valid_out@20000000
-    getTanh_i_llvm_fpga_pipeline_keep_going26_gettanh0 thei_llvm_fpga_pipeline_keep_going26_gettanh1 (
+    getTanh_i_llvm_fpga_pipeline_keep_going4_gettanh0 thei_llvm_fpga_pipeline_keep_going4_gettanh1 (
         .in_data_in(VCC_q),
         .in_initeration_in(GND_q),
         .in_initeration_valid_in(GND_q),
-        .in_not_exitcond_in(i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_feedback_out_7),
-        .in_not_exitcond_valid_in(i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_feedback_valid_out_7),
+        .in_not_exitcond_in(i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_feedback_out_5),
+        .in_not_exitcond_valid_in(i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_feedback_valid_out_5),
         .in_pipeline_stall_in(in_pipeline_stall_in),
         .in_stall_in(enable_stall_connector_not_enable_q),
         .in_valid_in(in_i_valid),
         .out_data_out(),
-        .out_exiting_stall_out(i_llvm_fpga_pipeline_keep_going26_gettanh1_out_exiting_stall_out),
-        .out_exiting_valid_out(i_llvm_fpga_pipeline_keep_going26_gettanh1_out_exiting_valid_out),
+        .out_exiting_stall_out(i_llvm_fpga_pipeline_keep_going4_gettanh1_out_exiting_stall_out),
+        .out_exiting_valid_out(i_llvm_fpga_pipeline_keep_going4_gettanh1_out_exiting_valid_out),
         .out_initeration_stall_out(),
-        .out_not_exitcond_stall_out(i_llvm_fpga_pipeline_keep_going26_gettanh1_out_not_exitcond_stall_out),
-        .out_pipeline_valid_out(i_llvm_fpga_pipeline_keep_going26_gettanh1_out_pipeline_valid_out),
+        .out_not_exitcond_stall_out(i_llvm_fpga_pipeline_keep_going4_gettanh1_out_not_exitcond_stall_out),
+        .out_pipeline_valid_out(i_llvm_fpga_pipeline_keep_going4_gettanh1_out_pipeline_valid_out),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -101,15 +101,15 @@ module getTanh_i_sfc_logic_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0 (
     );
 
     // ext_sig_sync_out(GPOUT,8)
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_valid_out = i_llvm_fpga_pipeline_keep_going26_gettanh1_out_exiting_valid_out;
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_stall_out = i_llvm_fpga_pipeline_keep_going26_gettanh1_out_exiting_stall_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out = i_llvm_fpga_pipeline_keep_going4_gettanh1_out_exiting_valid_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out = i_llvm_fpga_pipeline_keep_going4_gettanh1_out_exiting_stall_out;
 
     // pipeline_valid_out_sync(GPOUT,12)
-    assign out_pipeline_valid_out = i_llvm_fpga_pipeline_keep_going26_gettanh1_out_pipeline_valid_out;
+    assign out_pipeline_valid_out = i_llvm_fpga_pipeline_keep_going4_gettanh1_out_pipeline_valid_out;
 
     // sync_out_aunroll_x(GPOUT,16)@1
     assign out_c0_exi1_0_tpl = GND_q;
-    assign out_c0_exi1_1_tpl = i_llvm_fpga_push_i1_notexitcond27_gettanh2_out_data_out;
+    assign out_c0_exi1_1_tpl = i_llvm_fpga_push_i1_notexitcond5_gettanh2_out_data_out;
     assign out_o_valid = in_i_valid;
     assign out_unnamed_getTanh1 = GND_q;
 

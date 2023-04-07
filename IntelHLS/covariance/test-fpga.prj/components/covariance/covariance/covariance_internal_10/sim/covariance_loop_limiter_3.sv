@@ -16,7 +16,7 @@
 
 // SystemVerilog created from loop_limiter_covariance3
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:07 2023
+// SystemVerilog created on Fri Apr  7 17:50:03 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -62,7 +62,7 @@ module covariance_loop_limiter_3 (
         .EXIT_WIDTH(1),
         .SYNCHRONIZE_RESET(0),
         .THRESHOLD(1),
-        .THRESHOLD_NO_DELAY(0)
+        .THRESHOLD_NO_DELAY(1)
     ) thelimiter (
         .i_stall(limiter_i_stall_bitsignaltemp),
         .i_stall_exit(limiter_i_stall_exit_bitsignaltemp),

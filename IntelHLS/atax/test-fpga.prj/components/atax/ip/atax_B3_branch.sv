@@ -16,17 +16,33 @@
 
 // SystemVerilog created from atax_B3_branch
 // Created for function/kernel atax
-// SystemVerilog created on Wed Apr  5 13:56:00 2023
+// SystemVerilog created on Fri Apr  7 18:08:54 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module atax_B3_branch (
-    input wire [0:0] in_c0_exe2,
-    input wire [31:0] in_c0_exe3,
+    input wire [0:0] in_c0_exe10,
+    input wire [63:0] in_c0_exe199,
+    input wire [63:0] in_c0_exe2100,
+    input wire [0:0] in_c0_exe3,
+    input wire [31:0] in_c0_exe4,
+    input wire [0:0] in_c0_exe5,
+    input wire [0:0] in_c0_exe6,
+    input wire [0:0] in_c0_exe7,
+    input wire [0:0] in_c0_exe8,
+    input wire [0:0] in_c0_exe9,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_c0_exe2,
-    output wire [31:0] out_c0_exe3,
+    output wire [0:0] out_c0_exe10,
+    output wire [63:0] out_c0_exe199,
+    output wire [63:0] out_c0_exe2100,
+    output wire [0:0] out_c0_exe3,
+    output wire [31:0] out_c0_exe4,
+    output wire [0:0] out_c0_exe5,
+    output wire [0:0] out_c0_exe6,
+    output wire [0:0] out_c0_exe7,
+    output wire [0:0] out_c0_exe8,
+    output wire [0:0] out_c0_exe9,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
     input wire clock,
@@ -36,19 +52,43 @@ module atax_B3_branch (
     wire [0:0] stall_out_q;
 
 
-    // out_c0_exe2(GPOUT,6)
-    assign out_c0_exe2 = in_c0_exe2;
+    // out_c0_exe10(GPOUT,14)
+    assign out_c0_exe10 = in_c0_exe10;
 
-    // out_c0_exe3(GPOUT,7)
+    // out_c0_exe199(GPOUT,15)
+    assign out_c0_exe199 = in_c0_exe199;
+
+    // out_c0_exe2100(GPOUT,16)
+    assign out_c0_exe2100 = in_c0_exe2100;
+
+    // out_c0_exe3(GPOUT,17)
     assign out_c0_exe3 = in_c0_exe3;
 
-    // stall_out(LOGICAL,10)
+    // out_c0_exe4(GPOUT,18)
+    assign out_c0_exe4 = in_c0_exe4;
+
+    // out_c0_exe5(GPOUT,19)
+    assign out_c0_exe5 = in_c0_exe5;
+
+    // out_c0_exe6(GPOUT,20)
+    assign out_c0_exe6 = in_c0_exe6;
+
+    // out_c0_exe7(GPOUT,21)
+    assign out_c0_exe7 = in_c0_exe7;
+
+    // out_c0_exe8(GPOUT,22)
+    assign out_c0_exe8 = in_c0_exe8;
+
+    // out_c0_exe9(GPOUT,23)
+    assign out_c0_exe9 = in_c0_exe9;
+
+    // stall_out(LOGICAL,26)
     assign stall_out_q = in_valid_in & in_stall_in_0;
 
-    // out_stall_out(GPOUT,8)
+    // out_stall_out(GPOUT,24)
     assign out_stall_out = stall_out_q;
 
-    // out_valid_out_0(GPOUT,9)
+    // out_valid_out_0(GPOUT,25)
     assign out_valid_out_0 = in_valid_in;
 
 endmodule

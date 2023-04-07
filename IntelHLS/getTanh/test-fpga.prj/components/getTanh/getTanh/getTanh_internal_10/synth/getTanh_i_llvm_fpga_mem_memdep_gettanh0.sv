@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_memdep_gettanh0
 // Created for function/kernel getTanh
-// SystemVerilog created on Tue Apr  4 23:44:28 2023
+// SystemVerilog created on Fri Apr  7 17:19:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -109,13 +109,13 @@ module getTanh_i_llvm_fpga_mem_memdep_gettanh0 (
     // c_i3_08(CONSTANT,9)
     assign c_i3_08_q = $unsigned(3'b000);
 
-    // addr_trunc_sel_x(BITSELECT,18)@16
+    // addr_trunc_sel_x(BITSELECT,18)@35
     assign addr_trunc_sel_x_b = in_i_address[31:0];
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_memdep_gettanh1(EXTIFACE,13)@16 + 1
+    // i_llvm_fpga_mem_memdep_gettanh1(EXTIFACE,13)@35 + 1
     assign i_llvm_fpga_mem_memdep_gettanh1_avm_readdata = in_memdep_getTanh_avm_readdata;
     assign i_llvm_fpga_mem_memdep_gettanh1_avm_readdatavalid = in_memdep_getTanh_avm_readdatavalid;
     assign i_llvm_fpga_mem_memdep_gettanh1_avm_waitrequest = in_memdep_getTanh_avm_waitrequest;
@@ -231,10 +231,10 @@ module getTanh_i_llvm_fpga_mem_memdep_gettanh0 (
     assign out_memdep_getTanh_avm_byteenable = i_llvm_fpga_mem_memdep_gettanh1_avm_byteenable;
     assign out_memdep_getTanh_avm_burstcount = i_llvm_fpga_mem_memdep_gettanh1_avm_burstcount;
 
-    // sync_out(GPOUT,16)@17
+    // sync_out(GPOUT,16)@36
     assign out_o_stall = i_llvm_fpga_mem_memdep_gettanh1_o_stall;
 
-    // dupName_0_sync_out_x(GPOUT,19)@17
+    // dupName_0_sync_out_x(GPOUT,19)@36
     assign out_o_valid = i_llvm_fpga_mem_memdep_gettanh1_o_valid;
     assign out_o_writeack = i_llvm_fpga_mem_memdep_gettanh1_o_writeack;
 

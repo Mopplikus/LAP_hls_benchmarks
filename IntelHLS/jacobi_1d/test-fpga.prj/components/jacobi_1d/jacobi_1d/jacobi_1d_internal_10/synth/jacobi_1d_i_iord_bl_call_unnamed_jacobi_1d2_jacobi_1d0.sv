@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_iord_bl_call_jacobi_1d_unnamed_jacobi_1d2_jacobi_1d0
 // Created for function/kernel jacobi_1d
-// SystemVerilog created on Wed Apr  5 13:32:10 2023
+// SystemVerilog created on Fri Apr  7 17:06:24 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -151,7 +151,7 @@ module jacobi_1d_i_iord_bl_call_unnamed_jacobi_1d2_jacobi_1d0 (
     // ip_dsdk_adapt_bitselect2(BITSELECT,6)
     assign ip_dsdk_adapt_bitselect2_b = iord_o_data[63:0];
 
-    // dupName_0_sync_out_aunroll_x(GPOUT,19)@2
+    // dupName_0_sync_out_aunroll_x(GPOUT,19)@10
     assign out_o_data_0_tpl = ip_dsdk_adapt_bitselect2_b;
     assign out_o_data_1_tpl = ip_dsdk_adapt_bitselect4_b;
     assign out_o_data_2_tpl = ip_dsdk_adapt_bitselect6_b;

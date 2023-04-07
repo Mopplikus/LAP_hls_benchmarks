@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pipeline_keep_going_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Wed Apr  5 14:46:57 2023
+// SystemVerilog created on Fri Apr  7 16:28:14 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -91,7 +91,7 @@ module triangular_i_llvm_fpga_pipeline_keep_going_0 (
     // regfree_osync(GPOUT,4)
     assign out_exiting_stall_out = passthru_buffer_out;
 
-    // i_llvm_fpga_pipeline_keep_going_triangular1(EXTIFACE,2)@1
+    // i_llvm_fpga_pipeline_keep_going_triangular1(EXTIFACE,2)@5
     assign i_llvm_fpga_pipeline_keep_going_triangular1_data_in = in_data_in;
     assign i_llvm_fpga_pipeline_keep_going_triangular1_initeration_in = in_initeration_in;
     assign i_llvm_fpga_pipeline_keep_going_triangular1_initeration_valid_in = in_initeration_valid_in;
@@ -141,7 +141,7 @@ module triangular_i_llvm_fpga_pipeline_keep_going_0 (
         .resetn(resetn)
     );
 
-    // sync_out(GPOUT,6)@1
+    // sync_out(GPOUT,6)@5
     assign out_stall_out = i_llvm_fpga_pipeline_keep_going_triangular1_stall_out;
 
     // unsched_sync_out(GPOUT,9)
@@ -152,7 +152,7 @@ module triangular_i_llvm_fpga_pipeline_keep_going_0 (
     // dupName_0_regfree_osync_x(GPOUT,10)
     assign out_exiting_valid_out = i_llvm_fpga_pipeline_keep_going_triangular1_exiting_valid_out;
 
-    // dupName_0_sync_out_x(GPOUT,11)@1
+    // dupName_0_sync_out_x(GPOUT,11)@5
     assign out_data_out = i_llvm_fpga_pipeline_keep_going_triangular1_data_out;
     assign out_valid_out = i_llvm_fpga_pipeline_keep_going_triangular1_valid_out;
 

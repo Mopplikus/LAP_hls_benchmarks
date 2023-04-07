@@ -16,107 +16,64 @@
 
 // SystemVerilog created from gaussian_B4_branch
 // Created for function/kernel gaussian
-// SystemVerilog created on Tue Apr  4 21:38:49 2023
+// SystemVerilog created on Fri Apr  7 17:25:52 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module gaussian_B4_branch (
-    input wire [0:0] in_c0_exe31341,
+    input wire [31:0] in_add,
+    input wire [0:0] in_cmp416,
+    input wire [31:0] in_fpga_indvars_iv7,
+    input wire [31:0] in_fpga_indvars_iv9,
+    input wire [31:0] in_j_018,
+    input wire [0:0] in_memdep_phi4_pop729,
     input wire [0:0] in_stall_in_0,
-    input wire [0:0] in_stall_in_1,
+    input wire [32:0] in_unnamed_gaussian3,
     input wire [0:0] in_valid_in,
+    output wire [31:0] out_add,
+    output wire [0:0] out_cmp416,
+    output wire [31:0] out_fpga_indvars_iv7,
+    output wire [31:0] out_fpga_indvars_iv9,
+    output wire [31:0] out_j_018,
+    output wire [0:0] out_memdep_phi4_pop729,
     output wire [0:0] out_stall_out,
+    output wire [32:0] out_unnamed_gaussian3,
     output wire [0:0] out_valid_out_0,
-    output wire [0:0] out_valid_out_1,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] VCC_q;
-    wire [0:0] c0_exe31341_cmp_q;
-    wire [0:0] gaussian_B4_branch_enable_q;
-    wire [0:0] gaussian_B4_branch_enable_not_q;
-    wire [0:0] not_stall_in_0_q;
-    wire [0:0] not_stall_in_1_q;
-    wire [0:0] not_valid_0_q;
-    wire [0:0] not_valid_1_q;
-    wire [0:0] not_valid_or_not_stall_0_q;
-    wire [0:0] not_valid_or_not_stall_1_q;
-    reg [0:0] valid_0_reg_q;
-    reg [0:0] valid_1_reg_q;
-    wire [0:0] valid_out_0_and_q;
-    wire [0:0] valid_out_1_and_q;
+    wire [0:0] stall_out_q;
 
 
-    // not_stall_in_1(LOGICAL,10)
-    assign not_stall_in_1_q = ~ (in_stall_in_1);
+    // out_add(GPOUT,11)
+    assign out_add = in_add;
 
-    // c0_exe31341_cmp(LOGICAL,2)
-    assign c0_exe31341_cmp_q = ~ (in_c0_exe31341);
+    // out_cmp416(GPOUT,12)
+    assign out_cmp416 = in_cmp416;
 
-    // valid_out_1_and(LOGICAL,21)
-    assign valid_out_1_and_q = in_valid_in & c0_exe31341_cmp_q;
+    // out_fpga_indvars_iv7(GPOUT,13)
+    assign out_fpga_indvars_iv7 = in_fpga_indvars_iv7;
 
-    // valid_1_reg(REG,19)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            valid_1_reg_q <= $unsigned(1'b0);
-        end
-        else if (gaussian_B4_branch_enable_q == 1'b1)
-        begin
-            valid_1_reg_q <= valid_out_1_and_q;
-        end
-    end
+    // out_fpga_indvars_iv9(GPOUT,14)
+    assign out_fpga_indvars_iv9 = in_fpga_indvars_iv9;
 
-    // not_valid_1(LOGICAL,12)
-    assign not_valid_1_q = ~ (valid_1_reg_q);
+    // out_j_018(GPOUT,15)
+    assign out_j_018 = in_j_018;
 
-    // not_valid_or_not_stall_1(LOGICAL,14)
-    assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
+    // out_memdep_phi4_pop729(GPOUT,16)
+    assign out_memdep_phi4_pop729 = in_memdep_phi4_pop729;
 
-    // not_stall_in_0(LOGICAL,9)
-    assign not_stall_in_0_q = ~ (in_stall_in_0);
+    // stall_out(LOGICAL,20)
+    assign stall_out_q = in_valid_in & in_stall_in_0;
 
-    // valid_out_0_and(LOGICAL,20)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe31341;
+    // out_stall_out(GPOUT,17)
+    assign out_stall_out = stall_out_q;
 
-    // valid_0_reg(REG,18)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            valid_0_reg_q <= $unsigned(1'b0);
-        end
-        else if (gaussian_B4_branch_enable_q == 1'b1)
-        begin
-            valid_0_reg_q <= valid_out_0_and_q;
-        end
-    end
+    // out_unnamed_gaussian3(GPOUT,18)
+    assign out_unnamed_gaussian3 = in_unnamed_gaussian3;
 
-    // not_valid_0(LOGICAL,11)
-    assign not_valid_0_q = ~ (valid_0_reg_q);
-
-    // not_valid_or_not_stall_0(LOGICAL,13)
-    assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
-
-    // gaussian_B4_branch_enable(LOGICAL,3)
-    assign gaussian_B4_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
-
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
-
-    // gaussian_B4_branch_enable_not(LOGICAL,4)
-    assign gaussian_B4_branch_enable_not_q = ~ (gaussian_B4_branch_enable_q);
-
-    // out_stall_out(GPOUT,15)
-    assign out_stall_out = gaussian_B4_branch_enable_not_q;
-
-    // out_valid_out_0(GPOUT,16)
-    assign out_valid_out_0 = valid_0_reg_q;
-
-    // out_valid_out_1(GPOUT,17)
-    assign out_valid_out_1 = valid_1_reg_q;
+    // out_valid_out_0(GPOUT,19)
+    assign out_valid_out_0 = in_valid_in;
 
 endmodule

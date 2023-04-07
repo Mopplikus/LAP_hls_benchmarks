@@ -6,15 +6,13 @@
 module covariance_cfan (
 		input  wire  in_conduit,    //    in_conduit.conduit
 		output wire  out_conduit_0, // out_conduit_0.conduit
-		output wire  out_conduit_1, // out_conduit_1.conduit
-		output wire  out_conduit_2  // out_conduit_2.conduit
+		output wire  out_conduit_1  // out_conduit_1.conduit
 	);
 
-	covariance_cfan_avalon_conduit_fanout_10_ak2cvai covariance_cfan (
+	covariance_cfan_avalon_conduit_fanout_10_kcgql6q covariance_cfan (
 		.in_conduit    (in_conduit),    //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (out_conduit_0), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (out_conduit_1), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (out_conduit_2)  //  output,  width = 1, out_conduit_2.conduit
+		.out_conduit_1 (out_conduit_1)  //  output,  width = 1, out_conduit_1.conduit
 	);
 
 endmodule

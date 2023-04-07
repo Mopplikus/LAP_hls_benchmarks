@@ -14,7 +14,7 @@ component void matvec(int M[N][N], int V[N], int Out[N]) {
 	int i, j;
 	int tmp = 0;
 
-    INIT:for(i = 0; i < N; i++)
+    /*INIT:for(i = 0; i < N; i++)
     {
         for(j = 0; j < N; j++)
         {
@@ -22,7 +22,7 @@ component void matvec(int M[N][N], int V[N], int Out[N]) {
         }
         V_local[i] = V[i];
         Out_local[i] = Out[i];
-    }
+    }*/
 
 	WORK:for (i=0;i<N;i++) {
 		tmp = 0;
@@ -33,10 +33,10 @@ component void matvec(int M[N][N], int V[N], int Out[N]) {
 		Out_local[i] = tmp;
 	}
 
-    OUT:for(i = 0; i < N; i++)
+    /*OUT:for(i = 0; i < N; i++)
     {
         Out[i] = Out_local[i];
-    }
+    }*/
 }
 
 void matvec_ref(int M[N][N], int V[N], int Out[N]) {

@@ -12,7 +12,7 @@ namespace eval histogram_en_cfan {
   
   proc get_design_files {QSYS_SIMDIR} {
     set design_files [dict create]
-    dict set design_files "histogram_en_cfan_avalon_conduit_fanout_10_ak2cvai.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/histogram_en_cfan_avalon_conduit_fanout_10_ak2cvai.sv"
+    dict set design_files "histogram_en_cfan_avalon_conduit_fanout_10_kcgql6q.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/histogram_en_cfan_avalon_conduit_fanout_10_kcgql6q.sv"
     dict set design_files "histogram_en_cfan.v"                                   "$QSYS_SIMDIR/histogram_en_cfan.v"                                                                  
     return $design_files
   }

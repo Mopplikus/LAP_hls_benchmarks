@@ -16,31 +16,15 @@
 
 // SystemVerilog created from kernel_3mm_B9_branch
 // Created for function/kernel kernel_3mm
-// SystemVerilog created on Wed Apr  5 01:38:04 2023
+// SystemVerilog created on Fri Apr  7 18:25:08 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module kernel_3mm_B9_branch (
-    input wire [31:0] in_c0_exe103169,
-    input wire [0:0] in_c0_exe1131710,
-    input wire [63:0] in_c0_exe1326,
-    input wire [63:0] in_c0_exe23082,
-    input wire [31:0] in_c0_exe2327,
-    input wire [63:0] in_c0_exe33093,
-    input wire [31:0] in_c0_exe63125,
-    input wire [0:0] in_c0_exe73136,
-    input wire [0:0] in_c0_exe93158,
+    input wire [0:0] in_memdep_phi7_pop21,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_valid_in,
-    output wire [31:0] out_c0_exe103169,
-    output wire [0:0] out_c0_exe1131710,
-    output wire [63:0] out_c0_exe1326,
-    output wire [63:0] out_c0_exe23082,
-    output wire [31:0] out_c0_exe2327,
-    output wire [63:0] out_c0_exe33093,
-    output wire [31:0] out_c0_exe63125,
-    output wire [0:0] out_c0_exe73136,
-    output wire [0:0] out_c0_exe93158,
+    output wire [0:0] out_memdep_phi7_pop21,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
     input wire clock,
@@ -50,40 +34,16 @@ module kernel_3mm_B9_branch (
     wire [0:0] stall_out_q;
 
 
-    // out_c0_exe103169(GPOUT,13)
-    assign out_c0_exe103169 = in_c0_exe103169;
+    // out_memdep_phi7_pop21(GPOUT,5)
+    assign out_memdep_phi7_pop21 = in_memdep_phi7_pop21;
 
-    // out_c0_exe1131710(GPOUT,14)
-    assign out_c0_exe1131710 = in_c0_exe1131710;
-
-    // out_c0_exe1326(GPOUT,15)
-    assign out_c0_exe1326 = in_c0_exe1326;
-
-    // out_c0_exe23082(GPOUT,16)
-    assign out_c0_exe23082 = in_c0_exe23082;
-
-    // out_c0_exe2327(GPOUT,17)
-    assign out_c0_exe2327 = in_c0_exe2327;
-
-    // out_c0_exe33093(GPOUT,18)
-    assign out_c0_exe33093 = in_c0_exe33093;
-
-    // out_c0_exe63125(GPOUT,19)
-    assign out_c0_exe63125 = in_c0_exe63125;
-
-    // out_c0_exe73136(GPOUT,20)
-    assign out_c0_exe73136 = in_c0_exe73136;
-
-    // out_c0_exe93158(GPOUT,21)
-    assign out_c0_exe93158 = in_c0_exe93158;
-
-    // stall_out(LOGICAL,24)
+    // stall_out(LOGICAL,8)
     assign stall_out_q = in_valid_in & in_stall_in_0;
 
-    // out_stall_out(GPOUT,22)
+    // out_stall_out(GPOUT,6)
     assign out_stall_out = stall_out_q;
 
-    // out_valid_out_0(GPOUT,23)
+    // out_valid_out_0(GPOUT,7)
     assign out_valid_out_0 = in_valid_in;
 
 endmodule

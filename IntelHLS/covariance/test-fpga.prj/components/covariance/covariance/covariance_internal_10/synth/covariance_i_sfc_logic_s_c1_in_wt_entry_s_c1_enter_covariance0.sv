@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_sfc_logic_s_c1_in_wt_entry_covariances_c1_enter_covariance0
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:06 2023
+// SystemVerilog created on Fri Apr  7 17:50:02 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -37,17 +37,17 @@ module covariance_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_covariance0 (
     wire [0:0] VCC_q;
     wire [15:0] c_i16_09_q;
     wire [15:0] c_i16_110_q;
-    wire [16:0] i_inc68_covariance3_a;
-    wire [16:0] i_inc68_covariance3_b;
-    logic [16:0] i_inc68_covariance3_o;
-    wire [16:0] i_inc68_covariance3_q;
+    wire [16:0] i_inc32_covariance3_a;
+    wire [16:0] i_inc32_covariance3_b;
+    logic [16:0] i_inc32_covariance3_o;
+    wire [16:0] i_inc32_covariance3_q;
     wire [31:0] i_lim_ext_covariance5_vt_join_q;
     wire [15:0] i_lim_ext_covariance5_vt_select_15_b;
-    wire [15:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2_out_data_out;
-    wire [0:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2_out_feedback_stall_out_25;
-    wire [15:0] i_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4_out_feedback_out_25;
-    wire [0:0] i_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4_out_feedback_valid_out_25;
-    wire [15:0] bgTrunc_i_inc68_covariance3_sel_x_b;
+    wire [15:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2_out_data_out;
+    wire [0:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2_out_feedback_stall_out_19;
+    wire [15:0] i_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4_out_feedback_out_19;
+    wire [0:0] i_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4_out_feedback_valid_out_19;
+    wire [15:0] bgTrunc_i_inc32_covariance3_sel_x_b;
     wire [31:0] i_lim_ext_covariance5_sel_x_b;
     (* dont_merge *) reg [0:0] valid_fanout_reg0_q;
     (* dont_merge *) reg [0:0] valid_fanout_reg1_q;
@@ -107,26 +107,26 @@ module covariance_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_covariance0 (
     // c_i16_110(CONSTANT,4)
     assign c_i16_110_q = $unsigned(16'b0000000000000001);
 
-    // i_inc68_covariance3(ADD,8)@2
-    assign i_inc68_covariance3_a = {1'b0, i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2_out_data_out};
-    assign i_inc68_covariance3_b = {1'b0, c_i16_110_q};
-    assign i_inc68_covariance3_o = $unsigned(i_inc68_covariance3_a) + $unsigned(i_inc68_covariance3_b);
-    assign i_inc68_covariance3_q = i_inc68_covariance3_o[16:0];
+    // i_inc32_covariance3(ADD,8)@2
+    assign i_inc32_covariance3_a = {1'b0, i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2_out_data_out};
+    assign i_inc32_covariance3_b = {1'b0, c_i16_110_q};
+    assign i_inc32_covariance3_o = $unsigned(i_inc32_covariance3_a) + $unsigned(i_inc32_covariance3_b);
+    assign i_inc32_covariance3_q = i_inc32_covariance3_o[16:0];
 
-    // bgTrunc_i_inc68_covariance3_sel_x(BITSELECT,16)@2
-    assign bgTrunc_i_inc68_covariance3_sel_x_b = i_inc68_covariance3_q[15:0];
+    // bgTrunc_i_inc32_covariance3_sel_x(BITSELECT,16)@2
+    assign bgTrunc_i_inc32_covariance3_sel_x_b = i_inc32_covariance3_q[15:0];
 
-    // i_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4(BLACKBOX,14)@2
-    // out out_feedback_out_25@20000000
-    // out out_feedback_valid_out_25@20000000
-    covariance_i_llvm_fpga_push_i16_reorder_limiter_count_push25_0 thei_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4 (
-        .in_data_in(bgTrunc_i_inc68_covariance3_sel_x_b),
-        .in_feedback_stall_in_25(i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2_out_feedback_stall_out_25),
+    // i_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4(BLACKBOX,14)@2
+    // out out_feedback_out_19@20000000
+    // out out_feedback_valid_out_19@20000000
+    covariance_i_llvm_fpga_push_i16_reorder_limiter_count_push19_0 thei_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4 (
+        .in_data_in(bgTrunc_i_inc32_covariance3_sel_x_b),
+        .in_feedback_stall_in_19(i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2_out_feedback_stall_out_19),
         .in_stall_in(enable_stall_connector_not_enable_q),
         .in_valid_in(valid_fanout_reg2_q),
         .out_data_out(),
-        .out_feedback_out_25(i_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4_out_feedback_out_25),
-        .out_feedback_valid_out_25(i_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4_out_feedback_valid_out_25),
+        .out_feedback_out_19(i_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4_out_feedback_out_19),
+        .out_feedback_valid_out_19(i_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4_out_feedback_valid_out_19),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -146,18 +146,18 @@ module covariance_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_covariance0 (
         end
     end
 
-    // i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2(BLACKBOX,13)@2
-    // out out_feedback_stall_out_25@20000000
-    covariance_i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_0 thei_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2 (
+    // i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2(BLACKBOX,13)@2
+    // out out_feedback_stall_out_19@20000000
+    covariance_i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_0 thei_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2 (
         .in_data_in(c_i16_09_q),
         .in_dir(redist0_sync_together15_aunroll_x_in_c1_eni1_1_tpl_1_q),
-        .in_feedback_in_25(i_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4_out_feedback_out_25),
-        .in_feedback_valid_in_25(i_llvm_fpga_push_i16_reorder_limiter_count_push25_covariance4_out_feedback_valid_out_25),
+        .in_feedback_in_19(i_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4_out_feedback_out_19),
+        .in_feedback_valid_in_19(i_llvm_fpga_push_i16_reorder_limiter_count_push19_covariance4_out_feedback_valid_out_19),
         .in_predicate(GND_q),
         .in_stall_in(enable_stall_connector_not_enable_q),
         .in_valid_in(valid_fanout_reg1_q),
-        .out_data_out(i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2_out_data_out),
-        .out_feedback_stall_out_25(i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2_out_feedback_stall_out_25),
+        .out_data_out(i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2_out_data_out),
+        .out_feedback_stall_out_19(i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2_out_feedback_stall_out_19),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -165,7 +165,7 @@ module covariance_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_covariance0 (
     );
 
     // i_lim_ext_covariance5_sel_x(BITSELECT,18)@2
-    assign i_lim_ext_covariance5_sel_x_b = {16'b0000000000000000, i_llvm_fpga_pop_i16_reorder_limiter_count_pop25_covariance2_out_data_out[15:0]};
+    assign i_lim_ext_covariance5_sel_x_b = {16'b0000000000000000, i_llvm_fpga_pop_i16_reorder_limiter_count_pop19_covariance2_out_data_out[15:0]};
 
     // i_lim_ext_covariance5_vt_select_15(BITSELECT,12)@2
     assign i_lim_ext_covariance5_vt_select_15_b = i_lim_ext_covariance5_sel_x_b[15:0];

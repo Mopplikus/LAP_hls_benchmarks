@@ -12,7 +12,7 @@ namespace eval kernel_3mm_en_cfan {
   
   proc get_design_files {QSYS_SIMDIR} {
     set design_files [dict create]
-    dict set design_files "kernel_3mm_en_cfan_avalon_conduit_fanout_10_ach4yka.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/kernel_3mm_en_cfan_avalon_conduit_fanout_10_ach4yka.sv"
+    dict set design_files "kernel_3mm_en_cfan_avalon_conduit_fanout_10_oyd4ioi.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/kernel_3mm_en_cfan_avalon_conduit_fanout_10_oyd4ioi.sv"
     dict set design_files "kernel_3mm_en_cfan.v"                                   "$QSYS_SIMDIR/kernel_3mm_en_cfan.v"                                                                  
     return $design_files
   }

@@ -1,11 +1,26 @@
 {
-  "3543193296":
+  "273013280":
   {
     "nodes":
     [
       {
+        "name":"Entry"
+        , "id":277404560
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
         "name":"Exit"
-        , "id":3544404976
+        , "id":277964912
         , "subtype":"exit"
         , "start":"1.00"
         , "end":"1.00"
@@ -19,33 +34,18 @@
         ]
         , "type":"inst"
       }
-      , {
-        "name":"Entry"
-        , "id":3545788704
-        , "subtype":"entry"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
     ]
     , "links":
     [
     ]
   }
-  , "3543741424":
+  , "273561328":
   {
     "nodes":
     [
       {
         "name":"Entry"
-        , "id":3543220864
+        , "id":272942896
         , "subtype":"entry"
         , "details":
         [
@@ -59,43 +59,17 @@
         , "type":"inst"
       }
       , {
-        "name":"8-bit Unsigned Integer Remainder"
-        , "id":3543820848
+        "name":"f32 -"
+        , "id":273029904
         , "subtype":"default"
-        , "start":"6.00"
-        , "end":"6.00"
+        , "start":"7.00"
+        , "end":"10.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"8-bit Unsigned Integer Remainder"
-            , "Start Cycle":"6"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"f32 +"
-        , "id":3544020688
-        , "subtype":"default"
-        , "start":"16.00"
-        , "end":"19.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Floating-point Add"
-            , "Start Cycle":"16"
+            , "Instruction":"32-bit Floating-point Sub"
+            , "Start Cycle":"7"
             , "Latency":"3"
             , "Implementation Preference":"Default DSP usage"
           }
@@ -112,18 +86,16 @@
         , "type":"inst"
       }
       , {
-        "name":"Select"
-        , "id":3544021040
-        , "subtype":"select"
-        , "start":"19.00"
-        , "end":"19.00"
+        "name":"Loop Orch"
+        , "id":273418464
+        , "subtype":"default"
+        , "start":"3.00"
+        , "end":"4.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Select"
-            , "Start Cycle":"19"
-            , "Latency":"0"
+            , "Instruction":"Loop Orchestration Logic"
           }
         ]
         , "debug":
@@ -131,7 +103,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":28
+              , "line":26
             }
           ]
         ]
@@ -139,16 +111,16 @@
       }
       , {
         "name":"FP Compare"
-        , "id":3544076112
+        , "id":273898400
         , "subtype":"default"
-        , "start":"16.00"
-        , "end":"18.00"
+        , "start":"10.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"32-bit Floating-point Compare"
-            , "Start Cycle":"16"
+            , "Start Cycle":"10"
             , "Latency":"2"
           }
         ]
@@ -157,7 +129,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":28
+              , "line":29
             }
           ]
         ]
@@ -165,17 +137,17 @@
       }
       , {
         "name":"'s'"
-        , "id":3544076464
+        , "id":273898752
         , "subtype":"pop"
-        , "start":"16.00"
-        , "end":"16.00"
+        , "start":"10.00"
+        , "end":"10.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Feedback Read"
             , "Variable":"'s'"
-            , "Start Cycle":"16"
+            , "Start Cycle":"10"
             , "Latency":"0"
           }
         ]
@@ -184,7 +156,33 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":23
+              , "line":24
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":274079264
+        , "subtype":"default"
+        , "start":"3.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":28
             }
           ]
         ]
@@ -192,7 +190,7 @@
       }
       , {
         "name":"+"
-        , "id":3544445520
+        , "id":274336400
         , "subtype":"default"
         , "start":"3.00"
         , "end":"3.00"
@@ -211,7 +209,199 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":16
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":274746688
+        , "subtype":"ffwdSource"
+        , "start":"13.00"
+        , "end":"13.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"13"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":29
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":277097440
+        , "subtype":"load/store"
+        , "start":"3.00"
+        , "end":"7.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"3"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":28
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":277921280
+        , "subtype":"default"
+        , "start":"3.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":28
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Xor"
+        , "id":278481264
+        , "subtype":"default"
+        , "start":"3.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"1-bit Xor"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":278892416
+        , "subtype":"load/store"
+        , "start":"3.00"
+        , "end":"7.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"3"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":28
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"f32 +"
+        , "id":278908048
+        , "subtype":"default"
+        , "start":"10.00"
+        , "end":"13.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Floating-point Add"
+            , "Start Cycle":"10"
+            , "Latency":"3"
+            , "Implementation Preference":"Default DSP usage"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":29
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":278908400
+        , "subtype":"select"
+        , "start":"13.00"
+        , "end":"13.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Select"
+            , "Start Cycle":"13"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/example/example.cpp"
+              , "line":29
             }
           ]
         ]
@@ -219,7 +409,7 @@
       }
       , {
         "name":"'i'"
-        , "id":3544467936
+        , "id":279645040
         , "subtype":"pop"
         , "start":"3.00"
         , "end":"3.00"
@@ -238,87 +428,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":16
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"And"
-        , "id":3547544544
-        , "subtype":"default"
-        , "start":"3.00"
-        , "end":"8.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit And"
-            , "Constant Operand":"3 (0x3)"
-            , "Start Cycle":"3"
-            , "Latency":"5"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":19
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Convert"
-        , "id":3547544896
-        , "subtype":"default"
-        , "start":"8.00"
-        , "end":"13.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer to Floating-point Conversion"
-            , "Start Cycle":"8"
-            , "Latency":"5"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":19
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Xor"
-        , "id":3548132112
-        , "subtype":"default"
-        , "start":"12.00"
-        , "end":"12.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"1-bit Xor"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"12"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":25
+              , "line":15
             }
           ]
         ]
@@ -326,15 +436,15 @@
       }
       , {
         "name":"Exit"
-        , "id":3548240832
+        , "id":281618224
         , "subtype":"exit"
-        , "start":"19.00"
-        , "end":"22.00"
+        , "start":"13.00"
+        , "end":"16.00"
         , "details":
         [
           {
             "type":"table"
-            , "Start Cycle":"19"
+            , "Start Cycle":"13"
             , "Latency":"3"
             , "Exit FIFO Depth":"32"
             , "Exit FIFO Width":"24"
@@ -343,91 +453,12 @@
         ]
         , "type":"inst"
       }
-      , {
-        "name":"Convert"
-        , "id":3548700208
-        , "subtype":"default"
-        , "start":"10.00"
-        , "end":"13.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer to Floating-point Conversion"
-            , "Start Cycle":"10"
-            , "Latency":"3"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":18
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"f32 -"
-        , "id":3548700560
-        , "subtype":"default"
-        , "start":"13.00"
-        , "end":"16.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Floating-point Sub"
-            , "Start Cycle":"13"
-            , "Latency":"3"
-            , "Implementation Preference":"Default DSP usage"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":3548769520
-        , "subtype":"ffwdSource"
-        , "start":"19.00"
-        , "end":"19.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"19"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/example/example.cpp"
-              , "line":28
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
     ]
     , "links":
     [
       {
-        "from":3543220864
-        , "to":3544076464
+        "from":272942896
+        , "to":273418464
         , "details":
         [
           {
@@ -437,8 +468,8 @@
         ]
       }
       , {
-        "from":3543220864
-        , "to":3544076464
+        "from":272942896
+        , "to":273898752
         , "details":
         [
           {
@@ -448,8 +479,8 @@
         ]
       }
       , {
-        "from":3543220864
-        , "to":3544467936
+        "from":272942896
+        , "to":279645040
         , "details":
         [
           {
@@ -459,8 +490,8 @@
         ]
       }
       , {
-        "from":3543220864
-        , "to":3544467936
+        "from":272942896
+        , "to":273898752
         , "details":
         [
           {
@@ -470,8 +501,8 @@
         ]
       }
       , {
-        "from":3543220864
-        , "to":3548240832
+        "from":272942896
+        , "to":279645040
         , "details":
         [
           {
@@ -481,8 +512,19 @@
         ]
       }
       , {
-        "from":3544020688
-        , "to":3544021040
+        "from":272942896
+        , "to":281618224
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"16"
+          }
+        ]
+      }
+      , {
+        "from":273029904
+        , "to":273898400
         , "details":
         [
           {
@@ -492,25 +534,8 @@
         ]
       }
       , {
-        "from":3544021040
-        , "to":3544076464
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"'s'"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"19"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":3544021040
-        , "to":3548769520
+        "from":273029904
+        , "to":278908048
         , "details":
         [
           {
@@ -520,8 +545,8 @@
         ]
       }
       , {
-        "from":3544076112
-        , "to":3544021040
+        "from":273418464
+        , "to":279645040
         , "details":
         [
           {
@@ -531,8 +556,52 @@
         ]
       }
       , {
-        "from":3544076464
-        , "to":3544020688
+        "from":273418464
+        , "to":278481264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":273418464
+        , "to":273898752
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":273418464
+        , "to":281618224
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":273898400
+        , "to":278908400
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":273898752
+        , "to":278908048
         , "details":
         [
           {
@@ -542,8 +611,8 @@
         ]
       }
       , {
-        "from":3544076464
-        , "to":3544021040
+        "from":273898752
+        , "to":278908400
         , "details":
         [
           {
@@ -553,8 +622,19 @@
         ]
       }
       , {
-        "from":3544445520
-        , "to":3544467936
+        "from":274079264
+        , "to":278892416
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":274336400
+        , "to":279645040
         , "reverse":1
         , "details":
         [
@@ -570,8 +650,8 @@
         ]
       }
       , {
-        "from":3544467936
-        , "to":3543820848
+        "from":277097440
+        , "to":273029904
         , "details":
         [
           {
@@ -581,129 +661,19 @@
         ]
       }
       , {
-        "from":3544467936
-        , "to":3543820848
+        "from":277921280
+        , "to":277097440
         , "details":
         [
           {
             "type":"table"
-            , "Width":"32"
+            , "Width":"64"
           }
         ]
       }
       , {
-        "from":3544467936
-        , "to":3543820848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3544467936
-        , "to":3543820848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3544467936
-        , "to":3544445520
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3544467936
-        , "to":3543820848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3544467936
-        , "to":3547544544
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3544467936
-        , "to":3543820848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3544467936
-        , "to":3543820848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3544467936
-        , "to":3543820848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3547544544
-        , "to":3547544896
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3547544896
-        , "to":3548700560
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3548132112
-        , "to":3548769520
+        "from":278481264
+        , "to":273418464
         , "details":
         [
           {
@@ -713,19 +683,41 @@
         ]
       }
       , {
-        "from":3543820848
-        , "to":3548700208
+        "from":278481264
+        , "to":274746688
         , "details":
         [
           {
             "type":"table"
-            , "Width":"8"
+            , "Width":"1"
           }
         ]
       }
       , {
-        "from":3548700208
-        , "to":3548700560
+        "from":278481264
+        , "to":277097440
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":278481264
+        , "to":278892416
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":278892416
+        , "to":273029904
         , "details":
         [
           {
@@ -735,8 +727,8 @@
         ]
       }
       , {
-        "from":3548700560
-        , "to":3544020688
+        "from":278908048
+        , "to":278908400
         , "details":
         [
           {
@@ -746,8 +738,58 @@
         ]
       }
       , {
-        "from":3548700560
-        , "to":3544076112
+        "from":278908400
+        , "to":274746688
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":278908400
+        , "to":273898752
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'s'"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"32"
+            , "Start Cycle":"13"
+            , "Latency":"0"
+          }
+        ]
+      }
+      , {
+        "from":279645040
+        , "to":274079264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":279645040
+        , "to":274336400
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":279645040
+        , "to":277921280
         , "details":
         [
           {

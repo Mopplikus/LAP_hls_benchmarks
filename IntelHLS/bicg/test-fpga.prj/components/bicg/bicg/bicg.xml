@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.04.05.16:26:51"
+ date="2023.04.07.18:01:18"
  outputDirectory="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/">
  <perimeter>
   <parameter
@@ -48,18 +48,6 @@
   <parameter
      name="AUTO_CLOCK_RESET_DOMAIN"
      type="Integer"
-     defaultValue="-1"
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_MAP"
-     type="AddressMap"
-     defaultValue=""
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_WIDTH"
-     type="AddressWidthType"
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
@@ -118,70 +106,14 @@
    <property name="prSafe" value="false" />
    <port name="r" direction="input" role="data" width="64" />
   </interface>
-  <interface name="avmm_0_rw" kind="avalon" start="1">
-   <property name="adaptsTo" value="" />
-   <property name="addressGroup" value="0" />
-   <property name="addressUnits" value="SYMBOLS" />
-   <property name="alwaysBurstMaxBurst" value="false" />
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="bitsPerSymbol" value="8" />
-   <property name="burstOnBurstBoundariesOnly" value="false" />
-   <property name="burstcountUnits" value="WORDS" />
-   <property name="constantBurstBehavior" value="false" />
-   <property name="dBSBigEndian" value="false" />
-   <property name="doStreamReads" value="false" />
-   <property name="doStreamWrites" value="false" />
-   <property name="holdTime" value="0" />
-   <property name="interleaveBursts" value="false" />
-   <property name="isAsynchronous" value="false" />
-   <property name="isBigEndian" value="false" />
-   <property name="isReadable" value="false" />
-   <property name="isWriteable" value="false" />
-   <property name="linewrapBursts" value="false" />
-   <property name="maxAddressWidth" value="32" />
-   <property name="maximumPendingReadTransactions" value="0" />
-   <property name="maximumPendingWriteTransactions" value="0" />
-   <property name="minimumReadLatency" value="1" />
-   <property name="minimumResponseLatency" value="1" />
-   <property name="prSafe" value="false" />
-   <property name="readLatency" value="1" />
-   <property name="readWaitTime" value="0" />
-   <property name="registerIncomingSignals" value="false" />
-   <property name="registerOutgoingSignals" value="false" />
-   <property name="setupTime" value="0" />
-   <property name="timingUnits" value="Cycles" />
-   <property name="waitrequestAllowance" value="0" />
-   <property name="writeWaitTime" value="0" />
-   <port name="avmm_0_rw_address" direction="output" role="address" width="64" />
-   <port
-       name="avmm_0_rw_byteenable"
-       direction="output"
-       role="byteenable"
-       width="8" />
-   <port name="avmm_0_rw_read" direction="output" role="read" width="1" />
-   <port
-       name="avmm_0_rw_readdata"
-       direction="input"
-       role="readdata"
-       width="64" />
-   <port name="avmm_0_rw_write" direction="output" role="write" width="1" />
-   <port
-       name="avmm_0_rw_writedata"
-       direction="output"
-       role="writedata"
-       width="64" />
-  </interface>
  </perimeter>
  <entity kind="bicg" version="1.0" name="bicg">
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="10AX115U1F45I1SG" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_MAP" value="" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="1" />
   <generatedFiles>
@@ -330,16 +262,13 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_full_detector.v"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_latency.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ffwddst.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_valid.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/lsu_top.v"
@@ -438,13 +367,10 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_valid.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_loop_profiler.sv"
@@ -492,133 +418,25 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B0_runOnce_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iowr_bl_return_unnamed_bicg19_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B11_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body73_s_c0_enter14811_bicg1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body73_s_c0_exit152_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0003_bicg1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t152_bicg1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body73_s_c0_enter14811_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_q4622_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_7_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_20_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i69_038_pop20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i4_cleanups_pop22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i4_initerations_pop21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv17_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i69_038_push20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i4_cleanups_push22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i4_initerations_push21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv17_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B11_merge.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B1_start.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B1_start_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop7_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop7_4_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024a30i32_unnamed_3_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iord_bl_call_unnamed_bicg1_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_5_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_6_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_7_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iord_bl_call_unnamed_bicg2_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_wt_entry_s_c0_enter8_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_wt_entry_s_c0_enter8_bicg1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_bicg0.sv"
@@ -627,10 +445,10 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter8_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going69_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond70_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond14_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B1_start_branch.sv"
@@ -645,6 +463,15 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B2_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iowr_bl_return_unnamed_bicg2_bicg0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push7_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push7_1_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B2_branch.sv"
        attributes="" />
    <file
@@ -657,40 +484,61 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B3_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi2_pop11_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi2_pop11_3_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B3_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body_s_c0_enter959_bicg1.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body_s_c0_enter489_bicg1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit97_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit52_bicg0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000_bicg1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it97_bicg1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it52_bicg1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body_s_c0_enter959_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body_s_c0_enter489_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going65_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_3_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i_043_pop15_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv8_pop14_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi3_pop819_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond66_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop717_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i_043_push15_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i_019_pop10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv8_push14_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv4_pop9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi3_pop819_push13_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_pop717_push12_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i_019_push10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv4_push9_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B3_branch.sv"
@@ -705,52 +553,13 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B4_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_p4724_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_q4623_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_r4825_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_s4521_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_2_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_3_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_10_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi2_push11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_10_bicg2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_11_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_11_bicg3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_8_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_8_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_9_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_9_bicg1.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi2_push11_0_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B4_branch.sv"
@@ -765,73 +574,118 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B5_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_4_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_12_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_12_bicg4.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B5_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body9_s_c0_enter10012_bicg1.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body9_s_c0_enter5810_bicg1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit105_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit71_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body9_s_c0_enter10012_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_bicg1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024a30i32_a4420_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it71_bicg1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going51_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body9_s_c0_enter5810_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_notcmp6374_pop27_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_1_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_cleanups54_pop26_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_5_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_initerations49_pop25_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_6_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i_043_pop1575_pop28_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_7_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_j_042_pop24_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_8_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop23_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration53_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_exitcond623_pop23_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notcmp6374_push27_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi2_pop1125_pop25_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond61_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi3_pop820_pop20_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_cleanups54_push26_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop718_pop19_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_initerations49_push25_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_notcmp724_pop24_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i_043_pop1575_push28_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_cleanups_pop18_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_j_042_push24_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_initerations_pop17_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv_push23_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_j_017_pop16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_tmp_q_018_pop15_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i64_idxprom21_pop21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_p66i32_arrayidx122_pop22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_exitcond623_push23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi2_pop1125_push25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi3_pop820_push20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_pop718_push19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notcmp724_push24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_cleanups_push18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_initerations_push17_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_j_017_push16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_tmp_q_018_push15_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i64_idxprom21_push21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv_push14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_p66i32_arrayidx122_push22_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B5_branch.sv"
@@ -840,238 +694,16 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B5_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B6.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going13_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B6_stall_region.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going13_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B6_branch.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going9_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B6_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B7.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B7_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop18_3_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B7_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body39_s_c0_enter11010_bicg1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body39_s_c0_exit118_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_bicg1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t118_bicg1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body39_s_c0_enter11010_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_13_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i35_041_pop17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv14_pop16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i35_041_push17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv14_push16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B7_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B7_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B8.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B8_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_5_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push18_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B9_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body46_s_c0_enter12813_bicg1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body46_s_c0_exit139_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0002_bicg1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t139_bicg1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body46_s_c0_enter12813_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_6_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_15_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_16_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_17_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_18_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_exitcond1678_pop36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop1880_pop38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_notcmp4279_pop37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_cleanups33_pop33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_initerations28_pop32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_j42_040_pop30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_tmp_q_039_pop31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i64_idxprom4076_pop34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv11_pop29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_p66i32_arrayidx41677_pop35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_exitcond1678_push36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_pop1880_push38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notcmp4279_push37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_cleanups33_push33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_initerations28_push32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_j42_040_push30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_tmp_q_039_push31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i64_idxprom4076_push34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv11_push29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_p66i32_arrayidx41677_push35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going30_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going30_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going44_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going44_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going51_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going51_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going65_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going65_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going69_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going69_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going9_2_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -1086,21 +718,6 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B10_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B11_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B2_sr_0.sv"
        attributes="" />
    <file
@@ -1113,43 +730,7 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B5_sr_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B6_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B7_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B9_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_mem1x.v"
@@ -1198,6 +779,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_internal.v"
@@ -1325,16 +924,13 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_full_detector.v"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_latency.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ffwddst.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_valid.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/lsu_top.v"
@@ -1433,13 +1029,10 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_iowr_stall_valid.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/hld_loop_profiler.sv"
@@ -1487,133 +1080,25 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B0_runOnce_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iowr_bl_return_unnamed_bicg19_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B11_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body73_s_c0_enter14811_bicg1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body73_s_c0_exit152_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0003_bicg1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t152_bicg1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body73_s_c0_enter14811_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_q4622_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_7_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_20_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i69_038_pop20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i4_cleanups_pop22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i4_initerations_pop21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv17_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i69_038_push20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i4_cleanups_push22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i4_initerations_push21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv17_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B11_merge.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B1_start.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B1_start_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop7_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop7_4_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024a30i32_unnamed_3_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iord_bl_call_unnamed_bicg1_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_5_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_6_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_source_p1024i32_unnamed_7_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iord_bl_call_unnamed_bicg2_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_wt_entry_s_c0_enter8_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_wt_entry_s_c0_enter8_bicg1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_bicg0.sv"
@@ -1622,10 +1107,10 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter8_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going69_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond70_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond14_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B1_start_branch.sv"
@@ -1640,6 +1125,15 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B2_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_iowr_bl_return_unnamed_bicg2_bicg0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push7_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push7_1_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B2_branch.sv"
        attributes="" />
    <file
@@ -1652,40 +1146,61 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B3_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi2_pop11_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi2_pop11_3_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B3_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body_s_c0_enter959_bicg1.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body_s_c0_enter489_bicg1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit97_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit52_bicg0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000_bicg1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it97_bicg1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it52_bicg1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body_s_c0_enter959_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body_s_c0_enter489_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going65_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_3_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i_043_pop15_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv8_pop14_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi3_pop819_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond66_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop717_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i_043_push15_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i_019_pop10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv8_push14_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv4_pop9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi3_pop819_push13_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_pop717_push12_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i_019_push10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv4_push9_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B3_branch.sv"
@@ -1700,52 +1215,13 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B4_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_p4724_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_q4623_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_r4825_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024i32_s4521_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_2_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_3_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_10_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi2_push11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_10_bicg2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_11_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_11_bicg3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_8_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_8_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_9_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_9_bicg1.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi2_push11_0_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B4_branch.sv"
@@ -1760,73 +1236,118 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B5_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_4_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_12_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_readdata_reg_unnamed_12_bicg4.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B5_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body9_s_c0_enter10012_bicg1.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body9_s_c0_enter5810_bicg1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit105_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body9_s_c0_exit71_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body9_s_c0_enter10012_bicg0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_bicg1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_ffwd_dest_p1024a30i32_a4420_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it71_bicg1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going51_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body9_s_c0_enter5810_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_notcmp6374_pop27_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_1_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_cleanups54_pop26_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_5_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_initerations49_pop25_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_6_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i_043_pop1575_pop28_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_7_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_j_042_pop24_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_8_bicg0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop23_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration53_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_exitcond623_pop23_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notcmp6374_push27_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi2_pop1125_pop25_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond61_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi3_pop820_pop20_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_cleanups54_push26_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop718_pop19_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_initerations49_push25_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_notcmp724_pop24_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i_043_pop1575_push28_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_cleanups_pop18_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_j_042_push24_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_initerations_pop17_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv_push23_0.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_j_017_pop16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_tmp_q_018_pop15_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i64_idxprom21_pop21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_p66i32_arrayidx122_pop22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_exitcond623_push23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi2_pop1125_push25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi3_pop820_push20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_pop718_push19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notcmp724_push24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_cleanups_push18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_initerations_push17_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_j_017_push16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_tmp_q_018_push15_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i64_idxprom21_push21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv_push14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_p66i32_arrayidx122_push22_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B5_branch.sv"
@@ -1835,238 +1356,16 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B5_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B6.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going13_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B6_stall_region.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going13_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B6_branch.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going9_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B6_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B7.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B7_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop18_3_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B7_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body39_s_c0_enter11010_bicg1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body39_s_c0_exit118_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_bicg1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t118_bicg1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body39_s_c0_enter11010_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_13_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_i35_041_pop17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv14_pop16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_i35_041_push17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv14_push16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B7_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B7_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B8.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B8_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_5_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_push18_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B9_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_s_c0_in_for_body46_s_c0_enter12813_bicg1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_body46_s_c0_exit139_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0002_bicg1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t139_bicg1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_sfc_logic_s_c0_in_for_body46_s_c0_enter12813_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_memdep_6_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_15_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_16_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_17_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_mem_unnamed_18_bicg0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_exitcond1678_pop36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_memdep_phi_pop1880_pop38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i1_notcmp4279_pop37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_cleanups33_pop33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i2_initerations28_pop32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_j42_040_pop30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i32_tmp_q_039_pop31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i64_idxprom4076_pop34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_i6_fpga_indvars_iv11_pop29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pop_p66i32_arrayidx41677_pop35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_exitcond1678_push36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_lastiniteration32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_memdep_phi_pop1880_push38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notcmp4279_push37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i1_notexitcond40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_cleanups33_push33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i2_initerations28_push32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_j42_040_push30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i32_tmp_q_039_push31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i64_idxprom4076_push34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_i6_fpga_indvars_iv11_push29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_push_p66i32_arrayidx41677_push35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going30_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going30_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going44_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going44_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going51_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going51_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going65_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going65_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going69_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going69_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going9_2_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -2081,21 +1380,6 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B10_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B11_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B2_sr_0.sv"
        attributes="" />
    <file
@@ -2108,43 +1392,7 @@
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B5_sr_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B6_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B7_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_bb_B9_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_mem1x.v"
@@ -2193,6 +1441,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/bicg/test-fpga.prj/components/bicg/bicg/bicg_internal_10/synth/bicg_internal.v"

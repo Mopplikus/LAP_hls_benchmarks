@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.4 67 linux 2023.04.05.14:47:44
+# ACDS 21.4 67 linux 2023.04.07.16:28:55
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.04.05.14:47:44
+# ACDS 21.4 67 linux 2023.04.07.16:28:55
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="main_dpi_controller.main_dpi_controller"

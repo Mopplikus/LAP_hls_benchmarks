@@ -16,14 +16,15 @@ component void histogram(
     hls_memory hls_singlepump float hist[N];
 
     int i;
+    /*
     INIT:for(i = 0; i < N; i++)
     {
         feature[i] = i + 1;
         weight[i] = (float) (2 * i);
         hist[i] = 0.0f;
-    }
+    }*/
 
-    HIST:for(i = 0; i < n; i++)
+    WORK:for(i = 0; i < n; i++)
     {
         int m = feature[i];
         float wt = weight[i];
@@ -31,10 +32,12 @@ component void histogram(
         hist[m] = x + wt;
     }
 
+    /*
     OUT:for(i = 0; i < N; i++)
     {
         hist_r[i] = hist[i];
     }
+    */
 }
 
 int main()

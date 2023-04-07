@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.04.05.16:27:19
+# ACDS 21.4 67 linux 2023.04.07.18:01:44
 
 # ----------------------------------------
 # Initialize variables

@@ -16,94 +16,76 @@
 
 // SystemVerilog created from bb_stencil_2d_B8
 // Created for function/kernel stencil_2d
-// SystemVerilog created on Tue Apr  4 22:01:35 2023
+// SystemVerilog created on Fri Apr  7 16:44:44 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module stencil_2d_bb_B8 (
-    input wire [0:0] in_forked82_0,
-    input wire [0:0] in_forked82_1,
-    input wire [31:0] in_mul50114_0,
-    input wire [31:0] in_mul50114_1,
-    input wire [0:0] in_notcmp39119_0,
-    input wire [0:0] in_notcmp39119_1,
-    input wire [31:0] in_r_036_pop25109_0,
-    input wire [31:0] in_r_036_pop25109_1,
+    input wire [31:0] in_c0_exe21892_0,
+    input wire [31:0] in_c0_exe41914_0,
+    input wire [0:0] in_c0_exe51927_0,
+    input wire [0:0] in_c0_exe61939_0,
+    input wire [31:0] in_c0_exe719411_0,
+    input wire [0:0] in_c0_exe819512_0,
     input wire [0:0] in_stall_in_0,
+    input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in_0,
-    input wire [0:0] in_valid_in_1,
-    output wire [0:0] out_c0_exe2190,
-    output wire [31:0] out_c0_exe3191,
-    output wire [31:0] out_c0_exe4192,
-    output wire [31:0] out_c0_exe5,
-    output wire [0:0] out_c0_exe6,
-    output wire [31:0] out_c0_exe7,
-    output wire [31:0] out_c0_exe8,
-    output wire [0:0] out_c0_exe9,
-    output wire [0:0] out_exiting_stall_out,
-    output wire [0:0] out_exiting_valid_out,
+    output wire [31:0] out_c0_exe21892,
+    output wire [31:0] out_c0_exe41914,
+    output wire [0:0] out_c0_exe51927,
+    output wire [0:0] out_c0_exe61939,
+    output wire [31:0] out_c0_exe719411,
+    output wire [0:0] out_stall_in_0,
     output wire [0:0] out_stall_out_0,
-    output wire [0:0] out_stall_out_1,
-    output wire [0:0] out_valid_in_0,
-    output wire [0:0] out_valid_in_1,
     output wire [0:0] out_valid_out_0,
-    input wire [0:0] in_pipeline_stall_in,
-    output wire [0:0] out_pipeline_valid_out,
+    output wire [0:0] out_valid_out_1,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] bb_stencil_2d_B8_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_stall_out;
-    wire [0:0] bb_stencil_2d_B8_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_valid_out;
-    wire [0:0] bb_stencil_2d_B8_stall_region_out_c0_exe2190;
-    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe3191;
-    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe4192;
-    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe5;
-    wire [0:0] bb_stencil_2d_B8_stall_region_out_c0_exe6;
-    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe7;
-    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe8;
-    wire [0:0] bb_stencil_2d_B8_stall_region_out_c0_exe9;
-    wire [0:0] bb_stencil_2d_B8_stall_region_out_pipeline_valid_out;
+    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe21892;
+    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe41914;
+    wire [0:0] bb_stencil_2d_B8_stall_region_out_c0_exe51927;
+    wire [0:0] bb_stencil_2d_B8_stall_region_out_c0_exe61939;
+    wire [31:0] bb_stencil_2d_B8_stall_region_out_c0_exe719411;
+    wire [0:0] bb_stencil_2d_B8_stall_region_out_c0_exe819512;
     wire [0:0] bb_stencil_2d_B8_stall_region_out_stall_out;
     wire [0:0] bb_stencil_2d_B8_stall_region_out_valid_out;
-    wire [0:0] stencil_2d_B8_branch_out_c0_exe2190;
-    wire [31:0] stencil_2d_B8_branch_out_c0_exe3191;
-    wire [31:0] stencil_2d_B8_branch_out_c0_exe4192;
-    wire [31:0] stencil_2d_B8_branch_out_c0_exe5;
-    wire [0:0] stencil_2d_B8_branch_out_c0_exe6;
-    wire [31:0] stencil_2d_B8_branch_out_c0_exe7;
-    wire [31:0] stencil_2d_B8_branch_out_c0_exe8;
-    wire [0:0] stencil_2d_B8_branch_out_c0_exe9;
+    wire [31:0] stencil_2d_B8_branch_out_c0_exe21892;
+    wire [31:0] stencil_2d_B8_branch_out_c0_exe41914;
+    wire [0:0] stencil_2d_B8_branch_out_c0_exe51927;
+    wire [0:0] stencil_2d_B8_branch_out_c0_exe61939;
+    wire [31:0] stencil_2d_B8_branch_out_c0_exe719411;
     wire [0:0] stencil_2d_B8_branch_out_stall_out;
     wire [0:0] stencil_2d_B8_branch_out_valid_out_0;
-    wire [0:0] stencil_2d_B8_merge_out_forked82;
-    wire [31:0] stencil_2d_B8_merge_out_mul50114;
-    wire [0:0] stencil_2d_B8_merge_out_notcmp39119;
-    wire [31:0] stencil_2d_B8_merge_out_r_036_pop25109;
+    wire [0:0] stencil_2d_B8_branch_out_valid_out_1;
+    wire [31:0] stencil_2d_B8_merge_out_c0_exe21892;
+    wire [31:0] stencil_2d_B8_merge_out_c0_exe41914;
+    wire [0:0] stencil_2d_B8_merge_out_c0_exe51927;
+    wire [0:0] stencil_2d_B8_merge_out_c0_exe61939;
+    wire [31:0] stencil_2d_B8_merge_out_c0_exe719411;
+    wire [0:0] stencil_2d_B8_merge_out_c0_exe819512;
     wire [0:0] stencil_2d_B8_merge_out_stall_out_0;
-    wire [0:0] stencil_2d_B8_merge_out_stall_out_1;
     wire [0:0] stencil_2d_B8_merge_out_valid_out;
 
 
-    // stencil_2d_B8_merge(BLACKBOX,32)
+    // stencil_2d_B8_merge(BLACKBOX,22)
     stencil_2d_B8_merge thestencil_2d_B8_merge (
-        .in_forked82_0(in_forked82_0),
-        .in_forked82_1(in_forked82_1),
-        .in_mul50114_0(in_mul50114_0),
-        .in_mul50114_1(in_mul50114_1),
-        .in_notcmp39119_0(in_notcmp39119_0),
-        .in_notcmp39119_1(in_notcmp39119_1),
-        .in_r_036_pop25109_0(in_r_036_pop25109_0),
-        .in_r_036_pop25109_1(in_r_036_pop25109_1),
+        .in_c0_exe21892_0(in_c0_exe21892_0),
+        .in_c0_exe41914_0(in_c0_exe41914_0),
+        .in_c0_exe51927_0(in_c0_exe51927_0),
+        .in_c0_exe61939_0(in_c0_exe61939_0),
+        .in_c0_exe719411_0(in_c0_exe719411_0),
+        .in_c0_exe819512_0(in_c0_exe819512_0),
         .in_stall_in(bb_stencil_2d_B8_stall_region_out_stall_out),
         .in_valid_in_0(in_valid_in_0),
-        .in_valid_in_1(in_valid_in_1),
-        .out_forked82(stencil_2d_B8_merge_out_forked82),
-        .out_mul50114(stencil_2d_B8_merge_out_mul50114),
-        .out_notcmp39119(stencil_2d_B8_merge_out_notcmp39119),
-        .out_r_036_pop25109(stencil_2d_B8_merge_out_r_036_pop25109),
+        .out_c0_exe21892(stencil_2d_B8_merge_out_c0_exe21892),
+        .out_c0_exe41914(stencil_2d_B8_merge_out_c0_exe41914),
+        .out_c0_exe51927(stencil_2d_B8_merge_out_c0_exe51927),
+        .out_c0_exe61939(stencil_2d_B8_merge_out_c0_exe61939),
+        .out_c0_exe719411(stencil_2d_B8_merge_out_c0_exe719411),
+        .out_c0_exe819512(stencil_2d_B8_merge_out_c0_exe819512),
         .out_stall_out_0(stencil_2d_B8_merge_out_stall_out_0),
-        .out_stall_out_1(stencil_2d_B8_merge_out_stall_out_1),
         .out_valid_out(stencil_2d_B8_merge_out_valid_out),
         .clock(clock),
         .resetn(resetn)
@@ -111,102 +93,74 @@ module stencil_2d_bb_B8 (
 
     // bb_stencil_2d_B8_stall_region(BLACKBOX,2)
     stencil_2d_bb_B8_stall_region thebb_stencil_2d_B8_stall_region (
-        .in_forked82(stencil_2d_B8_merge_out_forked82),
-        .in_mul50114(stencil_2d_B8_merge_out_mul50114),
-        .in_notcmp39119(stencil_2d_B8_merge_out_notcmp39119),
-        .in_pipeline_stall_in(in_pipeline_stall_in),
-        .in_r_036_pop25109(stencil_2d_B8_merge_out_r_036_pop25109),
+        .in_c0_exe21892(stencil_2d_B8_merge_out_c0_exe21892),
+        .in_c0_exe41914(stencil_2d_B8_merge_out_c0_exe41914),
+        .in_c0_exe51927(stencil_2d_B8_merge_out_c0_exe51927),
+        .in_c0_exe61939(stencil_2d_B8_merge_out_c0_exe61939),
+        .in_c0_exe719411(stencil_2d_B8_merge_out_c0_exe719411),
+        .in_c0_exe819512(stencil_2d_B8_merge_out_c0_exe819512),
         .in_stall_in(stencil_2d_B8_branch_out_stall_out),
         .in_valid_in(stencil_2d_B8_merge_out_valid_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_stall_out(bb_stencil_2d_B8_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_valid_out(bb_stencil_2d_B8_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_valid_out),
-        .out_c0_exe2190(bb_stencil_2d_B8_stall_region_out_c0_exe2190),
-        .out_c0_exe3191(bb_stencil_2d_B8_stall_region_out_c0_exe3191),
-        .out_c0_exe4192(bb_stencil_2d_B8_stall_region_out_c0_exe4192),
-        .out_c0_exe5(bb_stencil_2d_B8_stall_region_out_c0_exe5),
-        .out_c0_exe6(bb_stencil_2d_B8_stall_region_out_c0_exe6),
-        .out_c0_exe7(bb_stencil_2d_B8_stall_region_out_c0_exe7),
-        .out_c0_exe8(bb_stencil_2d_B8_stall_region_out_c0_exe8),
-        .out_c0_exe9(bb_stencil_2d_B8_stall_region_out_c0_exe9),
-        .out_pipeline_valid_out(bb_stencil_2d_B8_stall_region_out_pipeline_valid_out),
+        .out_c0_exe21892(bb_stencil_2d_B8_stall_region_out_c0_exe21892),
+        .out_c0_exe41914(bb_stencil_2d_B8_stall_region_out_c0_exe41914),
+        .out_c0_exe51927(bb_stencil_2d_B8_stall_region_out_c0_exe51927),
+        .out_c0_exe61939(bb_stencil_2d_B8_stall_region_out_c0_exe61939),
+        .out_c0_exe719411(bb_stencil_2d_B8_stall_region_out_c0_exe719411),
+        .out_c0_exe819512(bb_stencil_2d_B8_stall_region_out_c0_exe819512),
         .out_stall_out(bb_stencil_2d_B8_stall_region_out_stall_out),
         .out_valid_out(bb_stencil_2d_B8_stall_region_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // stencil_2d_B8_branch(BLACKBOX,31)
+    // stencil_2d_B8_branch(BLACKBOX,21)
     stencil_2d_B8_branch thestencil_2d_B8_branch (
-        .in_c0_exe2190(bb_stencil_2d_B8_stall_region_out_c0_exe2190),
-        .in_c0_exe3191(bb_stencil_2d_B8_stall_region_out_c0_exe3191),
-        .in_c0_exe4192(bb_stencil_2d_B8_stall_region_out_c0_exe4192),
-        .in_c0_exe5(bb_stencil_2d_B8_stall_region_out_c0_exe5),
-        .in_c0_exe6(bb_stencil_2d_B8_stall_region_out_c0_exe6),
-        .in_c0_exe7(bb_stencil_2d_B8_stall_region_out_c0_exe7),
-        .in_c0_exe8(bb_stencil_2d_B8_stall_region_out_c0_exe8),
-        .in_c0_exe9(bb_stencil_2d_B8_stall_region_out_c0_exe9),
+        .in_c0_exe21892(bb_stencil_2d_B8_stall_region_out_c0_exe21892),
+        .in_c0_exe41914(bb_stencil_2d_B8_stall_region_out_c0_exe41914),
+        .in_c0_exe51927(bb_stencil_2d_B8_stall_region_out_c0_exe51927),
+        .in_c0_exe61939(bb_stencil_2d_B8_stall_region_out_c0_exe61939),
+        .in_c0_exe719411(bb_stencil_2d_B8_stall_region_out_c0_exe719411),
+        .in_c0_exe819512(bb_stencil_2d_B8_stall_region_out_c0_exe819512),
         .in_stall_in_0(in_stall_in_0),
+        .in_stall_in_1(in_stall_in_1),
         .in_valid_in(bb_stencil_2d_B8_stall_region_out_valid_out),
-        .out_c0_exe2190(stencil_2d_B8_branch_out_c0_exe2190),
-        .out_c0_exe3191(stencil_2d_B8_branch_out_c0_exe3191),
-        .out_c0_exe4192(stencil_2d_B8_branch_out_c0_exe4192),
-        .out_c0_exe5(stencil_2d_B8_branch_out_c0_exe5),
-        .out_c0_exe6(stencil_2d_B8_branch_out_c0_exe6),
-        .out_c0_exe7(stencil_2d_B8_branch_out_c0_exe7),
-        .out_c0_exe8(stencil_2d_B8_branch_out_c0_exe8),
-        .out_c0_exe9(stencil_2d_B8_branch_out_c0_exe9),
+        .out_c0_exe21892(stencil_2d_B8_branch_out_c0_exe21892),
+        .out_c0_exe41914(stencil_2d_B8_branch_out_c0_exe41914),
+        .out_c0_exe51927(stencil_2d_B8_branch_out_c0_exe51927),
+        .out_c0_exe61939(stencil_2d_B8_branch_out_c0_exe61939),
+        .out_c0_exe719411(stencil_2d_B8_branch_out_c0_exe719411),
         .out_stall_out(stencil_2d_B8_branch_out_stall_out),
         .out_valid_out_0(stencil_2d_B8_branch_out_valid_out_0),
+        .out_valid_out_1(stencil_2d_B8_branch_out_valid_out_1),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // out_c0_exe2190(GPOUT,14)
-    assign out_c0_exe2190 = stencil_2d_B8_branch_out_c0_exe2190;
+    // out_c0_exe21892(GPOUT,12)
+    assign out_c0_exe21892 = stencil_2d_B8_branch_out_c0_exe21892;
 
-    // out_c0_exe3191(GPOUT,15)
-    assign out_c0_exe3191 = stencil_2d_B8_branch_out_c0_exe3191;
+    // out_c0_exe41914(GPOUT,13)
+    assign out_c0_exe41914 = stencil_2d_B8_branch_out_c0_exe41914;
 
-    // out_c0_exe4192(GPOUT,16)
-    assign out_c0_exe4192 = stencil_2d_B8_branch_out_c0_exe4192;
+    // out_c0_exe51927(GPOUT,14)
+    assign out_c0_exe51927 = stencil_2d_B8_branch_out_c0_exe51927;
 
-    // out_c0_exe5(GPOUT,17)
-    assign out_c0_exe5 = stencil_2d_B8_branch_out_c0_exe5;
+    // out_c0_exe61939(GPOUT,15)
+    assign out_c0_exe61939 = stencil_2d_B8_branch_out_c0_exe61939;
 
-    // out_c0_exe6(GPOUT,18)
-    assign out_c0_exe6 = stencil_2d_B8_branch_out_c0_exe6;
+    // out_c0_exe719411(GPOUT,16)
+    assign out_c0_exe719411 = stencil_2d_B8_branch_out_c0_exe719411;
 
-    // out_c0_exe7(GPOUT,19)
-    assign out_c0_exe7 = stencil_2d_B8_branch_out_c0_exe7;
+    // out_stall_in_0(GPOUT,17)
+    assign out_stall_in_0 = in_stall_in_0;
 
-    // out_c0_exe8(GPOUT,20)
-    assign out_c0_exe8 = stencil_2d_B8_branch_out_c0_exe8;
-
-    // out_c0_exe9(GPOUT,21)
-    assign out_c0_exe9 = stencil_2d_B8_branch_out_c0_exe9;
-
-    // out_exiting_stall_out(GPOUT,22)
-    assign out_exiting_stall_out = bb_stencil_2d_B8_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_stall_out;
-
-    // out_exiting_valid_out(GPOUT,23)
-    assign out_exiting_valid_out = bb_stencil_2d_B8_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going36_stencil_2d2_exiting_valid_out;
-
-    // out_stall_out_0(GPOUT,24)
+    // out_stall_out_0(GPOUT,18)
     assign out_stall_out_0 = stencil_2d_B8_merge_out_stall_out_0;
 
-    // out_stall_out_1(GPOUT,25)
-    assign out_stall_out_1 = stencil_2d_B8_merge_out_stall_out_1;
-
-    // out_valid_in_0(GPOUT,26)
-    assign out_valid_in_0 = in_valid_in_0;
-
-    // out_valid_in_1(GPOUT,27)
-    assign out_valid_in_1 = in_valid_in_1;
-
-    // out_valid_out_0(GPOUT,28)
+    // out_valid_out_0(GPOUT,19)
     assign out_valid_out_0 = stencil_2d_B8_branch_out_valid_out_0;
 
-    // pipeline_valid_out_sync(GPOUT,30)
-    assign out_pipeline_valid_out = bb_stencil_2d_B8_stall_region_out_pipeline_valid_out;
+    // out_valid_out_1(GPOUT,20)
+    assign out_valid_out_1 = stencil_2d_B8_branch_out_valid_out_1;
 
 endmodule

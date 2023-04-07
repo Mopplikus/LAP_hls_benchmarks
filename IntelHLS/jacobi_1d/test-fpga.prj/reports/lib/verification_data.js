@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"jacobi_1d"
       , "data":
-      ['1', '2143,2143,2143', 'n/a,n/a,n/a']
+      ['1', '310,310,310', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '2143,2143,2143', 'n/a,n/a,n/a']
+      ['1', '310,310,310', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

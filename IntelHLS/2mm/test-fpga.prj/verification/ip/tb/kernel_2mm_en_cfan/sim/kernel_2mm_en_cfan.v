@@ -10,19 +10,17 @@ module kernel_2mm_en_cfan (
 		output wire  out_conduit_2, // out_conduit_2.conduit
 		output wire  out_conduit_3, // out_conduit_3.conduit
 		output wire  out_conduit_4, // out_conduit_4.conduit
-		output wire  out_conduit_5, // out_conduit_5.conduit
-		output wire  out_conduit_6  // out_conduit_6.conduit
+		output wire  out_conduit_5  // out_conduit_5.conduit
 	);
 
-	kernel_2mm_en_cfan_avalon_conduit_fanout_10_oyd4ioi kernel_2mm_en_cfan (
+	kernel_2mm_en_cfan_avalon_conduit_fanout_10_oec7a4y kernel_2mm_en_cfan (
 		.in_conduit    (in_conduit),    //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (out_conduit_0), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (out_conduit_1), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (out_conduit_2), //  output,  width = 1, out_conduit_2.conduit
 		.out_conduit_3 (out_conduit_3), //  output,  width = 1, out_conduit_3.conduit
 		.out_conduit_4 (out_conduit_4), //  output,  width = 1, out_conduit_4.conduit
-		.out_conduit_5 (out_conduit_5), //  output,  width = 1, out_conduit_5.conduit
-		.out_conduit_6 (out_conduit_6)  //  output,  width = 1, out_conduit_6.conduit
+		.out_conduit_5 (out_conduit_5)  //  output,  width = 1, out_conduit_5.conduit
 	);
 
 endmodule

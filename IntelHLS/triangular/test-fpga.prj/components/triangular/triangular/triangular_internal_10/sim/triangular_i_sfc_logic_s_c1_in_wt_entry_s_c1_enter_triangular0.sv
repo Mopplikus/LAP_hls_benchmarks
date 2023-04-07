@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Wed Apr  5 14:46:57 2023
+// SystemVerilog created on Fri Apr  7 16:28:14 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -37,17 +37,17 @@ module triangular_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_triangular0 (
     wire [0:0] VCC_q;
     wire [15:0] c_i16_09_q;
     wire [15:0] c_i16_110_q;
-    wire [16:0] i_inc66_triangular3_a;
-    wire [16:0] i_inc66_triangular3_b;
-    logic [16:0] i_inc66_triangular3_o;
-    wire [16:0] i_inc66_triangular3_q;
+    wire [16:0] i_inc_triangular3_a;
+    wire [16:0] i_inc_triangular3_b;
+    logic [16:0] i_inc_triangular3_o;
+    wire [16:0] i_inc_triangular3_q;
     wire [31:0] i_lim_ext_triangular5_vt_join_q;
     wire [15:0] i_lim_ext_triangular5_vt_select_15_b;
-    wire [15:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2_out_data_out;
-    wire [0:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2_out_feedback_stall_out_17;
-    wire [15:0] i_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4_out_feedback_out_17;
-    wire [0:0] i_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4_out_feedback_valid_out_17;
-    wire [15:0] bgTrunc_i_inc66_triangular3_sel_x_b;
+    wire [15:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2_out_data_out;
+    wire [0:0] i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2_out_feedback_stall_out_9;
+    wire [15:0] i_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4_out_feedback_out_9;
+    wire [0:0] i_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4_out_feedback_valid_out_9;
+    wire [15:0] bgTrunc_i_inc_triangular3_sel_x_b;
     wire [31:0] i_lim_ext_triangular5_sel_x_b;
     (* dont_merge *) reg [0:0] valid_fanout_reg0_q;
     (* dont_merge *) reg [0:0] valid_fanout_reg1_q;
@@ -107,26 +107,26 @@ module triangular_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_triangular0 (
     // c_i16_110(CONSTANT,4)
     assign c_i16_110_q = $unsigned(16'b0000000000000001);
 
-    // i_inc66_triangular3(ADD,8)@2
-    assign i_inc66_triangular3_a = {1'b0, i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2_out_data_out};
-    assign i_inc66_triangular3_b = {1'b0, c_i16_110_q};
-    assign i_inc66_triangular3_o = $unsigned(i_inc66_triangular3_a) + $unsigned(i_inc66_triangular3_b);
-    assign i_inc66_triangular3_q = i_inc66_triangular3_o[16:0];
+    // i_inc_triangular3(ADD,8)@2
+    assign i_inc_triangular3_a = {1'b0, i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2_out_data_out};
+    assign i_inc_triangular3_b = {1'b0, c_i16_110_q};
+    assign i_inc_triangular3_o = $unsigned(i_inc_triangular3_a) + $unsigned(i_inc_triangular3_b);
+    assign i_inc_triangular3_q = i_inc_triangular3_o[16:0];
 
-    // bgTrunc_i_inc66_triangular3_sel_x(BITSELECT,16)@2
-    assign bgTrunc_i_inc66_triangular3_sel_x_b = i_inc66_triangular3_q[15:0];
+    // bgTrunc_i_inc_triangular3_sel_x(BITSELECT,16)@2
+    assign bgTrunc_i_inc_triangular3_sel_x_b = i_inc_triangular3_q[15:0];
 
-    // i_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4(BLACKBOX,14)@2
-    // out out_feedback_out_17@20000000
-    // out out_feedback_valid_out_17@20000000
-    triangular_i_llvm_fpga_push_i16_reorder_limiter_count_push17_0 thei_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4 (
-        .in_data_in(bgTrunc_i_inc66_triangular3_sel_x_b),
-        .in_feedback_stall_in_17(i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2_out_feedback_stall_out_17),
+    // i_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4(BLACKBOX,14)@2
+    // out out_feedback_out_9@20000000
+    // out out_feedback_valid_out_9@20000000
+    triangular_i_llvm_fpga_push_i16_reorder_limiter_count_push9_0 thei_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4 (
+        .in_data_in(bgTrunc_i_inc_triangular3_sel_x_b),
+        .in_feedback_stall_in_9(i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2_out_feedback_stall_out_9),
         .in_stall_in(enable_stall_connector_not_enable_q),
         .in_valid_in(valid_fanout_reg2_q),
         .out_data_out(),
-        .out_feedback_out_17(i_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4_out_feedback_out_17),
-        .out_feedback_valid_out_17(i_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4_out_feedback_valid_out_17),
+        .out_feedback_out_9(i_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4_out_feedback_out_9),
+        .out_feedback_valid_out_9(i_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4_out_feedback_valid_out_9),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -146,18 +146,18 @@ module triangular_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_triangular0 (
         end
     end
 
-    // i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2(BLACKBOX,13)@2
-    // out out_feedback_stall_out_17@20000000
-    triangular_i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_0 thei_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2 (
+    // i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2(BLACKBOX,13)@2
+    // out out_feedback_stall_out_9@20000000
+    triangular_i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_0 thei_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2 (
         .in_data_in(c_i16_09_q),
         .in_dir(redist0_sync_together15_aunroll_x_in_c1_eni1_1_tpl_1_q),
-        .in_feedback_in_17(i_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4_out_feedback_out_17),
-        .in_feedback_valid_in_17(i_llvm_fpga_push_i16_reorder_limiter_count_push17_triangular4_out_feedback_valid_out_17),
+        .in_feedback_in_9(i_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4_out_feedback_out_9),
+        .in_feedback_valid_in_9(i_llvm_fpga_push_i16_reorder_limiter_count_push9_triangular4_out_feedback_valid_out_9),
         .in_predicate(GND_q),
         .in_stall_in(enable_stall_connector_not_enable_q),
         .in_valid_in(valid_fanout_reg1_q),
-        .out_data_out(i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2_out_data_out),
-        .out_feedback_stall_out_17(i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2_out_feedback_stall_out_17),
+        .out_data_out(i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2_out_data_out),
+        .out_feedback_stall_out_9(i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2_out_feedback_stall_out_9),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -165,7 +165,7 @@ module triangular_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_triangular0 (
     );
 
     // i_lim_ext_triangular5_sel_x(BITSELECT,18)@2
-    assign i_lim_ext_triangular5_sel_x_b = {16'b0000000000000000, i_llvm_fpga_pop_i16_reorder_limiter_count_pop17_triangular2_out_data_out[15:0]};
+    assign i_lim_ext_triangular5_sel_x_b = {16'b0000000000000000, i_llvm_fpga_pop_i16_reorder_limiter_count_pop9_triangular2_out_data_out[15:0]};
 
     // i_lim_ext_triangular5_vt_select_15(BITSELECT,12)@2
     assign i_lim_ext_triangular5_vt_select_15_b = i_lim_ext_triangular5_sel_x_b[15:0];

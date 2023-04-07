@@ -9,12 +9,6 @@ module quartus_compile (
 	, input logic [63:0] atax_x
 	, input logic [63:0] atax_y
 	, input logic [63:0] atax_tmp
-	, output logic [63:0] atax_avmm_0_rw_address
-	, output logic [7:0] atax_avmm_0_rw_byteenable
-	, output logic [0:0] atax_avmm_0_rw_read
-	, input logic [63:0] atax_avmm_0_rw_readdata
-	, output logic [0:0] atax_avmm_0_rw_write
-	, output logic [63:0] atax_avmm_0_rw_writedata
 	);
 
 	logic [0:0] atax_start_reg;
@@ -25,12 +19,6 @@ module quartus_compile (
 	logic [63:0] atax_x_reg;
 	logic [63:0] atax_y_reg;
 	logic [63:0] atax_tmp_reg;
-	logic [63:0] atax_avmm_0_rw_address_reg;
-	logic [7:0] atax_avmm_0_rw_byteenable_reg;
-	logic [0:0] atax_avmm_0_rw_read_reg;
-	logic [63:0] atax_avmm_0_rw_readdata_reg;
-	logic [0:0] atax_avmm_0_rw_write_reg;
-	logic [63:0] atax_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -42,12 +30,6 @@ module quartus_compile (
 		atax_x_reg <= atax_x;
 		atax_y_reg <= atax_y;
 		atax_tmp_reg <= atax_tmp;
-		atax_avmm_0_rw_address <= atax_avmm_0_rw_address_reg;
-		atax_avmm_0_rw_byteenable <= atax_avmm_0_rw_byteenable_reg;
-		atax_avmm_0_rw_read <= atax_avmm_0_rw_read_reg;
-		atax_avmm_0_rw_readdata_reg <= atax_avmm_0_rw_readdata;
-		atax_avmm_0_rw_write <= atax_avmm_0_rw_write_reg;
-		atax_avmm_0_rw_writedata <= atax_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -72,12 +54,6 @@ module quartus_compile (
 		, .x(atax_x_reg)
 		, .y(atax_y_reg)
 		, .tmp(atax_tmp_reg)
-		, .avmm_0_rw_address(atax_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(atax_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(atax_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(atax_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(atax_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(atax_avmm_0_rw_writedata_reg)
 	);
 
 

@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example0
 // Created for function/kernel example
-// SystemVerilog created on Tue Apr  4 21:14:17 2023
+// SystemVerilog created on Fri Apr  7 17:41:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -60,7 +60,7 @@ module example_i_llvm_fpga_push_i8_fpga_indvars_iv_push6_0 (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1(EXTIFACE,5)@12
+    // i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1(EXTIFACE,5)@3
     assign i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_data_in = in_data_in;
     assign i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_dir = in_keep_going;
     assign i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_feedback_stall_in = in_feedback_stall_in_6;
@@ -107,10 +107,10 @@ module example_i_llvm_fpga_push_i8_fpga_indvars_iv_push6_0 (
     assign out_feedback_out_6 = i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_feedback_out;
     assign out_feedback_valid_out_6 = i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_feedback_valid_out;
 
-    // sync_out(GPOUT,8)@12
+    // sync_out(GPOUT,8)@3
     assign out_stall_out = i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,10)@12
+    // dupName_0_sync_out_x(GPOUT,10)@3
     assign out_data_out = i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_data_out;
     assign out_valid_out = i_llvm_fpga_push_i8_fpga_indvars_iv_push6_example1_valid_out;
 

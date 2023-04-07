@@ -1,11 +1,11 @@
 {
-  "114192576":
+  "2850479648":
   {
     "nodes":
     [
       {
         "name":"Feedback"
-        , "id":145890864
+        , "id":2859743568
         , "start":"0.00"
         , "end":"1.00"
         , "subtype":"push"
@@ -15,17 +15,26 @@
             "type":"table"
             , "Instruction":"Feedback Write"
             , "Variable":"Unknown variable"
-            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Depth":"2"
             , "Feedback FIFO Width":"1"
             , "Start Cycle":"0"
             , "Latency":"1"
           }
         ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":47
+            }
+          ]
+        ]
         , "type":"inst"
       }
       , {
         "name":"WR"
-        , "id":147369360
+        , "id":2859806416
         , "start":"0.00"
         , "end":"0.00"
         , "subtype":"default"
@@ -47,7 +56,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":54
+              , "line":56
             }
           ]
         ]
@@ -56,330 +65,22 @@
     ]
     , "links":
     [
-      {
-        "from":147369360
-        , "to":145890864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
     ]
   }
-  , "114192656":
+  , "2850479728":
   {
     "nodes":
     [
       {
-        "name":"Cluster 5"
-        , "id":121652176
-        , "start":"1.00"
-        , "end":"13.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body73_bicgs_c0_enter14811_bicg1"
-            , "Cluster Type":"Stall-Free"
-            , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"12"
-          }
-        ]
-        , "type":"cluster"
-        , "children":
-        [
-          {
-            "name":"Logic"
-            , "id":121658688
-            , "subtype":"entry"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"9"
-              }
-            ]
-            , "type":"inst"
-          }
-          , {
-            "name":"Exit"
-            , "id":122091904
-            , "subtype":"exit"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Start Cycle":"10"
-                , "Latency":"3"
-                , "Exit FIFO Depth":"32"
-                , "Exit FIFO Width":"24"
-                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-              }
-            ]
-            , "type":"inst"
-          }
-        ]
-      }
-      , {
-        "name":"Loop Orch"
-        , "id":128334096
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":50
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":121658688
-        , "to":122091904
-      }
-      , {
-        "from":128334096
-        , "to":121658688
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-    ]
-  }
-  , "114221392":
-  {
-    "nodes":
-    [
-      {
-        "name":"Cluster 2"
-        , "id":119160784
-        , "start":"1.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body9_bicgs_c0_enter10012_bicg1"
-            , "Cluster Type":"Stall-Enable"
-            , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"3"
-          }
-        ]
-        , "type":"cluster"
-        , "children":
-        [
-          {
-            "name":"Logic"
-            , "id":119167232
-            , "subtype":"entry"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"3"
-              }
-            ]
-            , "type":"inst"
-          }
-        ]
-      }
-      , {
-        "name":"Loop Orch"
-        , "id":146500576
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":25
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":148872592
-        , "start":"36.00"
-        , "end":"37.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"36"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":148911920
-        , "start":"4.00"
-        , "end":"36.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"4"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":146500576
-        , "to":119167232
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":146500576
-        , "to":119167232
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":119167232
-        , "to":148872592
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":146500576
-        , "to":119167232
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148911920
-        , "to":148872592
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":119167232
-        , "to":148911920
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-    ]
-  }
-  , "114221472":
-  {
-    "nodes":
-    [
-    ]
-    , "links":
-    [
-    ]
-  }
-  , "114221552":
-  {
-    "nodes":
-    [
-      {
-        "name":"Cluster 3"
-        , "id":119920304
+        "name":"Cluster 1"
+        , "id":2854407440
         , "start":"1.00"
         , "end":"9.00"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body39_bicgs_c0_enter11010_bicg1"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body_bicgs_c0_enter489_bicg1"
             , "Cluster Type":"Stall-Free"
             , "Cluster Start Cycle":"1"
             , "Cluster Latency":"8"
@@ -390,7 +91,7 @@
         [
           {
             "name":"Logic"
-            , "id":119926960
+            , "id":2854414224
             , "subtype":"entry"
             , "details":
             [
@@ -404,7 +105,7 @@
           }
           , {
             "name":"Exit"
-            , "id":120161376
+            , "id":2854789328
             , "subtype":"exit"
             , "details":
             [
@@ -413,7 +114,7 @@
                 , "Start Cycle":"6"
                 , "Latency":"3"
                 , "Exit FIFO Depth":"32"
-                , "Exit FIFO Width":"256"
+                , "Exit FIFO Width":"320"
                 , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
               }
             ]
@@ -423,14 +124,14 @@
       }
       , {
         "name":"Loop Input"
-        , "id":150011472
+        , "id":2857344480
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Loop Input"
-            , "Preceding Blocks":"bicg.B8, bicg.B2"
+            , "Preceding Blocks":"bicg.B4, bicg.B1.start"
           }
         ]
         , "debug":
@@ -438,7 +139,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":37
+              , "line":38
             }
           ]
         ]
@@ -446,7 +147,7 @@
       }
       , {
         "name":"s_local"
-        , "id":150207104
+        , "id":2857999408
         , "start":"9.00"
         , "end":"10.00"
         , "subtype":"pop"
@@ -465,7 +166,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
+              , "line":44
             }
           ]
         ]
@@ -475,12 +176,12 @@
     , "links":
     [
       {
-        "from":119926960
-        , "to":120161376
+        "from":2854414224
+        , "to":2854789328
       }
       , {
-        "from":150011472
-        , "to":119926960
+        "from":2857344480
+        , "to":2854414224
         , "details":
         [
           {
@@ -490,39 +191,77 @@
         ]
       }
       , {
-        "from":120161376
-        , "to":150207104
+        "from":2854789328
+        , "to":2857999408
         , "details":
         [
           {
             "type":"table"
-            , "Width":"256"
+            , "Width":"320"
+          }
+        ]
+      }
+      , {
+        "from":2857344480
+        , "to":2854414224
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2857344480
+        , "to":2854414224
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
           }
         ]
       }
     ]
   }
-  , "114221632":
+  , "2850479808":
   {
     "nodes":
     [
       {
-        "name":"Input"
-        , "id":128547936
-        , "subtype":"default"
+        "name":"ST"
+        , "id":2854668208
+        , "start":"0.00"
+        , "end":"1.00"
+        , "subtype":"load/store"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Input"
-            , "Preceding Blocks":"bicg.B9"
+            , "Instruction":"Store"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"0"
+            , "Latency":"1"
           }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":47
+            }
+          ]
         ]
         , "type":"inst"
       }
       , {
         "name":"Feedback"
-        , "id":146827232
+        , "id":2856027088
         , "start":"0.00"
         , "end":"1.00"
         , "subtype":"push"
@@ -543,39 +282,23 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
+              , "line":44
             }
           ]
         ]
         , "type":"inst"
       }
       , {
-        "name":"ST"
-        , "id":148897120
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"load/store"
+        "name":"Input"
+        , "id":2859506992
+        , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"0"
-            , "Latency":"1"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"bicg.B5"
           }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":46
-            }
-          ]
         ]
         , "type":"inst"
       }
@@ -583,19 +306,19 @@
     , "links":
     [
       {
-        "from":128547936
-        , "to":148897120
+        "from":2859506992
+        , "to":2854668208
         , "details":
         [
           {
             "type":"table"
-            , "Width":"32"
+            , "Width":"64"
           }
         ]
       }
       , {
-        "from":128547936
-        , "to":146827232
+        "from":2859506992
+        , "to":2856027088
         , "details":
         [
           {
@@ -605,32 +328,32 @@
         ]
       }
       , {
-        "from":128547936
-        , "to":148897120
+        "from":2859506992
+        , "to":2854668208
         , "details":
         [
           {
             "type":"table"
-            , "Width":"64"
+            , "Width":"32"
           }
         ]
       }
     ]
   }
-  , "114221712":
+  , "2850479888":
   {
     "nodes":
     [
       {
-        "name":"Cluster 4"
-        , "id":120489440
+        "name":"Cluster 2"
+        , "id":2855158224
         , "start":"1.00"
         , "end":"15.00"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body46_bicgs_c0_enter12813_bicg1"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body9_bicgs_c0_enter5810_bicg1"
             , "Cluster Type":"Stall-Free"
             , "Cluster Start Cycle":"1"
             , "Cluster Latency":"14"
@@ -641,7 +364,7 @@
         [
           {
             "name":"Logic"
-            , "id":120497344
+            , "id":2855166272
             , "subtype":"entry"
             , "details":
             [
@@ -655,7 +378,7 @@
           }
           , {
             "name":"Exit"
-            , "id":121405584
+            , "id":2856175616
             , "subtype":"exit"
             , "details":
             [
@@ -674,14 +397,14 @@
       }
       , {
         "name":"Loop Input"
-        , "id":118760432
+        , "id":2857825920
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Loop Input"
-            , "Preceding Blocks":"bicg.B9, bicg.B7"
+            , "Preceding Blocks":"bicg.B5, bicg.B3"
           }
         ]
         , "type":"inst"
@@ -690,12 +413,12 @@
     , "links":
     [
       {
-        "from":120497344
-        , "to":121405584
+        "from":2855166272
+        , "to":2856175616
       }
       , {
-        "from":118760432
-        , "to":120497344
+        "from":2857825920
+        , "to":2855166272
         , "details":
         [
           {
@@ -705,19 +428,8 @@
         ]
       }
       , {
-        "from":118760432
-        , "to":120497344
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":118760432
-        , "to":120497344
+        "from":2857825920
+        , "to":2855166272
         , "details":
         [
           {
@@ -727,8 +439,19 @@
         ]
       }
       , {
-        "from":118760432
-        , "to":120497344
+        "from":2857825920
+        , "to":2855166272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2857825920
+        , "to":2855166272
         , "details":
         [
           {
@@ -738,8 +461,52 @@
         ]
       }
       , {
-        "from":118760432
-        , "to":120497344
+        "from":2857825920
+        , "to":2855166272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2857825920
+        , "to":2855166272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2857825920
+        , "to":2855166272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2857825920
+        , "to":2855166272
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2857825920
+        , "to":2855166272
         , "details":
         [
           {
@@ -749,19 +516,19 @@
         ]
       }
       , {
-        "from":118760432
-        , "to":120497344
+        "from":2857825920
+        , "to":2855166272
         , "details":
         [
           {
             "type":"table"
-            , "Width":"64"
+            , "Width":"1"
           }
         ]
       }
       , {
-        "from":118760432
-        , "to":120497344
+        "from":2857825920
+        , "to":2855166272
         , "details":
         [
           {
@@ -772,31 +539,13 @@
       }
     ]
   }
-  , "114230864":
+  , "2850978944":
   {
     "nodes":
     [
       {
-        "name":"?"
-        , "id":128335344
-        , "start":"1.00"
-        , "end":"2.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
-            , "Start Cycle":"1"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"Feedback"
-        , "id":128544192
+        , "id":2859777200
         , "start":"1.00"
         , "end":"2.00"
         , "subtype":"push"
@@ -823,12 +572,30 @@
         ]
         , "type":"inst"
       }
+      , {
+        "name":"?"
+        , "id":2859828336
+        , "start":"1.00"
+        , "end":"2.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
     ]
     , "links":
     [
       {
-        "from":128544192
-        , "to":128335344
+        "from":2859777200
+        , "to":2859828336
         , "details":
         [
           {
@@ -839,20 +606,20 @@
       }
     ]
   }
-  , "114230944":
+  , "2850979024":
   {
     "nodes":
     [
       {
         "name":"Cluster 0"
-        , "id":117878512
+        , "id":2854003888
         , "start":"1.00"
         , "end":"1.00"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_wt_entry_bicgs_c0_enter8_bicg0"
+            , "Cluster Name":"i_sfc_s_c0_in_wt_entry_bicgs_c0_enter8_bicg1"
             , "Cluster Type":"Stall-Enable"
             , "Cluster Start Cycle":"1"
             , "Cluster Latency":"0"
@@ -863,7 +630,7 @@
         [
           {
             "name":"Logic"
-            , "id":117884896
+            , "id":2854010688
             , "subtype":"entry"
             , "details":
             [
@@ -878,25 +645,8 @@
         ]
       }
       , {
-        "name":"FFwd Src"
-        , "id":118050448
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"?"
-        , "id":120357728
+        , "id":2859560112
         , "start":"1.00"
         , "end":"2.00"
         , "subtype":"pop"
@@ -915,83 +665,15 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":15
+              , "line":47
             }
           ]
         ]
         , "type":"inst"
       }
       , {
-        "name":"FFwd Src"
-        , "id":121946368
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":124668480
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":128308480
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":128309728
-        , "start":"2.00"
-        , "end":"2.00"
-        , "subtype":"ffwdSource"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"RD"
-        , "id":128314720
+        , "id":2859579424
         , "start":"2.00"
         , "end":"2.00"
         , "subtype":"default"
@@ -1019,161 +701,17 @@
         ]
         , "type":"inst"
       }
-    ]
-    , "links":
-    [
-      {
-        "from":120357728
-        , "to":128314720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":128314720
-        , "to":118050448
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":128314720
-        , "to":121946368
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":128314720
-        , "to":124668480
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":128314720
-        , "to":128308480
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":128314720
-        , "to":128309728
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-    ]
-  }
-  , "114333456":
-  {
-    "nodes":
-    [
-    ]
-    , "links":
-    [
-    ]
-  }
-  , "114333536":
-  {
-    "nodes":
-    [
-      {
-        "name":"Cluster 1"
-        , "id":118219344
-        , "start":"1.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body_bicgs_c0_enter959_bicg1"
-            , "Cluster Type":"Stall-Free"
-            , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"4"
-          }
-        ]
-        , "type":"cluster"
-        , "children":
-        [
-          {
-            "name":"Logic"
-            , "id":118226032
-            , "subtype":"entry"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"1"
-              }
-            ]
-            , "type":"inst"
-          }
-          , {
-            "name":"Exit"
-            , "id":118382800
-            , "subtype":"exit"
-            , "details":
-            [
-              {
-                "type":"table"
-                , "Start Cycle":"2"
-                , "Latency":"3"
-                , "Exit FIFO Depth":"32"
-                , "Exit FIFO Width":"64"
-                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-              }
-            ]
-            , "type":"inst"
-          }
-        ]
-      }
       , {
         "name":"Loop Input"
-        , "id":124469360
+        , "id":2870943664
         , "subtype":"default"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Loop Input"
-            , "Preceding Blocks":"bicg.B4, bicg.B1.start"
+            , "Preceding Blocks":"bicg.B2, bicg.B0.runOnce"
           }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":23
-            }
-          ]
         ]
         , "type":"inst"
       }
@@ -1181,820 +719,24 @@
     , "links":
     [
       {
-        "from":118226032
-        , "to":118382800
+        "from":2854010688
+        , "to":2859560112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
       }
       , {
-        "from":124469360
-        , "to":118226032
+        "from":2870943664
+        , "to":2854010688
         , "details":
         [
           {
             "type":"table"
             , "Width":"1"
-          }
-        ]
-      }
-    ]
-  }
-  , "114333616":
-  {
-    "nodes":
-    [
-      {
-        "name":"ST"
-        , "id":118043952
-        , "start":"33.00"
-        , "end":"34.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"33"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":32
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":118046128
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":118519040
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":31
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":118726032
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":29
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":119005888
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":29
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":119158816
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":30
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":119434480
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":31
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":119435344
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":119913984
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":30
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":121922368
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":32
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":123456784
-        , "start":"33.00"
-        , "end":"34.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"33"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":31
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":125637136
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":127481376
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":32
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":127902592
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":29
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":128350208
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":128359088
-        , "start":"33.00"
-        , "end":"34.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"33"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":30
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":128648096
-        , "start":"33.00"
-        , "end":"34.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"33"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":29
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":128667520
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"load/store"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined"
-            , "Stall-free":"No"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":30
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":141984480
-        , "start":"1.00"
-        , "end":"1.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":32
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Input"
-        , "id":146767696
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Input"
-            , "Preceding Blocks":"bicg.B5"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":146828672
-        , "start":"1.00"
-        , "end":"33.00"
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"1"
-            , "Latency":"32"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":31
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":118046128
-        , "to":127902592
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":118519040
-        , "to":123456784
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":118726032
-        , "to":128648096
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":119005888
-        , "to":128648096
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":119158816
-        , "to":128667520
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":119434480
-        , "to":118519040
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":119435344
-        , "to":119434480
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":119913984
-        , "to":128359088
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":121922368
-        , "to":118043952
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":125637136
-        , "to":141984480
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":127481376
-        , "to":118043952
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":127902592
-        , "to":118726032
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":128350208
-        , "to":119158816
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":128667520
-        , "to":128359088
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":141984480
-        , "to":127481376
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":119005888
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":119158816
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":119434480
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":119913984
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":121922368
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":127902592
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":141984480
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146767696
-        , "to":146828672
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146828672
-        , "to":123456784
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
           }
         ]
       }

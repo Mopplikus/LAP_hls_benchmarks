@@ -16,39 +16,126 @@
 
 // SystemVerilog created from triangular_B2_branch
 // Created for function/kernel triangular
-// SystemVerilog created on Wed Apr  5 14:46:57 2023
+// SystemVerilog created on Fri Apr  7 16:28:14 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_B2_branch (
-    input wire [31:0] in_c0_exe72,
-    input wire [31:0] in_reorder_limiter_enter,
+    input wire [0:0] in_c0_exe4792,
+    input wire [31:0] in_c0_exe5804,
     input wire [0:0] in_stall_in_0,
+    input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [31:0] out_c0_exe72,
-    output wire [31:0] out_reorder_limiter_enter,
+    output wire [31:0] out_c0_exe5804,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
+    output wire [0:0] out_valid_out_1,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] stall_out_q;
+    wire [0:0] VCC_q;
+    wire [0:0] c0_exe4792_cmp_q;
+    reg [31:0] c0_exe5804_reg_q;
+    wire [0:0] not_stall_in_0_q;
+    wire [0:0] not_stall_in_1_q;
+    wire [0:0] not_valid_0_q;
+    wire [0:0] not_valid_1_q;
+    wire [0:0] not_valid_or_not_stall_0_q;
+    wire [0:0] not_valid_or_not_stall_1_q;
+    wire [0:0] triangular_B2_branch_enable_q;
+    wire [0:0] triangular_B2_branch_enable_not_q;
+    reg [0:0] valid_0_reg_q;
+    reg [0:0] valid_1_reg_q;
+    wire [0:0] valid_out_0_and_q;
+    wire [0:0] valid_out_1_and_q;
 
 
-    // out_c0_exe72(GPOUT,6)
-    assign out_c0_exe72 = in_c0_exe72;
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
 
-    // out_reorder_limiter_enter(GPOUT,7)
-    assign out_reorder_limiter_enter = in_reorder_limiter_enter;
+    // not_stall_in_1(LOGICAL,10)
+    assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // stall_out(LOGICAL,10)
-    assign stall_out_q = in_valid_in & in_stall_in_0;
+    // c0_exe4792_cmp(LOGICAL,2)
+    assign c0_exe4792_cmp_q = ~ (in_c0_exe4792);
 
-    // out_stall_out(GPOUT,8)
-    assign out_stall_out = stall_out_q;
+    // valid_out_1_and(LOGICAL,24)
+    assign valid_out_1_and_q = in_valid_in & c0_exe4792_cmp_q;
 
-    // out_valid_out_0(GPOUT,9)
-    assign out_valid_out_0 = in_valid_in;
+    // valid_1_reg(REG,22)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            valid_1_reg_q <= $unsigned(1'b0);
+        end
+        else if (triangular_B2_branch_enable_q == 1'b1)
+        begin
+            valid_1_reg_q <= valid_out_1_and_q;
+        end
+    end
+
+    // not_valid_1(LOGICAL,12)
+    assign not_valid_1_q = ~ (valid_1_reg_q);
+
+    // not_valid_or_not_stall_1(LOGICAL,14)
+    assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
+
+    // not_stall_in_0(LOGICAL,9)
+    assign not_stall_in_0_q = ~ (in_stall_in_0);
+
+    // valid_out_0_and(LOGICAL,23)
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe4792;
+
+    // valid_0_reg(REG,21)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            valid_0_reg_q <= $unsigned(1'b0);
+        end
+        else if (triangular_B2_branch_enable_q == 1'b1)
+        begin
+            valid_0_reg_q <= valid_out_0_and_q;
+        end
+    end
+
+    // not_valid_0(LOGICAL,11)
+    assign not_valid_0_q = ~ (valid_0_reg_q);
+
+    // not_valid_or_not_stall_0(LOGICAL,13)
+    assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
+
+    // triangular_B2_branch_enable(LOGICAL,19)
+    assign triangular_B2_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
+
+    // c0_exe5804_reg(REG,3)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe5804_reg_q <= $unsigned(32'b00000000000000000000000000000000);
+        end
+        else if (triangular_B2_branch_enable_q == 1'b1)
+        begin
+            c0_exe5804_reg_q <= in_c0_exe5804;
+        end
+    end
+
+    // out_c0_exe5804(GPOUT,15)
+    assign out_c0_exe5804 = c0_exe5804_reg_q;
+
+    // triangular_B2_branch_enable_not(LOGICAL,20)
+    assign triangular_B2_branch_enable_not_q = ~ (triangular_B2_branch_enable_q);
+
+    // out_stall_out(GPOUT,16)
+    assign out_stall_out = triangular_B2_branch_enable_not_q;
+
+    // out_valid_out_0(GPOUT,17)
+    assign out_valid_out_0 = valid_0_reg_q;
+
+    // out_valid_out_1(GPOUT,18)
+    assign out_valid_out_1 = valid_1_reg_q;
 
 endmodule

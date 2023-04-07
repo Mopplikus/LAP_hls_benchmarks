@@ -8,17 +8,15 @@ module atax_cfan (
 		output wire  out_conduit_0, // out_conduit_0.conduit
 		output wire  out_conduit_1, // out_conduit_1.conduit
 		output wire  out_conduit_2, // out_conduit_2.conduit
-		output wire  out_conduit_3, // out_conduit_3.conduit
-		output wire  out_conduit_4  // out_conduit_4.conduit
+		output wire  out_conduit_3  // out_conduit_3.conduit
 	);
 
-	atax_cfan_avalon_conduit_fanout_10_mhqe7za atax_cfan (
+	atax_cfan_avalon_conduit_fanout_10_joescla atax_cfan (
 		.in_conduit    (in_conduit),    //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (out_conduit_0), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (out_conduit_1), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (out_conduit_2), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (out_conduit_3), //  output,  width = 1, out_conduit_3.conduit
-		.out_conduit_4 (out_conduit_4)  //  output,  width = 1, out_conduit_4.conduit
+		.out_conduit_3 (out_conduit_3)  //  output,  width = 1, out_conduit_3.conduit
 	);
 
 endmodule

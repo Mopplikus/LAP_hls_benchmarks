@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"stencil_2d"
       , "data":
-      ['1', '10396,10396,10396', 'n/a,n/a,n/a']
+      ['1', '9444,9444,9444', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '10396,10396,10396', 'n/a,n/a,n/a']
+      ['1', '9444,9444,9444', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

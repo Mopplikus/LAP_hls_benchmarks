@@ -16,221 +16,99 @@
 
 // SystemVerilog created from covariance_B9_branch
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:07 2023
+// SystemVerilog created on Fri Apr  7 17:50:03 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module covariance_B9_branch (
-    input wire [63:0] in_c0_exe2308,
-    input wire [31:0] in_c0_exe3309,
-    input wire [0:0] in_c0_exe4310,
-    input wire [31:0] in_c0_exe5311,
-    input wire [0:0] in_c0_exe6312,
-    input wire [0:0] in_c0_exe7313,
-    input wire [31:0] in_c0_exe8314,
+    input wire [31:0] in_c0_exe10365,
+    input wire [32:0] in_c0_exe11366,
+    input wire [0:0] in_c0_exe12367,
+    input wire [31:0] in_c0_exe13368,
+    input wire [31:0] in_c0_exe14369,
+    input wire [31:0] in_c0_exe15,
+    input wire [0:0] in_c0_exe2357,
+    input wire [31:0] in_c0_exe3358,
+    input wire [31:0] in_c0_exe4359,
+    input wire [31:0] in_c0_exe5360,
+    input wire [0:0] in_c0_exe6361,
+    input wire [31:0] in_c0_exe7362,
+    input wire [0:0] in_c0_exe8363,
+    input wire [31:0] in_c0_exe9364,
     input wire [0:0] in_stall_in_0,
-    input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [63:0] out_c0_exe2308,
-    output wire [31:0] out_c0_exe3309,
-    output wire [31:0] out_c0_exe5311,
-    output wire [0:0] out_c0_exe6312,
-    output wire [0:0] out_c0_exe7313,
-    output wire [31:0] out_c0_exe8314,
+    output wire [31:0] out_c0_exe10365,
+    output wire [32:0] out_c0_exe11366,
+    output wire [0:0] out_c0_exe12367,
+    output wire [31:0] out_c0_exe13368,
+    output wire [31:0] out_c0_exe14369,
+    output wire [31:0] out_c0_exe15,
+    output wire [0:0] out_c0_exe2357,
+    output wire [31:0] out_c0_exe3358,
+    output wire [31:0] out_c0_exe4359,
+    output wire [31:0] out_c0_exe5360,
+    output wire [0:0] out_c0_exe6361,
+    output wire [31:0] out_c0_exe7362,
+    output wire [0:0] out_c0_exe8363,
+    output wire [31:0] out_c0_exe9364,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
-    output wire [0:0] out_valid_out_1,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] VCC_q;
-    reg [63:0] c0_exe2308_reg_q;
-    reg [31:0] c0_exe3309_reg_q;
-    wire [0:0] c0_exe4310_cmp_q;
-    reg [31:0] c0_exe5311_reg_q;
-    reg [0:0] c0_exe6312_reg_q;
-    reg [0:0] c0_exe7313_reg_q;
-    reg [31:0] c0_exe8314_reg_q;
-    wire [0:0] covariance_B9_branch_enable_q;
-    wire [0:0] covariance_B9_branch_enable_not_q;
-    wire [0:0] not_stall_in_0_q;
-    wire [0:0] not_stall_in_1_q;
-    wire [0:0] not_valid_0_q;
-    wire [0:0] not_valid_1_q;
-    wire [0:0] not_valid_or_not_stall_0_q;
-    wire [0:0] not_valid_or_not_stall_1_q;
-    reg [0:0] valid_0_reg_q;
-    reg [0:0] valid_1_reg_q;
-    wire [0:0] valid_out_0_and_q;
-    wire [0:0] valid_out_1_and_q;
+    wire [0:0] stall_out_q;
 
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
+    // out_c0_exe10365(GPOUT,18)
+    assign out_c0_exe10365 = in_c0_exe10365;
 
-    // not_stall_in_1(LOGICAL,22)
-    assign not_stall_in_1_q = ~ (in_stall_in_1);
+    // out_c0_exe11366(GPOUT,19)
+    assign out_c0_exe11366 = in_c0_exe11366;
 
-    // c0_exe4310_cmp(LOGICAL,4)
-    assign c0_exe4310_cmp_q = ~ (in_c0_exe4310);
+    // out_c0_exe12367(GPOUT,20)
+    assign out_c0_exe12367 = in_c0_exe12367;
 
-    // valid_out_1_and(LOGICAL,39)
-    assign valid_out_1_and_q = in_valid_in & c0_exe4310_cmp_q;
+    // out_c0_exe13368(GPOUT,21)
+    assign out_c0_exe13368 = in_c0_exe13368;
 
-    // valid_1_reg(REG,37)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            valid_1_reg_q <= $unsigned(1'b0);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            valid_1_reg_q <= valid_out_1_and_q;
-        end
-    end
+    // out_c0_exe14369(GPOUT,22)
+    assign out_c0_exe14369 = in_c0_exe14369;
 
-    // not_valid_1(LOGICAL,24)
-    assign not_valid_1_q = ~ (valid_1_reg_q);
+    // out_c0_exe15(GPOUT,23)
+    assign out_c0_exe15 = in_c0_exe15;
 
-    // not_valid_or_not_stall_1(LOGICAL,26)
-    assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
+    // out_c0_exe2357(GPOUT,24)
+    assign out_c0_exe2357 = in_c0_exe2357;
 
-    // not_stall_in_0(LOGICAL,21)
-    assign not_stall_in_0_q = ~ (in_stall_in_0);
+    // out_c0_exe3358(GPOUT,25)
+    assign out_c0_exe3358 = in_c0_exe3358;
 
-    // valid_out_0_and(LOGICAL,38)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe4310;
+    // out_c0_exe4359(GPOUT,26)
+    assign out_c0_exe4359 = in_c0_exe4359;
 
-    // valid_0_reg(REG,36)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            valid_0_reg_q <= $unsigned(1'b0);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            valid_0_reg_q <= valid_out_0_and_q;
-        end
-    end
+    // out_c0_exe5360(GPOUT,27)
+    assign out_c0_exe5360 = in_c0_exe5360;
 
-    // not_valid_0(LOGICAL,23)
-    assign not_valid_0_q = ~ (valid_0_reg_q);
+    // out_c0_exe6361(GPOUT,28)
+    assign out_c0_exe6361 = in_c0_exe6361;
 
-    // not_valid_or_not_stall_0(LOGICAL,25)
-    assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
+    // out_c0_exe7362(GPOUT,29)
+    assign out_c0_exe7362 = in_c0_exe7362;
 
-    // covariance_B9_branch_enable(LOGICAL,9)
-    assign covariance_B9_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
+    // out_c0_exe8363(GPOUT,30)
+    assign out_c0_exe8363 = in_c0_exe8363;
 
-    // c0_exe2308_reg(REG,2)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe2308_reg_q <= $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe2308_reg_q <= in_c0_exe2308;
-        end
-    end
+    // out_c0_exe9364(GPOUT,31)
+    assign out_c0_exe9364 = in_c0_exe9364;
 
-    // out_c0_exe2308(GPOUT,27)
-    assign out_c0_exe2308 = c0_exe2308_reg_q;
+    // stall_out(LOGICAL,34)
+    assign stall_out_q = in_valid_in & in_stall_in_0;
 
-    // c0_exe3309_reg(REG,3)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe3309_reg_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe3309_reg_q <= in_c0_exe3309;
-        end
-    end
+    // out_stall_out(GPOUT,32)
+    assign out_stall_out = stall_out_q;
 
-    // out_c0_exe3309(GPOUT,28)
-    assign out_c0_exe3309 = c0_exe3309_reg_q;
-
-    // c0_exe5311_reg(REG,5)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe5311_reg_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe5311_reg_q <= in_c0_exe5311;
-        end
-    end
-
-    // out_c0_exe5311(GPOUT,29)
-    assign out_c0_exe5311 = c0_exe5311_reg_q;
-
-    // c0_exe6312_reg(REG,6)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe6312_reg_q <= $unsigned(1'b0);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe6312_reg_q <= in_c0_exe6312;
-        end
-    end
-
-    // out_c0_exe6312(GPOUT,30)
-    assign out_c0_exe6312 = c0_exe6312_reg_q;
-
-    // c0_exe7313_reg(REG,7)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe7313_reg_q <= $unsigned(1'b0);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe7313_reg_q <= in_c0_exe7313;
-        end
-    end
-
-    // out_c0_exe7313(GPOUT,31)
-    assign out_c0_exe7313 = c0_exe7313_reg_q;
-
-    // c0_exe8314_reg(REG,8)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            c0_exe8314_reg_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (covariance_B9_branch_enable_q == 1'b1)
-        begin
-            c0_exe8314_reg_q <= in_c0_exe8314;
-        end
-    end
-
-    // out_c0_exe8314(GPOUT,32)
-    assign out_c0_exe8314 = c0_exe8314_reg_q;
-
-    // covariance_B9_branch_enable_not(LOGICAL,10)
-    assign covariance_B9_branch_enable_not_q = ~ (covariance_B9_branch_enable_q);
-
-    // out_stall_out(GPOUT,33)
-    assign out_stall_out = covariance_B9_branch_enable_not_q;
-
-    // out_valid_out_0(GPOUT,34)
-    assign out_valid_out_0 = valid_0_reg_q;
-
-    // out_valid_out_1(GPOUT,35)
-    assign out_valid_out_1 = valid_1_reg_q;
+    // out_valid_out_0(GPOUT,33)
+    assign out_valid_out_0 = in_valid_in;
 
 endmodule

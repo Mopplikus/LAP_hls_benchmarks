@@ -16,11 +16,19 @@
 
 // SystemVerilog created from example_function_wrapper
 // Created for function/kernel example
-// SystemVerilog created on Tue Apr  4 21:14:17 2023
+// SystemVerilog created on Fri Apr  7 17:41:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module example_function_wrapper (
+    input wire [31:0] avm_unnamed_example3_example_readdata,
+    input wire [0:0] avm_unnamed_example3_example_readdatavalid,
+    input wire [0:0] avm_unnamed_example3_example_waitrequest,
+    input wire [0:0] avm_unnamed_example3_example_writeack,
+    input wire [31:0] avm_unnamed_example4_example_readdata,
+    input wire [0:0] avm_unnamed_example4_example_readdatavalid,
+    input wire [0:0] avm_unnamed_example4_example_waitrequest,
+    input wire [0:0] avm_unnamed_example4_example_writeack,
     input wire [0:0] avst_iord_bl_call_example_data,
     input wire [0:0] avst_iord_bl_call_example_valid,
     input wire [0:0] avst_iowr_bl_return_example_almostfull,
@@ -29,6 +37,20 @@ module example_function_wrapper (
     input wire [0:0] stall_in,
     input wire [0:0] start,
     input wire [0:0] valid_in,
+    output wire [31:0] avm_unnamed_example3_example_address,
+    output wire [0:0] avm_unnamed_example3_example_burstcount,
+    output wire [3:0] avm_unnamed_example3_example_byteenable,
+    output wire [0:0] avm_unnamed_example3_example_enable,
+    output wire [0:0] avm_unnamed_example3_example_read,
+    output wire [0:0] avm_unnamed_example3_example_write,
+    output wire [31:0] avm_unnamed_example3_example_writedata,
+    output wire [31:0] avm_unnamed_example4_example_address,
+    output wire [0:0] avm_unnamed_example4_example_burstcount,
+    output wire [3:0] avm_unnamed_example4_example_byteenable,
+    output wire [0:0] avm_unnamed_example4_example_enable,
+    output wire [0:0] avm_unnamed_example4_example_read,
+    output wire [0:0] avm_unnamed_example4_example_write,
+    output wire [31:0] avm_unnamed_example4_example_writedata,
     output wire [0:0] avst_iord_bl_call_example_almost_full,
     output wire [0:0] avst_iord_bl_call_example_ready,
     output wire [31:0] avst_iowr_bl_return_example_data,
@@ -49,6 +71,20 @@ module example_function_wrapper (
     wire [0:0] example_function_out_iord_bl_call_example_o_fifoready;
     wire [31:0] example_function_out_iowr_bl_return_example_o_fifodata;
     wire [0:0] example_function_out_iowr_bl_return_example_o_fifovalid;
+    wire [31:0] example_function_out_unnamed_example3_example_avm_address;
+    wire [0:0] example_function_out_unnamed_example3_example_avm_burstcount;
+    wire [3:0] example_function_out_unnamed_example3_example_avm_byteenable;
+    wire [0:0] example_function_out_unnamed_example3_example_avm_enable;
+    wire [0:0] example_function_out_unnamed_example3_example_avm_read;
+    wire [0:0] example_function_out_unnamed_example3_example_avm_write;
+    wire [31:0] example_function_out_unnamed_example3_example_avm_writedata;
+    wire [31:0] example_function_out_unnamed_example4_example_avm_address;
+    wire [0:0] example_function_out_unnamed_example4_example_avm_burstcount;
+    wire [3:0] example_function_out_unnamed_example4_example_avm_byteenable;
+    wire [0:0] example_function_out_unnamed_example4_example_avm_enable;
+    wire [0:0] example_function_out_unnamed_example4_example_avm_read;
+    wire [0:0] example_function_out_unnamed_example4_example_avm_write;
+    wire [31:0] example_function_out_unnamed_example4_example_avm_writedata;
     wire [0:0] not_ready_q;
     wire [0:0] not_stall_q;
     wire [0:0] pos_reset_q;
@@ -62,7 +98,7 @@ module example_function_wrapper (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // not_stall(LOGICAL,17)
+    // not_stall(LOGICAL,25)
     assign not_stall_q = ~ (stall);
 
     // call_const(CONSTANT,4)
@@ -76,36 +112,101 @@ module example_function_wrapper (
         .in_iord_bl_call_example_i_fifovalid(start),
         .in_iowr_bl_return_example_i_fifoready(not_stall_q),
         .in_stall_in(GND_q),
+        .in_start(GND_q),
+        .in_unnamed_example3_example_avm_readdata(avm_unnamed_example3_example_readdata),
+        .in_unnamed_example3_example_avm_readdatavalid(avm_unnamed_example3_example_readdatavalid),
+        .in_unnamed_example3_example_avm_waitrequest(avm_unnamed_example3_example_waitrequest),
+        .in_unnamed_example3_example_avm_writeack(avm_unnamed_example3_example_writeack),
+        .in_unnamed_example4_example_avm_readdata(avm_unnamed_example4_example_readdata),
+        .in_unnamed_example4_example_avm_readdatavalid(avm_unnamed_example4_example_readdatavalid),
+        .in_unnamed_example4_example_avm_waitrequest(avm_unnamed_example4_example_waitrequest),
+        .in_unnamed_example4_example_avm_writeack(avm_unnamed_example4_example_writeack),
         .in_valid_in(VCC_q),
         .out_iord_bl_call_example_o_fifoalmost_full(example_function_out_iord_bl_call_example_o_fifoalmost_full),
         .out_iord_bl_call_example_o_fifoready(example_function_out_iord_bl_call_example_o_fifoready),
         .out_iowr_bl_return_example_o_fifodata(example_function_out_iowr_bl_return_example_o_fifodata),
         .out_iowr_bl_return_example_o_fifovalid(example_function_out_iowr_bl_return_example_o_fifovalid),
         .out_stall_out(),
+        .out_unnamed_example3_example_avm_address(example_function_out_unnamed_example3_example_avm_address),
+        .out_unnamed_example3_example_avm_burstcount(example_function_out_unnamed_example3_example_avm_burstcount),
+        .out_unnamed_example3_example_avm_byteenable(example_function_out_unnamed_example3_example_avm_byteenable),
+        .out_unnamed_example3_example_avm_enable(example_function_out_unnamed_example3_example_avm_enable),
+        .out_unnamed_example3_example_avm_read(example_function_out_unnamed_example3_example_avm_read),
+        .out_unnamed_example3_example_avm_write(example_function_out_unnamed_example3_example_avm_write),
+        .out_unnamed_example3_example_avm_writedata(example_function_out_unnamed_example3_example_avm_writedata),
+        .out_unnamed_example4_example_avm_address(example_function_out_unnamed_example4_example_avm_address),
+        .out_unnamed_example4_example_avm_burstcount(example_function_out_unnamed_example4_example_avm_burstcount),
+        .out_unnamed_example4_example_avm_byteenable(example_function_out_unnamed_example4_example_avm_byteenable),
+        .out_unnamed_example4_example_avm_enable(example_function_out_unnamed_example4_example_avm_enable),
+        .out_unnamed_example4_example_avm_read(example_function_out_unnamed_example4_example_avm_read),
+        .out_unnamed_example4_example_avm_write(example_function_out_unnamed_example4_example_avm_write),
+        .out_unnamed_example4_example_avm_writedata(example_function_out_unnamed_example4_example_avm_writedata),
         .out_valid_out(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // avst_iord_bl_call_example_almost_full(GPOUT,18)
+    // avm_unnamed_example3_example_address(GPOUT,26)
+    assign avm_unnamed_example3_example_address = example_function_out_unnamed_example3_example_avm_address;
+
+    // avm_unnamed_example3_example_burstcount(GPOUT,27)
+    assign avm_unnamed_example3_example_burstcount = example_function_out_unnamed_example3_example_avm_burstcount;
+
+    // avm_unnamed_example3_example_byteenable(GPOUT,28)
+    assign avm_unnamed_example3_example_byteenable = example_function_out_unnamed_example3_example_avm_byteenable;
+
+    // avm_unnamed_example3_example_enable(GPOUT,29)
+    assign avm_unnamed_example3_example_enable = example_function_out_unnamed_example3_example_avm_enable;
+
+    // avm_unnamed_example3_example_read(GPOUT,30)
+    assign avm_unnamed_example3_example_read = example_function_out_unnamed_example3_example_avm_read;
+
+    // avm_unnamed_example3_example_write(GPOUT,31)
+    assign avm_unnamed_example3_example_write = example_function_out_unnamed_example3_example_avm_write;
+
+    // avm_unnamed_example3_example_writedata(GPOUT,32)
+    assign avm_unnamed_example3_example_writedata = example_function_out_unnamed_example3_example_avm_writedata;
+
+    // avm_unnamed_example4_example_address(GPOUT,33)
+    assign avm_unnamed_example4_example_address = example_function_out_unnamed_example4_example_avm_address;
+
+    // avm_unnamed_example4_example_burstcount(GPOUT,34)
+    assign avm_unnamed_example4_example_burstcount = example_function_out_unnamed_example4_example_avm_burstcount;
+
+    // avm_unnamed_example4_example_byteenable(GPOUT,35)
+    assign avm_unnamed_example4_example_byteenable = example_function_out_unnamed_example4_example_avm_byteenable;
+
+    // avm_unnamed_example4_example_enable(GPOUT,36)
+    assign avm_unnamed_example4_example_enable = example_function_out_unnamed_example4_example_avm_enable;
+
+    // avm_unnamed_example4_example_read(GPOUT,37)
+    assign avm_unnamed_example4_example_read = example_function_out_unnamed_example4_example_avm_read;
+
+    // avm_unnamed_example4_example_write(GPOUT,38)
+    assign avm_unnamed_example4_example_write = example_function_out_unnamed_example4_example_avm_write;
+
+    // avm_unnamed_example4_example_writedata(GPOUT,39)
+    assign avm_unnamed_example4_example_writedata = example_function_out_unnamed_example4_example_avm_writedata;
+
+    // avst_iord_bl_call_example_almost_full(GPOUT,40)
     assign avst_iord_bl_call_example_almost_full = example_function_out_iord_bl_call_example_o_fifoalmost_full;
 
-    // avst_iord_bl_call_example_ready(GPOUT,19)
+    // avst_iord_bl_call_example_ready(GPOUT,41)
     assign avst_iord_bl_call_example_ready = example_function_out_iord_bl_call_example_o_fifoready;
 
-    // avst_iowr_bl_return_example_data(GPOUT,20)
+    // avst_iowr_bl_return_example_data(GPOUT,42)
     assign avst_iowr_bl_return_example_data = example_function_out_iowr_bl_return_example_o_fifodata;
 
-    // avst_iowr_bl_return_example_valid(GPOUT,21)
+    // avst_iowr_bl_return_example_valid(GPOUT,43)
     assign avst_iowr_bl_return_example_valid = example_function_out_iowr_bl_return_example_o_fifovalid;
 
-    // not_ready(LOGICAL,16)
+    // not_ready(LOGICAL,24)
     assign not_ready_q = ~ (example_function_out_iord_bl_call_example_o_fifoready);
 
     // busy_and(LOGICAL,2)
     assign busy_and_q = not_ready_q & start;
 
-    // reset_wire_inst(EXTIFACE,26)
+    // reset_wire_inst(EXTIFACE,48)
     assign reset_wire_inst_o_resetn[0] = reset_wire_inst_o_resetn_bitsignaltemp;
     acl_reset_wire thereset_wire_inst (
         .o_resetn(reset_wire_inst_o_resetn_bitsignaltemp),
@@ -113,19 +214,19 @@ module example_function_wrapper (
         .resetn(resetn)
     );
 
-    // pos_reset(LOGICAL,25)
+    // pos_reset(LOGICAL,47)
     assign pos_reset_q = ~ (reset_wire_inst_o_resetn);
 
     // busy_or(LOGICAL,3)
     assign busy_or_q = pos_reset_q | busy_and_q;
 
-    // busy(GPOUT,22)
+    // busy(GPOUT,44)
     assign busy = busy_or_q;
 
-    // done(GPOUT,23)
+    // done(GPOUT,45)
     assign done = example_function_out_iowr_bl_return_example_o_fifovalid;
 
-    // returndata(GPOUT,24)
+    // returndata(GPOUT,46)
     assign returndata = example_function_out_iowr_bl_return_example_o_fifodata;
 
 endmodule

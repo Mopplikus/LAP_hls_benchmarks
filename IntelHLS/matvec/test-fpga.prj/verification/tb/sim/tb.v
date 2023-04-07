@@ -6,13 +6,7 @@
 module tb (
 	);
 
-	wire  [63:0] matvec_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:avs_readdata -> matvec_inst:avmm_0_rw_readdata
-	wire  [63:0] matvec_inst_avmm_0_rw_address;                                                            // matvec_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:avs_address
-	wire   [7:0] matvec_inst_avmm_0_rw_byteenable;                                                         // matvec_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:avs_byteenable
-	wire         matvec_inst_avmm_0_rw_read;                                                               // matvec_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:avs_read
-	wire         matvec_inst_avmm_0_rw_write;                                                              // matvec_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:avs_write
-	wire  [63:0] matvec_inst_avmm_0_rw_writedata;                                                          // matvec_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                               // clock_reset_inst:clock -> [component_dpi_controller_matvec_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, matvec_inst:clock, mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:clock, stream_source_dpi_bfm_matvec_M_inst:clock, stream_source_dpi_bfm_matvec_Out0_inst:clock, stream_source_dpi_bfm_matvec_V_inst:clock]
+	wire         clock_reset_inst_clock_clk;                                                               // clock_reset_inst:clock -> [component_dpi_controller_matvec_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, matvec_inst:clock, stream_source_dpi_bfm_matvec_M_inst:clock, stream_source_dpi_bfm_matvec_Out0_inst:clock, stream_source_dpi_bfm_matvec_V_inst:clock]
 	wire         clock_reset_inst_clock2x_clk;                                                             // clock_reset_inst:clock2x -> [component_dpi_controller_matvec_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_matvec_M_inst:clock2x, stream_source_dpi_bfm_matvec_Out0_inst:clock2x, stream_source_dpi_bfm_matvec_V_inst:clock2x]
 	wire         component_dpi_controller_matvec_inst_component_call_valid;                                // component_dpi_controller_matvec_inst:start -> matvec_inst:start
 	wire         matvec_inst_call_stall;                                                                   // matvec_inst:busy -> component_dpi_controller_matvec_inst:busy
@@ -33,8 +27,6 @@ module tb (
 	wire         matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit;           // matvec_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_matvec_Out0_inst:do_bind
 	wire         matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit;         // matvec_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_matvec_Out0_inst:enable
 	wire         matvec_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_2_conduit; // matvec_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_matvec_Out0_inst:source_ready
-	wire         matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit;           // matvec_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:do_bind
-	wire         matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit;         // matvec_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:enable
 	wire         component_dpi_controller_matvec_inst_read_implicit_streams_conduit;                       // component_dpi_controller_matvec_inst:read_implicit_streams -> matvec_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
 	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                              // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
 	wire         matvec_inst_return_valid;                                                                 // matvec_inst:done -> component_dpi_controller_matvec_inst:done
@@ -42,7 +34,7 @@ module tb (
 	wire  [63:0] stream_source_dpi_bfm_matvec_m_inst_source_data_data;                                     // stream_source_dpi_bfm_matvec_M_inst:source_data -> matvec_inst:M
 	wire  [63:0] stream_source_dpi_bfm_matvec_out0_inst_source_data_data;                                  // stream_source_dpi_bfm_matvec_Out0_inst:source_data -> matvec_inst:Out0
 	wire  [63:0] stream_source_dpi_bfm_matvec_v_inst_source_data_data;                                     // stream_source_dpi_bfm_matvec_V_inst:source_data -> matvec_inst:V
-	wire         clock_reset_inst_reset_reset;                                                             // clock_reset_inst:resetn -> [component_dpi_controller_matvec_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, matvec_inst:resetn, mm_agent_dpi_bfm_matvec_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_matvec_M_inst:resetn, stream_source_dpi_bfm_matvec_Out0_inst:resetn, stream_source_dpi_bfm_matvec_V_inst:resetn]
+	wire         clock_reset_inst_reset_reset;                                                             // clock_reset_inst:resetn -> [component_dpi_controller_matvec_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, matvec_inst:resetn, stream_source_dpi_bfm_matvec_M_inst:resetn, stream_source_dpi_bfm_matvec_Out0_inst:resetn, stream_source_dpi_bfm_matvec_V_inst:resetn]
 	wire         component_dpi_controller_matvec_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_matvec_inst:done_irq
 
 	clock_reset clock_reset_inst (
@@ -96,16 +88,14 @@ module tb (
 		.in_conduit    (component_dpi_controller_matvec_inst_dpi_control_bind_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_2 (matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
 	);
 
 	matvec_en_cfan matvec_component_dpi_controller_enable_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_matvec_inst_dpi_control_enable_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_2 (matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
 	);
 
 	matvec_ir_cfan matvec_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -116,34 +106,15 @@ module tb (
 	);
 
 	matvec matvec_inst (
-		.clock                (clock_reset_inst_clock_clk),                                  //   input,   width = 1,     clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                                //   input,   width = 1,     reset.reset_n
-		.start                (component_dpi_controller_matvec_inst_component_call_valid),   //   input,   width = 1,      call.valid
-		.busy                 (matvec_inst_call_stall),                                      //  output,   width = 1,          .stall
-		.done                 (matvec_inst_return_valid),                                    //  output,   width = 1,    return.valid
-		.stall                (component_dpi_controller_matvec_inst_component_return_stall), //   input,   width = 1,          .stall
-		.M                    (stream_source_dpi_bfm_matvec_m_inst_source_data_data),        //   input,  width = 64,         M.data
-		.V                    (stream_source_dpi_bfm_matvec_v_inst_source_data_data),        //   input,  width = 64,         V.data
-		.Out0                 (stream_source_dpi_bfm_matvec_out0_inst_source_data_data),     //   input,  width = 64,      Out0.data
-		.avmm_0_rw_address    (matvec_inst_avmm_0_rw_address),                               //  output,  width = 64, avmm_0_rw.address
-		.avmm_0_rw_byteenable (matvec_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,          .byteenable
-		.avmm_0_rw_read       (matvec_inst_avmm_0_rw_read),                                  //  output,   width = 1,          .read
-		.avmm_0_rw_readdata   (matvec_inst_avmm_0_rw_readdata),                              //   input,  width = 64,          .readdata
-		.avmm_0_rw_write      (matvec_inst_avmm_0_rw_write),                                 //  output,   width = 1,          .write
-		.avmm_0_rw_writedata  (matvec_inst_avmm_0_rw_writedata)                              //  output,  width = 64,          .writedata
-	);
-
-	mm_agent_matvec_avmm_0_rw mm_agent_dpi_bfm_matvec_avmm_0_rw_inst (
-		.do_bind        (matvec_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (matvec_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                       //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                     //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (matvec_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (matvec_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (matvec_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (matvec_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (matvec_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (matvec_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
+		.clock  (clock_reset_inst_clock_clk),                                  //   input,   width = 1,  clock.clk
+		.resetn (clock_reset_inst_reset_reset),                                //   input,   width = 1,  reset.reset_n
+		.start  (component_dpi_controller_matvec_inst_component_call_valid),   //   input,   width = 1,   call.valid
+		.busy   (matvec_inst_call_stall),                                      //  output,   width = 1,       .stall
+		.done   (matvec_inst_return_valid),                                    //  output,   width = 1, return.valid
+		.stall  (component_dpi_controller_matvec_inst_component_return_stall), //   input,   width = 1,       .stall
+		.M      (stream_source_dpi_bfm_matvec_m_inst_source_data_data),        //   input,  width = 64,      M.data
+		.V      (stream_source_dpi_bfm_matvec_v_inst_source_data_data),        //   input,  width = 64,      V.data
+		.Out0   (stream_source_dpi_bfm_matvec_out0_inst_source_data_data)      //   input,  width = 64,   Out0.data
 	);
 
 	sp_cstart split_component_start_inst (

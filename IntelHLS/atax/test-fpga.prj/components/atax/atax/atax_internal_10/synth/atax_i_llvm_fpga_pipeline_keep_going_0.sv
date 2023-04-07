@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pipeline_keep_going_atax0
 // Created for function/kernel atax
-// SystemVerilog created on Wed Apr  5 13:55:59 2023
+// SystemVerilog created on Fri Apr  7 18:08:55 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -41,9 +41,6 @@ module atax_i_llvm_fpga_pipeline_keep_going_0 (
     input wire resetn
     );
 
-    wire [0:0] i_llvm_fpga_pipeline_keep_going_atax0_reg_out_data_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going_atax0_reg_out_stall_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going_atax0_reg_out_valid_out;
     wire [0:0] i_llvm_fpga_pipeline_keep_going_atax1_data_in;
     wire i_llvm_fpga_pipeline_keep_going_atax1_data_in_bitsignaltemp;
     wire [0:0] i_llvm_fpga_pipeline_keep_going_atax1_initeration_in;
@@ -80,7 +77,7 @@ module atax_i_llvm_fpga_pipeline_keep_going_0 (
     wire passthru_buffer_out_bitsignaltemp;
 
 
-    // passthru(EXTIFACE,4)
+    // passthru(EXTIFACE,3)@20000000
     assign passthru_buffer_in = in_pipeline_stall_in;
     assign passthru_buffer_in_bitsignaltemp = passthru_buffer_in[0];
     assign passthru_buffer_out[0] = passthru_buffer_out_bitsignaltemp;
@@ -91,31 +88,17 @@ module atax_i_llvm_fpga_pipeline_keep_going_0 (
         .buffer_out(passthru_buffer_out_bitsignaltemp)
     );
 
-    // regfree_osync(GPOUT,5)
+    // regfree_osync(GPOUT,4)
     assign out_exiting_stall_out = passthru_buffer_out;
 
-    // i_llvm_fpga_pipeline_keep_going_atax0_reg(BLACKBOX,2)@20000000
-    // out out_data_out@20000001
-    // out out_valid_out@20000001
-    atax_i_llvm_fpga_pipeline_keep_going_0_reg thei_llvm_fpga_pipeline_keep_going_atax0_reg (
-        .in_data_in(i_llvm_fpga_pipeline_keep_going_atax1_data_out),
-        .in_stall_in(in_stall_in),
-        .in_valid_in(i_llvm_fpga_pipeline_keep_going_atax1_valid_out),
-        .out_data_out(i_llvm_fpga_pipeline_keep_going_atax0_reg_out_data_out),
-        .out_stall_out(i_llvm_fpga_pipeline_keep_going_atax0_reg_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pipeline_keep_going_atax0_reg_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_pipeline_keep_going_atax1(EXTIFACE,3)
+    // i_llvm_fpga_pipeline_keep_going_atax1(EXTIFACE,2)@1
     assign i_llvm_fpga_pipeline_keep_going_atax1_data_in = in_data_in;
     assign i_llvm_fpga_pipeline_keep_going_atax1_initeration_in = in_initeration_in;
     assign i_llvm_fpga_pipeline_keep_going_atax1_initeration_valid_in = in_initeration_valid_in;
     assign i_llvm_fpga_pipeline_keep_going_atax1_not_exitcond_in = in_not_exitcond_in;
     assign i_llvm_fpga_pipeline_keep_going_atax1_not_exitcond_valid_in = in_not_exitcond_valid_in;
     assign i_llvm_fpga_pipeline_keep_going_atax1_pipeline_stall_in = in_pipeline_stall_in;
-    assign i_llvm_fpga_pipeline_keep_going_atax1_stall_in = i_llvm_fpga_pipeline_keep_going_atax0_reg_out_stall_out;
+    assign i_llvm_fpga_pipeline_keep_going_atax1_stall_in = in_stall_in;
     assign i_llvm_fpga_pipeline_keep_going_atax1_valid_in = in_valid_in;
     assign i_llvm_fpga_pipeline_keep_going_atax1_data_in_bitsignaltemp = i_llvm_fpga_pipeline_keep_going_atax1_data_in[0];
     assign i_llvm_fpga_pipeline_keep_going_atax1_initeration_in_bitsignaltemp = i_llvm_fpga_pipeline_keep_going_atax1_initeration_in[0];
@@ -133,7 +116,7 @@ module atax_i_llvm_fpga_pipeline_keep_going_0 (
     assign i_llvm_fpga_pipeline_keep_going_atax1_stall_out[0] = i_llvm_fpga_pipeline_keep_going_atax1_stall_out_bitsignaltemp;
     assign i_llvm_fpga_pipeline_keep_going_atax1_valid_out[0] = i_llvm_fpga_pipeline_keep_going_atax1_valid_out_bitsignaltemp;
     acl_pipeline #(
-        .FIFO_DEPTH(2),
+        .FIFO_DEPTH(1),
         .ASYNC_RESET(1),
         .ENABLED(0),
         .STYLE("SPECULATIVE"),
@@ -158,19 +141,19 @@ module atax_i_llvm_fpga_pipeline_keep_going_0 (
         .resetn(resetn)
     );
 
-    // sync_out(GPOUT,7)@20000000
+    // sync_out(GPOUT,6)@1
     assign out_stall_out = i_llvm_fpga_pipeline_keep_going_atax1_stall_out;
 
-    // unsched_sync_out(GPOUT,10)
+    // unsched_sync_out(GPOUT,9)
     assign out_initeration_stall_out = i_llvm_fpga_pipeline_keep_going_atax1_initeration_stall_out;
     assign out_not_exitcond_stall_out = i_llvm_fpga_pipeline_keep_going_atax1_not_exitcond_stall_out;
     assign out_pipeline_valid_out = i_llvm_fpga_pipeline_keep_going_atax1_pipeline_valid_out;
 
-    // dupName_0_regfree_osync_x(GPOUT,11)
+    // dupName_0_regfree_osync_x(GPOUT,10)
     assign out_exiting_valid_out = i_llvm_fpga_pipeline_keep_going_atax1_exiting_valid_out;
 
-    // dupName_0_sync_out_x(GPOUT,12)@64
-    assign out_data_out = i_llvm_fpga_pipeline_keep_going_atax0_reg_out_data_out;
-    assign out_valid_out = i_llvm_fpga_pipeline_keep_going_atax0_reg_out_valid_out;
+    // dupName_0_sync_out_x(GPOUT,11)@1
+    assign out_data_out = i_llvm_fpga_pipeline_keep_going_atax1_data_out;
+    assign out_valid_out = i_llvm_fpga_pipeline_keep_going_atax1_valid_out;
 
 endmodule

@@ -12,6 +12,7 @@ component void covariance(int data[N][N], int cov[N][N])
     hls_memory hls_singlepump int data_local[N][N];
     hls_memory hls_singlepump int cov_local[N][N];
 
+    /*
     INIT:for(int i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
@@ -19,7 +20,7 @@ component void covariance(int data[N][N], int cov[N][N])
             data_local[i][j] = data[i][j];
             cov_local[i][j] = cov[i][j];
         }
-    }
+    }*/
 
    WORK_1:for (int j = 0; j < N; j++) {
     int m = 0;
@@ -47,14 +48,14 @@ component void covariance(int data[N][N], int cov[N][N])
       cov_local[i][j] = c;
     }
   }
-
+    /*
     OUT:for(i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
         {
             cov[i][j] = cov_local[i][j];
         }
-    }
+    }*/
 }
 
 int main(void){

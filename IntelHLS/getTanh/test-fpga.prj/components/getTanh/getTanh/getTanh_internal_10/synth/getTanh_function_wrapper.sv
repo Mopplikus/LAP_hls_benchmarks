@@ -16,23 +16,11 @@
 
 // SystemVerilog created from getTanh_function_wrapper
 // Created for function/kernel getTanh
-// SystemVerilog created on Tue Apr  4 23:44:29 2023
+// SystemVerilog created on Fri Apr  7 17:19:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module getTanh_function_wrapper (
-    input wire [31:0] avm_memdep_1_getTanh_readdata,
-    input wire [0:0] avm_memdep_1_getTanh_readdatavalid,
-    input wire [0:0] avm_memdep_1_getTanh_waitrequest,
-    input wire [0:0] avm_memdep_1_getTanh_writeack,
-    input wire [31:0] avm_memdep_2_getTanh_readdata,
-    input wire [0:0] avm_memdep_2_getTanh_readdatavalid,
-    input wire [0:0] avm_memdep_2_getTanh_waitrequest,
-    input wire [0:0] avm_memdep_2_getTanh_writeack,
-    input wire [31:0] avm_memdep_3_getTanh_readdata,
-    input wire [0:0] avm_memdep_3_getTanh_readdatavalid,
-    input wire [0:0] avm_memdep_3_getTanh_waitrequest,
-    input wire [0:0] avm_memdep_3_getTanh_writeack,
     input wire [31:0] avm_memdep_getTanh_readdata,
     input wire [0:0] avm_memdep_getTanh_readdatavalid,
     input wire [0:0] avm_memdep_getTanh_waitrequest,
@@ -53,27 +41,6 @@ module getTanh_function_wrapper (
     input wire [0:0] stall_in,
     input wire [0:0] start,
     input wire [0:0] valid_in,
-    output wire [31:0] avm_memdep_1_getTanh_address,
-    output wire [0:0] avm_memdep_1_getTanh_burstcount,
-    output wire [3:0] avm_memdep_1_getTanh_byteenable,
-    output wire [0:0] avm_memdep_1_getTanh_enable,
-    output wire [0:0] avm_memdep_1_getTanh_read,
-    output wire [0:0] avm_memdep_1_getTanh_write,
-    output wire [31:0] avm_memdep_1_getTanh_writedata,
-    output wire [31:0] avm_memdep_2_getTanh_address,
-    output wire [0:0] avm_memdep_2_getTanh_burstcount,
-    output wire [3:0] avm_memdep_2_getTanh_byteenable,
-    output wire [0:0] avm_memdep_2_getTanh_enable,
-    output wire [0:0] avm_memdep_2_getTanh_read,
-    output wire [0:0] avm_memdep_2_getTanh_write,
-    output wire [31:0] avm_memdep_2_getTanh_writedata,
-    output wire [31:0] avm_memdep_3_getTanh_address,
-    output wire [0:0] avm_memdep_3_getTanh_burstcount,
-    output wire [3:0] avm_memdep_3_getTanh_byteenable,
-    output wire [0:0] avm_memdep_3_getTanh_enable,
-    output wire [0:0] avm_memdep_3_getTanh_read,
-    output wire [0:0] avm_memdep_3_getTanh_write,
-    output wire [31:0] avm_memdep_3_getTanh_writedata,
     output wire [31:0] avm_memdep_getTanh_address,
     output wire [0:0] avm_memdep_getTanh_burstcount,
     output wire [3:0] avm_memdep_getTanh_byteenable,
@@ -115,27 +82,6 @@ module getTanh_function_wrapper (
     wire [0:0] getTanh_function_out_iord_bl_call_getTanh_o_fifoready;
     wire [31:0] getTanh_function_out_iowr_bl_return_getTanh_o_fifodata;
     wire [0:0] getTanh_function_out_iowr_bl_return_getTanh_o_fifovalid;
-    wire [31:0] getTanh_function_out_memdep_1_getTanh_avm_address;
-    wire [0:0] getTanh_function_out_memdep_1_getTanh_avm_burstcount;
-    wire [3:0] getTanh_function_out_memdep_1_getTanh_avm_byteenable;
-    wire [0:0] getTanh_function_out_memdep_1_getTanh_avm_enable;
-    wire [0:0] getTanh_function_out_memdep_1_getTanh_avm_read;
-    wire [0:0] getTanh_function_out_memdep_1_getTanh_avm_write;
-    wire [31:0] getTanh_function_out_memdep_1_getTanh_avm_writedata;
-    wire [31:0] getTanh_function_out_memdep_2_getTanh_avm_address;
-    wire [0:0] getTanh_function_out_memdep_2_getTanh_avm_burstcount;
-    wire [3:0] getTanh_function_out_memdep_2_getTanh_avm_byteenable;
-    wire [0:0] getTanh_function_out_memdep_2_getTanh_avm_enable;
-    wire [0:0] getTanh_function_out_memdep_2_getTanh_avm_read;
-    wire [0:0] getTanh_function_out_memdep_2_getTanh_avm_write;
-    wire [31:0] getTanh_function_out_memdep_2_getTanh_avm_writedata;
-    wire [31:0] getTanh_function_out_memdep_3_getTanh_avm_address;
-    wire [0:0] getTanh_function_out_memdep_3_getTanh_avm_burstcount;
-    wire [3:0] getTanh_function_out_memdep_3_getTanh_avm_byteenable;
-    wire [0:0] getTanh_function_out_memdep_3_getTanh_avm_enable;
-    wire [0:0] getTanh_function_out_memdep_3_getTanh_avm_read;
-    wire [0:0] getTanh_function_out_memdep_3_getTanh_avm_write;
-    wire [31:0] getTanh_function_out_memdep_3_getTanh_avm_writedata;
     wire [31:0] getTanh_function_out_memdep_getTanh_avm_address;
     wire [0:0] getTanh_function_out_memdep_getTanh_avm_burstcount;
     wire [3:0] getTanh_function_out_memdep_getTanh_avm_byteenable;
@@ -170,7 +116,7 @@ module getTanh_function_wrapper (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // not_stall(LOGICAL,41)
+    // not_stall(LOGICAL,29)
     assign not_stall_q = ~ (stall);
 
     // call_const(CONSTANT,4)
@@ -183,18 +129,6 @@ module getTanh_function_wrapper (
         .in_iord_bl_call_getTanh_i_fifodata(avst_iord_bl_call_getTanh_data),
         .in_iord_bl_call_getTanh_i_fifovalid(start),
         .in_iowr_bl_return_getTanh_i_fifoready(not_stall_q),
-        .in_memdep_1_getTanh_avm_readdata(avm_memdep_1_getTanh_readdata),
-        .in_memdep_1_getTanh_avm_readdatavalid(avm_memdep_1_getTanh_readdatavalid),
-        .in_memdep_1_getTanh_avm_waitrequest(avm_memdep_1_getTanh_waitrequest),
-        .in_memdep_1_getTanh_avm_writeack(avm_memdep_1_getTanh_writeack),
-        .in_memdep_2_getTanh_avm_readdata(avm_memdep_2_getTanh_readdata),
-        .in_memdep_2_getTanh_avm_readdatavalid(avm_memdep_2_getTanh_readdatavalid),
-        .in_memdep_2_getTanh_avm_waitrequest(avm_memdep_2_getTanh_waitrequest),
-        .in_memdep_2_getTanh_avm_writeack(avm_memdep_2_getTanh_writeack),
-        .in_memdep_3_getTanh_avm_readdata(avm_memdep_3_getTanh_readdata),
-        .in_memdep_3_getTanh_avm_readdatavalid(avm_memdep_3_getTanh_readdatavalid),
-        .in_memdep_3_getTanh_avm_waitrequest(avm_memdep_3_getTanh_waitrequest),
-        .in_memdep_3_getTanh_avm_writeack(avm_memdep_3_getTanh_writeack),
         .in_memdep_getTanh_avm_readdata(avm_memdep_getTanh_readdata),
         .in_memdep_getTanh_avm_readdatavalid(avm_memdep_getTanh_readdatavalid),
         .in_memdep_getTanh_avm_waitrequest(avm_memdep_getTanh_waitrequest),
@@ -214,27 +148,6 @@ module getTanh_function_wrapper (
         .out_iord_bl_call_getTanh_o_fifoready(getTanh_function_out_iord_bl_call_getTanh_o_fifoready),
         .out_iowr_bl_return_getTanh_o_fifodata(getTanh_function_out_iowr_bl_return_getTanh_o_fifodata),
         .out_iowr_bl_return_getTanh_o_fifovalid(getTanh_function_out_iowr_bl_return_getTanh_o_fifovalid),
-        .out_memdep_1_getTanh_avm_address(getTanh_function_out_memdep_1_getTanh_avm_address),
-        .out_memdep_1_getTanh_avm_burstcount(getTanh_function_out_memdep_1_getTanh_avm_burstcount),
-        .out_memdep_1_getTanh_avm_byteenable(getTanh_function_out_memdep_1_getTanh_avm_byteenable),
-        .out_memdep_1_getTanh_avm_enable(getTanh_function_out_memdep_1_getTanh_avm_enable),
-        .out_memdep_1_getTanh_avm_read(getTanh_function_out_memdep_1_getTanh_avm_read),
-        .out_memdep_1_getTanh_avm_write(getTanh_function_out_memdep_1_getTanh_avm_write),
-        .out_memdep_1_getTanh_avm_writedata(getTanh_function_out_memdep_1_getTanh_avm_writedata),
-        .out_memdep_2_getTanh_avm_address(getTanh_function_out_memdep_2_getTanh_avm_address),
-        .out_memdep_2_getTanh_avm_burstcount(getTanh_function_out_memdep_2_getTanh_avm_burstcount),
-        .out_memdep_2_getTanh_avm_byteenable(getTanh_function_out_memdep_2_getTanh_avm_byteenable),
-        .out_memdep_2_getTanh_avm_enable(getTanh_function_out_memdep_2_getTanh_avm_enable),
-        .out_memdep_2_getTanh_avm_read(getTanh_function_out_memdep_2_getTanh_avm_read),
-        .out_memdep_2_getTanh_avm_write(getTanh_function_out_memdep_2_getTanh_avm_write),
-        .out_memdep_2_getTanh_avm_writedata(getTanh_function_out_memdep_2_getTanh_avm_writedata),
-        .out_memdep_3_getTanh_avm_address(getTanh_function_out_memdep_3_getTanh_avm_address),
-        .out_memdep_3_getTanh_avm_burstcount(getTanh_function_out_memdep_3_getTanh_avm_burstcount),
-        .out_memdep_3_getTanh_avm_byteenable(getTanh_function_out_memdep_3_getTanh_avm_byteenable),
-        .out_memdep_3_getTanh_avm_enable(getTanh_function_out_memdep_3_getTanh_avm_enable),
-        .out_memdep_3_getTanh_avm_read(getTanh_function_out_memdep_3_getTanh_avm_read),
-        .out_memdep_3_getTanh_avm_write(getTanh_function_out_memdep_3_getTanh_avm_write),
-        .out_memdep_3_getTanh_avm_writedata(getTanh_function_out_memdep_3_getTanh_avm_writedata),
         .out_memdep_getTanh_avm_address(getTanh_function_out_memdep_getTanh_avm_address),
         .out_memdep_getTanh_avm_burstcount(getTanh_function_out_memdep_getTanh_avm_burstcount),
         .out_memdep_getTanh_avm_byteenable(getTanh_function_out_memdep_getTanh_avm_byteenable),
@@ -262,151 +175,88 @@ module getTanh_function_wrapper (
         .resetn(resetn)
     );
 
-    // avm_memdep_1_getTanh_address(GPOUT,42)
-    assign avm_memdep_1_getTanh_address = getTanh_function_out_memdep_1_getTanh_avm_address;
-
-    // avm_memdep_1_getTanh_burstcount(GPOUT,43)
-    assign avm_memdep_1_getTanh_burstcount = getTanh_function_out_memdep_1_getTanh_avm_burstcount;
-
-    // avm_memdep_1_getTanh_byteenable(GPOUT,44)
-    assign avm_memdep_1_getTanh_byteenable = getTanh_function_out_memdep_1_getTanh_avm_byteenable;
-
-    // avm_memdep_1_getTanh_enable(GPOUT,45)
-    assign avm_memdep_1_getTanh_enable = getTanh_function_out_memdep_1_getTanh_avm_enable;
-
-    // avm_memdep_1_getTanh_read(GPOUT,46)
-    assign avm_memdep_1_getTanh_read = getTanh_function_out_memdep_1_getTanh_avm_read;
-
-    // avm_memdep_1_getTanh_write(GPOUT,47)
-    assign avm_memdep_1_getTanh_write = getTanh_function_out_memdep_1_getTanh_avm_write;
-
-    // avm_memdep_1_getTanh_writedata(GPOUT,48)
-    assign avm_memdep_1_getTanh_writedata = getTanh_function_out_memdep_1_getTanh_avm_writedata;
-
-    // avm_memdep_2_getTanh_address(GPOUT,49)
-    assign avm_memdep_2_getTanh_address = getTanh_function_out_memdep_2_getTanh_avm_address;
-
-    // avm_memdep_2_getTanh_burstcount(GPOUT,50)
-    assign avm_memdep_2_getTanh_burstcount = getTanh_function_out_memdep_2_getTanh_avm_burstcount;
-
-    // avm_memdep_2_getTanh_byteenable(GPOUT,51)
-    assign avm_memdep_2_getTanh_byteenable = getTanh_function_out_memdep_2_getTanh_avm_byteenable;
-
-    // avm_memdep_2_getTanh_enable(GPOUT,52)
-    assign avm_memdep_2_getTanh_enable = getTanh_function_out_memdep_2_getTanh_avm_enable;
-
-    // avm_memdep_2_getTanh_read(GPOUT,53)
-    assign avm_memdep_2_getTanh_read = getTanh_function_out_memdep_2_getTanh_avm_read;
-
-    // avm_memdep_2_getTanh_write(GPOUT,54)
-    assign avm_memdep_2_getTanh_write = getTanh_function_out_memdep_2_getTanh_avm_write;
-
-    // avm_memdep_2_getTanh_writedata(GPOUT,55)
-    assign avm_memdep_2_getTanh_writedata = getTanh_function_out_memdep_2_getTanh_avm_writedata;
-
-    // avm_memdep_3_getTanh_address(GPOUT,56)
-    assign avm_memdep_3_getTanh_address = getTanh_function_out_memdep_3_getTanh_avm_address;
-
-    // avm_memdep_3_getTanh_burstcount(GPOUT,57)
-    assign avm_memdep_3_getTanh_burstcount = getTanh_function_out_memdep_3_getTanh_avm_burstcount;
-
-    // avm_memdep_3_getTanh_byteenable(GPOUT,58)
-    assign avm_memdep_3_getTanh_byteenable = getTanh_function_out_memdep_3_getTanh_avm_byteenable;
-
-    // avm_memdep_3_getTanh_enable(GPOUT,59)
-    assign avm_memdep_3_getTanh_enable = getTanh_function_out_memdep_3_getTanh_avm_enable;
-
-    // avm_memdep_3_getTanh_read(GPOUT,60)
-    assign avm_memdep_3_getTanh_read = getTanh_function_out_memdep_3_getTanh_avm_read;
-
-    // avm_memdep_3_getTanh_write(GPOUT,61)
-    assign avm_memdep_3_getTanh_write = getTanh_function_out_memdep_3_getTanh_avm_write;
-
-    // avm_memdep_3_getTanh_writedata(GPOUT,62)
-    assign avm_memdep_3_getTanh_writedata = getTanh_function_out_memdep_3_getTanh_avm_writedata;
-
-    // avm_memdep_getTanh_address(GPOUT,63)
+    // avm_memdep_getTanh_address(GPOUT,30)
     assign avm_memdep_getTanh_address = getTanh_function_out_memdep_getTanh_avm_address;
 
-    // avm_memdep_getTanh_burstcount(GPOUT,64)
+    // avm_memdep_getTanh_burstcount(GPOUT,31)
     assign avm_memdep_getTanh_burstcount = getTanh_function_out_memdep_getTanh_avm_burstcount;
 
-    // avm_memdep_getTanh_byteenable(GPOUT,65)
+    // avm_memdep_getTanh_byteenable(GPOUT,32)
     assign avm_memdep_getTanh_byteenable = getTanh_function_out_memdep_getTanh_avm_byteenable;
 
-    // avm_memdep_getTanh_enable(GPOUT,66)
+    // avm_memdep_getTanh_enable(GPOUT,33)
     assign avm_memdep_getTanh_enable = getTanh_function_out_memdep_getTanh_avm_enable;
 
-    // avm_memdep_getTanh_read(GPOUT,67)
+    // avm_memdep_getTanh_read(GPOUT,34)
     assign avm_memdep_getTanh_read = getTanh_function_out_memdep_getTanh_avm_read;
 
-    // avm_memdep_getTanh_write(GPOUT,68)
+    // avm_memdep_getTanh_write(GPOUT,35)
     assign avm_memdep_getTanh_write = getTanh_function_out_memdep_getTanh_avm_write;
 
-    // avm_memdep_getTanh_writedata(GPOUT,69)
+    // avm_memdep_getTanh_writedata(GPOUT,36)
     assign avm_memdep_getTanh_writedata = getTanh_function_out_memdep_getTanh_avm_writedata;
 
-    // avm_unnamed_getTanh4_getTanh_address(GPOUT,70)
+    // avm_unnamed_getTanh4_getTanh_address(GPOUT,37)
     assign avm_unnamed_getTanh4_getTanh_address = getTanh_function_out_unnamed_getTanh4_getTanh_avm_address;
 
-    // avm_unnamed_getTanh4_getTanh_burstcount(GPOUT,71)
+    // avm_unnamed_getTanh4_getTanh_burstcount(GPOUT,38)
     assign avm_unnamed_getTanh4_getTanh_burstcount = getTanh_function_out_unnamed_getTanh4_getTanh_avm_burstcount;
 
-    // avm_unnamed_getTanh4_getTanh_byteenable(GPOUT,72)
+    // avm_unnamed_getTanh4_getTanh_byteenable(GPOUT,39)
     assign avm_unnamed_getTanh4_getTanh_byteenable = getTanh_function_out_unnamed_getTanh4_getTanh_avm_byteenable;
 
-    // avm_unnamed_getTanh4_getTanh_enable(GPOUT,73)
+    // avm_unnamed_getTanh4_getTanh_enable(GPOUT,40)
     assign avm_unnamed_getTanh4_getTanh_enable = getTanh_function_out_unnamed_getTanh4_getTanh_avm_enable;
 
-    // avm_unnamed_getTanh4_getTanh_read(GPOUT,74)
+    // avm_unnamed_getTanh4_getTanh_read(GPOUT,41)
     assign avm_unnamed_getTanh4_getTanh_read = getTanh_function_out_unnamed_getTanh4_getTanh_avm_read;
 
-    // avm_unnamed_getTanh4_getTanh_write(GPOUT,75)
+    // avm_unnamed_getTanh4_getTanh_write(GPOUT,42)
     assign avm_unnamed_getTanh4_getTanh_write = getTanh_function_out_unnamed_getTanh4_getTanh_avm_write;
 
-    // avm_unnamed_getTanh4_getTanh_writedata(GPOUT,76)
+    // avm_unnamed_getTanh4_getTanh_writedata(GPOUT,43)
     assign avm_unnamed_getTanh4_getTanh_writedata = getTanh_function_out_unnamed_getTanh4_getTanh_avm_writedata;
 
-    // avm_unnamed_getTanh5_getTanh_address(GPOUT,77)
+    // avm_unnamed_getTanh5_getTanh_address(GPOUT,44)
     assign avm_unnamed_getTanh5_getTanh_address = getTanh_function_out_unnamed_getTanh5_getTanh_avm_address;
 
-    // avm_unnamed_getTanh5_getTanh_burstcount(GPOUT,78)
+    // avm_unnamed_getTanh5_getTanh_burstcount(GPOUT,45)
     assign avm_unnamed_getTanh5_getTanh_burstcount = getTanh_function_out_unnamed_getTanh5_getTanh_avm_burstcount;
 
-    // avm_unnamed_getTanh5_getTanh_byteenable(GPOUT,79)
+    // avm_unnamed_getTanh5_getTanh_byteenable(GPOUT,46)
     assign avm_unnamed_getTanh5_getTanh_byteenable = getTanh_function_out_unnamed_getTanh5_getTanh_avm_byteenable;
 
-    // avm_unnamed_getTanh5_getTanh_enable(GPOUT,80)
+    // avm_unnamed_getTanh5_getTanh_enable(GPOUT,47)
     assign avm_unnamed_getTanh5_getTanh_enable = getTanh_function_out_unnamed_getTanh5_getTanh_avm_enable;
 
-    // avm_unnamed_getTanh5_getTanh_read(GPOUT,81)
+    // avm_unnamed_getTanh5_getTanh_read(GPOUT,48)
     assign avm_unnamed_getTanh5_getTanh_read = getTanh_function_out_unnamed_getTanh5_getTanh_avm_read;
 
-    // avm_unnamed_getTanh5_getTanh_write(GPOUT,82)
+    // avm_unnamed_getTanh5_getTanh_write(GPOUT,49)
     assign avm_unnamed_getTanh5_getTanh_write = getTanh_function_out_unnamed_getTanh5_getTanh_avm_write;
 
-    // avm_unnamed_getTanh5_getTanh_writedata(GPOUT,83)
+    // avm_unnamed_getTanh5_getTanh_writedata(GPOUT,50)
     assign avm_unnamed_getTanh5_getTanh_writedata = getTanh_function_out_unnamed_getTanh5_getTanh_avm_writedata;
 
-    // avst_iord_bl_call_getTanh_almost_full(GPOUT,84)
+    // avst_iord_bl_call_getTanh_almost_full(GPOUT,51)
     assign avst_iord_bl_call_getTanh_almost_full = getTanh_function_out_iord_bl_call_getTanh_o_fifoalmost_full;
 
-    // avst_iord_bl_call_getTanh_ready(GPOUT,85)
+    // avst_iord_bl_call_getTanh_ready(GPOUT,52)
     assign avst_iord_bl_call_getTanh_ready = getTanh_function_out_iord_bl_call_getTanh_o_fifoready;
 
-    // avst_iowr_bl_return_getTanh_data(GPOUT,86)
+    // avst_iowr_bl_return_getTanh_data(GPOUT,53)
     assign avst_iowr_bl_return_getTanh_data = getTanh_function_out_iowr_bl_return_getTanh_o_fifodata;
 
-    // avst_iowr_bl_return_getTanh_valid(GPOUT,87)
+    // avst_iowr_bl_return_getTanh_valid(GPOUT,54)
     assign avst_iowr_bl_return_getTanh_valid = getTanh_function_out_iowr_bl_return_getTanh_o_fifovalid;
 
-    // not_ready(LOGICAL,40)
+    // not_ready(LOGICAL,28)
     assign not_ready_q = ~ (getTanh_function_out_iord_bl_call_getTanh_o_fifoready);
 
     // busy_and(LOGICAL,2)
     assign busy_and_q = not_ready_q & start;
 
-    // reset_wire_inst(EXTIFACE,92)
+    // reset_wire_inst(EXTIFACE,59)
     assign reset_wire_inst_o_resetn[0] = reset_wire_inst_o_resetn_bitsignaltemp;
     acl_reset_wire thereset_wire_inst (
         .o_resetn(reset_wire_inst_o_resetn_bitsignaltemp),
@@ -414,19 +264,19 @@ module getTanh_function_wrapper (
         .resetn(resetn)
     );
 
-    // pos_reset(LOGICAL,91)
+    // pos_reset(LOGICAL,58)
     assign pos_reset_q = ~ (reset_wire_inst_o_resetn);
 
     // busy_or(LOGICAL,3)
     assign busy_or_q = pos_reset_q | busy_and_q;
 
-    // busy(GPOUT,88)
+    // busy(GPOUT,55)
     assign busy = busy_or_q;
 
-    // done(GPOUT,89)
+    // done(GPOUT,56)
     assign done = getTanh_function_out_iowr_bl_return_getTanh_o_fifovalid;
 
-    // returndata(GPOUT,90)
+    // returndata(GPOUT,57)
     assign returndata = getTanh_function_out_iowr_bl_return_getTanh_o_fifodata;
 
 endmodule

@@ -16,38 +16,37 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_memdep_covariance0
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:06 2023
+// SystemVerilog created on Fri Apr  7 17:50:02 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module covariance_i_llvm_fpga_mem_memdep_0 (
-    input wire [0:0] in_flush,
     input wire [31:0] in_memdep_covariance_avm_readdata,
-    input wire [0:0] in_memdep_covariance_avm_readdatavalid,
-    input wire [0:0] in_memdep_covariance_avm_waitrequest,
     input wire [0:0] in_memdep_covariance_avm_writeack,
+    input wire [0:0] in_memdep_covariance_avm_waitrequest,
+    input wire [0:0] in_memdep_covariance_avm_readdatavalid,
     output wire [31:0] out_memdep_covariance_avm_address,
-    input wire [0:0] in_i_stall,
-    output wire [0:0] out_o_stall,
-    input wire [63:0] in_i_address,
-    input wire [0:0] in_i_predicate,
-    input wire [0:0] in_i_valid,
-    input wire [31:0] in_i_writedata,
-    output wire [0:0] out_memdep_covariance_avm_burstcount,
-    output wire [0:0] out_o_valid,
-    output wire [0:0] out_o_writeack,
-    output wire [3:0] out_memdep_covariance_avm_byteenable,
     output wire [0:0] out_memdep_covariance_avm_enable,
     output wire [0:0] out_memdep_covariance_avm_read,
     output wire [0:0] out_memdep_covariance_avm_write,
     output wire [31:0] out_memdep_covariance_avm_writedata,
+    output wire [3:0] out_memdep_covariance_avm_byteenable,
+    output wire [0:0] out_memdep_covariance_avm_burstcount,
+    input wire [0:0] in_flush,
+    input wire [0:0] in_i_stall,
+    output wire [0:0] out_o_stall,
+    input wire [63:0] in_i_address,
+    input wire [0:0] in_i_dependence,
+    input wire [0:0] in_i_predicate,
+    input wire [0:0] in_i_valid,
+    input wire [31:0] in_i_writedata,
+    output wire [0:0] out_o_valid,
+    output wire [0:0] out_o_writeack,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
-    wire [31:0] addr_trunc_in;
-    wire [31:0] addr_trunc_q;
     wire [31:0] c_i32_02_q;
     wire [2:0] c_i3_07_q;
     wire [3:0] c_i4_13_q;
@@ -99,6 +98,7 @@ module covariance_i_llvm_fpga_mem_memdep_0 (
     wire i_llvm_fpga_mem_memdep_covariance1_o_writeack_bitsignaltemp;
     wire [31:0] i_llvm_fpga_mem_memdep_covariance1_profile_avm_burstcount_total_incr;
     wire [31:0] i_llvm_fpga_mem_memdep_covariance1_profile_bw_incr;
+    wire [31:0] addr_trunc_sel_x_b;
 
 
     // c_i4_13(CONSTANT,9)
@@ -110,21 +110,20 @@ module covariance_i_llvm_fpga_mem_memdep_0 (
     // c_i3_07(CONSTANT,8)
     assign c_i3_07_q = $unsigned(3'b000);
 
-    // addr_trunc(ROUND,2)
-    assign addr_trunc_in = in_i_address[31:0];
-    assign addr_trunc_q = addr_trunc_in[31:0];
+    // addr_trunc_sel_x(BITSELECT,17)@6
+    assign addr_trunc_sel_x_b = in_i_address[31:0];
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_memdep_covariance1(EXTIFACE,10)
+    // i_llvm_fpga_mem_memdep_covariance1(EXTIFACE,12)@6 + 1
     assign i_llvm_fpga_mem_memdep_covariance1_avm_readdata = in_memdep_covariance_avm_readdata;
     assign i_llvm_fpga_mem_memdep_covariance1_avm_readdatavalid = in_memdep_covariance_avm_readdatavalid;
     assign i_llvm_fpga_mem_memdep_covariance1_avm_waitrequest = in_memdep_covariance_avm_waitrequest;
     assign i_llvm_fpga_mem_memdep_covariance1_avm_writeack = in_memdep_covariance_avm_writeack;
     assign i_llvm_fpga_mem_memdep_covariance1_clock2x = GND_q;
     assign i_llvm_fpga_mem_memdep_covariance1_flush = in_flush;
-    assign i_llvm_fpga_mem_memdep_covariance1_i_address = addr_trunc_q;
+    assign i_llvm_fpga_mem_memdep_covariance1_i_address = addr_trunc_sel_x_b;
     assign i_llvm_fpga_mem_memdep_covariance1_i_atomic_op = c_i3_07_q;
     assign i_llvm_fpga_mem_memdep_covariance1_i_bitwiseor = c_i32_02_q;
     assign i_llvm_fpga_mem_memdep_covariance1_i_byteenable = c_i4_13_q;
@@ -165,7 +164,7 @@ module covariance_i_llvm_fpga_mem_memdep_0 (
         .AWIDTH(32),
         .BURSTCOUNT_WIDTH(1),
         .ENABLE_BANKED_MEMORY(0),
-        .FORCE_NOP_SUPPORT(0),
+        .FORCE_NOP_SUPPORT(1),
         .HIGH_FMAX(1),
         .INPUTFIFO_USEDW_MAXBITS(5),
         .KERNEL_SIDE_MEM_LATENCY(1),
@@ -175,12 +174,12 @@ module covariance_i_llvm_fpga_mem_memdep_0 (
         .NUMBER_BANKS(1),
         .PROFILE_ADDR_TOGGLE(0),
         .READ(0),
-        .STALLFREE(0),
+        .STALLFREE(1),
         .STYLE("PIPELINED"),
         .SYNCHRONIZE_RESET(0),
         .USECACHING(0),
         .USEINPUTFIFO(0),
-        .USEOUTPUTFIFO(1),
+        .USEOUTPUTFIFO(0),
         .USE_BYTE_EN(0),
         .USE_STALL_LATENCY(0),
         .USE_WRITE_ACK(0),
@@ -194,7 +193,7 @@ module covariance_i_llvm_fpga_mem_memdep_0 (
         .avm_writeack(i_llvm_fpga_mem_memdep_covariance1_avm_writeack_bitsignaltemp),
         .clock2x(i_llvm_fpga_mem_memdep_covariance1_clock2x_bitsignaltemp),
         .flush(i_llvm_fpga_mem_memdep_covariance1_flush_bitsignaltemp),
-        .i_address(addr_trunc_q),
+        .i_address(addr_trunc_sel_x_b),
         .i_atomic_op(c_i3_07_q),
         .i_bitwiseor(c_i32_02_q),
         .i_byteenable(c_i4_13_q),
@@ -224,32 +223,20 @@ module covariance_i_llvm_fpga_mem_memdep_0 (
         .resetn(resetn)
     );
 
-    // regfree_osync(GPOUT,16)
+    // ext_sig_sync_out(GPOUT,11)
     assign out_memdep_covariance_avm_address = i_llvm_fpga_mem_memdep_covariance1_avm_address;
-
-    // sync_out(GPOUT,18)@20000000
-    assign out_o_stall = i_llvm_fpga_mem_memdep_covariance1_o_stall;
-
-    // dupName_0_regfree_osync_x(GPOUT,20)
+    assign out_memdep_covariance_avm_enable = i_llvm_fpga_mem_memdep_covariance1_avm_enable;
+    assign out_memdep_covariance_avm_read = i_llvm_fpga_mem_memdep_covariance1_avm_read;
+    assign out_memdep_covariance_avm_write = i_llvm_fpga_mem_memdep_covariance1_avm_write;
+    assign out_memdep_covariance_avm_writedata = i_llvm_fpga_mem_memdep_covariance1_avm_writedata;
+    assign out_memdep_covariance_avm_byteenable = i_llvm_fpga_mem_memdep_covariance1_avm_byteenable;
     assign out_memdep_covariance_avm_burstcount = i_llvm_fpga_mem_memdep_covariance1_avm_burstcount;
 
-    // dupName_0_sync_out_x(GPOUT,21)@36
+    // sync_out(GPOUT,15)@7
+    assign out_o_stall = i_llvm_fpga_mem_memdep_covariance1_o_stall;
+
+    // dupName_0_sync_out_x(GPOUT,18)@7
     assign out_o_valid = i_llvm_fpga_mem_memdep_covariance1_o_valid;
     assign out_o_writeack = i_llvm_fpga_mem_memdep_covariance1_o_writeack;
-
-    // dupName_1_regfree_osync_x(GPOUT,22)
-    assign out_memdep_covariance_avm_byteenable = i_llvm_fpga_mem_memdep_covariance1_avm_byteenable;
-
-    // dupName_2_regfree_osync_x(GPOUT,23)
-    assign out_memdep_covariance_avm_enable = i_llvm_fpga_mem_memdep_covariance1_avm_enable;
-
-    // dupName_3_regfree_osync_x(GPOUT,24)
-    assign out_memdep_covariance_avm_read = i_llvm_fpga_mem_memdep_covariance1_avm_read;
-
-    // dupName_4_regfree_osync_x(GPOUT,25)
-    assign out_memdep_covariance_avm_write = i_llvm_fpga_mem_memdep_covariance1_avm_write;
-
-    // dupName_5_regfree_osync_x(GPOUT,26)
-    assign out_memdep_covariance_avm_writedata = i_llvm_fpga_mem_memdep_covariance1_avm_writedata;
 
 endmodule

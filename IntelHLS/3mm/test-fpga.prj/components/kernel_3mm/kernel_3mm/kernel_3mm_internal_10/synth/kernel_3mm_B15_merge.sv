@@ -16,103 +16,39 @@
 
 // SystemVerilog created from kernel_3mm_B15_merge
 // Created for function/kernel kernel_3mm
-// SystemVerilog created on Wed Apr  5 01:38:03 2023
+// SystemVerilog created on Fri Apr  7 18:25:07 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module kernel_3mm_B15_merge (
-    input wire [0:0] in_forked160_0,
-    input wire [0:0] in_forked160_1,
-    input wire [31:0] in_i_394_pop31219_0,
-    input wire [31:0] in_i_394_pop31219_1,
-    input wire [0:0] in_notcmp75216_0,
-    input wire [0:0] in_notcmp75216_1,
+    input wire [0:0] in_c0_exe261236_0,
+    input wire [0:0] in_memdep_644_0,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
-    input wire [0:0] in_valid_in_1,
-    output wire [0:0] out_forked160,
-    output wire [31:0] out_i_394_pop31219,
-    output wire [0:0] out_notcmp75216,
+    output wire [0:0] out_c0_exe261236,
+    output wire [0:0] out_memdep_644,
     output wire [0:0] out_stall_out_0,
-    output wire [0:0] out_stall_out_1,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] VCC_q;
-    wire [0:0] forked160_mux_s;
-    reg [0:0] forked160_mux_q;
-    wire [0:0] i_394_pop31219_mux_s;
-    reg [31:0] i_394_pop31219_mux_q;
-    wire [0:0] notcmp75216_mux_s;
-    reg [0:0] notcmp75216_mux_q;
     wire [0:0] stall_out_q;
-    wire [0:0] stall_out_1_specific_q;
-    wire [0:0] valid_or_q;
 
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
+    // out_c0_exe261236(GPOUT,6)
+    assign out_c0_exe261236 = in_c0_exe261236_0;
 
-    // forked160_mux(MUX,2)
-    assign forked160_mux_s = in_valid_in_0;
-    always @(forked160_mux_s or in_forked160_1 or in_forked160_0)
-    begin
-        unique case (forked160_mux_s)
-            1'b0 : forked160_mux_q = in_forked160_1;
-            1'b1 : forked160_mux_q = in_forked160_0;
-            default : forked160_mux_q = 1'b0;
-        endcase
-    end
+    // out_memdep_644(GPOUT,7)
+    assign out_memdep_644 = in_memdep_644_0;
 
-    // out_forked160(GPOUT,14)
-    assign out_forked160 = forked160_mux_q;
+    // stall_out(LOGICAL,10)
+    assign stall_out_q = in_valid_in_0 & in_stall_in;
 
-    // i_394_pop31219_mux(MUX,3)
-    assign i_394_pop31219_mux_s = in_valid_in_0;
-    always @(i_394_pop31219_mux_s or in_i_394_pop31219_1 or in_i_394_pop31219_0)
-    begin
-        unique case (i_394_pop31219_mux_s)
-            1'b0 : i_394_pop31219_mux_q = in_i_394_pop31219_1;
-            1'b1 : i_394_pop31219_mux_q = in_i_394_pop31219_0;
-            default : i_394_pop31219_mux_q = 32'b0;
-        endcase
-    end
-
-    // out_i_394_pop31219(GPOUT,15)
-    assign out_i_394_pop31219 = i_394_pop31219_mux_q;
-
-    // notcmp75216_mux(MUX,13)
-    assign notcmp75216_mux_s = in_valid_in_0;
-    always @(notcmp75216_mux_s or in_notcmp75216_1 or in_notcmp75216_0)
-    begin
-        unique case (notcmp75216_mux_s)
-            1'b0 : notcmp75216_mux_q = in_notcmp75216_1;
-            1'b1 : notcmp75216_mux_q = in_notcmp75216_0;
-            default : notcmp75216_mux_q = 1'b0;
-        endcase
-    end
-
-    // out_notcmp75216(GPOUT,16)
-    assign out_notcmp75216 = notcmp75216_mux_q;
-
-    // valid_or(LOGICAL,22)
-    assign valid_or_q = in_valid_in_0 | in_valid_in_1;
-
-    // stall_out(LOGICAL,20)
-    assign stall_out_q = valid_or_q & in_stall_in;
-
-    // out_stall_out_0(GPOUT,17)
+    // out_stall_out_0(GPOUT,8)
     assign out_stall_out_0 = stall_out_q;
 
-    // stall_out_1_specific(LOGICAL,21)
-    assign stall_out_1_specific_q = in_valid_in_0 | stall_out_q;
-
-    // out_stall_out_1(GPOUT,18)
-    assign out_stall_out_1 = stall_out_1_specific_q;
-
-    // out_valid_out(GPOUT,19)
-    assign out_valid_out = valid_or_q;
+    // out_valid_out(GPOUT,9)
+    assign out_valid_out = in_valid_in_0;
 
 endmodule

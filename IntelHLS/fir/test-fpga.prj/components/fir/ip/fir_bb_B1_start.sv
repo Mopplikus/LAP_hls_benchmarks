@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_fir_B1_start
 // Created for function/kernel fir
-// SystemVerilog created on Wed Apr  5 16:46:39 2023
+// SystemVerilog created on Fri Apr  7 17:34:03 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -31,8 +31,6 @@ module fir_bb_B1_start (
     input wire [0:0] in_valid_in_1,
     output wire [0:0] out_exiting_stall_out,
     output wire [0:0] out_exiting_valid_out,
-    output wire [63:0] out_intel_reserved_ffwd_0_0,
-    output wire [63:0] out_intel_reserved_ffwd_1_0,
     output wire [0:0] out_iord_bl_call_fir_o_fifoalmost_full,
     output wire [0:0] out_iord_bl_call_fir_o_fifoready,
     output wire [0:0] out_stall_out_0,
@@ -46,11 +44,9 @@ module fir_bb_B1_start (
     input wire resetn
     );
 
-    wire [0:0] bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_stall_out;
-    wire [0:0] bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_valid_out;
+    wire [0:0] bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_stall_out;
+    wire [0:0] bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_valid_out;
     wire [0:0] bb_fir_B1_start_stall_region_out_feedback_stall_out_1;
-    wire [63:0] bb_fir_B1_start_stall_region_out_intel_reserved_ffwd_0_0;
-    wire [63:0] bb_fir_B1_start_stall_region_out_intel_reserved_ffwd_1_0;
     wire [0:0] bb_fir_B1_start_stall_region_out_iord_bl_call_fir_o_fifoalmost_full;
     wire [0:0] bb_fir_B1_start_stall_region_out_iord_bl_call_fir_o_fifoready;
     wire [0:0] bb_fir_B1_start_stall_region_out_pipeline_valid_out;
@@ -94,11 +90,9 @@ module fir_bb_B1_start (
         .in_pipeline_stall_in(in_pipeline_stall_in),
         .in_stall_in(fir_B1_start_branch_out_stall_out),
         .in_valid_in(fir_B1_start_merge_out_valid_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_stall_out(bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_valid_out(bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_valid_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_stall_out(bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_stall_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_valid_out(bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_valid_out),
         .out_feedback_stall_out_1(bb_fir_B1_start_stall_region_out_feedback_stall_out_1),
-        .out_intel_reserved_ffwd_0_0(bb_fir_B1_start_stall_region_out_intel_reserved_ffwd_0_0),
-        .out_intel_reserved_ffwd_1_0(bb_fir_B1_start_stall_region_out_intel_reserved_ffwd_1_0),
         .out_iord_bl_call_fir_o_fifoalmost_full(bb_fir_B1_start_stall_region_out_iord_bl_call_fir_o_fifoalmost_full),
         .out_iord_bl_call_fir_o_fifoready(bb_fir_B1_start_stall_region_out_iord_bl_call_fir_o_fifoready),
         .out_pipeline_valid_out(bb_fir_B1_start_stall_region_out_pipeline_valid_out),
@@ -112,39 +106,33 @@ module fir_bb_B1_start (
     assign out_feedback_stall_out_1 = bb_fir_B1_start_stall_region_out_feedback_stall_out_1;
 
     // out_exiting_stall_out(GPOUT,13)
-    assign out_exiting_stall_out = bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_stall_out;
+    assign out_exiting_stall_out = bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_stall_out;
 
     // out_exiting_valid_out(GPOUT,14)
-    assign out_exiting_valid_out = bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_fir1_exiting_valid_out;
+    assign out_exiting_valid_out = bb_fir_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_fir1_exiting_valid_out;
 
-    // out_intel_reserved_ffwd_0_0(GPOUT,15)
-    assign out_intel_reserved_ffwd_0_0 = bb_fir_B1_start_stall_region_out_intel_reserved_ffwd_0_0;
-
-    // out_intel_reserved_ffwd_1_0(GPOUT,16)
-    assign out_intel_reserved_ffwd_1_0 = bb_fir_B1_start_stall_region_out_intel_reserved_ffwd_1_0;
-
-    // out_iord_bl_call_fir_o_fifoalmost_full(GPOUT,17)
+    // out_iord_bl_call_fir_o_fifoalmost_full(GPOUT,15)
     assign out_iord_bl_call_fir_o_fifoalmost_full = bb_fir_B1_start_stall_region_out_iord_bl_call_fir_o_fifoalmost_full;
 
-    // out_iord_bl_call_fir_o_fifoready(GPOUT,18)
+    // out_iord_bl_call_fir_o_fifoready(GPOUT,16)
     assign out_iord_bl_call_fir_o_fifoready = bb_fir_B1_start_stall_region_out_iord_bl_call_fir_o_fifoready;
 
-    // out_stall_out_0(GPOUT,19)
+    // out_stall_out_0(GPOUT,17)
     assign out_stall_out_0 = fir_B1_start_merge_out_stall_out_0;
 
-    // out_stall_out_1(GPOUT,20)
+    // out_stall_out_1(GPOUT,18)
     assign out_stall_out_1 = fir_B1_start_merge_out_stall_out_1;
 
-    // out_valid_in_0(GPOUT,21)
+    // out_valid_in_0(GPOUT,19)
     assign out_valid_in_0 = in_valid_in_0;
 
-    // out_valid_in_1(GPOUT,22)
+    // out_valid_in_1(GPOUT,20)
     assign out_valid_in_1 = in_valid_in_1;
 
-    // out_valid_out_0(GPOUT,23)
+    // out_valid_out_0(GPOUT,21)
     assign out_valid_out_0 = fir_B1_start_branch_out_valid_out_0;
 
-    // pipeline_valid_out_sync(GPOUT,25)
+    // pipeline_valid_out_sync(GPOUT,23)
     assign out_pipeline_valid_out = bb_fir_B1_start_stall_region_out_pipeline_valid_out;
 
 endmodule

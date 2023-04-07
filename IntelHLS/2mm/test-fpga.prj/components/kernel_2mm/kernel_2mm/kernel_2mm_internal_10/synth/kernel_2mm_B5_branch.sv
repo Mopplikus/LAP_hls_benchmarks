@@ -16,17 +16,19 @@
 
 // SystemVerilog created from kernel_2mm_B5_branch
 // Created for function/kernel kernel_2mm
-// SystemVerilog created on Wed Apr  5 01:12:29 2023
+// SystemVerilog created on Fri Apr  7 18:35:51 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module kernel_2mm_B5_branch (
-    input wire [0:0] in_c0_exe11,
-    input wire [0:0] in_c0_exe12,
+    input wire [63:0] in_c0_exe21372,
+    input wire [0:0] in_c0_exe51405,
+    input wire [0:0] in_c0_exe71427,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_c0_exe12,
+    output wire [63:0] out_c0_exe21372,
+    output wire [0:0] out_c0_exe51405,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
     output wire [0:0] out_valid_out_1,
@@ -35,8 +37,9 @@ module kernel_2mm_B5_branch (
     );
 
     wire [0:0] VCC_q;
-    wire [0:0] c0_exe11_cmp_q;
-    reg [0:0] c0_exe12_reg_q;
+    reg [63:0] c0_exe21372_reg_q;
+    reg [0:0] c0_exe51405_reg_q;
+    wire [0:0] c0_exe71427_cmp_q;
     wire [0:0] kernel_2mm_B5_branch_enable_q;
     wire [0:0] kernel_2mm_B5_branch_enable_not_q;
     wire [0:0] not_stall_in_0_q;
@@ -54,16 +57,16 @@ module kernel_2mm_B5_branch (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // not_stall_in_1(LOGICAL,12)
+    // not_stall_in_1(LOGICAL,14)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // c0_exe11_cmp(LOGICAL,2)
-    assign c0_exe11_cmp_q = ~ (in_c0_exe11);
+    // c0_exe71427_cmp(LOGICAL,4)
+    assign c0_exe71427_cmp_q = ~ (in_c0_exe71427);
 
-    // valid_out_1_and(LOGICAL,24)
-    assign valid_out_1_and_q = in_valid_in & c0_exe11_cmp_q;
+    // valid_out_1_and(LOGICAL,27)
+    assign valid_out_1_and_q = in_valid_in & c0_exe71427_cmp_q;
 
-    // valid_1_reg(REG,22)
+    // valid_1_reg(REG,25)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -76,19 +79,19 @@ module kernel_2mm_B5_branch (
         end
     end
 
-    // not_valid_1(LOGICAL,14)
+    // not_valid_1(LOGICAL,16)
     assign not_valid_1_q = ~ (valid_1_reg_q);
 
-    // not_valid_or_not_stall_1(LOGICAL,16)
+    // not_valid_or_not_stall_1(LOGICAL,18)
     assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
 
-    // not_stall_in_0(LOGICAL,11)
+    // not_stall_in_0(LOGICAL,13)
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
-    // valid_out_0_and(LOGICAL,23)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe11;
+    // valid_out_0_and(LOGICAL,26)
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe71427;
 
-    // valid_0_reg(REG,21)
+    // valid_0_reg(REG,24)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -101,41 +104,57 @@ module kernel_2mm_B5_branch (
         end
     end
 
-    // not_valid_0(LOGICAL,13)
+    // not_valid_0(LOGICAL,15)
     assign not_valid_0_q = ~ (valid_0_reg_q);
 
-    // not_valid_or_not_stall_0(LOGICAL,15)
+    // not_valid_or_not_stall_0(LOGICAL,17)
     assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
 
-    // kernel_2mm_B5_branch_enable(LOGICAL,9)
+    // kernel_2mm_B5_branch_enable(LOGICAL,11)
     assign kernel_2mm_B5_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
 
-    // c0_exe12_reg(REG,3)
+    // c0_exe21372_reg(REG,2)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            c0_exe12_reg_q <= $unsigned(1'b0);
+            c0_exe21372_reg_q <= $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
         end
         else if (kernel_2mm_B5_branch_enable_q == 1'b1)
         begin
-            c0_exe12_reg_q <= in_c0_exe12;
+            c0_exe21372_reg_q <= in_c0_exe21372;
         end
     end
 
-    // out_c0_exe12(GPOUT,17)
-    assign out_c0_exe12 = c0_exe12_reg_q;
+    // out_c0_exe21372(GPOUT,19)
+    assign out_c0_exe21372 = c0_exe21372_reg_q;
 
-    // kernel_2mm_B5_branch_enable_not(LOGICAL,10)
+    // c0_exe51405_reg(REG,3)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe51405_reg_q <= $unsigned(1'b0);
+        end
+        else if (kernel_2mm_B5_branch_enable_q == 1'b1)
+        begin
+            c0_exe51405_reg_q <= in_c0_exe51405;
+        end
+    end
+
+    // out_c0_exe51405(GPOUT,20)
+    assign out_c0_exe51405 = c0_exe51405_reg_q;
+
+    // kernel_2mm_B5_branch_enable_not(LOGICAL,12)
     assign kernel_2mm_B5_branch_enable_not_q = ~ (kernel_2mm_B5_branch_enable_q);
 
-    // out_stall_out(GPOUT,18)
+    // out_stall_out(GPOUT,21)
     assign out_stall_out = kernel_2mm_B5_branch_enable_not_q;
 
-    // out_valid_out_0(GPOUT,19)
+    // out_valid_out_0(GPOUT,22)
     assign out_valid_out_0 = valid_0_reg_q;
 
-    // out_valid_out_1(GPOUT,20)
+    // out_valid_out_1(GPOUT,23)
     assign out_valid_out_1 = valid_1_reg_q;
 
 endmodule

@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i1_notexitcond_jacobi_1d0
 // Created for function/kernel jacobi_1d
-// SystemVerilog created on Wed Apr  5 13:32:10 2023
+// SystemVerilog created on Fri Apr  7 17:06:24 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -26,8 +26,8 @@ module jacobi_1d_i_llvm_fpga_push_i1_notexitcond_0 (
     output wire [0:0] out_feedback_valid_out_3,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
-    input wire [0:0] in_c0_exe1107,
     input wire [0:0] in_data_in,
+    input wire [0:0] in_first_cleanup,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_data_out,
     output wire [0:0] out_valid_out,
@@ -36,8 +36,6 @@ module jacobi_1d_i_llvm_fpga_push_i1_notexitcond_0 (
     );
 
     wire [0:0] GND_q;
-    wire [0:0] adapt_scalar_trunc4_in;
-    wire [0:0] adapt_scalar_trunc4_q;
     wire [6:0] c_i7_03_q;
     wire [7:0] element_extension2_q;
     wire [0:0] i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_data_in;
@@ -62,28 +60,7 @@ module jacobi_1d_i_llvm_fpga_push_i1_notexitcond_0 (
     wire i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_stall_out_bitsignaltemp;
     wire [0:0] i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_valid_out;
     wire i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_valid_out_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_data_out;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_stall_out;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_valid_out;
 
-
-    // adapt_scalar_trunc4(ROUND,2)
-    assign adapt_scalar_trunc4_in = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_data_out;
-    assign adapt_scalar_trunc4_q = adapt_scalar_trunc4_in[0:0];
-
-    // i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg(BLACKBOX,9)@20000000
-    // out out_data_out@20000001
-    // out out_valid_out@20000001
-    jacobi_1d_i_llvm_fpga_push_i1_notexitcond_8_reg thei_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg (
-        .in_data_in(adapt_scalar_trunc4_q),
-        .in_stall_in(in_stall_in),
-        .in_valid_in(i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_valid_out),
-        .out_data_out(i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_data_out),
-        .out_stall_out(i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_stall_out),
-        .out_valid_out(i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
@@ -91,15 +68,15 @@ module jacobi_1d_i_llvm_fpga_push_i1_notexitcond_0 (
     // c_i7_03(CONSTANT,4)
     assign c_i7_03_q = $unsigned(7'b0000000);
 
-    // element_extension2(BITJOIN,5)
+    // element_extension2(BITJOIN,5)@2
     assign element_extension2_q = {c_i7_03_q, in_data_in};
 
-    // i_llvm_fpga_push_i1_notexitcond_jacobi_1d1(EXTIFACE,8)
+    // i_llvm_fpga_push_i1_notexitcond_jacobi_1d1(EXTIFACE,8)@2
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_data_in = element_extension2_q[0:0];
-    assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_dir = in_c0_exe1107;
+    assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_dir = in_first_cleanup;
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_feedback_stall_in = in_feedback_stall_in_3;
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_predicate = GND_q;
-    assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_stall_in = i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_stall_out;
+    assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_stall_in = in_stall_in;
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_valid_in = in_valid_in;
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_data_in_bitsignaltemp = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_data_in[0];
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_dir_bitsignaltemp = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_dir[0];
@@ -113,16 +90,16 @@ module jacobi_1d_i_llvm_fpga_push_i1_notexitcond_0 (
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_stall_out[0] = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_stall_out_bitsignaltemp;
     assign i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_valid_out[0] = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_valid_out_bitsignaltemp;
     acl_push #(
-        .FIFO_DEPTH(4),
+        .FIFO_DEPTH(1),
         .INF_LOOP(0),
         .INF_LOOP_INITIALIZATION(1'b0),
-        .MIN_FIFO_LATENCY(183),
+        .MIN_FIFO_LATENCY(0),
         .STYLE("REGULAR"),
         .ASYNC_RESET(1),
         .DATA_WIDTH(1),
         .ENABLED(0),
         .RAM_FIFO_DEPTH_INC(0),
-        .STALLFREE(0),
+        .STALLFREE(1),
         .SYNCHRONIZE_RESET(0)
     ) thei_llvm_fpga_push_i1_notexitcond_jacobi_1d1 (
         .data_in(i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_data_in_bitsignaltemp),
@@ -144,11 +121,11 @@ module jacobi_1d_i_llvm_fpga_push_i1_notexitcond_0 (
     assign out_feedback_out_3 = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_feedback_out;
     assign out_feedback_valid_out_3 = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_feedback_valid_out;
 
-    // sync_out(GPOUT,11)@20000000
+    // sync_out(GPOUT,10)@2
     assign out_stall_out = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,13)@70
-    assign out_data_out = i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_data_out;
-    assign out_valid_out = i_llvm_fpga_push_i1_notexitcond_jacobi_1d8_reg_out_valid_out;
+    // dupName_0_sync_out_x(GPOUT,13)@2
+    assign out_data_out = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_data_out;
+    assign out_valid_out = i_llvm_fpga_push_i1_notexitcond_jacobi_1d1_valid_out;
 
 endmodule

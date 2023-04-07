@@ -32,28 +32,28 @@ module getTanh_internal
    genvar __i;
    genvar __j;
    genvar __k;
-   logic local_avm_aspace64_enable [1][4];
-   logic local_avm_aspace64_read [1][4];
-   logic local_avm_aspace64_write [1][4];
-   logic [31:0] local_avm_aspace64_address [1][4];
-   logic [31:0] local_avm_aspace64_writedata [1][4];
-   logic [3:0] local_avm_aspace64_byteenable [1][4];
-   logic local_avm_aspace64_waitrequest [1][4];
-   logic [31:0] local_avm_aspace64_readdata [1][4];
-   logic local_avm_aspace64_readdatavalid [1][4];
-   logic local_avm_aspace64_burstcount [1][4];
-   logic local_avm_aspace64_writeack [1][4];
-   logic local_avm_aspace65_enable [1][2];
-   logic local_avm_aspace65_read [1][2];
-   logic local_avm_aspace65_write [1][2];
-   logic [31:0] local_avm_aspace65_address [1][2];
-   logic [31:0] local_avm_aspace65_writedata [1][2];
-   logic [3:0] local_avm_aspace65_byteenable [1][2];
-   logic local_avm_aspace65_waitrequest [1][2];
-   logic [31:0] local_avm_aspace65_readdata [1][2];
-   logic local_avm_aspace65_readdatavalid [1][2];
-   logic local_avm_aspace65_burstcount [1][2];
-   logic local_avm_aspace65_writeack [1][2];
+   logic local_avm_aspace64_enable [1][2];
+   logic local_avm_aspace64_read [1][2];
+   logic local_avm_aspace64_write [1][2];
+   logic [31:0] local_avm_aspace64_address [1][2];
+   logic [31:0] local_avm_aspace64_writedata [1][2];
+   logic [3:0] local_avm_aspace64_byteenable [1][2];
+   logic local_avm_aspace64_waitrequest [1][2];
+   logic [31:0] local_avm_aspace64_readdata [1][2];
+   logic local_avm_aspace64_readdatavalid [1][2];
+   logic local_avm_aspace64_burstcount [1][2];
+   logic local_avm_aspace64_writeack [1][2];
+   logic local_avm_aspace65_enable [1][1];
+   logic local_avm_aspace65_read [1][1];
+   logic local_avm_aspace65_write [1][1];
+   logic [31:0] local_avm_aspace65_address [1][1];
+   logic [31:0] local_avm_aspace65_writedata [1][1];
+   logic [3:0] local_avm_aspace65_byteenable [1][1];
+   logic local_avm_aspace65_waitrequest [1][1];
+   logic [31:0] local_avm_aspace65_readdata [1][1];
+   logic local_avm_aspace65_readdatavalid [1][1];
+   logic local_avm_aspace65_burstcount [1][1];
+   logic local_avm_aspace65_writeack [1][1];
 
    // INST getTanh_internal of getTanh_function_wrapper
    getTanh_function_wrapper getTanh_internal
@@ -65,98 +65,62 @@ module getTanh_internal
       .done(done),
       .stall(stall),
       .returndata(returndata),
-      // AVM avm_memdep_2_getTanh
-      .avm_memdep_2_getTanh_enable(local_avm_aspace64_enable[0][0]),
-      .avm_memdep_2_getTanh_read(local_avm_aspace64_read[0][0]),
-      .avm_memdep_2_getTanh_write(local_avm_aspace64_write[0][0]),
-      .avm_memdep_2_getTanh_address(local_avm_aspace64_address[0][0]),
-      .avm_memdep_2_getTanh_writedata(local_avm_aspace64_writedata[0][0]),
-      .avm_memdep_2_getTanh_byteenable(local_avm_aspace64_byteenable[0][0]),
-      .avm_memdep_2_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][0]),
-      .avm_memdep_2_getTanh_readdata(local_avm_aspace64_readdata[0][0]),
-      .avm_memdep_2_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
-      .avm_memdep_2_getTanh_burstcount(local_avm_aspace64_burstcount[0][0]),
-      .avm_memdep_2_getTanh_writeack(local_avm_aspace64_writeack[0][0]),
-      // AVM avm_memdep_3_getTanh
-      .avm_memdep_3_getTanh_enable(local_avm_aspace64_enable[0][1]),
-      .avm_memdep_3_getTanh_read(local_avm_aspace64_read[0][1]),
-      .avm_memdep_3_getTanh_write(local_avm_aspace64_write[0][1]),
-      .avm_memdep_3_getTanh_address(local_avm_aspace64_address[0][1]),
-      .avm_memdep_3_getTanh_writedata(local_avm_aspace64_writedata[0][1]),
-      .avm_memdep_3_getTanh_byteenable(local_avm_aspace64_byteenable[0][1]),
-      .avm_memdep_3_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][1]),
-      .avm_memdep_3_getTanh_readdata(local_avm_aspace64_readdata[0][1]),
-      .avm_memdep_3_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][1]),
-      .avm_memdep_3_getTanh_burstcount(local_avm_aspace64_burstcount[0][1]),
-      .avm_memdep_3_getTanh_writeack(local_avm_aspace64_writeack[0][1]),
       // AVM avm_memdep_getTanh
-      .avm_memdep_getTanh_enable(local_avm_aspace64_enable[0][2]),
-      .avm_memdep_getTanh_read(local_avm_aspace64_read[0][2]),
-      .avm_memdep_getTanh_write(local_avm_aspace64_write[0][2]),
-      .avm_memdep_getTanh_address(local_avm_aspace64_address[0][2]),
-      .avm_memdep_getTanh_writedata(local_avm_aspace64_writedata[0][2]),
-      .avm_memdep_getTanh_byteenable(local_avm_aspace64_byteenable[0][2]),
-      .avm_memdep_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][2]),
-      .avm_memdep_getTanh_readdata(local_avm_aspace64_readdata[0][2]),
-      .avm_memdep_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][2]),
-      .avm_memdep_getTanh_burstcount(local_avm_aspace64_burstcount[0][2]),
-      .avm_memdep_getTanh_writeack(local_avm_aspace64_writeack[0][2]),
+      .avm_memdep_getTanh_enable(local_avm_aspace64_enable[0][0]),
+      .avm_memdep_getTanh_read(local_avm_aspace64_read[0][0]),
+      .avm_memdep_getTanh_write(local_avm_aspace64_write[0][0]),
+      .avm_memdep_getTanh_address(local_avm_aspace64_address[0][0]),
+      .avm_memdep_getTanh_writedata(local_avm_aspace64_writedata[0][0]),
+      .avm_memdep_getTanh_byteenable(local_avm_aspace64_byteenable[0][0]),
+      .avm_memdep_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][0]),
+      .avm_memdep_getTanh_readdata(local_avm_aspace64_readdata[0][0]),
+      .avm_memdep_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
+      .avm_memdep_getTanh_burstcount(local_avm_aspace64_burstcount[0][0]),
+      .avm_memdep_getTanh_writeack(local_avm_aspace64_writeack[0][0]),
       // AVM avm_unnamed_getTanh5_getTanh
-      .avm_unnamed_getTanh5_getTanh_enable(local_avm_aspace64_enable[0][3]),
-      .avm_unnamed_getTanh5_getTanh_read(local_avm_aspace64_read[0][3]),
-      .avm_unnamed_getTanh5_getTanh_write(local_avm_aspace64_write[0][3]),
-      .avm_unnamed_getTanh5_getTanh_address(local_avm_aspace64_address[0][3]),
-      .avm_unnamed_getTanh5_getTanh_writedata(local_avm_aspace64_writedata[0][3]),
-      .avm_unnamed_getTanh5_getTanh_byteenable(local_avm_aspace64_byteenable[0][3]),
-      .avm_unnamed_getTanh5_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][3]),
-      .avm_unnamed_getTanh5_getTanh_readdata(local_avm_aspace64_readdata[0][3]),
-      .avm_unnamed_getTanh5_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][3]),
-      .avm_unnamed_getTanh5_getTanh_burstcount(local_avm_aspace64_burstcount[0][3]),
-      .avm_unnamed_getTanh5_getTanh_writeack(local_avm_aspace64_writeack[0][3]),
-      // AVM avm_memdep_1_getTanh
-      .avm_memdep_1_getTanh_enable(local_avm_aspace65_enable[0][0]),
-      .avm_memdep_1_getTanh_read(local_avm_aspace65_read[0][0]),
-      .avm_memdep_1_getTanh_write(local_avm_aspace65_write[0][0]),
-      .avm_memdep_1_getTanh_address(local_avm_aspace65_address[0][0]),
-      .avm_memdep_1_getTanh_writedata(local_avm_aspace65_writedata[0][0]),
-      .avm_memdep_1_getTanh_byteenable(local_avm_aspace65_byteenable[0][0]),
-      .avm_memdep_1_getTanh_waitrequest(local_avm_aspace65_waitrequest[0][0]),
-      .avm_memdep_1_getTanh_readdata(local_avm_aspace65_readdata[0][0]),
-      .avm_memdep_1_getTanh_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
-      .avm_memdep_1_getTanh_burstcount(local_avm_aspace65_burstcount[0][0]),
-      .avm_memdep_1_getTanh_writeack(local_avm_aspace65_writeack[0][0]),
+      .avm_unnamed_getTanh5_getTanh_enable(local_avm_aspace64_enable[0][1]),
+      .avm_unnamed_getTanh5_getTanh_read(local_avm_aspace64_read[0][1]),
+      .avm_unnamed_getTanh5_getTanh_write(local_avm_aspace64_write[0][1]),
+      .avm_unnamed_getTanh5_getTanh_address(local_avm_aspace64_address[0][1]),
+      .avm_unnamed_getTanh5_getTanh_writedata(local_avm_aspace64_writedata[0][1]),
+      .avm_unnamed_getTanh5_getTanh_byteenable(local_avm_aspace64_byteenable[0][1]),
+      .avm_unnamed_getTanh5_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][1]),
+      .avm_unnamed_getTanh5_getTanh_readdata(local_avm_aspace64_readdata[0][1]),
+      .avm_unnamed_getTanh5_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][1]),
+      .avm_unnamed_getTanh5_getTanh_burstcount(local_avm_aspace64_burstcount[0][1]),
+      .avm_unnamed_getTanh5_getTanh_writeack(local_avm_aspace64_writeack[0][1]),
       // AVM avm_unnamed_getTanh4_getTanh
-      .avm_unnamed_getTanh4_getTanh_enable(local_avm_aspace65_enable[0][1]),
-      .avm_unnamed_getTanh4_getTanh_read(local_avm_aspace65_read[0][1]),
-      .avm_unnamed_getTanh4_getTanh_write(local_avm_aspace65_write[0][1]),
-      .avm_unnamed_getTanh4_getTanh_address(local_avm_aspace65_address[0][1]),
-      .avm_unnamed_getTanh4_getTanh_writedata(local_avm_aspace65_writedata[0][1]),
-      .avm_unnamed_getTanh4_getTanh_byteenable(local_avm_aspace65_byteenable[0][1]),
-      .avm_unnamed_getTanh4_getTanh_waitrequest(local_avm_aspace65_waitrequest[0][1]),
-      .avm_unnamed_getTanh4_getTanh_readdata(local_avm_aspace65_readdata[0][1]),
-      .avm_unnamed_getTanh4_getTanh_readdatavalid(local_avm_aspace65_readdatavalid[0][1]),
-      .avm_unnamed_getTanh4_getTanh_burstcount(local_avm_aspace65_burstcount[0][1]),
-      .avm_unnamed_getTanh4_getTanh_writeack(local_avm_aspace65_writeack[0][1])
+      .avm_unnamed_getTanh4_getTanh_enable(local_avm_aspace65_enable[0][0]),
+      .avm_unnamed_getTanh4_getTanh_read(local_avm_aspace65_read[0][0]),
+      .avm_unnamed_getTanh4_getTanh_write(local_avm_aspace65_write[0][0]),
+      .avm_unnamed_getTanh4_getTanh_address(local_avm_aspace65_address[0][0]),
+      .avm_unnamed_getTanh4_getTanh_writedata(local_avm_aspace65_writedata[0][0]),
+      .avm_unnamed_getTanh4_getTanh_byteenable(local_avm_aspace65_byteenable[0][0]),
+      .avm_unnamed_getTanh4_getTanh_waitrequest(local_avm_aspace65_waitrequest[0][0]),
+      .avm_unnamed_getTanh4_getTanh_readdata(local_avm_aspace65_readdata[0][0]),
+      .avm_unnamed_getTanh4_getTanh_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
+      .avm_unnamed_getTanh4_getTanh_burstcount(local_avm_aspace65_burstcount[0][0]),
+      .avm_unnamed_getTanh4_getTanh_writeack(local_avm_aspace65_writeack[0][0])
    );
 
    generate
    begin:local_mem_system_aspace64
-      logic local_icm_arb_request [1][4];
-      logic local_icm_arb_enable [1][4];
-      logic local_icm_arb_read [1][4];
-      logic local_icm_arb_write [1][4];
-      logic local_icm_arb_burstcount [1][4];
-      logic [9:0] local_icm_arb_address [1][4];
-      logic [31:0] local_icm_arb_writedata [1][4];
-      logic [3:0] local_icm_arb_byteenable [1][4];
-      logic local_icm_arb_stall [1][4];
-      logic local_icm_wrp_ack [1][4];
-      logic local_icm_rrp_datavalid [1][4];
-      logic [31:0] local_icm_rrp_data [1][4];
+      logic local_icm_arb_request [1][2];
+      logic local_icm_arb_enable [1][2];
+      logic local_icm_arb_read [1][2];
+      logic local_icm_arb_write [1][2];
+      logic local_icm_arb_burstcount [1][2];
+      logic [9:0] local_icm_arb_address [1][2];
+      logic [31:0] local_icm_arb_writedata [1][2];
+      logic [3:0] local_icm_arb_byteenable [1][2];
+      logic local_icm_arb_stall [1][2];
+      logic local_icm_wrp_ack [1][2];
+      logic local_icm_rrp_datavalid [1][2];
+      logic [31:0] local_icm_rrp_data [1][2];
 
       for( __i = 0; __i < 1; __i = __i + 1 )
       begin:local_mem_group
-         for( __j = 0; __j < 4; __j = __j + 1 )
+         for( __j = 0; __j < 2; __j = __j + 1 )
          begin:host
             // INST avm_to_ic of acl_avm_to_ic
             acl_avm_to_ic
@@ -221,7 +185,7 @@ module getTanh_internal
                .SYNCHRONIZE_RESET(0),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
-               .RAM_OPERATION_MODE("BIDIR_DUAL_PORT"),
+               .RAM_OPERATION_MODE("DUAL_PORT"),
                .MINIMIZE_MEMORY_USAGE(0),
                .USE_BYTEENA(0),
                .RAM_BLOCK_TYPE("AUTO")
@@ -254,7 +218,7 @@ module getTanh_internal
 
          end
 
-         for( __j = 0; __j < 4; __j = __j + 1 )
+         for( __j = 0; __j < 2; __j = __j + 1 )
          begin:router
             logic b_arb_request [1];
             logic b_arb_enable [1];
@@ -317,18 +281,18 @@ module getTanh_internal
 
          for( __j = 0; __j < 1; __j = __j + 1 )
          begin:port1bank0
-            logic icm_in_arb_request [2];
-            logic icm_in_arb_enable [2];
-            logic icm_in_arb_read [2];
-            logic icm_in_arb_write [2];
-            logic icm_in_arb_burstcount [2];
-            logic [9:0] icm_in_arb_address [2];
-            logic [31:0] icm_in_arb_writedata [2];
-            logic [3:0] icm_in_arb_byteenable [2];
-            logic icm_in_arb_stall [2];
-            logic icm_in_wrp_ack [2];
-            logic icm_in_rrp_datavalid [2];
-            logic [31:0] icm_in_rrp_data [2];
+            logic icm_in_arb_request [1];
+            logic icm_in_arb_enable [1];
+            logic icm_in_arb_read [1];
+            logic icm_in_arb_write [1];
+            logic icm_in_arb_burstcount [1];
+            logic [9:0] icm_in_arb_address [1];
+            logic [31:0] icm_in_arb_writedata [1];
+            logic [3:0] icm_in_arb_byteenable [1];
+            logic icm_in_arb_stall [1];
+            logic icm_in_wrp_ack [1];
+            logic icm_in_rrp_datavalid [1];
+            logic [31:0] icm_in_rrp_data [1];
             logic icm_out_arb_request;
             logic icm_out_arb_enable;
             logic icm_out_arb_read;
@@ -342,32 +306,20 @@ module getTanh_internal
             logic icm_out_rrp_datavalid;
             logic [31:0] icm_out_rrp_data;
 
-            assign icm_in_arb_request[0] = router[1].b_arb_request[0];
-            assign icm_in_arb_enable[0] = router[1].b_arb_enable[0];
-            assign icm_in_arb_read[0] = router[1].b_arb_read[0];
-            assign icm_in_arb_write[0] = router[1].b_arb_write[0];
-            assign icm_in_arb_burstcount[0] = router[1].b_arb_burstcount[0];
-            assign icm_in_arb_address[0] = router[1].b_arb_address[0];
-            assign icm_in_arb_writedata[0] = router[1].b_arb_writedata[0];
-            assign icm_in_arb_byteenable[0] = router[1].b_arb_byteenable[0];
-            assign router[1].b_arb_stall[0] = icm_in_arb_stall[0];
-            assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
-            assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
-            assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
-            assign icm_in_arb_request[1] = router[2].b_arb_request[0];
-            assign icm_in_arb_enable[1] = router[2].b_arb_enable[0];
-            assign icm_in_arb_read[1] = router[2].b_arb_read[0];
-            assign icm_in_arb_write[1] = router[2].b_arb_write[0];
-            assign icm_in_arb_burstcount[1] = router[2].b_arb_burstcount[0];
-            assign icm_in_arb_address[1] = router[2].b_arb_address[0];
-            assign icm_in_arb_writedata[1] = router[2].b_arb_writedata[0];
-            assign icm_in_arb_byteenable[1] = router[2].b_arb_byteenable[0];
-            assign router[2].b_arb_stall[0] = icm_in_arb_stall[1];
-            assign router[2].b_wrp_ack[0] = icm_in_wrp_ack[1];
-            assign router[2].b_rrp_datavalid[0] = icm_in_rrp_datavalid[1];
-            assign router[2].b_rrp_data[0] = icm_in_rrp_data[1];
-            // INST data_ic of getTanh_internal_ic_10295715645886237553
-            getTanh_internal_ic_10295715645886237553 data_ic
+            assign icm_in_arb_request[0] = router[0].b_arb_request[0];
+            assign icm_in_arb_enable[0] = router[0].b_arb_enable[0];
+            assign icm_in_arb_read[0] = router[0].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[0].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[0].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[0].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[0].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[0].b_arb_byteenable[0];
+            assign router[0].b_arb_stall[0] = icm_in_arb_stall[0];
+            assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
+            assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
+            assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
+            // INST data_ic of getTanh_internal_ic_12564195338966864784
+            getTanh_internal_ic_12564195338966864784 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -414,18 +366,18 @@ module getTanh_internal
 
          for( __j = 0; __j < 1; __j = __j + 1 )
          begin:port2bank0
-            logic icm_in_arb_request [2];
-            logic icm_in_arb_enable [2];
-            logic icm_in_arb_read [2];
-            logic icm_in_arb_write [2];
-            logic icm_in_arb_burstcount [2];
-            logic [9:0] icm_in_arb_address [2];
-            logic [31:0] icm_in_arb_writedata [2];
-            logic [3:0] icm_in_arb_byteenable [2];
-            logic icm_in_arb_stall [2];
-            logic icm_in_wrp_ack [2];
-            logic icm_in_rrp_datavalid [2];
-            logic [31:0] icm_in_rrp_data [2];
+            logic icm_in_arb_request [1];
+            logic icm_in_arb_enable [1];
+            logic icm_in_arb_read [1];
+            logic icm_in_arb_write [1];
+            logic icm_in_arb_burstcount [1];
+            logic [9:0] icm_in_arb_address [1];
+            logic [31:0] icm_in_arb_writedata [1];
+            logic [3:0] icm_in_arb_byteenable [1];
+            logic icm_in_arb_stall [1];
+            logic icm_in_wrp_ack [1];
+            logic icm_in_rrp_datavalid [1];
+            logic [31:0] icm_in_rrp_data [1];
             logic icm_out_arb_request;
             logic icm_out_arb_enable;
             logic icm_out_arb_read;
@@ -439,32 +391,20 @@ module getTanh_internal
             logic icm_out_rrp_datavalid;
             logic [31:0] icm_out_rrp_data;
 
-            assign icm_in_arb_request[0] = router[0].b_arb_request[0];
-            assign icm_in_arb_enable[0] = router[0].b_arb_enable[0];
-            assign icm_in_arb_read[0] = router[0].b_arb_read[0];
-            assign icm_in_arb_write[0] = router[0].b_arb_write[0];
-            assign icm_in_arb_burstcount[0] = router[0].b_arb_burstcount[0];
-            assign icm_in_arb_address[0] = router[0].b_arb_address[0];
-            assign icm_in_arb_writedata[0] = router[0].b_arb_writedata[0];
-            assign icm_in_arb_byteenable[0] = router[0].b_arb_byteenable[0];
-            assign router[0].b_arb_stall[0] = icm_in_arb_stall[0];
-            assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
-            assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
-            assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            assign icm_in_arb_request[1] = router[3].b_arb_request[0];
-            assign icm_in_arb_enable[1] = router[3].b_arb_enable[0];
-            assign icm_in_arb_read[1] = router[3].b_arb_read[0];
-            assign icm_in_arb_write[1] = router[3].b_arb_write[0];
-            assign icm_in_arb_burstcount[1] = router[3].b_arb_burstcount[0];
-            assign icm_in_arb_address[1] = router[3].b_arb_address[0];
-            assign icm_in_arb_writedata[1] = router[3].b_arb_writedata[0];
-            assign icm_in_arb_byteenable[1] = router[3].b_arb_byteenable[0];
-            assign router[3].b_arb_stall[0] = icm_in_arb_stall[1];
-            assign router[3].b_wrp_ack[0] = icm_in_wrp_ack[1];
-            assign router[3].b_rrp_datavalid[0] = icm_in_rrp_datavalid[1];
-            assign router[3].b_rrp_data[0] = icm_in_rrp_data[1];
-            // INST data_ic of getTanh_internal_ic_6556085024641785210
-            getTanh_internal_ic_6556085024641785210 data_ic
+            assign icm_in_arb_request[0] = router[1].b_arb_request[0];
+            assign icm_in_arb_enable[0] = router[1].b_arb_enable[0];
+            assign icm_in_arb_read[0] = router[1].b_arb_read[0];
+            assign icm_in_arb_write[0] = router[1].b_arb_write[0];
+            assign icm_in_arb_burstcount[0] = router[1].b_arb_burstcount[0];
+            assign icm_in_arb_address[0] = router[1].b_arb_address[0];
+            assign icm_in_arb_writedata[0] = router[1].b_arb_writedata[0];
+            assign icm_in_arb_byteenable[0] = router[1].b_arb_byteenable[0];
+            assign router[1].b_arb_stall[0] = icm_in_arb_stall[0];
+            assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
+            assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
+            assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
+            // INST data_ic of getTanh_internal_ic_16657900664427986554
+            getTanh_internal_ic_16657900664427986554 data_ic
             (
                .clock(clock),
                .resetn(resetn),
@@ -516,22 +456,22 @@ module getTanh_internal
 
    generate
    begin:local_mem_system_aspace65
-      logic local_icm_arb_request [1][2];
-      logic local_icm_arb_enable [1][2];
-      logic local_icm_arb_read [1][2];
-      logic local_icm_arb_write [1][2];
-      logic local_icm_arb_burstcount [1][2];
-      logic [9:0] local_icm_arb_address [1][2];
-      logic [31:0] local_icm_arb_writedata [1][2];
-      logic [3:0] local_icm_arb_byteenable [1][2];
-      logic local_icm_arb_stall [1][2];
-      logic local_icm_wrp_ack [1][2];
-      logic local_icm_rrp_datavalid [1][2];
-      logic [31:0] local_icm_rrp_data [1][2];
+      logic local_icm_arb_request [1][1];
+      logic local_icm_arb_enable [1][1];
+      logic local_icm_arb_read [1][1];
+      logic local_icm_arb_write [1][1];
+      logic local_icm_arb_burstcount [1][1];
+      logic [9:0] local_icm_arb_address [1][1];
+      logic [31:0] local_icm_arb_writedata [1][1];
+      logic [3:0] local_icm_arb_byteenable [1][1];
+      logic local_icm_arb_stall [1][1];
+      logic local_icm_wrp_ack [1][1];
+      logic local_icm_rrp_datavalid [1][1];
+      logic [31:0] local_icm_rrp_data [1][1];
 
       for( __j = 0; __j < 1; __j = __j + 1 )
       begin:local_mem_group
-         for( __k = 0; __k < 2; __k = __k + 1 )
+         for( __k = 0; __k < 1; __k = __k + 1 )
          begin:host
             // INST avm_to_ic of acl_avm_to_ic
             acl_avm_to_ic
@@ -629,7 +569,7 @@ module getTanh_internal
 
          end
 
-         for( __k = 0; __k < 2; __k = __k + 1 )
+         for( __k = 0; __k < 1; __k = __k + 1 )
          begin:router
             logic b_arb_request [1];
             logic b_arb_enable [1];
@@ -692,6 +632,16 @@ module getTanh_internal
 
          for( __k = 0; __k < 1; __k = __k + 1 )
          begin:port1bank0
+            assign bank[0].port_enable[1] = '0;
+            assign bank[0].port_read[1] = '0;
+            assign bank[0].port_write[1] = '0;
+            assign bank[0].port_address[1] = '0;
+            assign bank[0].port_writedata[1] = '0;
+            assign bank[0].port_byteenable[1] = '0;
+         end
+
+         for( __k = 0; __k < 1; __k = __k + 1 )
+         begin:port2bank0
             logic icm_in_arb_request [1];
             logic icm_in_arb_enable [1];
             logic icm_in_arb_read [1];
@@ -729,91 +679,6 @@ module getTanh_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of getTanh_internal_ic_13830461541539336706
-            getTanh_internal_ic_13830461541539336706 data_ic
-            (
-               .clock(clock),
-               .resetn(resetn),
-               // ICM m
-               .m_arb_request(icm_in_arb_request),
-               .m_arb_enable(icm_in_arb_enable),
-               .m_arb_read(icm_in_arb_read),
-               .m_arb_write(icm_in_arb_write),
-               .m_arb_burstcount(icm_in_arb_burstcount),
-               .m_arb_address(icm_in_arb_address),
-               .m_arb_writedata(icm_in_arb_writedata),
-               .m_arb_byteenable(icm_in_arb_byteenable),
-               .m_arb_stall(icm_in_arb_stall),
-               .m_wrp_ack(icm_in_wrp_ack),
-               .m_rrp_datavalid(icm_in_rrp_datavalid),
-               .m_rrp_data(icm_in_rrp_data),
-               // ICM mout
-               .mout_arb_request(icm_out_arb_request),
-               .mout_arb_enable(icm_out_arb_enable),
-               .mout_arb_read(icm_out_arb_read),
-               .mout_arb_write(icm_out_arb_write),
-               .mout_arb_burstcount(icm_out_arb_burstcount),
-               .mout_arb_address(icm_out_arb_address),
-               .mout_arb_writedata(icm_out_arb_writedata),
-               .mout_arb_byteenable(icm_out_arb_byteenable),
-               .mout_arb_id(),
-               .mout_arb_stall(icm_out_arb_stall),
-               .mout_wrp_ack(icm_out_wrp_ack),
-               .mout_rrp_datavalid(icm_out_rrp_datavalid),
-               .mout_rrp_data(icm_out_rrp_data)
-            );
-
-            assign bank[0].port_enable[1] = icm_out_arb_enable;
-            assign bank[0].port_read[1] = icm_out_arb_read;
-            assign bank[0].port_write[1] = icm_out_arb_write;
-            assign bank[0].port_address[1] = icm_out_arb_address;
-            assign bank[0].port_writedata[1] = icm_out_arb_writedata;
-            assign bank[0].port_byteenable[1] = icm_out_arb_byteenable;
-            assign icm_out_arb_stall = bank[0].port_waitrequest[1];
-            assign icm_out_rrp_data = bank[0].port_readdata[1];
-            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[1];
-            assign icm_out_wrp_ack = 'b0;
-         end
-
-         for( __k = 0; __k < 1; __k = __k + 1 )
-         begin:port2bank0
-            logic icm_in_arb_request [1];
-            logic icm_in_arb_enable [1];
-            logic icm_in_arb_read [1];
-            logic icm_in_arb_write [1];
-            logic icm_in_arb_burstcount [1];
-            logic [9:0] icm_in_arb_address [1];
-            logic [31:0] icm_in_arb_writedata [1];
-            logic [3:0] icm_in_arb_byteenable [1];
-            logic icm_in_arb_stall [1];
-            logic icm_in_wrp_ack [1];
-            logic icm_in_rrp_datavalid [1];
-            logic [31:0] icm_in_rrp_data [1];
-            logic icm_out_arb_request;
-            logic icm_out_arb_enable;
-            logic icm_out_arb_read;
-            logic icm_out_arb_write;
-            logic icm_out_arb_burstcount;
-            logic [9:0] icm_out_arb_address;
-            logic [31:0] icm_out_arb_writedata;
-            logic [3:0] icm_out_arb_byteenable;
-            logic icm_out_arb_stall;
-            logic icm_out_wrp_ack;
-            logic icm_out_rrp_datavalid;
-            logic [31:0] icm_out_rrp_data;
-
-            assign icm_in_arb_request[0] = router[1].b_arb_request[0];
-            assign icm_in_arb_enable[0] = router[1].b_arb_enable[0];
-            assign icm_in_arb_read[0] = router[1].b_arb_read[0];
-            assign icm_in_arb_write[0] = router[1].b_arb_write[0];
-            assign icm_in_arb_burstcount[0] = router[1].b_arb_burstcount[0];
-            assign icm_in_arb_address[0] = router[1].b_arb_address[0];
-            assign icm_in_arb_writedata[0] = router[1].b_arb_writedata[0];
-            assign icm_in_arb_byteenable[0] = router[1].b_arb_byteenable[0];
-            assign router[1].b_arb_stall[0] = icm_in_arb_stall[0];
-            assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
-            assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
-            assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
             // INST data_ic of getTanh_internal_ic_17240874513320749926
             getTanh_internal_ic_17240874513320749926 data_ic
             (
@@ -868,522 +733,9 @@ module getTanh_internal
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE getTanh_internal_ic_10295715645886237553
+// MODULE getTanh_internal_ic_12564195338966864784
 /////////////////////////////////////////////////////////////////
-module getTanh_internal_ic_10295715645886237553
-(
-   input logic clock,
-   input logic resetn,
-   // ICM m
-   input logic m_arb_request [2],
-   input logic m_arb_enable [2],
-   input logic m_arb_read [2],
-   input logic m_arb_write [2],
-   input logic m_arb_burstcount [2],
-   input logic [9:0] m_arb_address [2],
-   input logic [31:0] m_arb_writedata [2],
-   input logic [3:0] m_arb_byteenable [2],
-   output logic m_arb_stall [2],
-   output logic m_wrp_ack [2],
-   output logic m_rrp_datavalid [2],
-   output logic [31:0] m_rrp_data [2],
-   // ICM mout
-   output logic mout_arb_request,
-   output logic mout_arb_enable,
-   output logic mout_arb_read,
-   output logic mout_arb_write,
-   output logic mout_arb_burstcount,
-   output logic [9:0] mout_arb_address,
-   output logic [31:0] mout_arb_writedata,
-   output logic [3:0] mout_arb_byteenable,
-   output logic mout_arb_id,
-   input logic mout_arb_stall,
-   input logic mout_wrp_ack,
-   input logic mout_rrp_datavalid,
-   input logic [31:0] mout_rrp_data
-);
-   genvar __i;
-   generate
-      for( __i = 0; __i < 2; __i = __i + 1 )
-      begin:m
-         logic id;
-         acl_ic_host_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) m_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) arb_intf();
-         acl_ic_wrp_intf
-         #(
-            .ID_W(1)
-         ) wrp_intf();
-         acl_ic_rrp_intf
-         #(
-            .DATA_W(32),
-            .ID_W(1)
-         ) rrp_intf();
-
-         assign id = __i;
-         // INST m_endp of acl_ic_host_endpoint
-         acl_ic_host_endpoint
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1),
-            .NUM_READ_HOSTS(0),
-            .NUM_WRITE_HOSTS(2),
-            .ID(__i)
-         )
-         m_endp
-         (
-            .clock(clock),
-            .resetn(resetn),
-            .m_intf(m_intf),
-            .arb_intf(arb_intf),
-            .wrp_intf(wrp_intf),
-            .rrp_intf(rrp_intf)
-         );
-
-         assign m_intf.arb.req.request = m_arb_request[__i];
-         assign m_intf.arb.req.enable = m_arb_enable[__i];
-         assign m_intf.arb.req.read = m_arb_read[__i];
-         assign m_intf.arb.req.write = m_arb_write[__i];
-         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
-         assign m_intf.arb.req.address = m_arb_address[__i];
-         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
-         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
-         assign m_arb_stall[__i] = m_intf.arb.stall;
-         assign m_wrp_ack[__i] = m_intf.wrp.ack;
-         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
-         assign m_rrp_data[__i] = m_intf.rrp.data;
-         assign m_intf.arb.req.id = id;
-      end
-
-   endgenerate
-
-   generate
-   begin:s
-      acl_arb_intf
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1)
-      ) in_arb_intf();
-      acl_arb_intf
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1)
-      ) out_arb_intf();
-      acl_ic_wrp_intf
-      #(
-         .ID_W(1)
-      ) wrp_intf();
-      acl_ic_rrp_intf
-      #(
-         .DATA_W(32),
-         .ID_W(1)
-      ) rrp_intf();
-
-      // INST s_endp of acl_ic_agent_endpoint
-      acl_ic_agent_endpoint
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1),
-         .NUM_READ_HOSTS(0),
-         .NUM_WRITE_HOSTS(2),
-         .PIPELINE_RETURN_PATHS(0),
-         .WRP_FIFO_DEPTH(0),
-         .RRP_FIFO_DEPTH(0),
-         .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(1),
-         .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
-      )
-      s_endp
-      (
-         .clock(clock),
-         .resetn(resetn),
-         .m_intf(in_arb_intf),
-         .s_intf(out_arb_intf),
-         .s_readdatavalid(mout_rrp_datavalid),
-         .s_readdata(mout_rrp_data),
-         .s_writeack(mout_wrp_ack),
-         .wrp_intf(wrp_intf),
-         .rrp_intf(rrp_intf)
-      );
-
-   end
-   endgenerate
-
-   generate
-   begin:wrp
-      assign m[0].wrp_intf.ack = s.wrp_intf.ack;
-      assign m[0].wrp_intf.id = s.wrp_intf.id;
-      assign m[1].wrp_intf.ack = s.wrp_intf.ack;
-      assign m[1].wrp_intf.id = s.wrp_intf.id;
-   end
-   endgenerate
-
-   generate
-   begin:rrp
-   end
-   endgenerate
-
-   generate
-      for( __i = 0; __i < 1; __i = __i + 1 )
-      begin:a
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) m0_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) m1_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) mout_intf();
-
-         // INST a of acl_arb2
-         acl_arb2
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1),
-            .PIPELINE("none"),
-            .KEEP_LAST_GRANT(1),
-            .NO_STALL_NETWORK(0),
-            .ASYNC_RESET(1),
-            .SYNCHRONIZE_RESET(0)
-         )
-         a
-         (
-            .clock(clock),
-            .resetn(resetn),
-            .m0_intf(m0_intf),
-            .m1_intf(m1_intf),
-            .mout_intf(mout_intf)
-         );
-
-      end
-
-   endgenerate
-
-   assign mout_arb_request = s.out_arb_intf.req.request;
-   assign mout_arb_enable = s.out_arb_intf.req.enable;
-   assign mout_arb_read = s.out_arb_intf.req.read;
-   assign mout_arb_write = s.out_arb_intf.req.write;
-   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
-   assign mout_arb_address = s.out_arb_intf.req.address;
-   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
-   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
-   assign mout_arb_id = s.out_arb_intf.req.id;
-   assign s.out_arb_intf.stall = mout_arb_stall;
-   assign s.in_arb_intf.req = a[0].mout_intf.req;
-   assign a[0].mout_intf.stall = s.in_arb_intf.stall;
-   assign a[0].m0_intf.req = m[0].arb_intf.req;
-   assign m[0].arb_intf.stall = a[0].m0_intf.stall;
-   assign a[0].m1_intf.req = m[1].arb_intf.req;
-   assign m[1].arb_intf.stall = a[0].m1_intf.stall;
-endmodule
-
-/////////////////////////////////////////////////////////////////
-// MODULE getTanh_internal_ic_6556085024641785210
-/////////////////////////////////////////////////////////////////
-module getTanh_internal_ic_6556085024641785210
-(
-   input logic clock,
-   input logic resetn,
-   // ICM m
-   input logic m_arb_request [2],
-   input logic m_arb_enable [2],
-   input logic m_arb_read [2],
-   input logic m_arb_write [2],
-   input logic m_arb_burstcount [2],
-   input logic [9:0] m_arb_address [2],
-   input logic [31:0] m_arb_writedata [2],
-   input logic [3:0] m_arb_byteenable [2],
-   output logic m_arb_stall [2],
-   output logic m_wrp_ack [2],
-   output logic m_rrp_datavalid [2],
-   output logic [31:0] m_rrp_data [2],
-   // ICM mout
-   output logic mout_arb_request,
-   output logic mout_arb_enable,
-   output logic mout_arb_read,
-   output logic mout_arb_write,
-   output logic mout_arb_burstcount,
-   output logic [9:0] mout_arb_address,
-   output logic [31:0] mout_arb_writedata,
-   output logic [3:0] mout_arb_byteenable,
-   output logic mout_arb_id,
-   input logic mout_arb_stall,
-   input logic mout_wrp_ack,
-   input logic mout_rrp_datavalid,
-   input logic [31:0] mout_rrp_data
-);
-   genvar __i;
-   generate
-      for( __i = 0; __i < 2; __i = __i + 1 )
-      begin:m
-         logic id;
-         acl_ic_host_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) m_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) arb_intf();
-         acl_ic_wrp_intf
-         #(
-            .ID_W(1)
-         ) wrp_intf();
-         acl_ic_rrp_intf
-         #(
-            .DATA_W(32),
-            .ID_W(1)
-         ) rrp_intf();
-
-         assign id = __i;
-         // INST m_endp of acl_ic_host_endpoint
-         acl_ic_host_endpoint
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1),
-            .NUM_READ_HOSTS(1),
-            .NUM_WRITE_HOSTS(1),
-            .ID(__i)
-         )
-         m_endp
-         (
-            .clock(clock),
-            .resetn(resetn),
-            .m_intf(m_intf),
-            .arb_intf(arb_intf),
-            .wrp_intf(wrp_intf),
-            .rrp_intf(rrp_intf)
-         );
-
-         assign m_intf.arb.req.request = m_arb_request[__i];
-         assign m_intf.arb.req.enable = m_arb_enable[__i];
-         assign m_intf.arb.req.read = m_arb_read[__i];
-         assign m_intf.arb.req.write = m_arb_write[__i];
-         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
-         assign m_intf.arb.req.address = m_arb_address[__i];
-         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
-         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
-         assign m_arb_stall[__i] = m_intf.arb.stall;
-         assign m_wrp_ack[__i] = m_intf.wrp.ack;
-         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
-         assign m_rrp_data[__i] = m_intf.rrp.data;
-         assign m_intf.arb.req.id = id;
-      end
-
-   endgenerate
-
-   generate
-   begin:s
-      acl_arb_intf
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1)
-      ) in_arb_intf();
-      acl_arb_intf
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1)
-      ) out_arb_intf();
-      acl_ic_wrp_intf
-      #(
-         .ID_W(1)
-      ) wrp_intf();
-      acl_ic_rrp_intf
-      #(
-         .DATA_W(32),
-         .ID_W(1)
-      ) rrp_intf();
-
-      // INST s_endp of acl_ic_agent_endpoint
-      acl_ic_agent_endpoint
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1),
-         .NUM_READ_HOSTS(1),
-         .NUM_WRITE_HOSTS(1),
-         .PIPELINE_RETURN_PATHS(0),
-         .WRP_FIFO_DEPTH(0),
-         .RRP_FIFO_DEPTH(0),
-         .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(1),
-         .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
-      )
-      s_endp
-      (
-         .clock(clock),
-         .resetn(resetn),
-         .m_intf(in_arb_intf),
-         .s_intf(out_arb_intf),
-         .s_readdatavalid(mout_rrp_datavalid),
-         .s_readdata(mout_rrp_data),
-         .s_writeack(mout_wrp_ack),
-         .wrp_intf(wrp_intf),
-         .rrp_intf(rrp_intf)
-      );
-
-   end
-   endgenerate
-
-   generate
-   begin:wrp
-      assign m[0].wrp_intf.ack = s.wrp_intf.ack;
-      assign m[0].wrp_intf.id = s.wrp_intf.id;
-   end
-   endgenerate
-
-   generate
-   begin:rrp
-      assign m[1].rrp_intf.datavalid = s.rrp_intf.datavalid;
-      assign m[1].rrp_intf.data = s.rrp_intf.data;
-      assign m[1].rrp_intf.id = s.rrp_intf.id;
-   end
-   endgenerate
-
-   generate
-      for( __i = 0; __i < 1; __i = __i + 1 )
-      begin:a
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) m0_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) m1_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) mout_intf();
-
-         // INST a of acl_arb2
-         acl_arb2
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1),
-            .PIPELINE("none"),
-            .KEEP_LAST_GRANT(1),
-            .NO_STALL_NETWORK(0),
-            .ASYNC_RESET(1),
-            .SYNCHRONIZE_RESET(0)
-         )
-         a
-         (
-            .clock(clock),
-            .resetn(resetn),
-            .m0_intf(m0_intf),
-            .m1_intf(m1_intf),
-            .mout_intf(mout_intf)
-         );
-
-      end
-
-   endgenerate
-
-   assign mout_arb_request = s.out_arb_intf.req.request;
-   assign mout_arb_enable = s.out_arb_intf.req.enable;
-   assign mout_arb_read = s.out_arb_intf.req.read;
-   assign mout_arb_write = s.out_arb_intf.req.write;
-   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
-   assign mout_arb_address = s.out_arb_intf.req.address;
-   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
-   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
-   assign mout_arb_id = s.out_arb_intf.req.id;
-   assign s.out_arb_intf.stall = mout_arb_stall;
-   assign s.in_arb_intf.req = a[0].mout_intf.req;
-   assign a[0].mout_intf.stall = s.in_arb_intf.stall;
-   assign a[0].m0_intf.req = m[1].arb_intf.req;
-   assign m[1].arb_intf.stall = a[0].m0_intf.stall;
-   assign a[0].m1_intf.req = m[0].arb_intf.req;
-   assign m[0].arb_intf.stall = a[0].m1_intf.stall;
-endmodule
-
-/////////////////////////////////////////////////////////////////
-// MODULE getTanh_internal_ic_13830461541539336706
-/////////////////////////////////////////////////////////////////
-module getTanh_internal_ic_13830461541539336706
+module getTanh_internal_ic_12564195338966864784
 (
    input logic clock,
    input logic resetn,
@@ -1528,7 +880,7 @@ module getTanh_internal_ic_13830461541539336706
          .WRP_FIFO_DEPTH(0),
          .RRP_FIFO_DEPTH(0),
          .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(3),
+         .AGENT_FIXED_LATENCY(1),
          .SEPARATE_READ_WRITE_STALLS(0),
          .ASYNC_RESET(1),
          .SYNCHRONIZE_RESET(0)
@@ -1558,6 +910,202 @@ module getTanh_internal_ic_13830461541539336706
 
    generate
    begin:rrp
+   end
+   endgenerate
+
+   assign mout_arb_request = s.out_arb_intf.req.request;
+   assign mout_arb_enable = s.out_arb_intf.req.enable;
+   assign mout_arb_read = s.out_arb_intf.req.read;
+   assign mout_arb_write = s.out_arb_intf.req.write;
+   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
+   assign mout_arb_address = s.out_arb_intf.req.address;
+   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
+   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
+   assign mout_arb_id = s.out_arb_intf.req.id;
+   assign s.out_arb_intf.stall = mout_arb_stall;
+   assign s.in_arb_intf.req = m[0].arb_intf.req;
+   assign m[0].arb_intf.stall = s.in_arb_intf.stall;
+endmodule
+
+/////////////////////////////////////////////////////////////////
+// MODULE getTanh_internal_ic_16657900664427986554
+/////////////////////////////////////////////////////////////////
+module getTanh_internal_ic_16657900664427986554
+(
+   input logic clock,
+   input logic resetn,
+   // ICM m
+   input logic m_arb_request [1],
+   input logic m_arb_enable [1],
+   input logic m_arb_read [1],
+   input logic m_arb_write [1],
+   input logic m_arb_burstcount [1],
+   input logic [9:0] m_arb_address [1],
+   input logic [31:0] m_arb_writedata [1],
+   input logic [3:0] m_arb_byteenable [1],
+   output logic m_arb_stall [1],
+   output logic m_wrp_ack [1],
+   output logic m_rrp_datavalid [1],
+   output logic [31:0] m_rrp_data [1],
+   // ICM mout
+   output logic mout_arb_request,
+   output logic mout_arb_enable,
+   output logic mout_arb_read,
+   output logic mout_arb_write,
+   output logic mout_arb_burstcount,
+   output logic [9:0] mout_arb_address,
+   output logic [31:0] mout_arb_writedata,
+   output logic [3:0] mout_arb_byteenable,
+   output logic mout_arb_id,
+   input logic mout_arb_stall,
+   input logic mout_wrp_ack,
+   input logic mout_rrp_datavalid,
+   input logic [31:0] mout_rrp_data
+);
+   genvar __i;
+   generate
+      for( __i = 0; __i < 1; __i = __i + 1 )
+      begin:m
+         logic id;
+         acl_ic_host_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(10),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) m_intf();
+         acl_arb_intf
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(10),
+            .BYTEENA_W(4),
+            .ID_W(1)
+         ) arb_intf();
+         acl_ic_wrp_intf
+         #(
+            .ID_W(1)
+         ) wrp_intf();
+         acl_ic_rrp_intf
+         #(
+            .DATA_W(32),
+            .ID_W(1)
+         ) rrp_intf();
+
+         assign id = __i;
+         // INST m_endp of acl_ic_host_endpoint
+         acl_ic_host_endpoint
+         #(
+            .DATA_W(32),
+            .BURSTCOUNT_W(1),
+            .ADDRESS_W(10),
+            .BYTEENA_W(4),
+            .ID_W(1),
+            .NUM_READ_HOSTS(1),
+            .NUM_WRITE_HOSTS(0),
+            .ID(__i)
+         )
+         m_endp
+         (
+            .clock(clock),
+            .resetn(resetn),
+            .m_intf(m_intf),
+            .arb_intf(arb_intf),
+            .wrp_intf(wrp_intf),
+            .rrp_intf(rrp_intf)
+         );
+
+         assign m_intf.arb.req.request = m_arb_request[__i];
+         assign m_intf.arb.req.enable = m_arb_enable[__i];
+         assign m_intf.arb.req.read = m_arb_read[__i];
+         assign m_intf.arb.req.write = m_arb_write[__i];
+         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
+         assign m_intf.arb.req.address = m_arb_address[__i];
+         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
+         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
+         assign m_arb_stall[__i] = m_intf.arb.stall;
+         assign m_wrp_ack[__i] = m_intf.wrp.ack;
+         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
+         assign m_rrp_data[__i] = m_intf.rrp.data;
+         assign m_intf.arb.req.id = id;
+      end
+
+   endgenerate
+
+   generate
+   begin:s
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(10),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) in_arb_intf();
+      acl_arb_intf
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(10),
+         .BYTEENA_W(4),
+         .ID_W(1)
+      ) out_arb_intf();
+      acl_ic_wrp_intf
+      #(
+         .ID_W(1)
+      ) wrp_intf();
+      acl_ic_rrp_intf
+      #(
+         .DATA_W(32),
+         .ID_W(1)
+      ) rrp_intf();
+
+      // INST s_endp of acl_ic_agent_endpoint
+      acl_ic_agent_endpoint
+      #(
+         .DATA_W(32),
+         .BURSTCOUNT_W(1),
+         .ADDRESS_W(10),
+         .BYTEENA_W(4),
+         .ID_W(1),
+         .NUM_READ_HOSTS(1),
+         .NUM_WRITE_HOSTS(0),
+         .PIPELINE_RETURN_PATHS(0),
+         .WRP_FIFO_DEPTH(0),
+         .RRP_FIFO_DEPTH(0),
+         .RRP_USE_LL_FIFO(1),
+         .AGENT_FIXED_LATENCY(1),
+         .SEPARATE_READ_WRITE_STALLS(0),
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
+      )
+      s_endp
+      (
+         .clock(clock),
+         .resetn(resetn),
+         .m_intf(in_arb_intf),
+         .s_intf(out_arb_intf),
+         .s_readdatavalid(mout_rrp_datavalid),
+         .s_readdata(mout_rrp_data),
+         .s_writeack(mout_wrp_ack),
+         .wrp_intf(wrp_intf),
+         .rrp_intf(rrp_intf)
+      );
+
+   end
+   endgenerate
+
+   generate
+   begin:wrp
+   end
+   endgenerate
+
+   generate
+   begin:rrp
+      assign m[0].rrp_intf.datavalid = s.rrp_intf.datavalid;
+      assign m[0].rrp_intf.data = s.rrp_intf.data;
+      assign m[0].rrp_intf.id = s.rrp_intf.id;
    end
    endgenerate
 

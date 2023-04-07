@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"getTanh"
       , "data":
-      ['1', '17046,17046,17046', 'n/a,n/a,n/a']
+      ['1', '16025,16025,16025', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '17046,17046,17046', 'n/a,n/a,n/a']
+      ['1', '16025,16025,16025', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

@@ -6,13 +6,7 @@
 module tb (
 	);
 
-	wire  [63:0] fir_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_fir_avmm_0_rw_inst:avs_readdata -> fir_inst:avmm_0_rw_readdata
-	wire  [63:0] fir_inst_avmm_0_rw_address;                                                            // fir_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_fir_avmm_0_rw_inst:avs_address
-	wire   [7:0] fir_inst_avmm_0_rw_byteenable;                                                         // fir_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_fir_avmm_0_rw_inst:avs_byteenable
-	wire         fir_inst_avmm_0_rw_read;                                                               // fir_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_fir_avmm_0_rw_inst:avs_read
-	wire         fir_inst_avmm_0_rw_write;                                                              // fir_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_fir_avmm_0_rw_inst:avs_write
-	wire  [63:0] fir_inst_avmm_0_rw_writedata;                                                          // fir_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_fir_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                            // clock_reset_inst:clock -> [component_dpi_controller_fir_inst:clock, fir_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_fir_avmm_0_rw_inst:clock, stream_source_dpi_bfm_fir_d_i_inst:clock, stream_source_dpi_bfm_fir_idx_inst:clock]
+	wire         clock_reset_inst_clock_clk;                                                            // clock_reset_inst:clock -> [component_dpi_controller_fir_inst:clock, fir_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, stream_source_dpi_bfm_fir_d_i_inst:clock, stream_source_dpi_bfm_fir_idx_inst:clock]
 	wire         clock_reset_inst_clock2x_clk;                                                          // clock_reset_inst:clock2x -> [component_dpi_controller_fir_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_fir_d_i_inst:clock2x, stream_source_dpi_bfm_fir_idx_inst:clock2x]
 	wire         component_dpi_controller_fir_inst_component_call_valid;                                // component_dpi_controller_fir_inst:start -> fir_inst:start
 	wire         fir_inst_call_stall;                                                                   // fir_inst:busy -> component_dpi_controller_fir_inst:busy
@@ -30,8 +24,6 @@ module tb (
 	wire         fir_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit;           // fir_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_fir_idx_inst:do_bind
 	wire         fir_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit;         // fir_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_fir_idx_inst:enable
 	wire         fir_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_1_conduit; // fir_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_fir_idx_inst:source_ready
-	wire         fir_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit;           // fir_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_2 -> mm_agent_dpi_bfm_fir_avmm_0_rw_inst:do_bind
-	wire         fir_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit;         // fir_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_2 -> mm_agent_dpi_bfm_fir_avmm_0_rw_inst:enable
 	wire         component_dpi_controller_fir_inst_read_implicit_streams_conduit;                       // component_dpi_controller_fir_inst:read_implicit_streams -> fir_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
 	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                           // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
 	wire         fir_inst_return_valid;                                                                 // fir_inst:done -> component_dpi_controller_fir_inst:done
@@ -39,7 +31,7 @@ module tb (
 	wire  [31:0] fir_inst_returndata_data;                                                              // fir_inst:returndata -> component_dpi_controller_fir_inst:returndata
 	wire  [63:0] stream_source_dpi_bfm_fir_d_i_inst_source_data_data;                                   // stream_source_dpi_bfm_fir_d_i_inst:source_data -> fir_inst:d_i
 	wire  [63:0] stream_source_dpi_bfm_fir_idx_inst_source_data_data;                                   // stream_source_dpi_bfm_fir_idx_inst:source_data -> fir_inst:idx
-	wire         clock_reset_inst_reset_reset;                                                          // clock_reset_inst:resetn -> [component_dpi_controller_fir_inst:resetn, fir_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_fir_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_fir_d_i_inst:resetn, stream_source_dpi_bfm_fir_idx_inst:resetn]
+	wire         clock_reset_inst_reset_reset;                                                          // clock_reset_inst:resetn -> [component_dpi_controller_fir_inst:resetn, fir_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, stream_source_dpi_bfm_fir_d_i_inst:resetn, stream_source_dpi_bfm_fir_idx_inst:resetn]
 	wire         component_dpi_controller_fir_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_fir_inst:done_irq
 
 	clock_reset clock_reset_inst (
@@ -82,15 +74,13 @@ module tb (
 	fir_cfan fir_component_dpi_controller_bind_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_fir_inst_dpi_control_bind_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (fir_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (fir_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (fir_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
+		.out_conduit_1 (fir_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit)  //  output,  width = 1, out_conduit_1.conduit
 	);
 
 	fir_en_cfan fir_component_dpi_controller_enable_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_fir_inst_dpi_control_enable_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (fir_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (fir_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (fir_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
+		.out_conduit_1 (fir_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit)  //  output,  width = 1, out_conduit_1.conduit
 	);
 
 	fir_ir_cfan fir_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -100,21 +90,15 @@ module tb (
 	);
 
 	fir fir_inst (
-		.clock                (clock_reset_inst_clock_clk),                               //   input,   width = 1,      clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                             //   input,   width = 1,      reset.reset_n
-		.start                (component_dpi_controller_fir_inst_component_call_valid),   //   input,   width = 1,       call.valid
-		.busy                 (fir_inst_call_stall),                                      //  output,   width = 1,           .stall
-		.done                 (fir_inst_return_valid),                                    //  output,   width = 1,     return.valid
-		.stall                (component_dpi_controller_fir_inst_component_return_stall), //   input,   width = 1,           .stall
-		.returndata           (fir_inst_returndata_data),                                 //  output,  width = 32, returndata.data
-		.d_i                  (stream_source_dpi_bfm_fir_d_i_inst_source_data_data),      //   input,  width = 64,        d_i.data
-		.idx                  (stream_source_dpi_bfm_fir_idx_inst_source_data_data),      //   input,  width = 64,        idx.data
-		.avmm_0_rw_address    (fir_inst_avmm_0_rw_address),                               //  output,  width = 64,  avmm_0_rw.address
-		.avmm_0_rw_byteenable (fir_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,           .byteenable
-		.avmm_0_rw_read       (fir_inst_avmm_0_rw_read),                                  //  output,   width = 1,           .read
-		.avmm_0_rw_readdata   (fir_inst_avmm_0_rw_readdata),                              //   input,  width = 64,           .readdata
-		.avmm_0_rw_write      (fir_inst_avmm_0_rw_write),                                 //  output,   width = 1,           .write
-		.avmm_0_rw_writedata  (fir_inst_avmm_0_rw_writedata)                              //  output,  width = 64,           .writedata
+		.clock      (clock_reset_inst_clock_clk),                               //   input,   width = 1,      clock.clk
+		.resetn     (clock_reset_inst_reset_reset),                             //   input,   width = 1,      reset.reset_n
+		.start      (component_dpi_controller_fir_inst_component_call_valid),   //   input,   width = 1,       call.valid
+		.busy       (fir_inst_call_stall),                                      //  output,   width = 1,           .stall
+		.done       (fir_inst_return_valid),                                    //  output,   width = 1,     return.valid
+		.stall      (component_dpi_controller_fir_inst_component_return_stall), //   input,   width = 1,           .stall
+		.returndata (fir_inst_returndata_data),                                 //  output,  width = 32, returndata.data
+		.d_i        (stream_source_dpi_bfm_fir_d_i_inst_source_data_data),      //   input,  width = 64,        d_i.data
+		.idx        (stream_source_dpi_bfm_fir_idx_inst_source_data_data)       //   input,  width = 64,        idx.data
 	);
 
 	main_dpi_controller main_dpi_controller_inst (
@@ -125,19 +109,6 @@ module tb (
 		.component_done                   (concatenate_component_done_inst_out_conduit_conduit),                   //   input,  width = 1,                   component_done.conduit
 		.component_wait_for_stream_writes (concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit), //   input,  width = 1, component_wait_for_stream_writes.conduit
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
-	);
-
-	mm_agent_fir_avmm_0_rw mm_agent_dpi_bfm_fir_avmm_0_rw_inst (
-		.do_bind        (fir_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (fir_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                    //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                  //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (fir_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (fir_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (fir_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (fir_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (fir_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (fir_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
 	);
 
 	sp_cstart split_component_start_inst (

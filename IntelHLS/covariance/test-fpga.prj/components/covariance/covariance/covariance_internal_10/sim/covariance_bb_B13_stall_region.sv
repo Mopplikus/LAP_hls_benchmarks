@@ -16,314 +16,233 @@
 
 // SystemVerilog created from bb_covariance_B13_stall_region
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:05 2023
+// SystemVerilog created on Fri Apr  7 17:50:02 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module covariance_bb_B13_stall_region (
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_valid_out,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_stall_out,
-    input wire [0:0] in_pipeline_stall_in,
-    output wire [0:0] out_pipeline_valid_out,
+    input wire [0:0] in_wgl_7_exit_exit_valid_out,
+    input wire [0:0] in_wgl_7_exit_exit_stall_out,
+    output wire [0:0] out_wgl_7_exit_exit_valid_in,
+    output wire [0:0] out_wgl_7_exit_exit_stall_in,
+    output wire [0:0] out_feedback_out_18,
+    input wire [0:0] in_feedback_stall_in_18,
+    output wire [0:0] out_feedback_valid_out_18,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
-    input wire [0:0] in_forked59,
-    input wire [32:0] in_fpga_indvars_iv20_pop34209,
-    input wire [31:0] in_i56_057_pop35215,
-    input wire [31:0] in_lim_ext136_pop61204,
-    input wire [31:0] in_lim_ext137_pop36218,
-    input wire [0:0] in_notcmp63212,
-    input wire [31:0] in_reorder_limiter_enter142_pop37221,
-    input wire [31:0] in_reorder_limiter_enter183,
+    input wire [0:0] in_c0_exe442822,
+    input wire [31:0] in_c0_exe843226,
     input wire [0:0] in_valid_in,
-    output wire [31:0] out_c0_exe10404,
-    output wire [32:0] out_c0_exe11,
-    output wire [0:0] out_c0_exe12,
-    output wire [31:0] out_c0_exe13,
-    output wire [31:0] out_c0_exe14,
-    output wire [31:0] out_c0_exe15,
-    output wire [0:0] out_c0_exe2396,
-    output wire [31:0] out_c0_exe3397,
-    output wire [31:0] out_c0_exe4398,
-    output wire [31:0] out_c0_exe5399,
-    output wire [0:0] out_c0_exe6400,
-    output wire [31:0] out_c0_exe7401,
-    output wire [0:0] out_c0_exe8402,
-    output wire [31:0] out_c0_exe9403,
+    input wire [0:0] in_iowr_bl_return_covariance_i_fifoready,
+    output wire [0:0] out_iowr_bl_return_covariance_o_fifodata,
+    output wire [0:0] out_iowr_bl_return_covariance_o_fifovalid,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
-    wire [0:0] covariance_B13_merge_reg_aunroll_x_out_stall_out;
-    wire [0:0] covariance_B13_merge_reg_aunroll_x_out_valid_out;
-    wire [0:0] covariance_B13_merge_reg_aunroll_x_out_data_out_0_tpl;
-    wire [31:0] covariance_B13_merge_reg_aunroll_x_out_data_out_1_tpl;
-    wire [31:0] covariance_B13_merge_reg_aunroll_x_out_data_out_2_tpl;
-    wire [32:0] covariance_B13_merge_reg_aunroll_x_out_data_out_3_tpl;
-    wire [0:0] covariance_B13_merge_reg_aunroll_x_out_data_out_4_tpl;
-    wire [31:0] covariance_B13_merge_reg_aunroll_x_out_data_out_5_tpl;
-    wire [31:0] covariance_B13_merge_reg_aunroll_x_out_data_out_6_tpl;
-    wire [31:0] covariance_B13_merge_reg_aunroll_x_out_data_out_7_tpl;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_stall_out;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_valid_out;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_o_stall;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_o_valid;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_pipeline_valid_out;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_2_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_3_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_4_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_5_tpl;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_6_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_7_tpl;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_8_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_9_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_10_tpl;
-    wire [32:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_11_tpl;
-    wire [0:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_12_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_13_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_14_tpl;
-    wire [31:0] i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_15_tpl;
-    wire [194:0] bubble_join_stall_entry_q;
+    wire [0:0] i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_iowr_bl_return_covariance_o_fifodata;
+    wire [0:0] i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_iowr_bl_return_covariance_o_fifovalid;
+    wire [0:0] i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_o_stall;
+    wire [0:0] i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_o_valid;
+    wire [0:0] i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_feedback_out_18;
+    wire [0:0] i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_feedback_valid_out_18;
+    wire [0:0] i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_stall_out;
+    wire [0:0] i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_valid_out;
+    wire [0:0] i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_exit_stall_in;
+    wire [0:0] i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_exit_valid_in;
+    wire [0:0] i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_stall_out;
+    wire [0:0] i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_valid_out;
+    wire [32:0] bubble_join_stall_entry_q;
     wire [0:0] bubble_select_stall_entry_b;
-    wire [32:0] bubble_select_stall_entry_c;
-    wire [31:0] bubble_select_stall_entry_d;
-    wire [31:0] bubble_select_stall_entry_e;
-    wire [31:0] bubble_select_stall_entry_f;
-    wire [0:0] bubble_select_stall_entry_g;
-    wire [31:0] bubble_select_stall_entry_h;
-    wire [31:0] bubble_select_stall_entry_i;
-    wire [194:0] bubble_join_covariance_B13_merge_reg_aunroll_x_q;
-    wire [0:0] bubble_select_covariance_B13_merge_reg_aunroll_x_b;
-    wire [31:0] bubble_select_covariance_B13_merge_reg_aunroll_x_c;
-    wire [31:0] bubble_select_covariance_B13_merge_reg_aunroll_x_d;
-    wire [32:0] bubble_select_covariance_B13_merge_reg_aunroll_x_e;
-    wire [0:0] bubble_select_covariance_B13_merge_reg_aunroll_x_f;
-    wire [31:0] bubble_select_covariance_B13_merge_reg_aunroll_x_g;
-    wire [31:0] bubble_select_covariance_B13_merge_reg_aunroll_x_h;
-    wire [31:0] bubble_select_covariance_B13_merge_reg_aunroll_x_i;
-    wire [324:0] bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q;
-    wire [0:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_b;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_c;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_d;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_e;
-    wire [0:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_f;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_g;
-    wire [0:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_h;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_i;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_j;
-    wire [32:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_k;
-    wire [0:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_l;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_m;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_n;
-    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_o;
+    wire [31:0] bubble_select_stall_entry_c;
+    wire [0:0] SE_out_i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_wireValid;
+    wire [0:0] SE_out_i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_wireValid;
+    wire [0:0] SE_out_i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_wireValid;
+    wire [0:0] SE_out_i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_backStall;
     wire [0:0] SE_stall_entry_wireValid;
+    wire [0:0] SE_stall_entry_wireStall;
+    wire [0:0] SE_stall_entry_StallValid;
+    wire [0:0] SE_stall_entry_toReg0;
+    reg [0:0] SE_stall_entry_fromReg0;
+    wire [0:0] SE_stall_entry_consumed0;
+    wire [0:0] SE_stall_entry_toReg1;
+    reg [0:0] SE_stall_entry_fromReg1;
+    wire [0:0] SE_stall_entry_consumed1;
+    wire [0:0] SE_stall_entry_toReg2;
+    reg [0:0] SE_stall_entry_fromReg2;
+    wire [0:0] SE_stall_entry_consumed2;
+    wire [0:0] SE_stall_entry_toReg3;
+    reg [0:0] SE_stall_entry_fromReg3;
+    wire [0:0] SE_stall_entry_consumed3;
+    wire [0:0] SE_stall_entry_or0;
+    wire [0:0] SE_stall_entry_or1;
+    wire [0:0] SE_stall_entry_or2;
     wire [0:0] SE_stall_entry_backStall;
     wire [0:0] SE_stall_entry_V0;
-    wire [0:0] SE_out_covariance_B13_merge_reg_aunroll_x_wireValid;
-    wire [0:0] SE_out_covariance_B13_merge_reg_aunroll_x_backStall;
-    wire [0:0] SE_out_covariance_B13_merge_reg_aunroll_x_V0;
-    wire [0:0] SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_wireValid;
-    wire [0:0] SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_backStall;
-    wire [0:0] SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_V0;
+    wire [0:0] SE_stall_entry_V1;
+    wire [0:0] SE_stall_entry_V2;
+    wire [0:0] SE_stall_entry_V3;
 
 
-    // bubble_join_stall_entry(BITJOIN,21)
-    assign bubble_join_stall_entry_q = {in_reorder_limiter_enter183, in_reorder_limiter_enter142_pop37221, in_notcmp63212, in_lim_ext137_pop36218, in_lim_ext136_pop61204, in_i56_057_pop35215, in_fpga_indvars_iv20_pop34209, in_forked59};
-
-    // bubble_select_stall_entry(BITSELECT,22)
-    assign bubble_select_stall_entry_b = $unsigned(bubble_join_stall_entry_q[0:0]);
-    assign bubble_select_stall_entry_c = $unsigned(bubble_join_stall_entry_q[33:1]);
-    assign bubble_select_stall_entry_d = $unsigned(bubble_join_stall_entry_q[65:34]);
-    assign bubble_select_stall_entry_e = $unsigned(bubble_join_stall_entry_q[97:66]);
-    assign bubble_select_stall_entry_f = $unsigned(bubble_join_stall_entry_q[129:98]);
-    assign bubble_select_stall_entry_g = $unsigned(bubble_join_stall_entry_q[130:130]);
-    assign bubble_select_stall_entry_h = $unsigned(bubble_join_stall_entry_q[162:131]);
-    assign bubble_select_stall_entry_i = $unsigned(bubble_join_stall_entry_q[194:163]);
-
-    // SE_stall_entry(STALLENABLE,31)
-    // Valid signal propagation
-    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
+    // SE_out_i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1(STALLENABLE,37)
     // Backward Stall generation
-    assign SE_stall_entry_backStall = covariance_B13_merge_reg_aunroll_x_out_stall_out | ~ (SE_stall_entry_wireValid);
+    assign SE_out_i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_backStall = $unsigned(1'b0);
     // Computing multiple Valid(s)
-    assign SE_stall_entry_wireValid = in_valid_in;
+    assign SE_out_i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_wireValid = i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_valid_out;
 
-    // covariance_B13_merge_reg_aunroll_x(BLACKBOX,17)@0
+    // i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1(BLACKBOX,11)@0
     // in in_stall_in@20000000
+    // out out_data_out@1
+    // out out_feedback_out_18@20000000
+    // out out_feedback_valid_out_18@20000000
     // out out_stall_out@20000000
     // out out_valid_out@1
-    // out out_data_out_0_tpl@1
-    // out out_data_out_1_tpl@1
-    // out out_data_out_2_tpl@1
-    // out out_data_out_3_tpl@1
-    // out out_data_out_4_tpl@1
-    // out out_data_out_5_tpl@1
-    // out out_data_out_6_tpl@1
-    // out out_data_out_7_tpl@1
-    covariance_B13_merge_reg thecovariance_B13_merge_reg_aunroll_x (
-        .in_stall_in(SE_out_covariance_B13_merge_reg_aunroll_x_backStall),
-        .in_valid_in(SE_stall_entry_V0),
-        .in_data_in_0_tpl(bubble_select_stall_entry_b),
-        .in_data_in_1_tpl(bubble_select_stall_entry_i),
-        .in_data_in_2_tpl(bubble_select_stall_entry_e),
-        .in_data_in_3_tpl(bubble_select_stall_entry_c),
-        .in_data_in_4_tpl(bubble_select_stall_entry_g),
-        .in_data_in_5_tpl(bubble_select_stall_entry_d),
-        .in_data_in_6_tpl(bubble_select_stall_entry_f),
-        .in_data_in_7_tpl(bubble_select_stall_entry_h),
-        .out_stall_out(covariance_B13_merge_reg_aunroll_x_out_stall_out),
-        .out_valid_out(covariance_B13_merge_reg_aunroll_x_out_valid_out),
-        .out_data_out_0_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_0_tpl),
-        .out_data_out_1_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_1_tpl),
-        .out_data_out_2_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_2_tpl),
-        .out_data_out_3_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_3_tpl),
-        .out_data_out_4_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_4_tpl),
-        .out_data_out_5_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_5_tpl),
-        .out_data_out_6_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_6_tpl),
-        .out_data_out_7_tpl(covariance_B13_merge_reg_aunroll_x_out_data_out_7_tpl),
+    covariance_i_llvm_fpga_push_i1_memdep_phi2_push17_0 thei_llvm_fpga_push_i1_memdep_phi2_push17_covariance1 (
+        .in_data_in(bubble_select_stall_entry_b),
+        .in_feedback_stall_in_18(in_feedback_stall_in_18),
+        .in_stall_in(SE_out_i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_backStall),
+        .in_valid_in(SE_stall_entry_V2),
+        .out_data_out(),
+        .out_feedback_out_18(i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_feedback_out_18),
+        .out_feedback_valid_out_18(i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_feedback_valid_out_18),
+        .out_stall_out(i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_stall_out),
+        .out_valid_out(i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // bubble_join_covariance_B13_merge_reg_aunroll_x(BITJOIN,25)
-    assign bubble_join_covariance_B13_merge_reg_aunroll_x_q = {covariance_B13_merge_reg_aunroll_x_out_data_out_7_tpl, covariance_B13_merge_reg_aunroll_x_out_data_out_6_tpl, covariance_B13_merge_reg_aunroll_x_out_data_out_5_tpl, covariance_B13_merge_reg_aunroll_x_out_data_out_4_tpl, covariance_B13_merge_reg_aunroll_x_out_data_out_3_tpl, covariance_B13_merge_reg_aunroll_x_out_data_out_2_tpl, covariance_B13_merge_reg_aunroll_x_out_data_out_1_tpl, covariance_B13_merge_reg_aunroll_x_out_data_out_0_tpl};
-
-    // bubble_select_covariance_B13_merge_reg_aunroll_x(BITSELECT,26)
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_b = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[0:0]);
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_c = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[32:1]);
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_d = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[64:33]);
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_e = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[97:65]);
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_f = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[98:98]);
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_g = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[130:99]);
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_h = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[162:131]);
-    assign bubble_select_covariance_B13_merge_reg_aunroll_x_i = $unsigned(bubble_join_covariance_B13_merge_reg_aunroll_x_q[194:163]);
+    // SE_out_i_iowr_bl_return_covariance_unnamed_covariance8_covariance2(STALLENABLE,35)
+    // Backward Stall generation
+    assign SE_out_i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_backStall = $unsigned(1'b0);
+    // Computing multiple Valid(s)
+    assign SE_out_i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_wireValid = i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_o_valid;
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // SE_out_covariance_B13_merge_reg_aunroll_x(STALLENABLE,34)
-    // Valid signal propagation
-    assign SE_out_covariance_B13_merge_reg_aunroll_x_V0 = SE_out_covariance_B13_merge_reg_aunroll_x_wireValid;
-    // Backward Stall generation
-    assign SE_out_covariance_B13_merge_reg_aunroll_x_backStall = i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_o_stall | ~ (SE_out_covariance_B13_merge_reg_aunroll_x_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_covariance_B13_merge_reg_aunroll_x_wireValid = covariance_B13_merge_reg_aunroll_x_out_valid_out;
-
-    // SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x(STALLENABLE,36)
-    // Valid signal propagation
-    assign SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_V0 = SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_wireValid;
-    // Backward Stall generation
-    assign SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_backStall = in_stall_in | ~ (SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_wireValid = i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_o_valid;
-
-    // i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x(BLACKBOX,19)@1
+    // i_iowr_bl_return_covariance_unnamed_covariance8_covariance2(BLACKBOX,10)@0
     // in in_i_stall@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_stall_out@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_valid_out@20000000
+    // out out_iowr_bl_return_covariance_o_fifodata@20000000
+    // out out_iowr_bl_return_covariance_o_fifovalid@20000000
     // out out_o_stall@20000000
-    // out out_o_valid@5
-    // out out_pipeline_valid_out@20000000
-    // out out_c0_exit394_0_tpl@5
-    // out out_c0_exit394_1_tpl@5
-    // out out_c0_exit394_2_tpl@5
-    // out out_c0_exit394_3_tpl@5
-    // out out_c0_exit394_4_tpl@5
-    // out out_c0_exit394_5_tpl@5
-    // out out_c0_exit394_6_tpl@5
-    // out out_c0_exit394_7_tpl@5
-    // out out_c0_exit394_8_tpl@5
-    // out out_c0_exit394_9_tpl@5
-    // out out_c0_exit394_10_tpl@5
-    // out out_c0_exit394_11_tpl@5
-    // out out_c0_exit394_12_tpl@5
-    // out out_c0_exit394_13_tpl@5
-    // out out_c0_exit394_14_tpl@5
-    // out out_c0_exit394_15_tpl@5
-    covariance_i_sfc_s_c0_in_for_cond65_preh0000ter37635_covariance1 thei_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x (
-        .in_i_stall(SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_backStall),
-        .in_i_valid(SE_out_covariance_B13_merge_reg_aunroll_x_V0),
-        .in_pipeline_stall_in(in_pipeline_stall_in),
-        .in_c0_eni8_0_tpl(GND_q),
-        .in_c0_eni8_1_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_e),
-        .in_c0_eni8_2_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_b),
-        .in_c0_eni8_3_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_g),
-        .in_c0_eni8_4_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_h),
-        .in_c0_eni8_5_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_i),
-        .in_c0_eni8_6_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_f),
-        .in_c0_eni8_7_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_c),
-        .in_c0_eni8_8_tpl(bubble_select_covariance_B13_merge_reg_aunroll_x_d),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_stall_out(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_valid_out(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_valid_out),
-        .out_o_stall(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_o_stall),
-        .out_o_valid(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_o_valid),
-        .out_pipeline_valid_out(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_pipeline_valid_out),
-        .out_c0_exit394_0_tpl(),
-        .out_c0_exit394_1_tpl(),
-        .out_c0_exit394_2_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_2_tpl),
-        .out_c0_exit394_3_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_3_tpl),
-        .out_c0_exit394_4_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_4_tpl),
-        .out_c0_exit394_5_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_5_tpl),
-        .out_c0_exit394_6_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_6_tpl),
-        .out_c0_exit394_7_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_7_tpl),
-        .out_c0_exit394_8_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_8_tpl),
-        .out_c0_exit394_9_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_9_tpl),
-        .out_c0_exit394_10_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_10_tpl),
-        .out_c0_exit394_11_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_11_tpl),
-        .out_c0_exit394_12_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_12_tpl),
-        .out_c0_exit394_13_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_13_tpl),
-        .out_c0_exit394_14_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_14_tpl),
-        .out_c0_exit394_15_tpl(i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_15_tpl),
+    covariance_i_iowr_bl_return_unnamed_covariance8_covariance0 thei_iowr_bl_return_covariance_unnamed_covariance8_covariance2 (
+        .in_i_data(GND_q),
+        .in_i_stall(SE_out_i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_backStall),
+        .in_i_valid(SE_stall_entry_V0),
+        .in_iowr_bl_return_covariance_i_fifoready(in_iowr_bl_return_covariance_i_fifoready),
+        .out_iowr_bl_return_covariance_o_fifodata(i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_iowr_bl_return_covariance_o_fifodata),
+        .out_iowr_bl_return_covariance_o_fifovalid(i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_iowr_bl_return_covariance_o_fifovalid),
+        .out_o_ack(),
+        .out_o_stall(i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_o_stall),
+        .out_o_valid(i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_o_valid),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // ext_sig_sync_out(GPOUT,5)
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_valid_out = i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_valid_out;
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_stall_out = i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going60_covariance2_exiting_stall_out;
+    // SE_stall_entry(STALLENABLE,40)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            SE_stall_entry_fromReg0 <= '0;
+            SE_stall_entry_fromReg1 <= '0;
+            SE_stall_entry_fromReg2 <= '0;
+            SE_stall_entry_fromReg3 <= '0;
+        end
+        else
+        begin
+            // Successor 0
+            SE_stall_entry_fromReg0 <= SE_stall_entry_toReg0;
+            // Successor 1
+            SE_stall_entry_fromReg1 <= SE_stall_entry_toReg1;
+            // Successor 2
+            SE_stall_entry_fromReg2 <= SE_stall_entry_toReg2;
+            // Successor 3
+            SE_stall_entry_fromReg3 <= SE_stall_entry_toReg3;
+        end
+    end
+    // Input Stall processing
+    assign SE_stall_entry_consumed0 = (~ (i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_o_stall) & SE_stall_entry_wireValid) | SE_stall_entry_fromReg0;
+    assign SE_stall_entry_consumed1 = (~ (in_stall_in) & SE_stall_entry_wireValid) | SE_stall_entry_fromReg1;
+    assign SE_stall_entry_consumed2 = (~ (i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_stall_out) & SE_stall_entry_wireValid) | SE_stall_entry_fromReg2;
+    assign SE_stall_entry_consumed3 = (~ (i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_stall_out) & SE_stall_entry_wireValid) | SE_stall_entry_fromReg3;
+    // Consuming
+    assign SE_stall_entry_StallValid = SE_stall_entry_backStall & SE_stall_entry_wireValid;
+    assign SE_stall_entry_toReg0 = SE_stall_entry_StallValid & SE_stall_entry_consumed0;
+    assign SE_stall_entry_toReg1 = SE_stall_entry_StallValid & SE_stall_entry_consumed1;
+    assign SE_stall_entry_toReg2 = SE_stall_entry_StallValid & SE_stall_entry_consumed2;
+    assign SE_stall_entry_toReg3 = SE_stall_entry_StallValid & SE_stall_entry_consumed3;
+    // Backward Stall generation
+    assign SE_stall_entry_or0 = SE_stall_entry_consumed0;
+    assign SE_stall_entry_or1 = SE_stall_entry_consumed1 & SE_stall_entry_or0;
+    assign SE_stall_entry_or2 = SE_stall_entry_consumed2 & SE_stall_entry_or1;
+    assign SE_stall_entry_wireStall = ~ (SE_stall_entry_consumed3 & SE_stall_entry_or2);
+    assign SE_stall_entry_backStall = SE_stall_entry_wireStall;
+    // Valid signal propagation
+    assign SE_stall_entry_V0 = SE_stall_entry_wireValid & ~ (SE_stall_entry_fromReg0);
+    assign SE_stall_entry_V1 = SE_stall_entry_wireValid & ~ (SE_stall_entry_fromReg1);
+    assign SE_stall_entry_V2 = SE_stall_entry_wireValid & ~ (SE_stall_entry_fromReg2);
+    assign SE_stall_entry_V3 = SE_stall_entry_wireValid & ~ (SE_stall_entry_fromReg3);
+    // Computing multiple Valid(s)
+    assign SE_stall_entry_wireValid = in_valid_in;
 
-    // pipeline_valid_out_sync(GPOUT,11)
-    assign out_pipeline_valid_out = i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_pipeline_valid_out;
+    // SE_out_i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0(STALLENABLE,39)
+    // Backward Stall generation
+    assign SE_out_i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_backStall = $unsigned(1'b0);
+    // Computing multiple Valid(s)
+    assign SE_out_i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_wireValid = i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_valid_out;
 
-    // sync_out(GPOUT,15)@0
+    // bubble_join_stall_entry(BITJOIN,28)
+    assign bubble_join_stall_entry_q = {in_c0_exe843226, in_c0_exe442822};
+
+    // bubble_select_stall_entry(BITSELECT,29)
+    assign bubble_select_stall_entry_b = $unsigned(bubble_join_stall_entry_q[0:0]);
+    assign bubble_select_stall_entry_c = $unsigned(bubble_join_stall_entry_q[32:1]);
+
+    // i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0(BLACKBOX,12)@0
+    // in in_stall_in@20000000
+    // out out_data_out@1
+    // out out_exit_stall_in@1
+    // out out_exit_valid_in@1
+    // out out_stall_out@20000000
+    // out out_valid_out@1
+    covariance_i_llvm_fpga_wg_limiter_exit_unnamed_7_covariance0 thei_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0 (
+        .in_data_in(bubble_select_stall_entry_c),
+        .in_exit_stall_out(in_wgl_7_exit_exit_stall_out),
+        .in_exit_valid_out(in_wgl_7_exit_exit_valid_out),
+        .in_stall_in(SE_out_i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_backStall),
+        .in_valid_in(SE_stall_entry_V3),
+        .out_data_out(),
+        .out_exit_stall_in(i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_exit_stall_in),
+        .out_exit_valid_in(i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_exit_valid_in),
+        .out_stall_out(i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_stall_out),
+        .out_valid_out(i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // ext_sig_sync_out(GPOUT,6)
+    assign out_wgl_7_exit_exit_valid_in = i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_exit_valid_in;
+    assign out_wgl_7_exit_exit_stall_in = i_llvm_fpga_wg_limiter_exit_unnamed_covariance7_covariance0_out_exit_stall_in;
+
+    // feedback_out_18_sync(GPOUT,7)
+    assign out_feedback_out_18 = i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_feedback_out_18;
+
+    // feedback_valid_out_18_sync(GPOUT,9)
+    assign out_feedback_valid_out_18 = i_llvm_fpga_push_i1_memdep_phi2_push17_covariance1_out_feedback_valid_out_18;
+
+    // sync_out(GPOUT,22)@0
     assign out_stall_out = SE_stall_entry_backStall;
 
-    // bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x(BITJOIN,29)
-    assign bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q = {i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_15_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_14_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_13_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_12_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_11_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_10_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_9_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_8_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_7_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_6_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_5_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_4_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_3_tpl, i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_out_c0_exit394_2_tpl};
+    // dupName_0_ext_sig_sync_out_x(GPOUT,25)
+    assign out_iowr_bl_return_covariance_o_fifodata = i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_iowr_bl_return_covariance_o_fifodata;
+    assign out_iowr_bl_return_covariance_o_fifovalid = i_iowr_bl_return_covariance_unnamed_covariance8_covariance2_out_iowr_bl_return_covariance_o_fifovalid;
 
-    // bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x(BITSELECT,30)
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_b = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[0:0]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_c = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[32:1]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_d = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[64:33]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_e = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[96:65]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_f = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[97:97]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_g = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[129:98]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_h = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[130:130]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_i = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[162:131]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_j = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[194:163]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_k = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[227:195]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_l = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[228:228]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_m = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[260:229]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_n = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[292:261]);
-    assign bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_o = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_q[324:293]);
-
-    // dupName_0_sync_out_x(GPOUT,18)@5
-    assign out_c0_exe10404 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_j;
-    assign out_c0_exe11 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_k;
-    assign out_c0_exe12 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_l;
-    assign out_c0_exe13 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_m;
-    assign out_c0_exe14 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_n;
-    assign out_c0_exe15 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_o;
-    assign out_c0_exe2396 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_b;
-    assign out_c0_exe3397 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_c;
-    assign out_c0_exe4398 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_d;
-    assign out_c0_exe5399 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_e;
-    assign out_c0_exe6400 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_f;
-    assign out_c0_exe7401 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_g;
-    assign out_c0_exe8402 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_h;
-    assign out_c0_exe9403 = bubble_select_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_i;
-    assign out_valid_out = SE_out_i_sfc_s_c0_in_for_cond65_preheader_covariances_c0_enter37635_covariance1_aunroll_x_V0;
+    // dupName_0_sync_out_x(GPOUT,26)@0
+    assign out_valid_out = SE_stall_entry_V1;
 
 endmodule

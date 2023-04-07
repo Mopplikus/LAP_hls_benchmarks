@@ -2,10 +2,10 @@
   "bottlenecks":
   [
     {
-      "name":"?"
+      "name":"A_1_local"
       , "id":4294967295
-      , "src":"1395860848"
-      , "dst":"1390312336"
+      , "src":"1967347072"
+      , "dst":"1969587120"
       , "concurrency":"1"
       , "type":"Occupancy limiter"
       , "brief":"Data dependency"
@@ -14,26 +14,28 @@
       [
         {
           "type":"table"
-          , "Loop: ":"jacobi_1d.B1.start"
-          , "Declared at: ":"Component invocation"
+          , "Variable on critical loop carried feedback path: ":"A_1_local"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                  , "line":"12"
+                }
+              ]
+            }
+          ]
           , "Dependency: ":"Data dependency"
           , "Concurrency value: ":"1"
           , "Loop feedback path that lowered occupancy: ":
           [
             {
               "type":"text"
-              , "text":"Loop: jacobi_1d.B3(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                  , "line":"16"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Basic block: jacobi_1d.B2(%L)"
+              , "text":"Loop: jacobi_1d.B2(%L)"
               , "links":
               [
                 {
@@ -44,18 +46,7 @@
             }
             , {
               "type":"text"
-              , "text":"Loop: jacobi_1d.B4(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                  , "line":"24"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Loop: Fused loop jacobi_1d.B5(%L)"
+              , "text":"Loop: Fused loop jacobi_1d.B3(%L)"
               , "links":
               [
                 {
@@ -66,34 +57,12 @@
             }
             , {
               "type":"text"
-              , "text":"Basic block: jacobi_1d.B6(%L)"
+              , "text":"Basic block: jacobi_1d.B4(%L)"
               , "links":
               [
                 {
                   "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
                   , "line":"24"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Basic block: jacobi_1d.B7(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                  , "line":"37"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Loop: jacobi_1d.B8(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                  , "line":"37"
                 }
               ]
             }
@@ -103,8 +72,8 @@
       , "nodes":
       [
         {
-          "name":"?"
-          , "id":1395860848
+          "name":"A_1_local"
+          , "id":1967347072
           , "start":"1.00"
           , "parent":"jacobi_1d.B1.start"
           , "debug":
@@ -119,36 +88,8 @@
           , "type":"inst"
         }
         , {
-          "name":"jacobi_1d.B3"
-          , "id":1396564864
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":16
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
           "name":"jacobi_1d.B2"
-          , "id":1401763248
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":24
-              }
-            ]
-          ]
-          , "type":"bb"
-        }
-        , {
-          "name":"jacobi_1d.B4"
-          , "id":1396554896
+          , "id":1968057840
           , "debug":
           [
             [
@@ -161,8 +102,8 @@
           , "type":"loop"
         }
         , {
-          "name":"Fused loop jacobi_1d.B5"
-          , "id":1396615568
+          "name":"Fused loop jacobi_1d.B3"
+          , "id":1968644416
           , "debug":
           [
             [
@@ -175,8 +116,8 @@
           , "type":"loop"
         }
         , {
-          "name":"jacobi_1d.B6"
-          , "id":1396562368
+          "name":"jacobi_1d.B4"
+          , "id":1967355728
           , "debug":
           [
             [
@@ -189,230 +130,38 @@
           , "type":"bb"
         }
         , {
-          "name":"jacobi_1d.B7"
-          , "id":1396558624
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":37
-              }
-            ]
-          ]
-          , "type":"bb"
-        }
-        , {
-          "name":"jacobi_1d.B8"
-          , "id":1396559872
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":37
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
           "name":"Feedback"
-          , "id":1390312336
+          , "id":1969587120
           , "end":"1.00"
-          , "parent":"jacobi_1d.B9"
+          , "parent":"jacobi_1d.B5"
           , "type":"inst"
         }
       ]
       , "links":
       [
         {
-          "from":1396564864
-          , "to":1396564864
+          "from":1968057840
+          , "to":1968644416
         }
         , {
-          "from":1396564864
-          , "to":1401763248
+          "from":1968644416
+          , "to":1968644416
         }
         , {
-          "from":1401763248
-          , "to":1396554896
+          "from":1968644416
+          , "to":1967355728
         }
         , {
-          "from":1396554896
-          , "to":1396615568
+          "from":1967347072
+          , "to":1968057840
         }
         , {
-          "from":1396615568
-          , "to":1396615568
+          "from":1967355728
+          , "to":1969587120
         }
         , {
-          "from":1396615568
-          , "to":1396562368
-        }
-        , {
-          "from":1396562368
-          , "to":1396558624
-        }
-        , {
-          "from":1396558624
-          , "to":1396559872
-        }
-        , {
-          "from":1396559872
-          , "to":1396559872
-        }
-        , {
-          "from":1395860848
-          , "to":1396564864
-        }
-        , {
-          "from":1396559872
-          , "to":1390312336
-        }
-        , {
-          "from":1395860848
-          , "to":1390312336
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"Global variable"
-      , "id":4294967295
-      , "src":"1398715072"
-      , "dst":"1388472896"
-      , "type":"fMAX/II"
-      , "brief":"Memory dependency"
-      , "loop":"jacobi_1d.B8"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Estimated fmax reduced to: ":"240.0"
-          , "Loop feedback path that lowered II and Fmax: ":
-          [
-            {
-              "type":"text"
-              , "text":"ST(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                  , "line":"39"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"ST(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                  , "line":"40"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"Global variable"
-          , "id":1398715072
-          , "start":"68.00"
-          , "parent":"jacobi_1d.B8"
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":40
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"ST"
-          , "id":1407888208
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":39
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"ST"
-          , "id":1405137936
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":40
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Feedback"
-          , "id":1388472896
-          , "end":"132.00"
-          , "parent":"jacobi_1d.B8"
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
-                , "line":40
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":1398715072
-          , "to":1407888208
-        }
-        , {
-          "from":1407888208
-          , "to":1405137936
-        }
-        , {
-          "from":1405137936
-          , "to":1388472896
-        }
-        , {
-          "from":1398715072
-          , "to":1388472896
+          "from":1967347072
+          , "to":1969587120
           , "reverse":1
         }
       ]

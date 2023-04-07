@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.04.05.13:56:17"
+ date="2023.04.07.18:09:09"
  outputDirectory="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/">
  <perimeter>
   <parameter
@@ -48,18 +48,6 @@
   <parameter
      name="AUTO_CLOCK_RESET_DOMAIN"
      type="Integer"
-     defaultValue="-1"
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_MAP"
-     type="AddressMap"
-     defaultValue=""
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_WIDTH"
-     type="AddressWidthType"
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
@@ -112,70 +100,14 @@
    <property name="prSafe" value="false" />
    <port name="tmp" direction="input" role="data" width="64" />
   </interface>
-  <interface name="avmm_0_rw" kind="avalon" start="1">
-   <property name="adaptsTo" value="" />
-   <property name="addressGroup" value="0" />
-   <property name="addressUnits" value="SYMBOLS" />
-   <property name="alwaysBurstMaxBurst" value="false" />
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="bitsPerSymbol" value="8" />
-   <property name="burstOnBurstBoundariesOnly" value="false" />
-   <property name="burstcountUnits" value="WORDS" />
-   <property name="constantBurstBehavior" value="false" />
-   <property name="dBSBigEndian" value="false" />
-   <property name="doStreamReads" value="false" />
-   <property name="doStreamWrites" value="false" />
-   <property name="holdTime" value="0" />
-   <property name="interleaveBursts" value="false" />
-   <property name="isAsynchronous" value="false" />
-   <property name="isBigEndian" value="false" />
-   <property name="isReadable" value="false" />
-   <property name="isWriteable" value="false" />
-   <property name="linewrapBursts" value="false" />
-   <property name="maxAddressWidth" value="32" />
-   <property name="maximumPendingReadTransactions" value="0" />
-   <property name="maximumPendingWriteTransactions" value="0" />
-   <property name="minimumReadLatency" value="1" />
-   <property name="minimumResponseLatency" value="1" />
-   <property name="prSafe" value="false" />
-   <property name="readLatency" value="1" />
-   <property name="readWaitTime" value="0" />
-   <property name="registerIncomingSignals" value="false" />
-   <property name="registerOutgoingSignals" value="false" />
-   <property name="setupTime" value="0" />
-   <property name="timingUnits" value="Cycles" />
-   <property name="waitrequestAllowance" value="0" />
-   <property name="writeWaitTime" value="0" />
-   <port name="avmm_0_rw_address" direction="output" role="address" width="64" />
-   <port
-       name="avmm_0_rw_byteenable"
-       direction="output"
-       role="byteenable"
-       width="8" />
-   <port name="avmm_0_rw_read" direction="output" role="read" width="1" />
-   <port
-       name="avmm_0_rw_readdata"
-       direction="input"
-       role="readdata"
-       width="64" />
-   <port name="avmm_0_rw_write" direction="output" role="write" width="1" />
-   <port
-       name="avmm_0_rw_writedata"
-       direction="output"
-       role="writedata"
-       width="64" />
-  </interface>
  </perimeter>
  <entity kind="atax" version="1.0" name="atax">
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="10AX115U1F45I1SG" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_MAP" value="" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="1" />
   <generatedFiles>
@@ -324,16 +256,13 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_latency.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ffwddst.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_valid.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/lsu_top.v"
@@ -432,13 +361,10 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_valid.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_loop_profiler.sv"
@@ -486,264 +412,6 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_token_i1_wt_limpush_1_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_4_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push20_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B11_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B11_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body55_s_c0_enter19220_atax1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body55_s_c0_exit207_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0003_atax1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t207_atax1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body55_s_c0_enter19220_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_5_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_15_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_16_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond20102_pop48_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20105_pop50_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp62104_pop49_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups37_pop45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations32_pop44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_add106_pop51_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j51_044_pop43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom3598_pop46_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv15_pop42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx365100_pop47_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond20102_push48_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop20105_push50_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp62104_push49_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups37_push45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations32_push44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_add106_push51_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j51_044_push43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom3598_push46_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv15_push42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx365100_push47_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B12.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B12_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B12_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B12_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iowr_bl_return_unnamed_atax17_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B13.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B13_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B13_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B13_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_6_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_7_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi8_pop23_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi8_pop23_2_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_initerations_pop24_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_initerations_pop24_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration_12_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi8_push23_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi8_push23_13_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond_8_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i4_initerations_push24_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i4_initerations_push24_9_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B13_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body78_s_c0_enter21717_atax4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body78_s_c0_exit228_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0004_atax1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t228_atax1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body78_s_c0_enter21717_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_tmp5128_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_y5026_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_18_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_19_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i74_041_pop22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_cleanups_pop25_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv21_pop21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i74_041_push22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i4_cleanups_push25_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv21_push21_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B1_start.sv"
        attributes="" />
    <file
@@ -756,43 +424,31 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B1_start_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop9_4_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024a20i32_unnamed_3_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iord_bl_call_unnamed_atax1_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024i32_unnamed_5_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024i32_unnamed_6_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iord_bl_call_unnamed_atax2_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_wt_entry_s_c0_enter14_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_wt_entry_s_c0_enter17_atax1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter14_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter17_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going89_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going32_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond90_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond33_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B2.sv"
@@ -805,6 +461,15 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B2_stall_region.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iowr_bl_return_unnamed_atax2_atax0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push9_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B3.sv"
@@ -822,37 +487,52 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B3_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body_s_c0_enter13315_atax1.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body_s_c0_enter9418_atax1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit135_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit98_atax0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000_atax1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t135_atax1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it98_atax1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body_s_c0_enter13315_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body_s_c0_enter9418_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going85_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_3_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_047_pop17_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv9_pop16_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi3_pop1039_pop15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond86_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop936_pop14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_047_push17_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_022_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv9_push16_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv7_pop11_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi3_pop1039_push15_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop936_push14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond29_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_022_push12_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv7_push11_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B4.sv"
@@ -867,40 +547,10 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B4_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_tmp5129_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi2_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_x4925_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_y5027_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_2_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_7_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_7_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_8_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_8_atax1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_9_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_9_atax2.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi2_pop13_0_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B5.sv"
@@ -915,73 +565,109 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B5_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_3_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_10_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_10_atax3.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B5_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body8_s_c0_enter13818_atax1.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body8_s_c0_enter10419_atax1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body8_s_c0_exit143_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body8_s_c0_exit118_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body8_s_c0_enter13818_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_atax1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024a20i32_a4824_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t118_atax1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going71_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body8_s_c0_enter10419_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp8394_pop30_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_5_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups74_pop29_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_6_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations69_pop28_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_047_pop1795_pop31_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond947_pop26_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_046_pop27_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_forked3542_pop23_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop26_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi3_pop1040_pop22_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration73_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop937_pop21_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp8394_push30_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp2649_pop27_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond81_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups17_pop20_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups74_push29_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations12_pop19_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations69_push28_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_020_pop17_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_047_pop1795_push31_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_t_019_pop18_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_046_push27_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom43_pop24_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv_push26_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx145_pop25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond947_push26_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_forked3542_push23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi3_pop1040_push22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop937_push21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp2649_push27_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups17_push20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations12_push19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_020_push17_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_t_019_push18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom43_push24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv_push16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx145_push25_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B6.sv"
@@ -994,6 +680,15 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B6_stall_region.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi2_push13_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi2_push13_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B7.sv"
@@ -1011,202 +706,133 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B7_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body34_s_c0_enter14816_atax1.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body19_s_c0_enter14020_atax1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body34_s_c0_exit156_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_atax1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t156_atax1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body34_s_c0_enter14816_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_11_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going64_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i30_045_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv18_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond65_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i30_045_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv18_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B8.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B8_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B9_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body41_s_c0_enter16619_atax1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body41_s_c0_exit177_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body19_s_c0_exit161_atax0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0002_atax1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t177_atax1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t161_atax1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body41_s_c0_enter16619_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body19_s_c0_enter14020_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_13_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_1_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_14_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_7_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going50_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_8_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond20101_pop40_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_forked9396_pop37_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond948_pop36_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp62103_pop41_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi2_pop1351_pop38_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups53_pop36_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi3_pop1041_pop33_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations48_pop35_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop938_pop32_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j37_043_pop33_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp2650_pop37_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_t_042_pop34_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups_pop31_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom3597_pop38_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations_pop30_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv12_pop32_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_add52_pop39_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx36599_pop39_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j15_021_pop29_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond20101_push40_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom44_pop34_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_forked9396_push37_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv4_pop28_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration52_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx146_pop35_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp62103_push41_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond948_push36_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond60_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups53_push36_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi2_pop1351_push38_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations48_push35_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi3_pop1041_push33_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j37_043_push33_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop938_push32_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_t_042_push34_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp2650_push37_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom3597_push38_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv12_push32_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups_push31_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx36599_push39_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations_push30_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going34_6_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_add52_push39_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going34_6_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j15_021_push29_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going50_6_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom44_push34_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going50_6_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv4_push28_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going64_2_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx146_push35_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going64_2_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going14_6_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going71_6_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going14_6_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going71_6_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going85_2_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going85_2_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going32_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going89_1_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going32_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going89_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_6_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_0.sv"
@@ -1216,27 +842,6 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_5.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B10_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B11_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B12_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B13_sr_1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B2_sr_0.sv"
@@ -1257,37 +862,7 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B7_sr_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B9_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_mem1x.v"
@@ -1336,6 +911,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v"
@@ -1463,16 +1056,13 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_latency.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ffwddst.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_valid.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/lsu_top.v"
@@ -1571,13 +1161,10 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_iowr_stall_valid.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/hld_loop_profiler.sv"
@@ -1625,264 +1212,6 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_token_i1_wt_limpush_1_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_4_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push20_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B11_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B11_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body55_s_c0_enter19220_atax1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body55_s_c0_exit207_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0003_atax1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t207_atax1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body55_s_c0_enter19220_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_5_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_15_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_16_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond20102_pop48_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20105_pop50_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp62104_pop49_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups37_pop45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations32_pop44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_add106_pop51_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j51_044_pop43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom3598_pop46_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv15_pop42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx365100_pop47_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond20102_push48_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop20105_push50_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp62104_push49_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups37_push45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations32_push44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_add106_push51_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j51_044_push43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom3598_push46_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv15_push42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx365100_push47_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B12.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B12_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B12_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B12_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iowr_bl_return_unnamed_atax17_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B13.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B13_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B13_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B13_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_6_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_7_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi8_pop23_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi8_pop23_2_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_initerations_pop24_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_initerations_pop24_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration_12_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi8_push23_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi8_push23_13_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond_8_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i4_initerations_push24_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i4_initerations_push24_9_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B13_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body78_s_c0_enter21717_atax4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body78_s_c0_exit228_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0004_atax1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t228_atax1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body78_s_c0_enter21717_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_tmp5128_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_y5026_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_18_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_19_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i74_041_pop22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i4_cleanups_pop25_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv21_pop21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i74_041_push22_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i4_cleanups_push25_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv21_push21_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B1_start.sv"
        attributes="" />
    <file
@@ -1895,43 +1224,31 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B1_start_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop9_4_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024a20i32_unnamed_3_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iord_bl_call_unnamed_atax1_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024i32_unnamed_5_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_source_p1024i32_unnamed_6_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iord_bl_call_unnamed_atax2_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_wt_entry_s_c0_enter14_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_wt_entry_s_c0_enter17_atax1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter14_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter17_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going89_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going32_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond90_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond33_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B2.sv"
@@ -1944,6 +1261,15 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B2_stall_region.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_iowr_bl_return_unnamed_atax2_atax0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_push9_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B3.sv"
@@ -1961,37 +1287,52 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B3_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body_s_c0_enter13315_atax1.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body_s_c0_enter9418_atax1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit135_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit98_atax0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000_atax1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t135_atax1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000it98_atax1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body_s_c0_enter13315_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body_s_c0_enter9418_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going85_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_3_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_047_pop17_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv9_pop16_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi3_pop1039_pop15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond86_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop936_pop14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_047_push17_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_022_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv9_push16_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv7_pop11_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi3_pop1039_push15_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop936_push14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond29_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_022_push12_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv7_push11_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B4.sv"
@@ -2006,40 +1347,10 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B4_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_tmp5129_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi2_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_x4925_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024i32_y5027_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_2_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_7_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_7_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_8_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_8_atax1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_9_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_9_atax2.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi2_pop13_0_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B5.sv"
@@ -2054,73 +1365,109 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B5_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_3_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_10_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_readdata_reg_unnamed_10_atax3.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B5_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body8_s_c0_enter13818_atax1.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body8_s_c0_enter10419_atax1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body8_s_c0_exit143_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body8_s_c0_exit118_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body8_s_c0_enter13818_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_atax1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_ffwd_dest_p1024a20i32_a4824_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t118_atax1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going71_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body8_s_c0_enter10419_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp8394_pop30_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_5_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups74_pop29_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_6_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations69_pop28_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i_047_pop1795_pop31_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond947_pop26_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_046_pop27_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_forked3542_pop23_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop26_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi3_pop1040_pop22_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration73_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop937_pop21_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp8394_push30_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp2649_pop27_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond81_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups17_pop20_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups74_push29_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations12_pop19_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations69_push28_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j_020_pop17_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i_047_pop1795_push31_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_t_019_pop18_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_046_push27_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom43_pop24_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv_push26_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx145_pop25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond947_push26_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_forked3542_push23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi3_pop1040_push22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop937_push21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp2649_push27_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups17_push20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations12_push19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j_020_push17_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_t_019_push18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom43_push24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv_push16_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx145_push25_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B6.sv"
@@ -2133,6 +1480,15 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B6_stall_region.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi2_push13_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi2_push13_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B7.sv"
@@ -2150,202 +1506,133 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B7_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body34_s_c0_enter14816_atax1.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body19_s_c0_enter14020_atax1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body34_s_c0_exit156_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0001_atax1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t156_atax1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body34_s_c0_enter14816_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_11_atax0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going64_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_i30_045_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv18_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond65_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_i30_045_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv18_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B8.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B8_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop20_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_B9_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_s_c0_in_for_body41_s_c0_enter16619_atax1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body41_s_c0_exit177_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_body19_s_c0_exit161_atax0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0002_atax1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t177_atax1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_sfc_exit_s_c0_out_for_b0000t161_atax1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body41_s_c0_enter16619_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_sfc_logic_s_c0_in_for_body19_s_c0_enter14020_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_13_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_memdep_1_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_14_atax0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_7_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going50_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_mem_unnamed_8_atax0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond20101_pop40_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_forked9396_pop37_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_exitcond948_pop36_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp62103_pop41_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi2_pop1351_pop38_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups53_pop36_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi3_pop1041_pop33_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations48_pop35_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_memdep_phi_pop938_pop32_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j37_043_pop33_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i1_notcmp2650_pop37_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_t_042_pop34_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_cleanups_pop31_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom3597_pop38_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i2_initerations_pop30_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv12_pop32_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_add52_pop39_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx36599_pop39_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i32_j15_021_pop29_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond20101_push40_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i64_idxprom44_pop34_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_forked9396_push37_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_i6_fpga_indvars_iv4_pop28_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration52_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pop_p67i32_arrayidx146_pop35_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp62103_push41_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_exitcond948_push36_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond60_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_lastiniteration_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups53_push36_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi2_pop1351_push38_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations48_push35_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi3_pop1041_push33_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j37_043_push33_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_memdep_phi_pop938_push32_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_t_042_push34_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notcmp2650_push37_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom3597_push38_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv12_push32_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_cleanups_push31_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx36599_push39_0.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i2_initerations_push30_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going34_6_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_add52_push39_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going34_6_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i32_j15_021_push29_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going50_6_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i64_idxprom44_push34_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going50_6_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_i6_fpga_indvars_iv4_push28_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going64_2_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_push_p67i32_arrayidx146_push35_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going64_2_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going14_6_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going71_6_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going14_6_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going71_6_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going85_2_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going28_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going85_2_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going32_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going89_1_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going32_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going89_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_0_sr.sv"
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_i_llvm_fpga_pipeline_keep_going_6_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_0.sv"
@@ -2355,27 +1642,6 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_loop_limiter_5.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B10_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B11_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B12_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B13_sr_1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B2_sr_0.sv"
@@ -2396,37 +1662,7 @@
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B7_sr_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_bb_B9_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_mem1x.v"
@@ -2475,6 +1711,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/atax/test-fpga.prj/components/atax/atax/atax_internal_10/synth/atax_internal.v"

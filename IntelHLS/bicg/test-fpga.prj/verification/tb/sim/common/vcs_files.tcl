@@ -1,4 +1,3 @@
-source [file join [file dirname [info script]] ./../../../ip/tb/mm_agent_bicg_avmm_0_rw/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../../components/bicg/bicg/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/cat_done/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/cat_cwfsw/sim/common/vcs_files.tcl]
@@ -18,7 +17,6 @@ source [file join [file dirname [info script]] ./../../../ip/tb/main_dpi_control
 namespace eval tb {
   proc get_memory_files {QSYS_SIMDIR} {
     set memory_files [list]
-    set memory_files [concat $memory_files [mm_agent_bicg_avmm_0_rw::get_memory_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_bicg_avmm_0_rw/sim/"]]
     set memory_files [concat $memory_files [bicg::get_memory_files "$QSYS_SIMDIR/../../../components/bicg/bicg/sim/"]]
     set memory_files [concat $memory_files [cat_done::get_memory_files "$QSYS_SIMDIR/../../ip/tb/cat_done/sim/"]]
     set memory_files [concat $memory_files [cat_cwfsw::get_memory_files "$QSYS_SIMDIR/../../ip/tb/cat_cwfsw/sim/"]]
@@ -39,7 +37,6 @@ namespace eval tb {
   
   proc get_common_design_files {QSYS_SIMDIR} {
     set design_files [dict create]
-    set design_files [dict merge $design_files [mm_agent_bicg_avmm_0_rw::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_bicg_avmm_0_rw/sim/"]]
     set design_files [dict merge $design_files [bicg::get_common_design_files "$QSYS_SIMDIR/../../../components/bicg/bicg/sim/"]]
     set design_files [dict merge $design_files [cat_done::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/cat_done/sim/"]]
     set design_files [dict merge $design_files [cat_cwfsw::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/cat_cwfsw/sim/"]]
@@ -60,7 +57,6 @@ namespace eval tb {
   
   proc get_design_files {QSYS_SIMDIR} {
     set design_files [dict create]
-    set design_files [dict merge $design_files [mm_agent_bicg_avmm_0_rw::get_design_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_bicg_avmm_0_rw/sim/"]]
     set design_files [dict merge $design_files [bicg::get_design_files "$QSYS_SIMDIR/../../../components/bicg/bicg/sim/"]]
     set design_files [dict merge $design_files [cat_done::get_design_files "$QSYS_SIMDIR/../../ip/tb/cat_done/sim/"]]
     set design_files [dict merge $design_files [cat_cwfsw::get_design_files "$QSYS_SIMDIR/../../ip/tb/cat_cwfsw/sim/"]]
@@ -83,7 +79,6 @@ namespace eval tb {
   
   proc get_elab_options {SIMULATOR_TOOL_BITNESS} {
     set ELAB_OPTIONS ""
-    append ELAB_OPTIONS [mm_agent_bicg_avmm_0_rw::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [bicg::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [cat_done::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [cat_cwfsw::get_elab_options $SIMULATOR_TOOL_BITNESS]
@@ -108,7 +103,6 @@ namespace eval tb {
   
   proc get_sim_options {SIMULATOR_TOOL_BITNESS} {
     set SIM_OPTIONS ""
-    append SIM_OPTIONS [mm_agent_bicg_avmm_0_rw::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [bicg::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [cat_done::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [cat_cwfsw::get_sim_options $SIMULATOR_TOOL_BITNESS]
@@ -134,7 +128,6 @@ namespace eval tb {
   proc get_env_variables {SIMULATOR_TOOL_BITNESS} {
     set ENV_VARIABLES [dict create]
     set LD_LIBRARY_PATH [dict create]
-    set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [mm_agent_bicg_avmm_0_rw::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [bicg::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [cat_done::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [cat_cwfsw::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]

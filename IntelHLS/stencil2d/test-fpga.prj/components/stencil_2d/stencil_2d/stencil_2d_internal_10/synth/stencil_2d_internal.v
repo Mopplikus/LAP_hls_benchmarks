@@ -33,17 +33,17 @@ module stencil_2d_internal
    genvar __j;
    genvar __k;
    genvar __l;
-   logic local_avm_aspace64_enable [1][2];
-   logic local_avm_aspace64_read [1][2];
-   logic local_avm_aspace64_write [1][2];
-   logic [31:0] local_avm_aspace64_address [1][2];
-   logic [31:0] local_avm_aspace64_writedata [1][2];
-   logic [3:0] local_avm_aspace64_byteenable [1][2];
-   logic local_avm_aspace64_waitrequest [1][2];
-   logic [31:0] local_avm_aspace64_readdata [1][2];
-   logic local_avm_aspace64_readdatavalid [1][2];
-   logic local_avm_aspace64_burstcount [1][2];
-   logic local_avm_aspace64_writeack [1][2];
+   logic local_avm_aspace64_enable [1][1];
+   logic local_avm_aspace64_read [1][1];
+   logic local_avm_aspace64_write [1][1];
+   logic [31:0] local_avm_aspace64_address [1][1];
+   logic [31:0] local_avm_aspace64_writedata [1][1];
+   logic [3:0] local_avm_aspace64_byteenable [1][1];
+   logic local_avm_aspace64_waitrequest [1][1];
+   logic [31:0] local_avm_aspace64_readdata [1][1];
+   logic local_avm_aspace64_readdatavalid [1][1];
+   logic local_avm_aspace64_burstcount [1][1];
+   logic local_avm_aspace64_writeack [1][1];
    logic local_avm_aspace65_enable [1][1];
    logic local_avm_aspace65_read [1][1];
    logic local_avm_aspace65_write [1][1];
@@ -55,17 +55,17 @@ module stencil_2d_internal
    logic local_avm_aspace65_readdatavalid [1][1];
    logic local_avm_aspace65_burstcount [1][1];
    logic local_avm_aspace65_writeack [1][1];
-   logic local_avm_aspace66_enable [1][2];
-   logic local_avm_aspace66_read [1][2];
-   logic local_avm_aspace66_write [1][2];
-   logic [31:0] local_avm_aspace66_address [1][2];
-   logic [31:0] local_avm_aspace66_writedata [1][2];
-   logic [3:0] local_avm_aspace66_byteenable [1][2];
-   logic local_avm_aspace66_waitrequest [1][2];
-   logic [31:0] local_avm_aspace66_readdata [1][2];
-   logic local_avm_aspace66_readdatavalid [1][2];
-   logic local_avm_aspace66_burstcount [1][2];
-   logic local_avm_aspace66_writeack [1][2];
+   logic local_avm_aspace66_enable [1][1];
+   logic local_avm_aspace66_read [1][1];
+   logic local_avm_aspace66_write [1][1];
+   logic [31:0] local_avm_aspace66_address [1][1];
+   logic [31:0] local_avm_aspace66_writedata [1][1];
+   logic [3:0] local_avm_aspace66_byteenable [1][1];
+   logic local_avm_aspace66_waitrequest [1][1];
+   logic [31:0] local_avm_aspace66_readdata [1][1];
+   logic local_avm_aspace66_readdatavalid [1][1];
+   logic local_avm_aspace66_burstcount [1][1];
+   logic local_avm_aspace66_writeack [1][1];
 
    // INST stencil_2d_internal of stencil_2d_function_wrapper
    stencil_2d_function_wrapper stencil_2d_internal
@@ -77,30 +77,18 @@ module stencil_2d_internal
       .done(done),
       .stall(stall),
       .returndata(returndata),
-      // AVM avm_memdep_stencil_2d
-      .avm_memdep_stencil_2d_enable(local_avm_aspace64_enable[0][0]),
-      .avm_memdep_stencil_2d_read(local_avm_aspace64_read[0][0]),
-      .avm_memdep_stencil_2d_write(local_avm_aspace64_write[0][0]),
-      .avm_memdep_stencil_2d_address(local_avm_aspace64_address[0][0]),
-      .avm_memdep_stencil_2d_writedata(local_avm_aspace64_writedata[0][0]),
-      .avm_memdep_stencil_2d_byteenable(local_avm_aspace64_byteenable[0][0]),
-      .avm_memdep_stencil_2d_waitrequest(local_avm_aspace64_waitrequest[0][0]),
-      .avm_memdep_stencil_2d_readdata(local_avm_aspace64_readdata[0][0]),
-      .avm_memdep_stencil_2d_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
-      .avm_memdep_stencil_2d_burstcount(local_avm_aspace64_burstcount[0][0]),
-      .avm_memdep_stencil_2d_writeack(local_avm_aspace64_writeack[0][0]),
       // AVM avm_unnamed_stencil_2d6_stencil_2d
-      .avm_unnamed_stencil_2d6_stencil_2d_enable(local_avm_aspace64_enable[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_read(local_avm_aspace64_read[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_write(local_avm_aspace64_write[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_address(local_avm_aspace64_address[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_writedata(local_avm_aspace64_writedata[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_byteenable(local_avm_aspace64_byteenable[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_waitrequest(local_avm_aspace64_waitrequest[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_readdata(local_avm_aspace64_readdata[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_readdatavalid(local_avm_aspace64_readdatavalid[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_burstcount(local_avm_aspace64_burstcount[0][1]),
-      .avm_unnamed_stencil_2d6_stencil_2d_writeack(local_avm_aspace64_writeack[0][1]),
+      .avm_unnamed_stencil_2d6_stencil_2d_enable(local_avm_aspace64_enable[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_read(local_avm_aspace64_read[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_write(local_avm_aspace64_write[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_address(local_avm_aspace64_address[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_writedata(local_avm_aspace64_writedata[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_byteenable(local_avm_aspace64_byteenable[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_waitrequest(local_avm_aspace64_waitrequest[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_readdata(local_avm_aspace64_readdata[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_burstcount(local_avm_aspace64_burstcount[0][0]),
+      .avm_unnamed_stencil_2d6_stencil_2d_writeack(local_avm_aspace64_writeack[0][0]),
       // AVM avm_unnamed_stencil_2d4_stencil_2d
       .avm_unnamed_stencil_2d4_stencil_2d_enable(local_avm_aspace65_enable[0][0]),
       .avm_unnamed_stencil_2d4_stencil_2d_read(local_avm_aspace65_read[0][0]),
@@ -113,50 +101,38 @@ module stencil_2d_internal
       .avm_unnamed_stencil_2d4_stencil_2d_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
       .avm_unnamed_stencil_2d4_stencil_2d_burstcount(local_avm_aspace65_burstcount[0][0]),
       .avm_unnamed_stencil_2d4_stencil_2d_writeack(local_avm_aspace65_writeack[0][0]),
-      // AVM avm_memdep_1_stencil_2d
-      .avm_memdep_1_stencil_2d_enable(local_avm_aspace66_enable[0][0]),
-      .avm_memdep_1_stencil_2d_read(local_avm_aspace66_read[0][0]),
-      .avm_memdep_1_stencil_2d_write(local_avm_aspace66_write[0][0]),
-      .avm_memdep_1_stencil_2d_address(local_avm_aspace66_address[0][0]),
-      .avm_memdep_1_stencil_2d_writedata(local_avm_aspace66_writedata[0][0]),
-      .avm_memdep_1_stencil_2d_byteenable(local_avm_aspace66_byteenable[0][0]),
-      .avm_memdep_1_stencil_2d_waitrequest(local_avm_aspace66_waitrequest[0][0]),
-      .avm_memdep_1_stencil_2d_readdata(local_avm_aspace66_readdata[0][0]),
-      .avm_memdep_1_stencil_2d_readdatavalid(local_avm_aspace66_readdatavalid[0][0]),
-      .avm_memdep_1_stencil_2d_burstcount(local_avm_aspace66_burstcount[0][0]),
-      .avm_memdep_1_stencil_2d_writeack(local_avm_aspace66_writeack[0][0]),
       // AVM avm_unnamed_stencil_2d5_stencil_2d
-      .avm_unnamed_stencil_2d5_stencil_2d_enable(local_avm_aspace66_enable[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_read(local_avm_aspace66_read[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_write(local_avm_aspace66_write[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_address(local_avm_aspace66_address[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_writedata(local_avm_aspace66_writedata[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_byteenable(local_avm_aspace66_byteenable[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_waitrequest(local_avm_aspace66_waitrequest[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_readdata(local_avm_aspace66_readdata[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_readdatavalid(local_avm_aspace66_readdatavalid[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_burstcount(local_avm_aspace66_burstcount[0][1]),
-      .avm_unnamed_stencil_2d5_stencil_2d_writeack(local_avm_aspace66_writeack[0][1])
+      .avm_unnamed_stencil_2d5_stencil_2d_enable(local_avm_aspace66_enable[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_read(local_avm_aspace66_read[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_write(local_avm_aspace66_write[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_address(local_avm_aspace66_address[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_writedata(local_avm_aspace66_writedata[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_byteenable(local_avm_aspace66_byteenable[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_waitrequest(local_avm_aspace66_waitrequest[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_readdata(local_avm_aspace66_readdata[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_readdatavalid(local_avm_aspace66_readdatavalid[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_burstcount(local_avm_aspace66_burstcount[0][0]),
+      .avm_unnamed_stencil_2d5_stencil_2d_writeack(local_avm_aspace66_writeack[0][0])
    );
 
    generate
    begin:local_mem_system_aspace64
-      logic local_icm_arb_request [1][2];
-      logic local_icm_arb_enable [1][2];
-      logic local_icm_arb_read [1][2];
-      logic local_icm_arb_write [1][2];
-      logic local_icm_arb_burstcount [1][2];
-      logic [9:0] local_icm_arb_address [1][2];
-      logic [31:0] local_icm_arb_writedata [1][2];
-      logic [3:0] local_icm_arb_byteenable [1][2];
-      logic local_icm_arb_stall [1][2];
-      logic local_icm_wrp_ack [1][2];
-      logic local_icm_rrp_datavalid [1][2];
-      logic [31:0] local_icm_rrp_data [1][2];
+      logic local_icm_arb_request [1][1];
+      logic local_icm_arb_enable [1][1];
+      logic local_icm_arb_read [1][1];
+      logic local_icm_arb_write [1][1];
+      logic local_icm_arb_burstcount [1][1];
+      logic [9:0] local_icm_arb_address [1][1];
+      logic [31:0] local_icm_arb_writedata [1][1];
+      logic [3:0] local_icm_arb_byteenable [1][1];
+      logic local_icm_arb_stall [1][1];
+      logic local_icm_wrp_ack [1][1];
+      logic local_icm_rrp_datavalid [1][1];
+      logic [31:0] local_icm_rrp_data [1][1];
 
       for( __i = 0; __i < 1; __i = __i + 1 )
       begin:local_mem_group
-         for( __j = 0; __j < 2; __j = __j + 1 )
+         for( __j = 0; __j < 1; __j = __j + 1 )
          begin:host
             // INST avm_to_ic of acl_avm_to_ic
             acl_avm_to_ic
@@ -254,7 +230,7 @@ module stencil_2d_internal
 
          end
 
-         for( __j = 0; __j < 2; __j = __j + 1 )
+         for( __j = 0; __j < 1; __j = __j + 1 )
          begin:router
             logic b_arb_request [1];
             logic b_arb_enable [1];
@@ -317,6 +293,16 @@ module stencil_2d_internal
 
          for( __j = 0; __j < 1; __j = __j + 1 )
          begin:port1bank0
+            assign bank[0].port_enable[1] = '0;
+            assign bank[0].port_read[1] = '0;
+            assign bank[0].port_write[1] = '0;
+            assign bank[0].port_address[1] = '0;
+            assign bank[0].port_writedata[1] = '0;
+            assign bank[0].port_byteenable[1] = '0;
+         end
+
+         for( __j = 0; __j < 1; __j = __j + 1 )
+         begin:port2bank0
             logic icm_in_arb_request [1];
             logic icm_in_arb_enable [1];
             logic icm_in_arb_read [1];
@@ -354,91 +340,6 @@ module stencil_2d_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of stencil_2d_internal_ic_13830461541539336706
-            stencil_2d_internal_ic_13830461541539336706 data_ic
-            (
-               .clock(clock),
-               .resetn(resetn),
-               // ICM m
-               .m_arb_request(icm_in_arb_request),
-               .m_arb_enable(icm_in_arb_enable),
-               .m_arb_read(icm_in_arb_read),
-               .m_arb_write(icm_in_arb_write),
-               .m_arb_burstcount(icm_in_arb_burstcount),
-               .m_arb_address(icm_in_arb_address),
-               .m_arb_writedata(icm_in_arb_writedata),
-               .m_arb_byteenable(icm_in_arb_byteenable),
-               .m_arb_stall(icm_in_arb_stall),
-               .m_wrp_ack(icm_in_wrp_ack),
-               .m_rrp_datavalid(icm_in_rrp_datavalid),
-               .m_rrp_data(icm_in_rrp_data),
-               // ICM mout
-               .mout_arb_request(icm_out_arb_request),
-               .mout_arb_enable(icm_out_arb_enable),
-               .mout_arb_read(icm_out_arb_read),
-               .mout_arb_write(icm_out_arb_write),
-               .mout_arb_burstcount(icm_out_arb_burstcount),
-               .mout_arb_address(icm_out_arb_address),
-               .mout_arb_writedata(icm_out_arb_writedata),
-               .mout_arb_byteenable(icm_out_arb_byteenable),
-               .mout_arb_id(),
-               .mout_arb_stall(icm_out_arb_stall),
-               .mout_wrp_ack(icm_out_wrp_ack),
-               .mout_rrp_datavalid(icm_out_rrp_datavalid),
-               .mout_rrp_data(icm_out_rrp_data)
-            );
-
-            assign bank[0].port_enable[1] = icm_out_arb_enable;
-            assign bank[0].port_read[1] = icm_out_arb_read;
-            assign bank[0].port_write[1] = icm_out_arb_write;
-            assign bank[0].port_address[1] = icm_out_arb_address;
-            assign bank[0].port_writedata[1] = icm_out_arb_writedata;
-            assign bank[0].port_byteenable[1] = icm_out_arb_byteenable;
-            assign icm_out_arb_stall = bank[0].port_waitrequest[1];
-            assign icm_out_rrp_data = bank[0].port_readdata[1];
-            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[1];
-            assign icm_out_wrp_ack = 'b0;
-         end
-
-         for( __j = 0; __j < 1; __j = __j + 1 )
-         begin:port2bank0
-            logic icm_in_arb_request [1];
-            logic icm_in_arb_enable [1];
-            logic icm_in_arb_read [1];
-            logic icm_in_arb_write [1];
-            logic icm_in_arb_burstcount [1];
-            logic [9:0] icm_in_arb_address [1];
-            logic [31:0] icm_in_arb_writedata [1];
-            logic [3:0] icm_in_arb_byteenable [1];
-            logic icm_in_arb_stall [1];
-            logic icm_in_wrp_ack [1];
-            logic icm_in_rrp_datavalid [1];
-            logic [31:0] icm_in_rrp_data [1];
-            logic icm_out_arb_request;
-            logic icm_out_arb_enable;
-            logic icm_out_arb_read;
-            logic icm_out_arb_write;
-            logic icm_out_arb_burstcount;
-            logic [9:0] icm_out_arb_address;
-            logic [31:0] icm_out_arb_writedata;
-            logic [3:0] icm_out_arb_byteenable;
-            logic icm_out_arb_stall;
-            logic icm_out_wrp_ack;
-            logic icm_out_rrp_datavalid;
-            logic [31:0] icm_out_rrp_data;
-
-            assign icm_in_arb_request[0] = router[1].b_arb_request[0];
-            assign icm_in_arb_enable[0] = router[1].b_arb_enable[0];
-            assign icm_in_arb_read[0] = router[1].b_arb_read[0];
-            assign icm_in_arb_write[0] = router[1].b_arb_write[0];
-            assign icm_in_arb_burstcount[0] = router[1].b_arb_burstcount[0];
-            assign icm_in_arb_address[0] = router[1].b_arb_address[0];
-            assign icm_in_arb_writedata[0] = router[1].b_arb_writedata[0];
-            assign icm_in_arb_byteenable[0] = router[1].b_arb_byteenable[0];
-            assign router[1].b_arb_stall[0] = icm_in_arb_stall[0];
-            assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
-            assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
-            assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
             // INST data_ic of stencil_2d_internal_ic_17240874513320749926
             stencil_2d_internal_ic_17240874513320749926 data_ic
             (
@@ -768,22 +669,22 @@ module stencil_2d_internal
 
    generate
    begin:local_mem_system_aspace66
-      logic local_icm_arb_request [1][2];
-      logic local_icm_arb_enable [1][2];
-      logic local_icm_arb_read [1][2];
-      logic local_icm_arb_write [1][2];
-      logic local_icm_arb_burstcount [1][2];
-      logic [3:0] local_icm_arb_address [1][2];
-      logic [31:0] local_icm_arb_writedata [1][2];
-      logic [3:0] local_icm_arb_byteenable [1][2];
-      logic local_icm_arb_stall [1][2];
-      logic local_icm_wrp_ack [1][2];
-      logic local_icm_rrp_datavalid [1][2];
-      logic [31:0] local_icm_rrp_data [1][2];
+      logic local_icm_arb_request [1][1];
+      logic local_icm_arb_enable [1][1];
+      logic local_icm_arb_read [1][1];
+      logic local_icm_arb_write [1][1];
+      logic local_icm_arb_burstcount [1][1];
+      logic [3:0] local_icm_arb_address [1][1];
+      logic [31:0] local_icm_arb_writedata [1][1];
+      logic [3:0] local_icm_arb_byteenable [1][1];
+      logic local_icm_arb_stall [1][1];
+      logic local_icm_wrp_ack [1][1];
+      logic local_icm_rrp_datavalid [1][1];
+      logic [31:0] local_icm_rrp_data [1][1];
 
       for( __k = 0; __k < 1; __k = __k + 1 )
       begin:local_mem_group
-         for( __l = 0; __l < 2; __l = __l + 1 )
+         for( __l = 0; __l < 1; __l = __l + 1 )
          begin:host
             // INST avm_to_ic of acl_avm_to_ic
             acl_avm_to_ic
@@ -881,7 +782,7 @@ module stencil_2d_internal
 
          end
 
-         for( __l = 0; __l < 2; __l = __l + 1 )
+         for( __l = 0; __l < 1; __l = __l + 1 )
          begin:router
             logic b_arb_request [1];
             logic b_arb_enable [1];
@@ -944,6 +845,16 @@ module stencil_2d_internal
 
          for( __l = 0; __l < 1; __l = __l + 1 )
          begin:port1bank0
+            assign bank[0].port_enable[1] = '0;
+            assign bank[0].port_read[1] = '0;
+            assign bank[0].port_write[1] = '0;
+            assign bank[0].port_address[1] = '0;
+            assign bank[0].port_writedata[1] = '0;
+            assign bank[0].port_byteenable[1] = '0;
+         end
+
+         for( __l = 0; __l < 1; __l = __l + 1 )
+         begin:port2bank0
             logic icm_in_arb_request [1];
             logic icm_in_arb_enable [1];
             logic icm_in_arb_read [1];
@@ -981,91 +892,6 @@ module stencil_2d_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of stencil_2d_internal_ic_10335562066212466101
-            stencil_2d_internal_ic_10335562066212466101 data_ic
-            (
-               .clock(clock),
-               .resetn(resetn),
-               // ICM m
-               .m_arb_request(icm_in_arb_request),
-               .m_arb_enable(icm_in_arb_enable),
-               .m_arb_read(icm_in_arb_read),
-               .m_arb_write(icm_in_arb_write),
-               .m_arb_burstcount(icm_in_arb_burstcount),
-               .m_arb_address(icm_in_arb_address),
-               .m_arb_writedata(icm_in_arb_writedata),
-               .m_arb_byteenable(icm_in_arb_byteenable),
-               .m_arb_stall(icm_in_arb_stall),
-               .m_wrp_ack(icm_in_wrp_ack),
-               .m_rrp_datavalid(icm_in_rrp_datavalid),
-               .m_rrp_data(icm_in_rrp_data),
-               // ICM mout
-               .mout_arb_request(icm_out_arb_request),
-               .mout_arb_enable(icm_out_arb_enable),
-               .mout_arb_read(icm_out_arb_read),
-               .mout_arb_write(icm_out_arb_write),
-               .mout_arb_burstcount(icm_out_arb_burstcount),
-               .mout_arb_address(icm_out_arb_address),
-               .mout_arb_writedata(icm_out_arb_writedata),
-               .mout_arb_byteenable(icm_out_arb_byteenable),
-               .mout_arb_id(),
-               .mout_arb_stall(icm_out_arb_stall),
-               .mout_wrp_ack(icm_out_wrp_ack),
-               .mout_rrp_datavalid(icm_out_rrp_datavalid),
-               .mout_rrp_data(icm_out_rrp_data)
-            );
-
-            assign bank[0].port_enable[1] = icm_out_arb_enable;
-            assign bank[0].port_read[1] = icm_out_arb_read;
-            assign bank[0].port_write[1] = icm_out_arb_write;
-            assign bank[0].port_address[1] = icm_out_arb_address;
-            assign bank[0].port_writedata[1] = icm_out_arb_writedata;
-            assign bank[0].port_byteenable[1] = icm_out_arb_byteenable;
-            assign icm_out_arb_stall = bank[0].port_waitrequest[1];
-            assign icm_out_rrp_data = bank[0].port_readdata[1];
-            assign icm_out_rrp_datavalid = bank[0].port_readdatavalid[1];
-            assign icm_out_wrp_ack = 'b0;
-         end
-
-         for( __l = 0; __l < 1; __l = __l + 1 )
-         begin:port2bank0
-            logic icm_in_arb_request [1];
-            logic icm_in_arb_enable [1];
-            logic icm_in_arb_read [1];
-            logic icm_in_arb_write [1];
-            logic icm_in_arb_burstcount [1];
-            logic [3:0] icm_in_arb_address [1];
-            logic [31:0] icm_in_arb_writedata [1];
-            logic [3:0] icm_in_arb_byteenable [1];
-            logic icm_in_arb_stall [1];
-            logic icm_in_wrp_ack [1];
-            logic icm_in_rrp_datavalid [1];
-            logic [31:0] icm_in_rrp_data [1];
-            logic icm_out_arb_request;
-            logic icm_out_arb_enable;
-            logic icm_out_arb_read;
-            logic icm_out_arb_write;
-            logic icm_out_arb_burstcount;
-            logic [3:0] icm_out_arb_address;
-            logic [31:0] icm_out_arb_writedata;
-            logic [3:0] icm_out_arb_byteenable;
-            logic icm_out_arb_stall;
-            logic icm_out_wrp_ack;
-            logic icm_out_rrp_datavalid;
-            logic [31:0] icm_out_rrp_data;
-
-            assign icm_in_arb_request[0] = router[1].b_arb_request[0];
-            assign icm_in_arb_enable[0] = router[1].b_arb_enable[0];
-            assign icm_in_arb_read[0] = router[1].b_arb_read[0];
-            assign icm_in_arb_write[0] = router[1].b_arb_write[0];
-            assign icm_in_arb_burstcount[0] = router[1].b_arb_burstcount[0];
-            assign icm_in_arb_address[0] = router[1].b_arb_address[0];
-            assign icm_in_arb_writedata[0] = router[1].b_arb_writedata[0];
-            assign icm_in_arb_byteenable[0] = router[1].b_arb_byteenable[0];
-            assign router[1].b_arb_stall[0] = icm_in_arb_stall[0];
-            assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
-            assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
-            assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
             // INST data_ic of stencil_2d_internal_ic_10390277419909522145
             stencil_2d_internal_ic_10390277419909522145 data_ic
             (
@@ -1117,201 +943,6 @@ module stencil_2d_internal
    end
    endgenerate
 
-endmodule
-
-/////////////////////////////////////////////////////////////////
-// MODULE stencil_2d_internal_ic_13830461541539336706
-/////////////////////////////////////////////////////////////////
-module stencil_2d_internal_ic_13830461541539336706
-(
-   input logic clock,
-   input logic resetn,
-   // ICM m
-   input logic m_arb_request [1],
-   input logic m_arb_enable [1],
-   input logic m_arb_read [1],
-   input logic m_arb_write [1],
-   input logic m_arb_burstcount [1],
-   input logic [9:0] m_arb_address [1],
-   input logic [31:0] m_arb_writedata [1],
-   input logic [3:0] m_arb_byteenable [1],
-   output logic m_arb_stall [1],
-   output logic m_wrp_ack [1],
-   output logic m_rrp_datavalid [1],
-   output logic [31:0] m_rrp_data [1],
-   // ICM mout
-   output logic mout_arb_request,
-   output logic mout_arb_enable,
-   output logic mout_arb_read,
-   output logic mout_arb_write,
-   output logic mout_arb_burstcount,
-   output logic [9:0] mout_arb_address,
-   output logic [31:0] mout_arb_writedata,
-   output logic [3:0] mout_arb_byteenable,
-   output logic mout_arb_id,
-   input logic mout_arb_stall,
-   input logic mout_wrp_ack,
-   input logic mout_rrp_datavalid,
-   input logic [31:0] mout_rrp_data
-);
-   genvar __i;
-   generate
-      for( __i = 0; __i < 1; __i = __i + 1 )
-      begin:m
-         logic id;
-         acl_ic_host_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) m_intf();
-         acl_arb_intf
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1)
-         ) arb_intf();
-         acl_ic_wrp_intf
-         #(
-            .ID_W(1)
-         ) wrp_intf();
-         acl_ic_rrp_intf
-         #(
-            .DATA_W(32),
-            .ID_W(1)
-         ) rrp_intf();
-
-         assign id = __i;
-         // INST m_endp of acl_ic_host_endpoint
-         acl_ic_host_endpoint
-         #(
-            .DATA_W(32),
-            .BURSTCOUNT_W(1),
-            .ADDRESS_W(10),
-            .BYTEENA_W(4),
-            .ID_W(1),
-            .NUM_READ_HOSTS(0),
-            .NUM_WRITE_HOSTS(1),
-            .ID(__i)
-         )
-         m_endp
-         (
-            .clock(clock),
-            .resetn(resetn),
-            .m_intf(m_intf),
-            .arb_intf(arb_intf),
-            .wrp_intf(wrp_intf),
-            .rrp_intf(rrp_intf)
-         );
-
-         assign m_intf.arb.req.request = m_arb_request[__i];
-         assign m_intf.arb.req.enable = m_arb_enable[__i];
-         assign m_intf.arb.req.read = m_arb_read[__i];
-         assign m_intf.arb.req.write = m_arb_write[__i];
-         assign m_intf.arb.req.burstcount = m_arb_burstcount[__i];
-         assign m_intf.arb.req.address = m_arb_address[__i];
-         assign m_intf.arb.req.writedata = m_arb_writedata[__i];
-         assign m_intf.arb.req.byteenable = m_arb_byteenable[__i];
-         assign m_arb_stall[__i] = m_intf.arb.stall;
-         assign m_wrp_ack[__i] = m_intf.wrp.ack;
-         assign m_rrp_datavalid[__i] = m_intf.rrp.datavalid;
-         assign m_rrp_data[__i] = m_intf.rrp.data;
-         assign m_intf.arb.req.id = id;
-      end
-
-   endgenerate
-
-   generate
-   begin:s
-      acl_arb_intf
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1)
-      ) in_arb_intf();
-      acl_arb_intf
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1)
-      ) out_arb_intf();
-      acl_ic_wrp_intf
-      #(
-         .ID_W(1)
-      ) wrp_intf();
-      acl_ic_rrp_intf
-      #(
-         .DATA_W(32),
-         .ID_W(1)
-      ) rrp_intf();
-
-      // INST s_endp of acl_ic_agent_endpoint
-      acl_ic_agent_endpoint
-      #(
-         .DATA_W(32),
-         .BURSTCOUNT_W(1),
-         .ADDRESS_W(10),
-         .BYTEENA_W(4),
-         .ID_W(1),
-         .NUM_READ_HOSTS(0),
-         .NUM_WRITE_HOSTS(1),
-         .PIPELINE_RETURN_PATHS(0),
-         .WRP_FIFO_DEPTH(0),
-         .RRP_FIFO_DEPTH(0),
-         .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(3),
-         .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
-      )
-      s_endp
-      (
-         .clock(clock),
-         .resetn(resetn),
-         .m_intf(in_arb_intf),
-         .s_intf(out_arb_intf),
-         .s_readdatavalid(mout_rrp_datavalid),
-         .s_readdata(mout_rrp_data),
-         .s_writeack(mout_wrp_ack),
-         .wrp_intf(wrp_intf),
-         .rrp_intf(rrp_intf)
-      );
-
-   end
-   endgenerate
-
-   generate
-   begin:wrp
-      assign m[0].wrp_intf.ack = s.wrp_intf.ack;
-      assign m[0].wrp_intf.id = s.wrp_intf.id;
-   end
-   endgenerate
-
-   generate
-   begin:rrp
-   end
-   endgenerate
-
-   assign mout_arb_request = s.out_arb_intf.req.request;
-   assign mout_arb_enable = s.out_arb_intf.req.enable;
-   assign mout_arb_read = s.out_arb_intf.req.read;
-   assign mout_arb_write = s.out_arb_intf.req.write;
-   assign mout_arb_burstcount = s.out_arb_intf.req.burstcount;
-   assign mout_arb_address = s.out_arb_intf.req.address;
-   assign mout_arb_writedata = s.out_arb_intf.req.writedata;
-   assign mout_arb_byteenable = s.out_arb_intf.req.byteenable;
-   assign mout_arb_id = s.out_arb_intf.req.id;
-   assign s.out_arb_intf.stall = mout_arb_stall;
-   assign s.in_arb_intf.req = m[0].arb_intf.req;
-   assign m[0].arb_intf.stall = s.in_arb_intf.stall;
 endmodule
 
 /////////////////////////////////////////////////////////////////
@@ -1511,9 +1142,9 @@ module stencil_2d_internal_ic_17240874513320749926
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE stencil_2d_internal_ic_10335562066212466101
+// MODULE stencil_2d_internal_ic_13830461541539336706
 /////////////////////////////////////////////////////////////////
-module stencil_2d_internal_ic_10335562066212466101
+module stencil_2d_internal_ic_13830461541539336706
 (
    input logic clock,
    input logic resetn,
@@ -1523,7 +1154,7 @@ module stencil_2d_internal_ic_10335562066212466101
    input logic m_arb_read [1],
    input logic m_arb_write [1],
    input logic m_arb_burstcount [1],
-   input logic [3:0] m_arb_address [1],
+   input logic [9:0] m_arb_address [1],
    input logic [31:0] m_arb_writedata [1],
    input logic [3:0] m_arb_byteenable [1],
    output logic m_arb_stall [1],
@@ -1536,7 +1167,7 @@ module stencil_2d_internal_ic_10335562066212466101
    output logic mout_arb_read,
    output logic mout_arb_write,
    output logic mout_arb_burstcount,
-   output logic [3:0] mout_arb_address,
+   output logic [9:0] mout_arb_address,
    output logic [31:0] mout_arb_writedata,
    output logic [3:0] mout_arb_byteenable,
    output logic mout_arb_id,
@@ -1554,7 +1185,7 @@ module stencil_2d_internal_ic_10335562066212466101
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(4),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) m_intf();
@@ -1562,7 +1193,7 @@ module stencil_2d_internal_ic_10335562066212466101
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(4),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1)
          ) arb_intf();
@@ -1582,7 +1213,7 @@ module stencil_2d_internal_ic_10335562066212466101
          #(
             .DATA_W(32),
             .BURSTCOUNT_W(1),
-            .ADDRESS_W(4),
+            .ADDRESS_W(10),
             .BYTEENA_W(4),
             .ID_W(1),
             .NUM_READ_HOSTS(0),
@@ -1622,7 +1253,7 @@ module stencil_2d_internal_ic_10335562066212466101
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(4),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) in_arb_intf();
@@ -1630,7 +1261,7 @@ module stencil_2d_internal_ic_10335562066212466101
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(4),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1)
       ) out_arb_intf();
@@ -1649,7 +1280,7 @@ module stencil_2d_internal_ic_10335562066212466101
       #(
          .DATA_W(32),
          .BURSTCOUNT_W(1),
-         .ADDRESS_W(4),
+         .ADDRESS_W(10),
          .BYTEENA_W(4),
          .ID_W(1),
          .NUM_READ_HOSTS(0),

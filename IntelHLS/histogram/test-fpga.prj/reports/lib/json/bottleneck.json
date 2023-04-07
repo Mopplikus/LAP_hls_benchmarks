@@ -2,13 +2,116 @@
   "bottlenecks":
   [
     {
+      "name":"?"
+      , "id":4294967295
+      , "src":"1601355568"
+      , "dst":"1600640976"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"histogram.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"histogram.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: histogram.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                  , "line":"27"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":1601355568
+          , "start":"1.00"
+          , "parent":"histogram.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":9
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"histogram.B2"
+          , "id":1601614192
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":27
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":1600640976
+          , "end":"1.00"
+          , "parent":"histogram.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":41
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":1601614192
+          , "to":1601614192
+        }
+        , {
+          "from":1601355568
+          , "to":1601614192
+        }
+        , {
+          "from":1601614192
+          , "to":1600640976
+        }
+        , {
+          "from":1601355568
+          , "to":1600640976
+          , "reverse":1
+        }
+      ]
+    }
+    , {
       "name":"hist"
       , "id":4294967295
-      , "src":"1736067152"
-      , "dst":"1749023744"
+      , "src":"1609012624"
+      , "dst":"1601220400"
       , "type":"fMAX/II"
       , "brief":"Memory dependency"
-      , "loop":"histogram.B5"
+      , "loop":"histogram.B2"
       , "details":
       [
         {
@@ -39,7 +142,7 @@
               [
                 {
                   "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"30"
+                  , "line":"31"
                 }
               ]
             }
@@ -50,7 +153,7 @@
               [
                 {
                   "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"31"
+                  , "line":"32"
                 }
               ]
             }
@@ -61,7 +164,7 @@
               [
                 {
                   "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"31"
+                  , "line":"32"
                 }
               ]
             }
@@ -72,15 +175,15 @@
       [
         {
           "name":"hist"
-          , "id":1736067152
+          , "id":1609012624
           , "start":"9.00"
-          , "parent":"histogram.B5"
+          , "parent":"histogram.B2"
           , "debug":
           [
             [
               {
                 "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":31
+                , "line":32
               }
             ]
           ]
@@ -88,13 +191,13 @@
         }
         , {
           "name":"LD"
-          , "id":1736185136
+          , "id":1609155152
           , "debug":
           [
             [
               {
                 "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":30
+                , "line":31
               }
             ]
           ]
@@ -102,13 +205,13 @@
         }
         , {
           "name":"f32 +"
-          , "id":1736277312
+          , "id":1605525904
           , "debug":
           [
             [
               {
                 "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":31
+                , "line":32
               }
             ]
           ]
@@ -116,13 +219,13 @@
         }
         , {
           "name":"ST"
-          , "id":1736277664
+          , "id":1605526256
           , "debug":
           [
             [
               {
                 "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":31
+                , "line":32
               }
             ]
           ]
@@ -130,15 +233,15 @@
         }
         , {
           "name":"Feedback"
-          , "id":1749023744
+          , "id":1601220400
           , "end":"14.00"
-          , "parent":"histogram.B5"
+          , "parent":"histogram.B2"
           , "debug":
           [
             [
               {
                 "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":31
+                , "line":32
               }
             ]
           ]
@@ -148,242 +251,24 @@
       , "links":
       [
         {
-          "from":1736067152
-          , "to":1736185136
+          "from":1609012624
+          , "to":1609155152
         }
         , {
-          "from":1736185136
-          , "to":1736277312
+          "from":1609155152
+          , "to":1605525904
         }
         , {
-          "from":1736277312
-          , "to":1736277664
+          "from":1605525904
+          , "to":1605526256
         }
         , {
-          "from":1736277664
-          , "to":1749023744
+          "from":1605526256
+          , "to":1601220400
         }
         , {
-          "from":1736067152
-          , "to":1749023744
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"?"
-      , "id":4294967295
-      , "src":"1736328976"
-      , "dst":"1733159408"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Data dependency"
-      , "loop":"histogram.B1.start"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Loop: ":"histogram.B1.start"
-          , "Declared at: ":"Component invocation"
-          , "Dependency: ":"Data dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: histogram.B3(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"19"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Basic block: histogram.B2(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"26"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Loop: histogram.B5(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"26"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Basic block: histogram.B4(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"34"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Loop: histogram.B6(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                  , "line":"34"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"?"
-          , "id":1736328976
-          , "start":"1.00"
-          , "parent":"histogram.B1.start"
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":9
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"histogram.B3"
-          , "id":1736016880
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":19
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"histogram.B2"
-          , "id":1736270160
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"bb"
-        }
-        , {
-          "name":"histogram.B5"
-          , "id":1736033536
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"histogram.B4"
-          , "id":1736050336
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":34
-              }
-            ]
-          ]
-          , "type":"bb"
-        }
-        , {
-          "name":"histogram.B6"
-          , "id":1736058608
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
-                , "line":34
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"Feedback"
-          , "id":1733159408
-          , "end":"1.00"
-          , "parent":"histogram.B7"
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":1736016880
-          , "to":1736016880
-        }
-        , {
-          "from":1736016880
-          , "to":1736270160
-        }
-        , {
-          "from":1736033536
-          , "to":1736033536
-        }
-        , {
-          "from":1736270160
-          , "to":1736033536
-        }
-        , {
-          "from":1736033536
-          , "to":1736050336
-        }
-        , {
-          "from":1736050336
-          , "to":1736058608
-        }
-        , {
-          "from":1736058608
-          , "to":1736058608
-        }
-        , {
-          "from":1736328976
-          , "to":1736016880
-        }
-        , {
-          "from":1736058608
-          , "to":1733159408
-        }
-        , {
-          "from":1736328976
-          , "to":1733159408
+          "from":1609012624
+          , "to":1601220400
           , "reverse":1
         }
       ]

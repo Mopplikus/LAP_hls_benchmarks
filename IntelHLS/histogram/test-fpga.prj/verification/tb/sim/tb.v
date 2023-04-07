@@ -6,13 +6,7 @@
 module tb (
 	);
 
-	wire  [63:0] histogram_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:avs_readdata -> histogram_inst:avmm_0_rw_readdata
-	wire  [63:0] histogram_inst_avmm_0_rw_address;                                                            // histogram_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:avs_address
-	wire   [7:0] histogram_inst_avmm_0_rw_byteenable;                                                         // histogram_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:avs_byteenable
-	wire         histogram_inst_avmm_0_rw_read;                                                               // histogram_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:avs_read
-	wire         histogram_inst_avmm_0_rw_write;                                                              // histogram_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:avs_write
-	wire  [63:0] histogram_inst_avmm_0_rw_writedata;                                                          // histogram_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                                  // clock_reset_inst:clock -> [component_dpi_controller_histogram_inst:clock, histogram_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:clock, stream_source_dpi_bfm_histogram_hist_r_inst:clock, stream_source_dpi_bfm_histogram_n_inst:clock]
+	wire         clock_reset_inst_clock_clk;                                                                  // clock_reset_inst:clock -> [component_dpi_controller_histogram_inst:clock, histogram_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, stream_source_dpi_bfm_histogram_hist_r_inst:clock, stream_source_dpi_bfm_histogram_n_inst:clock]
 	wire         clock_reset_inst_clock2x_clk;                                                                // clock_reset_inst:clock2x -> [component_dpi_controller_histogram_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_histogram_hist_r_inst:clock2x, stream_source_dpi_bfm_histogram_n_inst:clock2x]
 	wire         component_dpi_controller_histogram_inst_component_call_valid;                                // component_dpi_controller_histogram_inst:start -> histogram_inst:start
 	wire         histogram_inst_call_stall;                                                                   // histogram_inst:busy -> component_dpi_controller_histogram_inst:busy
@@ -30,15 +24,13 @@ module tb (
 	wire         histogram_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit;           // histogram_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_histogram_n_inst:do_bind
 	wire         histogram_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit;         // histogram_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_histogram_n_inst:enable
 	wire         histogram_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_1_conduit; // histogram_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_histogram_n_inst:source_ready
-	wire         histogram_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit;           // histogram_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_2 -> mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:do_bind
-	wire         histogram_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit;         // histogram_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_2 -> mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:enable
 	wire         component_dpi_controller_histogram_inst_read_implicit_streams_conduit;                       // component_dpi_controller_histogram_inst:read_implicit_streams -> histogram_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
 	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                                 // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
 	wire         histogram_inst_return_valid;                                                                 // histogram_inst:done -> component_dpi_controller_histogram_inst:done
 	wire         component_dpi_controller_histogram_inst_component_return_stall;                              // component_dpi_controller_histogram_inst:stall -> histogram_inst:stall
 	wire  [63:0] stream_source_dpi_bfm_histogram_hist_r_inst_source_data_data;                                // stream_source_dpi_bfm_histogram_hist_r_inst:source_data -> histogram_inst:hist_r
 	wire  [31:0] stream_source_dpi_bfm_histogram_n_inst_source_data_data;                                     // stream_source_dpi_bfm_histogram_n_inst:source_data -> histogram_inst:n
-	wire         clock_reset_inst_reset_reset;                                                                // clock_reset_inst:resetn -> [component_dpi_controller_histogram_inst:resetn, histogram_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_histogram_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_histogram_hist_r_inst:resetn, stream_source_dpi_bfm_histogram_n_inst:resetn]
+	wire         clock_reset_inst_reset_reset;                                                                // clock_reset_inst:resetn -> [component_dpi_controller_histogram_inst:resetn, histogram_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, stream_source_dpi_bfm_histogram_hist_r_inst:resetn, stream_source_dpi_bfm_histogram_n_inst:resetn]
 	wire         component_dpi_controller_histogram_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_histogram_inst:done_irq
 
 	clock_reset clock_reset_inst (
@@ -81,15 +73,13 @@ module tb (
 	histogram_cfan histogram_component_dpi_controller_bind_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_histogram_inst_dpi_control_bind_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (histogram_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (histogram_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (histogram_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
+		.out_conduit_1 (histogram_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit)  //  output,  width = 1, out_conduit_1.conduit
 	);
 
 	histogram_en_cfan histogram_component_dpi_controller_enable_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_histogram_inst_dpi_control_enable_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (histogram_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (histogram_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (histogram_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
+		.out_conduit_1 (histogram_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit)  //  output,  width = 1, out_conduit_1.conduit
 	);
 
 	histogram_ir_cfan histogram_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -99,20 +89,14 @@ module tb (
 	);
 
 	histogram histogram_inst (
-		.clock                (clock_reset_inst_clock_clk),                                     //   input,   width = 1,     clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                                   //   input,   width = 1,     reset.reset_n
-		.start                (component_dpi_controller_histogram_inst_component_call_valid),   //   input,   width = 1,      call.valid
-		.busy                 (histogram_inst_call_stall),                                      //  output,   width = 1,          .stall
-		.done                 (histogram_inst_return_valid),                                    //  output,   width = 1,    return.valid
-		.stall                (component_dpi_controller_histogram_inst_component_return_stall), //   input,   width = 1,          .stall
-		.hist_r               (stream_source_dpi_bfm_histogram_hist_r_inst_source_data_data),   //   input,  width = 64,    hist_r.data
-		.n                    (stream_source_dpi_bfm_histogram_n_inst_source_data_data),        //   input,  width = 32,         n.data
-		.avmm_0_rw_address    (histogram_inst_avmm_0_rw_address),                               //  output,  width = 64, avmm_0_rw.address
-		.avmm_0_rw_byteenable (histogram_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,          .byteenable
-		.avmm_0_rw_read       (histogram_inst_avmm_0_rw_read),                                  //  output,   width = 1,          .read
-		.avmm_0_rw_readdata   (histogram_inst_avmm_0_rw_readdata),                              //   input,  width = 64,          .readdata
-		.avmm_0_rw_write      (histogram_inst_avmm_0_rw_write),                                 //  output,   width = 1,          .write
-		.avmm_0_rw_writedata  (histogram_inst_avmm_0_rw_writedata)                              //  output,  width = 64,          .writedata
+		.clock  (clock_reset_inst_clock_clk),                                     //   input,   width = 1,  clock.clk
+		.resetn (clock_reset_inst_reset_reset),                                   //   input,   width = 1,  reset.reset_n
+		.start  (component_dpi_controller_histogram_inst_component_call_valid),   //   input,   width = 1,   call.valid
+		.busy   (histogram_inst_call_stall),                                      //  output,   width = 1,       .stall
+		.done   (histogram_inst_return_valid),                                    //  output,   width = 1, return.valid
+		.stall  (component_dpi_controller_histogram_inst_component_return_stall), //   input,   width = 1,       .stall
+		.hist_r (stream_source_dpi_bfm_histogram_hist_r_inst_source_data_data),   //   input,  width = 64, hist_r.data
+		.n      (stream_source_dpi_bfm_histogram_n_inst_source_data_data)         //   input,  width = 32,      n.data
 	);
 
 	main_dpi_controller main_dpi_controller_inst (
@@ -123,19 +107,6 @@ module tb (
 		.component_done                   (concatenate_component_done_inst_out_conduit_conduit),                   //   input,  width = 1,                   component_done.conduit
 		.component_wait_for_stream_writes (concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit), //   input,  width = 1, component_wait_for_stream_writes.conduit
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
-	);
-
-	mm_agent_histogram_avmm_0_rw mm_agent_dpi_bfm_histogram_avmm_0_rw_inst (
-		.do_bind        (histogram_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (histogram_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                          //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                        //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (histogram_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (histogram_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (histogram_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (histogram_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (histogram_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (histogram_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
 	);
 
 	sp_cstart split_component_start_inst (

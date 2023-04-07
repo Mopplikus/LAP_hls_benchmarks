@@ -16,103 +16,34 @@
 
 // SystemVerilog created from kernel_2mm_B8_merge
 // Created for function/kernel kernel_2mm
-// SystemVerilog created on Wed Apr  5 01:12:29 2023
+// SystemVerilog created on Fri Apr  7 18:35:51 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module kernel_2mm_B8_merge (
-    input wire [0:0] in_forked121_0,
-    input wire [0:0] in_forked121_1,
-    input wire [31:0] in_i47_073_pop25146_0,
-    input wire [31:0] in_i47_073_pop25146_1,
-    input wire [0:0] in_notcmp86143_0,
-    input wire [0:0] in_notcmp86143_1,
+    input wire [0:0] in_c0_exe42029_0,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
-    input wire [0:0] in_valid_in_1,
-    output wire [0:0] out_forked121,
-    output wire [31:0] out_i47_073_pop25146,
-    output wire [0:0] out_notcmp86143,
+    output wire [0:0] out_c0_exe42029,
     output wire [0:0] out_stall_out_0,
-    output wire [0:0] out_stall_out_1,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] VCC_q;
-    wire [0:0] forked121_mux_s;
-    reg [0:0] forked121_mux_q;
-    wire [0:0] i47_073_pop25146_mux_s;
-    reg [31:0] i47_073_pop25146_mux_q;
-    wire [0:0] notcmp86143_mux_s;
-    reg [0:0] notcmp86143_mux_q;
     wire [0:0] stall_out_q;
-    wire [0:0] stall_out_1_specific_q;
-    wire [0:0] valid_or_q;
 
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
+    // out_c0_exe42029(GPOUT,5)
+    assign out_c0_exe42029 = in_c0_exe42029_0;
 
-    // forked121_mux(MUX,2)
-    assign forked121_mux_s = in_valid_in_0;
-    always @(forked121_mux_s or in_forked121_1 or in_forked121_0)
-    begin
-        unique case (forked121_mux_s)
-            1'b0 : forked121_mux_q = in_forked121_1;
-            1'b1 : forked121_mux_q = in_forked121_0;
-            default : forked121_mux_q = 1'b0;
-        endcase
-    end
+    // stall_out(LOGICAL,8)
+    assign stall_out_q = in_valid_in_0 & in_stall_in;
 
-    // out_forked121(GPOUT,14)
-    assign out_forked121 = forked121_mux_q;
-
-    // i47_073_pop25146_mux(MUX,3)
-    assign i47_073_pop25146_mux_s = in_valid_in_0;
-    always @(i47_073_pop25146_mux_s or in_i47_073_pop25146_1 or in_i47_073_pop25146_0)
-    begin
-        unique case (i47_073_pop25146_mux_s)
-            1'b0 : i47_073_pop25146_mux_q = in_i47_073_pop25146_1;
-            1'b1 : i47_073_pop25146_mux_q = in_i47_073_pop25146_0;
-            default : i47_073_pop25146_mux_q = 32'b0;
-        endcase
-    end
-
-    // out_i47_073_pop25146(GPOUT,15)
-    assign out_i47_073_pop25146 = i47_073_pop25146_mux_q;
-
-    // notcmp86143_mux(MUX,13)
-    assign notcmp86143_mux_s = in_valid_in_0;
-    always @(notcmp86143_mux_s or in_notcmp86143_1 or in_notcmp86143_0)
-    begin
-        unique case (notcmp86143_mux_s)
-            1'b0 : notcmp86143_mux_q = in_notcmp86143_1;
-            1'b1 : notcmp86143_mux_q = in_notcmp86143_0;
-            default : notcmp86143_mux_q = 1'b0;
-        endcase
-    end
-
-    // out_notcmp86143(GPOUT,16)
-    assign out_notcmp86143 = notcmp86143_mux_q;
-
-    // valid_or(LOGICAL,22)
-    assign valid_or_q = in_valid_in_0 | in_valid_in_1;
-
-    // stall_out(LOGICAL,20)
-    assign stall_out_q = valid_or_q & in_stall_in;
-
-    // out_stall_out_0(GPOUT,17)
+    // out_stall_out_0(GPOUT,6)
     assign out_stall_out_0 = stall_out_q;
 
-    // stall_out_1_specific(LOGICAL,21)
-    assign stall_out_1_specific_q = in_valid_in_0 | stall_out_q;
-
-    // out_stall_out_1(GPOUT,18)
-    assign out_stall_out_1 = stall_out_1_specific_q;
-
-    // out_valid_out(GPOUT,19)
-    assign out_valid_out = valid_or_q;
+    // out_valid_out(GPOUT,7)
+    assign out_valid_out = in_valid_in_0;
 
 endmodule

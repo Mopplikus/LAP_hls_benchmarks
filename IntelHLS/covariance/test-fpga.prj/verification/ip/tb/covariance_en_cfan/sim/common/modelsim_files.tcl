@@ -19,7 +19,7 @@ namespace eval covariance_en_cfan {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/covariance_en_cfan_avalon_conduit_fanout_10_ak2cvai.sv"]\"  -work avalon_conduit_fanout_10"
+    lappend design_files "vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/covariance_en_cfan_avalon_conduit_fanout_10_kcgql6q.sv"]\"  -work avalon_conduit_fanout_10"
     lappend design_files "vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/covariance_en_cfan.v"]\"  -work covariance_en_cfan"                                                                            
     return $design_files
   }

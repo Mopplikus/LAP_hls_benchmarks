@@ -16,59 +16,202 @@
 
 // SystemVerilog created from atax_B7_branch
 // Created for function/kernel atax
-// SystemVerilog created on Wed Apr  5 13:56:00 2023
+// SystemVerilog created on Fri Apr  7 18:08:55 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module atax_B7_branch (
-    input wire [63:0] in_c0_exe1157,
-    input wire [63:0] in_c0_exe2158,
-    input wire [31:0] in_c0_exe3159,
-    input wire [0:0] in_c0_exe4160,
-    input wire [0:0] in_c0_exe5161,
-    input wire [0:0] in_c0_exe6162,
+    input wire [31:0] in_c0_exe2163,
+    input wire [0:0] in_c0_exe3164,
+    input wire [0:0] in_c0_exe4165,
+    input wire [63:0] in_c0_exe5166,
+    input wire [0:0] in_c0_exe6167,
+    input wire [0:0] in_c0_exe7168,
     input wire [0:0] in_stall_in_0,
+    input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [63:0] out_c0_exe1157,
-    output wire [63:0] out_c0_exe2158,
-    output wire [31:0] out_c0_exe3159,
-    output wire [0:0] out_c0_exe4160,
-    output wire [0:0] out_c0_exe5161,
-    output wire [0:0] out_c0_exe6162,
+    output wire [31:0] out_c0_exe2163,
+    output wire [0:0] out_c0_exe3164,
+    output wire [63:0] out_c0_exe5166,
+    output wire [0:0] out_c0_exe6167,
+    output wire [0:0] out_c0_exe7168,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
+    output wire [0:0] out_valid_out_1,
     input wire clock,
     input wire resetn
     );
 
-    wire [0:0] stall_out_q;
+    wire [0:0] VCC_q;
+    wire [0:0] atax_B7_branch_enable_q;
+    wire [0:0] atax_B7_branch_enable_not_q;
+    reg [31:0] c0_exe2163_reg_q;
+    reg [0:0] c0_exe3164_reg_q;
+    wire [0:0] c0_exe4165_cmp_q;
+    reg [63:0] c0_exe5166_reg_q;
+    reg [0:0] c0_exe6167_reg_q;
+    reg [0:0] c0_exe7168_reg_q;
+    wire [0:0] not_stall_in_0_q;
+    wire [0:0] not_stall_in_1_q;
+    wire [0:0] not_valid_0_q;
+    wire [0:0] not_valid_1_q;
+    wire [0:0] not_valid_or_not_stall_0_q;
+    wire [0:0] not_valid_or_not_stall_1_q;
+    reg [0:0] valid_0_reg_q;
+    reg [0:0] valid_1_reg_q;
+    wire [0:0] valid_out_0_and_q;
+    wire [0:0] valid_out_1_and_q;
 
 
-    // out_c0_exe1157(GPOUT,10)
-    assign out_c0_exe1157 = in_c0_exe1157;
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
 
-    // out_c0_exe2158(GPOUT,11)
-    assign out_c0_exe2158 = in_c0_exe2158;
+    // not_stall_in_1(LOGICAL,20)
+    assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // out_c0_exe3159(GPOUT,12)
-    assign out_c0_exe3159 = in_c0_exe3159;
+    // c0_exe4165_cmp(LOGICAL,6)
+    assign c0_exe4165_cmp_q = ~ (in_c0_exe4165);
 
-    // out_c0_exe4160(GPOUT,13)
-    assign out_c0_exe4160 = in_c0_exe4160;
+    // valid_out_1_and(LOGICAL,36)
+    assign valid_out_1_and_q = in_valid_in & c0_exe4165_cmp_q;
 
-    // out_c0_exe5161(GPOUT,14)
-    assign out_c0_exe5161 = in_c0_exe5161;
+    // valid_1_reg(REG,34)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            valid_1_reg_q <= $unsigned(1'b0);
+        end
+        else if (atax_B7_branch_enable_q == 1'b1)
+        begin
+            valid_1_reg_q <= valid_out_1_and_q;
+        end
+    end
 
-    // out_c0_exe6162(GPOUT,15)
-    assign out_c0_exe6162 = in_c0_exe6162;
+    // not_valid_1(LOGICAL,22)
+    assign not_valid_1_q = ~ (valid_1_reg_q);
 
-    // stall_out(LOGICAL,18)
-    assign stall_out_q = in_valid_in & in_stall_in_0;
+    // not_valid_or_not_stall_1(LOGICAL,24)
+    assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
 
-    // out_stall_out(GPOUT,16)
-    assign out_stall_out = stall_out_q;
+    // not_stall_in_0(LOGICAL,19)
+    assign not_stall_in_0_q = ~ (in_stall_in_0);
 
-    // out_valid_out_0(GPOUT,17)
-    assign out_valid_out_0 = in_valid_in;
+    // valid_out_0_and(LOGICAL,35)
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe4165;
+
+    // valid_0_reg(REG,33)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            valid_0_reg_q <= $unsigned(1'b0);
+        end
+        else if (atax_B7_branch_enable_q == 1'b1)
+        begin
+            valid_0_reg_q <= valid_out_0_and_q;
+        end
+    end
+
+    // not_valid_0(LOGICAL,21)
+    assign not_valid_0_q = ~ (valid_0_reg_q);
+
+    // not_valid_or_not_stall_0(LOGICAL,23)
+    assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
+
+    // atax_B7_branch_enable(LOGICAL,2)
+    assign atax_B7_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
+
+    // c0_exe2163_reg(REG,4)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe2163_reg_q <= $unsigned(32'b00000000000000000000000000000000);
+        end
+        else if (atax_B7_branch_enable_q == 1'b1)
+        begin
+            c0_exe2163_reg_q <= in_c0_exe2163;
+        end
+    end
+
+    // out_c0_exe2163(GPOUT,25)
+    assign out_c0_exe2163 = c0_exe2163_reg_q;
+
+    // c0_exe3164_reg(REG,5)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe3164_reg_q <= $unsigned(1'b0);
+        end
+        else if (atax_B7_branch_enable_q == 1'b1)
+        begin
+            c0_exe3164_reg_q <= in_c0_exe3164;
+        end
+    end
+
+    // out_c0_exe3164(GPOUT,26)
+    assign out_c0_exe3164 = c0_exe3164_reg_q;
+
+    // c0_exe5166_reg(REG,7)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe5166_reg_q <= $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
+        end
+        else if (atax_B7_branch_enable_q == 1'b1)
+        begin
+            c0_exe5166_reg_q <= in_c0_exe5166;
+        end
+    end
+
+    // out_c0_exe5166(GPOUT,27)
+    assign out_c0_exe5166 = c0_exe5166_reg_q;
+
+    // c0_exe6167_reg(REG,8)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe6167_reg_q <= $unsigned(1'b0);
+        end
+        else if (atax_B7_branch_enable_q == 1'b1)
+        begin
+            c0_exe6167_reg_q <= in_c0_exe6167;
+        end
+    end
+
+    // out_c0_exe6167(GPOUT,28)
+    assign out_c0_exe6167 = c0_exe6167_reg_q;
+
+    // c0_exe7168_reg(REG,9)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe7168_reg_q <= $unsigned(1'b0);
+        end
+        else if (atax_B7_branch_enable_q == 1'b1)
+        begin
+            c0_exe7168_reg_q <= in_c0_exe7168;
+        end
+    end
+
+    // out_c0_exe7168(GPOUT,29)
+    assign out_c0_exe7168 = c0_exe7168_reg_q;
+
+    // atax_B7_branch_enable_not(LOGICAL,3)
+    assign atax_B7_branch_enable_not_q = ~ (atax_B7_branch_enable_q);
+
+    // out_stall_out(GPOUT,30)
+    assign out_stall_out = atax_B7_branch_enable_not_q;
+
+    // out_valid_out_0(GPOUT,31)
+    assign out_valid_out_0 = valid_0_reg_q;
+
+    // out_valid_out_1(GPOUT,32)
+    assign out_valid_out_1 = valid_1_reg_q;
 
 endmodule

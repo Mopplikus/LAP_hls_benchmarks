@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_pre_pre1_jacobi_1d0
 // Created for function/kernel jacobi_1d
-// SystemVerilog created on Wed Apr  5 13:32:10 2023
+// SystemVerilog created on Fri Apr  7 17:06:24 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -36,6 +36,7 @@ module jacobi_1d_i_llvm_fpga_mem_pre_pre1_0 (
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
     input wire [63:0] in_i_address,
+    input wire [0:0] in_i_dependence,
     input wire [0:0] in_i_predicate,
     input wire [0:0] in_i_valid,
     output wire [31:0] out_o_readdata,
@@ -111,13 +112,13 @@ module jacobi_1d_i_llvm_fpga_mem_pre_pre1_0 (
     // c_i3_010(CONSTANT,11)
     assign c_i3_010_q = $unsigned(3'b000);
 
-    // addr_trunc_sel_x(BITSELECT,21)@1
+    // addr_trunc_sel_x(BITSELECT,21)@3
     assign addr_trunc_sel_x_b = in_i_address[31:0];
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_pre_pre1_jacobi_1d1(EXTIFACE,15)@1 + 3
+    // i_llvm_fpga_mem_pre_pre1_jacobi_1d1(EXTIFACE,15)@3 + 3
     assign i_llvm_fpga_mem_pre_pre1_jacobi_1d1_avm_readdata = in_pre_pre1_jacobi_1d_avm_readdata;
     assign i_llvm_fpga_mem_pre_pre1_jacobi_1d1_avm_readdatavalid = in_pre_pre1_jacobi_1d_avm_readdatavalid;
     assign i_llvm_fpga_mem_pre_pre1_jacobi_1d1_avm_waitrequest = in_pre_pre1_jacobi_1d_avm_waitrequest;
@@ -233,13 +234,13 @@ module jacobi_1d_i_llvm_fpga_mem_pre_pre1_0 (
     assign out_pre_pre1_jacobi_1d_avm_byteenable = i_llvm_fpga_mem_pre_pre1_jacobi_1d1_avm_byteenable;
     assign out_pre_pre1_jacobi_1d_avm_burstcount = i_llvm_fpga_mem_pre_pre1_jacobi_1d1_avm_burstcount;
 
-    // sync_out(GPOUT,19)@4
+    // sync_out(GPOUT,19)@6
     assign out_o_stall = i_llvm_fpga_mem_pre_pre1_jacobi_1d1_o_stall;
 
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // readdata_reg_pre_pre1_jacobi_1d0_readdata_reg_pre_pre1_jacobi_1d0_valid_reg_x(REG,26)@4 + 1
+    // readdata_reg_pre_pre1_jacobi_1d0_readdata_reg_pre_pre1_jacobi_1d0_valid_reg_x(REG,26)@6 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -252,7 +253,7 @@ module jacobi_1d_i_llvm_fpga_mem_pre_pre1_0 (
         end
     end
 
-    // readdata_reg_pre_pre1_jacobi_1d0_readdata_reg_pre_pre1_jacobi_1d0_data_reg_x(REG,25)@4 + 1
+    // readdata_reg_pre_pre1_jacobi_1d0_readdata_reg_pre_pre1_jacobi_1d0_data_reg_x(REG,25)@6 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -265,7 +266,7 @@ module jacobi_1d_i_llvm_fpga_mem_pre_pre1_0 (
         end
     end
 
-    // dupName_0_sync_out_x(GPOUT,22)@5
+    // dupName_0_sync_out_x(GPOUT,22)@7
     assign out_o_readdata = readdata_reg_pre_pre1_jacobi_1d0_readdata_reg_pre_pre1_jacobi_1d0_data_reg_x_q;
     assign out_o_valid = readdata_reg_pre_pre1_jacobi_1d0_readdata_reg_pre_pre1_jacobi_1d0_valid_reg_x_q;
 

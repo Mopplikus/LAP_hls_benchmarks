@@ -15,6 +15,7 @@ component void atax(int A[N][N], int x[N], int y[N], int tmp[N])
     hls_memory hls_singlepump int y_local[N];
     hls_memory hls_singlepump int tmp_local[N];
 
+    /*
     INIT:for(int i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
@@ -24,7 +25,7 @@ component void atax(int A[N][N], int x[N], int y[N], int tmp[N])
         x_local[i] = x[i];
         y_local[i] = y[i];
         tmp_local[i] = tmp[i];
-    }
+    }*/
 
     WORK:for (int i = 0; i < NX; i++)
     {
@@ -40,11 +41,12 @@ component void atax(int A[N][N], int x[N], int y[N], int tmp[N])
         tmp_local[i] = t; 
     }
 
+    /*
     OUT:for(int i = 0; i < N; i++)
     {
         y[i] = y_local[i];
         tmp[i] = tmp_local[i];
-    }
+    }*/
 }
 
 void atax_ref(int A[N][N], int x[N], int y[N], int tmp[N])

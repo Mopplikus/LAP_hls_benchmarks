@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"kernel_3mm"
       , "data":
-      ['1', '3147,3147,3147', 'n/a,n/a,n/a']
+      ['1', '2295,2295,2295', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '3147,3147,3147', 'n/a,n/a,n/a']
+      ['1', '2295,2295,2295', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

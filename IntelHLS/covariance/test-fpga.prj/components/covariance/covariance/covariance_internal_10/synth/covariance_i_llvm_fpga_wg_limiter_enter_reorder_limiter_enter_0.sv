@@ -16,19 +16,19 @@
 
 // SystemVerilog created from i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance0
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:06 2023
+// SystemVerilog created on Fri Apr  7 17:50:02 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module covariance_i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_0 (
-    input wire [0:0] in_wgl_12_enter_exit_stall_in,
-    input wire [0:0] in_wgl_12_enter_exit_valid_in,
-    output wire [0:0] out_wgl_12_enter_exit_stall_out,
+    input wire [0:0] in_wgl_7_enter_exit_stall_in,
+    input wire [0:0] in_wgl_7_enter_exit_valid_in,
+    output wire [0:0] out_wgl_7_enter_exit_stall_out,
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
     input wire [31:0] in_i_data,
     input wire [0:0] in_i_valid,
-    output wire [0:0] out_wgl_12_enter_exit_valid_out,
+    output wire [0:0] out_wgl_7_enter_exit_valid_out,
     output wire [31:0] out_o_data,
     output wire [0:0] out_o_valid,
     input wire clock,
@@ -64,8 +64,8 @@ module covariance_i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_0 (
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_k_wgid = in_i_data;
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_stall_in = in_i_stall;
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_valid_in = in_i_valid;
-    assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_stall_in = in_wgl_12_enter_exit_stall_in;
-    assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_valid_in = in_wgl_12_enter_exit_valid_in;
+    assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_stall_in = in_wgl_7_enter_exit_stall_in;
+    assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_valid_in = in_wgl_7_enter_exit_valid_in;
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_wg_size = c_i32_12_q;
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_stall_in_bitsignaltemp = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_stall_in[0];
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_valid_in_bitsignaltemp = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_valid_in[0];
@@ -99,13 +99,13 @@ module covariance_i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_0 (
     );
 
     // regfree_osync(GPOUT,6)
-    assign out_wgl_12_enter_exit_stall_out = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_stall_out;
+    assign out_wgl_7_enter_exit_stall_out = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_stall_out;
 
     // sync_out(GPOUT,8)@20000000
     assign out_o_stall = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_stall_out;
 
     // dupName_0_regfree_osync_x(GPOUT,10)
-    assign out_wgl_12_enter_exit_valid_out = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_valid_out;
+    assign out_wgl_7_enter_exit_valid_out = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_exit_valid_out;
 
     // dupName_0_sync_out_x(GPOUT,11)@1
     assign out_o_data = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_covariance1_entry_l_wgid;

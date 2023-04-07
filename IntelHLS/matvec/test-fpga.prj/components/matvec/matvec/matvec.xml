@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.04.05.15:28:46"
+ date="2023.04.07.16:55:48"
  outputDirectory="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/">
  <perimeter>
   <parameter
@@ -51,18 +51,6 @@
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_MAP"
-     type="AddressMap"
-     defaultValue=""
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_WIDTH"
-     type="AddressWidthType"
-     defaultValue="-1"
-     onHdl="0"
-     affectsHdl="1" />
   <interface name="clock" kind="clock" start="0">
    <property name="clockRate" value="0" />
    <property name="externallyDriven" value="false" />
@@ -106,70 +94,14 @@
    <property name="prSafe" value="false" />
    <port name="Out0" direction="input" role="data" width="64" />
   </interface>
-  <interface name="avmm_0_rw" kind="avalon" start="1">
-   <property name="adaptsTo" value="" />
-   <property name="addressGroup" value="0" />
-   <property name="addressUnits" value="SYMBOLS" />
-   <property name="alwaysBurstMaxBurst" value="false" />
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="bitsPerSymbol" value="8" />
-   <property name="burstOnBurstBoundariesOnly" value="false" />
-   <property name="burstcountUnits" value="WORDS" />
-   <property name="constantBurstBehavior" value="false" />
-   <property name="dBSBigEndian" value="false" />
-   <property name="doStreamReads" value="false" />
-   <property name="doStreamWrites" value="false" />
-   <property name="holdTime" value="0" />
-   <property name="interleaveBursts" value="false" />
-   <property name="isAsynchronous" value="false" />
-   <property name="isBigEndian" value="false" />
-   <property name="isReadable" value="false" />
-   <property name="isWriteable" value="false" />
-   <property name="linewrapBursts" value="false" />
-   <property name="maxAddressWidth" value="32" />
-   <property name="maximumPendingReadTransactions" value="0" />
-   <property name="maximumPendingWriteTransactions" value="0" />
-   <property name="minimumReadLatency" value="1" />
-   <property name="minimumResponseLatency" value="1" />
-   <property name="prSafe" value="false" />
-   <property name="readLatency" value="1" />
-   <property name="readWaitTime" value="0" />
-   <property name="registerIncomingSignals" value="false" />
-   <property name="registerOutgoingSignals" value="false" />
-   <property name="setupTime" value="0" />
-   <property name="timingUnits" value="Cycles" />
-   <property name="waitrequestAllowance" value="0" />
-   <property name="writeWaitTime" value="0" />
-   <port name="avmm_0_rw_address" direction="output" role="address" width="64" />
-   <port
-       name="avmm_0_rw_byteenable"
-       direction="output"
-       role="byteenable"
-       width="8" />
-   <port name="avmm_0_rw_read" direction="output" role="read" width="1" />
-   <port
-       name="avmm_0_rw_readdata"
-       direction="input"
-       role="readdata"
-       width="64" />
-   <port name="avmm_0_rw_write" direction="output" role="write" width="1" />
-   <port
-       name="avmm_0_rw_writedata"
-       direction="output"
-       role="writedata"
-       width="64" />
-  </interface>
  </perimeter>
  <entity kind="matvec" version="1.0" name="matvec">
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="10AX115U1F45I1SG" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_MAP" value="" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="1" />
   <generatedFiles>
@@ -318,16 +250,10 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ffwdsrc.v"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ffwddst.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/lsu_top.v"
@@ -480,118 +406,10 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B0_runOnce_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body46_s_c0_enter1259_matvec1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000s_c0_exit129_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0003atvec1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000029_matvec1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body46_s_c0_enter1259_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024i32_out03619_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_4_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_11_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_228_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i4_cleanups_pop21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i4_initerations_pop20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv14_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_228_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i4_cleanups_push21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i4_initerations_push20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv14_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B10_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_iowr_bl_return_unnamed_matvec12_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B11_merge.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B1_start.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B1_start_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_source_p1024a30i32_unnamed_3_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_source_p1024i32_unnamed_5_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B1_start_merge_reg.sv"
@@ -600,19 +418,19 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_iord_bl_call_unnamed_matvec2_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_wt_entry_s_c0_enter6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_wt_entry_s_c0_enter4_matvec0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter4_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going64_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond65_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond11_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B1_start_branch.sv"
@@ -627,37 +445,37 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B2_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_cond4_preheader_s_c0_enter827_matvec1.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_cond4_preheader_s_c0_enter215_matvec1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit84_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit23_matvec0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000atvec1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000084_matvec1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000023_matvec1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_cond4_pre0000_c0_enter827_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_cond4_pre0000_c0_enter215_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going60_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going6_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_033_pop15_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_013_pop8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv5_pop14_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv1_pop7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond61_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_033_push15_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_013_push8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv5_push14_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv1_push7_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B2_merge_reg.sv"
@@ -675,70 +493,76 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body6_s_c0_enter266_matvec1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit31_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_readdata_reg_unnamed_6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0001atvec1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body6_s_c0_enter8710_matvec1.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000031_matvec1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit92_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body6_s_c0_enter266_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body6_s_c0_enter8710_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_3_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024a30i32_m3417_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_4_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going46_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i1_notcmp5869_pop26_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i1_notcmp414_pop14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_cleanups49_pop25_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_cleanups_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_initerations44_pop24_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_initerations_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_033_pop1570_pop27_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_013_pop815_pop15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_j_032_pop23_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_j_011_pop11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop22_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_tmp_012_pop10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration48_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notcmp5869_push26_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond56_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notcmp414_push14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_cleanups49_push25_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_initerations44_push24_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_cleanups_push13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_033_pop1570_push27_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_initerations_push12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_j_032_push23_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_013_pop815_push15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv_push22_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_j_011_push11_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_tmp_012_push10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv_push9_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B3_merge_reg.sv"
@@ -756,28 +580,7 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B4_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024i32_out03620_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024i32_v3518_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_2_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_7_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_readdata_reg_unnamed_7_matvec1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_8_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_readdata_reg_unnamed_8_matvec2.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_5_matvec0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B4_branch.sv"
@@ -792,202 +595,25 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B5_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_iowr_bl_return_unnamed_matvec6_matvec0.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B5_branch.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B5_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B6.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going10_1_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B6_stall_region.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going10_1_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_cond27_preheader_s_c0_enter978_matvec1.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going6_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000s_c0_exit102_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0001atvec1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000002_matvec1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_cond27_pr0000_c0_enter978_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going39_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_131_pop17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv11_pop16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_131_push17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv11_push16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B6_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B6_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B6_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B7.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B7_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body29_s_c0_enter10911_matvec1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000s_c0_exit118_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0002atvec1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000018_matvec1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body29_s_c0_enter10911_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_10_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_9_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going25_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i1_notcmp3771_pop33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_cleanups28_pop32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_initerations23_pop31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_131_pop1772_pop34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_j_129_pop30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_tmp_030_pop29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv8_pop28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration27_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notcmp3771_push33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_cleanups28_push32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_initerations23_push31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_131_pop1772_push34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_j_129_push30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_tmp_030_push29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv8_push28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B7_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B7_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B7_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B8.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B8_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_3_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going25_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going25_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going39_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going39_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going46_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going46_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going60_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going60_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going64_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going64_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going6_2_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -1002,21 +628,6 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B10_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B11_sr_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B2_sr_1.sv"
        attributes="" />
    <file
@@ -1029,43 +640,7 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B5_sr_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B6_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B7_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B9_sr_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_mem1x.v"
@@ -1114,6 +689,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_internal.v"
@@ -1241,16 +834,10 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ffwdsrc.v"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_full_detector.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ffwddst.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/lsu_top.v"
@@ -1403,118 +990,10 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B0_runOnce_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body46_s_c0_enter1259_matvec1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000s_c0_exit129_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0003atvec1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000029_matvec1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body46_s_c0_enter1259_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024i32_out03619_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_4_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_11_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_228_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i4_cleanups_pop21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i4_initerations_pop20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv14_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_228_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i4_cleanups_push21_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i4_initerations_push20_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv14_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B10_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_iowr_bl_return_unnamed_matvec12_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B11_merge.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B1_start.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B1_start_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_source_p1024a30i32_unnamed_3_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_source_p1024i32_unnamed_5_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B1_start_merge_reg.sv"
@@ -1523,19 +1002,19 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_iord_bl_call_unnamed_matvec2_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_wt_entry_s_c0_enter6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_wt_entry_s_c0_enter4_matvec0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_s_c0_exit_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter4_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going64_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond65_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond11_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B1_start_branch.sv"
@@ -1550,37 +1029,37 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B2_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_cond4_preheader_s_c0_enter827_matvec1.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_cond4_preheader_s_c0_enter215_matvec1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit84_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit23_matvec0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000atvec1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000084_matvec1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000023_matvec1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_cond4_pre0000_c0_enter827_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_cond4_pre0000_c0_enter215_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going60_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going6_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_033_pop15_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_013_pop8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv5_pop14_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv1_pop7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond61_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_033_push15_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_013_push8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv5_push14_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv1_push7_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B2_merge_reg.sv"
@@ -1598,70 +1077,76 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body6_s_c0_enter266_matvec1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit31_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_readdata_reg_unnamed_6_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0001atvec1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body6_s_c0_enter8710_matvec1.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000031_matvec1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000_s_c0_exit92_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body6_s_c0_enter266_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body6_s_c0_enter8710_matvec0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_3_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024a30i32_m3417_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_4_matvec0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going46_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i1_notcmp5869_pop26_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i1_notcmp414_pop14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_cleanups49_pop25_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_cleanups_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_initerations44_pop24_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_initerations_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_033_pop1570_pop27_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_013_pop815_pop15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_j_032_pop23_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_j_011_pop11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop22_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_tmp_012_pop10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration48_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notcmp5869_push26_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond56_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notcmp414_push14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_cleanups49_push25_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_initerations44_push24_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_cleanups_push13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_033_pop1570_push27_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_initerations_push12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_j_032_push23_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_013_pop815_push15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv_push22_0.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_j_011_push11_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_tmp_012_push10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv_push9_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B3_merge_reg.sv"
@@ -1679,28 +1164,7 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B4_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024i32_out03620_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_ffwd_dest_p1024i32_v3518_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_2_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_7_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_readdata_reg_unnamed_7_matvec1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_8_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_readdata_reg_unnamed_8_matvec2.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_5_matvec0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B4_branch.sv"
@@ -1715,202 +1179,25 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B5_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_iowr_bl_return_unnamed_matvec6_matvec0.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B5_branch.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B5_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B6.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going10_1_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B6_stall_region.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going10_1_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_cond27_preheader_s_c0_enter978_matvec1.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going6_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000s_c0_exit102_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0001atvec1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000002_matvec1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_cond27_pr0000_c0_enter978_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going39_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_131_pop17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv11_pop16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_131_push17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv11_push16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B6_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B6_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B6_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B7.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B7_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_s_c0_in_for_body29_s_c0_enter10911_matvec1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0000s_c0_exit118_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for0002atvec1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_sfc_exit_s_c0_out_for000018_matvec1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_sfc_logic_s_c0_in_for_body29_s_c0_enter10911_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_10_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_unnamed_9_matvec0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going25_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i1_notcmp3771_pop33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_cleanups28_pop32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i2_initerations23_pop31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_i_131_pop1772_pop34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_j_129_pop30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i32_tmp_030_pop29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pop_i6_fpga_indvars_iv8_pop28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_lastiniteration27_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notcmp3771_push33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i1_notexitcond35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_cleanups28_push32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i2_initerations23_push31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_i_131_pop1772_push34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_j_129_push30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i32_tmp_030_push29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_push_i6_fpga_indvars_iv8_push28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B7_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B7_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B7_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B8.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B8_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_mem_memdep_3_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going25_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going25_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going39_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going39_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going46_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going46_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going60_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going60_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going64_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going64_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going6_2_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -1925,21 +1212,6 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_2.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B10_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B11_sr_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B2_sr_1.sv"
        attributes="" />
    <file
@@ -1952,43 +1224,7 @@
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B5_sr_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B6_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B7_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_bb_B9_sr_0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_mem1x.v"
@@ -2037,6 +1273,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/matvec/test-fpga.prj/components/matvec/matvec/matvec_internal_10/synth/matvec_internal.v"

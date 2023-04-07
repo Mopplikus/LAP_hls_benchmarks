@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"covariance"
       , "data":
-      ['1', '23324,23324,23324', 'n/a,n/a,n/a']
+      ['1', '20181,20181,20181', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '23324,23324,23324', 'n/a,n/a,n/a']
+      ['1', '20181,20181,20181', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

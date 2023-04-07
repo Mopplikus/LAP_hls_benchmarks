@@ -16,15 +16,17 @@
 
 // SystemVerilog created from jacobi_1d_B3_branch
 // Created for function/kernel jacobi_1d
-// SystemVerilog created on Wed Apr  5 13:32:10 2023
+// SystemVerilog created on Fri Apr  7 17:06:24 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module jacobi_1d_B3_branch (
-    input wire [0:0] in_c0_exe7,
+    input wire [0:0] in_c0_exe232,
+    input wire [0:0] in_c0_exe3,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
+    output wire [0:0] out_c0_exe3,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
     output wire [0:0] out_valid_out_1,
@@ -33,7 +35,8 @@ module jacobi_1d_B3_branch (
     );
 
     wire [0:0] VCC_q;
-    wire [0:0] c0_exe7_cmp_q;
+    wire [0:0] c0_exe232_cmp_q;
+    reg [0:0] c0_exe3_reg_q;
     wire [0:0] jacobi_1d_B3_branch_enable_q;
     wire [0:0] jacobi_1d_B3_branch_enable_not_q;
     wire [0:0] not_stall_in_0_q;
@@ -48,16 +51,19 @@ module jacobi_1d_B3_branch (
     wire [0:0] valid_out_1_and_q;
 
 
-    // not_stall_in_1(LOGICAL,10)
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
+
+    // not_stall_in_1(LOGICAL,12)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // c0_exe7_cmp(LOGICAL,2)
-    assign c0_exe7_cmp_q = ~ (in_c0_exe7);
+    // c0_exe232_cmp(LOGICAL,2)
+    assign c0_exe232_cmp_q = ~ (in_c0_exe232);
 
-    // valid_out_1_and(LOGICAL,21)
-    assign valid_out_1_and_q = in_valid_in & c0_exe7_cmp_q;
+    // valid_out_1_and(LOGICAL,24)
+    assign valid_out_1_and_q = in_valid_in & c0_exe232_cmp_q;
 
-    // valid_1_reg(REG,19)
+    // valid_1_reg(REG,22)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -70,19 +76,19 @@ module jacobi_1d_B3_branch (
         end
     end
 
-    // not_valid_1(LOGICAL,12)
+    // not_valid_1(LOGICAL,14)
     assign not_valid_1_q = ~ (valid_1_reg_q);
 
-    // not_valid_or_not_stall_1(LOGICAL,14)
+    // not_valid_or_not_stall_1(LOGICAL,16)
     assign not_valid_or_not_stall_1_q = not_valid_1_q | not_stall_in_1_q;
 
-    // not_stall_in_0(LOGICAL,9)
+    // not_stall_in_0(LOGICAL,11)
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
-    // valid_out_0_and(LOGICAL,20)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe7;
+    // valid_out_0_and(LOGICAL,23)
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe232;
 
-    // valid_0_reg(REG,18)
+    // valid_0_reg(REG,21)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -95,28 +101,41 @@ module jacobi_1d_B3_branch (
         end
     end
 
-    // not_valid_0(LOGICAL,11)
+    // not_valid_0(LOGICAL,13)
     assign not_valid_0_q = ~ (valid_0_reg_q);
 
-    // not_valid_or_not_stall_0(LOGICAL,13)
+    // not_valid_or_not_stall_0(LOGICAL,15)
     assign not_valid_or_not_stall_0_q = not_valid_0_q | not_stall_in_0_q;
 
-    // jacobi_1d_B3_branch_enable(LOGICAL,7)
+    // jacobi_1d_B3_branch_enable(LOGICAL,9)
     assign jacobi_1d_B3_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
+    // c0_exe3_reg(REG,3)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            c0_exe3_reg_q <= $unsigned(1'b0);
+        end
+        else if (jacobi_1d_B3_branch_enable_q == 1'b1)
+        begin
+            c0_exe3_reg_q <= in_c0_exe3;
+        end
+    end
 
-    // jacobi_1d_B3_branch_enable_not(LOGICAL,8)
+    // out_c0_exe3(GPOUT,17)
+    assign out_c0_exe3 = c0_exe3_reg_q;
+
+    // jacobi_1d_B3_branch_enable_not(LOGICAL,10)
     assign jacobi_1d_B3_branch_enable_not_q = ~ (jacobi_1d_B3_branch_enable_q);
 
-    // out_stall_out(GPOUT,15)
+    // out_stall_out(GPOUT,18)
     assign out_stall_out = jacobi_1d_B3_branch_enable_not_q;
 
-    // out_valid_out_0(GPOUT,16)
+    // out_valid_out_0(GPOUT,19)
     assign out_valid_out_0 = valid_0_reg_q;
 
-    // out_valid_out_1(GPOUT,17)
+    // out_valid_out_1(GPOUT,20)
     assign out_valid_out_1 = valid_1_reg_q;
 
 endmodule
