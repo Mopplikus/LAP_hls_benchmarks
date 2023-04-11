@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_jacobi_1d_B3_sr_1
 // Created for function/kernel jacobi_1d
-// SystemVerilog created on Wed Apr  5 13:32:11 2023
+// SystemVerilog created on Fri Apr  7 17:06:24 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -24,9 +24,11 @@ module jacobi_1d_bb_B3_sr_1 (
     input wire [0:0] in_i_stall,
     input wire [0:0] in_i_valid,
     input wire [0:0] in_i_data_0_tpl,
+    input wire [0:0] in_i_data_1_tpl,
     output wire [0:0] out_o_stall,
     output wire [0:0] out_o_valid,
     output wire [0:0] out_o_data_0_tpl,
+    output wire [0:0] out_o_data_1_tpl,
     input wire clock,
     input wire resetn
     );
@@ -38,7 +40,10 @@ module jacobi_1d_bb_B3_sr_1 (
     wire [0:0] stall_and_valid_q;
     wire [0:0] data_mux_0_x_s;
     reg [0:0] data_mux_0_x_q;
+    wire [0:0] data_mux_1_x_s;
+    reg [0:0] data_mux_1_x_q;
     reg [0:0] sr_0_x_q;
+    reg [0:0] sr_1_x_q;
 
 
     // combined_valid(LOGICAL,2)
@@ -60,16 +65,16 @@ module jacobi_1d_bb_B3_sr_1 (
         end
     end
 
-    // out_o_stall(GPOUT,11)
+    // out_o_stall(GPOUT,13)
     assign out_o_stall = sr_valid_q;
 
-    // out_o_valid(GPOUT,12)
+    // out_o_valid(GPOUT,14)
     assign out_o_valid = combined_valid_q;
 
     // not_sr_valid(LOGICAL,3)
     assign not_sr_valid_q = ~ (sr_valid_q);
 
-    // sr_0_x(REG,14)
+    // sr_0_x(REG,17)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -96,7 +101,34 @@ module jacobi_1d_bb_B3_sr_1 (
         endcase
     end
 
-    // out_o_data_0_tpl(GPOUT,13)
+    // out_o_data_0_tpl(GPOUT,15)
     assign out_o_data_0_tpl = data_mux_0_x_q;
+
+    // sr_1_x(REG,18)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            sr_1_x_q <= $unsigned(1'b0);
+        end
+        else if (not_sr_valid_q == 1'b1)
+        begin
+            sr_1_x_q <= in_i_data_1_tpl;
+        end
+    end
+
+    // data_mux_1_x(MUX,8)
+    assign data_mux_1_x_s = sr_valid_q;
+    always @(data_mux_1_x_s or in_i_data_1_tpl or sr_1_x_q)
+    begin
+        unique case (data_mux_1_x_s)
+            1'b0 : data_mux_1_x_q = in_i_data_1_tpl;
+            1'b1 : data_mux_1_x_q = sr_1_x_q;
+            default : data_mux_1_x_q = 1'b0;
+        endcase
+    end
+
+    // out_o_data_1_tpl(GPOUT,16)
+    assign out_o_data_1_tpl = data_mux_1_x_q;
 
 endmodule

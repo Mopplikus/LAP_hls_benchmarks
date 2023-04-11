@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_iord_bl_call_covariance_unnamed_covariance1_covariance0
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:06 2023
+// SystemVerilog created on Fri Apr  7 17:50:02 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -26,7 +26,6 @@ module covariance_i_iord_bl_call_unnamed_covariance1_covariance0 (
     output wire [0:0] out_iord_bl_call_covariance_o_fifoalmost_full,
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
-    input wire [0:0] in_i_dependence,
     input wire [0:0] in_i_valid,
     output wire [0:0] out_iord_bl_call_covariance_o_fifoready,
     output wire [63:0] out_o_data_0_tpl,

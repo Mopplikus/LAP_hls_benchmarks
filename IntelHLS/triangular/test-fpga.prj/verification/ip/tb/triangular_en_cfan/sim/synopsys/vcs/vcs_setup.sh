@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.4 67 linux 2023.04.05.14:47:48
+# ACDS 21.4 67 linux 2023.04.07.16:28:58
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -96,7 +96,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.04.05.14:47:48
+# ACDS 21.4 67 linux 2023.04.07.16:28:58
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="triangular_en_cfan"

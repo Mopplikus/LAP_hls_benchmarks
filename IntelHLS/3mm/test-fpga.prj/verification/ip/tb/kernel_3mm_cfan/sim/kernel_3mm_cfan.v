@@ -11,11 +11,10 @@ module kernel_3mm_cfan (
 		output wire  out_conduit_3, // out_conduit_3.conduit
 		output wire  out_conduit_4, // out_conduit_4.conduit
 		output wire  out_conduit_5, // out_conduit_5.conduit
-		output wire  out_conduit_6, // out_conduit_6.conduit
-		output wire  out_conduit_7  // out_conduit_7.conduit
+		output wire  out_conduit_6  // out_conduit_6.conduit
 	);
 
-	kernel_3mm_cfan_avalon_conduit_fanout_10_ach4yka kernel_3mm_cfan (
+	kernel_3mm_cfan_avalon_conduit_fanout_10_oyd4ioi kernel_3mm_cfan (
 		.in_conduit    (in_conduit),    //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (out_conduit_0), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (out_conduit_1), //  output,  width = 1, out_conduit_1.conduit
@@ -23,8 +22,7 @@ module kernel_3mm_cfan (
 		.out_conduit_3 (out_conduit_3), //  output,  width = 1, out_conduit_3.conduit
 		.out_conduit_4 (out_conduit_4), //  output,  width = 1, out_conduit_4.conduit
 		.out_conduit_5 (out_conduit_5), //  output,  width = 1, out_conduit_5.conduit
-		.out_conduit_6 (out_conduit_6), //  output,  width = 1, out_conduit_6.conduit
-		.out_conduit_7 (out_conduit_7)  //  output,  width = 1, out_conduit_7.conduit
+		.out_conduit_6 (out_conduit_6)  //  output,  width = 1, out_conduit_6.conduit
 	);
 
 endmodule

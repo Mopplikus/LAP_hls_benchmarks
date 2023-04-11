@@ -5,8 +5,7 @@
 			out_conduit_1 : out std_logic;        -- conduit
 			out_conduit_2 : out std_logic;        -- conduit
 			out_conduit_3 : out std_logic;        -- conduit
-			out_conduit_4 : out std_logic;        -- conduit
-			out_conduit_5 : out std_logic         -- conduit
+			out_conduit_4 : out std_logic         -- conduit
 		);
 	end component bicg_en_cfan;
 
@@ -17,7 +16,6 @@
 			out_conduit_1 => CONNECTED_TO_out_conduit_1, -- out_conduit_1.conduit
 			out_conduit_2 => CONNECTED_TO_out_conduit_2, -- out_conduit_2.conduit
 			out_conduit_3 => CONNECTED_TO_out_conduit_3, -- out_conduit_3.conduit
-			out_conduit_4 => CONNECTED_TO_out_conduit_4, -- out_conduit_4.conduit
-			out_conduit_5 => CONNECTED_TO_out_conduit_5  -- out_conduit_5.conduit
+			out_conduit_4 => CONNECTED_TO_out_conduit_4  -- out_conduit_4.conduit
 		);
 

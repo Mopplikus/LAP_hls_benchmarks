@@ -16,17 +16,19 @@
 
 // SystemVerilog created from matvec_B4_merge
 // Created for function/kernel matvec
-// SystemVerilog created on Wed Apr  5 15:28:29 2023
+// SystemVerilog created on Fri Apr  7 16:55:33 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module matvec_B4_merge (
-    input wire [63:0] in_c0_exe3951_0,
-    input wire [0:0] in_c0_exe72_0,
+    input wire [63:0] in_c0_exe2331_0,
+    input wire [31:0] in_c0_exe3342_0,
+    input wire [0:0] in_c0_exe53_0,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
-    output wire [63:0] out_c0_exe3951,
-    output wire [0:0] out_c0_exe72,
+    output wire [63:0] out_c0_exe2331,
+    output wire [31:0] out_c0_exe3342,
+    output wire [0:0] out_c0_exe53,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_valid_out,
     input wire clock,
@@ -36,19 +38,22 @@ module matvec_B4_merge (
     wire [0:0] stall_out_q;
 
 
-    // out_c0_exe3951(GPOUT,6)
-    assign out_c0_exe3951 = in_c0_exe3951_0;
+    // out_c0_exe2331(GPOUT,7)
+    assign out_c0_exe2331 = in_c0_exe2331_0;
 
-    // out_c0_exe72(GPOUT,7)
-    assign out_c0_exe72 = in_c0_exe72_0;
+    // out_c0_exe3342(GPOUT,8)
+    assign out_c0_exe3342 = in_c0_exe3342_0;
 
-    // stall_out(LOGICAL,10)
+    // out_c0_exe53(GPOUT,9)
+    assign out_c0_exe53 = in_c0_exe53_0;
+
+    // stall_out(LOGICAL,12)
     assign stall_out_q = in_valid_in_0 & in_stall_in;
 
-    // out_stall_out_0(GPOUT,8)
+    // out_stall_out_0(GPOUT,10)
     assign out_stall_out_0 = stall_out_q;
 
-    // out_valid_out(GPOUT,9)
+    // out_valid_out(GPOUT,11)
     assign out_valid_out = in_valid_in_0;
 
 endmodule

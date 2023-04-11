@@ -7,12 +7,6 @@ module quartus_compile (
 	, input logic [0:0] histogram_stall
 	, input logic [63:0] histogram_hist_r
 	, input logic [31:0] histogram_n
-	, output logic [63:0] histogram_avmm_0_rw_address
-	, output logic [7:0] histogram_avmm_0_rw_byteenable
-	, output logic [0:0] histogram_avmm_0_rw_read
-	, input logic [63:0] histogram_avmm_0_rw_readdata
-	, output logic [0:0] histogram_avmm_0_rw_write
-	, output logic [63:0] histogram_avmm_0_rw_writedata
 	);
 
 	logic [0:0] histogram_start_reg;
@@ -21,12 +15,6 @@ module quartus_compile (
 	logic [0:0] histogram_stall_reg;
 	logic [63:0] histogram_hist_r_reg;
 	logic [31:0] histogram_n_reg;
-	logic [63:0] histogram_avmm_0_rw_address_reg;
-	logic [7:0] histogram_avmm_0_rw_byteenable_reg;
-	logic [0:0] histogram_avmm_0_rw_read_reg;
-	logic [63:0] histogram_avmm_0_rw_readdata_reg;
-	logic [0:0] histogram_avmm_0_rw_write_reg;
-	logic [63:0] histogram_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -36,12 +24,6 @@ module quartus_compile (
 		histogram_stall_reg <= histogram_stall;
 		histogram_hist_r_reg <= histogram_hist_r;
 		histogram_n_reg <= histogram_n;
-		histogram_avmm_0_rw_address <= histogram_avmm_0_rw_address_reg;
-		histogram_avmm_0_rw_byteenable <= histogram_avmm_0_rw_byteenable_reg;
-		histogram_avmm_0_rw_read <= histogram_avmm_0_rw_read_reg;
-		histogram_avmm_0_rw_readdata_reg <= histogram_avmm_0_rw_readdata;
-		histogram_avmm_0_rw_write <= histogram_avmm_0_rw_write_reg;
-		histogram_avmm_0_rw_writedata <= histogram_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -64,12 +46,6 @@ module quartus_compile (
 		, .stall(histogram_stall_reg)
 		, .hist_r(histogram_hist_r_reg)
 		, .n(histogram_n_reg)
-		, .avmm_0_rw_address(histogram_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(histogram_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(histogram_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(histogram_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(histogram_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(histogram_avmm_0_rw_writedata_reg)
 	);
 
 

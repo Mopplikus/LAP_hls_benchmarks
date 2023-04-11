@@ -19,7 +19,7 @@ namespace eval atax_en_cfan {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/atax_en_cfan_avalon_conduit_fanout_10_mhqe7za.sv\"  -work avalon_conduit_fanout_10"
+    lappend design_files "vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/atax_en_cfan_avalon_conduit_fanout_10_joescla.sv\"  -work avalon_conduit_fanout_10"
     lappend design_files "vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/atax_en_cfan.v\"  -work atax_en_cfan"                                                                                        
     return $design_files
   }

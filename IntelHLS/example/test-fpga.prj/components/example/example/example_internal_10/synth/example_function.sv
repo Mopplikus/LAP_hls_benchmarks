@@ -16,7 +16,7 @@
 
 // SystemVerilog created from example_function
 // Created for function/kernel example
-// SystemVerilog created on Tue Apr  4 21:14:17 2023
+// SystemVerilog created on Fri Apr  7 17:41:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -27,12 +27,35 @@ module example_function (
     input wire [0:0] in_iord_bl_call_example_i_fifovalid,
     input wire [0:0] in_iowr_bl_return_example_i_fifoready,
     input wire [0:0] in_stall_in,
+    input wire [0:0] in_start,
+    input wire [31:0] in_unnamed_example3_example_avm_readdata,
+    input wire [0:0] in_unnamed_example3_example_avm_readdatavalid,
+    input wire [0:0] in_unnamed_example3_example_avm_waitrequest,
+    input wire [0:0] in_unnamed_example3_example_avm_writeack,
+    input wire [31:0] in_unnamed_example4_example_avm_readdata,
+    input wire [0:0] in_unnamed_example4_example_avm_readdatavalid,
+    input wire [0:0] in_unnamed_example4_example_avm_waitrequest,
+    input wire [0:0] in_unnamed_example4_example_avm_writeack,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_iord_bl_call_example_o_fifoalmost_full,
     output wire [0:0] out_iord_bl_call_example_o_fifoready,
     output wire [31:0] out_iowr_bl_return_example_o_fifodata,
     output wire [0:0] out_iowr_bl_return_example_o_fifovalid,
     output wire [0:0] out_stall_out,
+    output wire [31:0] out_unnamed_example3_example_avm_address,
+    output wire [0:0] out_unnamed_example3_example_avm_burstcount,
+    output wire [3:0] out_unnamed_example3_example_avm_byteenable,
+    output wire [0:0] out_unnamed_example3_example_avm_enable,
+    output wire [0:0] out_unnamed_example3_example_avm_read,
+    output wire [0:0] out_unnamed_example3_example_avm_write,
+    output wire [31:0] out_unnamed_example3_example_avm_writedata,
+    output wire [31:0] out_unnamed_example4_example_avm_address,
+    output wire [0:0] out_unnamed_example4_example_avm_burstcount,
+    output wire [3:0] out_unnamed_example4_example_avm_byteenable,
+    output wire [0:0] out_unnamed_example4_example_avm_enable,
+    output wire [0:0] out_unnamed_example4_example_avm_read,
+    output wire [0:0] out_unnamed_example4_example_avm_write,
+    output wire [31:0] out_unnamed_example4_example_avm_writedata,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
@@ -56,6 +79,20 @@ module example_function (
     wire [0:0] bb_example_B2_out_stall_in_0;
     wire [0:0] bb_example_B2_out_stall_out_0;
     wire [0:0] bb_example_B2_out_stall_out_1;
+    wire [31:0] bb_example_B2_out_unnamed_example3_example_avm_address;
+    wire [0:0] bb_example_B2_out_unnamed_example3_example_avm_burstcount;
+    wire [3:0] bb_example_B2_out_unnamed_example3_example_avm_byteenable;
+    wire [0:0] bb_example_B2_out_unnamed_example3_example_avm_enable;
+    wire [0:0] bb_example_B2_out_unnamed_example3_example_avm_read;
+    wire [0:0] bb_example_B2_out_unnamed_example3_example_avm_write;
+    wire [31:0] bb_example_B2_out_unnamed_example3_example_avm_writedata;
+    wire [31:0] bb_example_B2_out_unnamed_example4_example_avm_address;
+    wire [0:0] bb_example_B2_out_unnamed_example4_example_avm_burstcount;
+    wire [3:0] bb_example_B2_out_unnamed_example4_example_avm_byteenable;
+    wire [0:0] bb_example_B2_out_unnamed_example4_example_avm_enable;
+    wire [0:0] bb_example_B2_out_unnamed_example4_example_avm_read;
+    wire [0:0] bb_example_B2_out_unnamed_example4_example_avm_write;
+    wire [31:0] bb_example_B2_out_unnamed_example4_example_avm_writedata;
     wire [0:0] bb_example_B2_out_valid_in_0;
     wire [0:0] bb_example_B2_out_valid_in_1;
     wire [0:0] bb_example_B2_out_valid_out_0;
@@ -103,10 +140,10 @@ module example_function (
     wire example_B2_x_i_valid_pred_bitsignaltemp;
     wire [0:0] example_B2_x_i_valid_succ;
     wire example_B2_x_i_valid_succ_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going7_example1_sr_out_o_stall;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going7_example1_sr_out_o_valid;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going7_example1_valid_fifo_out_stall_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going7_example1_valid_fifo_out_valid_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going3_example1_sr_out_o_stall;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going3_example1_sr_out_o_valid;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going3_example1_valid_fifo_out_stall_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going3_example1_valid_fifo_out_valid_out;
     wire [0:0] i_llvm_fpga_pipeline_keep_going_example6_sr_out_o_stall;
     wire [0:0] i_llvm_fpga_pipeline_keep_going_example6_sr_out_o_valid;
     wire [0:0] i_llvm_fpga_pipeline_keep_going_example6_valid_fifo_out_stall_out;
@@ -123,15 +160,15 @@ module example_function (
     // c_i2_010(CONSTANT,18)
     assign c_i2_010_q = $unsigned(2'b00);
 
-    // i_llvm_fpga_pipeline_keep_going7_example1_valid_fifo(BLACKBOX,24)
-    example_i_llvm_fpga_pipeline_keep_going7_1_valid_fifo thei_llvm_fpga_pipeline_keep_going7_example1_valid_fifo (
+    // i_llvm_fpga_pipeline_keep_going3_example1_valid_fifo(BLACKBOX,24)
+    example_i_llvm_fpga_pipeline_keep_going3_1_valid_fifo thei_llvm_fpga_pipeline_keep_going3_example1_valid_fifo (
         .in_data_in(c_i2_010_q),
         .in_stall_in(bb_example_B1_start_out_stall_out_0),
-        .in_valid_in(i_llvm_fpga_pipeline_keep_going7_example1_sr_out_o_valid),
+        .in_valid_in(i_llvm_fpga_pipeline_keep_going3_example1_sr_out_o_valid),
         .out_almost_full(),
         .out_data_out(),
-        .out_stall_out(i_llvm_fpga_pipeline_keep_going7_example1_valid_fifo_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pipeline_keep_going7_example1_valid_fifo_out_valid_out),
+        .out_stall_out(i_llvm_fpga_pipeline_keep_going3_example1_valid_fifo_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pipeline_keep_going3_example1_valid_fifo_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
@@ -149,7 +186,7 @@ module example_function (
         .resetn(resetn)
     );
 
-    // bb_example_B3_sr_0_aunroll_x(BLACKBOX,42)
+    // bb_example_B3_sr_0_aunroll_x(BLACKBOX,65)
     example_bb_B3_sr_0 thebb_example_B3_sr_0_aunroll_x (
         .in_i_stall(bb_example_B3_out_stall_out_0),
         .in_i_valid(bb_example_B2_out_valid_out_0),
@@ -175,11 +212,20 @@ module example_function (
 
     // bb_example_B2(BLACKBOX,4)
     example_bb_B2 thebb_example_B2 (
+        .in_flush(in_start),
         .in_forked_0(GND_q),
         .in_forked_1(bb_example_B2_sr_1_aunroll_x_out_o_data_0_tpl),
         .in_pipeline_stall_in(i_llvm_fpga_pipeline_keep_going_example6_sr_out_o_stall),
         .in_stall_in_0(bb_example_B3_sr_0_aunroll_x_out_o_stall),
         .in_stall_in_1(GND_q),
+        .in_unnamed_example3_example_avm_readdata(in_unnamed_example3_example_avm_readdata),
+        .in_unnamed_example3_example_avm_readdatavalid(in_unnamed_example3_example_avm_readdatavalid),
+        .in_unnamed_example3_example_avm_waitrequest(in_unnamed_example3_example_avm_waitrequest),
+        .in_unnamed_example3_example_avm_writeack(in_unnamed_example3_example_avm_writeack),
+        .in_unnamed_example4_example_avm_readdata(in_unnamed_example4_example_avm_readdata),
+        .in_unnamed_example4_example_avm_readdatavalid(in_unnamed_example4_example_avm_readdatavalid),
+        .in_unnamed_example4_example_avm_waitrequest(in_unnamed_example4_example_avm_waitrequest),
+        .in_unnamed_example4_example_avm_writeack(in_unnamed_example4_example_avm_writeack),
         .in_valid_in_0(i_llvm_fpga_pipeline_keep_going_example6_valid_fifo_out_valid_out),
         .in_valid_in_1(bb_example_B2_sr_1_aunroll_x_out_o_valid),
         .out_exiting_stall_out(bb_example_B2_out_exiting_stall_out),
@@ -189,6 +235,20 @@ module example_function (
         .out_stall_in_0(bb_example_B2_out_stall_in_0),
         .out_stall_out_0(bb_example_B2_out_stall_out_0),
         .out_stall_out_1(bb_example_B2_out_stall_out_1),
+        .out_unnamed_example3_example_avm_address(bb_example_B2_out_unnamed_example3_example_avm_address),
+        .out_unnamed_example3_example_avm_burstcount(bb_example_B2_out_unnamed_example3_example_avm_burstcount),
+        .out_unnamed_example3_example_avm_byteenable(bb_example_B2_out_unnamed_example3_example_avm_byteenable),
+        .out_unnamed_example3_example_avm_enable(bb_example_B2_out_unnamed_example3_example_avm_enable),
+        .out_unnamed_example3_example_avm_read(bb_example_B2_out_unnamed_example3_example_avm_read),
+        .out_unnamed_example3_example_avm_write(bb_example_B2_out_unnamed_example3_example_avm_write),
+        .out_unnamed_example3_example_avm_writedata(bb_example_B2_out_unnamed_example3_example_avm_writedata),
+        .out_unnamed_example4_example_avm_address(bb_example_B2_out_unnamed_example4_example_avm_address),
+        .out_unnamed_example4_example_avm_burstcount(bb_example_B2_out_unnamed_example4_example_avm_burstcount),
+        .out_unnamed_example4_example_avm_byteenable(bb_example_B2_out_unnamed_example4_example_avm_byteenable),
+        .out_unnamed_example4_example_avm_enable(bb_example_B2_out_unnamed_example4_example_avm_enable),
+        .out_unnamed_example4_example_avm_read(bb_example_B2_out_unnamed_example4_example_avm_read),
+        .out_unnamed_example4_example_avm_write(bb_example_B2_out_unnamed_example4_example_avm_write),
+        .out_unnamed_example4_example_avm_writedata(bb_example_B2_out_unnamed_example4_example_avm_writedata),
         .out_valid_in_0(bb_example_B2_out_valid_in_0),
         .out_valid_in_1(bb_example_B2_out_valid_in_1),
         .out_valid_out_0(bb_example_B2_out_valid_out_0),
@@ -197,7 +257,7 @@ module example_function (
         .resetn(resetn)
     );
 
-    // bb_example_B2_sr_1_aunroll_x(BLACKBOX,41)
+    // bb_example_B2_sr_1_aunroll_x(BLACKBOX,64)
     example_bb_B2_sr_1 thebb_example_B2_sr_1_aunroll_x (
         .in_i_stall(bb_example_B2_out_stall_out_1),
         .in_i_valid(loop_limiter_example0_out_o_valid),
@@ -209,7 +269,7 @@ module example_function (
         .resetn(resetn)
     );
 
-    // loop_limiter_example0(BLACKBOX,34)
+    // loop_limiter_example0(BLACKBOX,43)
     example_loop_limiter_0 theloop_limiter_example0 (
         .in_i_stall(bb_example_B2_sr_1_aunroll_x_out_o_stall),
         .in_i_stall_exit(bb_example_B2_out_exiting_stall_out),
@@ -221,14 +281,14 @@ module example_function (
         .resetn(resetn)
     );
 
-    // i_llvm_fpga_pipeline_keep_going7_example1_sr(BLACKBOX,23)
-    example_i_llvm_fpga_pipeline_keep_going7_1_sr thei_llvm_fpga_pipeline_keep_going7_example1_sr (
+    // i_llvm_fpga_pipeline_keep_going3_example1_sr(BLACKBOX,23)
+    example_i_llvm_fpga_pipeline_keep_going3_1_sr thei_llvm_fpga_pipeline_keep_going3_example1_sr (
         .in_i_data(GND_q),
-        .in_i_stall(i_llvm_fpga_pipeline_keep_going7_example1_valid_fifo_out_stall_out),
+        .in_i_stall(i_llvm_fpga_pipeline_keep_going3_example1_valid_fifo_out_stall_out),
         .in_i_valid(bb_example_B1_start_out_pipeline_valid_out),
         .out_o_data(),
-        .out_o_stall(i_llvm_fpga_pipeline_keep_going7_example1_sr_out_o_stall),
-        .out_o_valid(i_llvm_fpga_pipeline_keep_going7_example1_sr_out_o_valid),
+        .out_o_stall(i_llvm_fpga_pipeline_keep_going3_example1_sr_out_o_stall),
+        .out_o_valid(i_llvm_fpga_pipeline_keep_going3_example1_sr_out_o_valid),
         .clock(clock),
         .resetn(resetn)
     );
@@ -239,9 +299,9 @@ module example_function (
         .in_feedback_valid_in_1(bb_example_B3_out_feedback_valid_out_1),
         .in_iord_bl_call_example_i_fifodata(in_iord_bl_call_example_i_fifodata),
         .in_iord_bl_call_example_i_fifovalid(in_iord_bl_call_example_i_fifovalid),
-        .in_pipeline_stall_in(i_llvm_fpga_pipeline_keep_going7_example1_sr_out_o_stall),
+        .in_pipeline_stall_in(i_llvm_fpga_pipeline_keep_going3_example1_sr_out_o_stall),
         .in_stall_in_0(loop_limiter_example0_out_o_stall),
-        .in_valid_in_0(i_llvm_fpga_pipeline_keep_going7_example1_valid_fifo_out_valid_out),
+        .in_valid_in_0(i_llvm_fpga_pipeline_keep_going3_example1_valid_fifo_out_valid_out),
         .in_valid_in_1(in_valid_in),
         .out_exiting_stall_out(),
         .out_exiting_valid_out(),
@@ -352,16 +412,16 @@ module example_function (
         .resetn(resetn)
     );
 
-    // out_iord_bl_call_example_o_fifoalmost_full(GPOUT,35)
+    // out_iord_bl_call_example_o_fifoalmost_full(GPOUT,44)
     assign out_iord_bl_call_example_o_fifoalmost_full = bb_example_B1_start_out_iord_bl_call_example_o_fifoalmost_full;
 
-    // out_iord_bl_call_example_o_fifoready(GPOUT,36)
+    // out_iord_bl_call_example_o_fifoready(GPOUT,45)
     assign out_iord_bl_call_example_o_fifoready = bb_example_B1_start_out_iord_bl_call_example_o_fifoready;
 
-    // out_iowr_bl_return_example_o_fifodata(GPOUT,37)
+    // out_iowr_bl_return_example_o_fifodata(GPOUT,46)
     assign out_iowr_bl_return_example_o_fifodata = bb_example_B3_out_iowr_bl_return_example_o_fifodata;
 
-    // out_iowr_bl_return_example_o_fifovalid(GPOUT,38)
+    // out_iowr_bl_return_example_o_fifovalid(GPOUT,47)
     assign out_iowr_bl_return_example_o_fifovalid = bb_example_B3_out_iowr_bl_return_example_o_fifovalid;
 
     // bb_example_B0_runOnce(BLACKBOX,2)
@@ -374,10 +434,52 @@ module example_function (
         .resetn(resetn)
     );
 
-    // out_stall_out(GPOUT,39)
+    // out_stall_out(GPOUT,48)
     assign out_stall_out = bb_example_B0_runOnce_out_stall_out_0;
 
-    // out_valid_out(GPOUT,40)
+    // out_unnamed_example3_example_avm_address(GPOUT,49)
+    assign out_unnamed_example3_example_avm_address = bb_example_B2_out_unnamed_example3_example_avm_address;
+
+    // out_unnamed_example3_example_avm_burstcount(GPOUT,50)
+    assign out_unnamed_example3_example_avm_burstcount = bb_example_B2_out_unnamed_example3_example_avm_burstcount;
+
+    // out_unnamed_example3_example_avm_byteenable(GPOUT,51)
+    assign out_unnamed_example3_example_avm_byteenable = bb_example_B2_out_unnamed_example3_example_avm_byteenable;
+
+    // out_unnamed_example3_example_avm_enable(GPOUT,52)
+    assign out_unnamed_example3_example_avm_enable = bb_example_B2_out_unnamed_example3_example_avm_enable;
+
+    // out_unnamed_example3_example_avm_read(GPOUT,53)
+    assign out_unnamed_example3_example_avm_read = bb_example_B2_out_unnamed_example3_example_avm_read;
+
+    // out_unnamed_example3_example_avm_write(GPOUT,54)
+    assign out_unnamed_example3_example_avm_write = bb_example_B2_out_unnamed_example3_example_avm_write;
+
+    // out_unnamed_example3_example_avm_writedata(GPOUT,55)
+    assign out_unnamed_example3_example_avm_writedata = bb_example_B2_out_unnamed_example3_example_avm_writedata;
+
+    // out_unnamed_example4_example_avm_address(GPOUT,56)
+    assign out_unnamed_example4_example_avm_address = bb_example_B2_out_unnamed_example4_example_avm_address;
+
+    // out_unnamed_example4_example_avm_burstcount(GPOUT,57)
+    assign out_unnamed_example4_example_avm_burstcount = bb_example_B2_out_unnamed_example4_example_avm_burstcount;
+
+    // out_unnamed_example4_example_avm_byteenable(GPOUT,58)
+    assign out_unnamed_example4_example_avm_byteenable = bb_example_B2_out_unnamed_example4_example_avm_byteenable;
+
+    // out_unnamed_example4_example_avm_enable(GPOUT,59)
+    assign out_unnamed_example4_example_avm_enable = bb_example_B2_out_unnamed_example4_example_avm_enable;
+
+    // out_unnamed_example4_example_avm_read(GPOUT,60)
+    assign out_unnamed_example4_example_avm_read = bb_example_B2_out_unnamed_example4_example_avm_read;
+
+    // out_unnamed_example4_example_avm_write(GPOUT,61)
+    assign out_unnamed_example4_example_avm_write = bb_example_B2_out_unnamed_example4_example_avm_write;
+
+    // out_unnamed_example4_example_avm_writedata(GPOUT,62)
+    assign out_unnamed_example4_example_avm_writedata = bb_example_B2_out_unnamed_example4_example_avm_writedata;
+
+    // out_valid_out(GPOUT,63)
     assign out_valid_out = GND_q;
 
 endmodule

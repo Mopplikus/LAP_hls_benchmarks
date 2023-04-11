@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.04.04.21:39:05"
+ date="2023.04.07.17:26:07"
  outputDirectory="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/">
  <perimeter>
   <parameter
@@ -51,18 +51,6 @@
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_MAP"
-     type="AddressMap"
-     defaultValue=""
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_WIDTH"
-     type="AddressWidthType"
-     defaultValue="-1"
-     onHdl="0"
-     affectsHdl="1" />
   <interface name="clock" kind="clock" start="0">
    <property name="clockRate" value="0" />
    <property name="externallyDriven" value="false" />
@@ -94,70 +82,14 @@
    <property name="prSafe" value="false" />
    <port name="A_r" direction="input" role="data" width="64" />
   </interface>
-  <interface name="avmm_0_rw" kind="avalon" start="1">
-   <property name="adaptsTo" value="" />
-   <property name="addressGroup" value="0" />
-   <property name="addressUnits" value="SYMBOLS" />
-   <property name="alwaysBurstMaxBurst" value="false" />
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="bitsPerSymbol" value="8" />
-   <property name="burstOnBurstBoundariesOnly" value="false" />
-   <property name="burstcountUnits" value="WORDS" />
-   <property name="constantBurstBehavior" value="false" />
-   <property name="dBSBigEndian" value="false" />
-   <property name="doStreamReads" value="false" />
-   <property name="doStreamWrites" value="false" />
-   <property name="holdTime" value="0" />
-   <property name="interleaveBursts" value="false" />
-   <property name="isAsynchronous" value="false" />
-   <property name="isBigEndian" value="false" />
-   <property name="isReadable" value="false" />
-   <property name="isWriteable" value="false" />
-   <property name="linewrapBursts" value="false" />
-   <property name="maxAddressWidth" value="32" />
-   <property name="maximumPendingReadTransactions" value="0" />
-   <property name="maximumPendingWriteTransactions" value="0" />
-   <property name="minimumReadLatency" value="1" />
-   <property name="minimumResponseLatency" value="1" />
-   <property name="prSafe" value="false" />
-   <property name="readLatency" value="1" />
-   <property name="readWaitTime" value="0" />
-   <property name="registerIncomingSignals" value="false" />
-   <property name="registerOutgoingSignals" value="false" />
-   <property name="setupTime" value="0" />
-   <property name="timingUnits" value="Cycles" />
-   <property name="waitrequestAllowance" value="0" />
-   <property name="writeWaitTime" value="0" />
-   <port name="avmm_0_rw_address" direction="output" role="address" width="64" />
-   <port
-       name="avmm_0_rw_byteenable"
-       direction="output"
-       role="byteenable"
-       width="8" />
-   <port name="avmm_0_rw_read" direction="output" role="read" width="1" />
-   <port
-       name="avmm_0_rw_readdata"
-       direction="input"
-       role="readdata"
-       width="64" />
-   <port name="avmm_0_rw_write" direction="output" role="write" width="1" />
-   <port
-       name="avmm_0_rw_writedata"
-       direction="output"
-       role="writedata"
-       width="64" />
-  </interface>
  </perimeter>
  <entity kind="gaussian" version="1.0" name="gaussian">
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="10AX115U1F45I1SG" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_MAP" value="" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="1" />
   <generatedFiles>
@@ -306,7 +238,19 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_latency.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_valid.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_full_detector.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/lsu_top.v"
@@ -405,24 +349,6 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_full_detector.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ffwddst.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_valid.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_loop_profiler.sv"
        attributes="" />
    <file
@@ -468,343 +394,37 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B0_runOnce_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push28_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B11_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body25_s_c0_enter15014_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit160_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0003ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0003_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body25_0000enter15014_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193334_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193336_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_j_03529_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm113_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm92_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_5_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going48_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi6_pop38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop28102_pop45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp63101_pop44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_pop43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups51_pop40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations46_pop39_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add97_pop41_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_034_replace_phi100_pop42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_k_032_pop37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv10_pop36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration50_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi6_push38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop28102_push45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp63101_push44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond58_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_push43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups51_push40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations46_push39_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add97_push41_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_034_replace_phi100_push42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_k_032_push37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv10_push36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B11_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B12.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B12_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B12_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_cond55_prehea0000enter16810_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit173_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0004ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0004_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_cond55_0000enter16810_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going41_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i49_031_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv23_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i49_031_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv23_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B12_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B12_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B13.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B13_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iowr_bl_return_unnamed_gaussian14_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B13_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B13_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B14.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B14_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B14_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B14_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B15.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B15_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B15_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body58_s_c0_enter18013_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit187_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0005ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0005_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body58_0000enter18013_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_p1024a20i32_a_r3826_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_unnamed_15_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_unnamed_16_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp3998_pop34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups_pop33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations_pop32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i49_031_pop1999_pop35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_j54_030_pop31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv20_pop30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp3998_push34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups_push33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations_push32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i49_031_pop1999_push35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_j54_030_push31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv20_push30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B15_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B15_merge.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B1_start.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B1_start_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop7_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop7_4_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_p1024a20i32_unnamed_3_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iord_bl_call_unnamed_gaussian1_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_wt_entry_s_c0_enter8_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_wt_entry_s_c0_enter16_gaussian1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_w0000_s_c0_exit_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter8_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter16_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going89_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going23_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond90_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond24_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B1_start_branch.sv"
@@ -831,43 +451,13 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B3_merge_reg.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iowr_bl_return_unnamed_gaussian2_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body_s_c0_enter1219_gaussian1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit123_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body_s_c0_enter1219_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going85_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_y_037_pop17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv7_pop16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond86_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_y_037_push17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv7_push16_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push7_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B3_branch.sv"
@@ -882,6 +472,9 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B4_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B4_merge_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B4_branch.sv"
        attributes="" />
    <file
@@ -894,70 +487,82 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B5_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_3_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B5_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body6_s_c0_enter12611_gaussian1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body6_s_c0_enter8617_gaussian1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit131_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_c0_exit90_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001ssian1_full_detector.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000ssian1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001_gaussian1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_gaussian1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body6_s_c0_enter12611_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body6_s_c0_enter8617_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_4_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going19_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going71_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_cmp41638_pop16_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp8395_pop25_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop727_pop11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups74_pop23_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add36_pop15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations69_pop22_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv732_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_x_036_pop21_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv930_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i64_idxprom94_pop24_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_017_pop9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop20_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_j_01834_pop14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration73_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i33_fpga_indvars_iv11_pop8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp8395_push25_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_cmp41638_push16_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond81_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_pop727_push11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups74_push23_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond20_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations69_push22_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add36_push15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_x_036_push21_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv732_push13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i64_idxprom94_push24_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv930_push12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push20_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_017_push9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_j_01834_push14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i33_fpga_indvars_iv11_push8_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B5_branch.sv"
@@ -972,19 +577,10 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B6_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193337_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000iv13_replace_phi31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000iv15_replace_phi30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_4_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_5_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B6_branch.sv"
@@ -999,154 +595,151 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B7_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B7_merge_reg.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body10_s_c0_enter10118_gaussian1.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit127_gaussian0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001ssian1_full_detector.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001_gaussian1_data_fifo.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body10_0000enter10118_gaussian0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm1_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm62_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm83_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_cmp41639_pop27_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop728_pop22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi5_pop19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop1042_pop31_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp1740_pop29_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_pop28_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups_pop21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations_pop20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add37_pop26_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv733_pop24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv931_pop23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_017_pop941_pop30_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_j_01835_pop25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_k_015_pop18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop17_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_cmp41639_push27_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_pop728_push22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi5_push19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop1042_push31_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp1740_push29_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_push28_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups_push21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations_push20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add37_push26_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv733_push24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv931_push23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_017_pop941_push30_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_j_01835_push25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_k_015_push18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push17_0.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B7_branch.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B7_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going19_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8_stall_region.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going19_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next1427_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going23_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next1628_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i1_unnamed_11_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_10_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_6_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_7_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_8_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i33_unnamed_9_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B8_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop28_3_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B9_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body21_s_c0_enter13712_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit143_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0002ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0002_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body21_0000enter13712_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193335_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_add33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i33_unnamed_12_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going64_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add96_pop29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_034_pop27_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i33_fpga_indvars_iv17_pop26_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond65_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add96_push29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_034_push27_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i33_fpga_indvars_iv17_push26_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going41_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going41_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going48_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going48_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going64_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going64_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going71_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going71_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going85_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going85_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going89_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going89_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going23_2_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -1164,43 +757,16 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_2.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_5.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_6.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B10_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B11_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B12_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B13_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B14_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B15_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B2_sr_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B3_sr_1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B3_sr_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B4_sr_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B4_sr_1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B5_sr_1.sv"
@@ -1209,43 +775,10 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B6_sr_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B7_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B9_sr_1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B7_sr_1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_mem1x.v"
@@ -1294,6 +827,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_internal.v"
@@ -1421,7 +972,19 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_latency.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_valid.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_full_detector.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/lsu_top.v"
@@ -1520,24 +1083,6 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_full_detector.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_tessellated_incr_decr_decr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ffwddst.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_iowr_stall_valid.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/hld_loop_profiler.sv"
        attributes="" />
    <file
@@ -1583,343 +1128,37 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B0_runOnce_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B10.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B10_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push28_0_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B10_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B10_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B11.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B11_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B11_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body25_s_c0_enter15014_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit160_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0003ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0003_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body25_0000enter15014_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193334_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193336_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_j_03529_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm113_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm1_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm92_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_5_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going48_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi6_pop38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop28102_pop45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp63101_pop44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_pop43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups51_pop40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations46_pop39_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add97_pop41_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_034_replace_phi100_pop42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_k_032_pop37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv10_pop36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration50_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi6_push38_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop28102_push45_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp63101_push44_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond58_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_push43_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups51_push40_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations46_push39_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add97_push41_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_034_replace_phi100_push42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_k_032_push37_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv10_push36_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B11_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B11_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B12.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B12_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B12_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_cond55_prehea0000enter16810_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit173_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0004ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0004_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_cond55_0000enter16810_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going41_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i49_031_pop19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv23_pop18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond42_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i49_031_push19_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv23_push18_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B12_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B12_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B13.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B13_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iowr_bl_return_unnamed_gaussian14_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B13_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B13_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B14.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B14_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B14_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B14_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B15.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B15_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B15_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body58_s_c0_enter18013_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit187_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0005ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0005_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body58_0000enter18013_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_p1024a20i32_a_r3826_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_unnamed_15_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_unnamed_16_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp3998_pop34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups_pop33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations_pop32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i49_031_pop1999_pop35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_j54_030_pop31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv20_pop30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp3998_push34_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups_push33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations_push32_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i49_031_pop1999_push35_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_j54_030_push31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv20_push30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B15_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B15_merge.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B1_start.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B1_start_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop7_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop7_4_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_p1024a20i32_unnamed_3_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iord_bl_call_unnamed_gaussian1_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_wt_entry_s_c0_enter8_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_wt_entry_s_c0_enter16_gaussian1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_w0000_s_c0_exit_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter8_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter16_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going89_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going23_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond90_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond24_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B1_start_branch.sv"
@@ -1946,43 +1185,13 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B3_merge_reg.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_iowr_bl_return_unnamed_gaussian2_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body_s_c0_enter1219_gaussian1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit123_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body_s_c0_enter1219_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going85_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_y_037_pop17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv7_pop16_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond86_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_y_037_push17_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv7_push16_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push7_1_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B3_branch.sv"
@@ -1997,6 +1206,9 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B4_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B4_merge_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B4_branch.sv"
        attributes="" />
    <file
@@ -2009,70 +1221,82 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B5_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_3_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B5_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body6_s_c0_enter12611_gaussian1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body6_s_c0_enter8617_gaussian1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit131_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_c0_exit90_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001ssian1_full_detector.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000ssian1_full_detector.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001_gaussian1_data_fifo.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_gaussian1_data_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body6_s_c0_enter12611_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body6_s_c0_enter8617_gaussian0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_4_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going19_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going71_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_cmp41638_pop16_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp8395_pop25_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop727_pop11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups74_pop23_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add36_pop15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations69_pop22_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv732_pop13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_x_036_pop21_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv930_pop12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i64_idxprom94_pop24_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_017_pop9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop20_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_j_01834_pop14_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration73_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i33_fpga_indvars_iv11_pop8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp8395_push25_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_cmp41638_push16_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond81_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_pop727_push11_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups74_push23_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond20_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations69_push22_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add36_push15_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_x_036_push21_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv732_push13_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i64_idxprom94_push24_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv930_push12_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push20_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_017_push9_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_j_01834_push14_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i33_fpga_indvars_iv11_push8_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B5_branch.sv"
@@ -2087,19 +1311,10 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B6_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193337_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000iv13_replace_phi31_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000iv15_replace_phi30_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_4_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_5_gaussian0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0_reg.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B6_branch.sv"
@@ -2114,154 +1329,151 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B7_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B7_merge_reg.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body10_s_c0_enter10118_gaussian1.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit127_gaussian0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001ssian1_full_detector.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0001_gaussian1_data_fifo.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body10_0000enter10118_gaussian0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm1_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm62_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_lm83_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_mem_memdep_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_cmp41639_pop27_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop728_pop22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi5_pop19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop1042_pop31_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_notcmp1740_pop29_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_pop28_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_cleanups_pop21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i2_initerations_pop20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add37_pop26_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv733_pop24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_fpga_indvars_iv931_pop23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_017_pop941_pop30_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_j_01835_pop25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_k_015_pop18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop17_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_cmp41639_push27_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi4_pop728_push22_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi5_push19_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop1042_push31_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notcmp1740_push29_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_push28_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_cleanups_push21_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i2_initerations_push20_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add37_push26_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv733_push24_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_fpga_indvars_iv931_push23_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_017_pop941_push30_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_j_01835_push25_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_k_015_push18_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push17_0.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B7_branch.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B7_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going19_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8_stall_region.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going19_2_valid_fifo.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next1427_0.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going23_2_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next1628_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i1_unnamed_11_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_10_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_6_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_7_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_8_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_source_i33_unnamed_9_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B8_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B8_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B8_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B9.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B9_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop28_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop28_3_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B9_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_s_c0_in_for_body21_s_c0_enter13712_gaussian1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000c0_exit143_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0002ssian1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0002_gaussian1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_sfc_logic_s_c0_in_for_body21_0000enter13712_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp193335_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i32_add33_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_ffwd_dest_i33_unnamed_12_gaussian0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going64_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_add96_pop29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i32_i_034_pop27_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pop_i33_fpga_indvars_iv17_pop26_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i1_notexitcond65_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_add96_push29_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i32_i_034_push27_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_push_i33_fpga_indvars_iv17_push26_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B9_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_B9_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going41_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going41_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going48_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going48_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going64_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going64_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going71_6_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going71_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going85_2_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going85_2_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going89_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going89_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going23_2_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -2279,43 +1491,16 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_2.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_3.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_5.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_loop_limiter_6.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B10_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B11_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B12_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B13_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B14_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B15_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B2_sr_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B3_sr_1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B3_sr_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B4_sr_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B4_sr_1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B5_sr_1.sv"
@@ -2324,43 +1509,10 @@
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B6_sr_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B7_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B8_sr_1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B9_sr_1.sv"
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_bb_B7_sr_1.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_mem1x.v"
@@ -2409,6 +1561,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/gaussian/test-fpga.prj/components/gaussian/gaussian/gaussian_internal_10/synth/gaussian_internal.v"

@@ -27,7 +27,7 @@
           [
             {
               "type":"inst"
-              , "id":15
+              , "id":9
               , "name":"Stream Read"
               , "debug":
               [
@@ -66,7 +66,7 @@
             }
             , {
               "type":"inst"
-              , "id":38
+              , "id":20
               , "name":"Loop Input"
               , "debug":
               [
@@ -83,13 +83,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"51"
+                  , "Loops To":"23"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":39
+              , "id":21
               , "name":"End"
               , "details":
               [
@@ -118,48 +118,18 @@
           "type":"bb"
           , "id":5
           , "name":"bicg.B2"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":6
-          , "name":"bicg.B3"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"5"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-              , "Loops To":"41"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":7
-          , "name":"bicg.B4"
           , "children":
           [
             {
               "type":"inst"
-              , "id":17
-              , "name":"Load"
+              , "id":11
+              , "name":"Stream Write"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":29
+                    , "line":56
                   }
                 ]
               ]
@@ -167,169 +137,11 @@
               [
                 {
                   "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
+                  , "Width":"1 bit"
+                  , "Depth":"0"
                   , "Stall-free":"No"
-                  , "Start Cycle":"1"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":18
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":29
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"s_local"
-                  , "Start Cycle":"33"
-                  , "Latency":"1"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":19
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":30
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"1"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":20
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":30
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"q_local"
-                  , "Start Cycle":"33"
-                  , "Latency":"1"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":21
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":31
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"1"
-                  , "Latency":"31"
+                  , "Start Cycle":"0"
+                  , "Latency":"0"
                   , "Reference":
                   [
                     {
@@ -350,125 +162,6 @@
             , {
               "type":"inst"
               , "id":22
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":31
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"p_local"
-                  , "Start Cycle":"33"
-                  , "Latency":"1"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":23
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":32
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"1"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":24
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":32
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"r_local"
-                  , "Start Cycle":"33"
-                  , "Latency":"1"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":40
               , "name":"Begin"
               , "details":
               [
@@ -481,13 +174,13 @@
             }
             , {
               "type":"inst"
-              , "id":41
-              , "name":"End"
+              , "id":23
+              , "name":"Loop End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"34"
+                  , "Start Cycle":"0"
                   , "Latency":"1"
                 }
               ]
@@ -497,7 +190,7 @@
           [
             {
               "type":"table"
-              , "Latency":"34"
+              , "Latency":"0"
               , "II":"1"
               , "Subloops":"Yes"
               , "Pipelined":"Yes"
@@ -508,168 +201,20 @@
         }
         , {
           "type":"bb"
-          , "id":8
-          , "name":"bicg.B5"
+          , "id":6
+          , "name":"bicg.B3"
           , "children":
           [
             {
               "type":"inst"
-              , "id":25
+              , "id":13
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":27
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined"
-                  , "Stall-free":"No"
-                  , "Loads from":"A"
-                  , "Start Cycle":"4"
-                  , "Latency":"31"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":26
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":27
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"A_local"
-                  , "Start Cycle":"36"
-                  , "Latency":"1"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":42
-              , "name":"Loop Input"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":25
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                  , "Loops To":"43"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":43
-              , "name":"Loop End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"37"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"37"
-              , "II":"1"
-              , "Subloops":"No"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":""
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":9
-          , "name":"bicg.B6"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":10
-          , "name":"bicg.B7"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":27
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":39
+                    , "line":40
                   }
                 ]
               ]
@@ -702,14 +247,14 @@
             }
             , {
               "type":"inst"
-              , "id":44
+              , "id":24
               , "name":"Loop Input"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":37
+                    , "line":38
                   }
                 ]
               ]
@@ -719,13 +264,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"47"
+                  , "Loops To":"27"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":45
+              , "id":25
               , "name":"End"
               , "details":
               [
@@ -752,20 +297,20 @@
         }
         , {
           "type":"bb"
-          , "id":11
-          , "name":"bicg.B8"
+          , "id":7
+          , "name":"bicg.B4"
           , "children":
           [
             {
               "type":"inst"
-              , "id":28
+              , "id":14
               , "name":"Store"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":46
+                    , "line":47
                   }
                 ]
               ]
@@ -798,7 +343,7 @@
             }
             , {
               "type":"inst"
-              , "id":46
+              , "id":26
               , "name":"Begin"
               , "details":
               [
@@ -811,7 +356,7 @@
             }
             , {
               "type":"inst"
-              , "id":47
+              , "id":27
               , "name":"Loop End"
               , "details":
               [
@@ -838,20 +383,20 @@
         }
         , {
           "type":"bb"
-          , "id":12
-          , "name":"bicg.B9"
+          , "id":8
+          , "name":"bicg.B5"
           , "children":
           [
             {
               "type":"inst"
-              , "id":29
+              , "id":15
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":43
+                    , "line":44
                   }
                 ]
               ]
@@ -884,14 +429,14 @@
             }
             , {
               "type":"inst"
-              , "id":30
+              , "id":16
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":42
+                    , "line":43
                   }
                 ]
               ]
@@ -924,14 +469,14 @@
             }
             , {
               "type":"inst"
-              , "id":31
+              , "id":17
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":43
+                    , "line":44
                   }
                 ]
               ]
@@ -964,14 +509,14 @@
             }
             , {
               "type":"inst"
-              , "id":32
+              , "id":18
               , "name":"Store"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":43
+                    , "line":44
                   }
                 ]
               ]
@@ -1004,14 +549,14 @@
             }
             , {
               "type":"inst"
-              , "id":33
+              , "id":19
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":44
+                    , "line":45
                   }
                 ]
               ]
@@ -1044,14 +589,14 @@
             }
             , {
               "type":"inst"
-              , "id":48
+              , "id":28
               , "name":"Loop Input"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":40
+                    , "line":41
                   }
                 ]
               ]
@@ -1061,13 +606,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"49"
+                  , "Loops To":"29"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":49
+              , "id":29
               , "name":"Loop End"
               , "details":
               [
@@ -1093,235 +638,14 @@
           ]
         }
         , {
-          "type":"bb"
-          , "id":13
-          , "name":"bicg.B10"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":34
-              , "name":"Stream Write"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":54
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"1 bit"
-                  , "Depth":"0"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"0"
-                  , "Latency":"0"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":50
-              , "name":"Begin"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":51
-              , "name":"Loop End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Exit which branches back to loop. "
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":14
-          , "name":"bicg.B11"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":36
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":52
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Loads from":"q_local"
-                  , "Start Cycle":"2"
-                  , "Latency":"3"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":37
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":52
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"q"
-                  , "Start Cycle":"6"
-                  , "Latency":"4"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":52
-              , "name":"Loop Input"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-                    , "line":50
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                  , "Loops To":"53"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":53
-              , "name":"Loop End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"13"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"13"
-              , "II":"1"
-              , "Subloops":"No"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":""
-            }
-          ]
-        }
-        , {
           "type":"memtype"
-          , "id":59
+          , "id":35
           , "name":"Local Memory"
           , "children":
           [
             {
               "type":"memsys"
-              , "id":60
+              , "id":36
               , "name":"A_local"
               , "debug":
               [
@@ -1363,7 +687,7 @@
             }
             , {
               "type":"memsys"
-              , "id":64
+              , "id":39
               , "name":"s_local"
               , "debug":
               [
@@ -1405,7 +729,7 @@
             }
             , {
               "type":"memsys"
-              , "id":69
+              , "id":43
               , "name":"q_local"
               , "debug":
               [
@@ -1447,7 +771,7 @@
             }
             , {
               "type":"memsys"
-              , "id":75
+              , "id":47
               , "name":"p_local"
               , "debug":
               [
@@ -1489,7 +813,7 @@
             }
             , {
               "type":"memsys"
-              , "id":79
+              , "id":50
               , "name":"r_local"
               , "debug":
               [
@@ -1534,29 +858,8 @@
       ]
     }
     , {
-      "type":"memtype"
-      , "id":1
-      , "name":"System Memory"
-      , "children":
-      [
-        {
-          "type":"memsys"
-          , "id":83
-          , "name":"0"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Number of banks":"1"
-              , "Arguments from bicg":"A, s, q, p, r"
-            }
-          ]
-        }
-      ]
-    }
-    , {
       "type":"stream"
-      , "id":16
+      , "id":10
       , "name":"call.bicg"
       , "debug":
       [
@@ -1584,7 +887,7 @@
     }
     , {
       "type":"stream"
-      , "id":35
+      , "id":12
       , "name":"return.bicg"
       , "debug":
       [
@@ -1612,7 +915,7 @@
     }
     , {
       "type":"interface"
-      , "id":54
+      , "id":30
       , "name":"A"
       , "debug":
       [
@@ -1642,7 +945,7 @@
     }
     , {
       "type":"interface"
-      , "id":57
+      , "id":33
       , "name":"p"
       , "debug":
       [
@@ -1672,7 +975,7 @@
     }
     , {
       "type":"interface"
-      , "id":56
+      , "id":32
       , "name":"q"
       , "debug":
       [
@@ -1702,7 +1005,7 @@
     }
     , {
       "type":"interface"
-      , "id":58
+      , "id":34
       , "name":"r"
       , "debug":
       [
@@ -1732,7 +1035,7 @@
     }
     , {
       "type":"interface"
-      , "id":55
+      , "id":31
       , "name":"s"
       , "debug":
       [
@@ -1764,227 +1067,143 @@
   , "links":
   [
     {
-      "from":16
-      , "to":15
-    }
-    , {
-      "from":34
-      , "to":35
-    }
-    , {
-      "from":54
-      , "to":15
-    }
-    , {
-      "from":55
-      , "to":15
-    }
-    , {
-      "from":56
-      , "to":15
-    }
-    , {
-      "from":57
-      , "to":15
-    }
-    , {
-      "from":58
-      , "to":15
-    }
-    , {
-      "from":60
-      , "to":30
-    }
-    , {
-      "from":26
-      , "to":60
-    }
-    , {
-      "from":64
-      , "to":31
-    }
-    , {
-      "from":32
-      , "to":64
-    }
-    , {
-      "from":18
-      , "to":64
-    }
-    , {
-      "from":69
-      , "to":27
-    }
-    , {
-      "from":69
-      , "to":36
-    }
-    , {
-      "from":20
-      , "to":69
-    }
-    , {
-      "from":28
-      , "to":69
-    }
-    , {
-      "from":75
-      , "to":33
-    }
-    , {
-      "from":22
-      , "to":75
-    }
-    , {
-      "from":79
-      , "to":29
-    }
-    , {
-      "from":24
-      , "to":79
-    }
-    , {
-      "from":51
-      , "to":38
-    }
-    , {
-      "from":3
-      , "to":38
-    }
-    , {
-      "from":15
-      , "to":39
-    }
-    , {
-      "from":41
-      , "to":5
-    }
-    , {
-      "from":41
-      , "to":6
-    }
-    , {
-      "from":39
-      , "to":6
-    }
-    , {
-      "from":43
-      , "to":40
-    }
-    , {
-      "from":17
-      , "to":41
-    }
-    , {
-      "from":18
-      , "to":41
-    }
-    , {
-      "from":19
-      , "to":41
-    }
-    , {
-      "from":20
-      , "to":41
-    }
-    , {
-      "from":21
-      , "to":41
-    }
-    , {
-      "from":22
-      , "to":41
-    }
-    , {
-      "from":23
-      , "to":41
-    }
-    , {
-      "from":24
-      , "to":41
-    }
-    , {
-      "from":43
-      , "to":42
-    }
-    , {
-      "from":6
-      , "to":42
-    }
-    , {
-      "from":25
-      , "to":43
-    }
-    , {
-      "from":26
-      , "to":43
-    }
-    , {
-      "from":47
+      "from":10
       , "to":9
     }
     , {
-      "from":47
-      , "to":44
+      "from":11
+      , "to":12
     }
     , {
-      "from":5
-      , "to":44
+      "from":30
+      , "to":9
     }
     , {
-      "from":27
-      , "to":45
-    }
-    , {
-      "from":49
-      , "to":46
-    }
-    , {
-      "from":28
-      , "to":47
-    }
-    , {
-      "from":49
-      , "to":48
-    }
-    , {
-      "from":45
-      , "to":48
+      "from":31
+      , "to":9
     }
     , {
       "from":32
-      , "to":49
+      , "to":9
     }
     , {
       "from":33
-      , "to":49
-    }
-    , {
-      "from":53
-      , "to":50
+      , "to":9
     }
     , {
       "from":34
-      , "to":51
+      , "to":9
     }
     , {
-      "from":53
-      , "to":52
+      "from":36
+      , "to":16
     }
     , {
-      "from":9
-      , "to":52
+      "from":39
+      , "to":17
     }
     , {
-      "from":37
-      , "to":53
+      "from":18
+      , "to":39
     }
     , {
-      "from":38
+      "from":43
+      , "to":13
+    }
+    , {
+      "from":14
+      , "to":43
+    }
+    , {
+      "from":47
+      , "to":19
+    }
+    , {
+      "from":50
       , "to":15
     }
     , {
-      "from":40
+      "from":23
+      , "to":20
+    }
+    , {
+      "from":3
+      , "to":20
+    }
+    , {
+      "from":9
+      , "to":21
+    }
+    , {
+      "from":27
+      , "to":22
+    }
+    , {
+      "from":11
+      , "to":23
+    }
+    , {
+      "from":27
+      , "to":24
+    }
+    , {
+      "from":21
+      , "to":24
+    }
+    , {
+      "from":13
+      , "to":25
+    }
+    , {
+      "from":29
+      , "to":26
+    }
+    , {
+      "from":14
+      , "to":27
+    }
+    , {
+      "from":29
+      , "to":28
+    }
+    , {
+      "from":25
+      , "to":28
+    }
+    , {
+      "from":18
+      , "to":29
+    }
+    , {
+      "from":19
+      , "to":29
+    }
+    , {
+      "from":20
+      , "to":9
+    }
+    , {
+      "from":22
+      , "to":11
+    }
+    , {
+      "from":24
+      , "to":13
+    }
+    , {
+      "from":26
+      , "to":14
+    }
+    , {
+      "from":28
+      , "to":15
+    }
+    , {
+      "from":28
+      , "to":16
+    }
+    , {
+      "from":28
       , "to":17
     }
     , {
@@ -1992,108 +1211,16 @@
       , "to":18
     }
     , {
-      "from":40
+      "from":15
+      , "to":18
+    }
+    , {
+      "from":16
+      , "to":18
+    }
+    , {
+      "from":28
       , "to":19
-    }
-    , {
-      "from":19
-      , "to":20
-    }
-    , {
-      "from":40
-      , "to":21
-    }
-    , {
-      "from":21
-      , "to":22
-    }
-    , {
-      "from":40
-      , "to":23
-    }
-    , {
-      "from":23
-      , "to":24
-    }
-    , {
-      "from":42
-      , "to":25
-    }
-    , {
-      "from":25
-      , "to":26
-    }
-    , {
-      "from":44
-      , "to":27
-    }
-    , {
-      "from":46
-      , "to":28
-    }
-    , {
-      "from":48
-      , "to":29
-    }
-    , {
-      "from":48
-      , "to":30
-    }
-    , {
-      "from":48
-      , "to":31
-    }
-    , {
-      "from":31
-      , "to":32
-    }
-    , {
-      "from":29
-      , "to":32
-    }
-    , {
-      "from":30
-      , "to":32
-    }
-    , {
-      "from":48
-      , "to":33
-    }
-    , {
-      "from":50
-      , "to":34
-    }
-    , {
-      "from":52
-      , "to":36
-    }
-    , {
-      "from":36
-      , "to":37
-    }
-    , {
-      "from":83
-      , "to":17
-    }
-    , {
-      "from":83
-      , "to":23
-    }
-    , {
-      "from":37
-      , "to":83
-    }
-    , {
-      "from":83
-      , "to":25
-    }
-    , {
-      "from":83
-      , "to":19
-    }
-    , {
-      "from":83
-      , "to":21
     }
   ]
 }

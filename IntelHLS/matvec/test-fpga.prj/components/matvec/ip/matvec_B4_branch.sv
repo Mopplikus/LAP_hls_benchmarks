@@ -16,12 +16,12 @@
 
 // SystemVerilog created from matvec_B4_branch
 // Created for function/kernel matvec
-// SystemVerilog created on Wed Apr  5 15:28:29 2023
+// SystemVerilog created on Fri Apr  7 16:55:33 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module matvec_B4_branch (
-    input wire [0:0] in_c0_exe72,
+    input wire [0:0] in_c0_exe53,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
@@ -33,7 +33,7 @@ module matvec_B4_branch (
     );
 
     wire [0:0] VCC_q;
-    wire [0:0] c0_exe72_cmp_q;
+    wire [0:0] c0_exe53_cmp_q;
     wire [0:0] matvec_B4_branch_enable_q;
     wire [0:0] matvec_B4_branch_enable_not_q;
     wire [0:0] not_stall_in_0_q;
@@ -51,11 +51,11 @@ module matvec_B4_branch (
     // not_stall_in_1(LOGICAL,10)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // c0_exe72_cmp(LOGICAL,2)
-    assign c0_exe72_cmp_q = ~ (in_c0_exe72);
+    // c0_exe53_cmp(LOGICAL,2)
+    assign c0_exe53_cmp_q = ~ (in_c0_exe53);
 
     // valid_out_1_and(LOGICAL,21)
-    assign valid_out_1_and_q = in_valid_in & c0_exe72_cmp_q;
+    assign valid_out_1_and_q = in_valid_in & c0_exe53_cmp_q;
 
     // valid_1_reg(REG,19)
     always @ (posedge clock or negedge resetn)
@@ -80,7 +80,7 @@ module matvec_B4_branch (
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
     // valid_out_0_and(LOGICAL,20)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe72;
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe53;
 
     // valid_0_reg(REG,18)
     always @ (posedge clock or negedge resetn)

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.4 67 linux 2023.04.04.21:39:32
+# ACDS 21.4 67 linux 2023.04.07.17:26:33
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -96,7 +96,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.04.04.21:39:32
+# ACDS 21.4 67 linux 2023.04.07.17:26:33
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sso_gaussian_A_r"

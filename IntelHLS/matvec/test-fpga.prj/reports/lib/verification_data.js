@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"matvec"
       , "data":
-      ['1', '1974,1974,1974', 'n/a,n/a,n/a']
+      ['1', '950,950,950', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '1974,1974,1974', 'n/a,n/a,n/a']
+      ['1', '950,950,950', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

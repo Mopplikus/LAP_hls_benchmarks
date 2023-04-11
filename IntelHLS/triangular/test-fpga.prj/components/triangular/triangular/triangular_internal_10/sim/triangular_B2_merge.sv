@@ -16,15 +16,21 @@
 
 // SystemVerilog created from triangular_B2_merge
 // Created for function/kernel triangular
-// SystemVerilog created on Wed Apr  5 14:46:57 2023
+// SystemVerilog created on Fri Apr  7 16:28:14 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_B2_merge (
-    input wire [31:0] in_c0_exe72_0,
+    input wire [0:0] in_c0_exe2771_0,
+    input wire [0:0] in_c0_exe4792_0,
+    input wire [31:0] in_c0_exe5804_0,
+    input wire [0:0] in_c0_exe6815_0,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
-    output wire [31:0] out_c0_exe72,
+    output wire [0:0] out_c0_exe2771,
+    output wire [0:0] out_c0_exe4792,
+    output wire [31:0] out_c0_exe5804,
+    output wire [0:0] out_c0_exe6815,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_valid_out,
     input wire clock,
@@ -34,16 +40,25 @@ module triangular_B2_merge (
     wire [0:0] stall_out_q;
 
 
-    // out_c0_exe72(GPOUT,5)
-    assign out_c0_exe72 = in_c0_exe72_0;
+    // out_c0_exe2771(GPOUT,8)
+    assign out_c0_exe2771 = in_c0_exe2771_0;
 
-    // stall_out(LOGICAL,8)
+    // out_c0_exe4792(GPOUT,9)
+    assign out_c0_exe4792 = in_c0_exe4792_0;
+
+    // out_c0_exe5804(GPOUT,10)
+    assign out_c0_exe5804 = in_c0_exe5804_0;
+
+    // out_c0_exe6815(GPOUT,11)
+    assign out_c0_exe6815 = in_c0_exe6815_0;
+
+    // stall_out(LOGICAL,14)
     assign stall_out_q = in_valid_in_0 & in_stall_in;
 
-    // out_stall_out_0(GPOUT,6)
+    // out_stall_out_0(GPOUT,12)
     assign out_stall_out_0 = stall_out_q;
 
-    // out_valid_out(GPOUT,7)
+    // out_valid_out(GPOUT,13)
     assign out_valid_out = in_valid_in_0;
 
 endmodule

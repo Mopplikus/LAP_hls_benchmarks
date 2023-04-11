@@ -3,7 +3,7 @@
   [
     {
       "name":"example"
-      , "id":3541024568
+      , "id":270879560
       , "type":"component"
       , "children":
       [
@@ -34,6 +34,19 @@
                       ]
                     }
                   ]
+                  , "Requested size":"400 bytes"
+                  , "Implemented size":"512 bytes = (128 words per bank) x (4 bytes per word)"
+                  , "Memory Usage":"1 RAM"
+                  , "Number of banks":"1"
+                  , "Bank width (word size)":"4 bytes"
+                  , "Bank depth":"128 words"
+                  , "Number of replicates":"1"
+                  , "Number of private copies":"1"
+                  , "RAM Mode":"Simple dual-port"
+                  , "Pump configuration":"Single-pumped"
+                  , "Additional information":"In each private copy:</br>  Variable 'A' occupies memory words [0-99] and has 1 array element per memory word.</br>  Memory words [100-127] are unused padding."
+                  , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
+                  , "User defined attributes":"memory, singlepump"
                 }
               ]
               , "debug":
@@ -45,11 +58,83 @@
                   }
                 ]
               ]
-              , "type":"unsynth"
+              , "type":"romsys"
+              , "children":
+              [
+                {
+                  "name":"Bank 0"
+                  , "id":3
+                  , "details":
+                  [
+                    {
+                      "type":"table"
+                      , "Memory Usage":"1 RAM"
+                      , "Bank width":"4 bytes"
+                      , "Bank depth":"128 words"
+                      , "Implemented bank size":"512 bytes = (128 words) x (4 bytes per word)"
+                      , "Number of active ports":"1"
+                      , "Number of read ports":"1"
+                      , "Number of un-used ports":"1"
+                      , "Additional information":"In each private copy:</br>  Variable 'A' occupies memory words [0-99] and has 1 array element per memory word.</br>  Memory words [100-127] are unused padding."
+                      , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                        , "line":12
+                      }
+                    ]
+                  ]
+                  , "type":"bank"
+                  , "children":
+                  [
+                    {
+                      "name":"Replicate 0"
+                      , "id":4
+                      , "padding":"28"
+                      , "depth":"128"
+                      , "details":
+                      [
+                        {
+                          "type":"table"
+                          , "Implemented size":"512 bytes = (128 words) x (4 bytes per word)"
+                          , "Memory Usage":"1 RAM"
+                          , "Number of physical ports":"2"
+                          , "Number of read ports":"1"
+                          , "Number of un-used ports":"1"
+                          , "Additional information":"In each private copy:</br>  Variable 'A' occupies memory words [0-99] and has 1 array element per memory word.</br>  Memory words [100-127] are unused padding."
+                          , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
+                        }
+                      ]
+                      , "debug":
+                      [
+                        [
+                          {
+                            "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                            , "line":12
+                          }
+                        ]
+                      ]
+                      , "type":"replicate"
+                      , "children":
+                      [
+                        {
+                          "name":"R"
+                          , "id":5
+                          , "type":"port"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
             , {
               "name":"B"
-              , "id":3
+              , "id":6
               , "details":
               [
                 {
@@ -68,6 +153,19 @@
                       ]
                     }
                   ]
+                  , "Requested size":"400 bytes"
+                  , "Implemented size":"512 bytes = (128 words per bank) x (4 bytes per word)"
+                  , "Memory Usage":"1 RAM"
+                  , "Number of banks":"1"
+                  , "Bank width (word size)":"4 bytes"
+                  , "Bank depth":"128 words"
+                  , "Number of replicates":"1"
+                  , "Number of private copies":"1"
+                  , "RAM Mode":"Simple dual-port"
+                  , "Pump configuration":"Single-pumped"
+                  , "Additional information":"In each private copy:</br>  Variable 'B' occupies memory words [0-99] and has 1 array element per memory word.</br>  Memory words [100-127] are unused padding."
+                  , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
+                  , "User defined attributes":"memory, singlepump"
                 }
               ]
               , "debug":
@@ -79,14 +177,174 @@
                   }
                 ]
               ]
-              , "type":"unsynth"
+              , "type":"romsys"
+              , "children":
+              [
+                {
+                  "name":"Bank 0"
+                  , "id":7
+                  , "details":
+                  [
+                    {
+                      "type":"table"
+                      , "Memory Usage":"1 RAM"
+                      , "Bank width":"4 bytes"
+                      , "Bank depth":"128 words"
+                      , "Implemented bank size":"512 bytes = (128 words) x (4 bytes per word)"
+                      , "Number of active ports":"1"
+                      , "Number of read ports":"1"
+                      , "Number of un-used ports":"1"
+                      , "Additional information":"In each private copy:</br>  Variable 'B' occupies memory words [0-99] and has 1 array element per memory word.</br>  Memory words [100-127] are unused padding."
+                      , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
+                    }
+                  ]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                        , "line":13
+                      }
+                    ]
+                  ]
+                  , "type":"bank"
+                  , "children":
+                  [
+                    {
+                      "name":"Replicate 0"
+                      , "id":8
+                      , "padding":"28"
+                      , "depth":"128"
+                      , "details":
+                      [
+                        {
+                          "type":"table"
+                          , "Implemented size":"512 bytes = (128 words) x (4 bytes per word)"
+                          , "Memory Usage":"1 RAM"
+                          , "Number of physical ports":"2"
+                          , "Number of read ports":"1"
+                          , "Number of un-used ports":"1"
+                          , "Additional information":"In each private copy:</br>  Variable 'B' occupies memory words [0-99] and has 1 array element per memory word.</br>  Memory words [100-127] are unused padding."
+                          , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
+                        }
+                      ]
+                      , "debug":
+                      [
+                        [
+                          {
+                            "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                            , "line":13
+                          }
+                        ]
+                      ]
+                      , "type":"replicate"
+                      , "children":
+                      [
+                        {
+                          "name":"R"
+                          , "id":9
+                          , "type":"port"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
+        }
+        , {
+          "name":"Load"
+          , "id":270984664
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Width":"32 bits"
+              , "Stall-free":"Yes"
+              , "Type":"Pipelined never-stall"
+              , "Loads from":"A"
+              , "Start cycle":"3"
+              , "Latency":"3"
+              , "Reference":
+              [
+                {
+                  "type":"text"
+                  , "text":"See %L for more information"
+                  , "links":
+                  [
+                    {
+                      "guide":"Reference Manual"
+                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":28
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Load"
+          , "id":270985400
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Width":"32 bits"
+              , "Stall-free":"Yes"
+              , "Type":"Pipelined never-stall"
+              , "Loads from":"B"
+              , "Start cycle":"3"
+              , "Latency":"3"
+              , "Reference":
+              [
+                {
+                  "type":"text"
+                  , "text":"See %L for more information"
+                  , "links":
+                  [
+                    {
+                      "guide":"Reference Manual"
+                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/example/example.cpp"
+                , "line":28
+              }
+            ]
+          ]
+          , "type":"inst"
         }
       ]
     }
   ]
   , "links":
   [
+    {
+      "from":5
+      , "to":270984664
+    }
+    , {
+      "from":9
+      , "to":270985400
+    }
   ]
 }

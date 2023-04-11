@@ -6,13 +6,7 @@
 module tb (
 	);
 
-	wire  [63:0] bicg_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:avs_readdata -> bicg_inst:avmm_0_rw_readdata
-	wire  [63:0] bicg_inst_avmm_0_rw_address;                                                            // bicg_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:avs_address
-	wire   [7:0] bicg_inst_avmm_0_rw_byteenable;                                                         // bicg_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:avs_byteenable
-	wire         bicg_inst_avmm_0_rw_read;                                                               // bicg_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:avs_read
-	wire         bicg_inst_avmm_0_rw_write;                                                              // bicg_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:avs_write
-	wire  [63:0] bicg_inst_avmm_0_rw_writedata;                                                          // bicg_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                             // clock_reset_inst:clock -> [bicg_inst:clock, component_dpi_controller_bicg_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:clock, stream_source_dpi_bfm_bicg_A_inst:clock, stream_source_dpi_bfm_bicg_p_inst:clock, stream_source_dpi_bfm_bicg_q_inst:clock, stream_source_dpi_bfm_bicg_r_inst:clock, stream_source_dpi_bfm_bicg_s_inst:clock]
+	wire         clock_reset_inst_clock_clk;                                                             // clock_reset_inst:clock -> [bicg_inst:clock, component_dpi_controller_bicg_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, stream_source_dpi_bfm_bicg_A_inst:clock, stream_source_dpi_bfm_bicg_p_inst:clock, stream_source_dpi_bfm_bicg_q_inst:clock, stream_source_dpi_bfm_bicg_r_inst:clock, stream_source_dpi_bfm_bicg_s_inst:clock]
 	wire         clock_reset_inst_clock2x_clk;                                                           // clock_reset_inst:clock2x -> [component_dpi_controller_bicg_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_bicg_A_inst:clock2x, stream_source_dpi_bfm_bicg_p_inst:clock2x, stream_source_dpi_bfm_bicg_q_inst:clock2x, stream_source_dpi_bfm_bicg_r_inst:clock2x, stream_source_dpi_bfm_bicg_s_inst:clock2x]
 	wire         component_dpi_controller_bicg_inst_component_call_valid;                                // component_dpi_controller_bicg_inst:start -> bicg_inst:start
 	wire         bicg_inst_call_stall;                                                                   // bicg_inst:busy -> component_dpi_controller_bicg_inst:busy
@@ -39,8 +33,6 @@ module tb (
 	wire         bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_4_conduit;           // bicg_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_4 -> stream_source_dpi_bfm_bicg_r_inst:do_bind
 	wire         bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_4_conduit;         // bicg_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_4 -> stream_source_dpi_bfm_bicg_r_inst:enable
 	wire         bicg_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_4_conduit; // bicg_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_4 -> stream_source_dpi_bfm_bicg_r_inst:source_ready
-	wire         bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_5_conduit;           // bicg_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_5 -> mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:do_bind
-	wire         bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_5_conduit;         // bicg_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_5 -> mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:enable
 	wire         component_dpi_controller_bicg_inst_read_implicit_streams_conduit;                       // component_dpi_controller_bicg_inst:read_implicit_streams -> bicg_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
 	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                            // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
 	wire         bicg_inst_return_valid;                                                                 // bicg_inst:done -> component_dpi_controller_bicg_inst:done
@@ -50,7 +42,7 @@ module tb (
 	wire  [63:0] stream_source_dpi_bfm_bicg_q_inst_source_data_data;                                     // stream_source_dpi_bfm_bicg_q_inst:source_data -> bicg_inst:q
 	wire  [63:0] stream_source_dpi_bfm_bicg_r_inst_source_data_data;                                     // stream_source_dpi_bfm_bicg_r_inst:source_data -> bicg_inst:r
 	wire  [63:0] stream_source_dpi_bfm_bicg_s_inst_source_data_data;                                     // stream_source_dpi_bfm_bicg_s_inst:source_data -> bicg_inst:s
-	wire         clock_reset_inst_reset_reset;                                                           // clock_reset_inst:resetn -> [bicg_inst:resetn, component_dpi_controller_bicg_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_bicg_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_bicg_A_inst:resetn, stream_source_dpi_bfm_bicg_p_inst:resetn, stream_source_dpi_bfm_bicg_q_inst:resetn, stream_source_dpi_bfm_bicg_r_inst:resetn, stream_source_dpi_bfm_bicg_s_inst:resetn]
+	wire         clock_reset_inst_reset_reset;                                                           // clock_reset_inst:resetn -> [bicg_inst:resetn, component_dpi_controller_bicg_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, stream_source_dpi_bfm_bicg_A_inst:resetn, stream_source_dpi_bfm_bicg_p_inst:resetn, stream_source_dpi_bfm_bicg_q_inst:resetn, stream_source_dpi_bfm_bicg_r_inst:resetn, stream_source_dpi_bfm_bicg_s_inst:resetn]
 	wire         component_dpi_controller_bicg_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_bicg_inst:done_irq
 
 	bicg_cfan bicg_component_dpi_controller_bind_conduit_fanout_inst (
@@ -59,8 +51,7 @@ module tb (
 		.out_conduit_1 (bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
 		.out_conduit_3 (bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit), //  output,  width = 1, out_conduit_3.conduit
-		.out_conduit_4 (bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_4_conduit), //  output,  width = 1, out_conduit_4.conduit
-		.out_conduit_5 (bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_5_conduit)  //  output,  width = 1, out_conduit_5.conduit
+		.out_conduit_4 (bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_4_conduit)  //  output,  width = 1, out_conduit_4.conduit
 	);
 
 	bicg_en_cfan bicg_component_dpi_controller_enable_conduit_fanout_inst (
@@ -69,8 +60,7 @@ module tb (
 		.out_conduit_1 (bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
 		.out_conduit_3 (bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //  output,  width = 1, out_conduit_3.conduit
-		.out_conduit_4 (bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_4_conduit), //  output,  width = 1, out_conduit_4.conduit
-		.out_conduit_5 (bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_5_conduit)  //  output,  width = 1, out_conduit_5.conduit
+		.out_conduit_4 (bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_4_conduit)  //  output,  width = 1, out_conduit_4.conduit
 	);
 
 	bicg_ir_cfan bicg_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -83,23 +73,17 @@ module tb (
 	);
 
 	bicg bicg_inst (
-		.clock                (clock_reset_inst_clock_clk),                                //   input,   width = 1,     clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                              //   input,   width = 1,     reset.reset_n
-		.start                (component_dpi_controller_bicg_inst_component_call_valid),   //   input,   width = 1,      call.valid
-		.busy                 (bicg_inst_call_stall),                                      //  output,   width = 1,          .stall
-		.done                 (bicg_inst_return_valid),                                    //  output,   width = 1,    return.valid
-		.stall                (component_dpi_controller_bicg_inst_component_return_stall), //   input,   width = 1,          .stall
-		.A                    (stream_source_dpi_bfm_bicg_a_inst_source_data_data),        //   input,  width = 64,         A.data
-		.s                    (stream_source_dpi_bfm_bicg_s_inst_source_data_data),        //   input,  width = 64,         s.data
-		.q                    (stream_source_dpi_bfm_bicg_q_inst_source_data_data),        //   input,  width = 64,         q.data
-		.p                    (stream_source_dpi_bfm_bicg_p_inst_source_data_data),        //   input,  width = 64,         p.data
-		.r                    (stream_source_dpi_bfm_bicg_r_inst_source_data_data),        //   input,  width = 64,         r.data
-		.avmm_0_rw_address    (bicg_inst_avmm_0_rw_address),                               //  output,  width = 64, avmm_0_rw.address
-		.avmm_0_rw_byteenable (bicg_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,          .byteenable
-		.avmm_0_rw_read       (bicg_inst_avmm_0_rw_read),                                  //  output,   width = 1,          .read
-		.avmm_0_rw_readdata   (bicg_inst_avmm_0_rw_readdata),                              //   input,  width = 64,          .readdata
-		.avmm_0_rw_write      (bicg_inst_avmm_0_rw_write),                                 //  output,   width = 1,          .write
-		.avmm_0_rw_writedata  (bicg_inst_avmm_0_rw_writedata)                              //  output,  width = 64,          .writedata
+		.clock  (clock_reset_inst_clock_clk),                                //   input,   width = 1,  clock.clk
+		.resetn (clock_reset_inst_reset_reset),                              //   input,   width = 1,  reset.reset_n
+		.start  (component_dpi_controller_bicg_inst_component_call_valid),   //   input,   width = 1,   call.valid
+		.busy   (bicg_inst_call_stall),                                      //  output,   width = 1,       .stall
+		.done   (bicg_inst_return_valid),                                    //  output,   width = 1, return.valid
+		.stall  (component_dpi_controller_bicg_inst_component_return_stall), //   input,   width = 1,       .stall
+		.A      (stream_source_dpi_bfm_bicg_a_inst_source_data_data),        //   input,  width = 64,      A.data
+		.s      (stream_source_dpi_bfm_bicg_s_inst_source_data_data),        //   input,  width = 64,      s.data
+		.q      (stream_source_dpi_bfm_bicg_q_inst_source_data_data),        //   input,  width = 64,      q.data
+		.p      (stream_source_dpi_bfm_bicg_p_inst_source_data_data),        //   input,  width = 64,      p.data
+		.r      (stream_source_dpi_bfm_bicg_r_inst_source_data_data)         //   input,  width = 64,      r.data
 	);
 
 	clock_reset clock_reset_inst (
@@ -147,19 +131,6 @@ module tb (
 		.component_done                   (concatenate_component_done_inst_out_conduit_conduit),                   //   input,  width = 1,                   component_done.conduit
 		.component_wait_for_stream_writes (concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit), //   input,  width = 1, component_wait_for_stream_writes.conduit
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
-	);
-
-	mm_agent_bicg_avmm_0_rw mm_agent_dpi_bfm_bicg_avmm_0_rw_inst (
-		.do_bind        (bicg_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_5_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (bicg_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_5_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                     //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                   //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (bicg_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (bicg_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (bicg_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (bicg_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (bicg_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (bicg_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
 	);
 
 	sp_cstart split_component_start_inst (

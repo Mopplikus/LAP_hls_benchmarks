@@ -9,12 +9,14 @@ component void gaussian (int A_r[20][20]) {
     hls_memory hls_singlepump int c[20];
 	hls_memory hls_singlepump int A[20][20];
 
+    /*
     INIT:for(int y = 0; y < 20; ++y){
         c[y] = 1; //rand()%20;
         for(int x = 0; x < 20; ++x){
             A[y][x] = 1; //rand()%20;
         }
     }
+    */
 
     WORK:for(int j=1; j<=18; j++)
     /* loop for the generation of upper triangular matrix*/
@@ -31,13 +33,14 @@ component void gaussian (int A_r[20][20]) {
 
     }
 
+    /*
     OUT:for(int i = 0; i < 20; i++)
     {
         for(int j = 0; j < 20; j++)
         {
             A_r[i][j] = A[i][j];
         }
-    }
+    }*/
 }
     
 int breakout()

@@ -16,7 +16,7 @@
 
 // SystemVerilog created from atax_function_wrapper
 // Created for function/kernel atax
-// SystemVerilog created on Wed Apr  5 13:56:00 2023
+// SystemVerilog created on Fri Apr  7 18:08:55 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -26,78 +26,30 @@ module atax_function_wrapper (
     input wire [0:0] avm_memdep_1_atax_readdatavalid,
     input wire [0:0] avm_memdep_1_atax_waitrequest,
     input wire [0:0] avm_memdep_1_atax_writeack,
-    input wire [31:0] avm_memdep_2_atax_readdata,
-    input wire [0:0] avm_memdep_2_atax_readdatavalid,
-    input wire [0:0] avm_memdep_2_atax_waitrequest,
-    input wire [0:0] avm_memdep_2_atax_writeack,
-    input wire [31:0] avm_memdep_3_atax_readdata,
-    input wire [0:0] avm_memdep_3_atax_readdatavalid,
-    input wire [0:0] avm_memdep_3_atax_waitrequest,
-    input wire [0:0] avm_memdep_3_atax_writeack,
-    input wire [31:0] avm_memdep_4_atax_readdata,
-    input wire [0:0] avm_memdep_4_atax_readdatavalid,
-    input wire [0:0] avm_memdep_4_atax_waitrequest,
-    input wire [0:0] avm_memdep_4_atax_writeack,
-    input wire [31:0] avm_memdep_5_atax_readdata,
-    input wire [0:0] avm_memdep_5_atax_readdatavalid,
-    input wire [0:0] avm_memdep_5_atax_waitrequest,
-    input wire [0:0] avm_memdep_5_atax_writeack,
-    input wire [63:0] avm_memdep_6_atax_readdata,
-    input wire [0:0] avm_memdep_6_atax_readdatavalid,
-    input wire [0:0] avm_memdep_6_atax_waitrequest,
-    input wire [0:0] avm_memdep_6_atax_writeack,
-    input wire [63:0] avm_memdep_7_atax_readdata,
-    input wire [0:0] avm_memdep_7_atax_readdatavalid,
-    input wire [0:0] avm_memdep_7_atax_waitrequest,
-    input wire [0:0] avm_memdep_7_atax_writeack,
     input wire [31:0] avm_memdep_atax_readdata,
     input wire [0:0] avm_memdep_atax_readdatavalid,
     input wire [0:0] avm_memdep_atax_waitrequest,
     input wire [0:0] avm_memdep_atax_writeack,
-    input wire [63:0] avm_unnamed_atax10_atax_readdata,
-    input wire [0:0] avm_unnamed_atax10_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax10_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax10_atax_writeack,
-    input wire [31:0] avm_unnamed_atax11_atax_readdata,
-    input wire [0:0] avm_unnamed_atax11_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax11_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax11_atax_writeack,
-    input wire [31:0] avm_unnamed_atax13_atax_readdata,
-    input wire [0:0] avm_unnamed_atax13_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax13_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax13_atax_writeack,
-    input wire [31:0] avm_unnamed_atax14_atax_readdata,
-    input wire [0:0] avm_unnamed_atax14_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax14_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax14_atax_writeack,
-    input wire [31:0] avm_unnamed_atax15_atax_readdata,
-    input wire [0:0] avm_unnamed_atax15_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax15_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax15_atax_writeack,
-    input wire [31:0] avm_unnamed_atax16_atax_readdata,
-    input wire [0:0] avm_unnamed_atax16_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax16_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax16_atax_writeack,
-    input wire [31:0] avm_unnamed_atax18_atax_readdata,
-    input wire [0:0] avm_unnamed_atax18_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax18_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax18_atax_writeack,
-    input wire [31:0] avm_unnamed_atax19_atax_readdata,
-    input wire [0:0] avm_unnamed_atax19_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax19_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax19_atax_writeack,
-    input wire [63:0] avm_unnamed_atax7_atax_readdata,
+    input wire [31:0] avm_unnamed_atax3_atax_readdata,
+    input wire [0:0] avm_unnamed_atax3_atax_readdatavalid,
+    input wire [0:0] avm_unnamed_atax3_atax_waitrequest,
+    input wire [0:0] avm_unnamed_atax3_atax_writeack,
+    input wire [31:0] avm_unnamed_atax5_atax_readdata,
+    input wire [0:0] avm_unnamed_atax5_atax_readdatavalid,
+    input wire [0:0] avm_unnamed_atax5_atax_waitrequest,
+    input wire [0:0] avm_unnamed_atax5_atax_writeack,
+    input wire [31:0] avm_unnamed_atax6_atax_readdata,
+    input wire [0:0] avm_unnamed_atax6_atax_readdatavalid,
+    input wire [0:0] avm_unnamed_atax6_atax_waitrequest,
+    input wire [0:0] avm_unnamed_atax6_atax_writeack,
+    input wire [31:0] avm_unnamed_atax7_atax_readdata,
     input wire [0:0] avm_unnamed_atax7_atax_readdatavalid,
     input wire [0:0] avm_unnamed_atax7_atax_waitrequest,
     input wire [0:0] avm_unnamed_atax7_atax_writeack,
-    input wire [63:0] avm_unnamed_atax8_atax_readdata,
+    input wire [31:0] avm_unnamed_atax8_atax_readdata,
     input wire [0:0] avm_unnamed_atax8_atax_readdatavalid,
     input wire [0:0] avm_unnamed_atax8_atax_waitrequest,
     input wire [0:0] avm_unnamed_atax8_atax_writeack,
-    input wire [63:0] avm_unnamed_atax9_atax_readdata,
-    input wire [0:0] avm_unnamed_atax9_atax_readdatavalid,
-    input wire [0:0] avm_unnamed_atax9_atax_waitrequest,
-    input wire [0:0] avm_unnamed_atax9_atax_writeack,
     input wire [255:0] avst_iord_bl_call_atax_data,
     input wire [0:0] avst_iord_bl_call_atax_valid,
     input wire [0:0] avst_iowr_bl_return_atax_almostfull,
@@ -116,48 +68,6 @@ module atax_function_wrapper (
     output wire [0:0] avm_memdep_1_atax_read,
     output wire [0:0] avm_memdep_1_atax_write,
     output wire [31:0] avm_memdep_1_atax_writedata,
-    output wire [31:0] avm_memdep_2_atax_address,
-    output wire [0:0] avm_memdep_2_atax_burstcount,
-    output wire [3:0] avm_memdep_2_atax_byteenable,
-    output wire [0:0] avm_memdep_2_atax_enable,
-    output wire [0:0] avm_memdep_2_atax_read,
-    output wire [0:0] avm_memdep_2_atax_write,
-    output wire [31:0] avm_memdep_2_atax_writedata,
-    output wire [31:0] avm_memdep_3_atax_address,
-    output wire [0:0] avm_memdep_3_atax_burstcount,
-    output wire [3:0] avm_memdep_3_atax_byteenable,
-    output wire [0:0] avm_memdep_3_atax_enable,
-    output wire [0:0] avm_memdep_3_atax_read,
-    output wire [0:0] avm_memdep_3_atax_write,
-    output wire [31:0] avm_memdep_3_atax_writedata,
-    output wire [31:0] avm_memdep_4_atax_address,
-    output wire [0:0] avm_memdep_4_atax_burstcount,
-    output wire [3:0] avm_memdep_4_atax_byteenable,
-    output wire [0:0] avm_memdep_4_atax_enable,
-    output wire [0:0] avm_memdep_4_atax_read,
-    output wire [0:0] avm_memdep_4_atax_write,
-    output wire [31:0] avm_memdep_4_atax_writedata,
-    output wire [31:0] avm_memdep_5_atax_address,
-    output wire [0:0] avm_memdep_5_atax_burstcount,
-    output wire [3:0] avm_memdep_5_atax_byteenable,
-    output wire [0:0] avm_memdep_5_atax_enable,
-    output wire [0:0] avm_memdep_5_atax_read,
-    output wire [0:0] avm_memdep_5_atax_write,
-    output wire [31:0] avm_memdep_5_atax_writedata,
-    output wire [63:0] avm_memdep_6_atax_address,
-    output wire [0:0] avm_memdep_6_atax_burstcount,
-    output wire [7:0] avm_memdep_6_atax_byteenable,
-    output wire [0:0] avm_memdep_6_atax_enable,
-    output wire [0:0] avm_memdep_6_atax_read,
-    output wire [0:0] avm_memdep_6_atax_write,
-    output wire [63:0] avm_memdep_6_atax_writedata,
-    output wire [63:0] avm_memdep_7_atax_address,
-    output wire [0:0] avm_memdep_7_atax_burstcount,
-    output wire [7:0] avm_memdep_7_atax_byteenable,
-    output wire [0:0] avm_memdep_7_atax_enable,
-    output wire [0:0] avm_memdep_7_atax_read,
-    output wire [0:0] avm_memdep_7_atax_write,
-    output wire [63:0] avm_memdep_7_atax_writedata,
     output wire [31:0] avm_memdep_atax_address,
     output wire [0:0] avm_memdep_atax_burstcount,
     output wire [3:0] avm_memdep_atax_byteenable,
@@ -165,83 +75,41 @@ module atax_function_wrapper (
     output wire [0:0] avm_memdep_atax_read,
     output wire [0:0] avm_memdep_atax_write,
     output wire [31:0] avm_memdep_atax_writedata,
-    output wire [63:0] avm_unnamed_atax10_atax_address,
-    output wire [0:0] avm_unnamed_atax10_atax_burstcount,
-    output wire [7:0] avm_unnamed_atax10_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax10_atax_enable,
-    output wire [0:0] avm_unnamed_atax10_atax_read,
-    output wire [0:0] avm_unnamed_atax10_atax_write,
-    output wire [63:0] avm_unnamed_atax10_atax_writedata,
-    output wire [31:0] avm_unnamed_atax11_atax_address,
-    output wire [0:0] avm_unnamed_atax11_atax_burstcount,
-    output wire [3:0] avm_unnamed_atax11_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax11_atax_enable,
-    output wire [0:0] avm_unnamed_atax11_atax_read,
-    output wire [0:0] avm_unnamed_atax11_atax_write,
-    output wire [31:0] avm_unnamed_atax11_atax_writedata,
-    output wire [31:0] avm_unnamed_atax13_atax_address,
-    output wire [0:0] avm_unnamed_atax13_atax_burstcount,
-    output wire [3:0] avm_unnamed_atax13_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax13_atax_enable,
-    output wire [0:0] avm_unnamed_atax13_atax_read,
-    output wire [0:0] avm_unnamed_atax13_atax_write,
-    output wire [31:0] avm_unnamed_atax13_atax_writedata,
-    output wire [31:0] avm_unnamed_atax14_atax_address,
-    output wire [0:0] avm_unnamed_atax14_atax_burstcount,
-    output wire [3:0] avm_unnamed_atax14_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax14_atax_enable,
-    output wire [0:0] avm_unnamed_atax14_atax_read,
-    output wire [0:0] avm_unnamed_atax14_atax_write,
-    output wire [31:0] avm_unnamed_atax14_atax_writedata,
-    output wire [31:0] avm_unnamed_atax15_atax_address,
-    output wire [0:0] avm_unnamed_atax15_atax_burstcount,
-    output wire [3:0] avm_unnamed_atax15_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax15_atax_enable,
-    output wire [0:0] avm_unnamed_atax15_atax_read,
-    output wire [0:0] avm_unnamed_atax15_atax_write,
-    output wire [31:0] avm_unnamed_atax15_atax_writedata,
-    output wire [31:0] avm_unnamed_atax16_atax_address,
-    output wire [0:0] avm_unnamed_atax16_atax_burstcount,
-    output wire [3:0] avm_unnamed_atax16_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax16_atax_enable,
-    output wire [0:0] avm_unnamed_atax16_atax_read,
-    output wire [0:0] avm_unnamed_atax16_atax_write,
-    output wire [31:0] avm_unnamed_atax16_atax_writedata,
-    output wire [31:0] avm_unnamed_atax18_atax_address,
-    output wire [0:0] avm_unnamed_atax18_atax_burstcount,
-    output wire [3:0] avm_unnamed_atax18_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax18_atax_enable,
-    output wire [0:0] avm_unnamed_atax18_atax_read,
-    output wire [0:0] avm_unnamed_atax18_atax_write,
-    output wire [31:0] avm_unnamed_atax18_atax_writedata,
-    output wire [31:0] avm_unnamed_atax19_atax_address,
-    output wire [0:0] avm_unnamed_atax19_atax_burstcount,
-    output wire [3:0] avm_unnamed_atax19_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax19_atax_enable,
-    output wire [0:0] avm_unnamed_atax19_atax_read,
-    output wire [0:0] avm_unnamed_atax19_atax_write,
-    output wire [31:0] avm_unnamed_atax19_atax_writedata,
-    output wire [63:0] avm_unnamed_atax7_atax_address,
+    output wire [31:0] avm_unnamed_atax3_atax_address,
+    output wire [0:0] avm_unnamed_atax3_atax_burstcount,
+    output wire [3:0] avm_unnamed_atax3_atax_byteenable,
+    output wire [0:0] avm_unnamed_atax3_atax_enable,
+    output wire [0:0] avm_unnamed_atax3_atax_read,
+    output wire [0:0] avm_unnamed_atax3_atax_write,
+    output wire [31:0] avm_unnamed_atax3_atax_writedata,
+    output wire [31:0] avm_unnamed_atax5_atax_address,
+    output wire [0:0] avm_unnamed_atax5_atax_burstcount,
+    output wire [3:0] avm_unnamed_atax5_atax_byteenable,
+    output wire [0:0] avm_unnamed_atax5_atax_enable,
+    output wire [0:0] avm_unnamed_atax5_atax_read,
+    output wire [0:0] avm_unnamed_atax5_atax_write,
+    output wire [31:0] avm_unnamed_atax5_atax_writedata,
+    output wire [31:0] avm_unnamed_atax6_atax_address,
+    output wire [0:0] avm_unnamed_atax6_atax_burstcount,
+    output wire [3:0] avm_unnamed_atax6_atax_byteenable,
+    output wire [0:0] avm_unnamed_atax6_atax_enable,
+    output wire [0:0] avm_unnamed_atax6_atax_read,
+    output wire [0:0] avm_unnamed_atax6_atax_write,
+    output wire [31:0] avm_unnamed_atax6_atax_writedata,
+    output wire [31:0] avm_unnamed_atax7_atax_address,
     output wire [0:0] avm_unnamed_atax7_atax_burstcount,
-    output wire [7:0] avm_unnamed_atax7_atax_byteenable,
+    output wire [3:0] avm_unnamed_atax7_atax_byteenable,
     output wire [0:0] avm_unnamed_atax7_atax_enable,
     output wire [0:0] avm_unnamed_atax7_atax_read,
     output wire [0:0] avm_unnamed_atax7_atax_write,
-    output wire [63:0] avm_unnamed_atax7_atax_writedata,
-    output wire [63:0] avm_unnamed_atax8_atax_address,
+    output wire [31:0] avm_unnamed_atax7_atax_writedata,
+    output wire [31:0] avm_unnamed_atax8_atax_address,
     output wire [0:0] avm_unnamed_atax8_atax_burstcount,
-    output wire [7:0] avm_unnamed_atax8_atax_byteenable,
+    output wire [3:0] avm_unnamed_atax8_atax_byteenable,
     output wire [0:0] avm_unnamed_atax8_atax_enable,
     output wire [0:0] avm_unnamed_atax8_atax_read,
     output wire [0:0] avm_unnamed_atax8_atax_write,
-    output wire [63:0] avm_unnamed_atax8_atax_writedata,
-    output wire [63:0] avm_unnamed_atax9_atax_address,
-    output wire [0:0] avm_unnamed_atax9_atax_burstcount,
-    output wire [7:0] avm_unnamed_atax9_atax_byteenable,
-    output wire [0:0] avm_unnamed_atax9_atax_enable,
-    output wire [0:0] avm_unnamed_atax9_atax_read,
-    output wire [0:0] avm_unnamed_atax9_atax_write,
-    output wire [63:0] avm_unnamed_atax9_atax_writedata,
+    output wire [31:0] avm_unnamed_atax8_atax_writedata,
     output wire [0:0] avst_iord_bl_call_atax_almost_full,
     output wire [0:0] avst_iord_bl_call_atax_ready,
     output wire [0:0] avst_iowr_bl_return_atax_data,
@@ -266,48 +134,6 @@ module atax_function_wrapper (
     wire [0:0] atax_function_out_memdep_1_atax_avm_read;
     wire [0:0] atax_function_out_memdep_1_atax_avm_write;
     wire [31:0] atax_function_out_memdep_1_atax_avm_writedata;
-    wire [31:0] atax_function_out_memdep_2_atax_avm_address;
-    wire [0:0] atax_function_out_memdep_2_atax_avm_burstcount;
-    wire [3:0] atax_function_out_memdep_2_atax_avm_byteenable;
-    wire [0:0] atax_function_out_memdep_2_atax_avm_enable;
-    wire [0:0] atax_function_out_memdep_2_atax_avm_read;
-    wire [0:0] atax_function_out_memdep_2_atax_avm_write;
-    wire [31:0] atax_function_out_memdep_2_atax_avm_writedata;
-    wire [31:0] atax_function_out_memdep_3_atax_avm_address;
-    wire [0:0] atax_function_out_memdep_3_atax_avm_burstcount;
-    wire [3:0] atax_function_out_memdep_3_atax_avm_byteenable;
-    wire [0:0] atax_function_out_memdep_3_atax_avm_enable;
-    wire [0:0] atax_function_out_memdep_3_atax_avm_read;
-    wire [0:0] atax_function_out_memdep_3_atax_avm_write;
-    wire [31:0] atax_function_out_memdep_3_atax_avm_writedata;
-    wire [31:0] atax_function_out_memdep_4_atax_avm_address;
-    wire [0:0] atax_function_out_memdep_4_atax_avm_burstcount;
-    wire [3:0] atax_function_out_memdep_4_atax_avm_byteenable;
-    wire [0:0] atax_function_out_memdep_4_atax_avm_enable;
-    wire [0:0] atax_function_out_memdep_4_atax_avm_read;
-    wire [0:0] atax_function_out_memdep_4_atax_avm_write;
-    wire [31:0] atax_function_out_memdep_4_atax_avm_writedata;
-    wire [31:0] atax_function_out_memdep_5_atax_avm_address;
-    wire [0:0] atax_function_out_memdep_5_atax_avm_burstcount;
-    wire [3:0] atax_function_out_memdep_5_atax_avm_byteenable;
-    wire [0:0] atax_function_out_memdep_5_atax_avm_enable;
-    wire [0:0] atax_function_out_memdep_5_atax_avm_read;
-    wire [0:0] atax_function_out_memdep_5_atax_avm_write;
-    wire [31:0] atax_function_out_memdep_5_atax_avm_writedata;
-    wire [63:0] atax_function_out_memdep_6_atax_avm_address;
-    wire [0:0] atax_function_out_memdep_6_atax_avm_burstcount;
-    wire [7:0] atax_function_out_memdep_6_atax_avm_byteenable;
-    wire [0:0] atax_function_out_memdep_6_atax_avm_enable;
-    wire [0:0] atax_function_out_memdep_6_atax_avm_read;
-    wire [0:0] atax_function_out_memdep_6_atax_avm_write;
-    wire [63:0] atax_function_out_memdep_6_atax_avm_writedata;
-    wire [63:0] atax_function_out_memdep_7_atax_avm_address;
-    wire [0:0] atax_function_out_memdep_7_atax_avm_burstcount;
-    wire [7:0] atax_function_out_memdep_7_atax_avm_byteenable;
-    wire [0:0] atax_function_out_memdep_7_atax_avm_enable;
-    wire [0:0] atax_function_out_memdep_7_atax_avm_read;
-    wire [0:0] atax_function_out_memdep_7_atax_avm_write;
-    wire [63:0] atax_function_out_memdep_7_atax_avm_writedata;
     wire [31:0] atax_function_out_memdep_atax_avm_address;
     wire [0:0] atax_function_out_memdep_atax_avm_burstcount;
     wire [3:0] atax_function_out_memdep_atax_avm_byteenable;
@@ -315,83 +141,41 @@ module atax_function_wrapper (
     wire [0:0] atax_function_out_memdep_atax_avm_read;
     wire [0:0] atax_function_out_memdep_atax_avm_write;
     wire [31:0] atax_function_out_memdep_atax_avm_writedata;
-    wire [63:0] atax_function_out_unnamed_atax10_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax10_atax_avm_burstcount;
-    wire [7:0] atax_function_out_unnamed_atax10_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax10_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax10_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax10_atax_avm_write;
-    wire [63:0] atax_function_out_unnamed_atax10_atax_avm_writedata;
-    wire [31:0] atax_function_out_unnamed_atax11_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax11_atax_avm_burstcount;
-    wire [3:0] atax_function_out_unnamed_atax11_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax11_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax11_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax11_atax_avm_write;
-    wire [31:0] atax_function_out_unnamed_atax11_atax_avm_writedata;
-    wire [31:0] atax_function_out_unnamed_atax13_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax13_atax_avm_burstcount;
-    wire [3:0] atax_function_out_unnamed_atax13_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax13_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax13_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax13_atax_avm_write;
-    wire [31:0] atax_function_out_unnamed_atax13_atax_avm_writedata;
-    wire [31:0] atax_function_out_unnamed_atax14_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax14_atax_avm_burstcount;
-    wire [3:0] atax_function_out_unnamed_atax14_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax14_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax14_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax14_atax_avm_write;
-    wire [31:0] atax_function_out_unnamed_atax14_atax_avm_writedata;
-    wire [31:0] atax_function_out_unnamed_atax15_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax15_atax_avm_burstcount;
-    wire [3:0] atax_function_out_unnamed_atax15_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax15_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax15_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax15_atax_avm_write;
-    wire [31:0] atax_function_out_unnamed_atax15_atax_avm_writedata;
-    wire [31:0] atax_function_out_unnamed_atax16_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax16_atax_avm_burstcount;
-    wire [3:0] atax_function_out_unnamed_atax16_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax16_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax16_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax16_atax_avm_write;
-    wire [31:0] atax_function_out_unnamed_atax16_atax_avm_writedata;
-    wire [31:0] atax_function_out_unnamed_atax18_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax18_atax_avm_burstcount;
-    wire [3:0] atax_function_out_unnamed_atax18_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax18_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax18_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax18_atax_avm_write;
-    wire [31:0] atax_function_out_unnamed_atax18_atax_avm_writedata;
-    wire [31:0] atax_function_out_unnamed_atax19_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax19_atax_avm_burstcount;
-    wire [3:0] atax_function_out_unnamed_atax19_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax19_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax19_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax19_atax_avm_write;
-    wire [31:0] atax_function_out_unnamed_atax19_atax_avm_writedata;
-    wire [63:0] atax_function_out_unnamed_atax7_atax_avm_address;
+    wire [31:0] atax_function_out_unnamed_atax3_atax_avm_address;
+    wire [0:0] atax_function_out_unnamed_atax3_atax_avm_burstcount;
+    wire [3:0] atax_function_out_unnamed_atax3_atax_avm_byteenable;
+    wire [0:0] atax_function_out_unnamed_atax3_atax_avm_enable;
+    wire [0:0] atax_function_out_unnamed_atax3_atax_avm_read;
+    wire [0:0] atax_function_out_unnamed_atax3_atax_avm_write;
+    wire [31:0] atax_function_out_unnamed_atax3_atax_avm_writedata;
+    wire [31:0] atax_function_out_unnamed_atax5_atax_avm_address;
+    wire [0:0] atax_function_out_unnamed_atax5_atax_avm_burstcount;
+    wire [3:0] atax_function_out_unnamed_atax5_atax_avm_byteenable;
+    wire [0:0] atax_function_out_unnamed_atax5_atax_avm_enable;
+    wire [0:0] atax_function_out_unnamed_atax5_atax_avm_read;
+    wire [0:0] atax_function_out_unnamed_atax5_atax_avm_write;
+    wire [31:0] atax_function_out_unnamed_atax5_atax_avm_writedata;
+    wire [31:0] atax_function_out_unnamed_atax6_atax_avm_address;
+    wire [0:0] atax_function_out_unnamed_atax6_atax_avm_burstcount;
+    wire [3:0] atax_function_out_unnamed_atax6_atax_avm_byteenable;
+    wire [0:0] atax_function_out_unnamed_atax6_atax_avm_enable;
+    wire [0:0] atax_function_out_unnamed_atax6_atax_avm_read;
+    wire [0:0] atax_function_out_unnamed_atax6_atax_avm_write;
+    wire [31:0] atax_function_out_unnamed_atax6_atax_avm_writedata;
+    wire [31:0] atax_function_out_unnamed_atax7_atax_avm_address;
     wire [0:0] atax_function_out_unnamed_atax7_atax_avm_burstcount;
-    wire [7:0] atax_function_out_unnamed_atax7_atax_avm_byteenable;
+    wire [3:0] atax_function_out_unnamed_atax7_atax_avm_byteenable;
     wire [0:0] atax_function_out_unnamed_atax7_atax_avm_enable;
     wire [0:0] atax_function_out_unnamed_atax7_atax_avm_read;
     wire [0:0] atax_function_out_unnamed_atax7_atax_avm_write;
-    wire [63:0] atax_function_out_unnamed_atax7_atax_avm_writedata;
-    wire [63:0] atax_function_out_unnamed_atax8_atax_avm_address;
+    wire [31:0] atax_function_out_unnamed_atax7_atax_avm_writedata;
+    wire [31:0] atax_function_out_unnamed_atax8_atax_avm_address;
     wire [0:0] atax_function_out_unnamed_atax8_atax_avm_burstcount;
-    wire [7:0] atax_function_out_unnamed_atax8_atax_avm_byteenable;
+    wire [3:0] atax_function_out_unnamed_atax8_atax_avm_byteenable;
     wire [0:0] atax_function_out_unnamed_atax8_atax_avm_enable;
     wire [0:0] atax_function_out_unnamed_atax8_atax_avm_read;
     wire [0:0] atax_function_out_unnamed_atax8_atax_avm_write;
-    wire [63:0] atax_function_out_unnamed_atax8_atax_avm_writedata;
-    wire [63:0] atax_function_out_unnamed_atax9_atax_avm_address;
-    wire [0:0] atax_function_out_unnamed_atax9_atax_avm_burstcount;
-    wire [7:0] atax_function_out_unnamed_atax9_atax_avm_byteenable;
-    wire [0:0] atax_function_out_unnamed_atax9_atax_avm_enable;
-    wire [0:0] atax_function_out_unnamed_atax9_atax_avm_read;
-    wire [0:0] atax_function_out_unnamed_atax9_atax_avm_write;
-    wire [63:0] atax_function_out_unnamed_atax9_atax_avm_writedata;
+    wire [31:0] atax_function_out_unnamed_atax8_atax_avm_writedata;
     wire [0:0] busy_and_q;
     wire [0:0] busy_or_q;
     wire [255:0] implicit_input_q;
@@ -408,7 +192,7 @@ module atax_function_wrapper (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // not_stall(LOGICAL,99)
+    // not_stall(LOGICAL,51)
     assign not_stall_q = ~ (stall);
 
     // implicit_input(BITJOIN,9)
@@ -432,68 +216,24 @@ module atax_function_wrapper (
         .in_memdep_1_atax_avm_readdatavalid(avm_memdep_1_atax_readdatavalid),
         .in_memdep_1_atax_avm_waitrequest(avm_memdep_1_atax_waitrequest),
         .in_memdep_1_atax_avm_writeack(avm_memdep_1_atax_writeack),
-        .in_memdep_2_atax_avm_readdata(avm_memdep_2_atax_readdata),
-        .in_memdep_2_atax_avm_readdatavalid(avm_memdep_2_atax_readdatavalid),
-        .in_memdep_2_atax_avm_waitrequest(avm_memdep_2_atax_waitrequest),
-        .in_memdep_2_atax_avm_writeack(avm_memdep_2_atax_writeack),
-        .in_memdep_3_atax_avm_readdata(avm_memdep_3_atax_readdata),
-        .in_memdep_3_atax_avm_readdatavalid(avm_memdep_3_atax_readdatavalid),
-        .in_memdep_3_atax_avm_waitrequest(avm_memdep_3_atax_waitrequest),
-        .in_memdep_3_atax_avm_writeack(avm_memdep_3_atax_writeack),
-        .in_memdep_4_atax_avm_readdata(avm_memdep_4_atax_readdata),
-        .in_memdep_4_atax_avm_readdatavalid(avm_memdep_4_atax_readdatavalid),
-        .in_memdep_4_atax_avm_waitrequest(avm_memdep_4_atax_waitrequest),
-        .in_memdep_4_atax_avm_writeack(avm_memdep_4_atax_writeack),
-        .in_memdep_5_atax_avm_readdata(avm_memdep_5_atax_readdata),
-        .in_memdep_5_atax_avm_readdatavalid(avm_memdep_5_atax_readdatavalid),
-        .in_memdep_5_atax_avm_waitrequest(avm_memdep_5_atax_waitrequest),
-        .in_memdep_5_atax_avm_writeack(avm_memdep_5_atax_writeack),
-        .in_memdep_6_atax_avm_readdata(avm_memdep_6_atax_readdata),
-        .in_memdep_6_atax_avm_readdatavalid(avm_memdep_6_atax_readdatavalid),
-        .in_memdep_6_atax_avm_waitrequest(avm_memdep_6_atax_waitrequest),
-        .in_memdep_6_atax_avm_writeack(avm_memdep_6_atax_writeack),
-        .in_memdep_7_atax_avm_readdata(avm_memdep_7_atax_readdata),
-        .in_memdep_7_atax_avm_readdatavalid(avm_memdep_7_atax_readdatavalid),
-        .in_memdep_7_atax_avm_waitrequest(avm_memdep_7_atax_waitrequest),
-        .in_memdep_7_atax_avm_writeack(avm_memdep_7_atax_writeack),
         .in_memdep_atax_avm_readdata(avm_memdep_atax_readdata),
         .in_memdep_atax_avm_readdatavalid(avm_memdep_atax_readdatavalid),
         .in_memdep_atax_avm_waitrequest(avm_memdep_atax_waitrequest),
         .in_memdep_atax_avm_writeack(avm_memdep_atax_writeack),
         .in_stall_in(GND_q),
         .in_start(GND_q),
-        .in_unnamed_atax10_atax_avm_readdata(avm_unnamed_atax10_atax_readdata),
-        .in_unnamed_atax10_atax_avm_readdatavalid(avm_unnamed_atax10_atax_readdatavalid),
-        .in_unnamed_atax10_atax_avm_waitrequest(avm_unnamed_atax10_atax_waitrequest),
-        .in_unnamed_atax10_atax_avm_writeack(avm_unnamed_atax10_atax_writeack),
-        .in_unnamed_atax11_atax_avm_readdata(avm_unnamed_atax11_atax_readdata),
-        .in_unnamed_atax11_atax_avm_readdatavalid(avm_unnamed_atax11_atax_readdatavalid),
-        .in_unnamed_atax11_atax_avm_waitrequest(avm_unnamed_atax11_atax_waitrequest),
-        .in_unnamed_atax11_atax_avm_writeack(avm_unnamed_atax11_atax_writeack),
-        .in_unnamed_atax13_atax_avm_readdata(avm_unnamed_atax13_atax_readdata),
-        .in_unnamed_atax13_atax_avm_readdatavalid(avm_unnamed_atax13_atax_readdatavalid),
-        .in_unnamed_atax13_atax_avm_waitrequest(avm_unnamed_atax13_atax_waitrequest),
-        .in_unnamed_atax13_atax_avm_writeack(avm_unnamed_atax13_atax_writeack),
-        .in_unnamed_atax14_atax_avm_readdata(avm_unnamed_atax14_atax_readdata),
-        .in_unnamed_atax14_atax_avm_readdatavalid(avm_unnamed_atax14_atax_readdatavalid),
-        .in_unnamed_atax14_atax_avm_waitrequest(avm_unnamed_atax14_atax_waitrequest),
-        .in_unnamed_atax14_atax_avm_writeack(avm_unnamed_atax14_atax_writeack),
-        .in_unnamed_atax15_atax_avm_readdata(avm_unnamed_atax15_atax_readdata),
-        .in_unnamed_atax15_atax_avm_readdatavalid(avm_unnamed_atax15_atax_readdatavalid),
-        .in_unnamed_atax15_atax_avm_waitrequest(avm_unnamed_atax15_atax_waitrequest),
-        .in_unnamed_atax15_atax_avm_writeack(avm_unnamed_atax15_atax_writeack),
-        .in_unnamed_atax16_atax_avm_readdata(avm_unnamed_atax16_atax_readdata),
-        .in_unnamed_atax16_atax_avm_readdatavalid(avm_unnamed_atax16_atax_readdatavalid),
-        .in_unnamed_atax16_atax_avm_waitrequest(avm_unnamed_atax16_atax_waitrequest),
-        .in_unnamed_atax16_atax_avm_writeack(avm_unnamed_atax16_atax_writeack),
-        .in_unnamed_atax18_atax_avm_readdata(avm_unnamed_atax18_atax_readdata),
-        .in_unnamed_atax18_atax_avm_readdatavalid(avm_unnamed_atax18_atax_readdatavalid),
-        .in_unnamed_atax18_atax_avm_waitrequest(avm_unnamed_atax18_atax_waitrequest),
-        .in_unnamed_atax18_atax_avm_writeack(avm_unnamed_atax18_atax_writeack),
-        .in_unnamed_atax19_atax_avm_readdata(avm_unnamed_atax19_atax_readdata),
-        .in_unnamed_atax19_atax_avm_readdatavalid(avm_unnamed_atax19_atax_readdatavalid),
-        .in_unnamed_atax19_atax_avm_waitrequest(avm_unnamed_atax19_atax_waitrequest),
-        .in_unnamed_atax19_atax_avm_writeack(avm_unnamed_atax19_atax_writeack),
+        .in_unnamed_atax3_atax_avm_readdata(avm_unnamed_atax3_atax_readdata),
+        .in_unnamed_atax3_atax_avm_readdatavalid(avm_unnamed_atax3_atax_readdatavalid),
+        .in_unnamed_atax3_atax_avm_waitrequest(avm_unnamed_atax3_atax_waitrequest),
+        .in_unnamed_atax3_atax_avm_writeack(avm_unnamed_atax3_atax_writeack),
+        .in_unnamed_atax5_atax_avm_readdata(avm_unnamed_atax5_atax_readdata),
+        .in_unnamed_atax5_atax_avm_readdatavalid(avm_unnamed_atax5_atax_readdatavalid),
+        .in_unnamed_atax5_atax_avm_waitrequest(avm_unnamed_atax5_atax_waitrequest),
+        .in_unnamed_atax5_atax_avm_writeack(avm_unnamed_atax5_atax_writeack),
+        .in_unnamed_atax6_atax_avm_readdata(avm_unnamed_atax6_atax_readdata),
+        .in_unnamed_atax6_atax_avm_readdatavalid(avm_unnamed_atax6_atax_readdatavalid),
+        .in_unnamed_atax6_atax_avm_waitrequest(avm_unnamed_atax6_atax_waitrequest),
+        .in_unnamed_atax6_atax_avm_writeack(avm_unnamed_atax6_atax_writeack),
         .in_unnamed_atax7_atax_avm_readdata(avm_unnamed_atax7_atax_readdata),
         .in_unnamed_atax7_atax_avm_readdatavalid(avm_unnamed_atax7_atax_readdatavalid),
         .in_unnamed_atax7_atax_avm_waitrequest(avm_unnamed_atax7_atax_waitrequest),
@@ -502,10 +242,6 @@ module atax_function_wrapper (
         .in_unnamed_atax8_atax_avm_readdatavalid(avm_unnamed_atax8_atax_readdatavalid),
         .in_unnamed_atax8_atax_avm_waitrequest(avm_unnamed_atax8_atax_waitrequest),
         .in_unnamed_atax8_atax_avm_writeack(avm_unnamed_atax8_atax_writeack),
-        .in_unnamed_atax9_atax_avm_readdata(avm_unnamed_atax9_atax_readdata),
-        .in_unnamed_atax9_atax_avm_readdatavalid(avm_unnamed_atax9_atax_readdatavalid),
-        .in_unnamed_atax9_atax_avm_waitrequest(avm_unnamed_atax9_atax_waitrequest),
-        .in_unnamed_atax9_atax_avm_writeack(avm_unnamed_atax9_atax_writeack),
         .in_valid_in(VCC_q),
         .out_iord_bl_call_atax_o_fifoalmost_full(atax_function_out_iord_bl_call_atax_o_fifoalmost_full),
         .out_iord_bl_call_atax_o_fifoready(atax_function_out_iord_bl_call_atax_o_fifoready),
@@ -518,48 +254,6 @@ module atax_function_wrapper (
         .out_memdep_1_atax_avm_read(atax_function_out_memdep_1_atax_avm_read),
         .out_memdep_1_atax_avm_write(atax_function_out_memdep_1_atax_avm_write),
         .out_memdep_1_atax_avm_writedata(atax_function_out_memdep_1_atax_avm_writedata),
-        .out_memdep_2_atax_avm_address(atax_function_out_memdep_2_atax_avm_address),
-        .out_memdep_2_atax_avm_burstcount(atax_function_out_memdep_2_atax_avm_burstcount),
-        .out_memdep_2_atax_avm_byteenable(atax_function_out_memdep_2_atax_avm_byteenable),
-        .out_memdep_2_atax_avm_enable(atax_function_out_memdep_2_atax_avm_enable),
-        .out_memdep_2_atax_avm_read(atax_function_out_memdep_2_atax_avm_read),
-        .out_memdep_2_atax_avm_write(atax_function_out_memdep_2_atax_avm_write),
-        .out_memdep_2_atax_avm_writedata(atax_function_out_memdep_2_atax_avm_writedata),
-        .out_memdep_3_atax_avm_address(atax_function_out_memdep_3_atax_avm_address),
-        .out_memdep_3_atax_avm_burstcount(atax_function_out_memdep_3_atax_avm_burstcount),
-        .out_memdep_3_atax_avm_byteenable(atax_function_out_memdep_3_atax_avm_byteenable),
-        .out_memdep_3_atax_avm_enable(atax_function_out_memdep_3_atax_avm_enable),
-        .out_memdep_3_atax_avm_read(atax_function_out_memdep_3_atax_avm_read),
-        .out_memdep_3_atax_avm_write(atax_function_out_memdep_3_atax_avm_write),
-        .out_memdep_3_atax_avm_writedata(atax_function_out_memdep_3_atax_avm_writedata),
-        .out_memdep_4_atax_avm_address(atax_function_out_memdep_4_atax_avm_address),
-        .out_memdep_4_atax_avm_burstcount(atax_function_out_memdep_4_atax_avm_burstcount),
-        .out_memdep_4_atax_avm_byteenable(atax_function_out_memdep_4_atax_avm_byteenable),
-        .out_memdep_4_atax_avm_enable(atax_function_out_memdep_4_atax_avm_enable),
-        .out_memdep_4_atax_avm_read(atax_function_out_memdep_4_atax_avm_read),
-        .out_memdep_4_atax_avm_write(atax_function_out_memdep_4_atax_avm_write),
-        .out_memdep_4_atax_avm_writedata(atax_function_out_memdep_4_atax_avm_writedata),
-        .out_memdep_5_atax_avm_address(atax_function_out_memdep_5_atax_avm_address),
-        .out_memdep_5_atax_avm_burstcount(atax_function_out_memdep_5_atax_avm_burstcount),
-        .out_memdep_5_atax_avm_byteenable(atax_function_out_memdep_5_atax_avm_byteenable),
-        .out_memdep_5_atax_avm_enable(atax_function_out_memdep_5_atax_avm_enable),
-        .out_memdep_5_atax_avm_read(atax_function_out_memdep_5_atax_avm_read),
-        .out_memdep_5_atax_avm_write(atax_function_out_memdep_5_atax_avm_write),
-        .out_memdep_5_atax_avm_writedata(atax_function_out_memdep_5_atax_avm_writedata),
-        .out_memdep_6_atax_avm_address(atax_function_out_memdep_6_atax_avm_address),
-        .out_memdep_6_atax_avm_burstcount(atax_function_out_memdep_6_atax_avm_burstcount),
-        .out_memdep_6_atax_avm_byteenable(atax_function_out_memdep_6_atax_avm_byteenable),
-        .out_memdep_6_atax_avm_enable(atax_function_out_memdep_6_atax_avm_enable),
-        .out_memdep_6_atax_avm_read(atax_function_out_memdep_6_atax_avm_read),
-        .out_memdep_6_atax_avm_write(atax_function_out_memdep_6_atax_avm_write),
-        .out_memdep_6_atax_avm_writedata(atax_function_out_memdep_6_atax_avm_writedata),
-        .out_memdep_7_atax_avm_address(atax_function_out_memdep_7_atax_avm_address),
-        .out_memdep_7_atax_avm_burstcount(atax_function_out_memdep_7_atax_avm_burstcount),
-        .out_memdep_7_atax_avm_byteenable(atax_function_out_memdep_7_atax_avm_byteenable),
-        .out_memdep_7_atax_avm_enable(atax_function_out_memdep_7_atax_avm_enable),
-        .out_memdep_7_atax_avm_read(atax_function_out_memdep_7_atax_avm_read),
-        .out_memdep_7_atax_avm_write(atax_function_out_memdep_7_atax_avm_write),
-        .out_memdep_7_atax_avm_writedata(atax_function_out_memdep_7_atax_avm_writedata),
         .out_memdep_atax_avm_address(atax_function_out_memdep_atax_avm_address),
         .out_memdep_atax_avm_burstcount(atax_function_out_memdep_atax_avm_burstcount),
         .out_memdep_atax_avm_byteenable(atax_function_out_memdep_atax_avm_byteenable),
@@ -567,65 +261,28 @@ module atax_function_wrapper (
         .out_memdep_atax_avm_read(atax_function_out_memdep_atax_avm_read),
         .out_memdep_atax_avm_write(atax_function_out_memdep_atax_avm_write),
         .out_memdep_atax_avm_writedata(atax_function_out_memdep_atax_avm_writedata),
-        .out_o_active_memdep_6(),
-        .out_o_active_memdep_7(),
         .out_stall_out(),
-        .out_unnamed_atax10_atax_avm_address(atax_function_out_unnamed_atax10_atax_avm_address),
-        .out_unnamed_atax10_atax_avm_burstcount(atax_function_out_unnamed_atax10_atax_avm_burstcount),
-        .out_unnamed_atax10_atax_avm_byteenable(atax_function_out_unnamed_atax10_atax_avm_byteenable),
-        .out_unnamed_atax10_atax_avm_enable(atax_function_out_unnamed_atax10_atax_avm_enable),
-        .out_unnamed_atax10_atax_avm_read(atax_function_out_unnamed_atax10_atax_avm_read),
-        .out_unnamed_atax10_atax_avm_write(atax_function_out_unnamed_atax10_atax_avm_write),
-        .out_unnamed_atax10_atax_avm_writedata(atax_function_out_unnamed_atax10_atax_avm_writedata),
-        .out_unnamed_atax11_atax_avm_address(atax_function_out_unnamed_atax11_atax_avm_address),
-        .out_unnamed_atax11_atax_avm_burstcount(atax_function_out_unnamed_atax11_atax_avm_burstcount),
-        .out_unnamed_atax11_atax_avm_byteenable(atax_function_out_unnamed_atax11_atax_avm_byteenable),
-        .out_unnamed_atax11_atax_avm_enable(atax_function_out_unnamed_atax11_atax_avm_enable),
-        .out_unnamed_atax11_atax_avm_read(atax_function_out_unnamed_atax11_atax_avm_read),
-        .out_unnamed_atax11_atax_avm_write(atax_function_out_unnamed_atax11_atax_avm_write),
-        .out_unnamed_atax11_atax_avm_writedata(atax_function_out_unnamed_atax11_atax_avm_writedata),
-        .out_unnamed_atax13_atax_avm_address(atax_function_out_unnamed_atax13_atax_avm_address),
-        .out_unnamed_atax13_atax_avm_burstcount(atax_function_out_unnamed_atax13_atax_avm_burstcount),
-        .out_unnamed_atax13_atax_avm_byteenable(atax_function_out_unnamed_atax13_atax_avm_byteenable),
-        .out_unnamed_atax13_atax_avm_enable(atax_function_out_unnamed_atax13_atax_avm_enable),
-        .out_unnamed_atax13_atax_avm_read(atax_function_out_unnamed_atax13_atax_avm_read),
-        .out_unnamed_atax13_atax_avm_write(atax_function_out_unnamed_atax13_atax_avm_write),
-        .out_unnamed_atax13_atax_avm_writedata(atax_function_out_unnamed_atax13_atax_avm_writedata),
-        .out_unnamed_atax14_atax_avm_address(atax_function_out_unnamed_atax14_atax_avm_address),
-        .out_unnamed_atax14_atax_avm_burstcount(atax_function_out_unnamed_atax14_atax_avm_burstcount),
-        .out_unnamed_atax14_atax_avm_byteenable(atax_function_out_unnamed_atax14_atax_avm_byteenable),
-        .out_unnamed_atax14_atax_avm_enable(atax_function_out_unnamed_atax14_atax_avm_enable),
-        .out_unnamed_atax14_atax_avm_read(atax_function_out_unnamed_atax14_atax_avm_read),
-        .out_unnamed_atax14_atax_avm_write(atax_function_out_unnamed_atax14_atax_avm_write),
-        .out_unnamed_atax14_atax_avm_writedata(atax_function_out_unnamed_atax14_atax_avm_writedata),
-        .out_unnamed_atax15_atax_avm_address(atax_function_out_unnamed_atax15_atax_avm_address),
-        .out_unnamed_atax15_atax_avm_burstcount(atax_function_out_unnamed_atax15_atax_avm_burstcount),
-        .out_unnamed_atax15_atax_avm_byteenable(atax_function_out_unnamed_atax15_atax_avm_byteenable),
-        .out_unnamed_atax15_atax_avm_enable(atax_function_out_unnamed_atax15_atax_avm_enable),
-        .out_unnamed_atax15_atax_avm_read(atax_function_out_unnamed_atax15_atax_avm_read),
-        .out_unnamed_atax15_atax_avm_write(atax_function_out_unnamed_atax15_atax_avm_write),
-        .out_unnamed_atax15_atax_avm_writedata(atax_function_out_unnamed_atax15_atax_avm_writedata),
-        .out_unnamed_atax16_atax_avm_address(atax_function_out_unnamed_atax16_atax_avm_address),
-        .out_unnamed_atax16_atax_avm_burstcount(atax_function_out_unnamed_atax16_atax_avm_burstcount),
-        .out_unnamed_atax16_atax_avm_byteenable(atax_function_out_unnamed_atax16_atax_avm_byteenable),
-        .out_unnamed_atax16_atax_avm_enable(atax_function_out_unnamed_atax16_atax_avm_enable),
-        .out_unnamed_atax16_atax_avm_read(atax_function_out_unnamed_atax16_atax_avm_read),
-        .out_unnamed_atax16_atax_avm_write(atax_function_out_unnamed_atax16_atax_avm_write),
-        .out_unnamed_atax16_atax_avm_writedata(atax_function_out_unnamed_atax16_atax_avm_writedata),
-        .out_unnamed_atax18_atax_avm_address(atax_function_out_unnamed_atax18_atax_avm_address),
-        .out_unnamed_atax18_atax_avm_burstcount(atax_function_out_unnamed_atax18_atax_avm_burstcount),
-        .out_unnamed_atax18_atax_avm_byteenable(atax_function_out_unnamed_atax18_atax_avm_byteenable),
-        .out_unnamed_atax18_atax_avm_enable(atax_function_out_unnamed_atax18_atax_avm_enable),
-        .out_unnamed_atax18_atax_avm_read(atax_function_out_unnamed_atax18_atax_avm_read),
-        .out_unnamed_atax18_atax_avm_write(atax_function_out_unnamed_atax18_atax_avm_write),
-        .out_unnamed_atax18_atax_avm_writedata(atax_function_out_unnamed_atax18_atax_avm_writedata),
-        .out_unnamed_atax19_atax_avm_address(atax_function_out_unnamed_atax19_atax_avm_address),
-        .out_unnamed_atax19_atax_avm_burstcount(atax_function_out_unnamed_atax19_atax_avm_burstcount),
-        .out_unnamed_atax19_atax_avm_byteenable(atax_function_out_unnamed_atax19_atax_avm_byteenable),
-        .out_unnamed_atax19_atax_avm_enable(atax_function_out_unnamed_atax19_atax_avm_enable),
-        .out_unnamed_atax19_atax_avm_read(atax_function_out_unnamed_atax19_atax_avm_read),
-        .out_unnamed_atax19_atax_avm_write(atax_function_out_unnamed_atax19_atax_avm_write),
-        .out_unnamed_atax19_atax_avm_writedata(atax_function_out_unnamed_atax19_atax_avm_writedata),
+        .out_unnamed_atax3_atax_avm_address(atax_function_out_unnamed_atax3_atax_avm_address),
+        .out_unnamed_atax3_atax_avm_burstcount(atax_function_out_unnamed_atax3_atax_avm_burstcount),
+        .out_unnamed_atax3_atax_avm_byteenable(atax_function_out_unnamed_atax3_atax_avm_byteenable),
+        .out_unnamed_atax3_atax_avm_enable(atax_function_out_unnamed_atax3_atax_avm_enable),
+        .out_unnamed_atax3_atax_avm_read(atax_function_out_unnamed_atax3_atax_avm_read),
+        .out_unnamed_atax3_atax_avm_write(atax_function_out_unnamed_atax3_atax_avm_write),
+        .out_unnamed_atax3_atax_avm_writedata(atax_function_out_unnamed_atax3_atax_avm_writedata),
+        .out_unnamed_atax5_atax_avm_address(atax_function_out_unnamed_atax5_atax_avm_address),
+        .out_unnamed_atax5_atax_avm_burstcount(atax_function_out_unnamed_atax5_atax_avm_burstcount),
+        .out_unnamed_atax5_atax_avm_byteenable(atax_function_out_unnamed_atax5_atax_avm_byteenable),
+        .out_unnamed_atax5_atax_avm_enable(atax_function_out_unnamed_atax5_atax_avm_enable),
+        .out_unnamed_atax5_atax_avm_read(atax_function_out_unnamed_atax5_atax_avm_read),
+        .out_unnamed_atax5_atax_avm_write(atax_function_out_unnamed_atax5_atax_avm_write),
+        .out_unnamed_atax5_atax_avm_writedata(atax_function_out_unnamed_atax5_atax_avm_writedata),
+        .out_unnamed_atax6_atax_avm_address(atax_function_out_unnamed_atax6_atax_avm_address),
+        .out_unnamed_atax6_atax_avm_burstcount(atax_function_out_unnamed_atax6_atax_avm_burstcount),
+        .out_unnamed_atax6_atax_avm_byteenable(atax_function_out_unnamed_atax6_atax_avm_byteenable),
+        .out_unnamed_atax6_atax_avm_enable(atax_function_out_unnamed_atax6_atax_avm_enable),
+        .out_unnamed_atax6_atax_avm_read(atax_function_out_unnamed_atax6_atax_avm_read),
+        .out_unnamed_atax6_atax_avm_write(atax_function_out_unnamed_atax6_atax_avm_write),
+        .out_unnamed_atax6_atax_avm_writedata(atax_function_out_unnamed_atax6_atax_avm_writedata),
         .out_unnamed_atax7_atax_avm_address(atax_function_out_unnamed_atax7_atax_avm_address),
         .out_unnamed_atax7_atax_avm_burstcount(atax_function_out_unnamed_atax7_atax_avm_burstcount),
         .out_unnamed_atax7_atax_avm_byteenable(atax_function_out_unnamed_atax7_atax_avm_byteenable),
@@ -640,436 +297,177 @@ module atax_function_wrapper (
         .out_unnamed_atax8_atax_avm_read(atax_function_out_unnamed_atax8_atax_avm_read),
         .out_unnamed_atax8_atax_avm_write(atax_function_out_unnamed_atax8_atax_avm_write),
         .out_unnamed_atax8_atax_avm_writedata(atax_function_out_unnamed_atax8_atax_avm_writedata),
-        .out_unnamed_atax9_atax_avm_address(atax_function_out_unnamed_atax9_atax_avm_address),
-        .out_unnamed_atax9_atax_avm_burstcount(atax_function_out_unnamed_atax9_atax_avm_burstcount),
-        .out_unnamed_atax9_atax_avm_byteenable(atax_function_out_unnamed_atax9_atax_avm_byteenable),
-        .out_unnamed_atax9_atax_avm_enable(atax_function_out_unnamed_atax9_atax_avm_enable),
-        .out_unnamed_atax9_atax_avm_read(atax_function_out_unnamed_atax9_atax_avm_read),
-        .out_unnamed_atax9_atax_avm_write(atax_function_out_unnamed_atax9_atax_avm_write),
-        .out_unnamed_atax9_atax_avm_writedata(atax_function_out_unnamed_atax9_atax_avm_writedata),
         .out_valid_out(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // avm_memdep_1_atax_address(GPOUT,100)
+    // avm_memdep_1_atax_address(GPOUT,52)
     assign avm_memdep_1_atax_address = atax_function_out_memdep_1_atax_avm_address;
 
-    // avm_memdep_1_atax_burstcount(GPOUT,101)
+    // avm_memdep_1_atax_burstcount(GPOUT,53)
     assign avm_memdep_1_atax_burstcount = atax_function_out_memdep_1_atax_avm_burstcount;
 
-    // avm_memdep_1_atax_byteenable(GPOUT,102)
+    // avm_memdep_1_atax_byteenable(GPOUT,54)
     assign avm_memdep_1_atax_byteenable = atax_function_out_memdep_1_atax_avm_byteenable;
 
-    // avm_memdep_1_atax_enable(GPOUT,103)
+    // avm_memdep_1_atax_enable(GPOUT,55)
     assign avm_memdep_1_atax_enable = atax_function_out_memdep_1_atax_avm_enable;
 
-    // avm_memdep_1_atax_read(GPOUT,104)
+    // avm_memdep_1_atax_read(GPOUT,56)
     assign avm_memdep_1_atax_read = atax_function_out_memdep_1_atax_avm_read;
 
-    // avm_memdep_1_atax_write(GPOUT,105)
+    // avm_memdep_1_atax_write(GPOUT,57)
     assign avm_memdep_1_atax_write = atax_function_out_memdep_1_atax_avm_write;
 
-    // avm_memdep_1_atax_writedata(GPOUT,106)
+    // avm_memdep_1_atax_writedata(GPOUT,58)
     assign avm_memdep_1_atax_writedata = atax_function_out_memdep_1_atax_avm_writedata;
 
-    // avm_memdep_2_atax_address(GPOUT,107)
-    assign avm_memdep_2_atax_address = atax_function_out_memdep_2_atax_avm_address;
-
-    // avm_memdep_2_atax_burstcount(GPOUT,108)
-    assign avm_memdep_2_atax_burstcount = atax_function_out_memdep_2_atax_avm_burstcount;
-
-    // avm_memdep_2_atax_byteenable(GPOUT,109)
-    assign avm_memdep_2_atax_byteenable = atax_function_out_memdep_2_atax_avm_byteenable;
-
-    // avm_memdep_2_atax_enable(GPOUT,110)
-    assign avm_memdep_2_atax_enable = atax_function_out_memdep_2_atax_avm_enable;
-
-    // avm_memdep_2_atax_read(GPOUT,111)
-    assign avm_memdep_2_atax_read = atax_function_out_memdep_2_atax_avm_read;
-
-    // avm_memdep_2_atax_write(GPOUT,112)
-    assign avm_memdep_2_atax_write = atax_function_out_memdep_2_atax_avm_write;
-
-    // avm_memdep_2_atax_writedata(GPOUT,113)
-    assign avm_memdep_2_atax_writedata = atax_function_out_memdep_2_atax_avm_writedata;
-
-    // avm_memdep_3_atax_address(GPOUT,114)
-    assign avm_memdep_3_atax_address = atax_function_out_memdep_3_atax_avm_address;
-
-    // avm_memdep_3_atax_burstcount(GPOUT,115)
-    assign avm_memdep_3_atax_burstcount = atax_function_out_memdep_3_atax_avm_burstcount;
-
-    // avm_memdep_3_atax_byteenable(GPOUT,116)
-    assign avm_memdep_3_atax_byteenable = atax_function_out_memdep_3_atax_avm_byteenable;
-
-    // avm_memdep_3_atax_enable(GPOUT,117)
-    assign avm_memdep_3_atax_enable = atax_function_out_memdep_3_atax_avm_enable;
-
-    // avm_memdep_3_atax_read(GPOUT,118)
-    assign avm_memdep_3_atax_read = atax_function_out_memdep_3_atax_avm_read;
-
-    // avm_memdep_3_atax_write(GPOUT,119)
-    assign avm_memdep_3_atax_write = atax_function_out_memdep_3_atax_avm_write;
-
-    // avm_memdep_3_atax_writedata(GPOUT,120)
-    assign avm_memdep_3_atax_writedata = atax_function_out_memdep_3_atax_avm_writedata;
-
-    // avm_memdep_4_atax_address(GPOUT,121)
-    assign avm_memdep_4_atax_address = atax_function_out_memdep_4_atax_avm_address;
-
-    // avm_memdep_4_atax_burstcount(GPOUT,122)
-    assign avm_memdep_4_atax_burstcount = atax_function_out_memdep_4_atax_avm_burstcount;
-
-    // avm_memdep_4_atax_byteenable(GPOUT,123)
-    assign avm_memdep_4_atax_byteenable = atax_function_out_memdep_4_atax_avm_byteenable;
-
-    // avm_memdep_4_atax_enable(GPOUT,124)
-    assign avm_memdep_4_atax_enable = atax_function_out_memdep_4_atax_avm_enable;
-
-    // avm_memdep_4_atax_read(GPOUT,125)
-    assign avm_memdep_4_atax_read = atax_function_out_memdep_4_atax_avm_read;
-
-    // avm_memdep_4_atax_write(GPOUT,126)
-    assign avm_memdep_4_atax_write = atax_function_out_memdep_4_atax_avm_write;
-
-    // avm_memdep_4_atax_writedata(GPOUT,127)
-    assign avm_memdep_4_atax_writedata = atax_function_out_memdep_4_atax_avm_writedata;
-
-    // avm_memdep_5_atax_address(GPOUT,128)
-    assign avm_memdep_5_atax_address = atax_function_out_memdep_5_atax_avm_address;
-
-    // avm_memdep_5_atax_burstcount(GPOUT,129)
-    assign avm_memdep_5_atax_burstcount = atax_function_out_memdep_5_atax_avm_burstcount;
-
-    // avm_memdep_5_atax_byteenable(GPOUT,130)
-    assign avm_memdep_5_atax_byteenable = atax_function_out_memdep_5_atax_avm_byteenable;
-
-    // avm_memdep_5_atax_enable(GPOUT,131)
-    assign avm_memdep_5_atax_enable = atax_function_out_memdep_5_atax_avm_enable;
-
-    // avm_memdep_5_atax_read(GPOUT,132)
-    assign avm_memdep_5_atax_read = atax_function_out_memdep_5_atax_avm_read;
-
-    // avm_memdep_5_atax_write(GPOUT,133)
-    assign avm_memdep_5_atax_write = atax_function_out_memdep_5_atax_avm_write;
-
-    // avm_memdep_5_atax_writedata(GPOUT,134)
-    assign avm_memdep_5_atax_writedata = atax_function_out_memdep_5_atax_avm_writedata;
-
-    // avm_memdep_6_atax_address(GPOUT,135)
-    assign avm_memdep_6_atax_address = atax_function_out_memdep_6_atax_avm_address;
-
-    // avm_memdep_6_atax_burstcount(GPOUT,136)
-    assign avm_memdep_6_atax_burstcount = atax_function_out_memdep_6_atax_avm_burstcount;
-
-    // avm_memdep_6_atax_byteenable(GPOUT,137)
-    assign avm_memdep_6_atax_byteenable = atax_function_out_memdep_6_atax_avm_byteenable;
-
-    // avm_memdep_6_atax_enable(GPOUT,138)
-    assign avm_memdep_6_atax_enable = atax_function_out_memdep_6_atax_avm_enable;
-
-    // avm_memdep_6_atax_read(GPOUT,139)
-    assign avm_memdep_6_atax_read = atax_function_out_memdep_6_atax_avm_read;
-
-    // avm_memdep_6_atax_write(GPOUT,140)
-    assign avm_memdep_6_atax_write = atax_function_out_memdep_6_atax_avm_write;
-
-    // avm_memdep_6_atax_writedata(GPOUT,141)
-    assign avm_memdep_6_atax_writedata = atax_function_out_memdep_6_atax_avm_writedata;
-
-    // avm_memdep_7_atax_address(GPOUT,142)
-    assign avm_memdep_7_atax_address = atax_function_out_memdep_7_atax_avm_address;
-
-    // avm_memdep_7_atax_burstcount(GPOUT,143)
-    assign avm_memdep_7_atax_burstcount = atax_function_out_memdep_7_atax_avm_burstcount;
-
-    // avm_memdep_7_atax_byteenable(GPOUT,144)
-    assign avm_memdep_7_atax_byteenable = atax_function_out_memdep_7_atax_avm_byteenable;
-
-    // avm_memdep_7_atax_enable(GPOUT,145)
-    assign avm_memdep_7_atax_enable = atax_function_out_memdep_7_atax_avm_enable;
-
-    // avm_memdep_7_atax_read(GPOUT,146)
-    assign avm_memdep_7_atax_read = atax_function_out_memdep_7_atax_avm_read;
-
-    // avm_memdep_7_atax_write(GPOUT,147)
-    assign avm_memdep_7_atax_write = atax_function_out_memdep_7_atax_avm_write;
-
-    // avm_memdep_7_atax_writedata(GPOUT,148)
-    assign avm_memdep_7_atax_writedata = atax_function_out_memdep_7_atax_avm_writedata;
-
-    // avm_memdep_atax_address(GPOUT,149)
+    // avm_memdep_atax_address(GPOUT,59)
     assign avm_memdep_atax_address = atax_function_out_memdep_atax_avm_address;
 
-    // avm_memdep_atax_burstcount(GPOUT,150)
+    // avm_memdep_atax_burstcount(GPOUT,60)
     assign avm_memdep_atax_burstcount = atax_function_out_memdep_atax_avm_burstcount;
 
-    // avm_memdep_atax_byteenable(GPOUT,151)
+    // avm_memdep_atax_byteenable(GPOUT,61)
     assign avm_memdep_atax_byteenable = atax_function_out_memdep_atax_avm_byteenable;
 
-    // avm_memdep_atax_enable(GPOUT,152)
+    // avm_memdep_atax_enable(GPOUT,62)
     assign avm_memdep_atax_enable = atax_function_out_memdep_atax_avm_enable;
 
-    // avm_memdep_atax_read(GPOUT,153)
+    // avm_memdep_atax_read(GPOUT,63)
     assign avm_memdep_atax_read = atax_function_out_memdep_atax_avm_read;
 
-    // avm_memdep_atax_write(GPOUT,154)
+    // avm_memdep_atax_write(GPOUT,64)
     assign avm_memdep_atax_write = atax_function_out_memdep_atax_avm_write;
 
-    // avm_memdep_atax_writedata(GPOUT,155)
+    // avm_memdep_atax_writedata(GPOUT,65)
     assign avm_memdep_atax_writedata = atax_function_out_memdep_atax_avm_writedata;
 
-    // avm_unnamed_atax10_atax_address(GPOUT,156)
-    assign avm_unnamed_atax10_atax_address = atax_function_out_unnamed_atax10_atax_avm_address;
+    // avm_unnamed_atax3_atax_address(GPOUT,66)
+    assign avm_unnamed_atax3_atax_address = atax_function_out_unnamed_atax3_atax_avm_address;
 
-    // avm_unnamed_atax10_atax_burstcount(GPOUT,157)
-    assign avm_unnamed_atax10_atax_burstcount = atax_function_out_unnamed_atax10_atax_avm_burstcount;
+    // avm_unnamed_atax3_atax_burstcount(GPOUT,67)
+    assign avm_unnamed_atax3_atax_burstcount = atax_function_out_unnamed_atax3_atax_avm_burstcount;
 
-    // avm_unnamed_atax10_atax_byteenable(GPOUT,158)
-    assign avm_unnamed_atax10_atax_byteenable = atax_function_out_unnamed_atax10_atax_avm_byteenable;
+    // avm_unnamed_atax3_atax_byteenable(GPOUT,68)
+    assign avm_unnamed_atax3_atax_byteenable = atax_function_out_unnamed_atax3_atax_avm_byteenable;
 
-    // avm_unnamed_atax10_atax_enable(GPOUT,159)
-    assign avm_unnamed_atax10_atax_enable = atax_function_out_unnamed_atax10_atax_avm_enable;
+    // avm_unnamed_atax3_atax_enable(GPOUT,69)
+    assign avm_unnamed_atax3_atax_enable = atax_function_out_unnamed_atax3_atax_avm_enable;
 
-    // avm_unnamed_atax10_atax_read(GPOUT,160)
-    assign avm_unnamed_atax10_atax_read = atax_function_out_unnamed_atax10_atax_avm_read;
+    // avm_unnamed_atax3_atax_read(GPOUT,70)
+    assign avm_unnamed_atax3_atax_read = atax_function_out_unnamed_atax3_atax_avm_read;
 
-    // avm_unnamed_atax10_atax_write(GPOUT,161)
-    assign avm_unnamed_atax10_atax_write = atax_function_out_unnamed_atax10_atax_avm_write;
+    // avm_unnamed_atax3_atax_write(GPOUT,71)
+    assign avm_unnamed_atax3_atax_write = atax_function_out_unnamed_atax3_atax_avm_write;
 
-    // avm_unnamed_atax10_atax_writedata(GPOUT,162)
-    assign avm_unnamed_atax10_atax_writedata = atax_function_out_unnamed_atax10_atax_avm_writedata;
+    // avm_unnamed_atax3_atax_writedata(GPOUT,72)
+    assign avm_unnamed_atax3_atax_writedata = atax_function_out_unnamed_atax3_atax_avm_writedata;
 
-    // avm_unnamed_atax11_atax_address(GPOUT,163)
-    assign avm_unnamed_atax11_atax_address = atax_function_out_unnamed_atax11_atax_avm_address;
+    // avm_unnamed_atax5_atax_address(GPOUT,73)
+    assign avm_unnamed_atax5_atax_address = atax_function_out_unnamed_atax5_atax_avm_address;
 
-    // avm_unnamed_atax11_atax_burstcount(GPOUT,164)
-    assign avm_unnamed_atax11_atax_burstcount = atax_function_out_unnamed_atax11_atax_avm_burstcount;
+    // avm_unnamed_atax5_atax_burstcount(GPOUT,74)
+    assign avm_unnamed_atax5_atax_burstcount = atax_function_out_unnamed_atax5_atax_avm_burstcount;
 
-    // avm_unnamed_atax11_atax_byteenable(GPOUT,165)
-    assign avm_unnamed_atax11_atax_byteenable = atax_function_out_unnamed_atax11_atax_avm_byteenable;
+    // avm_unnamed_atax5_atax_byteenable(GPOUT,75)
+    assign avm_unnamed_atax5_atax_byteenable = atax_function_out_unnamed_atax5_atax_avm_byteenable;
 
-    // avm_unnamed_atax11_atax_enable(GPOUT,166)
-    assign avm_unnamed_atax11_atax_enable = atax_function_out_unnamed_atax11_atax_avm_enable;
+    // avm_unnamed_atax5_atax_enable(GPOUT,76)
+    assign avm_unnamed_atax5_atax_enable = atax_function_out_unnamed_atax5_atax_avm_enable;
 
-    // avm_unnamed_atax11_atax_read(GPOUT,167)
-    assign avm_unnamed_atax11_atax_read = atax_function_out_unnamed_atax11_atax_avm_read;
+    // avm_unnamed_atax5_atax_read(GPOUT,77)
+    assign avm_unnamed_atax5_atax_read = atax_function_out_unnamed_atax5_atax_avm_read;
 
-    // avm_unnamed_atax11_atax_write(GPOUT,168)
-    assign avm_unnamed_atax11_atax_write = atax_function_out_unnamed_atax11_atax_avm_write;
+    // avm_unnamed_atax5_atax_write(GPOUT,78)
+    assign avm_unnamed_atax5_atax_write = atax_function_out_unnamed_atax5_atax_avm_write;
 
-    // avm_unnamed_atax11_atax_writedata(GPOUT,169)
-    assign avm_unnamed_atax11_atax_writedata = atax_function_out_unnamed_atax11_atax_avm_writedata;
+    // avm_unnamed_atax5_atax_writedata(GPOUT,79)
+    assign avm_unnamed_atax5_atax_writedata = atax_function_out_unnamed_atax5_atax_avm_writedata;
 
-    // avm_unnamed_atax13_atax_address(GPOUT,170)
-    assign avm_unnamed_atax13_atax_address = atax_function_out_unnamed_atax13_atax_avm_address;
+    // avm_unnamed_atax6_atax_address(GPOUT,80)
+    assign avm_unnamed_atax6_atax_address = atax_function_out_unnamed_atax6_atax_avm_address;
 
-    // avm_unnamed_atax13_atax_burstcount(GPOUT,171)
-    assign avm_unnamed_atax13_atax_burstcount = atax_function_out_unnamed_atax13_atax_avm_burstcount;
+    // avm_unnamed_atax6_atax_burstcount(GPOUT,81)
+    assign avm_unnamed_atax6_atax_burstcount = atax_function_out_unnamed_atax6_atax_avm_burstcount;
 
-    // avm_unnamed_atax13_atax_byteenable(GPOUT,172)
-    assign avm_unnamed_atax13_atax_byteenable = atax_function_out_unnamed_atax13_atax_avm_byteenable;
+    // avm_unnamed_atax6_atax_byteenable(GPOUT,82)
+    assign avm_unnamed_atax6_atax_byteenable = atax_function_out_unnamed_atax6_atax_avm_byteenable;
 
-    // avm_unnamed_atax13_atax_enable(GPOUT,173)
-    assign avm_unnamed_atax13_atax_enable = atax_function_out_unnamed_atax13_atax_avm_enable;
+    // avm_unnamed_atax6_atax_enable(GPOUT,83)
+    assign avm_unnamed_atax6_atax_enable = atax_function_out_unnamed_atax6_atax_avm_enable;
 
-    // avm_unnamed_atax13_atax_read(GPOUT,174)
-    assign avm_unnamed_atax13_atax_read = atax_function_out_unnamed_atax13_atax_avm_read;
+    // avm_unnamed_atax6_atax_read(GPOUT,84)
+    assign avm_unnamed_atax6_atax_read = atax_function_out_unnamed_atax6_atax_avm_read;
 
-    // avm_unnamed_atax13_atax_write(GPOUT,175)
-    assign avm_unnamed_atax13_atax_write = atax_function_out_unnamed_atax13_atax_avm_write;
+    // avm_unnamed_atax6_atax_write(GPOUT,85)
+    assign avm_unnamed_atax6_atax_write = atax_function_out_unnamed_atax6_atax_avm_write;
 
-    // avm_unnamed_atax13_atax_writedata(GPOUT,176)
-    assign avm_unnamed_atax13_atax_writedata = atax_function_out_unnamed_atax13_atax_avm_writedata;
+    // avm_unnamed_atax6_atax_writedata(GPOUT,86)
+    assign avm_unnamed_atax6_atax_writedata = atax_function_out_unnamed_atax6_atax_avm_writedata;
 
-    // avm_unnamed_atax14_atax_address(GPOUT,177)
-    assign avm_unnamed_atax14_atax_address = atax_function_out_unnamed_atax14_atax_avm_address;
-
-    // avm_unnamed_atax14_atax_burstcount(GPOUT,178)
-    assign avm_unnamed_atax14_atax_burstcount = atax_function_out_unnamed_atax14_atax_avm_burstcount;
-
-    // avm_unnamed_atax14_atax_byteenable(GPOUT,179)
-    assign avm_unnamed_atax14_atax_byteenable = atax_function_out_unnamed_atax14_atax_avm_byteenable;
-
-    // avm_unnamed_atax14_atax_enable(GPOUT,180)
-    assign avm_unnamed_atax14_atax_enable = atax_function_out_unnamed_atax14_atax_avm_enable;
-
-    // avm_unnamed_atax14_atax_read(GPOUT,181)
-    assign avm_unnamed_atax14_atax_read = atax_function_out_unnamed_atax14_atax_avm_read;
-
-    // avm_unnamed_atax14_atax_write(GPOUT,182)
-    assign avm_unnamed_atax14_atax_write = atax_function_out_unnamed_atax14_atax_avm_write;
-
-    // avm_unnamed_atax14_atax_writedata(GPOUT,183)
-    assign avm_unnamed_atax14_atax_writedata = atax_function_out_unnamed_atax14_atax_avm_writedata;
-
-    // avm_unnamed_atax15_atax_address(GPOUT,184)
-    assign avm_unnamed_atax15_atax_address = atax_function_out_unnamed_atax15_atax_avm_address;
-
-    // avm_unnamed_atax15_atax_burstcount(GPOUT,185)
-    assign avm_unnamed_atax15_atax_burstcount = atax_function_out_unnamed_atax15_atax_avm_burstcount;
-
-    // avm_unnamed_atax15_atax_byteenable(GPOUT,186)
-    assign avm_unnamed_atax15_atax_byteenable = atax_function_out_unnamed_atax15_atax_avm_byteenable;
-
-    // avm_unnamed_atax15_atax_enable(GPOUT,187)
-    assign avm_unnamed_atax15_atax_enable = atax_function_out_unnamed_atax15_atax_avm_enable;
-
-    // avm_unnamed_atax15_atax_read(GPOUT,188)
-    assign avm_unnamed_atax15_atax_read = atax_function_out_unnamed_atax15_atax_avm_read;
-
-    // avm_unnamed_atax15_atax_write(GPOUT,189)
-    assign avm_unnamed_atax15_atax_write = atax_function_out_unnamed_atax15_atax_avm_write;
-
-    // avm_unnamed_atax15_atax_writedata(GPOUT,190)
-    assign avm_unnamed_atax15_atax_writedata = atax_function_out_unnamed_atax15_atax_avm_writedata;
-
-    // avm_unnamed_atax16_atax_address(GPOUT,191)
-    assign avm_unnamed_atax16_atax_address = atax_function_out_unnamed_atax16_atax_avm_address;
-
-    // avm_unnamed_atax16_atax_burstcount(GPOUT,192)
-    assign avm_unnamed_atax16_atax_burstcount = atax_function_out_unnamed_atax16_atax_avm_burstcount;
-
-    // avm_unnamed_atax16_atax_byteenable(GPOUT,193)
-    assign avm_unnamed_atax16_atax_byteenable = atax_function_out_unnamed_atax16_atax_avm_byteenable;
-
-    // avm_unnamed_atax16_atax_enable(GPOUT,194)
-    assign avm_unnamed_atax16_atax_enable = atax_function_out_unnamed_atax16_atax_avm_enable;
-
-    // avm_unnamed_atax16_atax_read(GPOUT,195)
-    assign avm_unnamed_atax16_atax_read = atax_function_out_unnamed_atax16_atax_avm_read;
-
-    // avm_unnamed_atax16_atax_write(GPOUT,196)
-    assign avm_unnamed_atax16_atax_write = atax_function_out_unnamed_atax16_atax_avm_write;
-
-    // avm_unnamed_atax16_atax_writedata(GPOUT,197)
-    assign avm_unnamed_atax16_atax_writedata = atax_function_out_unnamed_atax16_atax_avm_writedata;
-
-    // avm_unnamed_atax18_atax_address(GPOUT,198)
-    assign avm_unnamed_atax18_atax_address = atax_function_out_unnamed_atax18_atax_avm_address;
-
-    // avm_unnamed_atax18_atax_burstcount(GPOUT,199)
-    assign avm_unnamed_atax18_atax_burstcount = atax_function_out_unnamed_atax18_atax_avm_burstcount;
-
-    // avm_unnamed_atax18_atax_byteenable(GPOUT,200)
-    assign avm_unnamed_atax18_atax_byteenable = atax_function_out_unnamed_atax18_atax_avm_byteenable;
-
-    // avm_unnamed_atax18_atax_enable(GPOUT,201)
-    assign avm_unnamed_atax18_atax_enable = atax_function_out_unnamed_atax18_atax_avm_enable;
-
-    // avm_unnamed_atax18_atax_read(GPOUT,202)
-    assign avm_unnamed_atax18_atax_read = atax_function_out_unnamed_atax18_atax_avm_read;
-
-    // avm_unnamed_atax18_atax_write(GPOUT,203)
-    assign avm_unnamed_atax18_atax_write = atax_function_out_unnamed_atax18_atax_avm_write;
-
-    // avm_unnamed_atax18_atax_writedata(GPOUT,204)
-    assign avm_unnamed_atax18_atax_writedata = atax_function_out_unnamed_atax18_atax_avm_writedata;
-
-    // avm_unnamed_atax19_atax_address(GPOUT,205)
-    assign avm_unnamed_atax19_atax_address = atax_function_out_unnamed_atax19_atax_avm_address;
-
-    // avm_unnamed_atax19_atax_burstcount(GPOUT,206)
-    assign avm_unnamed_atax19_atax_burstcount = atax_function_out_unnamed_atax19_atax_avm_burstcount;
-
-    // avm_unnamed_atax19_atax_byteenable(GPOUT,207)
-    assign avm_unnamed_atax19_atax_byteenable = atax_function_out_unnamed_atax19_atax_avm_byteenable;
-
-    // avm_unnamed_atax19_atax_enable(GPOUT,208)
-    assign avm_unnamed_atax19_atax_enable = atax_function_out_unnamed_atax19_atax_avm_enable;
-
-    // avm_unnamed_atax19_atax_read(GPOUT,209)
-    assign avm_unnamed_atax19_atax_read = atax_function_out_unnamed_atax19_atax_avm_read;
-
-    // avm_unnamed_atax19_atax_write(GPOUT,210)
-    assign avm_unnamed_atax19_atax_write = atax_function_out_unnamed_atax19_atax_avm_write;
-
-    // avm_unnamed_atax19_atax_writedata(GPOUT,211)
-    assign avm_unnamed_atax19_atax_writedata = atax_function_out_unnamed_atax19_atax_avm_writedata;
-
-    // avm_unnamed_atax7_atax_address(GPOUT,212)
+    // avm_unnamed_atax7_atax_address(GPOUT,87)
     assign avm_unnamed_atax7_atax_address = atax_function_out_unnamed_atax7_atax_avm_address;
 
-    // avm_unnamed_atax7_atax_burstcount(GPOUT,213)
+    // avm_unnamed_atax7_atax_burstcount(GPOUT,88)
     assign avm_unnamed_atax7_atax_burstcount = atax_function_out_unnamed_atax7_atax_avm_burstcount;
 
-    // avm_unnamed_atax7_atax_byteenable(GPOUT,214)
+    // avm_unnamed_atax7_atax_byteenable(GPOUT,89)
     assign avm_unnamed_atax7_atax_byteenable = atax_function_out_unnamed_atax7_atax_avm_byteenable;
 
-    // avm_unnamed_atax7_atax_enable(GPOUT,215)
+    // avm_unnamed_atax7_atax_enable(GPOUT,90)
     assign avm_unnamed_atax7_atax_enable = atax_function_out_unnamed_atax7_atax_avm_enable;
 
-    // avm_unnamed_atax7_atax_read(GPOUT,216)
+    // avm_unnamed_atax7_atax_read(GPOUT,91)
     assign avm_unnamed_atax7_atax_read = atax_function_out_unnamed_atax7_atax_avm_read;
 
-    // avm_unnamed_atax7_atax_write(GPOUT,217)
+    // avm_unnamed_atax7_atax_write(GPOUT,92)
     assign avm_unnamed_atax7_atax_write = atax_function_out_unnamed_atax7_atax_avm_write;
 
-    // avm_unnamed_atax7_atax_writedata(GPOUT,218)
+    // avm_unnamed_atax7_atax_writedata(GPOUT,93)
     assign avm_unnamed_atax7_atax_writedata = atax_function_out_unnamed_atax7_atax_avm_writedata;
 
-    // avm_unnamed_atax8_atax_address(GPOUT,219)
+    // avm_unnamed_atax8_atax_address(GPOUT,94)
     assign avm_unnamed_atax8_atax_address = atax_function_out_unnamed_atax8_atax_avm_address;
 
-    // avm_unnamed_atax8_atax_burstcount(GPOUT,220)
+    // avm_unnamed_atax8_atax_burstcount(GPOUT,95)
     assign avm_unnamed_atax8_atax_burstcount = atax_function_out_unnamed_atax8_atax_avm_burstcount;
 
-    // avm_unnamed_atax8_atax_byteenable(GPOUT,221)
+    // avm_unnamed_atax8_atax_byteenable(GPOUT,96)
     assign avm_unnamed_atax8_atax_byteenable = atax_function_out_unnamed_atax8_atax_avm_byteenable;
 
-    // avm_unnamed_atax8_atax_enable(GPOUT,222)
+    // avm_unnamed_atax8_atax_enable(GPOUT,97)
     assign avm_unnamed_atax8_atax_enable = atax_function_out_unnamed_atax8_atax_avm_enable;
 
-    // avm_unnamed_atax8_atax_read(GPOUT,223)
+    // avm_unnamed_atax8_atax_read(GPOUT,98)
     assign avm_unnamed_atax8_atax_read = atax_function_out_unnamed_atax8_atax_avm_read;
 
-    // avm_unnamed_atax8_atax_write(GPOUT,224)
+    // avm_unnamed_atax8_atax_write(GPOUT,99)
     assign avm_unnamed_atax8_atax_write = atax_function_out_unnamed_atax8_atax_avm_write;
 
-    // avm_unnamed_atax8_atax_writedata(GPOUT,225)
+    // avm_unnamed_atax8_atax_writedata(GPOUT,100)
     assign avm_unnamed_atax8_atax_writedata = atax_function_out_unnamed_atax8_atax_avm_writedata;
 
-    // avm_unnamed_atax9_atax_address(GPOUT,226)
-    assign avm_unnamed_atax9_atax_address = atax_function_out_unnamed_atax9_atax_avm_address;
-
-    // avm_unnamed_atax9_atax_burstcount(GPOUT,227)
-    assign avm_unnamed_atax9_atax_burstcount = atax_function_out_unnamed_atax9_atax_avm_burstcount;
-
-    // avm_unnamed_atax9_atax_byteenable(GPOUT,228)
-    assign avm_unnamed_atax9_atax_byteenable = atax_function_out_unnamed_atax9_atax_avm_byteenable;
-
-    // avm_unnamed_atax9_atax_enable(GPOUT,229)
-    assign avm_unnamed_atax9_atax_enable = atax_function_out_unnamed_atax9_atax_avm_enable;
-
-    // avm_unnamed_atax9_atax_read(GPOUT,230)
-    assign avm_unnamed_atax9_atax_read = atax_function_out_unnamed_atax9_atax_avm_read;
-
-    // avm_unnamed_atax9_atax_write(GPOUT,231)
-    assign avm_unnamed_atax9_atax_write = atax_function_out_unnamed_atax9_atax_avm_write;
-
-    // avm_unnamed_atax9_atax_writedata(GPOUT,232)
-    assign avm_unnamed_atax9_atax_writedata = atax_function_out_unnamed_atax9_atax_avm_writedata;
-
-    // avst_iord_bl_call_atax_almost_full(GPOUT,233)
+    // avst_iord_bl_call_atax_almost_full(GPOUT,101)
     assign avst_iord_bl_call_atax_almost_full = atax_function_out_iord_bl_call_atax_o_fifoalmost_full;
 
-    // avst_iord_bl_call_atax_ready(GPOUT,234)
+    // avst_iord_bl_call_atax_ready(GPOUT,102)
     assign avst_iord_bl_call_atax_ready = atax_function_out_iord_bl_call_atax_o_fifoready;
 
-    // avst_iowr_bl_return_atax_data(GPOUT,235)
+    // avst_iowr_bl_return_atax_data(GPOUT,103)
     assign avst_iowr_bl_return_atax_data = atax_function_out_iowr_bl_return_atax_o_fifodata;
 
-    // avst_iowr_bl_return_atax_valid(GPOUT,236)
+    // avst_iowr_bl_return_atax_valid(GPOUT,104)
     assign avst_iowr_bl_return_atax_valid = atax_function_out_iowr_bl_return_atax_o_fifovalid;
 
-    // not_ready(LOGICAL,98)
+    // not_ready(LOGICAL,50)
     assign not_ready_q = ~ (atax_function_out_iord_bl_call_atax_o_fifoready);
 
     // busy_and(LOGICAL,4)
     assign busy_and_q = not_ready_q & start;
 
-    // reset_wire_inst(EXTIFACE,240)
+    // reset_wire_inst(EXTIFACE,108)
     assign reset_wire_inst_o_resetn[0] = reset_wire_inst_o_resetn_bitsignaltemp;
     acl_reset_wire thereset_wire_inst (
         .o_resetn(reset_wire_inst_o_resetn_bitsignaltemp),
@@ -1077,16 +475,16 @@ module atax_function_wrapper (
         .resetn(resetn)
     );
 
-    // pos_reset(LOGICAL,239)
+    // pos_reset(LOGICAL,107)
     assign pos_reset_q = ~ (reset_wire_inst_o_resetn);
 
     // busy_or(LOGICAL,5)
     assign busy_or_q = pos_reset_q | busy_and_q;
 
-    // busy(GPOUT,237)
+    // busy(GPOUT,105)
     assign busy = busy_or_q;
 
-    // done(GPOUT,238)
+    // done(GPOUT,106)
     assign done = atax_function_out_iowr_bl_return_atax_o_fifovalid;
 
 endmodule

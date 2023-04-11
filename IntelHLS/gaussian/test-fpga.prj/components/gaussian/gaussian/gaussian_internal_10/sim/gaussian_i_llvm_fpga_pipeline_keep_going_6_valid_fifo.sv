@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pipeline_keep_going_gaussian6_valid_fifo
 // Created for function/kernel gaussian
-// SystemVerilog created on Tue Apr  4 21:38:49 2023
+// SystemVerilog created on Fri Apr  7 17:25:52 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -57,9 +57,10 @@ module gaussian_i_llvm_fpga_pipeline_keep_going_6_valid_fifo (
     assign i_llvm_fpga_pipeline_keep_going_gaussian6_valid_fifo_valid_out[0] = i_llvm_fpga_pipeline_keep_going_gaussian6_valid_fifo_valid_out_bitsignaltemp;
     acl_data_fifo #(
         .ASYNC_RESET(1),
-        .DATA_WIDTH(2),
-        .DEPTH(1),
-        .IMPL("passthrough"),
+        .DATA_WIDTH(0),
+        .DEPTH(4),
+        .IMPL("zl_reg"),
+        .STRICT_DEPTH(1),
         .SYNCHRONIZE_RESET(0)
     ) thei_llvm_fpga_pipeline_keep_going_gaussian6_valid_fifo (
         .data_in(in_data_in),

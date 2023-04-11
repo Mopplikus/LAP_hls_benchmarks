@@ -16,13 +16,15 @@
 
 // SystemVerilog created from bicg_B2_merge
 // Created for function/kernel bicg
-// SystemVerilog created on Wed Apr  5 16:26:33 2023
+// SystemVerilog created on Fri Apr  7 18:01:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module bicg_B2_merge (
+    input wire [0:0] in_memdep_2_0,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
+    output wire [0:0] out_memdep_2,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_valid_out,
     input wire clock,
@@ -32,13 +34,16 @@ module bicg_B2_merge (
     wire [0:0] stall_out_q;
 
 
-    // stall_out(LOGICAL,6)
+    // out_memdep_2(GPOUT,5)
+    assign out_memdep_2 = in_memdep_2_0;
+
+    // stall_out(LOGICAL,8)
     assign stall_out_q = in_valid_in_0 & in_stall_in;
 
-    // out_stall_out_0(GPOUT,4)
+    // out_stall_out_0(GPOUT,6)
     assign out_stall_out_0 = stall_out_q;
 
-    // out_valid_out(GPOUT,5)
+    // out_valid_out(GPOUT,7)
     assign out_valid_out = in_valid_in_0;
 
 endmodule

@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_getTanh_B1_start
 // Created for function/kernel getTanh
-// SystemVerilog created on Tue Apr  4 23:44:28 2023
+// SystemVerilog created on Fri Apr  7 17:19:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -44,8 +44,8 @@ module getTanh_bb_B1_start (
     input wire resetn
     );
 
-    wire [0:0] bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_stall_out;
-    wire [0:0] bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_valid_out;
+    wire [0:0] bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out;
+    wire [0:0] bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out;
     wire [0:0] bb_getTanh_B1_start_stall_region_out_feedback_stall_out_1;
     wire [0:0] bb_getTanh_B1_start_stall_region_out_iord_bl_call_getTanh_o_fifoalmost_full;
     wire [0:0] bb_getTanh_B1_start_stall_region_out_iord_bl_call_getTanh_o_fifoready;
@@ -90,8 +90,8 @@ module getTanh_bb_B1_start (
         .in_pipeline_stall_in(in_pipeline_stall_in),
         .in_stall_in(getTanh_B1_start_branch_out_stall_out),
         .in_valid_in(getTanh_B1_start_merge_out_valid_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_stall_out(bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_valid_out(bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_valid_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out(bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out(bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out),
         .out_feedback_stall_out_1(bb_getTanh_B1_start_stall_region_out_feedback_stall_out_1),
         .out_iord_bl_call_getTanh_o_fifoalmost_full(bb_getTanh_B1_start_stall_region_out_iord_bl_call_getTanh_o_fifoalmost_full),
         .out_iord_bl_call_getTanh_o_fifoready(bb_getTanh_B1_start_stall_region_out_iord_bl_call_getTanh_o_fifoready),
@@ -106,10 +106,10 @@ module getTanh_bb_B1_start (
     assign out_feedback_stall_out_1 = bb_getTanh_B1_start_stall_region_out_feedback_stall_out_1;
 
     // out_exiting_stall_out(GPOUT,13)
-    assign out_exiting_stall_out = bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_stall_out;
+    assign out_exiting_stall_out = bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out;
 
     // out_exiting_valid_out(GPOUT,14)
-    assign out_exiting_valid_out = bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going26_gettanh1_exiting_valid_out;
+    assign out_exiting_valid_out = bb_getTanh_B1_start_stall_region_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out;
 
     // out_iord_bl_call_getTanh_o_fifoalmost_full(GPOUT,15)
     assign out_iord_bl_call_getTanh_o_fifoalmost_full = bb_getTanh_B1_start_stall_region_out_iord_bl_call_getTanh_o_fifoalmost_full;

@@ -27,7 +27,7 @@
           [
             {
               "type":"inst"
-              , "id":19
+              , "id":11
               , "name":"Stream Read"
               , "debug":
               [
@@ -66,7 +66,7 @@
             }
             , {
               "type":"inst"
-              , "id":31
+              , "id":19
               , "name":"Loop Input"
               , "debug":
               [
@@ -83,13 +83,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"40"
+                  , "Loops To":"22"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":32
+              , "id":20
               , "name":"End"
               , "details":
               [
@@ -123,6 +123,11 @@
             {
               "type":"table"
               , "Latency":"0"
+              , "II":"n/a"
+              , "Subloops":"Yes"
+              , "Pipelined":"No"
+              , "Fmax Bottlenecks":"No"
+              , "Loop Info":"Exit which branches back to loop. "
             }
           ]
         }
@@ -134,14 +139,14 @@
           [
             {
               "type":"inst"
-              , "id":21
-              , "name":"Store"
+              , "id":13
+              , "name":"Stream Write"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":13
+                    , "line":44
                   }
                 ]
               ]
@@ -149,12 +154,11 @@
               [
                 {
                   "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"c"
-                  , "Start Cycle":"2"
-                  , "Latency":"1"
+                  , "Width":"1 bit"
+                  , "Depth":"0"
+                  , "Stall-free":"No"
+                  , "Start Cycle":"0"
+                  , "Latency":"0"
                   , "Reference":
                   [
                     {
@@ -174,36 +178,26 @@
             }
             , {
               "type":"inst"
-              , "id":33
-              , "name":"Loop Input"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":12
-                  }
-                ]
-              ]
+              , "id":21
+              , "name":"Begin"
               , "details":
               [
                 {
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"7"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":34
-              , "name":"End"
+              , "id":22
+              , "name":"Loop End"
               , "details":
               [
                 {
                   "type":"table"
-                  , "Start Cycle":"6"
+                  , "Start Cycle":"0"
                   , "Latency":"1"
                 }
               ]
@@ -213,12 +207,12 @@
           [
             {
               "type":"table"
-              , "Latency":"6"
+              , "Latency":"0"
               , "II":"1"
               , "Subloops":"Yes"
               , "Pipelined":"Yes"
               , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
+              , "Loop Info":"Exit which branches back to loop. "
             }
           ]
         }
@@ -230,12 +224,13 @@
           [
             {
               "type":"table"
-              , "Latency":"0"
-              , "II":"1"
+              , "Latency":"3"
+              , "II":"n/a"
               , "Subloops":"Yes"
-              , "Pipelined":"Yes"
+              , "Pipelined":"No"
               , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Exit which branches back to loop. "
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"5"
             }
           ]
         }
@@ -243,95 +238,17 @@
           "type":"bb"
           , "id":8
           , "name":"gaussian.B5"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":22
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":15
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"A"
-                  , "Start Cycle":"3"
-                  , "Latency":"1"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":35
-              , "name":"Loop Input"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":14
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                  , "Loops To":"36"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":36
-              , "name":"Loop End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"7"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
           , "details":
           [
             {
               "type":"table"
-              , "Latency":"7"
+              , "Latency":"6"
               , "II":"1"
-              , "Subloops":"No"
+              , "Subloops":"Yes"
               , "Pipelined":"Yes"
               , "Fmax Bottlenecks":"No"
-              , "Loop Info":""
+              , "Loop Info":"Entry to loop. "
+              , "Loops To":"9"
             }
           ]
         }
@@ -343,10 +260,10 @@
           [
             {
               "type":"table"
-              , "Latency":"1"
-              , "II":"n/a"
+              , "Latency":"0"
+              , "II":"1"
               , "Subloops":"Yes"
-              , "Pipelined":"No"
+              , "Pipelined":"Yes"
               , "Fmax Bottlenecks":"No"
               , "Loop Info":"Exit which branches back to loop. "
             }
@@ -356,83 +273,18 @@
           "type":"bb"
           , "id":10
           , "name":"gaussian.B7"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":11
-          , "name":"gaussian.B8"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"3"
-              , "II":"n/a"
-              , "Subloops":"Yes"
-              , "Pipelined":"No"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-              , "Loops To":"9"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":12
-          , "name":"gaussian.B9"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"6"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-              , "Loops To":"13"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":13
-          , "name":"gaussian.B10"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Exit which branches back to loop. "
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":14
-          , "name":"gaussian.B11"
           , "children":
           [
             {
               "type":"inst"
-              , "id":23
+              , "id":15
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":26
+                    , "line":28
                   }
                 ]
               ]
@@ -465,14 +317,14 @@
             }
             , {
               "type":"inst"
-              , "id":24
+              , "id":16
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":26
+                    , "line":28
                   }
                 ]
               ]
@@ -505,14 +357,14 @@
             }
             , {
               "type":"inst"
-              , "id":25
+              , "id":17
               , "name":"Load"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":26
+                    , "line":28
                   }
                 ]
               ]
@@ -545,14 +397,14 @@
             }
             , {
               "type":"inst"
-              , "id":26
+              , "id":18
               , "name":"Store"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":26
+                    , "line":28
                   }
                 ]
               ]
@@ -585,14 +437,14 @@
             }
             , {
               "type":"inst"
-              , "id":37
+              , "id":23
               , "name":"Loop Input"
               , "debug":
               [
                 [
                   {
                     "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":24
+                    , "line":26
                   }
                 ]
               ]
@@ -602,13 +454,13 @@
                   "type":"table"
                   , "Start Cycle":"0"
                   , "Latency":"1"
-                  , "Loops To":"38"
+                  , "Loops To":"24"
                 }
               ]
             }
             , {
               "type":"inst"
-              , "id":38
+              , "id":24
               , "name":"Loop End"
               , "details":
               [
@@ -634,270 +486,14 @@
           ]
         }
         , {
-          "type":"bb"
-          , "id":15
-          , "name":"gaussian.B12"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"5"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Entry to loop. "
-              , "Loops To":"17"
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":16
-          , "name":"gaussian.B13"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":27
-              , "name":"Stream Write"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":41
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"1 bit"
-                  , "Depth":"0"
-                  , "Stall-free":"No"
-                  , "Start Cycle":"0"
-                  , "Latency":"0"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":39
-              , "name":"Begin"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":40
-              , "name":"Loop End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Exit which branches back to loop. "
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":17
-          , "name":"gaussian.B14"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"0"
-              , "II":"1"
-              , "Subloops":"Yes"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":"Exit which branches back to loop. "
-            }
-          ]
-        }
-        , {
-          "type":"bb"
-          , "id":18
-          , "name":"gaussian.B15"
-          , "children":
-          [
-            {
-              "type":"inst"
-              , "id":29
-              , "name":"Load"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":38
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Loads from":"A"
-                  , "Start Cycle":"4"
-                  , "Latency":"1"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":30
-              , "name":"Store"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":38
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Width":"32 bits"
-                  , "Type":"Pipelined never-stall"
-                  , "Stall-free":"Yes"
-                  , "Stores to":"A_r"
-                  , "Start Cycle":"6"
-                  , "Latency":"3"
-                  , "Reference":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"See %L for more information"
-                      , "links":
-                      [
-                        {
-                          "guide":"Reference Manual"
-                          , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":41
-              , "name":"Loop Input"
-              , "debug":
-              [
-                [
-                  {
-                    "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
-                    , "line":36
-                  }
-                ]
-              ]
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"0"
-                  , "Latency":"1"
-                  , "Loops To":"42"
-                }
-              ]
-            }
-            , {
-              "type":"inst"
-              , "id":42
-              , "name":"Loop End"
-              , "details":
-              [
-                {
-                  "type":"table"
-                  , "Start Cycle":"12"
-                  , "Latency":"1"
-                }
-              ]
-            }
-          ]
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Latency":"12"
-              , "II":"1"
-              , "Subloops":"No"
-              , "Pipelined":"Yes"
-              , "Fmax Bottlenecks":"No"
-              , "Loop Info":""
-            }
-          ]
-        }
-        , {
           "type":"memtype"
-          , "id":44
+          , "id":26
           , "name":"Local Memory"
           , "children":
           [
             {
               "type":"memsys"
-              , "id":45
+              , "id":27
               , "name":"c"
               , "debug":
               [
@@ -939,7 +535,7 @@
             }
             , {
               "type":"memsys"
-              , "id":49
+              , "id":30
               , "name":"A"
               , "debug":
               [
@@ -985,29 +581,8 @@
       ]
     }
     , {
-      "type":"memtype"
-      , "id":1
-      , "name":"System Memory"
-      , "children":
-      [
-        {
-          "type":"memsys"
-          , "id":56
-          , "name":"0"
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Number of banks":"1"
-              , "Arguments from gaussian":"A_r"
-            }
-          ]
-        }
-      ]
-    }
-    , {
       "type":"stream"
-      , "id":20
+      , "id":12
       , "name":"call.gaussian"
       , "debug":
       [
@@ -1035,7 +610,7 @@
     }
     , {
       "type":"stream"
-      , "id":28
+      , "id":14
       , "name":"return.gaussian"
       , "debug":
       [
@@ -1063,7 +638,7 @@
     }
     , {
       "type":"interface"
-      , "id":43
+      , "id":25
       , "name":"A_r"
       , "debug":
       [
@@ -1095,212 +670,120 @@
   , "links":
   [
     {
-      "from":20
-      , "to":19
-    }
-    , {
-      "from":27
-      , "to":28
-    }
-    , {
-      "from":43
-      , "to":19
-    }
-    , {
-      "from":45
-      , "to":23
-    }
-    , {
-      "from":21
-      , "to":45
-    }
-    , {
-      "from":49
-      , "to":24
-    }
-    , {
-      "from":49
-      , "to":29
-    }
-    , {
-      "from":49
-      , "to":25
-    }
-    , {
-      "from":26
-      , "to":49
-    }
-    , {
-      "from":22
-      , "to":49
-    }
-    , {
-      "from":40
-      , "to":31
-    }
-    , {
-      "from":3
-      , "to":31
-    }
-    , {
-      "from":19
-      , "to":32
-    }
-    , {
-      "from":7
-      , "to":5
-    }
-    , {
-      "from":7
-      , "to":33
-    }
-    , {
-      "from":32
-      , "to":33
-    }
-    , {
-      "from":21
-      , "to":34
-    }
-    , {
-      "from":36
-      , "to":7
-    }
-    , {
-      "from":36
-      , "to":35
-    }
-    , {
-      "from":34
-      , "to":35
-    }
-    , {
-      "from":22
-      , "to":36
-    }
-    , {
-      "from":13
-      , "to":9
-    }
-    , {
-      "from":9
-      , "to":10
-    }
-    , {
-      "from":9
-      , "to":11
-    }
-    , {
-      "from":5
-      , "to":11
-    }
-    , {
-      "from":13
-      , "to":12
-    }
-    , {
-      "from":11
-      , "to":12
-    }
-    , {
-      "from":38
-      , "to":13
-    }
-    , {
-      "from":38
-      , "to":37
-    }
-    , {
       "from":12
-      , "to":37
+      , "to":11
     }
     , {
-      "from":26
-      , "to":38
-    }
-    , {
-      "from":17
-      , "to":15
-    }
-    , {
-      "from":10
-      , "to":15
-    }
-    , {
-      "from":17
-      , "to":39
-    }
-    , {
-      "from":27
-      , "to":40
-    }
-    , {
-      "from":42
-      , "to":17
-    }
-    , {
-      "from":42
-      , "to":41
-    }
-    , {
-      "from":15
-      , "to":41
-    }
-    , {
-      "from":30
-      , "to":42
-    }
-    , {
-      "from":31
-      , "to":19
-    }
-    , {
-      "from":33
-      , "to":21
-    }
-    , {
-      "from":35
-      , "to":22
-    }
-    , {
-      "from":37
-      , "to":23
-    }
-    , {
-      "from":37
-      , "to":24
-    }
-    , {
-      "from":37
-      , "to":25
-    }
-    , {
-      "from":24
-      , "to":26
-    }
-    , {
-      "from":23
-      , "to":26
+      "from":13
+      , "to":14
     }
     , {
       "from":25
-      , "to":26
+      , "to":11
     }
     , {
-      "from":39
-      , "to":27
-    }
-    , {
-      "from":41
-      , "to":29
-    }
-    , {
-      "from":29
-      , "to":30
+      "from":27
+      , "to":15
     }
     , {
       "from":30
-      , "to":56
+      , "to":16
+    }
+    , {
+      "from":30
+      , "to":17
+    }
+    , {
+      "from":18
+      , "to":30
+    }
+    , {
+      "from":22
+      , "to":19
+    }
+    , {
+      "from":3
+      , "to":19
+    }
+    , {
+      "from":11
+      , "to":20
+    }
+    , {
+      "from":9
+      , "to":5
+    }
+    , {
+      "from":5
+      , "to":21
+    }
+    , {
+      "from":13
+      , "to":22
+    }
+    , {
+      "from":5
+      , "to":7
+    }
+    , {
+      "from":20
+      , "to":7
+    }
+    , {
+      "from":9
+      , "to":8
+    }
+    , {
+      "from":7
+      , "to":8
+    }
+    , {
+      "from":24
+      , "to":9
+    }
+    , {
+      "from":24
+      , "to":23
+    }
+    , {
+      "from":8
+      , "to":23
+    }
+    , {
+      "from":18
+      , "to":24
+    }
+    , {
+      "from":19
+      , "to":11
+    }
+    , {
+      "from":21
+      , "to":13
+    }
+    , {
+      "from":23
+      , "to":15
+    }
+    , {
+      "from":23
+      , "to":16
+    }
+    , {
+      "from":23
+      , "to":17
+    }
+    , {
+      "from":16
+      , "to":18
+    }
+    , {
+      "from":15
+      , "to":18
+    }
+    , {
+      "from":17
+      , "to":18
     }
   ]
 }

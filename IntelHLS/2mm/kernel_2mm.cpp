@@ -20,6 +20,7 @@ component void kernel_2mm(int alpha, int beta, int A[N][N], int B[N][N], int C[N
     hls_memory hls_singlepump int C_local[N][N];
     hls_memory hls_singlepump int D_local[N][N];
 
+    /*
     INIT:for(int i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
@@ -30,7 +31,7 @@ component void kernel_2mm(int alpha, int beta, int A[N][N], int B[N][N], int C[N
             D_local[i][j] = D[i][j];
             tmp_local[i][j] = 0;
         }
-    }
+    }*/
 
     WORK_1:for (int i = 0; i < NI; i++)
     {
@@ -56,13 +57,14 @@ component void kernel_2mm(int alpha, int beta, int A[N][N], int B[N][N], int C[N
         }
     }
 
+    /*
     OUT:for(int i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
         {
             D[i][j] = D_local[i][j];
         }
-    }
+    }*/
 }
 
 void kernel_2mm_ref(int alpha, int beta, int A[N][N], int B[N][N], int C[N][N], int D[N][N])

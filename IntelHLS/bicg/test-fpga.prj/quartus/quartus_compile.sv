@@ -10,12 +10,6 @@ module quartus_compile (
 	, input logic [63:0] bicg_q
 	, input logic [63:0] bicg_p
 	, input logic [63:0] bicg_r
-	, output logic [63:0] bicg_avmm_0_rw_address
-	, output logic [7:0] bicg_avmm_0_rw_byteenable
-	, output logic [0:0] bicg_avmm_0_rw_read
-	, input logic [63:0] bicg_avmm_0_rw_readdata
-	, output logic [0:0] bicg_avmm_0_rw_write
-	, output logic [63:0] bicg_avmm_0_rw_writedata
 	);
 
 	logic [0:0] bicg_start_reg;
@@ -27,12 +21,6 @@ module quartus_compile (
 	logic [63:0] bicg_q_reg;
 	logic [63:0] bicg_p_reg;
 	logic [63:0] bicg_r_reg;
-	logic [63:0] bicg_avmm_0_rw_address_reg;
-	logic [7:0] bicg_avmm_0_rw_byteenable_reg;
-	logic [0:0] bicg_avmm_0_rw_read_reg;
-	logic [63:0] bicg_avmm_0_rw_readdata_reg;
-	logic [0:0] bicg_avmm_0_rw_write_reg;
-	logic [63:0] bicg_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -45,12 +33,6 @@ module quartus_compile (
 		bicg_q_reg <= bicg_q;
 		bicg_p_reg <= bicg_p;
 		bicg_r_reg <= bicg_r;
-		bicg_avmm_0_rw_address <= bicg_avmm_0_rw_address_reg;
-		bicg_avmm_0_rw_byteenable <= bicg_avmm_0_rw_byteenable_reg;
-		bicg_avmm_0_rw_read <= bicg_avmm_0_rw_read_reg;
-		bicg_avmm_0_rw_readdata_reg <= bicg_avmm_0_rw_readdata;
-		bicg_avmm_0_rw_write <= bicg_avmm_0_rw_write_reg;
-		bicg_avmm_0_rw_writedata <= bicg_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -76,12 +58,6 @@ module quartus_compile (
 		, .q(bicg_q_reg)
 		, .p(bicg_p_reg)
 		, .r(bicg_r_reg)
-		, .avmm_0_rw_address(bicg_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(bicg_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(bicg_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(bicg_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(bicg_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(bicg_avmm_0_rw_writedata_reg)
 	);
 
 

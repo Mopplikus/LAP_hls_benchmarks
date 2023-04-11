@@ -13,11 +13,12 @@ component float example()
     hls_memory hls_singlepump float B[N];
 
     int i;
+    /*
     INIT:for(i = 0; i < N; i++)
     {
         A[i] = (float) (i % 3);
         B[i] = (float) (i % 4);
-    }
+    }*/
 
     float d = 0.0;
     float s = 0.0;

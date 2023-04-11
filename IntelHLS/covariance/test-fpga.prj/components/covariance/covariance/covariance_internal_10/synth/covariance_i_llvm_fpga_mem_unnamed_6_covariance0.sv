@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_unnamed_covariance6_covariance0
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:06 2023
+// SystemVerilog created on Fri Apr  7 17:50:02 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -36,7 +36,6 @@ module covariance_i_llvm_fpga_mem_unnamed_6_covariance0 (
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
     input wire [63:0] in_i_address,
-    input wire [0:0] in_i_dependence,
     input wire [0:0] in_i_predicate,
     input wire [0:0] in_i_valid,
     output wire [31:0] out_o_readdata,
@@ -99,8 +98,8 @@ module covariance_i_llvm_fpga_mem_unnamed_6_covariance0 (
     wire [31:0] i_llvm_fpga_mem_unnamed_covariance6_covariance1_profile_avm_burstcount_total_incr;
     wire [31:0] i_llvm_fpga_mem_unnamed_covariance6_covariance1_profile_bw_incr;
     wire [31:0] addr_trunc_sel_x_b;
-    reg [31:0] readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_data_reg_x_q;
-    reg [0:0] readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_valid_reg_x_q;
+    reg [31:0] readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_data_reg_x_q;
+    reg [0:0] readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_valid_reg_x_q;
 
 
     // c_i4_05(CONSTANT,11)
@@ -240,34 +239,34 @@ module covariance_i_llvm_fpga_mem_unnamed_6_covariance0 (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_valid_reg_x(REG,25)@5 + 1
+    // readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_valid_reg_x(REG,25)@5 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_valid_reg_x_q <= $unsigned(1'b0);
+            readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_valid_reg_x_q <= $unsigned(1'b0);
         end
         else
         begin
-            readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_valid_reg_x_q <= i_llvm_fpga_mem_unnamed_covariance6_covariance1_o_valid;
+            readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_valid_reg_x_q <= i_llvm_fpga_mem_unnamed_covariance6_covariance1_o_valid;
         end
     end
 
-    // readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_data_reg_x(REG,24)@5 + 1
+    // readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_data_reg_x(REG,24)@5 + 1
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
         begin
-            readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_data_reg_x_q <= $unsigned(32'b00000000000000000000000000000000);
+            readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_data_reg_x_q <= $unsigned(32'b00000000000000000000000000000000);
         end
         else
         begin
-            readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_data_reg_x_q <= i_llvm_fpga_mem_unnamed_covariance6_covariance1_o_readdata;
+            readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_data_reg_x_q <= i_llvm_fpga_mem_unnamed_covariance6_covariance1_o_readdata;
         end
     end
 
     // dupName_0_sync_out_x(GPOUT,21)@6
-    assign out_o_readdata = readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_data_reg_x_q;
-    assign out_o_valid = readdata_reg_unnamed_covariance6_covariance2_readdata_reg_unnamed_covariance6_covariance2_valid_reg_x_q;
+    assign out_o_readdata = readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_data_reg_x_q;
+    assign out_o_valid = readdata_reg_unnamed_covariance6_covariance3_readdata_reg_unnamed_covariance6_covariance3_valid_reg_x_q;
 
 endmodule

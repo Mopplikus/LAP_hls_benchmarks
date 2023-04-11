@@ -6,13 +6,7 @@
 module tb (
 	);
 
-	wire  [63:0] triangular_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:avs_readdata -> triangular_inst:avmm_0_rw_readdata
-	wire  [63:0] triangular_inst_avmm_0_rw_address;                                                            // triangular_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:avs_address
-	wire   [7:0] triangular_inst_avmm_0_rw_byteenable;                                                         // triangular_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:avs_byteenable
-	wire         triangular_inst_avmm_0_rw_read;                                                               // triangular_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:avs_read
-	wire         triangular_inst_avmm_0_rw_write;                                                              // triangular_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:avs_write
-	wire  [63:0] triangular_inst_avmm_0_rw_writedata;                                                          // triangular_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                                   // clock_reset_inst:clock -> [component_dpi_controller_triangular_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:clock, stream_source_dpi_bfm_triangular_A_inst:clock, stream_source_dpi_bfm_triangular_n_inst:clock, stream_source_dpi_bfm_triangular_x_inst:clock, triangular_inst:clock]
+	wire         clock_reset_inst_clock_clk;                                                                   // clock_reset_inst:clock -> [component_dpi_controller_triangular_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, stream_source_dpi_bfm_triangular_A_inst:clock, stream_source_dpi_bfm_triangular_n_inst:clock, stream_source_dpi_bfm_triangular_x_inst:clock, triangular_inst:clock]
 	wire         clock_reset_inst_clock2x_clk;                                                                 // clock_reset_inst:clock2x -> [component_dpi_controller_triangular_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_triangular_A_inst:clock2x, stream_source_dpi_bfm_triangular_n_inst:clock2x, stream_source_dpi_bfm_triangular_x_inst:clock2x]
 	wire         component_dpi_controller_triangular_inst_component_call_valid;                                // component_dpi_controller_triangular_inst:start -> triangular_inst:start
 	wire         triangular_inst_call_stall;                                                                   // triangular_inst:busy -> component_dpi_controller_triangular_inst:busy
@@ -33,8 +27,6 @@ module tb (
 	wire         triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit;           // triangular_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_triangular_n_inst:do_bind
 	wire         triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit;         // triangular_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_triangular_n_inst:enable
 	wire         triangular_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_2_conduit; // triangular_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_triangular_n_inst:source_ready
-	wire         triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit;           // triangular_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:do_bind
-	wire         triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit;         // triangular_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:enable
 	wire         component_dpi_controller_triangular_inst_read_implicit_streams_conduit;                       // component_dpi_controller_triangular_inst:read_implicit_streams -> triangular_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
 	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                                  // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
 	wire         triangular_inst_return_valid;                                                                 // triangular_inst:done -> component_dpi_controller_triangular_inst:done
@@ -42,7 +34,7 @@ module tb (
 	wire  [63:0] stream_source_dpi_bfm_triangular_a_inst_source_data_data;                                     // stream_source_dpi_bfm_triangular_A_inst:source_data -> triangular_inst:A
 	wire  [31:0] stream_source_dpi_bfm_triangular_n_inst_source_data_data;                                     // stream_source_dpi_bfm_triangular_n_inst:source_data -> triangular_inst:n
 	wire  [63:0] stream_source_dpi_bfm_triangular_x_inst_source_data_data;                                     // stream_source_dpi_bfm_triangular_x_inst:source_data -> triangular_inst:x
-	wire         clock_reset_inst_reset_reset;                                                                 // clock_reset_inst:resetn -> [component_dpi_controller_triangular_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_triangular_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_triangular_A_inst:resetn, stream_source_dpi_bfm_triangular_n_inst:resetn, stream_source_dpi_bfm_triangular_x_inst:resetn, triangular_inst:resetn]
+	wire         clock_reset_inst_reset_reset;                                                                 // clock_reset_inst:resetn -> [component_dpi_controller_triangular_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, stream_source_dpi_bfm_triangular_A_inst:resetn, stream_source_dpi_bfm_triangular_n_inst:resetn, stream_source_dpi_bfm_triangular_x_inst:resetn, triangular_inst:resetn]
 	wire         component_dpi_controller_triangular_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_triangular_inst:done_irq
 
 	clock_reset clock_reset_inst (
@@ -92,19 +84,6 @@ module tb (
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
 	);
 
-	mm_agent_triangular_avmm_0_rw mm_agent_dpi_bfm_triangular_avmm_0_rw_inst (
-		.do_bind        (triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                           //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                         //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (triangular_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (triangular_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (triangular_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (triangular_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (triangular_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (triangular_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
-	);
-
 	sp_cstart split_component_start_inst (
 		.in_conduit    (main_dpi_controller_inst_component_enabled_conduit), //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (split_component_start_inst_out_conduit_0_conduit)    //  output,  width = 1, out_conduit_0.conduit
@@ -147,16 +126,14 @@ module tb (
 		.in_conduit    (component_dpi_controller_triangular_inst_dpi_control_bind_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_2 (triangular_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
 	);
 
 	triangular_en_cfan triangular_component_dpi_controller_enable_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_triangular_inst_dpi_control_enable_conduit),                  //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
-		.out_conduit_2 (triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_2 (triangular_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit)  //  output,  width = 1, out_conduit_2.conduit
 	);
 
 	triangular_ir_cfan triangular_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -167,21 +144,15 @@ module tb (
 	);
 
 	triangular triangular_inst (
-		.clock                (clock_reset_inst_clock_clk),                                      //   input,   width = 1,     clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                                    //   input,   width = 1,     reset.reset_n
-		.start                (component_dpi_controller_triangular_inst_component_call_valid),   //   input,   width = 1,      call.valid
-		.busy                 (triangular_inst_call_stall),                                      //  output,   width = 1,          .stall
-		.done                 (triangular_inst_return_valid),                                    //  output,   width = 1,    return.valid
-		.stall                (component_dpi_controller_triangular_inst_component_return_stall), //   input,   width = 1,          .stall
-		.x                    (stream_source_dpi_bfm_triangular_x_inst_source_data_data),        //   input,  width = 64,         x.data
-		.A                    (stream_source_dpi_bfm_triangular_a_inst_source_data_data),        //   input,  width = 64,         A.data
-		.n                    (stream_source_dpi_bfm_triangular_n_inst_source_data_data),        //   input,  width = 32,         n.data
-		.avmm_0_rw_address    (triangular_inst_avmm_0_rw_address),                               //  output,  width = 64, avmm_0_rw.address
-		.avmm_0_rw_byteenable (triangular_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,          .byteenable
-		.avmm_0_rw_read       (triangular_inst_avmm_0_rw_read),                                  //  output,   width = 1,          .read
-		.avmm_0_rw_readdata   (triangular_inst_avmm_0_rw_readdata),                              //   input,  width = 64,          .readdata
-		.avmm_0_rw_write      (triangular_inst_avmm_0_rw_write),                                 //  output,   width = 1,          .write
-		.avmm_0_rw_writedata  (triangular_inst_avmm_0_rw_writedata)                              //  output,  width = 64,          .writedata
+		.clock  (clock_reset_inst_clock_clk),                                      //   input,   width = 1,  clock.clk
+		.resetn (clock_reset_inst_reset_reset),                                    //   input,   width = 1,  reset.reset_n
+		.start  (component_dpi_controller_triangular_inst_component_call_valid),   //   input,   width = 1,   call.valid
+		.busy   (triangular_inst_call_stall),                                      //  output,   width = 1,       .stall
+		.done   (triangular_inst_return_valid),                                    //  output,   width = 1, return.valid
+		.stall  (component_dpi_controller_triangular_inst_component_return_stall), //   input,   width = 1,       .stall
+		.x      (stream_source_dpi_bfm_triangular_x_inst_source_data_data),        //   input,  width = 64,      x.data
+		.A      (stream_source_dpi_bfm_triangular_a_inst_source_data_data),        //   input,  width = 64,      A.data
+		.n      (stream_source_dpi_bfm_triangular_n_inst_source_data_data)         //   input,  width = 32,      n.data
 	);
 
 	tb_altera_irq_mapper_1920_trjgw7i irq_mapper (

@@ -6,8 +6,7 @@ module kernel_3mm_cfan (
 		output wire  out_conduit_3, // out_conduit_3.conduit
 		output wire  out_conduit_4, // out_conduit_4.conduit
 		output wire  out_conduit_5, // out_conduit_5.conduit
-		output wire  out_conduit_6, // out_conduit_6.conduit
-		output wire  out_conduit_7  // out_conduit_7.conduit
+		output wire  out_conduit_6  // out_conduit_6.conduit
 	);
 endmodule
 

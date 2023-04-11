@@ -22,6 +22,7 @@ component void kernel_3mm(int A[N][N], int B[N][N], int C[N][N], int D[N][N], in
     hls_memory hls_singlepump int G_local[N][N];
     int i,j,k;
 
+    /*
     INIT:for(i = 0; i < N; i++)
     {
         for(j = 0; j < N; j++)
@@ -34,9 +35,10 @@ component void kernel_3mm(int A[N][N], int B[N][N], int C[N][N], int D[N][N], in
             F_local[i][j] = F[i][j];
             G_local[i][j] = G[i][j];
         }
-    }
+    }*/
 
   WORK_1:for (i = 0; i < NI; i++)
+  {
     for (j = 0; j < NJ; j++)
     {
       int tmp = E_local[i][j];
@@ -44,8 +46,10 @@ component void kernel_3mm(int A[N][N], int B[N][N], int C[N][N], int D[N][N], in
         tmp += A_local[i][k] * B_local[k][j];
       E_local[i][j] = tmp;
     }
+  }
 
   WORK_2:for (i = 0; i < NJ; i++)
+  {
     for (j = 0; j < NL; j++)
     {
       int tmp = F_local[i][j];
@@ -53,8 +57,10 @@ component void kernel_3mm(int A[N][N], int B[N][N], int C[N][N], int D[N][N], in
         tmp += C_local[i][k] * D_local[k][j];
       F_local[i][j] = tmp;
     }
+  }
 
   WORK_3:for (i = 0; i < NI; i++)
+  {
     for (j = 0; j < NL; j++)
     {
       int tmp = G_local[i][j];
@@ -62,14 +68,16 @@ component void kernel_3mm(int A[N][N], int B[N][N], int C[N][N], int D[N][N], in
         tmp += E_local[i][k] * F_local[k][j];
       G_local[i][j] = tmp;
     }
+  }
 
-    OUT:for(i = 0; i < N; i++)
-    {
-        for(j = 0; j < N; j++)
-        {
-            G[i][j] = G_local[i][j];
-        }
-    }
+  /*
+  OUT:for(i = 0; i < N; i++)
+  {
+      for(j = 0; j < N; j++)
+      {
+          G[i][j] = G_local[i][j];
+      }
+  }*/
 }
 
 void kernel_3mm_ref(int A[N][N], int B[N][N], int C[N][N], int D[N][N], int E[N][N], int F[N][N], int G[N][N])

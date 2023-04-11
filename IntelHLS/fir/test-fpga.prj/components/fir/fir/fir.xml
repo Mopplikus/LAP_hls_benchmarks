@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2023.04.05.16:46:55"
+ date="2023.04.07.17:34:18"
  outputDirectory="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/">
  <perimeter>
   <parameter
@@ -51,18 +51,6 @@
      defaultValue="-1"
      onHdl="0"
      affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_MAP"
-     type="AddressMap"
-     defaultValue=""
-     onHdl="0"
-     affectsHdl="1" />
-  <parameter
-     name="AUTO_AVMM_0_RW_ADDRESS_WIDTH"
-     type="AddressWidthType"
-     defaultValue="-1"
-     onHdl="0"
-     affectsHdl="1" />
   <interface name="clock" kind="clock" start="0">
    <property name="clockRate" value="0" />
    <property name="externallyDriven" value="false" />
@@ -106,70 +94,14 @@
    <property name="prSafe" value="false" />
    <port name="idx" direction="input" role="data" width="64" />
   </interface>
-  <interface name="avmm_0_rw" kind="avalon" start="1">
-   <property name="adaptsTo" value="" />
-   <property name="addressGroup" value="0" />
-   <property name="addressUnits" value="SYMBOLS" />
-   <property name="alwaysBurstMaxBurst" value="false" />
-   <property name="associatedClock" value="clock" />
-   <property name="associatedReset" value="reset" />
-   <property name="bitsPerSymbol" value="8" />
-   <property name="burstOnBurstBoundariesOnly" value="false" />
-   <property name="burstcountUnits" value="WORDS" />
-   <property name="constantBurstBehavior" value="false" />
-   <property name="dBSBigEndian" value="false" />
-   <property name="doStreamReads" value="false" />
-   <property name="doStreamWrites" value="false" />
-   <property name="holdTime" value="0" />
-   <property name="interleaveBursts" value="false" />
-   <property name="isAsynchronous" value="false" />
-   <property name="isBigEndian" value="false" />
-   <property name="isReadable" value="false" />
-   <property name="isWriteable" value="false" />
-   <property name="linewrapBursts" value="false" />
-   <property name="maxAddressWidth" value="32" />
-   <property name="maximumPendingReadTransactions" value="0" />
-   <property name="maximumPendingWriteTransactions" value="0" />
-   <property name="minimumReadLatency" value="1" />
-   <property name="minimumResponseLatency" value="1" />
-   <property name="prSafe" value="false" />
-   <property name="readLatency" value="1" />
-   <property name="readWaitTime" value="0" />
-   <property name="registerIncomingSignals" value="false" />
-   <property name="registerOutgoingSignals" value="false" />
-   <property name="setupTime" value="0" />
-   <property name="timingUnits" value="Cycles" />
-   <property name="waitrequestAllowance" value="0" />
-   <property name="writeWaitTime" value="0" />
-   <port name="avmm_0_rw_address" direction="output" role="address" width="64" />
-   <port
-       name="avmm_0_rw_byteenable"
-       direction="output"
-       role="byteenable"
-       width="8" />
-   <port name="avmm_0_rw_read" direction="output" role="read" width="1" />
-   <port
-       name="avmm_0_rw_readdata"
-       direction="input"
-       role="readdata"
-       width="64" />
-   <port name="avmm_0_rw_write" direction="output" role="write" width="1" />
-   <port
-       name="avmm_0_rw_writedata"
-       direction="output"
-       role="writedata"
-       width="64" />
-  </interface>
  </perimeter>
  <entity kind="fir" version="1.0" name="fir">
   <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
   <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
   <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_WIDTH" value="-1" />
   <parameter name="AUTO_GENERATION_ID" value="0" />
   <parameter name="AUTO_DEVICE" value="10AX115U1F45I1SG" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Arria 10" />
-  <parameter name="AUTO_AVMM_0_RW_ADDRESS_MAP" value="" />
   <parameter name="AUTO_UNIQUE_ID" value="" />
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="1" />
   <generatedFiles>
@@ -317,10 +249,16 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwddst.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwddst.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_latency.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_valid.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/lsu_top.v"
@@ -419,13 +357,7 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_valid.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwdsrc.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_full_detector.v"
@@ -488,12 +420,6 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_p1024i32_unnamed_3_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_fir0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
        attributes="" />
    <file
@@ -512,10 +438,10 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_fir0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going26_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going4_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond27_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond5_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B1_start_branch.sv"
@@ -530,6 +456,18 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B2_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_iowr_bl_return_unnamed_fir3_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_i32_add1_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_2_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B2_branch.sv"
        attributes="" />
    <file
@@ -542,157 +480,52 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_memdep_1_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_memdep_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_s_c0_in_for_body_s_c0_enter72_fir1.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit9_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo00009_fir1_full_detector.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo0000exit9_fir1_data_fifo.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_for_body_s_c0_enter72_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_i32_unnamed_6_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_4_fir0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_5_fir0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_readdata_reg_unnamed_5_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_6_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_readdata_reg_unnamed_6_fir1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_s_c0_in_for_body_s_c0_enter292_fir1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit31_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_for_body_s_c0_enter292_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_p1024i32_d_i165_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_p1024i32_idx176_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going13_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i11_fpga_indvars_iv_pop8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_i_015_pop9_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_cleanups16_pop11_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_initerations11_pop10_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i11_fpga_indvars_iv_push8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_lastiniteration15_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond23_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_i_015_push9_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_cleanups16_push11_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_initerations11_push10_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B4_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_iowr_bl_return_unnamed_fir7_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_i32_add7_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_2_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B4_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B4_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B5.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B5_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B5_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_s_c0_in_for_body13_s_c0_enter343_fir1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_body13_s_c0_exit38_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo00008_fir1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo0000xit38_fir1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_for_body13_s_c0_enter343_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_i32_unnamed_10_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_8_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_9_fir0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i11_fpga_indvars_iv2_pop12_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i11_fpga_indvars_iv_pop6_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_i9_014_pop13_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_i_08_pop7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_tmp_013_pop14_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_tmp_07_pop8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_cleanups_pop16_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_cleanups_pop10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_initerations_pop15_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_initerations_pop9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i11_fpga_indvars_iv2_push12_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i11_fpga_indvars_iv_push6_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_lastiniteration_0.sv"
@@ -701,34 +534,28 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_i9_014_push13_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_i_08_push7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_tmp_013_push14_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_tmp_07_push8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_cleanups_push16_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_cleanups_push10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_initerations_push15_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_initerations_push9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B5_branch.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_branch.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B5_merge.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going13_6_sr.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going4_1_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going13_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going26_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going26_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going4_1_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -740,46 +567,13 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_loop_limiter_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_loop_limiter_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B2_sr_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B3_sr_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B4_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B5_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_mem1x.v"
@@ -828,6 +622,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_internal.v"
@@ -955,10 +767,16 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_shift_register_no_reset.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwdsrc.v"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwddst.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwddst.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_latency.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_valid.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/lsu_top.v"
@@ -1057,13 +875,7 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_lsu_write_kernel_downstream.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_latency.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/hld_iowr_stall_valid.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ffwdsrc.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_full_detector.v"
@@ -1126,12 +938,6 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B1_start_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_p1024i32_unnamed_3_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_p1024i32_unnamed_4_fir0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
        attributes="" />
    <file
@@ -1150,10 +956,10 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_fir0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going26_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going4_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond27_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond5_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B1_start_branch.sv"
@@ -1168,6 +974,18 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B2_stall_region.sv"
        attributes="" />
    <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_iowr_bl_return_unnamed_fir3_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_i32_add1_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_2_reg.sv"
+       attributes="" />
+   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B2_branch.sv"
        attributes="" />
    <file
@@ -1180,157 +998,52 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B3_stall_region.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_memdep_1_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge_reg.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_memdep_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_s_c0_in_for_body_s_c0_enter72_fir1.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit9_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo00009_fir1_full_detector.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo0000exit9_fir1_data_fifo.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_for_body_s_c0_enter72_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_i32_unnamed_6_fir0.sv"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_4_fir0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_5_fir0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_readdata_reg_unnamed_5_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_6_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_readdata_reg_unnamed_6_fir1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_s_c0_in_for_body_s_c0_enter292_fir1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_body_s_c0_exit31_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_for_body_s_c0_enter292_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_p1024i32_d_i165_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_p1024i32_idx176_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going13_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i11_fpga_indvars_iv_pop8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_i_015_pop9_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_cleanups16_pop11_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_initerations11_pop10_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i11_fpga_indvars_iv_push8_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_lastiniteration15_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond23_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_i_015_push9_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_cleanups16_push11_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_initerations11_push10_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B4.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B4_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_iowr_bl_return_unnamed_fir7_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_dest_i32_add7_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_token_i1_throttle_push_2_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B4_branch.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B4_merge.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B5.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B5_stall_region.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B5_merge_reg.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_s_c0_in_for_body13_s_c0_enter343_fir1.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_body13_s_c0_exit38_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo00008_fir1_full_detector.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_sfc_exit_s_c0_out_for_bo0000xit38_fir1_data_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_sfc_logic_s_c0_in_for_body13_s_c0_enter343_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_ffwd_source_i32_unnamed_10_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_8_fir0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_mem_unnamed_9_fir0.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i11_fpga_indvars_iv2_pop12_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i11_fpga_indvars_iv_pop6_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_i9_014_pop13_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_i_08_pop7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_tmp_013_pop14_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i32_tmp_07_pop8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_cleanups_pop16_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_cleanups_pop10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_initerations_pop15_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pop_i4_initerations_pop9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i11_fpga_indvars_iv2_push12_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i11_fpga_indvars_iv_push6_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_lastiniteration_0.sv"
@@ -1339,34 +1052,28 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i1_notexitcond_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_i9_014_push13_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_i_08_push7_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_tmp_013_push14_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i32_tmp_07_push8_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_cleanups_push16_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_cleanups_push10_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_initerations_push15_0.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_push_i4_initerations_push9_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B5_branch.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_branch.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B5_merge.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_B3_merge.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going13_6_sr.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going4_1_sr.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going13_6_valid_fifo.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going26_1_sr.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going26_1_valid_fifo.sv"
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going4_1_valid_fifo.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
@@ -1378,46 +1085,13 @@
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_loop_limiter_0.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_loop_limiter_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B2_sr_0.sv"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B3_sr_1.sv"
        attributes="" />
    <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B4_sr_0.sv"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_bb_B5_sr_1.sv"
-       attributes="" />
-   <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_avm_to_ic.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_host_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_arb_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_intf.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_endpoint.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_rrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_wrp.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_arb2.v"
-       attributes="" />
-   <file
-       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_to_avm.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_mem1x.v"
@@ -1466,6 +1140,24 @@
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_local_mem_router.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_host_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_arb_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_intf.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_endpoint.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_rrp.v"
+       attributes="" />
+   <file
+       path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/acl_ic_agent_wrp.v"
        attributes="" />
    <file
        path="/home/dirren/IntelHLS/fir/test-fpga.prj/components/fir/fir/fir_internal_10/synth/fir_internal.v"

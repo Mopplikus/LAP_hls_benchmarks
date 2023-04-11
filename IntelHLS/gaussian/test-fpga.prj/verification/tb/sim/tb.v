@@ -6,13 +6,7 @@
 module tb (
 	);
 
-	wire  [63:0] gaussian_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:avs_readdata -> gaussian_inst:avmm_0_rw_readdata
-	wire  [63:0] gaussian_inst_avmm_0_rw_address;                                                            // gaussian_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:avs_address
-	wire   [7:0] gaussian_inst_avmm_0_rw_byteenable;                                                         // gaussian_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:avs_byteenable
-	wire         gaussian_inst_avmm_0_rw_read;                                                               // gaussian_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:avs_read
-	wire         gaussian_inst_avmm_0_rw_write;                                                              // gaussian_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:avs_write
-	wire  [63:0] gaussian_inst_avmm_0_rw_writedata;                                                          // gaussian_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                                 // clock_reset_inst:clock -> [component_dpi_controller_gaussian_inst:clock, gaussian_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:clock, stream_source_dpi_bfm_gaussian_A_r_inst:clock]
+	wire         clock_reset_inst_clock_clk;                                                                 // clock_reset_inst:clock -> [component_dpi_controller_gaussian_inst:clock, gaussian_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, stream_source_dpi_bfm_gaussian_A_r_inst:clock]
 	wire         clock_reset_inst_clock2x_clk;                                                               // clock_reset_inst:clock2x -> [component_dpi_controller_gaussian_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_gaussian_A_r_inst:clock2x]
 	wire         component_dpi_controller_gaussian_inst_component_call_valid;                                // component_dpi_controller_gaussian_inst:start -> gaussian_inst:start
 	wire         gaussian_inst_call_stall;                                                                   // gaussian_inst:busy -> component_dpi_controller_gaussian_inst:busy
@@ -27,14 +21,12 @@ module tb (
 	wire         gaussian_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit;           // gaussian_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_gaussian_A_r_inst:do_bind
 	wire         gaussian_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit;         // gaussian_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_gaussian_A_r_inst:enable
 	wire         gaussian_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_0_conduit; // gaussian_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_gaussian_A_r_inst:source_ready
-	wire         gaussian_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit;           // gaussian_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_1 -> mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:do_bind
-	wire         gaussian_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit;         // gaussian_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_1 -> mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:enable
 	wire         component_dpi_controller_gaussian_inst_read_implicit_streams_conduit;                       // component_dpi_controller_gaussian_inst:read_implicit_streams -> gaussian_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
 	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                                // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
 	wire         gaussian_inst_return_valid;                                                                 // gaussian_inst:done -> component_dpi_controller_gaussian_inst:done
 	wire         component_dpi_controller_gaussian_inst_component_return_stall;                              // component_dpi_controller_gaussian_inst:stall -> gaussian_inst:stall
 	wire  [63:0] stream_source_dpi_bfm_gaussian_a_r_inst_source_data_data;                                   // stream_source_dpi_bfm_gaussian_A_r_inst:source_data -> gaussian_inst:A_r
-	wire         clock_reset_inst_reset_reset;                                                               // clock_reset_inst:resetn -> [component_dpi_controller_gaussian_inst:resetn, gaussian_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_gaussian_A_r_inst:resetn]
+	wire         clock_reset_inst_reset_reset;                                                               // clock_reset_inst:resetn -> [component_dpi_controller_gaussian_inst:resetn, gaussian_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, stream_source_dpi_bfm_gaussian_A_r_inst:resetn]
 	wire         component_dpi_controller_gaussian_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_gaussian_inst:done_irq
 
 	clock_reset clock_reset_inst (
@@ -76,14 +68,12 @@ module tb (
 
 	gaussian_cfan gaussian_component_dpi_controller_bind_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_gaussian_inst_dpi_control_bind_conduit),                  //   input,  width = 1,    in_conduit.conduit
-		.out_conduit_0 (gaussian_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (gaussian_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit)  //  output,  width = 1, out_conduit_1.conduit
+		.out_conduit_0 (gaussian_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit)  //  output,  width = 1, out_conduit_0.conduit
 	);
 
 	gaussian_en_cfan gaussian_component_dpi_controller_enable_conduit_fanout_inst (
 		.in_conduit    (component_dpi_controller_gaussian_inst_dpi_control_enable_conduit),                  //   input,  width = 1,    in_conduit.conduit
-		.out_conduit_0 (gaussian_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
-		.out_conduit_1 (gaussian_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit)  //  output,  width = 1, out_conduit_1.conduit
+		.out_conduit_0 (gaussian_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit)  //  output,  width = 1, out_conduit_0.conduit
 	);
 
 	gaussian_ir_cfan gaussian_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -92,19 +82,13 @@ module tb (
 	);
 
 	gaussian gaussian_inst (
-		.clock                (clock_reset_inst_clock_clk),                                    //   input,   width = 1,     clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                                  //   input,   width = 1,     reset.reset_n
-		.start                (component_dpi_controller_gaussian_inst_component_call_valid),   //   input,   width = 1,      call.valid
-		.busy                 (gaussian_inst_call_stall),                                      //  output,   width = 1,          .stall
-		.done                 (gaussian_inst_return_valid),                                    //  output,   width = 1,    return.valid
-		.stall                (component_dpi_controller_gaussian_inst_component_return_stall), //   input,   width = 1,          .stall
-		.A_r                  (stream_source_dpi_bfm_gaussian_a_r_inst_source_data_data),      //   input,  width = 64,       A_r.data
-		.avmm_0_rw_address    (gaussian_inst_avmm_0_rw_address),                               //  output,  width = 64, avmm_0_rw.address
-		.avmm_0_rw_byteenable (gaussian_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,          .byteenable
-		.avmm_0_rw_read       (gaussian_inst_avmm_0_rw_read),                                  //  output,   width = 1,          .read
-		.avmm_0_rw_readdata   (gaussian_inst_avmm_0_rw_readdata),                              //   input,  width = 64,          .readdata
-		.avmm_0_rw_write      (gaussian_inst_avmm_0_rw_write),                                 //  output,   width = 1,          .write
-		.avmm_0_rw_writedata  (gaussian_inst_avmm_0_rw_writedata)                              //  output,  width = 64,          .writedata
+		.clock  (clock_reset_inst_clock_clk),                                    //   input,   width = 1,  clock.clk
+		.resetn (clock_reset_inst_reset_reset),                                  //   input,   width = 1,  reset.reset_n
+		.start  (component_dpi_controller_gaussian_inst_component_call_valid),   //   input,   width = 1,   call.valid
+		.busy   (gaussian_inst_call_stall),                                      //  output,   width = 1,       .stall
+		.done   (gaussian_inst_return_valid),                                    //  output,   width = 1, return.valid
+		.stall  (component_dpi_controller_gaussian_inst_component_return_stall), //   input,   width = 1,       .stall
+		.A_r    (stream_source_dpi_bfm_gaussian_a_r_inst_source_data_data)       //   input,  width = 64,    A_r.data
 	);
 
 	main_dpi_controller main_dpi_controller_inst (
@@ -115,19 +99,6 @@ module tb (
 		.component_done                   (concatenate_component_done_inst_out_conduit_conduit),                   //   input,  width = 1,                   component_done.conduit
 		.component_wait_for_stream_writes (concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit), //   input,  width = 1, component_wait_for_stream_writes.conduit
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
-	);
-
-	mm_agent_gaussian_avmm_0_rw mm_agent_dpi_bfm_gaussian_avmm_0_rw_inst (
-		.do_bind        (gaussian_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (gaussian_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                         //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                       //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (gaussian_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (gaussian_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (gaussian_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (gaussian_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (gaussian_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (gaussian_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
 	);
 
 	sp_cstart split_component_start_inst (

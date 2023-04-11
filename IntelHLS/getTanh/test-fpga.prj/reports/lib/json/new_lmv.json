@@ -3,7 +3,7 @@
   [
     {
       "name":"getTanh"
-      , "id":1412886072
+      , "id":1970609384
       , "type":"component"
       , "children":
       [
@@ -42,7 +42,7 @@
                   , "Bank depth":"1024 words"
                   , "Number of replicates":"1"
                   , "Number of private copies":"1"
-                  , "RAM Mode":"True dual-port"
+                  , "RAM Mode":"Simple dual-port"
                   , "Pump configuration":"Single-pumped"
                   , "Additional information":"In each private copy:</br>  Variable 'A' occupies memory words [0-999] and has 1 array element per memory word.</br>  Memory words [1000-1023] are unused padding."
                   , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
@@ -73,8 +73,8 @@
                       , "Bank depth":"1024 words"
                       , "Implemented bank size":"4096 bytes = (1024 words) x (4 bytes per word)"
                       , "Number of active ports":"2"
+                      , "Number of read ports":"1"
                       , "Number of write ports":"1"
-                      , "Number of shared (RW) ports":"1"
                       , "Additional information":"In each private copy:</br>  Variable 'A' occupies memory words [0-999] and has 1 array element per memory word.</br>  Memory words [1000-1023] are unused padding."
                       , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                     }
@@ -103,9 +103,8 @@
                           , "Implemented size":"4096 bytes = (1024 words) x (4 bytes per word)"
                           , "Memory Usage":"2 RAMs"
                           , "Number of physical ports":"2"
-                          , "Number of read ports":"0"
+                          , "Number of read ports":"1"
                           , "Number of write ports":"1"
-                          , "Number of shared (RW) ports":"1"
                           , "Additional information":"In each private copy:</br>  Variable 'A' occupies memory words [0-999] and has 1 array element per memory word.</br>  Memory words [1000-1023] are unused padding."
                           , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                         }
@@ -123,13 +122,13 @@
                       , "children":
                       [
                         {
-                          "name":"RW"
+                          "name":"R"
                           , "id":5
                           , "type":"port"
                         }
                         , {
                           "name":"W"
-                          , "id":7
+                          , "id":6
                           , "type":"port"
                         }
                       ]
@@ -155,7 +154,7 @@
             }
             , {
               "name":"addr"
-              , "id":9
+              , "id":7
               , "details":
               [
                 {
@@ -198,12 +197,12 @@
                   }
                 ]
               ]
-              , "type":"memsys"
+              , "type":"romsys"
               , "children":
               [
                 {
                   "name":"Bank 0"
-                  , "id":10
+                  , "id":8
                   , "details":
                   [
                     {
@@ -212,9 +211,9 @@
                       , "Bank width":"4 bytes"
                       , "Bank depth":"1024 words"
                       , "Implemented bank size":"4096 bytes = (1024 words) x (4 bytes per word)"
-                      , "Number of active ports":"2"
+                      , "Number of active ports":"1"
                       , "Number of read ports":"1"
-                      , "Number of write ports":"1"
+                      , "Number of un-used ports":"1"
                       , "Additional information":"In each private copy:</br>  Variable 'addr' occupies memory words [0-999] and has 1 array element per memory word.</br>  Memory words [1000-1023] are unused padding."
                       , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                     }
@@ -233,7 +232,7 @@
                   [
                     {
                       "name":"Replicate 0"
-                      , "id":11
+                      , "id":9
                       , "padding":"24"
                       , "depth":"1024"
                       , "details":
@@ -244,7 +243,7 @@
                           , "Memory Usage":"2 RAMs"
                           , "Number of physical ports":"2"
                           , "Number of read ports":"1"
-                          , "Number of write ports":"1"
+                          , "Number of un-used ports":"1"
                           , "Additional information":"In each private copy:</br>  Variable 'addr' occupies memory words [0-999] and has 1 array element per memory word.</br>  Memory words [1000-1023] are unused padding."
                           , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
                         }
@@ -263,30 +262,10 @@
                       [
                         {
                           "name":"R"
-                          , "id":12
-                          , "type":"port"
-                        }
-                        , {
-                          "name":"W"
-                          , "id":13
+                          , "id":10
                           , "type":"port"
                         }
                       ]
-                      , "copies":
-                      {
-                        "num":1
-                        , "details":
-                        [
-                          {
-                            "type":"table"
-                            , "Width":"4 bytes"
-                            , "Depth per copy (including padding)":"1024 words"
-                            , "Number of private copies":"1"
-                            , "Additional information":"In each private copy:</br>  Variable 'addr' occupies memory words [0-999] and has 1 array element per memory word.</br>  Memory words [1000-1023] are unused padding."
-                            , "Address bit information":"<table><tr><td>Byte address</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td>b<sub>1</sub></td><td>b<sub>0</sub></td></tr><tr><td>Sub-word bits</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td><td>0</td></tr><tr><td>Word address bits</td><td>b<sub>11</sub></td><td>b<sub>10</sub></td><td>b<sub>9</sub></td><td>b<sub>8</sub></td><td>b<sub>7</sub></td><td>b<sub>6</sub></td><td>b<sub>5</sub></td><td>b<sub>4</sub></td><td>b<sub>3</sub></td><td>b<sub>2</sub></td><td></td><td></td></tr></table>"
-                          }
-                        ]
-                      }
                     }
                   ]
                 }
@@ -296,7 +275,7 @@
         }
         , {
           "name":"Load"
-          , "id":1413137768
+          , "id":1970804984
           , "details":
           [
             {
@@ -328,7 +307,7 @@
             [
               {
                 "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-                , "line":32
+                , "line":33
               }
             ]
           ]
@@ -336,87 +315,7 @@
         }
         , {
           "name":"Store"
-          , "id":1413067576
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Width":"32 bits"
-              , "Stall-free":"Yes"
-              , "Type":"Pipelined never-stall"
-              , "Stores to":"A"
-              , "Start cycle":"16"
-              , "Latency":"1"
-              , "Reference":
-              [
-                {
-                  "type":"text"
-                  , "text":"See %L for more information"
-                  , "links":
-                  [
-                    {
-                      "guide":"Reference Manual"
-                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-                , "line":20
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Store"
-          , "id":1413124200
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Width":"32 bits"
-              , "Stall-free":"Yes"
-              , "Type":"Pipelined never-stall"
-              , "Stores to":"A"
-              , "Start cycle":"17"
-              , "Latency":"1"
-              , "Reference":
-              [
-                {
-                  "type":"text"
-                  , "text":"See %L for more information"
-                  , "links":
-                  [
-                    {
-                      "guide":"Reference Manual"
-                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-                , "line":25
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Store"
-          , "id":1413139544
+          , "id":1970806760
           , "details":
           [
             {
@@ -448,39 +347,15 @@
             [
               {
                 "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-                , "line":42
+                , "line":43
               }
             ]
           ]
           , "type":"inst"
         }
         , {
-          "name":"SHARE"
-          , "id":6
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Additional Information":"Mutually exclusive accesses, no stalls"
-            }
-          ]
-          , "type":"arb"
-        }
-        , {
-          "name":"SHARE"
-          , "id":8
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Additional Information":"Mutually exclusive accesses, no stalls"
-            }
-          ]
-          , "type":"arb"
-        }
-        , {
           "name":"Load"
-          , "id":1413136600
+          , "id":1970803816
           , "details":
           [
             {
@@ -512,47 +387,7 @@
             [
               {
                 "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-                , "line":31
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Store"
-          , "id":1413097752
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Width":"32 bits"
-              , "Stall-free":"Yes"
-              , "Type":"Pipelined never-stall"
-              , "Stores to":"addr"
-              , "Start cycle":"11"
-              , "Latency":"1"
-              , "Reference":
-              [
-                {
-                  "type":"text"
-                  , "text":"See %L for more information"
-                  , "links":
-                  [
-                    {
-                      "guide":"Reference Manual"
-                      , "link":"https://www.intel.com/content/www/us/en/programmable/documentation/ewa1462824960255.html"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-                , "line":21
+                , "line":32
               }
             ]
           ]
@@ -565,39 +400,15 @@
   [
     {
       "from":5
+      , "to":1970804984
+    }
+    , {
+      "from":1970806760
       , "to":6
     }
     , {
-      "from":6
-      , "to":5
-    }
-    , {
-      "from":6
-      , "to":1413137768
-    }
-    , {
-      "from":1413124200
-      , "to":6
-    }
-    , {
-      "from":8
-      , "to":7
-    }
-    , {
-      "from":1413067576
-      , "to":8
-    }
-    , {
-      "from":1413139544
-      , "to":8
-    }
-    , {
-      "from":12
-      , "to":1413136600
-    }
-    , {
-      "from":1413097752
-      , "to":13
+      "from":10
+      , "to":1970803816
     }
   ]
 }

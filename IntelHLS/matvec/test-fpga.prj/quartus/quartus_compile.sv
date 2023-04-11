@@ -8,12 +8,6 @@ module quartus_compile (
 	, input logic [63:0] matvec_M
 	, input logic [63:0] matvec_V
 	, input logic [63:0] matvec_Out0
-	, output logic [63:0] matvec_avmm_0_rw_address
-	, output logic [7:0] matvec_avmm_0_rw_byteenable
-	, output logic [0:0] matvec_avmm_0_rw_read
-	, input logic [63:0] matvec_avmm_0_rw_readdata
-	, output logic [0:0] matvec_avmm_0_rw_write
-	, output logic [63:0] matvec_avmm_0_rw_writedata
 	);
 
 	logic [0:0] matvec_start_reg;
@@ -23,12 +17,6 @@ module quartus_compile (
 	logic [63:0] matvec_M_reg;
 	logic [63:0] matvec_V_reg;
 	logic [63:0] matvec_Out0_reg;
-	logic [63:0] matvec_avmm_0_rw_address_reg;
-	logic [7:0] matvec_avmm_0_rw_byteenable_reg;
-	logic [0:0] matvec_avmm_0_rw_read_reg;
-	logic [63:0] matvec_avmm_0_rw_readdata_reg;
-	logic [0:0] matvec_avmm_0_rw_write_reg;
-	logic [63:0] matvec_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -39,12 +27,6 @@ module quartus_compile (
 		matvec_M_reg <= matvec_M;
 		matvec_V_reg <= matvec_V;
 		matvec_Out0_reg <= matvec_Out0;
-		matvec_avmm_0_rw_address <= matvec_avmm_0_rw_address_reg;
-		matvec_avmm_0_rw_byteenable <= matvec_avmm_0_rw_byteenable_reg;
-		matvec_avmm_0_rw_read <= matvec_avmm_0_rw_read_reg;
-		matvec_avmm_0_rw_readdata_reg <= matvec_avmm_0_rw_readdata;
-		matvec_avmm_0_rw_write <= matvec_avmm_0_rw_write_reg;
-		matvec_avmm_0_rw_writedata <= matvec_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -68,12 +50,6 @@ module quartus_compile (
 		, .M(matvec_M_reg)
 		, .V(matvec_V_reg)
 		, .Out0(matvec_Out0_reg)
-		, .avmm_0_rw_address(matvec_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(matvec_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(matvec_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(matvec_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(matvec_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(matvec_avmm_0_rw_writedata_reg)
 	);
 
 

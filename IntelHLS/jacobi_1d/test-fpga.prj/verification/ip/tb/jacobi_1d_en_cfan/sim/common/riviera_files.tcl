@@ -19,7 +19,7 @@ namespace eval jacobi_1d_en_cfan {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/jacobi_1d_en_cfan_avalon_conduit_fanout_10_joescla.sv"]\"  -work avalon_conduit_fanout_10"
+    lappend design_files "vlog  $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/jacobi_1d_en_cfan_avalon_conduit_fanout_10_ak2cvai.sv"]\"  -work avalon_conduit_fanout_10"
     lappend design_files "vlog -v2k5 $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"[normalize_path "$QSYS_SIMDIR/jacobi_1d_en_cfan.v"]\"  -work jacobi_1d_en_cfan"                                                                    
     return $design_files
   }

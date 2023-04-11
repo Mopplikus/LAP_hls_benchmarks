@@ -14,9 +14,9 @@
 // applicable agreement for further details.
 // ---------------------------------------------------------------------------
 
-// SystemVerilog created from i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram1_data_fifo
+// SystemVerilog created from i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram1_data_fifo
 // Created for function/kernel histogram
-// SystemVerilog created on Tue Apr  4 22:51:30 2023
+// SystemVerilog created on Fri Apr  7 17:12:38 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -47,18 +47,18 @@ module histogram_i_llvm_fpga_sfc_exit_s_c0_out_0000histogram1_data_fifo (
     wire [7:0] element_extension3_q;
     wire [7:0] element_extension5_q;
     wire [7:0] element_extension7_q;
-    wire [23:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_data;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_stall;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_stall_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_valid;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_valid_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_almost_full;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_almost_full_bitsignaltemp;
-    wire [23:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_data;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_stall;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_stall_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_valid;
-    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_valid_bitsignaltemp;
+    wire [23:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_data;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_stall;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_stall_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_valid;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_valid_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_almost_full;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_almost_full_bitsignaltemp;
+    wire [23:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_data;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_stall;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_stall_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_valid;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_valid_bitsignaltemp;
     wire [0:0] ip_dsdk_adapt_bitselect10_b;
     wire [0:0] ip_dsdk_adapt_bitselect12_b;
     wire [0:0] ip_dsdk_adapt_bitselect14_b;
@@ -79,15 +79,15 @@ module histogram_i_llvm_fpga_sfc_exit_s_c0_out_0000histogram1_data_fifo (
     // dsdk_ip_adapt_bitjoin1(BITJOIN,8)
     assign dsdk_ip_adapt_bitjoin1_q = {element_extension7_q, element_extension5_q, element_extension3_q};
 
-    // i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0(EXTIFACE,12)
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_data = dsdk_ip_adapt_bitjoin1_q;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_stall = in_i_stall;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_valid = in_i_valid;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_stall_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_stall[0];
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_valid_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_valid[0];
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_almost_full[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_almost_full_bitsignaltemp;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_stall[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_stall_bitsignaltemp;
-    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_valid[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_valid_bitsignaltemp;
+    // i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0(EXTIFACE,12)
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_data = dsdk_ip_adapt_bitjoin1_q;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_stall = in_i_stall;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_valid = in_i_valid;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_stall_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_stall[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_valid_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_valid[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_almost_full[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_almost_full_bitsignaltemp;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_stall[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_stall_bitsignaltemp;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_valid[0] = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_valid_bitsignaltemp;
     hld_fifo #(
         .DEPTH(32),
         .STYLE("ms"),
@@ -96,47 +96,47 @@ module histogram_i_llvm_fpga_sfc_exit_s_c0_out_0000histogram1_data_fifo (
         .RESET_EXTERNALLY_HELD(1),
         .SYNCHRONIZE_RESET(0),
         .WIDTH(24)
-    ) thei_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0 (
+    ) thei_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0 (
         .i_data(dsdk_ip_adapt_bitjoin1_q),
-        .i_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_stall_bitsignaltemp),
-        .i_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_i_valid_bitsignaltemp),
-        .o_almost_full(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_almost_full_bitsignaltemp),
-        .o_data(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_data),
-        .o_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_stall_bitsignaltemp),
-        .o_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_valid_bitsignaltemp),
+        .i_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_stall_bitsignaltemp),
+        .i_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_i_valid_bitsignaltemp),
+        .o_almost_full(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_almost_full_bitsignaltemp),
+        .o_data(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_data),
+        .o_stall(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_stall_bitsignaltemp),
+        .o_valid(i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_valid_bitsignaltemp),
         .clock(clock),
         .resetn(resetn)
     );
 
     // sync_out(GPOUT,17)@20000000
-    assign out_o_stall = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_stall;
+    assign out_o_stall = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_stall;
 
     // ip_dsdk_adapt_bitselect14(BITSELECT,15)
-    assign ip_dsdk_adapt_bitselect14_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_data[16:16];
+    assign ip_dsdk_adapt_bitselect14_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_data[16:16];
 
     // adapt_scalar_trunc15(ROUND,4)
     assign adapt_scalar_trunc15_in = ip_dsdk_adapt_bitselect14_b;
     assign adapt_scalar_trunc15_q = adapt_scalar_trunc15_in[0:0];
 
     // ip_dsdk_adapt_bitselect12(BITSELECT,14)
-    assign ip_dsdk_adapt_bitselect12_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_data[8:8];
+    assign ip_dsdk_adapt_bitselect12_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_data[8:8];
 
     // adapt_scalar_trunc13(ROUND,3)
     assign adapt_scalar_trunc13_in = ip_dsdk_adapt_bitselect12_b;
     assign adapt_scalar_trunc13_q = adapt_scalar_trunc13_in[0:0];
 
     // ip_dsdk_adapt_bitselect10(BITSELECT,13)
-    assign ip_dsdk_adapt_bitselect10_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_data[0:0];
+    assign ip_dsdk_adapt_bitselect10_b = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_data[0:0];
 
     // adapt_scalar_trunc11(ROUND,2)
     assign adapt_scalar_trunc11_in = ip_dsdk_adapt_bitselect10_b;
     assign adapt_scalar_trunc11_q = adapt_scalar_trunc11_in[0:0];
 
     // dupName_0_sync_out_aunroll_x(GPOUT,19)@20000003
-    assign out_o_almost_full = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_almost_full;
+    assign out_o_almost_full = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_almost_full;
     assign out_o_data_0_tpl = adapt_scalar_trunc11_q;
     assign out_o_data_1_tpl = adapt_scalar_trunc13_q;
     assign out_o_data_2_tpl = adapt_scalar_trunc15_q;
-    assign out_o_valid = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit60_histogram0_o_valid;
+    assign out_o_valid = i_llvm_fpga_sfc_exit_s_c0_out_for_body_histograms_c0_exit15_histogram0_o_valid;
 
 endmodule

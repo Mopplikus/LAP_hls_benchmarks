@@ -16,12 +16,12 @@
 
 // SystemVerilog created from fir_B3_branch
 // Created for function/kernel fir
-// SystemVerilog created on Wed Apr  5 16:46:39 2023
+// SystemVerilog created on Fri Apr  7 17:34:03 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module fir_B3_branch (
-    input wire [0:0] in_c0_exe6,
+    input wire [0:0] in_c0_exe2,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
@@ -33,7 +33,7 @@ module fir_B3_branch (
     );
 
     wire [0:0] VCC_q;
-    wire [0:0] c0_exe6_cmp_q;
+    wire [0:0] c0_exe2_cmp_q;
     wire [0:0] fir_B3_branch_enable_q;
     wire [0:0] fir_B3_branch_enable_not_q;
     wire [0:0] not_stall_in_0_q;
@@ -51,11 +51,11 @@ module fir_B3_branch (
     // not_stall_in_1(LOGICAL,10)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // c0_exe6_cmp(LOGICAL,2)
-    assign c0_exe6_cmp_q = ~ (in_c0_exe6);
+    // c0_exe2_cmp(LOGICAL,2)
+    assign c0_exe2_cmp_q = ~ (in_c0_exe2);
 
     // valid_out_1_and(LOGICAL,21)
-    assign valid_out_1_and_q = in_valid_in & c0_exe6_cmp_q;
+    assign valid_out_1_and_q = in_valid_in & c0_exe2_cmp_q;
 
     // valid_1_reg(REG,19)
     always @ (posedge clock or negedge resetn)
@@ -80,7 +80,7 @@ module fir_B3_branch (
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
     // valid_out_0_and(LOGICAL,20)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe6;
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe2;
 
     // valid_0_reg(REG,18)
     always @ (posedge clock or negedge resetn)

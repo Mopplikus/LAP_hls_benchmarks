@@ -9,7 +9,6 @@ source [file join [file dirname [info script]] ./../../../ip/tb/clock_reset/sim/
 source [file join [file dirname [info script]] ./../../../ip/tb/sso_triangular_x/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/triangular_cfan/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/sso_triangular_n/sim/common/vcs_files.tcl]
-source [file join [file dirname [info script]] ./../../../ip/tb/mm_agent_triangular_avmm_0_rw/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/triangular_en_cfan/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/cat_done/sim/common/vcs_files.tcl]
 
@@ -27,7 +26,6 @@ namespace eval tb {
     set memory_files [concat $memory_files [sso_triangular_x::get_memory_files "$QSYS_SIMDIR/../../ip/tb/sso_triangular_x/sim/"]]
     set memory_files [concat $memory_files [triangular_cfan::get_memory_files "$QSYS_SIMDIR/../../ip/tb/triangular_cfan/sim/"]]
     set memory_files [concat $memory_files [sso_triangular_n::get_memory_files "$QSYS_SIMDIR/../../ip/tb/sso_triangular_n/sim/"]]
-    set memory_files [concat $memory_files [mm_agent_triangular_avmm_0_rw::get_memory_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_triangular_avmm_0_rw/sim/"]]
     set memory_files [concat $memory_files [triangular_en_cfan::get_memory_files "$QSYS_SIMDIR/../../ip/tb/triangular_en_cfan/sim/"]]
     set memory_files [concat $memory_files [cat_done::get_memory_files "$QSYS_SIMDIR/../../ip/tb/cat_done/sim/"]]
     return $memory_files
@@ -46,7 +44,6 @@ namespace eval tb {
     set design_files [dict merge $design_files [sso_triangular_x::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/sso_triangular_x/sim/"]]
     set design_files [dict merge $design_files [triangular_cfan::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/triangular_cfan/sim/"]]
     set design_files [dict merge $design_files [sso_triangular_n::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/sso_triangular_n/sim/"]]
-    set design_files [dict merge $design_files [mm_agent_triangular_avmm_0_rw::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_triangular_avmm_0_rw/sim/"]]
     set design_files [dict merge $design_files [triangular_en_cfan::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/triangular_en_cfan/sim/"]]
     set design_files [dict merge $design_files [cat_done::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/cat_done/sim/"]]
     return $design_files
@@ -65,7 +62,6 @@ namespace eval tb {
     set design_files [dict merge $design_files [sso_triangular_x::get_design_files "$QSYS_SIMDIR/../../ip/tb/sso_triangular_x/sim/"]]
     set design_files [dict merge $design_files [triangular_cfan::get_design_files "$QSYS_SIMDIR/../../ip/tb/triangular_cfan/sim/"]]
     set design_files [dict merge $design_files [sso_triangular_n::get_design_files "$QSYS_SIMDIR/../../ip/tb/sso_triangular_n/sim/"]]
-    set design_files [dict merge $design_files [mm_agent_triangular_avmm_0_rw::get_design_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_triangular_avmm_0_rw/sim/"]]
     set design_files [dict merge $design_files [triangular_en_cfan::get_design_files "$QSYS_SIMDIR/../../ip/tb/triangular_en_cfan/sim/"]]
     set design_files [dict merge $design_files [cat_done::get_design_files "$QSYS_SIMDIR/../../ip/tb/cat_done/sim/"]]
     dict set design_files "tb_altera_irq_mapper_1920_trjgw7i.sv" "$QSYS_SIMDIR/../altera_irq_mapper_1920/sim/tb_altera_irq_mapper_1920_trjgw7i.sv"
@@ -86,7 +82,6 @@ namespace eval tb {
     append ELAB_OPTIONS [sso_triangular_x::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [triangular_cfan::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [sso_triangular_n::get_elab_options $SIMULATOR_TOOL_BITNESS]
-    append ELAB_OPTIONS [mm_agent_triangular_avmm_0_rw::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [triangular_en_cfan::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [cat_done::get_elab_options $SIMULATOR_TOOL_BITNESS]
     if ![ string match "bit_64" $SIMULATOR_TOOL_BITNESS ] {
@@ -109,7 +104,6 @@ namespace eval tb {
     append SIM_OPTIONS [sso_triangular_x::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [triangular_cfan::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [sso_triangular_n::get_sim_options $SIMULATOR_TOOL_BITNESS]
-    append SIM_OPTIONS [mm_agent_triangular_avmm_0_rw::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [triangular_en_cfan::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [cat_done::get_sim_options $SIMULATOR_TOOL_BITNESS]
     if ![ string match "bit_64" $SIMULATOR_TOOL_BITNESS ] {
@@ -133,7 +127,6 @@ namespace eval tb {
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [sso_triangular_x::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [triangular_cfan::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [sso_triangular_n::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
-    set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [mm_agent_triangular_avmm_0_rw::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [triangular_en_cfan::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [cat_done::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     dict set ENV_VARIABLES "LD_LIBRARY_PATH" $LD_LIBRARY_PATH

@@ -9,7 +9,6 @@ source [file join [file dirname [info script]] ./../../../ip/tb/sso_jacobi_1d_A_
 source [file join [file dirname [info script]] ./../../../../components/jacobi_1d/jacobi_1d/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/jacobi_1d_cfan/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/sp_cstart/sim/common/vcs_files.tcl]
-source [file join [file dirname [info script]] ./../../../ip/tb/mm_agent_jacobi_1d_avmm_0_rw/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/dpic_jacobi_1d/sim/common/vcs_files.tcl]
 source [file join [file dirname [info script]] ./../../../ip/tb/jacobi_1d_ir_cfan/sim/common/vcs_files.tcl]
 
@@ -27,7 +26,6 @@ namespace eval tb {
     set memory_files [concat $memory_files [jacobi_1d::get_memory_files "$QSYS_SIMDIR/../../../components/jacobi_1d/jacobi_1d/sim/"]]
     set memory_files [concat $memory_files [jacobi_1d_cfan::get_memory_files "$QSYS_SIMDIR/../../ip/tb/jacobi_1d_cfan/sim/"]]
     set memory_files [concat $memory_files [sp_cstart::get_memory_files "$QSYS_SIMDIR/../../ip/tb/sp_cstart/sim/"]]
-    set memory_files [concat $memory_files [mm_agent_jacobi_1d_avmm_0_rw::get_memory_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_jacobi_1d_avmm_0_rw/sim/"]]
     set memory_files [concat $memory_files [dpic_jacobi_1d::get_memory_files "$QSYS_SIMDIR/../../ip/tb/dpic_jacobi_1d/sim/"]]
     set memory_files [concat $memory_files [jacobi_1d_ir_cfan::get_memory_files "$QSYS_SIMDIR/../../ip/tb/jacobi_1d_ir_cfan/sim/"]]
     return $memory_files
@@ -46,7 +44,6 @@ namespace eval tb {
     set design_files [dict merge $design_files [jacobi_1d::get_common_design_files "$QSYS_SIMDIR/../../../components/jacobi_1d/jacobi_1d/sim/"]]
     set design_files [dict merge $design_files [jacobi_1d_cfan::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/jacobi_1d_cfan/sim/"]]
     set design_files [dict merge $design_files [sp_cstart::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/sp_cstart/sim/"]]
-    set design_files [dict merge $design_files [mm_agent_jacobi_1d_avmm_0_rw::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_jacobi_1d_avmm_0_rw/sim/"]]
     set design_files [dict merge $design_files [dpic_jacobi_1d::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/dpic_jacobi_1d/sim/"]]
     set design_files [dict merge $design_files [jacobi_1d_ir_cfan::get_common_design_files "$QSYS_SIMDIR/../../ip/tb/jacobi_1d_ir_cfan/sim/"]]
     return $design_files
@@ -65,7 +62,6 @@ namespace eval tb {
     set design_files [dict merge $design_files [jacobi_1d::get_design_files "$QSYS_SIMDIR/../../../components/jacobi_1d/jacobi_1d/sim/"]]
     set design_files [dict merge $design_files [jacobi_1d_cfan::get_design_files "$QSYS_SIMDIR/../../ip/tb/jacobi_1d_cfan/sim/"]]
     set design_files [dict merge $design_files [sp_cstart::get_design_files "$QSYS_SIMDIR/../../ip/tb/sp_cstart/sim/"]]
-    set design_files [dict merge $design_files [mm_agent_jacobi_1d_avmm_0_rw::get_design_files "$QSYS_SIMDIR/../../ip/tb/mm_agent_jacobi_1d_avmm_0_rw/sim/"]]
     set design_files [dict merge $design_files [dpic_jacobi_1d::get_design_files "$QSYS_SIMDIR/../../ip/tb/dpic_jacobi_1d/sim/"]]
     set design_files [dict merge $design_files [jacobi_1d_ir_cfan::get_design_files "$QSYS_SIMDIR/../../ip/tb/jacobi_1d_ir_cfan/sim/"]]
     dict set design_files "tb_altera_irq_mapper_1920_trjgw7i.sv" "$QSYS_SIMDIR/../altera_irq_mapper_1920/sim/tb_altera_irq_mapper_1920_trjgw7i.sv"
@@ -86,7 +82,6 @@ namespace eval tb {
     append ELAB_OPTIONS [jacobi_1d::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [jacobi_1d_cfan::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [sp_cstart::get_elab_options $SIMULATOR_TOOL_BITNESS]
-    append ELAB_OPTIONS [mm_agent_jacobi_1d_avmm_0_rw::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [dpic_jacobi_1d::get_elab_options $SIMULATOR_TOOL_BITNESS]
     append ELAB_OPTIONS [jacobi_1d_ir_cfan::get_elab_options $SIMULATOR_TOOL_BITNESS]
     if ![ string match "bit_64" $SIMULATOR_TOOL_BITNESS ] {
@@ -109,7 +104,6 @@ namespace eval tb {
     append SIM_OPTIONS [jacobi_1d::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [jacobi_1d_cfan::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [sp_cstart::get_sim_options $SIMULATOR_TOOL_BITNESS]
-    append SIM_OPTIONS [mm_agent_jacobi_1d_avmm_0_rw::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [dpic_jacobi_1d::get_sim_options $SIMULATOR_TOOL_BITNESS]
     append SIM_OPTIONS [jacobi_1d_ir_cfan::get_sim_options $SIMULATOR_TOOL_BITNESS]
     if ![ string match "bit_64" $SIMULATOR_TOOL_BITNESS ] {
@@ -133,7 +127,6 @@ namespace eval tb {
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [jacobi_1d::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [jacobi_1d_cfan::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [sp_cstart::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
-    set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [mm_agent_jacobi_1d_avmm_0_rw::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [dpic_jacobi_1d::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     set LD_LIBRARY_PATH [dict merge $LD_LIBRARY_PATH [dict get [jacobi_1d_ir_cfan::get_env_variables $SIMULATOR_TOOL_BITNESS] "LD_LIBRARY_PATH"]]
     dict set ENV_VARIABLES "LD_LIBRARY_PATH" $LD_LIBRARY_PATH

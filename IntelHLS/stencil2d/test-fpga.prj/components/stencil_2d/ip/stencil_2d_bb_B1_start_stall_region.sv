@@ -16,15 +16,15 @@
 
 // SystemVerilog created from bb_stencil_2d_B1_start_stall_region
 // Created for function/kernel stencil_2d
-// SystemVerilog created on Tue Apr  4 22:01:35 2023
+// SystemVerilog created on Fri Apr  7 16:44:43 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module stencil_2d_bb_B1_start_stall_region (
     input wire [0:0] in_iord_bl_call_stencil_2d_i_fifodata,
     input wire [0:0] in_iord_bl_call_stencil_2d_i_fifovalid,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_valid_out,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_stall_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_valid_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_stall_out,
     input wire [0:0] in_feedback_in_1,
     output wire [0:0] out_feedback_stall_out_1,
     input wire [0:0] in_feedback_valid_in_1,
@@ -51,8 +51,8 @@ module stencil_2d_bb_B1_start_stall_region (
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_stencil_2d1_out_valid_out;
     wire [0:0] stencil_2d_B1_start_merge_reg_out_stall_out;
     wire [0:0] stencil_2d_B1_start_merge_reg_out_valid_out;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_stall_out;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_valid_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_stall_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_valid_out;
     wire [0:0] i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_o_stall;
     wire [0:0] i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_o_valid;
     wire [0:0] i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_pipeline_valid_out;
@@ -184,8 +184,8 @@ module stencil_2d_bb_B1_start_stall_region (
 
     // i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x(BLACKBOX,32)@1
     // in in_i_stall@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_stall_out@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_valid_out@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_stall_out@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_valid_out@20000000
     // out out_o_stall@20000000
     // out out_pipeline_valid_out@20000000
     stencil_2d_i_sfc_s_c0_in_wt_entry_s_c0_enter13_stencil_2d0 thei_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x (
@@ -193,8 +193,8 @@ module stencil_2d_bb_B1_start_stall_region (
         .in_i_valid(SE_out_stencil_2d_B1_start_merge_reg_V0),
         .in_pipeline_stall_in(in_pipeline_stall_in),
         .in_unnamed_stencil_2d0_0_tpl(GND_q),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_stall_out(i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_valid_out(i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_valid_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_stall_out(i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_stall_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_valid_out(i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_valid_out),
         .out_o_stall(i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_o_stall),
         .out_o_valid(i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_o_valid),
         .out_pipeline_valid_out(i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_pipeline_valid_out),
@@ -205,8 +205,8 @@ module stencil_2d_bb_B1_start_stall_region (
     );
 
     // ext_sig_sync_out(GPOUT,8)
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_valid_out = i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_valid_out;
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_stall_out = i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going77_stencil_2d1_exiting_stall_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_valid_out = i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_valid_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_stall_out = i_sfc_s_c0_in_wt_entry_stencil_2ds_c0_enter13_stencil_2d0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going30_stencil_2d1_exiting_stall_out;
 
     // feedback_stall_out_1_sync(GPOUT,10)
     assign out_feedback_stall_out_1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_stencil_2d1_out_feedback_stall_out_1;

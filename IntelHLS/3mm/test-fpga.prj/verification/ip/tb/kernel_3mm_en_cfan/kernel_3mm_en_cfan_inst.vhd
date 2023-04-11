@@ -7,8 +7,7 @@
 			out_conduit_3 : out std_logic;        -- conduit
 			out_conduit_4 : out std_logic;        -- conduit
 			out_conduit_5 : out std_logic;        -- conduit
-			out_conduit_6 : out std_logic;        -- conduit
-			out_conduit_7 : out std_logic         -- conduit
+			out_conduit_6 : out std_logic         -- conduit
 		);
 	end component kernel_3mm_en_cfan;
 
@@ -21,7 +20,6 @@
 			out_conduit_3 => CONNECTED_TO_out_conduit_3, -- out_conduit_3.conduit
 			out_conduit_4 => CONNECTED_TO_out_conduit_4, -- out_conduit_4.conduit
 			out_conduit_5 => CONNECTED_TO_out_conduit_5, -- out_conduit_5.conduit
-			out_conduit_6 => CONNECTED_TO_out_conduit_6, -- out_conduit_6.conduit
-			out_conduit_7 => CONNECTED_TO_out_conduit_7  -- out_conduit_7.conduit
+			out_conduit_6 => CONNECTED_TO_out_conduit_6  -- out_conduit_6.conduit
 		);
 

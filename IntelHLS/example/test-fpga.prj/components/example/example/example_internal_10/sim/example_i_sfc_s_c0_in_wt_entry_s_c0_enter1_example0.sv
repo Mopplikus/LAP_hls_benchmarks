@@ -16,17 +16,17 @@
 
 // SystemVerilog created from i_sfc_s_c0_in_wt_entry_examples_c0_enter1_example0
 // Created for function/kernel example
-// SystemVerilog created on Tue Apr  4 21:14:17 2023
+// SystemVerilog created on Fri Apr  7 17:41:40 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module example_i_sfc_s_c0_in_wt_entry_s_c0_enter1_example0 (
     input wire [0:0] in_pipeline_stall_in,
     output wire [0:0] out_pipeline_valid_out,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_stall_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_stall_out,
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_valid_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_valid_out,
     input wire [0:0] in_i_valid,
     input wire [0:0] in_unnamed_example0_0_tpl,
     output wire [0:0] out_c0_exit_0_tpl,
@@ -45,8 +45,8 @@ module example_i_sfc_s_c0_in_wt_entry_s_c0_enter1_example0 (
     wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_examples_c0_exit_example1_aunroll_x_out_valid_out;
     wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_examples_c0_exit_example1_aunroll_x_out_data_out_0_tpl;
     wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_examples_c0_exit_example1_aunroll_x_out_data_out_1_tpl;
-    wire [0:0] i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_stall_out;
-    wire [0:0] i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_valid_out;
+    wire [0:0] i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_stall_out;
+    wire [0:0] i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_valid_out;
     wire [0:0] i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_o_valid;
     wire [0:0] i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_pipeline_valid_out;
     wire [0:0] i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_c0_exi1_0_tpl;
@@ -82,15 +82,15 @@ module example_i_sfc_s_c0_in_wt_entry_s_c0_enter1_example0 (
     );
 
     // i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x(BLACKBOX,11)@1
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_stall_out@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_valid_out@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_stall_out@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_valid_out@20000000
     // out out_pipeline_valid_out@20000000
     example_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_example0 thei_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x (
         .in_enable(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_examples_c0_exit_example1_aunroll_x_out_enable),
         .in_i_valid(input_accepted_and_q),
         .in_pipeline_stall_in(in_pipeline_stall_in),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_stall_out(i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_valid_out(i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_valid_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_stall_out(i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_stall_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_valid_out(i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_valid_out),
         .out_o_valid(i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_o_valid),
         .out_pipeline_valid_out(i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_pipeline_valid_out),
         .out_unnamed_example1(),
@@ -104,13 +104,13 @@ module example_i_sfc_s_c0_in_wt_entry_s_c0_enter1_example0 (
     assign out_pipeline_valid_out = i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_pipeline_valid_out;
 
     // regfree_osync(GPOUT,6)
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_stall_out = i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_stall_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_stall_out = i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_stall_out;
 
     // sync_out(GPOUT,8)@20000000
     assign out_o_stall = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_examples_c0_exit_example1_aunroll_x_out_stall_entry;
 
     // dupName_0_regfree_osync_x(GPOUT,9)
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_valid_out = i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going7_example1_exiting_valid_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_valid_out = i_sfc_logic_s_c0_in_wt_entry_examples_c0_enter1_example0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going3_example1_exiting_valid_out;
 
     // dupName_0_sync_out_aunroll_x(GPOUT,13)@1
     assign out_c0_exit_0_tpl = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_examples_c0_exit_example1_aunroll_x_out_data_out_0_tpl;

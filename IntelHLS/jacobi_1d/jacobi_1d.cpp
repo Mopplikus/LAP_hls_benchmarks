@@ -13,12 +13,12 @@ component void jacobi_1d(int A_1[N], int A_2[N], int B[N])
     hls_memory hls_singlepump int A_2_local[N];
     hls_memory hls_singlepump int B_local[N];
 
-    INIT:for(int i = 0; i < N; i++)
+    /*INIT:for(int i = 0; i < N; i++)
     {
         A_1_local[i] = A_1[i];
         A_2_local[i] = A_2[i];
         B_local[i] = B[i];
-    }
+    }*/
 
 	int t, i, j;
 	WORK:for (t = 0; t < TSTEPS; t++)
@@ -34,11 +34,11 @@ component void jacobi_1d(int A_1[N], int A_2[N], int B[N])
 		}
 	}	
 
-    OUT:for(i = 0; i < N; i++)
+    /*OUT:for(i = 0; i < N; i++)
     {
         A_2[i] = A_2_local[i];
         B[i] = B_local[i];
-    }	
+    }	*/
 	
 }
 

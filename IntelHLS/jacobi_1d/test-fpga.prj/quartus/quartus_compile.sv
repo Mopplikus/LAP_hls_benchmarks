@@ -8,12 +8,6 @@ module quartus_compile (
 	, input logic [63:0] jacobi_1d_A_1
 	, input logic [63:0] jacobi_1d_A_2
 	, input logic [63:0] jacobi_1d_B
-	, output logic [63:0] jacobi_1d_avmm_0_rw_address
-	, output logic [7:0] jacobi_1d_avmm_0_rw_byteenable
-	, output logic [0:0] jacobi_1d_avmm_0_rw_read
-	, input logic [63:0] jacobi_1d_avmm_0_rw_readdata
-	, output logic [0:0] jacobi_1d_avmm_0_rw_write
-	, output logic [63:0] jacobi_1d_avmm_0_rw_writedata
 	);
 
 	logic [0:0] jacobi_1d_start_reg;
@@ -23,12 +17,6 @@ module quartus_compile (
 	logic [63:0] jacobi_1d_A_1_reg;
 	logic [63:0] jacobi_1d_A_2_reg;
 	logic [63:0] jacobi_1d_B_reg;
-	logic [63:0] jacobi_1d_avmm_0_rw_address_reg;
-	logic [7:0] jacobi_1d_avmm_0_rw_byteenable_reg;
-	logic [0:0] jacobi_1d_avmm_0_rw_read_reg;
-	logic [63:0] jacobi_1d_avmm_0_rw_readdata_reg;
-	logic [0:0] jacobi_1d_avmm_0_rw_write_reg;
-	logic [63:0] jacobi_1d_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -39,12 +27,6 @@ module quartus_compile (
 		jacobi_1d_A_1_reg <= jacobi_1d_A_1;
 		jacobi_1d_A_2_reg <= jacobi_1d_A_2;
 		jacobi_1d_B_reg <= jacobi_1d_B;
-		jacobi_1d_avmm_0_rw_address <= jacobi_1d_avmm_0_rw_address_reg;
-		jacobi_1d_avmm_0_rw_byteenable <= jacobi_1d_avmm_0_rw_byteenable_reg;
-		jacobi_1d_avmm_0_rw_read <= jacobi_1d_avmm_0_rw_read_reg;
-		jacobi_1d_avmm_0_rw_readdata_reg <= jacobi_1d_avmm_0_rw_readdata;
-		jacobi_1d_avmm_0_rw_write <= jacobi_1d_avmm_0_rw_write_reg;
-		jacobi_1d_avmm_0_rw_writedata <= jacobi_1d_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -68,12 +50,6 @@ module quartus_compile (
 		, .A_1(jacobi_1d_A_1_reg)
 		, .A_2(jacobi_1d_A_2_reg)
 		, .B(jacobi_1d_B_reg)
-		, .avmm_0_rw_address(jacobi_1d_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(jacobi_1d_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(jacobi_1d_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(jacobi_1d_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(jacobi_1d_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(jacobi_1d_avmm_0_rw_writedata_reg)
 	);
 
 

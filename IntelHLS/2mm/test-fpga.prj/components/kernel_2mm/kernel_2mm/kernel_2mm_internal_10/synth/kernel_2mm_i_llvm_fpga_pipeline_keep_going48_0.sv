@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pipeline_keep_going48_kernel_2mm0
 // Created for function/kernel kernel_2mm
-// SystemVerilog created on Wed Apr  5 01:12:28 2023
+// SystemVerilog created on Fri Apr  7 18:35:51 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -116,10 +116,10 @@ module kernel_2mm_i_llvm_fpga_pipeline_keep_going48_0 (
     assign i_llvm_fpga_pipeline_keep_going48_kernel_2mm1_stall_out[0] = i_llvm_fpga_pipeline_keep_going48_kernel_2mm1_stall_out_bitsignaltemp;
     assign i_llvm_fpga_pipeline_keep_going48_kernel_2mm1_valid_out[0] = i_llvm_fpga_pipeline_keep_going48_kernel_2mm1_valid_out_bitsignaltemp;
     acl_pipeline #(
-        .FIFO_DEPTH(1),
+        .FIFO_DEPTH(0),
         .ASYNC_RESET(1),
-        .ENABLED(0),
-        .STYLE("SPECULATIVE"),
+        .ENABLED(1),
+        .STYLE("NON_SPECULATIVE"),
         .SYNCHRONIZE_RESET(0)
     ) thei_llvm_fpga_pipeline_keep_going48_kernel_2mm1 (
         .data_in(i_llvm_fpga_pipeline_keep_going48_kernel_2mm1_data_in_bitsignaltemp),

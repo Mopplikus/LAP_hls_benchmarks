@@ -6,12 +6,6 @@ module quartus_compile (
 	, output logic [0:0] gaussian_done
 	, input logic [0:0] gaussian_stall
 	, input logic [63:0] gaussian_A_r
-	, output logic [63:0] gaussian_avmm_0_rw_address
-	, output logic [7:0] gaussian_avmm_0_rw_byteenable
-	, output logic [0:0] gaussian_avmm_0_rw_read
-	, input logic [63:0] gaussian_avmm_0_rw_readdata
-	, output logic [0:0] gaussian_avmm_0_rw_write
-	, output logic [63:0] gaussian_avmm_0_rw_writedata
 	);
 
 	logic [0:0] gaussian_start_reg;
@@ -19,12 +13,6 @@ module quartus_compile (
 	logic [0:0] gaussian_done_reg;
 	logic [0:0] gaussian_stall_reg;
 	logic [63:0] gaussian_A_r_reg;
-	logic [63:0] gaussian_avmm_0_rw_address_reg;
-	logic [7:0] gaussian_avmm_0_rw_byteenable_reg;
-	logic [0:0] gaussian_avmm_0_rw_read_reg;
-	logic [63:0] gaussian_avmm_0_rw_readdata_reg;
-	logic [0:0] gaussian_avmm_0_rw_write_reg;
-	logic [63:0] gaussian_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -33,12 +21,6 @@ module quartus_compile (
 		gaussian_done <= gaussian_done_reg;
 		gaussian_stall_reg <= gaussian_stall;
 		gaussian_A_r_reg <= gaussian_A_r;
-		gaussian_avmm_0_rw_address <= gaussian_avmm_0_rw_address_reg;
-		gaussian_avmm_0_rw_byteenable <= gaussian_avmm_0_rw_byteenable_reg;
-		gaussian_avmm_0_rw_read <= gaussian_avmm_0_rw_read_reg;
-		gaussian_avmm_0_rw_readdata_reg <= gaussian_avmm_0_rw_readdata;
-		gaussian_avmm_0_rw_write <= gaussian_avmm_0_rw_write_reg;
-		gaussian_avmm_0_rw_writedata <= gaussian_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -60,12 +42,6 @@ module quartus_compile (
 		, .done(gaussian_done_reg)
 		, .stall(gaussian_stall_reg)
 		, .A_r(gaussian_A_r_reg)
-		, .avmm_0_rw_address(gaussian_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(gaussian_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(gaussian_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(gaussian_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(gaussian_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(gaussian_avmm_0_rw_writedata_reg)
 	);
 
 

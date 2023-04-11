@@ -8,12 +8,6 @@ module quartus_compile (
 	, output logic [31:0] fir_returndata
 	, input logic [63:0] fir_d_i
 	, input logic [63:0] fir_idx
-	, output logic [63:0] fir_avmm_0_rw_address
-	, output logic [7:0] fir_avmm_0_rw_byteenable
-	, output logic [0:0] fir_avmm_0_rw_read
-	, input logic [63:0] fir_avmm_0_rw_readdata
-	, output logic [0:0] fir_avmm_0_rw_write
-	, output logic [63:0] fir_avmm_0_rw_writedata
 	);
 
 	logic [0:0] fir_start_reg;
@@ -23,12 +17,6 @@ module quartus_compile (
 	logic [31:0] fir_returndata_reg;
 	logic [63:0] fir_d_i_reg;
 	logic [63:0] fir_idx_reg;
-	logic [63:0] fir_avmm_0_rw_address_reg;
-	logic [7:0] fir_avmm_0_rw_byteenable_reg;
-	logic [0:0] fir_avmm_0_rw_read_reg;
-	logic [63:0] fir_avmm_0_rw_readdata_reg;
-	logic [0:0] fir_avmm_0_rw_write_reg;
-	logic [63:0] fir_avmm_0_rw_writedata_reg;
 
 
 	always @(posedge clock) begin
@@ -39,12 +27,6 @@ module quartus_compile (
 		fir_returndata <= fir_returndata_reg;
 		fir_d_i_reg <= fir_d_i;
 		fir_idx_reg <= fir_idx;
-		fir_avmm_0_rw_address <= fir_avmm_0_rw_address_reg;
-		fir_avmm_0_rw_byteenable <= fir_avmm_0_rw_byteenable_reg;
-		fir_avmm_0_rw_read <= fir_avmm_0_rw_read_reg;
-		fir_avmm_0_rw_readdata_reg <= fir_avmm_0_rw_readdata;
-		fir_avmm_0_rw_write <= fir_avmm_0_rw_write_reg;
-		fir_avmm_0_rw_writedata <= fir_avmm_0_rw_writedata_reg;
 	end
 
 
@@ -68,12 +50,6 @@ module quartus_compile (
 		, .returndata(fir_returndata_reg)
 		, .d_i(fir_d_i_reg)
 		, .idx(fir_idx_reg)
-		, .avmm_0_rw_address(fir_avmm_0_rw_address_reg)
-		, .avmm_0_rw_byteenable(fir_avmm_0_rw_byteenable_reg)
-		, .avmm_0_rw_read(fir_avmm_0_rw_read_reg)
-		, .avmm_0_rw_readdata(fir_avmm_0_rw_readdata_reg)
-		, .avmm_0_rw_write(fir_avmm_0_rw_write_reg)
-		, .avmm_0_rw_writedata(fir_avmm_0_rw_writedata_reg)
 	);
 
 

@@ -1,11 +1,11 @@
 {
-  "117878512":
+  "2854003888":
   {
     "nodes":
     [
       {
         "name":"Exit"
-        , "id":148492512
+        , "id":2857439264
         , "subtype":"exit"
         , "start":"1.00"
         , "end":"1.00"
@@ -21,7 +21,7 @@
       }
       , {
         "name":"Entry"
-        , "id":149996272
+        , "id":2858266896
         , "subtype":"entry"
         , "details":
         [
@@ -37,91 +37,29 @@
     ]
     , "links":
     [
+      {
+        "from":2858266896
+        , "to":2857439264
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"16"
+          }
+        ]
+      }
     ]
   }
-  , "118219344":
+  , "2854407440":
   {
     "nodes":
     [
       {
-        "name":"Exit"
-        , "id":146811968
-        , "subtype":"exit"
-        , "start":"2.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Start Cycle":"2"
-            , "Latency":"3"
-            , "Exit FIFO Depth":"32"
-            , "Exit FIFO Width":"64"
-            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"'i'"
-        , "id":147843408
-        , "subtype":"pop"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"'i'"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":23
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":147845840
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":23
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"Loop Orch"
-        , "id":148486688
+        , "id":2859992960
         , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"6.00"
+        , "end":"6.00"
         , "details":
         [
           {
@@ -134,7 +72,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":23
+              , "line":38
             }
           ]
         ]
@@ -142,571 +80,7 @@
       }
       , {
         "name":"Entry"
-        , "id":148938928
-        , "subtype":"entry"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":147843408
-        , "to":146811968
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":147843408
-        , "to":147845840
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":147845840
-        , "to":147843408
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"'i'"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":148486688
-        , "to":146811968
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":148938928
-        , "to":146811968
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":148938928
-        , "to":147843408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":148938928
-        , "to":147843408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":148938928
-        , "to":148486688
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-    ]
-  }
-  , "119160784":
-  {
-    "nodes":
-    [
-      {
-        "name":"Loop Orch"
-        , "id":146816736
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":25
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"?"
-        , "id":148809776
-        , "subtype":"pop"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":23
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"'j'"
-        , "id":148815280
-        , "subtype":"pop"
-        , "start":"4.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"'j'"
-            , "Start Cycle":"4"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":25
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Exit"
-        , "id":148820864
-        , "subtype":"exit"
-        , "start":"4.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Start Cycle":"4"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":148828816
-        , "subtype":"ffwdDest"
-        , "start":"4.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"4"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":148831568
-        , "subtype":"default"
-        , "start":"3.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"3"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":148834416
-        , "subtype":"default"
-        , "start":"3.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"3"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":148838304
-        , "subtype":"default"
-        , "start":"4.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"4"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":25
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Entry"
-        , "id":149048512
-        , "subtype":"entry"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":146816736
-        , "to":148809776
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":146816736
-        , "to":148820864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":146816736
-        , "to":148815280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":148809776
-        , "to":148809776
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Unknown variable"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":148809776
-        , "to":148820864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148809776
-        , "to":148831568
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148809776
-        , "to":148834416
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148815280
-        , "to":148831568
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148815280
-        , "to":148834416
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148815280
-        , "to":148838304
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148828816
-        , "to":148831568
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":148831568
-        , "to":148820864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":148834416
-        , "to":148820864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":148838304
-        , "to":148815280
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"'j'"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"4"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":149048512
-        , "to":146816736
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":149048512
-        , "to":148809776
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":149048512
-        , "to":148809776
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":149048512
-        , "to":148815280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":149048512
-        , "to":148820864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":149048512
-        , "to":148815280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-    ]
-  }
-  , "119920304":
-  {
-    "nodes":
-    [
-      {
-        "name":"Entry"
-        , "id":146647136
+        , "id":2860178160
         , "subtype":"entry"
         , "details":
         [
@@ -721,7 +95,7 @@
       }
       , {
         "name":"'i'"
-        , "id":148667328
+        , "id":2865279808
         , "subtype":"pop"
         , "start":"2.00"
         , "end":"2.00"
@@ -740,33 +114,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":37
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":148670112
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":39
+              , "line":38
             }
           ]
         ]
@@ -774,7 +122,7 @@
       }
       , {
         "name":"LD"
-        , "id":148672752
+        , "id":2866568544
         , "subtype":"load/store"
         , "start":"2.00"
         , "end":"6.00"
@@ -796,39 +144,15 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":39
+              , "line":40
             }
           ]
         ]
         , "type":"inst"
       }
       , {
-        "name":"Loop Orch"
-        , "id":148681088
-        , "subtype":"default"
-        , "start":"6.00"
-        , "end":"6.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":37
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":148850064
+        "name":"Ptr. Comp."
+        , "id":2866810832
         , "subtype":"default"
         , "start":"2.00"
         , "end":"2.00"
@@ -836,8 +160,7 @@
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
+            , "Instruction":"Pointer Computation"
             , "Start Cycle":"2"
             , "Latency":"0"
           }
@@ -847,7 +170,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":37
+              , "line":40
             }
           ]
         ]
@@ -855,7 +178,7 @@
       }
       , {
         "name":"Exit"
-        , "id":149094864
+        , "id":2867026048
         , "subtype":"exit"
         , "start":"6.00"
         , "end":"9.00"
@@ -866,9 +189,36 @@
             , "Start Cycle":"6"
             , "Latency":"3"
             , "Exit FIFO Depth":"32"
-            , "Exit FIFO Width":"256"
+            , "Exit FIFO Width":"320"
             , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
           }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2868349776
+        , "subtype":"default"
+        , "start":"2.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":38
+            }
+          ]
         ]
         , "type":"inst"
       }
@@ -876,118 +226,8 @@
     , "links":
     [
       {
-        "from":146647136
-        , "to":148667328
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":146647136
-        , "to":148681088
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":146647136
-        , "to":148667328
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":146647136
-        , "to":149094864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":148667328
-        , "to":148670112
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148667328
-        , "to":148850064
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148667328
-        , "to":149094864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148670112
-        , "to":148672752
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":148670112
-        , "to":149094864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":148672752
-        , "to":149094864
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148681088
-        , "to":149094864
+        "from":2859992960
+        , "to":2867026048
         , "details":
         [
           {
@@ -997,8 +237,129 @@
         ]
       }
       , {
-        "from":148850064
-        , "to":148667328
+        "from":2860178160
+        , "to":2859992960
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2860178160
+        , "to":2865279808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2860178160
+        , "to":2866568544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2860178160
+        , "to":2867026048
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2860178160
+        , "to":2865279808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2865279808
+        , "to":2866810832
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2865279808
+        , "to":2867026048
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2865279808
+        , "to":2868349776
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2866568544
+        , "to":2867026048
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2866810832
+        , "to":2866568544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2866810832
+        , "to":2867026048
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2868349776
+        , "to":2865279808
         , "reverse":1
         , "details":
         [
@@ -1015,32 +376,39 @@
       }
     ]
   }
-  , "120489440":
+  , "2855158224":
   {
     "nodes":
     [
       {
-        "name":"Exit"
-        , "id":145746208
-        , "subtype":"exit"
-        , "start":"12.00"
-        , "end":"15.00"
+        "name":"Ptr. Comp."
+        , "id":2853938864
+        , "subtype":"default"
+        , "start":"2.00"
+        , "end":"3.00"
         , "details":
         [
           {
             "type":"table"
-            , "Start Cycle":"12"
-            , "Latency":"3"
-            , "Exit FIFO Depth":"32"
-            , "Exit FIFO Width":"256"
-            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"2"
+            , "Latency":"1"
           }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":43
+            }
+          ]
         ]
         , "type":"inst"
       }
       , {
         "name":"Loop Orch"
-        , "id":146781040
+        , "id":2855171328
         , "subtype":"pop"
         , "start":"2.00"
         , "end":"2.00"
@@ -1056,7 +424,78 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":40
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":2859141088
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":2861407024
+        , "subtype":"load/store"
+        , "start":"3.00"
+        , "end":"7.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"3"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":43
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":2862235376
+        , "subtype":"default"
+        , "start":"3.00"
+        , "end":"7.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"3"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":44
             }
           ]
         ]
@@ -1064,7 +503,7 @@
       }
       , {
         "name":"?"
-        , "id":146792224
+        , "id":2862338592
         , "subtype":"pop"
         , "start":"2.00"
         , "end":"2.00"
@@ -1083,202 +522,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":39
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":146797376
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":146800016
-        , "subtype":"load/store"
-        , "start":"3.00"
-        , "end":"7.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"3"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"'j'"
-        , "id":146805472
-        , "subtype":"pop"
-        , "start":"3.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"'j'"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":40
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":146808256
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":42
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":147340432
-        , "subtype":"load/store"
-        , "start":"3.00"
-        , "end":"7.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"3"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":42
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":147345360
-        , "subtype":"default"
-        , "start":"3.00"
-        , "end":"7.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"3"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":147354512
-        , "subtype":"load/store"
-        , "start":"7.00"
-        , "end":"11.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"7"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
+              , "line":47
             }
           ]
         ]
@@ -1286,7 +530,7 @@
       }
       , {
         "name":"*"
-        , "id":147359440
+        , "id":2862585968
         , "subtype":"default"
         , "start":"7.00"
         , "end":"10.00"
@@ -1304,7 +548,140 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
+              , "line":45
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":2862750256
+        , "subtype":"load/store"
+        , "start":"3.00"
+        , "end":"7.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"3"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":2863240864
+        , "subtype":"exit"
+        , "start":"12.00"
+        , "end":"15.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"12"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"32"
+            , "Exit FIFO Width":"256"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2863300672
+        , "subtype":"default"
+        , "start":"3.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"q_local"
+        , "id":2866089872
+        , "subtype":"pop"
+        , "start":"2.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"q_local"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":40
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":2866129936
+        , "subtype":"load/store"
+        , "start":"7.00"
+        , "end":"11.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"7"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":44
             }
           ]
         ]
@@ -1312,7 +689,7 @@
       }
       , {
         "name":"+"
-        , "id":147359792
+        , "id":2866133024
         , "subtype":"default"
         , "start":"11.00"
         , "end":"11.00"
@@ -1330,7 +707,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
+              , "line":44
             }
           ]
         ]
@@ -1338,7 +715,7 @@
       }
       , {
         "name":"ST"
-        , "id":147360144
+        , "id":2866133376
         , "subtype":"load/store"
         , "start":"11.00"
         , "end":"12.00"
@@ -1360,7 +737,113 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":43
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'j'"
+        , "id":2866201840
+        , "subtype":"pop"
+        , "start":"3.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'j'"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":41
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2866464560
+        , "subtype":"default"
+        , "start":"11.00"
+        , "end":"11.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Start Cycle":"11"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":45
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":2866482896
+        , "subtype":"default"
+        , "start":"3.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"3"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":45
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":2866565232
+        , "subtype":"pop"
+        , "start":"2.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"2"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":40
             }
           ]
         ]
@@ -1368,7 +851,7 @@
       }
       , {
         "name":"LD"
-        , "id":148624464
+        , "id":2866662560
         , "subtype":"load/store"
         , "start":"3.00"
         , "end":"7.00"
@@ -1390,6 +873,59 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":45
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"q_local"
+        , "id":2867166544
+        , "subtype":"pop"
+        , "start":"10.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"q_local"
+            , "Start Cycle":"10"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+              , "line":36
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":2867531680
+        , "subtype":"default"
+        , "start":"2.00"
+        , "end":"3.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"2"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
               , "line":44
             }
           ]
@@ -1398,7 +934,7 @@
       }
       , {
         "name":"*"
-        , "id":148629264
+        , "id":2868275856
         , "subtype":"default"
         , "start":"7.00"
         , "end":"10.00"
@@ -1422,160 +958,23 @@
         ]
         , "type":"inst"
       }
-      , {
-        "name":"q_local"
-        , "id":148629616
-        , "subtype":"pop"
-        , "start":"10.00"
-        , "end":"10.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"q_local"
-            , "Start Cycle":"10"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":35
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":148632048
-        , "subtype":"default"
-        , "start":"11.00"
-        , "end":"11.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Start Cycle":"11"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":44
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":148635120
-        , "subtype":"default"
-        , "start":"3.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":40
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"q_local"
-        , "id":148653088
-        , "subtype":"pop"
-        , "start":"10.00"
-        , "end":"10.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"q_local"
-            , "Start Cycle":"10"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":39
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Entry"
-        , "id":148863328
-        , "subtype":"entry"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":149095408
-        , "subtype":"default"
-        , "start":"3.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":44
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
     ]
     , "links":
     [
       {
-        "from":146781040
-        , "to":145746208
+        "from":2853938864
+        , "to":2861407024
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2855171328
+        , "to":2866089872
         , "details":
         [
           {
@@ -1585,8 +984,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":146792224
+        "from":2855171328
+        , "to":2861407024
         , "details":
         [
           {
@@ -1596,8 +995,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":146800016
+        "from":2855171328
+        , "to":2866565232
         , "details":
         [
           {
@@ -1607,8 +1006,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":147340432
+        "from":2855171328
+        , "to":2862750256
         , "details":
         [
           {
@@ -1618,8 +1017,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":147354512
+        "from":2855171328
+        , "to":2863240864
         , "details":
         [
           {
@@ -1629,8 +1028,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":147360144
+        "from":2855171328
+        , "to":2866201840
         , "details":
         [
           {
@@ -1640,8 +1039,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":148624464
+        "from":2855171328
+        , "to":2862338592
         , "details":
         [
           {
@@ -1651,8 +1050,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":148629616
+        "from":2855171328
+        , "to":2866129936
         , "details":
         [
           {
@@ -1662,8 +1061,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":146805472
+        "from":2855171328
+        , "to":2866133376
         , "details":
         [
           {
@@ -1673,8 +1072,8 @@
         ]
       }
       , {
-        "from":146781040
-        , "to":148653088
+        "from":2855171328
+        , "to":2867166544
         , "details":
         [
           {
@@ -1684,8 +1083,206 @@
         ]
       }
       , {
-        "from":146792224
-        , "to":146792224
+        "from":2855171328
+        , "to":2866662560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"2"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2855171328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2866089872
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2862338592
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2866565232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2863240864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2866201840
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2862338592
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2866089872
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2866129936
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2866201840
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2867166544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2866565232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2859141088
+        , "to":2867166544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2861407024
+        , "to":2862585968
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2861407024
+        , "to":2868275856
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2862235376
+        , "to":2866129936
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2862235376
+        , "to":2866133376
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2862338592
+        , "to":2862338592
         , "reverse":1
         , "details":
         [
@@ -1694,48 +1291,15 @@
             , "Instruction":"Feedback Write"
             , "Variable":"Unknown variable"
             , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"64"
+            , "Feedback FIFO Width":"1"
             , "Start Cycle":"2"
             , "Latency":"0"
           }
         ]
       }
       , {
-        "from":146792224
-        , "to":146797376
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146792224
-        , "to":146808256
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146797376
-        , "to":146800016
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":146800016
-        , "to":147359440
+        "from":2862585968
+        , "to":2866464560
         , "details":
         [
           {
@@ -1745,8 +1309,8 @@
         ]
       }
       , {
-        "from":146805472
-        , "to":146808256
+        "from":2862750256
+        , "to":2868275856
         , "details":
         [
           {
@@ -1756,201 +1320,8 @@
         ]
       }
       , {
-        "from":146805472
-        , "to":147345360
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":146805472
-        , "to":148635120
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":146805472
-        , "to":149095408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":146808256
-        , "to":147340432
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":147340432
-        , "to":147359440
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":147340432
-        , "to":148629264
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":147345360
-        , "to":147354512
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":147345360
-        , "to":147360144
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":147354512
-        , "to":147359792
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":147359440
-        , "to":147359792
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":147359792
-        , "to":147360144
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":147360144
-        , "to":145746208
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":148624464
-        , "to":148629264
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148629264
-        , "to":148632048
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148629616
-        , "to":148632048
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148632048
-        , "to":145746208
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148632048
-        , "to":148629616
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"q_local"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"11"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":148635120
-        , "to":146805472
+        "from":2863300672
+        , "to":2866201840
         , "reverse":1
         , "details":
         [
@@ -1966,19 +1337,8 @@
         ]
       }
       , {
-        "from":148653088
-        , "to":145746208
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":148653088
-        , "to":148653088
+        "from":2866089872
+        , "to":2866089872
         , "reverse":1
         , "details":
         [
@@ -1988,438 +1348,14 @@
             , "Variable":"q_local"
             , "Feedback FIFO Depth":"1"
             , "Feedback FIFO Width":"64"
-            , "Start Cycle":"11"
+            , "Start Cycle":"3"
             , "Latency":"0"
           }
         ]
       }
       , {
-        "from":148863328
-        , "to":145746208
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":146781040
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":146792224
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":146792224
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":146805472
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":147354512
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":148629616
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":148629616
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":146805472
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":148653088
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":148863328
-        , "to":148653088
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"320"
-          }
-        ]
-      }
-      , {
-        "from":149095408
-        , "to":148624464
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-    ]
-  }
-  , "121652176":
-  {
-    "nodes":
-    [
-      {
-        "name":"Entry"
-        , "id":146920720
-        , "subtype":"entry"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"'i'"
-        , "id":148587280
-        , "subtype":"pop"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"'i'"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":50
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":148590064
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":52
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":148593232
-        , "subtype":"load/store"
-        , "start":"2.00"
-        , "end":"6.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"2"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":52
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":148598160
-        , "subtype":"ffwdDest"
-        , "start":"6.00"
-        , "end":"6.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"6"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":148600384
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"6.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":52
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":148602192
-        , "subtype":"load/store"
-        , "start":"6.00"
-        , "end":"10.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Store"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"6"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":52
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":148606288
-        , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
-              , "line":50
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Exit"
-        , "id":148932096
-        , "subtype":"exit"
-        , "start":"10.00"
-        , "end":"13.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Start Cycle":"10"
-            , "Latency":"3"
-            , "Exit FIFO Depth":"32"
-            , "Exit FIFO Width":"24"
-            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-          }
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":146920720
-        , "to":148587280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":146920720
-        , "to":148587280
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":146920720
-        , "to":148932096
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"16"
-          }
-        ]
-      }
-      , {
-        "from":148587280
-        , "to":148590064
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148587280
-        , "to":148600384
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148587280
-        , "to":148606288
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":148590064
-        , "to":148593232
+        "from":2866089872
+        , "to":2863240864
         , "details":
         [
           {
@@ -2429,8 +1365,8 @@
         ]
       }
       , {
-        "from":148593232
-        , "to":148602192
+        "from":2866129936
+        , "to":2866133024
         , "details":
         [
           {
@@ -2440,41 +1376,190 @@
         ]
       }
       , {
-        "from":148598160
-        , "to":148600384
+        "from":2866133024
+        , "to":2866133376
         , "details":
         [
           {
             "type":"table"
-            , "Width":"64"
+            , "Width":"32"
           }
         ]
       }
       , {
-        "from":148600384
-        , "to":148602192
+        "from":2866133376
+        , "to":2863240864
         , "details":
         [
           {
             "type":"table"
-            , "Width":"64"
+            , "Width":"1"
           }
         ]
       }
       , {
-        "from":148606288
-        , "to":148587280
+        "from":2866201840
+        , "to":2853938864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2866201840
+        , "to":2862235376
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2866201840
+        , "to":2863300672
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2866201840
+        , "to":2866482896
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2866464560
+        , "to":2863240864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2866464560
+        , "to":2867166544
         , "reverse":1
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Feedback Write"
-            , "Variable":"'i'"
+            , "Variable":"q_local"
             , "Feedback FIFO Depth":"1"
             , "Feedback FIFO Width":"32"
+            , "Start Cycle":"11"
+            , "Latency":"0"
+          }
+        ]
+      }
+      , {
+        "from":2866482896
+        , "to":2866662560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2866565232
+        , "to":2853938864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2866565232
+        , "to":2866565232
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"64"
             , "Start Cycle":"2"
             , "Latency":"0"
+          }
+        ]
+      }
+      , {
+        "from":2866565232
+        , "to":2867531680
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2866662560
+        , "to":2862585968
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2867166544
+        , "to":2866464560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2867531680
+        , "to":2862750256
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2868275856
+        , "to":2866133024
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
           }
         ]
       }

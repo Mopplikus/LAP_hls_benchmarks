@@ -4,9 +4,9 @@
   , "debug_enabled":"true"
   , "type":"module"
   , "total_percent":
-  [0.538566, 0.425562, 0.163858, 0.147438, 0.131752]
+  [0.334449, 0.261353, 0.103991, 0.147438, 0.131752]
   , "total":
-  [2236, 2800, 4, 2, 70]
+  [913, 1777, 4, 2, 66]
   , "name":"System"
   , "max_resources":
   [854400, 1708800, 2713, 1518, 42720]
@@ -17,9 +17,9 @@
       , "compute_units":1
       , "type":"function"
       , "total_percent":
-      [0.538566, 0.425562, 0.163858, 0.147438, 0.131752]
+      [0.334449, 0.261353, 0.103991, 0.147438, 0.131752]
       , "total_kernel_resources":
-      [2236, 2800, 4, 1.5, 70]
+      [913, 1777, 4, 1.5, 66]
       , "details":
       [
         {
@@ -116,74 +116,6 @@
             , {
               "type":"brief"
               , "text":"Register,\n1 reg, 6 width by 1 depth,\n1 reg, 32 width by 1 depth"
-            }
-          ]
-        }
-        , {
-          "name":"Variable: \n - 'j' (stencil2d.cpp:13)"
-          , "type":"resource"
-          , "data":
-          [14, 51, 0, 0, 0]
-          , "debug":
-          [
-            [
-              {
-                "filename":"stencil2d.cpp"
-                , "line":13
-              }
-            ]
-          ]
-          , "details":
-          [
-            {
-              "type":"text"
-              , "text":"Type: Register"
-            }
-            , {
-              "type":"text"
-              , "text":"1 register of width 11 bits and depth 1"
-            }
-            , {
-              "type":"text"
-              , "text":"1 register of width 32 bits and depth 1"
-            }
-            , {
-              "type":"brief"
-              , "text":"Register,\n1 reg, 11 width by 1 depth,\n1 reg, 32 width by 1 depth"
-            }
-          ]
-        }
-        , {
-          "name":"Variable: \n - 'j' (stencil2d.cpp:17)"
-          , "type":"resource"
-          , "data":
-          [14, 45, 0, 0, 0]
-          , "debug":
-          [
-            [
-              {
-                "filename":"stencil2d.cpp"
-                , "line":17
-              }
-            ]
-          ]
-          , "details":
-          [
-            {
-              "type":"text"
-              , "text":"Type: Register"
-            }
-            , {
-              "type":"text"
-              , "text":"1 register of width 5 bits and depth 1"
-            }
-            , {
-              "type":"text"
-              , "text":"1 register of width 32 bits and depth 1"
-            }
-            , {
-              "type":"brief"
-              , "text":"Register,\n1 reg, 5 width by 1 depth,\n1 reg, 32 width by 1 depth"
             }
           ]
         }
@@ -383,7 +315,7 @@
               , "Number of replicates":"1"
               , "Number of private copies":"1"
               , "User defined HLS attributes":"hls_memory; hls_singlepump; "
-              , "Additional information":"Requested size 40 bytes, implemented size 64 bytes, stall-free, 1 read and 1 write. "
+              , "Additional information":"Requested size 40 bytes, implemented size 64 bytes, stall-free, 1 read and 0 writes. "
             }
             , {
               "type":"brief"
@@ -419,7 +351,7 @@
               , "Number of replicates":"1"
               , "Number of private copies":"1"
               , "User defined HLS attributes":"hls_memory; hls_singlepump; "
-              , "Additional information":"Requested size 3600 bytes, implemented size 4096 bytes, stall-free, 1 read and 1 write. "
+              , "Additional information":"Requested size 3600 bytes, implemented size 4096 bytes, stall-free, 1 read and 0 writes. "
             }
             , {
               "type":"brief"
@@ -527,7 +459,7 @@
           ]
         }
         , {
-          "name":"stencil_2d.B10"
+          "name":"stencil_2d.B2"
           , "type":"basicblock"
           , "children":
           [
@@ -535,7 +467,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [42, 340, 0, 0, 6]
+              [1, 36, 0, 0, 0]
               , "details":
               [
                 {
@@ -568,7 +500,442 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [42, 340, 0, 0, 6]
+                  [1, 36, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [9, 7, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"stencil2d.cpp:25"
+                  , "type":"resource"
+                  , "data":
+                  [9, 7, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":25
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [8, 6, 0, 0, 4]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"stencil2d.cpp:25"
+                  , "type":"resource"
+                  , "data":
+                  [2, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":25
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"6-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [2, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"stencil2d.cpp:38"
+                  , "type":"resource"
+                  , "data":
+                  [55, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":38
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [55, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"stencil_2d.B3"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [5, 8, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [5, 8, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"stencil2d.cpp:35"
+                  , "type":"resource"
+                  , "data":
+                  [2, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":35
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"FFwd Destination"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [2, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"stencil2d.cpp:43"
+                  , "type":"resource"
+                  , "data":
+                  [3, 2, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":43
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Stream Write"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3, 2, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"stencil_2d.B4"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [0, 67, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [0, 67, 0, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Feedback"
+              , "type":"resource"
+              , "data":
+              [33, 84, 0, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Loop-carried dependencies"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce number and size of loop-carried variables"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"stencil2d.cpp:25"
+                  , "type":"resource"
+                  , "data":
+                  [16, 41, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":25
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"stencil2d.cpp:27"
+                  , "type":"resource"
+                  , "data":
+                  [9, 7, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":27
+                      }
+                    ]
+                  ]
+                }
+                , {
+                  "name":"stencil2d.cpp:38"
+                  , "type":"resource"
+                  , "data":
+                  [8, 36, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":38
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [8, 6, 0, 0, 9]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"stencil2d.cpp:27"
+                  , "type":"resource"
+                  , "data":
+                  [2, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":27
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"6-bit Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [2, 0, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"stencil_2d.B6"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [42, 372, 0, 0, 6]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Live values and control logic"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [42, 372, 0, 0, 6]
                 }
               ]
             }
@@ -752,7 +1119,7 @@
           ]
         }
         , {
-          "name":"stencil_2d.B11"
+          "name":"stencil_2d.B7"
           , "type":"basicblock"
           , "children":
           [
@@ -862,7 +1229,7 @@
           ]
         }
         , {
-          "name":"stencil_2d.B13"
+          "name":"stencil_2d.B9"
           , "type":"basicblock"
           , "children":
           [
@@ -948,6 +1315,21 @@
               , "children":
               [
                 {
+                  "name":"stencil2d.cpp:22"
+                  , "type":"resource"
+                  , "data":
+                  [2, 2, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                        , "line":22
+                      }
+                    ]
+                  ]
+                }
+                , {
                   "name":"stencil2d.cpp:25"
                   , "type":"resource"
                   , "data":
@@ -1018,21 +1400,6 @@
                       {
                         "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
                         , "line":34
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"stencil2d.cpp:35"
-                  , "type":"resource"
-                  , "data":
-                  [2, 2, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":35
                       }
                     ]
                   ]
@@ -1239,901 +1606,6 @@
                       , "count":1
                       , "data":
                       [32, 0, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-              ]
-            }
-          ]
-        }
-        , {
-          "name":"stencil_2d.B3"
-          , "type":"basicblock"
-          , "children":
-          [
-            {
-              "name":"State"
-              , "type":"resource"
-              , "data":
-              [41, 397, 0, 0, 1]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Live values and control logic"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for live values and control logic. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce size of local variables"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce scope of local variables, localizing them as much as possible"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce number of nested loops"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"No Source Line"
-                  , "type":"resource"
-                  , "data":
-                  [41, 397, 0, 0, 1]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [36, 34, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:13"
-                  , "type":"resource"
-                  , "data":
-                  [36, 34, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":13
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-            , {
-              "name":"Cluster logic"
-              , "type":"resource"
-              , "data":
-              [8, 6, 0, 0, 1]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
-                }
-              ]
-            }
-            , {
-              "name":"Computation"
-              , "type":"resource"
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:13"
-                  , "type":"resource"
-                  , "data":
-                  [10, 1, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":13
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"1-bit And"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [1, 1, 0, 0, 0]
-                    }
-                    , {
-                      "name":"1-bit Or"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [1, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"11-bit Integer Compare"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [4, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"4-bit Select"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [4, 0, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-                , {
-                  "name":"stencil2d.cpp:15"
-                  , "type":"resource"
-                  , "data":
-                  [554, 55, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":15
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"16-bit Unsigned Integer Remainder"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [486, 15, 0, 0, 0]
-                      , "details":
-                      [
-                        {
-                          "type":"text"
-                          , "text":"Implemented using inlined soft-IP."
-                        }
-                      ]
-                    }
-                    , {
-                      "name":"Store"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [34, 24, 0, 0, 0]
-                      , "details":
-                      [
-                        {
-                          "type":"text"
-                          , "text":"Store uses a Pipelined never-stall LSU"
-                        }
-                        , {
-                          "type":"brief"
-                          , "text":"Pipelined never-stall LSU"
-                        }
-                        , {
-                          "type":"text"
-                          , "text":"Stall-free write to memory declared on %L."
-                          , "links":
-                          [
-                            {
-                              "filename":"stencil2d.cpp"
-                              , "line":"9"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                    , {
-                      "name":"Sum of 3 x 16-bit Integers"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [34, 16, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-              ]
-            }
-          ]
-        }
-        , {
-          "name":"stencil_2d.B5"
-          , "type":"basicblock"
-          , "children":
-          [
-            {
-              "name":"State"
-              , "type":"resource"
-              , "data":
-              [44, 371, 0, 0, 1]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Live values and control logic"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for live values and control logic. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce size of local variables"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce scope of local variables, localizing them as much as possible"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce number of nested loops"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"No Source Line"
-                  , "type":"resource"
-                  , "data":
-                  [44, 371, 0, 0, 1]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [36, 34, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:17"
-                  , "type":"resource"
-                  , "data":
-                  [36, 34, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":17
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-            , {
-              "name":"Cluster logic"
-              , "type":"resource"
-              , "data":
-              [8, 6, 0, 0, 1]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
-                }
-              ]
-            }
-            , {
-              "name":"Computation"
-              , "type":"resource"
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:17"
-                  , "type":"resource"
-                  , "data":
-                  [8, 1, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":17
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"1-bit And"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [1, 1, 0, 0, 0]
-                    }
-                    , {
-                      "name":"1-bit Or"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [1, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"4-bit Select"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [4, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"5-bit Integer Compare"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-                , {
-                  "name":"stencil2d.cpp:19"
-                  , "type":"resource"
-                  , "data":
-                  [550, 54, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":19
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"16-bit Unsigned Integer Remainder"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [484, 15, 0, 0, 0]
-                      , "details":
-                      [
-                        {
-                          "type":"text"
-                          , "text":"Implemented using inlined soft-IP."
-                        }
-                      ]
-                    }
-                    , {
-                      "name":"Store"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [34, 24, 0, 0, 0]
-                      , "details":
-                      [
-                        {
-                          "type":"text"
-                          , "text":"Store uses a Pipelined never-stall LSU"
-                        }
-                        , {
-                          "type":"brief"
-                          , "text":"Pipelined never-stall LSU"
-                        }
-                        , {
-                          "type":"text"
-                          , "text":"Stall-free write to memory declared on %L."
-                          , "links":
-                          [
-                            {
-                              "filename":"stencil2d.cpp"
-                              , "line":"11"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                    , {
-                      "name":"Sum of 3 x 16-bit Integers"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [32, 15, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-              ]
-            }
-          ]
-        }
-        , {
-          "name":"stencil_2d.B6"
-          , "type":"basicblock"
-          , "children":
-          [
-            {
-              "name":"State"
-              , "type":"resource"
-              , "data":
-              [1, 36, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Live values and control logic"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for live values and control logic. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce size of local variables"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce scope of local variables, localizing them as much as possible"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce number of nested loops"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"No Source Line"
-                  , "type":"resource"
-                  , "data":
-                  [1, 36, 0, 0, 0]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [9, 7, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:25"
-                  , "type":"resource"
-                  , "data":
-                  [9, 7, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":25
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-            , {
-              "name":"Cluster logic"
-              , "type":"resource"
-              , "data":
-              [8, 6, 0, 0, 4]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
-                }
-              ]
-            }
-            , {
-              "name":"Computation"
-              , "type":"resource"
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:25"
-                  , "type":"resource"
-                  , "data":
-                  [2, 0, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":25
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"6-bit Integer Compare"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-                , {
-                  "name":"stencil2d.cpp:38"
-                  , "type":"resource"
-                  , "data":
-                  [55, 0, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":38
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"32-bit Integer Multiply"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [55, 0, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-              ]
-            }
-          ]
-        }
-        , {
-          "name":"stencil_2d.B7"
-          , "type":"basicblock"
-          , "children":
-          [
-            {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [5, 8, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"No Source Line"
-                  , "type":"resource"
-                  , "data":
-                  [5, 8, 0, 0, 0]
-                }
-              ]
-            }
-            , {
-              "name":"Computation"
-              , "type":"resource"
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:35"
-                  , "type":"resource"
-                  , "data":
-                  [2, 0, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":35
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"FFwd Destination"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-                , {
-                  "name":"stencil2d.cpp:43"
-                  , "type":"resource"
-                  , "data":
-                  [3, 2, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":43
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"Stream Write"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [3, 2, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-              ]
-            }
-          ]
-        }
-        , {
-          "name":"stencil_2d.B8"
-          , "type":"basicblock"
-          , "children":
-          [
-            {
-              "name":"State"
-              , "type":"resource"
-              , "data":
-              [0, 67, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Live values and control logic"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for live values and control logic. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce size of local variables"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce scope of local variables, localizing them as much as possible"
-                    }
-                    , {
-                      "type":"text"
-                      , "text":"reduce number of nested loops"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"No Source Line"
-                  , "type":"resource"
-                  , "data":
-                  [0, 67, 0, 0, 0]
-                }
-              ]
-            }
-            , {
-              "name":"Feedback"
-              , "type":"resource"
-              , "data":
-              [33, 84, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Loop-carried dependencies"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
-                  , "details":
-                  [
-                    {
-                      "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
-                    }
-                  ]
-                }
-              ]
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:25"
-                  , "type":"resource"
-                  , "data":
-                  [16, 41, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":25
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"stencil2d.cpp:27"
-                  , "type":"resource"
-                  , "data":
-                  [9, 7, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":27
-                      }
-                    ]
-                  ]
-                }
-                , {
-                  "name":"stencil2d.cpp:38"
-                  , "type":"resource"
-                  , "data":
-                  [8, 36, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":38
-                      }
-                    ]
-                  ]
-                }
-              ]
-            }
-            , {
-              "name":"Cluster logic"
-              , "type":"resource"
-              , "data":
-              [8, 6, 0, 0, 9]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
-                }
-              ]
-            }
-            , {
-              "name":"Computation"
-              , "type":"resource"
-              , "children":
-              [
-                {
-                  "name":"stencil2d.cpp:27"
-                  , "type":"resource"
-                  , "data":
-                  [2, 0, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                        , "line":27
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"6-bit Integer Compare"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
                     }
                   ]
                   , "replace_name":"true"

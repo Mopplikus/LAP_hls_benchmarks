@@ -12,7 +12,7 @@ namespace eval gaussian_cfan {
   
   proc get_design_files {QSYS_SIMDIR} {
     set design_files [dict create]
-    dict set design_files "gaussian_cfan_avalon_conduit_fanout_10_kcgql6q.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/gaussian_cfan_avalon_conduit_fanout_10_kcgql6q.sv"
+    dict set design_files "gaussian_cfan_avalon_conduit_fanout_10_kjtx3wq.sv" "$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/gaussian_cfan_avalon_conduit_fanout_10_kjtx3wq.sv"
     dict set design_files "gaussian_cfan.v"                                   "$QSYS_SIMDIR/gaussian_cfan.v"                                                                  
     return $design_files
   }

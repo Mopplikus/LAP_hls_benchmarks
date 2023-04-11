@@ -6,13 +6,7 @@
 module tb (
 	);
 
-	wire  [63:0] kernel_3mm_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:avs_readdata -> kernel_3mm_inst:avmm_0_rw_readdata
-	wire  [63:0] kernel_3mm_inst_avmm_0_rw_address;                                                            // kernel_3mm_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:avs_address
-	wire   [7:0] kernel_3mm_inst_avmm_0_rw_byteenable;                                                         // kernel_3mm_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:avs_byteenable
-	wire         kernel_3mm_inst_avmm_0_rw_read;                                                               // kernel_3mm_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:avs_read
-	wire         kernel_3mm_inst_avmm_0_rw_write;                                                              // kernel_3mm_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:avs_write
-	wire  [63:0] kernel_3mm_inst_avmm_0_rw_writedata;                                                          // kernel_3mm_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                                   // clock_reset_inst:clock -> [component_dpi_controller_kernel_3mm_inst:clock, irq_mapper:clk, kernel_3mm_inst:clock, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:clock, stream_source_dpi_bfm_kernel_3mm_A_inst:clock, stream_source_dpi_bfm_kernel_3mm_B_inst:clock, stream_source_dpi_bfm_kernel_3mm_C_inst:clock, stream_source_dpi_bfm_kernel_3mm_D_inst:clock, stream_source_dpi_bfm_kernel_3mm_E_inst:clock, stream_source_dpi_bfm_kernel_3mm_F_inst:clock, stream_source_dpi_bfm_kernel_3mm_G_inst:clock]
+	wire         clock_reset_inst_clock_clk;                                                                   // clock_reset_inst:clock -> [component_dpi_controller_kernel_3mm_inst:clock, irq_mapper:clk, kernel_3mm_inst:clock, main_dpi_controller_inst:clock, stream_source_dpi_bfm_kernel_3mm_A_inst:clock, stream_source_dpi_bfm_kernel_3mm_B_inst:clock, stream_source_dpi_bfm_kernel_3mm_C_inst:clock, stream_source_dpi_bfm_kernel_3mm_D_inst:clock, stream_source_dpi_bfm_kernel_3mm_E_inst:clock, stream_source_dpi_bfm_kernel_3mm_F_inst:clock, stream_source_dpi_bfm_kernel_3mm_G_inst:clock]
 	wire         clock_reset_inst_clock2x_clk;                                                                 // clock_reset_inst:clock2x -> [component_dpi_controller_kernel_3mm_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_kernel_3mm_A_inst:clock2x, stream_source_dpi_bfm_kernel_3mm_B_inst:clock2x, stream_source_dpi_bfm_kernel_3mm_C_inst:clock2x, stream_source_dpi_bfm_kernel_3mm_D_inst:clock2x, stream_source_dpi_bfm_kernel_3mm_E_inst:clock2x, stream_source_dpi_bfm_kernel_3mm_F_inst:clock2x, stream_source_dpi_bfm_kernel_3mm_G_inst:clock2x]
 	wire         component_dpi_controller_kernel_3mm_inst_component_call_valid;                                // component_dpi_controller_kernel_3mm_inst:start -> kernel_3mm_inst:start
 	wire         kernel_3mm_inst_call_stall;                                                                   // kernel_3mm_inst:busy -> component_dpi_controller_kernel_3mm_inst:busy
@@ -45,8 +39,6 @@ module tb (
 	wire         kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_6_conduit;           // kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_6 -> stream_source_dpi_bfm_kernel_3mm_G_inst:do_bind
 	wire         kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_6_conduit;         // kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_6 -> stream_source_dpi_bfm_kernel_3mm_G_inst:enable
 	wire         kernel_3mm_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_6_conduit; // kernel_3mm_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_6 -> stream_source_dpi_bfm_kernel_3mm_G_inst:source_ready
-	wire         kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_7_conduit;           // kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_7 -> mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:do_bind
-	wire         kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_7_conduit;         // kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_7 -> mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:enable
 	wire         component_dpi_controller_kernel_3mm_inst_read_implicit_streams_conduit;                       // component_dpi_controller_kernel_3mm_inst:read_implicit_streams -> kernel_3mm_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
 	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                                  // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
 	wire         kernel_3mm_inst_return_valid;                                                                 // kernel_3mm_inst:done -> component_dpi_controller_kernel_3mm_inst:done
@@ -58,7 +50,7 @@ module tb (
 	wire  [63:0] stream_source_dpi_bfm_kernel_3mm_e_inst_source_data_data;                                     // stream_source_dpi_bfm_kernel_3mm_E_inst:source_data -> kernel_3mm_inst:E
 	wire  [63:0] stream_source_dpi_bfm_kernel_3mm_f_inst_source_data_data;                                     // stream_source_dpi_bfm_kernel_3mm_F_inst:source_data -> kernel_3mm_inst:F
 	wire  [63:0] stream_source_dpi_bfm_kernel_3mm_g_inst_source_data_data;                                     // stream_source_dpi_bfm_kernel_3mm_G_inst:source_data -> kernel_3mm_inst:G
-	wire         clock_reset_inst_reset_reset;                                                                 // clock_reset_inst:resetn -> [component_dpi_controller_kernel_3mm_inst:resetn, irq_mapper:reset, kernel_3mm_inst:resetn, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_kernel_3mm_A_inst:resetn, stream_source_dpi_bfm_kernel_3mm_B_inst:resetn, stream_source_dpi_bfm_kernel_3mm_C_inst:resetn, stream_source_dpi_bfm_kernel_3mm_D_inst:resetn, stream_source_dpi_bfm_kernel_3mm_E_inst:resetn, stream_source_dpi_bfm_kernel_3mm_F_inst:resetn, stream_source_dpi_bfm_kernel_3mm_G_inst:resetn]
+	wire         clock_reset_inst_reset_reset;                                                                 // clock_reset_inst:resetn -> [component_dpi_controller_kernel_3mm_inst:resetn, irq_mapper:reset, kernel_3mm_inst:resetn, main_dpi_controller_inst:resetn, stream_source_dpi_bfm_kernel_3mm_A_inst:resetn, stream_source_dpi_bfm_kernel_3mm_B_inst:resetn, stream_source_dpi_bfm_kernel_3mm_C_inst:resetn, stream_source_dpi_bfm_kernel_3mm_D_inst:resetn, stream_source_dpi_bfm_kernel_3mm_E_inst:resetn, stream_source_dpi_bfm_kernel_3mm_F_inst:resetn, stream_source_dpi_bfm_kernel_3mm_G_inst:resetn]
 	wire         component_dpi_controller_kernel_3mm_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_kernel_3mm_inst:done_irq
 
 	clock_reset clock_reset_inst (
@@ -106,8 +98,7 @@ module tb (
 		.out_conduit_3 (kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit), //  output,  width = 1, out_conduit_3.conduit
 		.out_conduit_4 (kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_4_conduit), //  output,  width = 1, out_conduit_4.conduit
 		.out_conduit_5 (kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_5_conduit), //  output,  width = 1, out_conduit_5.conduit
-		.out_conduit_6 (kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_6_conduit), //  output,  width = 1, out_conduit_6.conduit
-		.out_conduit_7 (kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_7_conduit)  //  output,  width = 1, out_conduit_7.conduit
+		.out_conduit_6 (kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_6_conduit)  //  output,  width = 1, out_conduit_6.conduit
 	);
 
 	kernel_3mm_en_cfan kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst (
@@ -118,8 +109,7 @@ module tb (
 		.out_conduit_3 (kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //  output,  width = 1, out_conduit_3.conduit
 		.out_conduit_4 (kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_4_conduit), //  output,  width = 1, out_conduit_4.conduit
 		.out_conduit_5 (kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_5_conduit), //  output,  width = 1, out_conduit_5.conduit
-		.out_conduit_6 (kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_6_conduit), //  output,  width = 1, out_conduit_6.conduit
-		.out_conduit_7 (kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_7_conduit)  //  output,  width = 1, out_conduit_7.conduit
+		.out_conduit_6 (kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_6_conduit)  //  output,  width = 1, out_conduit_6.conduit
 	);
 
 	kernel_3mm_ir_cfan kernel_3mm_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -134,25 +124,19 @@ module tb (
 	);
 
 	kernel_3mm kernel_3mm_inst (
-		.clock                (clock_reset_inst_clock_clk),                                      //   input,   width = 1,     clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                                    //   input,   width = 1,     reset.reset_n
-		.start                (component_dpi_controller_kernel_3mm_inst_component_call_valid),   //   input,   width = 1,      call.valid
-		.busy                 (kernel_3mm_inst_call_stall),                                      //  output,   width = 1,          .stall
-		.done                 (kernel_3mm_inst_return_valid),                                    //  output,   width = 1,    return.valid
-		.stall                (component_dpi_controller_kernel_3mm_inst_component_return_stall), //   input,   width = 1,          .stall
-		.A                    (stream_source_dpi_bfm_kernel_3mm_a_inst_source_data_data),        //   input,  width = 64,         A.data
-		.B                    (stream_source_dpi_bfm_kernel_3mm_b_inst_source_data_data),        //   input,  width = 64,         B.data
-		.C                    (stream_source_dpi_bfm_kernel_3mm_c_inst_source_data_data),        //   input,  width = 64,         C.data
-		.D                    (stream_source_dpi_bfm_kernel_3mm_d_inst_source_data_data),        //   input,  width = 64,         D.data
-		.E                    (stream_source_dpi_bfm_kernel_3mm_e_inst_source_data_data),        //   input,  width = 64,         E.data
-		.F                    (stream_source_dpi_bfm_kernel_3mm_f_inst_source_data_data),        //   input,  width = 64,         F.data
-		.G                    (stream_source_dpi_bfm_kernel_3mm_g_inst_source_data_data),        //   input,  width = 64,         G.data
-		.avmm_0_rw_address    (kernel_3mm_inst_avmm_0_rw_address),                               //  output,  width = 64, avmm_0_rw.address
-		.avmm_0_rw_byteenable (kernel_3mm_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,          .byteenable
-		.avmm_0_rw_read       (kernel_3mm_inst_avmm_0_rw_read),                                  //  output,   width = 1,          .read
-		.avmm_0_rw_readdata   (kernel_3mm_inst_avmm_0_rw_readdata),                              //   input,  width = 64,          .readdata
-		.avmm_0_rw_write      (kernel_3mm_inst_avmm_0_rw_write),                                 //  output,   width = 1,          .write
-		.avmm_0_rw_writedata  (kernel_3mm_inst_avmm_0_rw_writedata)                              //  output,  width = 64,          .writedata
+		.clock  (clock_reset_inst_clock_clk),                                      //   input,   width = 1,  clock.clk
+		.resetn (clock_reset_inst_reset_reset),                                    //   input,   width = 1,  reset.reset_n
+		.start  (component_dpi_controller_kernel_3mm_inst_component_call_valid),   //   input,   width = 1,   call.valid
+		.busy   (kernel_3mm_inst_call_stall),                                      //  output,   width = 1,       .stall
+		.done   (kernel_3mm_inst_return_valid),                                    //  output,   width = 1, return.valid
+		.stall  (component_dpi_controller_kernel_3mm_inst_component_return_stall), //   input,   width = 1,       .stall
+		.A      (stream_source_dpi_bfm_kernel_3mm_a_inst_source_data_data),        //   input,  width = 64,      A.data
+		.B      (stream_source_dpi_bfm_kernel_3mm_b_inst_source_data_data),        //   input,  width = 64,      B.data
+		.C      (stream_source_dpi_bfm_kernel_3mm_c_inst_source_data_data),        //   input,  width = 64,      C.data
+		.D      (stream_source_dpi_bfm_kernel_3mm_d_inst_source_data_data),        //   input,  width = 64,      D.data
+		.E      (stream_source_dpi_bfm_kernel_3mm_e_inst_source_data_data),        //   input,  width = 64,      E.data
+		.F      (stream_source_dpi_bfm_kernel_3mm_f_inst_source_data_data),        //   input,  width = 64,      F.data
+		.G      (stream_source_dpi_bfm_kernel_3mm_g_inst_source_data_data)         //   input,  width = 64,      G.data
 	);
 
 	main_dpi_controller main_dpi_controller_inst (
@@ -163,19 +147,6 @@ module tb (
 		.component_done                   (concatenate_component_done_inst_out_conduit_conduit),                   //   input,  width = 1,                   component_done.conduit
 		.component_wait_for_stream_writes (concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit), //   input,  width = 1, component_wait_for_stream_writes.conduit
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
-	);
-
-	mm_agent_kernel_3mm_avmm_0_rw mm_agent_dpi_bfm_kernel_3mm_avmm_0_rw_inst (
-		.do_bind        (kernel_3mm_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_7_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (kernel_3mm_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_7_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                           //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                         //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (kernel_3mm_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (kernel_3mm_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (kernel_3mm_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (kernel_3mm_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (kernel_3mm_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (kernel_3mm_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
 	);
 
 	sp_cstart split_component_start_inst (

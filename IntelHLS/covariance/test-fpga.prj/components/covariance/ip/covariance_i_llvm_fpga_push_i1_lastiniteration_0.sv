@@ -16,14 +16,14 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i1_lastiniteration_covariance0
 // Created for function/kernel covariance
-// SystemVerilog created on Wed Apr  5 02:12:06 2023
+// SystemVerilog created on Fri Apr  7 17:50:02 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module covariance_i_llvm_fpga_push_i1_lastiniteration_0 (
-    input wire [0:0] in_feedback_stall_in_2,
-    output wire [0:0] out_feedback_out_2,
-    output wire [0:0] out_feedback_valid_out_2,
+    input wire [0:0] in_feedback_stall_in_1,
+    output wire [0:0] out_feedback_out_1,
+    output wire [0:0] out_feedback_valid_out_1,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_data_in,
@@ -74,7 +74,7 @@ module covariance_i_llvm_fpga_push_i1_lastiniteration_0 (
     // i_llvm_fpga_push_i1_lastiniteration_covariance1(EXTIFACE,8)@2
     assign i_llvm_fpga_push_i1_lastiniteration_covariance1_data_in = element_extension2_q[0:0];
     assign i_llvm_fpga_push_i1_lastiniteration_covariance1_dir = in_keep_going;
-    assign i_llvm_fpga_push_i1_lastiniteration_covariance1_feedback_stall_in = in_feedback_stall_in_2;
+    assign i_llvm_fpga_push_i1_lastiniteration_covariance1_feedback_stall_in = in_feedback_stall_in_1;
     assign i_llvm_fpga_push_i1_lastiniteration_covariance1_predicate = GND_q;
     assign i_llvm_fpga_push_i1_lastiniteration_covariance1_stall_in = in_stall_in;
     assign i_llvm_fpga_push_i1_lastiniteration_covariance1_valid_in = in_valid_in;
@@ -118,8 +118,8 @@ module covariance_i_llvm_fpga_push_i1_lastiniteration_0 (
     );
 
     // feedback_sync_out(GPOUT,7)
-    assign out_feedback_out_2 = i_llvm_fpga_push_i1_lastiniteration_covariance1_feedback_out;
-    assign out_feedback_valid_out_2 = i_llvm_fpga_push_i1_lastiniteration_covariance1_feedback_valid_out;
+    assign out_feedback_out_1 = i_llvm_fpga_push_i1_lastiniteration_covariance1_feedback_out;
+    assign out_feedback_valid_out_1 = i_llvm_fpga_push_i1_lastiniteration_covariance1_feedback_valid_out;
 
     // sync_out(GPOUT,10)@2
     assign out_stall_out = i_llvm_fpga_push_i1_lastiniteration_covariance1_stall_out;

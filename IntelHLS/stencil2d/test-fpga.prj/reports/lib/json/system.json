@@ -3,13 +3,38 @@
   [
     {
       "name":"stencil_2d"
-      , "id":3720915496
+      , "id":3573772632
       , "type":"component"
       , "children":
       [
         {
+          "name":"Stream Write"
+          , "id":3573897392
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"stencil_2d.B3"
+              , "Width":"32 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
+                , "line":43
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
           "name":"Stream Read"
-          , "id":3721044880
+          , "id":3573930656
           , "details":
           [
             {
@@ -32,55 +57,11 @@
           ]
           , "type":"inst"
         }
-        , {
-          "name":"Stream Write"
-          , "id":3721208192
-          , "details":
-          [
-            {
-              "type":"table"
-              , "Basic Block":"stencil_2d.B7"
-              , "Width":"32 bits"
-              , "Depth":"0"
-              , "Stall-free":"No"
-              , "Latency":"0"
-            }
-          ]
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/stencil2d/stencil2d.cpp"
-                , "line":43
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
       ]
-    }
-    , {
-      "name":"return.stencil_2d"
-      , "id":3720428912
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Width":"32 bits"
-          , "Depth":"0"
-          , "Ready Latency":"0"
-          , "Bits per Symbol":"32 bits"
-          , "Uses Packets":"No"
-          , "Uses Ready":"Yes"
-          , "Uses Empty":"No"
-          , "First symbol in high order bits":"No"
-        }
-      ]
-      , "type":"stream"
     }
     , {
       "name":"call.stencil_2d"
-      , "id":3720431488
+      , "id":3573315184
       , "details":
       [
         {
@@ -97,20 +78,39 @@
       ]
       , "type":"stream"
     }
+    , {
+      "name":"return.stencil_2d"
+      , "id":3573315584
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"32 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"32 bits"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
   ]
   , "links":
   [
     {
-      "from":3721208192
-      , "to":3720428912
+      "from":3573315184
+      , "to":3573930656
     }
     , {
-      "from":3720431488
-      , "to":3721044880
+      "from":3573897392
+      , "to":3573315584
     }
     , {
-      "from":3721044880
-      , "to":3721208192
+      "from":3573930656
+      , "to":3573897392
     }
   ]
 }

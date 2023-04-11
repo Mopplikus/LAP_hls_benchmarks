@@ -16,29 +16,65 @@
 
 // SystemVerilog created from kernel_2mm_B2_merge
 // Created for function/kernel kernel_2mm
-// SystemVerilog created on Wed Apr  5 01:12:29 2023
+// SystemVerilog created on Fri Apr  7 18:35:51 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module kernel_2mm_B2_merge (
+    input wire [0:0] in_forked51_0,
+    input wire [0:0] in_forked51_1,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
+    input wire [0:0] in_valid_in_1,
+    output wire [0:0] out_forked51,
     output wire [0:0] out_stall_out_0,
+    output wire [0:0] out_stall_out_1,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
+    wire [0:0] VCC_q;
+    wire [0:0] forked51_mux_s;
+    reg [0:0] forked51_mux_q;
     wire [0:0] stall_out_q;
+    wire [0:0] stall_out_1_specific_q;
+    wire [0:0] valid_or_q;
 
 
-    // stall_out(LOGICAL,6)
-    assign stall_out_q = in_valid_in_0 & in_stall_in;
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
 
-    // out_stall_out_0(GPOUT,4)
+    // forked51_mux(MUX,2)
+    assign forked51_mux_s = in_valid_in_0;
+    always @(forked51_mux_s or in_forked51_1 or in_forked51_0)
+    begin
+        unique case (forked51_mux_s)
+            1'b0 : forked51_mux_q = in_forked51_1;
+            1'b1 : forked51_mux_q = in_forked51_0;
+            default : forked51_mux_q = 1'b0;
+        endcase
+    end
+
+    // out_forked51(GPOUT,8)
+    assign out_forked51 = forked51_mux_q;
+
+    // valid_or(LOGICAL,14)
+    assign valid_or_q = in_valid_in_0 | in_valid_in_1;
+
+    // stall_out(LOGICAL,12)
+    assign stall_out_q = valid_or_q & in_stall_in;
+
+    // out_stall_out_0(GPOUT,9)
     assign out_stall_out_0 = stall_out_q;
 
-    // out_valid_out(GPOUT,5)
-    assign out_valid_out = in_valid_in_0;
+    // stall_out_1_specific(LOGICAL,13)
+    assign stall_out_1_specific_q = in_valid_in_0 | stall_out_q;
+
+    // out_stall_out_1(GPOUT,10)
+    assign out_stall_out_1 = stall_out_1_specific_q;
+
+    // out_valid_out(GPOUT,11)
+    assign out_valid_out = valid_or_q;
 
 endmodule

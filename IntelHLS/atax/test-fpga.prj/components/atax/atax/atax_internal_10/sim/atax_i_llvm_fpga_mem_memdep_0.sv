@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_memdep_atax0
 // Created for function/kernel atax
-// SystemVerilog created on Wed Apr  5 13:56:00 2023
+// SystemVerilog created on Fri Apr  7 18:08:55 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -154,7 +154,7 @@ module atax_i_llvm_fpga_mem_memdep_0 (
     assign i_llvm_fpga_mem_memdep_atax1_o_writeack[0] = i_llvm_fpga_mem_memdep_atax1_o_writeack_bitsignaltemp;
     lsu_top #(
         .ABITS_PER_LMEM_BANK(7),
-        .ADDRSPACE(65),
+        .ADDRSPACE(67),
         .ALIGNMENT_BYTES(4),
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),
         .ASYNC_RESET(1),
@@ -233,7 +233,7 @@ module atax_i_llvm_fpga_mem_memdep_0 (
     // dupName_0_regfree_osync_x(GPOUT,21)
     assign out_memdep_atax_avm_burstcount = i_llvm_fpga_mem_memdep_atax1_avm_burstcount;
 
-    // dupName_0_sync_out_x(GPOUT,22)@34
+    // dupName_0_sync_out_x(GPOUT,22)@1
     assign out_o_valid = i_llvm_fpga_mem_memdep_atax1_o_valid;
     assign out_o_writeack = i_llvm_fpga_mem_memdep_atax1_o_writeack;
 

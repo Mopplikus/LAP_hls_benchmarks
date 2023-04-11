@@ -4,7 +4,6 @@
 		.out_conduit_1 (_connected_to_out_conduit_1_), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (_connected_to_out_conduit_2_), //  output,  width = 1, out_conduit_2.conduit
 		.out_conduit_3 (_connected_to_out_conduit_3_), //  output,  width = 1, out_conduit_3.conduit
-		.out_conduit_4 (_connected_to_out_conduit_4_), //  output,  width = 1, out_conduit_4.conduit
-		.out_conduit_5 (_connected_to_out_conduit_5_)  //  output,  width = 1, out_conduit_5.conduit
+		.out_conduit_4 (_connected_to_out_conduit_4_)  //  output,  width = 1, out_conduit_4.conduit
 	);
 

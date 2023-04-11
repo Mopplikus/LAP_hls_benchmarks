@@ -20,6 +20,7 @@ component void bicg(int A[N][N], int s[N], int q[N], int p[N], int r[N])
     hls_memory hls_singlepump int p_local[N];
     hls_memory hls_singlepump int r_local[N];
 
+    /*
     INIT:for(int i = 0; i < N; i++)
     {
         for(int j = 0; j < N; j++)
@@ -30,7 +31,7 @@ component void bicg(int A[N][N], int s[N], int q[N], int p[N], int r[N])
         q_local[i] = q[i];
         p_local[i] = p[i];
         r_local[i] = r[i];
-    }
+    }*/
 
     int tmp_q = 0;
 
@@ -47,10 +48,11 @@ component void bicg(int A[N][N], int s[N], int q[N], int p[N], int r[N])
 
     }
 
+    /*
     OUT:for(int i = 0; i < N; i++)
     {
         q[i] = q_local[i];
-    }
+    }*/
 }
 
 void bicg_ref(int A[N][N], int s[N], int q[N], int p[N], int r[N])

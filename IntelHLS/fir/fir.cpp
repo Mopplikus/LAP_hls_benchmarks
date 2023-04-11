@@ -10,11 +10,13 @@ component int fir(int d_i[N], int idx[N] ) {
     hls_memory hls_singlepump int d_i_local[N];
     hls_memory hls_singlepump int idx_local[N];
 
+    /*
     INIT:for(int i = 0; i < N; i++)
     {
         d_i_local[i] = d_i[i];
         idx_local[i] = idx[i];
     }
+    */
 
 	int tmp=0;
 

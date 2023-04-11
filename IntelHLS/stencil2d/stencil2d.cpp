@@ -10,14 +10,14 @@ component int stencil_2d ()
 	hls_memory hls_singlepump int sol[900];
 	hls_memory hls_singlepump int filter[10];
 
-	INIT_1:for(int j = 0; j < 900; ++j)
+	/*INIT_1:for(int j = 0; j < 900; ++j)
 	{
 		orig[j] = 35 * j % 100; 
 	}
 	INIT_2:for(int j = 0; j < 10; ++j)
 	{
 		filter[j] = 42 * j % 100; 
-	}
+	}*/
 
     int temp = 0;
 	int mul = 0;

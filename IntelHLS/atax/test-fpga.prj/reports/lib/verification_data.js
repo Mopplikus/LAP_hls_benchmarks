@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"atax"
       , "data":
-      ['1', '1575,1575,1575', 'n/a,n/a,n/a']
+      ['1', '784,784,784', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '1575,1575,1575', 'n/a,n/a,n/a']
+      ['1', '784,784,784', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

@@ -16,524 +16,402 @@
 
 // SystemVerilog created from bb_kernel_3mm_B1_start_stall_region
 // Created for function/kernel kernel_3mm
-// SystemVerilog created on Wed Apr  5 01:38:03 2023
+// SystemVerilog created on Fri Apr  7 18:25:07 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module kernel_3mm_bb_B1_start_stall_region (
     input wire [447:0] in_iord_bl_call_kernel_3mm_i_fifodata,
     input wire [0:0] in_iord_bl_call_kernel_3mm_i_fifovalid,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_valid_out,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_stall_out,
-    input wire [0:0] in_feedback_in_1,
-    output wire [0:0] out_feedback_stall_out_1,
-    input wire [0:0] in_feedback_valid_in_1,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_valid_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_stall_out,
+    input wire [0:0] in_feedback_in_17,
+    input wire [0:0] in_feedback_in_20,
+    output wire [0:0] out_feedback_stall_out_17,
+    output wire [0:0] out_feedback_stall_out_20,
+    input wire [0:0] in_feedback_valid_in_17,
+    input wire [0:0] in_feedback_valid_in_20,
     input wire [0:0] in_pipeline_stall_in,
     output wire [0:0] out_pipeline_valid_out,
-    output wire [63:0] out_intel_reserved_ffwd_0_0,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
+    input wire [0:0] in_forked81,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_iord_bl_call_kernel_3mm_o_fifoready,
     output wire [0:0] out_iord_bl_call_kernel_3mm_o_fifoalmost_full,
-    output wire [63:0] out_intel_reserved_ffwd_1_0,
+    output wire [0:0] out_c0_exe2,
+    output wire [0:0] out_memdep_phi3_pop19,
+    output wire [0:0] out_memdep_phi_pop17,
     output wire [0:0] out_valid_out,
-    output wire [63:0] out_intel_reserved_ffwd_2_0,
-    output wire [63:0] out_intel_reserved_ffwd_3_0,
-    output wire [63:0] out_intel_reserved_ffwd_4_0,
-    output wire [63:0] out_intel_reserved_ffwd_5_0,
-    output wire [63:0] out_intel_reserved_ffwd_6_0,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
-    wire [63:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_intel_reserved_ffwd_0_0;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_valid_out;
-    wire [63:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_intel_reserved_ffwd_1_0;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_valid_out;
-    wire [63:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_intel_reserved_ffwd_2_0;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_valid_out;
-    wire [63:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_intel_reserved_ffwd_3_0;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_valid_out;
-    wire [63:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_intel_reserved_ffwd_4_0;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_valid_out;
-    wire [63:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_intel_reserved_ffwd_5_0;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_valid_out;
-    wire [63:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_intel_reserved_ffwd_6_0;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_valid_out;
-    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_data_out;
-    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_feedback_stall_out_1;
-    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_stall_out;
-    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_valid_out;
-    wire [0:0] kernel_3mm_B1_start_merge_reg_out_stall_out;
-    wire [0:0] kernel_3mm_B1_start_merge_reg_out_valid_out;
-    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoalmost_full;
-    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoready;
-    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_stall;
-    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_valid;
-    wire [63:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_0_tpl;
-    wire [63:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_1_tpl;
-    wire [63:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_2_tpl;
-    wire [63:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_3_tpl;
-    wire [63:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_4_tpl;
-    wire [63:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_5_tpl;
-    wire [63:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_6_tpl;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_stall_out;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_valid_out;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_o_stall;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_o_valid;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_pipeline_valid_out;
-    wire [0:0] bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_q;
-    wire [0:0] bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_b;
-    wire [447:0] bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q;
-    wire [63:0] bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_b;
-    wire [63:0] bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_c;
-    wire [63:0] bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_d;
-    wire [63:0] bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_e;
-    wire [63:0] bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_f;
-    wire [63:0] bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_g;
-    wire [63:0] bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_h;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_wireValid;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and0;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and1;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and2;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and3;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and4;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and5;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_V0;
-    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_wireValid;
-    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_backStall;
-    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_V0;
-    wire [0:0] SE_out_kernel_3mm_B1_start_merge_reg_wireValid;
-    wire [0:0] SE_out_kernel_3mm_B1_start_merge_reg_backStall;
-    wire [0:0] SE_out_kernel_3mm_B1_start_merge_reg_V0;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_data_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_feedback_stall_out_20;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_stall_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_valid_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_data_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_feedback_stall_out_17;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_stall_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_valid_out;
+    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoalmost_full;
+    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoready;
+    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_o_stall;
+    wire [0:0] i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_o_valid;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_stall_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_valid_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_o_stall;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_o_valid;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_pipeline_valid_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl;
+    wire [0:0] kernel_3mm_B1_start_merge_reg_aunroll_x_out_stall_out;
+    wire [0:0] kernel_3mm_B1_start_merge_reg_aunroll_x_out_valid_out;
+    wire [0:0] kernel_3mm_B1_start_merge_reg_aunroll_x_out_data_out_0_tpl;
+    reg [0:0] redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_q;
+    wire [0:0] bubble_join_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_q;
+    wire [0:0] bubble_select_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_b;
+    wire [0:0] bubble_join_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_q;
+    wire [0:0] bubble_select_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_b;
+    wire [0:0] bubble_join_stall_entry_q;
+    wire [0:0] bubble_select_stall_entry_b;
+    wire [0:0] bubble_join_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_q;
+    wire [0:0] bubble_select_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_b;
+    wire [0:0] bubble_join_kernel_3mm_B1_start_merge_reg_aunroll_x_q;
+    wire [0:0] bubble_select_kernel_3mm_B1_start_merge_reg_aunroll_x_b;
+    wire [0:0] SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_wireValid;
+    wire [0:0] SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and0;
+    wire [0:0] SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and1;
+    wire [0:0] SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and2;
+    wire [0:0] SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_V0;
     wire [0:0] SE_stall_entry_wireValid;
     wire [0:0] SE_stall_entry_backStall;
     wire [0:0] SE_stall_entry_V0;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireStall;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg0;
-    reg [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg0;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed0;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg1;
-    reg [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg1;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed1;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg2;
-    reg [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg2;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed2;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg3;
-    reg [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg3;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed3;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg4;
-    reg [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg4;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed4;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg5;
-    reg [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg5;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed5;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg6;
-    reg [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg6;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed6;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or0;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or1;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or2;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or3;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or4;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or5;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_backStall;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V0;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V1;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V2;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V3;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V4;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V5;
-    wire [0:0] SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V6;
-    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_wireValid;
-    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_backStall;
-    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_V0;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireStall;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_StallValid;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg0;
+    reg [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg0;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed0;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg1;
+    reg [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg1;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed1;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg2;
+    reg [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg2;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed2;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_or0;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_or1;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_backStall;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V0;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V1;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V2;
+    wire [0:0] SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_wireValid;
+    wire [0:0] SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_backStall;
+    wire [0:0] SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_V0;
+    reg [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_0;
+    reg [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_1;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_v_s_0;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_0;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_1;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backEN;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_or0;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backStall;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_V0;
+    wire [0:0] SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_V1;
 
+
+    // bubble_join_stall_entry(BITJOIN,48)
+    assign bubble_join_stall_entry_q = in_forked81;
+
+    // bubble_select_stall_entry(BITSELECT,49)
+    assign bubble_select_stall_entry_b = $unsigned(bubble_join_stall_entry_q[0:0]);
+
+    // SE_stall_entry(STALLENABLE,64)
+    // Valid signal propagation
+    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
+    // Backward Stall generation
+    assign SE_stall_entry_backStall = kernel_3mm_B1_start_merge_reg_aunroll_x_out_stall_out | ~ (SE_stall_entry_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_stall_entry_wireValid = in_valid_in;
+
+    // kernel_3mm_B1_start_merge_reg_aunroll_x(BLACKBOX,36)@0
+    // in in_stall_in@20000000
+    // out out_stall_out@20000000
+    // out out_valid_out@1
+    // out out_data_out_0_tpl@1
+    kernel_3mm_B1_start_merge_reg thekernel_3mm_B1_start_merge_reg_aunroll_x (
+        .in_stall_in(SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_backStall),
+        .in_valid_in(SE_stall_entry_V0),
+        .in_data_in_0_tpl(bubble_select_stall_entry_b),
+        .out_stall_out(kernel_3mm_B1_start_merge_reg_aunroll_x_out_stall_out),
+        .out_valid_out(kernel_3mm_B1_start_merge_reg_aunroll_x_out_valid_out),
+        .out_data_out_0_tpl(kernel_3mm_B1_start_merge_reg_aunroll_x_out_data_out_0_tpl),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // bubble_join_kernel_3mm_B1_start_merge_reg_aunroll_x(BITJOIN,57)
+    assign bubble_join_kernel_3mm_B1_start_merge_reg_aunroll_x_q = kernel_3mm_B1_start_merge_reg_aunroll_x_out_data_out_0_tpl;
+
+    // bubble_select_kernel_3mm_B1_start_merge_reg_aunroll_x(BITSELECT,58)
+    assign bubble_select_kernel_3mm_B1_start_merge_reg_aunroll_x_b = $unsigned(bubble_join_kernel_3mm_B1_start_merge_reg_aunroll_x_q[0:0]);
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // SE_stall_entry(STALLENABLE,95)
+    // SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x(STALLENABLE,71)
     // Valid signal propagation
-    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
+    assign SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_V0 = SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_wireValid;
     // Backward Stall generation
-    assign SE_stall_entry_backStall = kernel_3mm_B1_start_merge_reg_out_stall_out | ~ (SE_stall_entry_wireValid);
+    assign SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_backStall = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_o_stall | ~ (SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_wireValid);
     // Computing multiple Valid(s)
-    assign SE_stall_entry_wireValid = in_valid_in;
+    assign SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_wireValid = kernel_3mm_B1_start_merge_reg_aunroll_x_out_valid_out;
 
-    // kernel_3mm_B1_start_merge_reg(BLACKBOX,31)@0
-    // in in_stall_in@20000000
-    // out out_data_out@1
-    // out out_stall_out@20000000
-    // out out_valid_out@1
-    kernel_3mm_B1_start_merge_reg thekernel_3mm_B1_start_merge_reg (
-        .in_data_in(GND_q),
-        .in_stall_in(SE_out_kernel_3mm_B1_start_merge_reg_backStall),
-        .in_valid_in(SE_stall_entry_V0),
-        .out_data_out(),
-        .out_stall_out(kernel_3mm_B1_start_merge_reg_out_stall_out),
-        .out_valid_out(kernel_3mm_B1_start_merge_reg_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // SE_out_kernel_3mm_B1_start_merge_reg(STALLENABLE,94)
-    // Valid signal propagation
-    assign SE_out_kernel_3mm_B1_start_merge_reg_V0 = SE_out_kernel_3mm_B1_start_merge_reg_wireValid;
-    // Backward Stall generation
-    assign SE_out_kernel_3mm_B1_start_merge_reg_backStall = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_o_stall | ~ (SE_out_kernel_3mm_B1_start_merge_reg_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_kernel_3mm_B1_start_merge_reg_wireValid = kernel_3mm_B1_start_merge_reg_out_valid_out;
-
-    // SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10(STALLENABLE,90)
-    // Valid signal propagation
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_V0 = SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_wireValid;
-    // Backward Stall generation
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall = in_stall_in | ~ (SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_valid_out;
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and1 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_valid_out & SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and0;
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and2 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_valid_out & SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and1;
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and3 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_valid_out & SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and2;
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and4 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_valid_out & SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and3;
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and5 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_valid_out & SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and4;
-    assign SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_wireValid = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_valid_out & SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_and5;
-
-    // bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x(BITJOIN,74)
-    assign bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q = {i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_6_tpl, i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_5_tpl, i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_4_tpl, i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_3_tpl, i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_2_tpl, i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_1_tpl, i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_0_tpl};
-
-    // bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x(BITSELECT,75)
-    assign bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_b = $unsigned(bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q[63:0]);
-    assign bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_c = $unsigned(bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q[127:64]);
-    assign bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_d = $unsigned(bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q[191:128]);
-    assign bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_e = $unsigned(bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q[255:192]);
-    assign bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_f = $unsigned(bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q[319:256]);
-    assign bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_g = $unsigned(bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q[383:320]);
-    assign bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_h = $unsigned(bubble_join_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_q[447:384]);
-
-    // i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10(BLACKBOX,18)@2
-    // in in_stall_in@20000000
-    // out out_intel_reserved_ffwd_6_0@20000000
-    // out out_stall_out@20000000
-    kernel_3mm_i_llvm_fpga_ffwd_source_p10240000nnamed_9_kernel_3mm0 thei_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10 (
-        .in_predicate_in(GND_q),
-        .in_src_data_in_6_0(bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_h),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall),
-        .in_valid_in(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V6),
-        .out_intel_reserved_ffwd_6_0(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_intel_reserved_ffwd_6_0),
-        .out_stall_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9(BLACKBOX,17)@2
-    // in in_stall_in@20000000
-    // out out_intel_reserved_ffwd_5_0@20000000
-    // out out_stall_out@20000000
-    kernel_3mm_i_llvm_fpga_ffwd_source_p10240000nnamed_8_kernel_3mm0 thei_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9 (
-        .in_predicate_in(GND_q),
-        .in_src_data_in_5_0(bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_g),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall),
-        .in_valid_in(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V5),
-        .out_intel_reserved_ffwd_5_0(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_intel_reserved_ffwd_5_0),
-        .out_stall_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8(BLACKBOX,16)@2
-    // in in_stall_in@20000000
-    // out out_intel_reserved_ffwd_4_0@20000000
-    // out out_stall_out@20000000
-    kernel_3mm_i_llvm_fpga_ffwd_source_p10240000nnamed_7_kernel_3mm0 thei_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8 (
-        .in_predicate_in(GND_q),
-        .in_src_data_in_4_0(bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_f),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall),
-        .in_valid_in(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V4),
-        .out_intel_reserved_ffwd_4_0(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_intel_reserved_ffwd_4_0),
-        .out_stall_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7(BLACKBOX,15)@2
-    // in in_stall_in@20000000
-    // out out_intel_reserved_ffwd_3_0@20000000
-    // out out_stall_out@20000000
-    kernel_3mm_i_llvm_fpga_ffwd_source_p10240000nnamed_6_kernel_3mm0 thei_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7 (
-        .in_predicate_in(GND_q),
-        .in_src_data_in_3_0(bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_e),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall),
-        .in_valid_in(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V3),
-        .out_intel_reserved_ffwd_3_0(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_intel_reserved_ffwd_3_0),
-        .out_stall_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6(BLACKBOX,14)@2
-    // in in_stall_in@20000000
-    // out out_intel_reserved_ffwd_2_0@20000000
-    // out out_stall_out@20000000
-    kernel_3mm_i_llvm_fpga_ffwd_source_p10240000nnamed_5_kernel_3mm0 thei_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6 (
-        .in_predicate_in(GND_q),
-        .in_src_data_in_2_0(bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_d),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall),
-        .in_valid_in(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V2),
-        .out_intel_reserved_ffwd_2_0(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_intel_reserved_ffwd_2_0),
-        .out_stall_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5(BLACKBOX,13)@2
-    // in in_stall_in@20000000
-    // out out_intel_reserved_ffwd_1_0@20000000
-    // out out_stall_out@20000000
-    kernel_3mm_i_llvm_fpga_ffwd_source_p10240000nnamed_4_kernel_3mm0 thei_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5 (
-        .in_predicate_in(GND_q),
-        .in_src_data_in_1_0(bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_c),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall),
-        .in_valid_in(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V1),
-        .out_intel_reserved_ffwd_1_0(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_intel_reserved_ffwd_1_0),
-        .out_stall_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4(BLACKBOX,12)@2
-    // in in_stall_in@20000000
-    // out out_intel_reserved_ffwd_0_0@20000000
-    // out out_stall_out@20000000
-    kernel_3mm_i_llvm_fpga_ffwd_source_p10240000nnamed_3_kernel_3mm0 thei_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4 (
-        .in_predicate_in(GND_q),
-        .in_src_data_in_0_0(bubble_select_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_b),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_backStall),
-        .in_valid_in(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V0),
-        .out_intel_reserved_ffwd_0_0(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_intel_reserved_ffwd_0_0),
-        .out_stall_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x(STALLENABLE,98)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg0 <= '0;
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg1 <= '0;
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg2 <= '0;
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg3 <= '0;
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg4 <= '0;
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg5 <= '0;
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg6 <= '0;
-        end
-        else
-        begin
-            // Successor 0
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg0 <= SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg0;
-            // Successor 1
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg1 <= SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg1;
-            // Successor 2
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg2 <= SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg2;
-            // Successor 3
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg3 <= SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg3;
-            // Successor 4
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg4 <= SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg4;
-            // Successor 5
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg5 <= SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg5;
-            // Successor 6
-            SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg6 <= SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg6;
-        end
-    end
-    // Input Stall processing
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed0 = (~ (i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_stall_out) & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid) | SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg0;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed1 = (~ (i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_stall_out) & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid) | SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg1;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed2 = (~ (i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_stall_out) & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid) | SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg2;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed3 = (~ (i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_stall_out) & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid) | SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg3;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed4 = (~ (i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_stall_out) & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid) | SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg4;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed5 = (~ (i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_stall_out) & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid) | SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg5;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed6 = (~ (i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_stall_out) & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid) | SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg6;
-    // Consuming
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_backStall & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg0 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed0;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg1 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed1;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg2 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed2;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg3 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed3;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg4 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed4;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg5 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed5;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_toReg6 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_StallValid & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed6;
-    // Backward Stall generation
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or0 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed0;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or1 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed1 & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or0;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or2 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed2 & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or1;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or3 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed3 & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or2;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or4 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed4 & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or3;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or5 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed5 & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or4;
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireStall = ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_consumed6 & SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_or5);
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_backStall = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireStall;
-    // Valid signal propagation
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V0 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg0);
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V1 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg1);
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V2 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg2);
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V3 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg3);
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V4 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg4);
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V5 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg5);
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_V6 = SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_fromReg6);
-    // Computing multiple Valid(s)
-    assign SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_wireValid = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_valid;
-
-    // bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1(BITJOIN,69)
-    assign bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_q = i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_data_out;
-
-    // bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1(BITSELECT,70)
-    assign bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_b = $unsigned(bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_q[0:0]);
-
-    // i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x(BLACKBOX,59)@2
+    // i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x(BLACKBOX,34)@2
     // in in_i_stall@20000000
     // out out_iord_bl_call_kernel_3mm_o_fifoalmost_full@20000000
     // out out_iord_bl_call_kernel_3mm_o_fifoready@20000000
     // out out_o_stall@20000000
-    kernel_3mm_i_iord_bl_call_unnamed_kernel_3mm2_kernel_3mm0 thei_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x (
-        .in_i_dependence(bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_b),
-        .in_i_stall(SE_out_i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_backStall),
-        .in_i_valid(SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_V0),
+    kernel_3mm_i_iord_bl_call_unnamed_kernel_3mm1_kernel_3mm0 thei_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x (
+        .in_i_stall(SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_backStall),
+        .in_i_valid(SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_V1),
         .in_iord_bl_call_kernel_3mm_i_fifodata(in_iord_bl_call_kernel_3mm_i_fifodata),
         .in_iord_bl_call_kernel_3mm_i_fifovalid(in_iord_bl_call_kernel_3mm_i_fifovalid),
-        .out_iord_bl_call_kernel_3mm_o_fifoalmost_full(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoalmost_full),
-        .out_iord_bl_call_kernel_3mm_o_fifoready(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoready),
-        .out_o_stall(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_stall),
-        .out_o_valid(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_valid),
-        .out_o_data_0_tpl(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_0_tpl),
-        .out_o_data_1_tpl(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_1_tpl),
-        .out_o_data_2_tpl(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_2_tpl),
-        .out_o_data_3_tpl(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_3_tpl),
-        .out_o_data_4_tpl(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_4_tpl),
-        .out_o_data_5_tpl(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_5_tpl),
-        .out_o_data_6_tpl(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_data_6_tpl),
+        .out_iord_bl_call_kernel_3mm_o_fifoalmost_full(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoalmost_full),
+        .out_iord_bl_call_kernel_3mm_o_fifoready(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoready),
+        .out_o_stall(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_o_stall),
+        .out_o_valid(i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_o_valid),
+        .out_o_data_0_tpl(),
+        .out_o_data_1_tpl(),
+        .out_o_data_2_tpl(),
+        .out_o_data_3_tpl(),
+        .out_o_data_4_tpl(),
+        .out_o_data_5_tpl(),
+        .out_o_data_6_tpl(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1(STALLENABLE,92)
+    // SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4(STALLENABLE,63)
     // Valid signal propagation
-    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_V0 = SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_wireValid;
+    assign SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_V0 = SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_wireValid;
     // Backward Stall generation
-    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_backStall = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_o_stall | ~ (SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_wireValid);
+    assign SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_backStall = in_stall_in | ~ (SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_wireValid);
     // Computing multiple Valid(s)
-    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_wireValid = i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_valid_out;
+    assign SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and0 = i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_valid_out;
+    assign SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and1 = i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_valid_out & SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and0;
+    assign SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and2 = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_o_valid & SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and1;
+    assign SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_wireValid = SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_V0 & SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_and2;
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1(BLACKBOX,19)@1
+    // bubble_join_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x(BITJOIN,53)
+    assign bubble_join_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_q = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl;
+
+    // bubble_select_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x(BITSELECT,54)
+    assign bubble_select_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_b = $unsigned(bubble_join_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_q[0:0]);
+
+    // i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4(BLACKBOX,14)@1
     // in in_stall_in@20000000
     // out out_data_out@2
-    // out out_feedback_stall_out_1@20000000
+    // out out_feedback_stall_out_17@20000000
     // out out_stall_out@20000000
     // out out_valid_out@2
-    kernel_3mm_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 thei_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1 (
+    kernel_3mm_i_llvm_fpga_pop_i1_memdep_phi_pop17_0 thei_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4 (
         .in_data_in(GND_q),
-        .in_dir(GND_q),
-        .in_feedback_in_1(in_feedback_in_1),
-        .in_feedback_valid_in_1(in_feedback_valid_in_1),
+        .in_dir(bubble_select_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_b),
+        .in_feedback_in_17(in_feedback_in_17),
+        .in_feedback_valid_in_17(in_feedback_valid_in_17),
         .in_predicate(GND_q),
-        .in_stall_in(SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_backStall),
-        .in_valid_in(SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_V0),
-        .out_data_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_data_out),
-        .out_feedback_stall_out_1(i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_feedback_stall_out_1),
-        .out_stall_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_valid_out),
+        .in_stall_in(SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_backStall),
+        .in_valid_in(SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V2),
+        .out_data_out(i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_data_out),
+        .out_feedback_stall_out_17(i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_feedback_stall_out_17),
+        .out_stall_out(i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x(STALLENABLE,100)
-    // Valid signal propagation
-    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_V0 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_wireValid;
-    // Backward Stall generation
-    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_backStall = i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_stall_out | ~ (SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_wireValid = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_o_valid;
+    // i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5(BLACKBOX,13)@1
+    // in in_stall_in@20000000
+    // out out_data_out@2
+    // out out_feedback_stall_out_20@20000000
+    // out out_stall_out@20000000
+    // out out_valid_out@2
+    kernel_3mm_i_llvm_fpga_pop_i1_memdep_phi3_pop19_0 thei_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5 (
+        .in_data_in(GND_q),
+        .in_dir(bubble_select_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_b),
+        .in_feedback_in_20(in_feedback_in_20),
+        .in_feedback_valid_in_20(in_feedback_valid_in_20),
+        .in_predicate(GND_q),
+        .in_stall_in(SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_backStall),
+        .in_valid_in(SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V1),
+        .out_data_out(i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_data_out),
+        .out_feedback_stall_out_20(i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_feedback_stall_out_20),
+        .out_stall_out(i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
 
-    // i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x(BLACKBOX,60)@1
+    // SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0(STALLENABLE,72)
+    // Valid signal propagation
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_V0 = SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_0;
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_V1 = SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_1;
+    // Stall signal propagation
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_0 = SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_backStall & SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_0;
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_1 = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_o_stall & SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_1;
+    // Backward Enable generation
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_or0 = SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_0;
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backEN = ~ (SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_1 | SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_or0);
+    // Determine whether to write valid data into the first register stage
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_v_s_0 = SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backEN & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V0;
+    // Backward Stall generation
+    assign SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backStall = ~ (SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_v_s_0);
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_0 <= 1'b0;
+            SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_1 <= 1'b0;
+        end
+        else
+        begin
+            if (SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backEN == 1'b0)
+            begin
+                SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_0 <= SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_0 & SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_0;
+            end
+            else
+            begin
+                SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_0 <= SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_v_s_0;
+            end
+
+            if (SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backEN == 1'b0)
+            begin
+                SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_1 <= SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_1 & SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_s_tv_1;
+            end
+            else
+            begin
+                SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_R_v_1 <= SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_v_s_0;
+            end
+
+        end
+    end
+
+    // SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x(STALLENABLE,69)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg0 <= '0;
+            SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg1 <= '0;
+            SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg2 <= '0;
+        end
+        else
+        begin
+            // Successor 0
+            SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg0 <= SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg0;
+            // Successor 1
+            SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg1 <= SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg1;
+            // Successor 2
+            SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg2 <= SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg2;
+        end
+    end
+    // Input Stall processing
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed0 = (~ (SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backStall) & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid) | SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg0;
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed1 = (~ (i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_stall_out) & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid) | SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg1;
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed2 = (~ (i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_stall_out) & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid) | SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg2;
+    // Consuming
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_StallValid = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_backStall & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid;
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg0 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_StallValid & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed0;
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg1 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_StallValid & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed1;
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_toReg2 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_StallValid & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed2;
+    // Backward Stall generation
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_or0 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed0;
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_or1 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed1 & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_or0;
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireStall = ~ (SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_consumed2 & SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_or1);
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_backStall = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireStall;
+    // Valid signal propagation
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V0 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid & ~ (SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg0);
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V1 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid & ~ (SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg1);
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_V2 = SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid & ~ (SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_fromReg2);
+    // Computing multiple Valid(s)
+    assign SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_wireValid = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_o_valid;
+
+    // i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x(BLACKBOX,35)@1
     // in in_i_stall@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_stall_out@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_valid_out@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_stall_out@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_valid_out@20000000
     // out out_o_stall@20000000
     // out out_pipeline_valid_out@20000000
-    kernel_3mm_i_sfc_s_c0_in_wt_entry_s_c0_enter22_kernel_3mm0 thei_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x (
-        .in_i_stall(SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_backStall),
-        .in_i_valid(SE_out_kernel_3mm_B1_start_merge_reg_V0),
+    kernel_3mm_i_sfc_s_c0_in_wt_entry_s_c0_enter46_kernel_3mm1 thei_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x (
+        .in_i_stall(SE_out_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_backStall),
+        .in_i_valid(SE_out_kernel_3mm_B1_start_merge_reg_aunroll_x_V0),
         .in_pipeline_stall_in(in_pipeline_stall_in),
-        .in_unnamed_kernel_3mm0_0_tpl(GND_q),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_stall_out(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_valid_out(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_valid_out),
-        .out_o_stall(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_o_stall),
-        .out_o_valid(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_o_valid),
-        .out_pipeline_valid_out(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_pipeline_valid_out),
+        .in_c0_eni1_0_tpl(GND_q),
+        .in_c0_eni1_1_tpl(bubble_select_kernel_3mm_B1_start_merge_reg_aunroll_x_b),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_stall_out(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_stall_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_valid_out(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_valid_out),
+        .out_o_stall(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_o_stall),
+        .out_o_valid(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_o_valid),
+        .out_pipeline_valid_out(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_pipeline_valid_out),
         .out_c0_exit_0_tpl(),
         .out_c0_exit_1_tpl(),
+        .out_c0_exit_2_tpl(i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // ext_sig_sync_out(GPOUT,8)
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_valid_out = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_valid_out;
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_stall_out = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going144_kernel_3mm1_exiting_stall_out;
+    // ext_sig_sync_out(GPOUT,6)
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_valid_out = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_valid_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_stall_out = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going79_kernel_3mm2_exiting_stall_out;
 
-    // feedback_stall_out_1_sync(GPOUT,10)
-    assign out_feedback_stall_out_1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_kernel_3mm1_out_feedback_stall_out_1;
+    // feedback_stall_out_17_sync(GPOUT,9)
+    assign out_feedback_stall_out_17 = i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_feedback_stall_out_17;
 
-    // pipeline_valid_out_sync(GPOUT,44)
-    assign out_pipeline_valid_out = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter22_kernel_3mm0_aunroll_x_out_pipeline_valid_out;
+    // feedback_stall_out_20_sync(GPOUT,10)
+    assign out_feedback_stall_out_20 = i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_feedback_stall_out_20;
 
-    // regfree_osync(GPOUT,45)
-    assign out_intel_reserved_ffwd_0_0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm3_kernel_3mm4_out_intel_reserved_ffwd_0_0;
+    // pipeline_valid_out_sync(GPOUT,26)
+    assign out_pipeline_valid_out = i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_pipeline_valid_out;
 
-    // sync_out(GPOUT,49)@0
+    // sync_out(GPOUT,30)@0
     assign out_stall_out = SE_stall_entry_backStall;
 
-    // dupName_0_ext_sig_sync_out_x(GPOUT,51)
-    assign out_iord_bl_call_kernel_3mm_o_fifoready = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoready;
-    assign out_iord_bl_call_kernel_3mm_o_fifoalmost_full = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm2_kernel_3mm2_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoalmost_full;
+    // dupName_0_ext_sig_sync_out_x(GPOUT,32)
+    assign out_iord_bl_call_kernel_3mm_o_fifoready = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoready;
+    assign out_iord_bl_call_kernel_3mm_o_fifoalmost_full = i_iord_bl_call_kernel_3mm_unnamed_kernel_3mm1_kernel_3mm3_aunroll_x_out_iord_bl_call_kernel_3mm_o_fifoalmost_full;
 
-    // dupName_0_regfree_osync_x(GPOUT,52)
-    assign out_intel_reserved_ffwd_1_0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm4_kernel_3mm5_out_intel_reserved_ffwd_1_0;
+    // bubble_join_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4(BITJOIN,44)
+    assign bubble_join_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_q = i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_out_data_out;
 
-    // dupName_0_sync_out_x(GPOUT,53)@2
-    assign out_valid_out = SE_out_i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_V0;
+    // bubble_select_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4(BITSELECT,45)
+    assign bubble_select_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_b = $unsigned(bubble_join_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_q[0:0]);
 
-    // dupName_1_regfree_osync_x(GPOUT,54)
-    assign out_intel_reserved_ffwd_2_0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm5_kernel_3mm6_out_intel_reserved_ffwd_2_0;
+    // bubble_join_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5(BITJOIN,40)
+    assign bubble_join_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_q = i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_out_data_out;
 
-    // dupName_2_regfree_osync_x(GPOUT,55)
-    assign out_intel_reserved_ffwd_3_0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm6_kernel_3mm7_out_intel_reserved_ffwd_3_0;
+    // bubble_select_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5(BITSELECT,41)
+    assign bubble_select_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_b = $unsigned(bubble_join_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_q[0:0]);
 
-    // dupName_3_regfree_osync_x(GPOUT,56)
-    assign out_intel_reserved_ffwd_4_0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm7_kernel_3mm8_out_intel_reserved_ffwd_4_0;
+    // redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0(REG,38)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_q <= $unsigned(1'b0);
+        end
+        else if (SE_redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_backEN == 1'b1)
+        begin
+            redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_q <= $unsigned(bubble_select_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_b);
+        end
+    end
 
-    // dupName_4_regfree_osync_x(GPOUT,57)
-    assign out_intel_reserved_ffwd_5_0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm8_kernel_3mm9_out_intel_reserved_ffwd_5_0;
-
-    // dupName_5_regfree_osync_x(GPOUT,58)
-    assign out_intel_reserved_ffwd_6_0 = i_llvm_fpga_ffwd_source_p1024a10i32_unnamed_kernel_3mm9_kernel_3mm10_out_intel_reserved_ffwd_6_0;
+    // dupName_0_sync_out_x(GPOUT,33)@2
+    assign out_c0_exe2 = redist0_i_sfc_s_c0_in_wt_entry_kernel_3mms_c0_enter46_kernel_3mm1_aunroll_x_out_c0_exit_2_tpl_1_0_q;
+    assign out_memdep_phi3_pop19 = bubble_select_i_llvm_fpga_pop_i1_memdep_phi3_pop19_kernel_3mm5_b;
+    assign out_memdep_phi_pop17 = bubble_select_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_b;
+    assign out_valid_out = SE_out_i_llvm_fpga_pop_i1_memdep_phi_pop17_kernel_3mm4_V0;
 
 endmodule

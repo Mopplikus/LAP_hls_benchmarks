@@ -16,7 +16,7 @@
 
 // SystemVerilog created from matvec_function_wrapper
 // Created for function/kernel matvec
-// SystemVerilog created on Wed Apr  5 15:28:29 2023
+// SystemVerilog created on Fri Apr  7 16:55:33 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -24,50 +24,18 @@ module matvec_function_wrapper (
     input wire [63:0] M,
     input wire [63:0] Out0,
     input wire [63:0] V,
-    input wire [31:0] avm_memdep_1_matvec_readdata,
-    input wire [0:0] avm_memdep_1_matvec_readdatavalid,
-    input wire [0:0] avm_memdep_1_matvec_waitrequest,
-    input wire [0:0] avm_memdep_1_matvec_writeack,
-    input wire [31:0] avm_memdep_2_matvec_readdata,
-    input wire [0:0] avm_memdep_2_matvec_readdatavalid,
-    input wire [0:0] avm_memdep_2_matvec_waitrequest,
-    input wire [0:0] avm_memdep_2_matvec_writeack,
-    input wire [31:0] avm_memdep_3_matvec_readdata,
-    input wire [0:0] avm_memdep_3_matvec_readdatavalid,
-    input wire [0:0] avm_memdep_3_matvec_waitrequest,
-    input wire [0:0] avm_memdep_3_matvec_writeack,
-    input wire [63:0] avm_memdep_4_matvec_readdata,
-    input wire [0:0] avm_memdep_4_matvec_readdatavalid,
-    input wire [0:0] avm_memdep_4_matvec_waitrequest,
-    input wire [0:0] avm_memdep_4_matvec_writeack,
-    input wire [31:0] avm_memdep_matvec_readdata,
-    input wire [0:0] avm_memdep_matvec_readdatavalid,
-    input wire [0:0] avm_memdep_matvec_waitrequest,
-    input wire [0:0] avm_memdep_matvec_writeack,
-    input wire [31:0] avm_unnamed_matvec10_matvec_readdata,
-    input wire [0:0] avm_unnamed_matvec10_matvec_readdatavalid,
-    input wire [0:0] avm_unnamed_matvec10_matvec_waitrequest,
-    input wire [0:0] avm_unnamed_matvec10_matvec_writeack,
-    input wire [31:0] avm_unnamed_matvec11_matvec_readdata,
-    input wire [0:0] avm_unnamed_matvec11_matvec_readdatavalid,
-    input wire [0:0] avm_unnamed_matvec11_matvec_waitrequest,
-    input wire [0:0] avm_unnamed_matvec11_matvec_writeack,
-    input wire [63:0] avm_unnamed_matvec6_matvec_readdata,
-    input wire [0:0] avm_unnamed_matvec6_matvec_readdatavalid,
-    input wire [0:0] avm_unnamed_matvec6_matvec_waitrequest,
-    input wire [0:0] avm_unnamed_matvec6_matvec_writeack,
-    input wire [63:0] avm_unnamed_matvec7_matvec_readdata,
-    input wire [0:0] avm_unnamed_matvec7_matvec_readdatavalid,
-    input wire [0:0] avm_unnamed_matvec7_matvec_waitrequest,
-    input wire [0:0] avm_unnamed_matvec7_matvec_writeack,
-    input wire [63:0] avm_unnamed_matvec8_matvec_readdata,
-    input wire [0:0] avm_unnamed_matvec8_matvec_readdatavalid,
-    input wire [0:0] avm_unnamed_matvec8_matvec_waitrequest,
-    input wire [0:0] avm_unnamed_matvec8_matvec_writeack,
-    input wire [31:0] avm_unnamed_matvec9_matvec_readdata,
-    input wire [0:0] avm_unnamed_matvec9_matvec_readdatavalid,
-    input wire [0:0] avm_unnamed_matvec9_matvec_waitrequest,
-    input wire [0:0] avm_unnamed_matvec9_matvec_writeack,
+    input wire [31:0] avm_unnamed_matvec3_matvec_readdata,
+    input wire [0:0] avm_unnamed_matvec3_matvec_readdatavalid,
+    input wire [0:0] avm_unnamed_matvec3_matvec_waitrequest,
+    input wire [0:0] avm_unnamed_matvec3_matvec_writeack,
+    input wire [31:0] avm_unnamed_matvec4_matvec_readdata,
+    input wire [0:0] avm_unnamed_matvec4_matvec_readdatavalid,
+    input wire [0:0] avm_unnamed_matvec4_matvec_waitrequest,
+    input wire [0:0] avm_unnamed_matvec4_matvec_writeack,
+    input wire [31:0] avm_unnamed_matvec5_matvec_readdata,
+    input wire [0:0] avm_unnamed_matvec5_matvec_readdatavalid,
+    input wire [0:0] avm_unnamed_matvec5_matvec_waitrequest,
+    input wire [0:0] avm_unnamed_matvec5_matvec_writeack,
     input wire [191:0] avst_iord_bl_call_matvec_data,
     input wire [0:0] avst_iord_bl_call_matvec_valid,
     input wire [0:0] avst_iowr_bl_return_matvec_almostfull,
@@ -76,83 +44,27 @@ module matvec_function_wrapper (
     input wire [0:0] stall_in,
     input wire [0:0] start,
     input wire [0:0] valid_in,
-    output wire [31:0] avm_memdep_1_matvec_address,
-    output wire [0:0] avm_memdep_1_matvec_burstcount,
-    output wire [3:0] avm_memdep_1_matvec_byteenable,
-    output wire [0:0] avm_memdep_1_matvec_enable,
-    output wire [0:0] avm_memdep_1_matvec_read,
-    output wire [0:0] avm_memdep_1_matvec_write,
-    output wire [31:0] avm_memdep_1_matvec_writedata,
-    output wire [31:0] avm_memdep_2_matvec_address,
-    output wire [0:0] avm_memdep_2_matvec_burstcount,
-    output wire [3:0] avm_memdep_2_matvec_byteenable,
-    output wire [0:0] avm_memdep_2_matvec_enable,
-    output wire [0:0] avm_memdep_2_matvec_read,
-    output wire [0:0] avm_memdep_2_matvec_write,
-    output wire [31:0] avm_memdep_2_matvec_writedata,
-    output wire [31:0] avm_memdep_3_matvec_address,
-    output wire [0:0] avm_memdep_3_matvec_burstcount,
-    output wire [3:0] avm_memdep_3_matvec_byteenable,
-    output wire [0:0] avm_memdep_3_matvec_enable,
-    output wire [0:0] avm_memdep_3_matvec_read,
-    output wire [0:0] avm_memdep_3_matvec_write,
-    output wire [31:0] avm_memdep_3_matvec_writedata,
-    output wire [63:0] avm_memdep_4_matvec_address,
-    output wire [0:0] avm_memdep_4_matvec_burstcount,
-    output wire [7:0] avm_memdep_4_matvec_byteenable,
-    output wire [0:0] avm_memdep_4_matvec_enable,
-    output wire [0:0] avm_memdep_4_matvec_read,
-    output wire [0:0] avm_memdep_4_matvec_write,
-    output wire [63:0] avm_memdep_4_matvec_writedata,
-    output wire [31:0] avm_memdep_matvec_address,
-    output wire [0:0] avm_memdep_matvec_burstcount,
-    output wire [3:0] avm_memdep_matvec_byteenable,
-    output wire [0:0] avm_memdep_matvec_enable,
-    output wire [0:0] avm_memdep_matvec_read,
-    output wire [0:0] avm_memdep_matvec_write,
-    output wire [31:0] avm_memdep_matvec_writedata,
-    output wire [31:0] avm_unnamed_matvec10_matvec_address,
-    output wire [0:0] avm_unnamed_matvec10_matvec_burstcount,
-    output wire [3:0] avm_unnamed_matvec10_matvec_byteenable,
-    output wire [0:0] avm_unnamed_matvec10_matvec_enable,
-    output wire [0:0] avm_unnamed_matvec10_matvec_read,
-    output wire [0:0] avm_unnamed_matvec10_matvec_write,
-    output wire [31:0] avm_unnamed_matvec10_matvec_writedata,
-    output wire [31:0] avm_unnamed_matvec11_matvec_address,
-    output wire [0:0] avm_unnamed_matvec11_matvec_burstcount,
-    output wire [3:0] avm_unnamed_matvec11_matvec_byteenable,
-    output wire [0:0] avm_unnamed_matvec11_matvec_enable,
-    output wire [0:0] avm_unnamed_matvec11_matvec_read,
-    output wire [0:0] avm_unnamed_matvec11_matvec_write,
-    output wire [31:0] avm_unnamed_matvec11_matvec_writedata,
-    output wire [63:0] avm_unnamed_matvec6_matvec_address,
-    output wire [0:0] avm_unnamed_matvec6_matvec_burstcount,
-    output wire [7:0] avm_unnamed_matvec6_matvec_byteenable,
-    output wire [0:0] avm_unnamed_matvec6_matvec_enable,
-    output wire [0:0] avm_unnamed_matvec6_matvec_read,
-    output wire [0:0] avm_unnamed_matvec6_matvec_write,
-    output wire [63:0] avm_unnamed_matvec6_matvec_writedata,
-    output wire [63:0] avm_unnamed_matvec7_matvec_address,
-    output wire [0:0] avm_unnamed_matvec7_matvec_burstcount,
-    output wire [7:0] avm_unnamed_matvec7_matvec_byteenable,
-    output wire [0:0] avm_unnamed_matvec7_matvec_enable,
-    output wire [0:0] avm_unnamed_matvec7_matvec_read,
-    output wire [0:0] avm_unnamed_matvec7_matvec_write,
-    output wire [63:0] avm_unnamed_matvec7_matvec_writedata,
-    output wire [63:0] avm_unnamed_matvec8_matvec_address,
-    output wire [0:0] avm_unnamed_matvec8_matvec_burstcount,
-    output wire [7:0] avm_unnamed_matvec8_matvec_byteenable,
-    output wire [0:0] avm_unnamed_matvec8_matvec_enable,
-    output wire [0:0] avm_unnamed_matvec8_matvec_read,
-    output wire [0:0] avm_unnamed_matvec8_matvec_write,
-    output wire [63:0] avm_unnamed_matvec8_matvec_writedata,
-    output wire [31:0] avm_unnamed_matvec9_matvec_address,
-    output wire [0:0] avm_unnamed_matvec9_matvec_burstcount,
-    output wire [3:0] avm_unnamed_matvec9_matvec_byteenable,
-    output wire [0:0] avm_unnamed_matvec9_matvec_enable,
-    output wire [0:0] avm_unnamed_matvec9_matvec_read,
-    output wire [0:0] avm_unnamed_matvec9_matvec_write,
-    output wire [31:0] avm_unnamed_matvec9_matvec_writedata,
+    output wire [31:0] avm_unnamed_matvec3_matvec_address,
+    output wire [0:0] avm_unnamed_matvec3_matvec_burstcount,
+    output wire [3:0] avm_unnamed_matvec3_matvec_byteenable,
+    output wire [0:0] avm_unnamed_matvec3_matvec_enable,
+    output wire [0:0] avm_unnamed_matvec3_matvec_read,
+    output wire [0:0] avm_unnamed_matvec3_matvec_write,
+    output wire [31:0] avm_unnamed_matvec3_matvec_writedata,
+    output wire [31:0] avm_unnamed_matvec4_matvec_address,
+    output wire [0:0] avm_unnamed_matvec4_matvec_burstcount,
+    output wire [3:0] avm_unnamed_matvec4_matvec_byteenable,
+    output wire [0:0] avm_unnamed_matvec4_matvec_enable,
+    output wire [0:0] avm_unnamed_matvec4_matvec_read,
+    output wire [0:0] avm_unnamed_matvec4_matvec_write,
+    output wire [31:0] avm_unnamed_matvec4_matvec_writedata,
+    output wire [31:0] avm_unnamed_matvec5_matvec_address,
+    output wire [0:0] avm_unnamed_matvec5_matvec_burstcount,
+    output wire [3:0] avm_unnamed_matvec5_matvec_byteenable,
+    output wire [0:0] avm_unnamed_matvec5_matvec_enable,
+    output wire [0:0] avm_unnamed_matvec5_matvec_read,
+    output wire [0:0] avm_unnamed_matvec5_matvec_write,
+    output wire [31:0] avm_unnamed_matvec5_matvec_writedata,
     output wire [0:0] avst_iord_bl_call_matvec_almost_full,
     output wire [0:0] avst_iord_bl_call_matvec_ready,
     output wire [0:0] avst_iowr_bl_return_matvec_data,
@@ -173,83 +85,27 @@ module matvec_function_wrapper (
     wire [0:0] matvec_function_out_iord_bl_call_matvec_o_fifoready;
     wire [0:0] matvec_function_out_iowr_bl_return_matvec_o_fifodata;
     wire [0:0] matvec_function_out_iowr_bl_return_matvec_o_fifovalid;
-    wire [31:0] matvec_function_out_memdep_1_matvec_avm_address;
-    wire [0:0] matvec_function_out_memdep_1_matvec_avm_burstcount;
-    wire [3:0] matvec_function_out_memdep_1_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_memdep_1_matvec_avm_enable;
-    wire [0:0] matvec_function_out_memdep_1_matvec_avm_read;
-    wire [0:0] matvec_function_out_memdep_1_matvec_avm_write;
-    wire [31:0] matvec_function_out_memdep_1_matvec_avm_writedata;
-    wire [31:0] matvec_function_out_memdep_2_matvec_avm_address;
-    wire [0:0] matvec_function_out_memdep_2_matvec_avm_burstcount;
-    wire [3:0] matvec_function_out_memdep_2_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_memdep_2_matvec_avm_enable;
-    wire [0:0] matvec_function_out_memdep_2_matvec_avm_read;
-    wire [0:0] matvec_function_out_memdep_2_matvec_avm_write;
-    wire [31:0] matvec_function_out_memdep_2_matvec_avm_writedata;
-    wire [31:0] matvec_function_out_memdep_3_matvec_avm_address;
-    wire [0:0] matvec_function_out_memdep_3_matvec_avm_burstcount;
-    wire [3:0] matvec_function_out_memdep_3_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_memdep_3_matvec_avm_enable;
-    wire [0:0] matvec_function_out_memdep_3_matvec_avm_read;
-    wire [0:0] matvec_function_out_memdep_3_matvec_avm_write;
-    wire [31:0] matvec_function_out_memdep_3_matvec_avm_writedata;
-    wire [63:0] matvec_function_out_memdep_4_matvec_avm_address;
-    wire [0:0] matvec_function_out_memdep_4_matvec_avm_burstcount;
-    wire [7:0] matvec_function_out_memdep_4_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_memdep_4_matvec_avm_enable;
-    wire [0:0] matvec_function_out_memdep_4_matvec_avm_read;
-    wire [0:0] matvec_function_out_memdep_4_matvec_avm_write;
-    wire [63:0] matvec_function_out_memdep_4_matvec_avm_writedata;
-    wire [31:0] matvec_function_out_memdep_matvec_avm_address;
-    wire [0:0] matvec_function_out_memdep_matvec_avm_burstcount;
-    wire [3:0] matvec_function_out_memdep_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_memdep_matvec_avm_enable;
-    wire [0:0] matvec_function_out_memdep_matvec_avm_read;
-    wire [0:0] matvec_function_out_memdep_matvec_avm_write;
-    wire [31:0] matvec_function_out_memdep_matvec_avm_writedata;
-    wire [31:0] matvec_function_out_unnamed_matvec10_matvec_avm_address;
-    wire [0:0] matvec_function_out_unnamed_matvec10_matvec_avm_burstcount;
-    wire [3:0] matvec_function_out_unnamed_matvec10_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_unnamed_matvec10_matvec_avm_enable;
-    wire [0:0] matvec_function_out_unnamed_matvec10_matvec_avm_read;
-    wire [0:0] matvec_function_out_unnamed_matvec10_matvec_avm_write;
-    wire [31:0] matvec_function_out_unnamed_matvec10_matvec_avm_writedata;
-    wire [31:0] matvec_function_out_unnamed_matvec11_matvec_avm_address;
-    wire [0:0] matvec_function_out_unnamed_matvec11_matvec_avm_burstcount;
-    wire [3:0] matvec_function_out_unnamed_matvec11_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_unnamed_matvec11_matvec_avm_enable;
-    wire [0:0] matvec_function_out_unnamed_matvec11_matvec_avm_read;
-    wire [0:0] matvec_function_out_unnamed_matvec11_matvec_avm_write;
-    wire [31:0] matvec_function_out_unnamed_matvec11_matvec_avm_writedata;
-    wire [63:0] matvec_function_out_unnamed_matvec6_matvec_avm_address;
-    wire [0:0] matvec_function_out_unnamed_matvec6_matvec_avm_burstcount;
-    wire [7:0] matvec_function_out_unnamed_matvec6_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_unnamed_matvec6_matvec_avm_enable;
-    wire [0:0] matvec_function_out_unnamed_matvec6_matvec_avm_read;
-    wire [0:0] matvec_function_out_unnamed_matvec6_matvec_avm_write;
-    wire [63:0] matvec_function_out_unnamed_matvec6_matvec_avm_writedata;
-    wire [63:0] matvec_function_out_unnamed_matvec7_matvec_avm_address;
-    wire [0:0] matvec_function_out_unnamed_matvec7_matvec_avm_burstcount;
-    wire [7:0] matvec_function_out_unnamed_matvec7_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_unnamed_matvec7_matvec_avm_enable;
-    wire [0:0] matvec_function_out_unnamed_matvec7_matvec_avm_read;
-    wire [0:0] matvec_function_out_unnamed_matvec7_matvec_avm_write;
-    wire [63:0] matvec_function_out_unnamed_matvec7_matvec_avm_writedata;
-    wire [63:0] matvec_function_out_unnamed_matvec8_matvec_avm_address;
-    wire [0:0] matvec_function_out_unnamed_matvec8_matvec_avm_burstcount;
-    wire [7:0] matvec_function_out_unnamed_matvec8_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_unnamed_matvec8_matvec_avm_enable;
-    wire [0:0] matvec_function_out_unnamed_matvec8_matvec_avm_read;
-    wire [0:0] matvec_function_out_unnamed_matvec8_matvec_avm_write;
-    wire [63:0] matvec_function_out_unnamed_matvec8_matvec_avm_writedata;
-    wire [31:0] matvec_function_out_unnamed_matvec9_matvec_avm_address;
-    wire [0:0] matvec_function_out_unnamed_matvec9_matvec_avm_burstcount;
-    wire [3:0] matvec_function_out_unnamed_matvec9_matvec_avm_byteenable;
-    wire [0:0] matvec_function_out_unnamed_matvec9_matvec_avm_enable;
-    wire [0:0] matvec_function_out_unnamed_matvec9_matvec_avm_read;
-    wire [0:0] matvec_function_out_unnamed_matvec9_matvec_avm_write;
-    wire [31:0] matvec_function_out_unnamed_matvec9_matvec_avm_writedata;
+    wire [31:0] matvec_function_out_unnamed_matvec3_matvec_avm_address;
+    wire [0:0] matvec_function_out_unnamed_matvec3_matvec_avm_burstcount;
+    wire [3:0] matvec_function_out_unnamed_matvec3_matvec_avm_byteenable;
+    wire [0:0] matvec_function_out_unnamed_matvec3_matvec_avm_enable;
+    wire [0:0] matvec_function_out_unnamed_matvec3_matvec_avm_read;
+    wire [0:0] matvec_function_out_unnamed_matvec3_matvec_avm_write;
+    wire [31:0] matvec_function_out_unnamed_matvec3_matvec_avm_writedata;
+    wire [31:0] matvec_function_out_unnamed_matvec4_matvec_avm_address;
+    wire [0:0] matvec_function_out_unnamed_matvec4_matvec_avm_burstcount;
+    wire [3:0] matvec_function_out_unnamed_matvec4_matvec_avm_byteenable;
+    wire [0:0] matvec_function_out_unnamed_matvec4_matvec_avm_enable;
+    wire [0:0] matvec_function_out_unnamed_matvec4_matvec_avm_read;
+    wire [0:0] matvec_function_out_unnamed_matvec4_matvec_avm_write;
+    wire [31:0] matvec_function_out_unnamed_matvec4_matvec_avm_writedata;
+    wire [31:0] matvec_function_out_unnamed_matvec5_matvec_avm_address;
+    wire [0:0] matvec_function_out_unnamed_matvec5_matvec_avm_burstcount;
+    wire [3:0] matvec_function_out_unnamed_matvec5_matvec_avm_byteenable;
+    wire [0:0] matvec_function_out_unnamed_matvec5_matvec_avm_enable;
+    wire [0:0] matvec_function_out_unnamed_matvec5_matvec_avm_read;
+    wire [0:0] matvec_function_out_unnamed_matvec5_matvec_avm_write;
+    wire [31:0] matvec_function_out_unnamed_matvec5_matvec_avm_writedata;
     wire [0:0] not_ready_q;
     wire [0:0] not_stall_q;
     wire [0:0] pos_reset_q;
@@ -263,7 +119,7 @@ module matvec_function_wrapper (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // not_stall(LOGICAL,68)
+    // not_stall(LOGICAL,36)
     assign not_stall_q = ~ (stall);
 
     // implicit_input(BITJOIN,10)
@@ -272,7 +128,7 @@ module matvec_function_wrapper (
     // M_const(CONSTANT,2)
     assign M_const_q = $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
 
-    // matvec_function(BLACKBOX,66)
+    // matvec_function(BLACKBOX,34)
     matvec_function thematvec_function (
         .in_arg_M(M_const_q),
         .in_arg_Out0(M_const_q),
@@ -282,391 +138,134 @@ module matvec_function_wrapper (
         .in_iord_bl_call_matvec_i_fifodata(implicit_input_q),
         .in_iord_bl_call_matvec_i_fifovalid(start),
         .in_iowr_bl_return_matvec_i_fifoready(not_stall_q),
-        .in_memdep_1_matvec_avm_readdata(avm_memdep_1_matvec_readdata),
-        .in_memdep_1_matvec_avm_readdatavalid(avm_memdep_1_matvec_readdatavalid),
-        .in_memdep_1_matvec_avm_waitrequest(avm_memdep_1_matvec_waitrequest),
-        .in_memdep_1_matvec_avm_writeack(avm_memdep_1_matvec_writeack),
-        .in_memdep_2_matvec_avm_readdata(avm_memdep_2_matvec_readdata),
-        .in_memdep_2_matvec_avm_readdatavalid(avm_memdep_2_matvec_readdatavalid),
-        .in_memdep_2_matvec_avm_waitrequest(avm_memdep_2_matvec_waitrequest),
-        .in_memdep_2_matvec_avm_writeack(avm_memdep_2_matvec_writeack),
-        .in_memdep_3_matvec_avm_readdata(avm_memdep_3_matvec_readdata),
-        .in_memdep_3_matvec_avm_readdatavalid(avm_memdep_3_matvec_readdatavalid),
-        .in_memdep_3_matvec_avm_waitrequest(avm_memdep_3_matvec_waitrequest),
-        .in_memdep_3_matvec_avm_writeack(avm_memdep_3_matvec_writeack),
-        .in_memdep_4_matvec_avm_readdata(avm_memdep_4_matvec_readdata),
-        .in_memdep_4_matvec_avm_readdatavalid(avm_memdep_4_matvec_readdatavalid),
-        .in_memdep_4_matvec_avm_waitrequest(avm_memdep_4_matvec_waitrequest),
-        .in_memdep_4_matvec_avm_writeack(avm_memdep_4_matvec_writeack),
-        .in_memdep_matvec_avm_readdata(avm_memdep_matvec_readdata),
-        .in_memdep_matvec_avm_readdatavalid(avm_memdep_matvec_readdatavalid),
-        .in_memdep_matvec_avm_waitrequest(avm_memdep_matvec_waitrequest),
-        .in_memdep_matvec_avm_writeack(avm_memdep_matvec_writeack),
         .in_stall_in(GND_q),
         .in_start(GND_q),
-        .in_unnamed_matvec10_matvec_avm_readdata(avm_unnamed_matvec10_matvec_readdata),
-        .in_unnamed_matvec10_matvec_avm_readdatavalid(avm_unnamed_matvec10_matvec_readdatavalid),
-        .in_unnamed_matvec10_matvec_avm_waitrequest(avm_unnamed_matvec10_matvec_waitrequest),
-        .in_unnamed_matvec10_matvec_avm_writeack(avm_unnamed_matvec10_matvec_writeack),
-        .in_unnamed_matvec11_matvec_avm_readdata(avm_unnamed_matvec11_matvec_readdata),
-        .in_unnamed_matvec11_matvec_avm_readdatavalid(avm_unnamed_matvec11_matvec_readdatavalid),
-        .in_unnamed_matvec11_matvec_avm_waitrequest(avm_unnamed_matvec11_matvec_waitrequest),
-        .in_unnamed_matvec11_matvec_avm_writeack(avm_unnamed_matvec11_matvec_writeack),
-        .in_unnamed_matvec6_matvec_avm_readdata(avm_unnamed_matvec6_matvec_readdata),
-        .in_unnamed_matvec6_matvec_avm_readdatavalid(avm_unnamed_matvec6_matvec_readdatavalid),
-        .in_unnamed_matvec6_matvec_avm_waitrequest(avm_unnamed_matvec6_matvec_waitrequest),
-        .in_unnamed_matvec6_matvec_avm_writeack(avm_unnamed_matvec6_matvec_writeack),
-        .in_unnamed_matvec7_matvec_avm_readdata(avm_unnamed_matvec7_matvec_readdata),
-        .in_unnamed_matvec7_matvec_avm_readdatavalid(avm_unnamed_matvec7_matvec_readdatavalid),
-        .in_unnamed_matvec7_matvec_avm_waitrequest(avm_unnamed_matvec7_matvec_waitrequest),
-        .in_unnamed_matvec7_matvec_avm_writeack(avm_unnamed_matvec7_matvec_writeack),
-        .in_unnamed_matvec8_matvec_avm_readdata(avm_unnamed_matvec8_matvec_readdata),
-        .in_unnamed_matvec8_matvec_avm_readdatavalid(avm_unnamed_matvec8_matvec_readdatavalid),
-        .in_unnamed_matvec8_matvec_avm_waitrequest(avm_unnamed_matvec8_matvec_waitrequest),
-        .in_unnamed_matvec8_matvec_avm_writeack(avm_unnamed_matvec8_matvec_writeack),
-        .in_unnamed_matvec9_matvec_avm_readdata(avm_unnamed_matvec9_matvec_readdata),
-        .in_unnamed_matvec9_matvec_avm_readdatavalid(avm_unnamed_matvec9_matvec_readdatavalid),
-        .in_unnamed_matvec9_matvec_avm_waitrequest(avm_unnamed_matvec9_matvec_waitrequest),
-        .in_unnamed_matvec9_matvec_avm_writeack(avm_unnamed_matvec9_matvec_writeack),
+        .in_unnamed_matvec3_matvec_avm_readdata(avm_unnamed_matvec3_matvec_readdata),
+        .in_unnamed_matvec3_matvec_avm_readdatavalid(avm_unnamed_matvec3_matvec_readdatavalid),
+        .in_unnamed_matvec3_matvec_avm_waitrequest(avm_unnamed_matvec3_matvec_waitrequest),
+        .in_unnamed_matvec3_matvec_avm_writeack(avm_unnamed_matvec3_matvec_writeack),
+        .in_unnamed_matvec4_matvec_avm_readdata(avm_unnamed_matvec4_matvec_readdata),
+        .in_unnamed_matvec4_matvec_avm_readdatavalid(avm_unnamed_matvec4_matvec_readdatavalid),
+        .in_unnamed_matvec4_matvec_avm_waitrequest(avm_unnamed_matvec4_matvec_waitrequest),
+        .in_unnamed_matvec4_matvec_avm_writeack(avm_unnamed_matvec4_matvec_writeack),
+        .in_unnamed_matvec5_matvec_avm_readdata(avm_unnamed_matvec5_matvec_readdata),
+        .in_unnamed_matvec5_matvec_avm_readdatavalid(avm_unnamed_matvec5_matvec_readdatavalid),
+        .in_unnamed_matvec5_matvec_avm_waitrequest(avm_unnamed_matvec5_matvec_waitrequest),
+        .in_unnamed_matvec5_matvec_avm_writeack(avm_unnamed_matvec5_matvec_writeack),
         .in_valid_in(VCC_q),
         .out_iord_bl_call_matvec_o_fifoalmost_full(matvec_function_out_iord_bl_call_matvec_o_fifoalmost_full),
         .out_iord_bl_call_matvec_o_fifoready(matvec_function_out_iord_bl_call_matvec_o_fifoready),
         .out_iowr_bl_return_matvec_o_fifodata(matvec_function_out_iowr_bl_return_matvec_o_fifodata),
         .out_iowr_bl_return_matvec_o_fifovalid(matvec_function_out_iowr_bl_return_matvec_o_fifovalid),
-        .out_memdep_1_matvec_avm_address(matvec_function_out_memdep_1_matvec_avm_address),
-        .out_memdep_1_matvec_avm_burstcount(matvec_function_out_memdep_1_matvec_avm_burstcount),
-        .out_memdep_1_matvec_avm_byteenable(matvec_function_out_memdep_1_matvec_avm_byteenable),
-        .out_memdep_1_matvec_avm_enable(matvec_function_out_memdep_1_matvec_avm_enable),
-        .out_memdep_1_matvec_avm_read(matvec_function_out_memdep_1_matvec_avm_read),
-        .out_memdep_1_matvec_avm_write(matvec_function_out_memdep_1_matvec_avm_write),
-        .out_memdep_1_matvec_avm_writedata(matvec_function_out_memdep_1_matvec_avm_writedata),
-        .out_memdep_2_matvec_avm_address(matvec_function_out_memdep_2_matvec_avm_address),
-        .out_memdep_2_matvec_avm_burstcount(matvec_function_out_memdep_2_matvec_avm_burstcount),
-        .out_memdep_2_matvec_avm_byteenable(matvec_function_out_memdep_2_matvec_avm_byteenable),
-        .out_memdep_2_matvec_avm_enable(matvec_function_out_memdep_2_matvec_avm_enable),
-        .out_memdep_2_matvec_avm_read(matvec_function_out_memdep_2_matvec_avm_read),
-        .out_memdep_2_matvec_avm_write(matvec_function_out_memdep_2_matvec_avm_write),
-        .out_memdep_2_matvec_avm_writedata(matvec_function_out_memdep_2_matvec_avm_writedata),
-        .out_memdep_3_matvec_avm_address(matvec_function_out_memdep_3_matvec_avm_address),
-        .out_memdep_3_matvec_avm_burstcount(matvec_function_out_memdep_3_matvec_avm_burstcount),
-        .out_memdep_3_matvec_avm_byteenable(matvec_function_out_memdep_3_matvec_avm_byteenable),
-        .out_memdep_3_matvec_avm_enable(matvec_function_out_memdep_3_matvec_avm_enable),
-        .out_memdep_3_matvec_avm_read(matvec_function_out_memdep_3_matvec_avm_read),
-        .out_memdep_3_matvec_avm_write(matvec_function_out_memdep_3_matvec_avm_write),
-        .out_memdep_3_matvec_avm_writedata(matvec_function_out_memdep_3_matvec_avm_writedata),
-        .out_memdep_4_matvec_avm_address(matvec_function_out_memdep_4_matvec_avm_address),
-        .out_memdep_4_matvec_avm_burstcount(matvec_function_out_memdep_4_matvec_avm_burstcount),
-        .out_memdep_4_matvec_avm_byteenable(matvec_function_out_memdep_4_matvec_avm_byteenable),
-        .out_memdep_4_matvec_avm_enable(matvec_function_out_memdep_4_matvec_avm_enable),
-        .out_memdep_4_matvec_avm_read(matvec_function_out_memdep_4_matvec_avm_read),
-        .out_memdep_4_matvec_avm_write(matvec_function_out_memdep_4_matvec_avm_write),
-        .out_memdep_4_matvec_avm_writedata(matvec_function_out_memdep_4_matvec_avm_writedata),
-        .out_memdep_matvec_avm_address(matvec_function_out_memdep_matvec_avm_address),
-        .out_memdep_matvec_avm_burstcount(matvec_function_out_memdep_matvec_avm_burstcount),
-        .out_memdep_matvec_avm_byteenable(matvec_function_out_memdep_matvec_avm_byteenable),
-        .out_memdep_matvec_avm_enable(matvec_function_out_memdep_matvec_avm_enable),
-        .out_memdep_matvec_avm_read(matvec_function_out_memdep_matvec_avm_read),
-        .out_memdep_matvec_avm_write(matvec_function_out_memdep_matvec_avm_write),
-        .out_memdep_matvec_avm_writedata(matvec_function_out_memdep_matvec_avm_writedata),
-        .out_o_active_memdep_4(),
         .out_stall_out(),
-        .out_unnamed_matvec10_matvec_avm_address(matvec_function_out_unnamed_matvec10_matvec_avm_address),
-        .out_unnamed_matvec10_matvec_avm_burstcount(matvec_function_out_unnamed_matvec10_matvec_avm_burstcount),
-        .out_unnamed_matvec10_matvec_avm_byteenable(matvec_function_out_unnamed_matvec10_matvec_avm_byteenable),
-        .out_unnamed_matvec10_matvec_avm_enable(matvec_function_out_unnamed_matvec10_matvec_avm_enable),
-        .out_unnamed_matvec10_matvec_avm_read(matvec_function_out_unnamed_matvec10_matvec_avm_read),
-        .out_unnamed_matvec10_matvec_avm_write(matvec_function_out_unnamed_matvec10_matvec_avm_write),
-        .out_unnamed_matvec10_matvec_avm_writedata(matvec_function_out_unnamed_matvec10_matvec_avm_writedata),
-        .out_unnamed_matvec11_matvec_avm_address(matvec_function_out_unnamed_matvec11_matvec_avm_address),
-        .out_unnamed_matvec11_matvec_avm_burstcount(matvec_function_out_unnamed_matvec11_matvec_avm_burstcount),
-        .out_unnamed_matvec11_matvec_avm_byteenable(matvec_function_out_unnamed_matvec11_matvec_avm_byteenable),
-        .out_unnamed_matvec11_matvec_avm_enable(matvec_function_out_unnamed_matvec11_matvec_avm_enable),
-        .out_unnamed_matvec11_matvec_avm_read(matvec_function_out_unnamed_matvec11_matvec_avm_read),
-        .out_unnamed_matvec11_matvec_avm_write(matvec_function_out_unnamed_matvec11_matvec_avm_write),
-        .out_unnamed_matvec11_matvec_avm_writedata(matvec_function_out_unnamed_matvec11_matvec_avm_writedata),
-        .out_unnamed_matvec6_matvec_avm_address(matvec_function_out_unnamed_matvec6_matvec_avm_address),
-        .out_unnamed_matvec6_matvec_avm_burstcount(matvec_function_out_unnamed_matvec6_matvec_avm_burstcount),
-        .out_unnamed_matvec6_matvec_avm_byteenable(matvec_function_out_unnamed_matvec6_matvec_avm_byteenable),
-        .out_unnamed_matvec6_matvec_avm_enable(matvec_function_out_unnamed_matvec6_matvec_avm_enable),
-        .out_unnamed_matvec6_matvec_avm_read(matvec_function_out_unnamed_matvec6_matvec_avm_read),
-        .out_unnamed_matvec6_matvec_avm_write(matvec_function_out_unnamed_matvec6_matvec_avm_write),
-        .out_unnamed_matvec6_matvec_avm_writedata(matvec_function_out_unnamed_matvec6_matvec_avm_writedata),
-        .out_unnamed_matvec7_matvec_avm_address(matvec_function_out_unnamed_matvec7_matvec_avm_address),
-        .out_unnamed_matvec7_matvec_avm_burstcount(matvec_function_out_unnamed_matvec7_matvec_avm_burstcount),
-        .out_unnamed_matvec7_matvec_avm_byteenable(matvec_function_out_unnamed_matvec7_matvec_avm_byteenable),
-        .out_unnamed_matvec7_matvec_avm_enable(matvec_function_out_unnamed_matvec7_matvec_avm_enable),
-        .out_unnamed_matvec7_matvec_avm_read(matvec_function_out_unnamed_matvec7_matvec_avm_read),
-        .out_unnamed_matvec7_matvec_avm_write(matvec_function_out_unnamed_matvec7_matvec_avm_write),
-        .out_unnamed_matvec7_matvec_avm_writedata(matvec_function_out_unnamed_matvec7_matvec_avm_writedata),
-        .out_unnamed_matvec8_matvec_avm_address(matvec_function_out_unnamed_matvec8_matvec_avm_address),
-        .out_unnamed_matvec8_matvec_avm_burstcount(matvec_function_out_unnamed_matvec8_matvec_avm_burstcount),
-        .out_unnamed_matvec8_matvec_avm_byteenable(matvec_function_out_unnamed_matvec8_matvec_avm_byteenable),
-        .out_unnamed_matvec8_matvec_avm_enable(matvec_function_out_unnamed_matvec8_matvec_avm_enable),
-        .out_unnamed_matvec8_matvec_avm_read(matvec_function_out_unnamed_matvec8_matvec_avm_read),
-        .out_unnamed_matvec8_matvec_avm_write(matvec_function_out_unnamed_matvec8_matvec_avm_write),
-        .out_unnamed_matvec8_matvec_avm_writedata(matvec_function_out_unnamed_matvec8_matvec_avm_writedata),
-        .out_unnamed_matvec9_matvec_avm_address(matvec_function_out_unnamed_matvec9_matvec_avm_address),
-        .out_unnamed_matvec9_matvec_avm_burstcount(matvec_function_out_unnamed_matvec9_matvec_avm_burstcount),
-        .out_unnamed_matvec9_matvec_avm_byteenable(matvec_function_out_unnamed_matvec9_matvec_avm_byteenable),
-        .out_unnamed_matvec9_matvec_avm_enable(matvec_function_out_unnamed_matvec9_matvec_avm_enable),
-        .out_unnamed_matvec9_matvec_avm_read(matvec_function_out_unnamed_matvec9_matvec_avm_read),
-        .out_unnamed_matvec9_matvec_avm_write(matvec_function_out_unnamed_matvec9_matvec_avm_write),
-        .out_unnamed_matvec9_matvec_avm_writedata(matvec_function_out_unnamed_matvec9_matvec_avm_writedata),
+        .out_unnamed_matvec3_matvec_avm_address(matvec_function_out_unnamed_matvec3_matvec_avm_address),
+        .out_unnamed_matvec3_matvec_avm_burstcount(matvec_function_out_unnamed_matvec3_matvec_avm_burstcount),
+        .out_unnamed_matvec3_matvec_avm_byteenable(matvec_function_out_unnamed_matvec3_matvec_avm_byteenable),
+        .out_unnamed_matvec3_matvec_avm_enable(matvec_function_out_unnamed_matvec3_matvec_avm_enable),
+        .out_unnamed_matvec3_matvec_avm_read(matvec_function_out_unnamed_matvec3_matvec_avm_read),
+        .out_unnamed_matvec3_matvec_avm_write(matvec_function_out_unnamed_matvec3_matvec_avm_write),
+        .out_unnamed_matvec3_matvec_avm_writedata(matvec_function_out_unnamed_matvec3_matvec_avm_writedata),
+        .out_unnamed_matvec4_matvec_avm_address(matvec_function_out_unnamed_matvec4_matvec_avm_address),
+        .out_unnamed_matvec4_matvec_avm_burstcount(matvec_function_out_unnamed_matvec4_matvec_avm_burstcount),
+        .out_unnamed_matvec4_matvec_avm_byteenable(matvec_function_out_unnamed_matvec4_matvec_avm_byteenable),
+        .out_unnamed_matvec4_matvec_avm_enable(matvec_function_out_unnamed_matvec4_matvec_avm_enable),
+        .out_unnamed_matvec4_matvec_avm_read(matvec_function_out_unnamed_matvec4_matvec_avm_read),
+        .out_unnamed_matvec4_matvec_avm_write(matvec_function_out_unnamed_matvec4_matvec_avm_write),
+        .out_unnamed_matvec4_matvec_avm_writedata(matvec_function_out_unnamed_matvec4_matvec_avm_writedata),
+        .out_unnamed_matvec5_matvec_avm_address(matvec_function_out_unnamed_matvec5_matvec_avm_address),
+        .out_unnamed_matvec5_matvec_avm_burstcount(matvec_function_out_unnamed_matvec5_matvec_avm_burstcount),
+        .out_unnamed_matvec5_matvec_avm_byteenable(matvec_function_out_unnamed_matvec5_matvec_avm_byteenable),
+        .out_unnamed_matvec5_matvec_avm_enable(matvec_function_out_unnamed_matvec5_matvec_avm_enable),
+        .out_unnamed_matvec5_matvec_avm_read(matvec_function_out_unnamed_matvec5_matvec_avm_read),
+        .out_unnamed_matvec5_matvec_avm_write(matvec_function_out_unnamed_matvec5_matvec_avm_write),
+        .out_unnamed_matvec5_matvec_avm_writedata(matvec_function_out_unnamed_matvec5_matvec_avm_writedata),
         .out_valid_out(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // avm_memdep_1_matvec_address(GPOUT,69)
-    assign avm_memdep_1_matvec_address = matvec_function_out_memdep_1_matvec_avm_address;
+    // avm_unnamed_matvec3_matvec_address(GPOUT,37)
+    assign avm_unnamed_matvec3_matvec_address = matvec_function_out_unnamed_matvec3_matvec_avm_address;
 
-    // avm_memdep_1_matvec_burstcount(GPOUT,70)
-    assign avm_memdep_1_matvec_burstcount = matvec_function_out_memdep_1_matvec_avm_burstcount;
+    // avm_unnamed_matvec3_matvec_burstcount(GPOUT,38)
+    assign avm_unnamed_matvec3_matvec_burstcount = matvec_function_out_unnamed_matvec3_matvec_avm_burstcount;
 
-    // avm_memdep_1_matvec_byteenable(GPOUT,71)
-    assign avm_memdep_1_matvec_byteenable = matvec_function_out_memdep_1_matvec_avm_byteenable;
+    // avm_unnamed_matvec3_matvec_byteenable(GPOUT,39)
+    assign avm_unnamed_matvec3_matvec_byteenable = matvec_function_out_unnamed_matvec3_matvec_avm_byteenable;
 
-    // avm_memdep_1_matvec_enable(GPOUT,72)
-    assign avm_memdep_1_matvec_enable = matvec_function_out_memdep_1_matvec_avm_enable;
+    // avm_unnamed_matvec3_matvec_enable(GPOUT,40)
+    assign avm_unnamed_matvec3_matvec_enable = matvec_function_out_unnamed_matvec3_matvec_avm_enable;
 
-    // avm_memdep_1_matvec_read(GPOUT,73)
-    assign avm_memdep_1_matvec_read = matvec_function_out_memdep_1_matvec_avm_read;
+    // avm_unnamed_matvec3_matvec_read(GPOUT,41)
+    assign avm_unnamed_matvec3_matvec_read = matvec_function_out_unnamed_matvec3_matvec_avm_read;
 
-    // avm_memdep_1_matvec_write(GPOUT,74)
-    assign avm_memdep_1_matvec_write = matvec_function_out_memdep_1_matvec_avm_write;
+    // avm_unnamed_matvec3_matvec_write(GPOUT,42)
+    assign avm_unnamed_matvec3_matvec_write = matvec_function_out_unnamed_matvec3_matvec_avm_write;
 
-    // avm_memdep_1_matvec_writedata(GPOUT,75)
-    assign avm_memdep_1_matvec_writedata = matvec_function_out_memdep_1_matvec_avm_writedata;
+    // avm_unnamed_matvec3_matvec_writedata(GPOUT,43)
+    assign avm_unnamed_matvec3_matvec_writedata = matvec_function_out_unnamed_matvec3_matvec_avm_writedata;
 
-    // avm_memdep_2_matvec_address(GPOUT,76)
-    assign avm_memdep_2_matvec_address = matvec_function_out_memdep_2_matvec_avm_address;
+    // avm_unnamed_matvec4_matvec_address(GPOUT,44)
+    assign avm_unnamed_matvec4_matvec_address = matvec_function_out_unnamed_matvec4_matvec_avm_address;
 
-    // avm_memdep_2_matvec_burstcount(GPOUT,77)
-    assign avm_memdep_2_matvec_burstcount = matvec_function_out_memdep_2_matvec_avm_burstcount;
+    // avm_unnamed_matvec4_matvec_burstcount(GPOUT,45)
+    assign avm_unnamed_matvec4_matvec_burstcount = matvec_function_out_unnamed_matvec4_matvec_avm_burstcount;
 
-    // avm_memdep_2_matvec_byteenable(GPOUT,78)
-    assign avm_memdep_2_matvec_byteenable = matvec_function_out_memdep_2_matvec_avm_byteenable;
+    // avm_unnamed_matvec4_matvec_byteenable(GPOUT,46)
+    assign avm_unnamed_matvec4_matvec_byteenable = matvec_function_out_unnamed_matvec4_matvec_avm_byteenable;
 
-    // avm_memdep_2_matvec_enable(GPOUT,79)
-    assign avm_memdep_2_matvec_enable = matvec_function_out_memdep_2_matvec_avm_enable;
+    // avm_unnamed_matvec4_matvec_enable(GPOUT,47)
+    assign avm_unnamed_matvec4_matvec_enable = matvec_function_out_unnamed_matvec4_matvec_avm_enable;
 
-    // avm_memdep_2_matvec_read(GPOUT,80)
-    assign avm_memdep_2_matvec_read = matvec_function_out_memdep_2_matvec_avm_read;
+    // avm_unnamed_matvec4_matvec_read(GPOUT,48)
+    assign avm_unnamed_matvec4_matvec_read = matvec_function_out_unnamed_matvec4_matvec_avm_read;
 
-    // avm_memdep_2_matvec_write(GPOUT,81)
-    assign avm_memdep_2_matvec_write = matvec_function_out_memdep_2_matvec_avm_write;
+    // avm_unnamed_matvec4_matvec_write(GPOUT,49)
+    assign avm_unnamed_matvec4_matvec_write = matvec_function_out_unnamed_matvec4_matvec_avm_write;
 
-    // avm_memdep_2_matvec_writedata(GPOUT,82)
-    assign avm_memdep_2_matvec_writedata = matvec_function_out_memdep_2_matvec_avm_writedata;
+    // avm_unnamed_matvec4_matvec_writedata(GPOUT,50)
+    assign avm_unnamed_matvec4_matvec_writedata = matvec_function_out_unnamed_matvec4_matvec_avm_writedata;
 
-    // avm_memdep_3_matvec_address(GPOUT,83)
-    assign avm_memdep_3_matvec_address = matvec_function_out_memdep_3_matvec_avm_address;
+    // avm_unnamed_matvec5_matvec_address(GPOUT,51)
+    assign avm_unnamed_matvec5_matvec_address = matvec_function_out_unnamed_matvec5_matvec_avm_address;
 
-    // avm_memdep_3_matvec_burstcount(GPOUT,84)
-    assign avm_memdep_3_matvec_burstcount = matvec_function_out_memdep_3_matvec_avm_burstcount;
+    // avm_unnamed_matvec5_matvec_burstcount(GPOUT,52)
+    assign avm_unnamed_matvec5_matvec_burstcount = matvec_function_out_unnamed_matvec5_matvec_avm_burstcount;
 
-    // avm_memdep_3_matvec_byteenable(GPOUT,85)
-    assign avm_memdep_3_matvec_byteenable = matvec_function_out_memdep_3_matvec_avm_byteenable;
+    // avm_unnamed_matvec5_matvec_byteenable(GPOUT,53)
+    assign avm_unnamed_matvec5_matvec_byteenable = matvec_function_out_unnamed_matvec5_matvec_avm_byteenable;
 
-    // avm_memdep_3_matvec_enable(GPOUT,86)
-    assign avm_memdep_3_matvec_enable = matvec_function_out_memdep_3_matvec_avm_enable;
+    // avm_unnamed_matvec5_matvec_enable(GPOUT,54)
+    assign avm_unnamed_matvec5_matvec_enable = matvec_function_out_unnamed_matvec5_matvec_avm_enable;
 
-    // avm_memdep_3_matvec_read(GPOUT,87)
-    assign avm_memdep_3_matvec_read = matvec_function_out_memdep_3_matvec_avm_read;
+    // avm_unnamed_matvec5_matvec_read(GPOUT,55)
+    assign avm_unnamed_matvec5_matvec_read = matvec_function_out_unnamed_matvec5_matvec_avm_read;
 
-    // avm_memdep_3_matvec_write(GPOUT,88)
-    assign avm_memdep_3_matvec_write = matvec_function_out_memdep_3_matvec_avm_write;
+    // avm_unnamed_matvec5_matvec_write(GPOUT,56)
+    assign avm_unnamed_matvec5_matvec_write = matvec_function_out_unnamed_matvec5_matvec_avm_write;
 
-    // avm_memdep_3_matvec_writedata(GPOUT,89)
-    assign avm_memdep_3_matvec_writedata = matvec_function_out_memdep_3_matvec_avm_writedata;
+    // avm_unnamed_matvec5_matvec_writedata(GPOUT,57)
+    assign avm_unnamed_matvec5_matvec_writedata = matvec_function_out_unnamed_matvec5_matvec_avm_writedata;
 
-    // avm_memdep_4_matvec_address(GPOUT,90)
-    assign avm_memdep_4_matvec_address = matvec_function_out_memdep_4_matvec_avm_address;
-
-    // avm_memdep_4_matvec_burstcount(GPOUT,91)
-    assign avm_memdep_4_matvec_burstcount = matvec_function_out_memdep_4_matvec_avm_burstcount;
-
-    // avm_memdep_4_matvec_byteenable(GPOUT,92)
-    assign avm_memdep_4_matvec_byteenable = matvec_function_out_memdep_4_matvec_avm_byteenable;
-
-    // avm_memdep_4_matvec_enable(GPOUT,93)
-    assign avm_memdep_4_matvec_enable = matvec_function_out_memdep_4_matvec_avm_enable;
-
-    // avm_memdep_4_matvec_read(GPOUT,94)
-    assign avm_memdep_4_matvec_read = matvec_function_out_memdep_4_matvec_avm_read;
-
-    // avm_memdep_4_matvec_write(GPOUT,95)
-    assign avm_memdep_4_matvec_write = matvec_function_out_memdep_4_matvec_avm_write;
-
-    // avm_memdep_4_matvec_writedata(GPOUT,96)
-    assign avm_memdep_4_matvec_writedata = matvec_function_out_memdep_4_matvec_avm_writedata;
-
-    // avm_memdep_matvec_address(GPOUT,97)
-    assign avm_memdep_matvec_address = matvec_function_out_memdep_matvec_avm_address;
-
-    // avm_memdep_matvec_burstcount(GPOUT,98)
-    assign avm_memdep_matvec_burstcount = matvec_function_out_memdep_matvec_avm_burstcount;
-
-    // avm_memdep_matvec_byteenable(GPOUT,99)
-    assign avm_memdep_matvec_byteenable = matvec_function_out_memdep_matvec_avm_byteenable;
-
-    // avm_memdep_matvec_enable(GPOUT,100)
-    assign avm_memdep_matvec_enable = matvec_function_out_memdep_matvec_avm_enable;
-
-    // avm_memdep_matvec_read(GPOUT,101)
-    assign avm_memdep_matvec_read = matvec_function_out_memdep_matvec_avm_read;
-
-    // avm_memdep_matvec_write(GPOUT,102)
-    assign avm_memdep_matvec_write = matvec_function_out_memdep_matvec_avm_write;
-
-    // avm_memdep_matvec_writedata(GPOUT,103)
-    assign avm_memdep_matvec_writedata = matvec_function_out_memdep_matvec_avm_writedata;
-
-    // avm_unnamed_matvec10_matvec_address(GPOUT,104)
-    assign avm_unnamed_matvec10_matvec_address = matvec_function_out_unnamed_matvec10_matvec_avm_address;
-
-    // avm_unnamed_matvec10_matvec_burstcount(GPOUT,105)
-    assign avm_unnamed_matvec10_matvec_burstcount = matvec_function_out_unnamed_matvec10_matvec_avm_burstcount;
-
-    // avm_unnamed_matvec10_matvec_byteenable(GPOUT,106)
-    assign avm_unnamed_matvec10_matvec_byteenable = matvec_function_out_unnamed_matvec10_matvec_avm_byteenable;
-
-    // avm_unnamed_matvec10_matvec_enable(GPOUT,107)
-    assign avm_unnamed_matvec10_matvec_enable = matvec_function_out_unnamed_matvec10_matvec_avm_enable;
-
-    // avm_unnamed_matvec10_matvec_read(GPOUT,108)
-    assign avm_unnamed_matvec10_matvec_read = matvec_function_out_unnamed_matvec10_matvec_avm_read;
-
-    // avm_unnamed_matvec10_matvec_write(GPOUT,109)
-    assign avm_unnamed_matvec10_matvec_write = matvec_function_out_unnamed_matvec10_matvec_avm_write;
-
-    // avm_unnamed_matvec10_matvec_writedata(GPOUT,110)
-    assign avm_unnamed_matvec10_matvec_writedata = matvec_function_out_unnamed_matvec10_matvec_avm_writedata;
-
-    // avm_unnamed_matvec11_matvec_address(GPOUT,111)
-    assign avm_unnamed_matvec11_matvec_address = matvec_function_out_unnamed_matvec11_matvec_avm_address;
-
-    // avm_unnamed_matvec11_matvec_burstcount(GPOUT,112)
-    assign avm_unnamed_matvec11_matvec_burstcount = matvec_function_out_unnamed_matvec11_matvec_avm_burstcount;
-
-    // avm_unnamed_matvec11_matvec_byteenable(GPOUT,113)
-    assign avm_unnamed_matvec11_matvec_byteenable = matvec_function_out_unnamed_matvec11_matvec_avm_byteenable;
-
-    // avm_unnamed_matvec11_matvec_enable(GPOUT,114)
-    assign avm_unnamed_matvec11_matvec_enable = matvec_function_out_unnamed_matvec11_matvec_avm_enable;
-
-    // avm_unnamed_matvec11_matvec_read(GPOUT,115)
-    assign avm_unnamed_matvec11_matvec_read = matvec_function_out_unnamed_matvec11_matvec_avm_read;
-
-    // avm_unnamed_matvec11_matvec_write(GPOUT,116)
-    assign avm_unnamed_matvec11_matvec_write = matvec_function_out_unnamed_matvec11_matvec_avm_write;
-
-    // avm_unnamed_matvec11_matvec_writedata(GPOUT,117)
-    assign avm_unnamed_matvec11_matvec_writedata = matvec_function_out_unnamed_matvec11_matvec_avm_writedata;
-
-    // avm_unnamed_matvec6_matvec_address(GPOUT,118)
-    assign avm_unnamed_matvec6_matvec_address = matvec_function_out_unnamed_matvec6_matvec_avm_address;
-
-    // avm_unnamed_matvec6_matvec_burstcount(GPOUT,119)
-    assign avm_unnamed_matvec6_matvec_burstcount = matvec_function_out_unnamed_matvec6_matvec_avm_burstcount;
-
-    // avm_unnamed_matvec6_matvec_byteenable(GPOUT,120)
-    assign avm_unnamed_matvec6_matvec_byteenable = matvec_function_out_unnamed_matvec6_matvec_avm_byteenable;
-
-    // avm_unnamed_matvec6_matvec_enable(GPOUT,121)
-    assign avm_unnamed_matvec6_matvec_enable = matvec_function_out_unnamed_matvec6_matvec_avm_enable;
-
-    // avm_unnamed_matvec6_matvec_read(GPOUT,122)
-    assign avm_unnamed_matvec6_matvec_read = matvec_function_out_unnamed_matvec6_matvec_avm_read;
-
-    // avm_unnamed_matvec6_matvec_write(GPOUT,123)
-    assign avm_unnamed_matvec6_matvec_write = matvec_function_out_unnamed_matvec6_matvec_avm_write;
-
-    // avm_unnamed_matvec6_matvec_writedata(GPOUT,124)
-    assign avm_unnamed_matvec6_matvec_writedata = matvec_function_out_unnamed_matvec6_matvec_avm_writedata;
-
-    // avm_unnamed_matvec7_matvec_address(GPOUT,125)
-    assign avm_unnamed_matvec7_matvec_address = matvec_function_out_unnamed_matvec7_matvec_avm_address;
-
-    // avm_unnamed_matvec7_matvec_burstcount(GPOUT,126)
-    assign avm_unnamed_matvec7_matvec_burstcount = matvec_function_out_unnamed_matvec7_matvec_avm_burstcount;
-
-    // avm_unnamed_matvec7_matvec_byteenable(GPOUT,127)
-    assign avm_unnamed_matvec7_matvec_byteenable = matvec_function_out_unnamed_matvec7_matvec_avm_byteenable;
-
-    // avm_unnamed_matvec7_matvec_enable(GPOUT,128)
-    assign avm_unnamed_matvec7_matvec_enable = matvec_function_out_unnamed_matvec7_matvec_avm_enable;
-
-    // avm_unnamed_matvec7_matvec_read(GPOUT,129)
-    assign avm_unnamed_matvec7_matvec_read = matvec_function_out_unnamed_matvec7_matvec_avm_read;
-
-    // avm_unnamed_matvec7_matvec_write(GPOUT,130)
-    assign avm_unnamed_matvec7_matvec_write = matvec_function_out_unnamed_matvec7_matvec_avm_write;
-
-    // avm_unnamed_matvec7_matvec_writedata(GPOUT,131)
-    assign avm_unnamed_matvec7_matvec_writedata = matvec_function_out_unnamed_matvec7_matvec_avm_writedata;
-
-    // avm_unnamed_matvec8_matvec_address(GPOUT,132)
-    assign avm_unnamed_matvec8_matvec_address = matvec_function_out_unnamed_matvec8_matvec_avm_address;
-
-    // avm_unnamed_matvec8_matvec_burstcount(GPOUT,133)
-    assign avm_unnamed_matvec8_matvec_burstcount = matvec_function_out_unnamed_matvec8_matvec_avm_burstcount;
-
-    // avm_unnamed_matvec8_matvec_byteenable(GPOUT,134)
-    assign avm_unnamed_matvec8_matvec_byteenable = matvec_function_out_unnamed_matvec8_matvec_avm_byteenable;
-
-    // avm_unnamed_matvec8_matvec_enable(GPOUT,135)
-    assign avm_unnamed_matvec8_matvec_enable = matvec_function_out_unnamed_matvec8_matvec_avm_enable;
-
-    // avm_unnamed_matvec8_matvec_read(GPOUT,136)
-    assign avm_unnamed_matvec8_matvec_read = matvec_function_out_unnamed_matvec8_matvec_avm_read;
-
-    // avm_unnamed_matvec8_matvec_write(GPOUT,137)
-    assign avm_unnamed_matvec8_matvec_write = matvec_function_out_unnamed_matvec8_matvec_avm_write;
-
-    // avm_unnamed_matvec8_matvec_writedata(GPOUT,138)
-    assign avm_unnamed_matvec8_matvec_writedata = matvec_function_out_unnamed_matvec8_matvec_avm_writedata;
-
-    // avm_unnamed_matvec9_matvec_address(GPOUT,139)
-    assign avm_unnamed_matvec9_matvec_address = matvec_function_out_unnamed_matvec9_matvec_avm_address;
-
-    // avm_unnamed_matvec9_matvec_burstcount(GPOUT,140)
-    assign avm_unnamed_matvec9_matvec_burstcount = matvec_function_out_unnamed_matvec9_matvec_avm_burstcount;
-
-    // avm_unnamed_matvec9_matvec_byteenable(GPOUT,141)
-    assign avm_unnamed_matvec9_matvec_byteenable = matvec_function_out_unnamed_matvec9_matvec_avm_byteenable;
-
-    // avm_unnamed_matvec9_matvec_enable(GPOUT,142)
-    assign avm_unnamed_matvec9_matvec_enable = matvec_function_out_unnamed_matvec9_matvec_avm_enable;
-
-    // avm_unnamed_matvec9_matvec_read(GPOUT,143)
-    assign avm_unnamed_matvec9_matvec_read = matvec_function_out_unnamed_matvec9_matvec_avm_read;
-
-    // avm_unnamed_matvec9_matvec_write(GPOUT,144)
-    assign avm_unnamed_matvec9_matvec_write = matvec_function_out_unnamed_matvec9_matvec_avm_write;
-
-    // avm_unnamed_matvec9_matvec_writedata(GPOUT,145)
-    assign avm_unnamed_matvec9_matvec_writedata = matvec_function_out_unnamed_matvec9_matvec_avm_writedata;
-
-    // avst_iord_bl_call_matvec_almost_full(GPOUT,146)
+    // avst_iord_bl_call_matvec_almost_full(GPOUT,58)
     assign avst_iord_bl_call_matvec_almost_full = matvec_function_out_iord_bl_call_matvec_o_fifoalmost_full;
 
-    // avst_iord_bl_call_matvec_ready(GPOUT,147)
+    // avst_iord_bl_call_matvec_ready(GPOUT,59)
     assign avst_iord_bl_call_matvec_ready = matvec_function_out_iord_bl_call_matvec_o_fifoready;
 
-    // avst_iowr_bl_return_matvec_data(GPOUT,148)
+    // avst_iowr_bl_return_matvec_data(GPOUT,60)
     assign avst_iowr_bl_return_matvec_data = matvec_function_out_iowr_bl_return_matvec_o_fifodata;
 
-    // avst_iowr_bl_return_matvec_valid(GPOUT,149)
+    // avst_iowr_bl_return_matvec_valid(GPOUT,61)
     assign avst_iowr_bl_return_matvec_valid = matvec_function_out_iowr_bl_return_matvec_o_fifovalid;
 
-    // not_ready(LOGICAL,67)
+    // not_ready(LOGICAL,35)
     assign not_ready_q = ~ (matvec_function_out_iord_bl_call_matvec_o_fifoready);
 
     // busy_and(LOGICAL,5)
     assign busy_and_q = not_ready_q & start;
 
-    // reset_wire_inst(EXTIFACE,153)
+    // reset_wire_inst(EXTIFACE,65)
     assign reset_wire_inst_o_resetn[0] = reset_wire_inst_o_resetn_bitsignaltemp;
     acl_reset_wire thereset_wire_inst (
         .o_resetn(reset_wire_inst_o_resetn_bitsignaltemp),
@@ -674,16 +273,16 @@ module matvec_function_wrapper (
         .resetn(resetn)
     );
 
-    // pos_reset(LOGICAL,152)
+    // pos_reset(LOGICAL,64)
     assign pos_reset_q = ~ (reset_wire_inst_o_resetn);
 
     // busy_or(LOGICAL,6)
     assign busy_or_q = pos_reset_q | busy_and_q;
 
-    // busy(GPOUT,150)
+    // busy(GPOUT,62)
     assign busy = busy_or_q;
 
-    // done(GPOUT,151)
+    // done(GPOUT,63)
     assign done = matvec_function_out_iowr_bl_return_matvec_o_fifovalid;
 
 endmodule
