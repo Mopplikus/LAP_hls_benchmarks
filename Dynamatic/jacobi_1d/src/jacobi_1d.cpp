@@ -1,8 +1,17 @@
-#include <stdlib.h>
-#define TSTEPS 3
-#define N 100
 
-int jacobi_1d(int A_1[N], int A_2[N], int B[N])
+/**
+
+* jacobi-1d-imper.c: This code is adapted from the original implementation that is part of the PolyBench/C 3.2 test suite.
+
+*/
+
+
+#include <stdlib.h>
+#include "jacobi_1d.h"
+
+
+
+int jacobi_1d(inout_int_t A_1[N], inout_int_t A_2[N], inout_int_t B[N])
 {
 
 	int t, i, j;
@@ -32,9 +41,9 @@ int jacobi_1d(int A_1[N], int A_2[N], int B[N])
 
 int main(void){
 
-    int A[AMOUNT_OF_TEST][N];
-    int B[AMOUNT_OF_TEST][N];
-    int C[AMOUNT_OF_TEST][N];
+    inout_int_t A[AMOUNT_OF_TEST][N];
+    inout_int_t B[AMOUNT_OF_TEST][N];
+    inout_int_t C[AMOUNT_OF_TEST][N];
 
 
     for(int i = 0; i < AMOUNT_OF_TEST; ++i){

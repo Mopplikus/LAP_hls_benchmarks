@@ -1,10 +1,10 @@
-#include <stdlib.h>
+#include "example.h"
 
-#define N 100
+#include <stdlib.h>
 
 #define AMOUNT_OF_TEST 1
 
-float example(float A[], float B[])
+float example(in_float_t A[], in_float_t B[])
 {
     float d, s = 0.0;
     int i;
@@ -21,9 +21,9 @@ float example(float A[], float B[])
 
 int main(void)
 {
-    float A[AMOUNT_OF_TEST][N];
-    float B[AMOUNT_OF_TEST][N];
-    float a = 5.0;
+    in_float_t A[AMOUNT_OF_TEST][N];
+    in_float_t B[AMOUNT_OF_TEST][N];
+    int a = 5;
 
 
     srand(15);
@@ -31,8 +31,8 @@ int main(void)
     {
 	for(int i = 0; i < N; i++)
 	{
-	    A[j][i] = (float)rand()/(float)(RAND_MAX/a);
-	    B[j][i] = (float)rand()/(float)(RAND_MAX/a);
+	    A[j][i] = (in_float_t)(rand()/(RAND_MAX/a));
+	    B[j][i] = (in_float_t)(rand()/(RAND_MAX/a));
 	}
     }
 

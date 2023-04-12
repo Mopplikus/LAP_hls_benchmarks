@@ -1,12 +1,17 @@
+/**
+ * covariance.c: This file is adapetd from the original implementation in the PolyBench/C 3.2 test suite.
+ *
+ *
+ */
+
+#include "covariance.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
-#define N 32
-
 #define AMOUNT_OF_TEST 1
 
-int covariance(int data[N][N], int cov[N][N])
+int covariance(inout_int_t data[N][N], inout_int_t cov[N][N])
 {
    for (int j = 0; j < N; j++) {
     int m = 0;//0.0f;
@@ -33,8 +38,8 @@ int covariance(int data[N][N], int cov[N][N])
 }
 
 int main(void){
-	int data[N][N];
-  int cov[N][N];
+	inout_int_t data[N][N];
+  out_int_t cov[N][N];
   int data_[N][N], cov_[N][N];
 
   srand(9);
@@ -72,4 +77,9 @@ int main(void){
 
   covariance(data_, cov_);
 }
+
+
+
+
+
 

@@ -1,3 +1,10 @@
+#include "getTanh.h"
+//------------------------------------------------------------------------
+// getTanh
+//------------------------------------------------------------------------
+
+//SEPARATOR_FOR_MAIN
+
 #include <stdlib.h>
 
 #include <stdio.h>
@@ -9,7 +16,7 @@
 
 #define AMOUNT_OF_TEST 1
 
-int getTanh (int A[1000], int addr[1000]) {
+int getTanh (inout_int_t A[1000], in_int_t addr[1000]) {
 	// getTanh
 	int result, beta;
 	for(int i = 0; i < 1000; i++) {
@@ -31,8 +38,8 @@ int getTanh (int A[1000], int addr[1000]) {
 #define AMOUNT_OF_TEST 1
 
 int main(void){
-	int a[AMOUNT_OF_TEST][1000];
-	int b[AMOUNT_OF_TEST][1000];
+	inout_int_t a[AMOUNT_OF_TEST][1000];
+	in_int_t b[AMOUNT_OF_TEST][1000];
     
 	for(int i = 0; i < AMOUNT_OF_TEST; ++i){
 		for(int j = 0; j < 1000; ++j){
@@ -50,3 +57,6 @@ int main(void){
 	getTanh (a[i], b[i]);
 
 }
+
+
+

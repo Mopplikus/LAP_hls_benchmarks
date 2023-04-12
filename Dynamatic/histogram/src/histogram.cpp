@@ -1,43 +1,46 @@
-#include <stdlib.h>
-#define N 100
 
+//------------------------------------------------------------------------
+// Histogram
+//------------------------------------------------------------------------
+
+
+#include <stdlib.h>
+#include "histogram.h"
 
 #define AMOUNT_OF_TEST 1
 
-void histogram(int feature[], float weight[], float hist[], int n)
+int histogram(in_int_t feature[1000], in_int_t weight[1000], inout_int_t hist[1000], in_int_t n) 
 {
-    for(int i = 0; i < n; ++i)
-    {
-        int m = feature[i];
-        float wt = weight[i];
-        float x = hist[m];
-        hist[m] = x + wt;
-    }
+	int i;
+	for (i=0; i<n; ++i) {
+    int m = feature[i];
+    int wt = weight[i];
+    int x = hist[m];
+    hist[m] = x + wt;
+  }
+  return i;
 }
 
 
-int main(void)
-{
-    int feature[AMOUNT_OF_TEST][N];
-    float weight[AMOUNT_OF_TEST][N];
-    float hist[AMOUNT_OF_TEST][N];
-    float a = 10.0;
-
-    srand(15);
-    for(int i = 0; i < AMOUNT_OF_TEST; i++)
-    {
-	for(int indx = 0; indx < N; indx ++)
-	{
-	    feature[i][indx] = rand() % (N + 1);
-	    weight[i][indx] = (float) rand() / (float)(RAND_MAX/a);
-	    hist[i][indx] = (float) rand() / (float)(RAND_MAX/a);
+int main(void){
+	  in_int_t feature[AMOUNT_OF_TEST][1000];
+	  in_int_t weight[AMOUNT_OF_TEST][1000];
+	  inout_int_t hist[AMOUNT_OF_TEST][1000];
+	  in_int_t n[AMOUNT_OF_TEST];
+    
+	srand(13);
+	for(int i = 0; i < AMOUNT_OF_TEST; ++i){
+    n[i] = 1000;
+    for(int j = 0; j < 1000; ++j){
+      feature[i][j] = rand()%1000;
+      weight[i][j] = rand()%100;
+      hist[i][j] = rand()%100;
+    }
 	}
-    }
 
-    for(int i = 0; i < AMOUNT_OF_TEST; i++)
-    {
-	histogram(feature[i], weight[i], hist[i], N);
-    }
-
-    return 0;
+	//for(int i = 0; i < AMOUNT_OF_TEST; ++i){
+		int i = 0; 
+		histogram(feature[i], weight[i], hist[i], n[i]);
+	//}
 }
+
