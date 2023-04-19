@@ -1,0 +1,170 @@
+
+
+================================================================
+== Vitis HLS Report for 'if_loop_1'
+================================================================
+* Date:           Wed Apr 19 15:51:54 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        if_loop_1
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck24-ubva530-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  2.908 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_12_1  |        ?|        ?|         3|          1|          1|     ?|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.43>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%sum = alloca i32 1"   --->   Operation 6 'alloca' 'sum' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 7 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 8 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%spectopmodule_ln6 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_2" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:6]   --->   Operation 9 'spectopmodule' 'spectopmodule_ln6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %a, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %a"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %n"   --->   Operation 12 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %n, void @empty_1, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%n_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %n" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:6]   --->   Operation 14 'read' 'n_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.42ns)   --->   "%store_ln12 = store i31 0, i31 %i" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 15 'store' 'store_ln12' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 16 [1/1] (0.42ns)   --->   "%store_ln12 = store i32 0, i32 %sum" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 16 'store' 'store_ln12' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln12 = br void %for.body" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 17 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%i_1 = load i31 %i" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 18 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%i_cast = zext i31 %i_1" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 19 'zext' 'i_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 20 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.99ns)   --->   "%icmp_ln12 = icmp_slt  i32 %i_cast, i32 %n_read" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 21 'icmp' 'icmp_ln12' <Predicate = true> <Delay = 0.99> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (1.00ns)   --->   "%add_ln12 = add i31 %i_1, i31 1" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 22 'add' 'add_ln12' <Predicate = true> <Delay = 1.00> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.00> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln12 = br i1 %icmp_ln12, void %for.end.loopexit, void %for.body.split" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 23 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%i_cast1 = zext i31 %i_1" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 24 'zext' 'i_cast1' <Predicate = (icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%a_addr = getelementptr i32 %a, i64 0, i64 %i_cast1" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13]   --->   Operation 25 'getelementptr' 'a_addr' <Predicate = (icmp_ln12)> <Delay = 0.00>
+ST_1 : Operation 26 [2/2] (1.23ns)   --->   "%a_load = load i7 %a_addr" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13]   --->   Operation 26 'load' 'a_load' <Predicate = (icmp_ln12)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_1 : Operation 27 [1/1] (0.42ns)   --->   "%store_ln12 = store i31 %add_ln12, i31 %i" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 27 'store' 'store_ln12' <Predicate = (icmp_ln12)> <Delay = 0.42>
+
+State 2 <SV = 1> <Delay = 1.23>
+ST_2 : Operation 28 [1/2] (1.23ns)   --->   "%a_load = load i7 %a_addr" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13]   --->   Operation 28 'load' 'a_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%sum_load_1 = load i32 %sum" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:22]   --->   Operation 38 'load' 'sum_load_1' <Predicate = (!icmp_ln12)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%ret_ln22 = ret i32 %sum_load_1" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:22]   --->   Operation 39 'ret' 'ret_ln22' <Predicate = (!icmp_ln12)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.90>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%sum_load = load i32 %sum" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:17]   --->   Operation 29 'load' 'sum_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%specloopname_ln7 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:7]   --->   Operation 30 'specloopname' 'specloopname_ln7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node tmp)   --->   "%shl_ln13 = shl i32 %a_load, i32 2" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13]   --->   Operation 31 'shl' 'shl_ln13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (1.01ns) (out node of the LUT)   --->   "%tmp = add i32 %a_load, i32 %shl_ln13" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13]   --->   Operation 32 'add' 'tmp' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 33 [1/1] (0.99ns)   --->   "%icmp_ln15 = icmp_sgt  i32 %tmp, i32 10" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:15]   --->   Operation 33 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 0.99> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (1.01ns)   --->   "%add_ln17 = add i32 %tmp, i32 %sum_load" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:17]   --->   Operation 34 'add' 'add_ln17' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 35 [1/1] (0.44ns)   --->   "%sum_1 = select i1 %icmp_ln15, i32 %add_ln17, i32 %sum_load" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:15]   --->   Operation 35 'select' 'sum_1' <Predicate = true> <Delay = 0.44> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.44> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 36 [1/1] (0.42ns)   --->   "%store_ln12 = store i32 %sum_1, i32 %sum" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 36 'store' 'store_ln12' <Predicate = true> <Delay = 0.42>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%br_ln12 = br void %for.body" [../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12]   --->   Operation 37 'br' 'br_ln12' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 1.43ns
+The critical path consists of the following:
+	'alloca' operation ('i') [4]  (0 ns)
+	'load' operation ('i', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12) on local variable 'i' [16]  (0 ns)
+	'add' operation ('add_ln12', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12) [20]  (1.01 ns)
+	'store' operation ('store_ln12', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12) of variable 'add_ln12', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12 on local variable 'i' [33]  (0.427 ns)
+
+ <State 2>: 1.24ns
+The critical path consists of the following:
+	'load' operation ('a_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13) on array 'a' [27]  (1.24 ns)
+
+ <State 3>: 2.91ns
+The critical path consists of the following:
+	'shl' operation ('shl_ln13', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13) [28]  (0 ns)
+	'add' operation ('tmp', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:13) [29]  (1.02 ns)
+	'add' operation ('add_ln17', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:17) [31]  (1.02 ns)
+	'select' operation ('sum', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:15) [32]  (0.449 ns)
+	'store' operation ('store_ln12', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:12) of variable 'sum', ../../../../Documents/LAP_hls_benchmarks/Vitis/if_loop_1/src/if_loop_1.cpp:15 on local variable 'sum' [34]  (0.427 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
