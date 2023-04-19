@@ -1,0 +1,108 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"?"
+      , "id":4294967295
+      , "src":"1446786336"
+      , "dst":"1446805104"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"if_loop_2.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"if_loop_2.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: if_loop_2.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/if_loop_2/if_loop_2.cpp"
+                  , "line":"24"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":1446786336
+          , "start":"1.00"
+          , "parent":"if_loop_2.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/if_loop_2/if_loop_2.cpp"
+                , "line":12
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"if_loop_2.B2"
+          , "id":1449737584
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/if_loop_2/if_loop_2.cpp"
+                , "line":24
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":1446805104
+          , "end":"2.00"
+          , "parent":"if_loop_2.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/if_loop_2/if_loop_2.cpp"
+                , "line":35
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":1449737584
+          , "to":1449737584
+        }
+        , {
+          "from":1446786336
+          , "to":1449737584
+        }
+        , {
+          "from":1449737584
+          , "to":1446805104
+        }
+        , {
+          "from":1446786336
+          , "to":1446805104
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}
