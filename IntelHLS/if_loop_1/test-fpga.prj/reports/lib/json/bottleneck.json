@@ -1,0 +1,108 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"?"
+      , "id":4294967295
+      , "src":"1293977088"
+      , "dst":"1292160576"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"if_loop_1.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"if_loop_1.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: if_loop_1.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/if_loop_1/if_loop_1.cpp"
+                  , "line":"25"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":1293977088
+          , "start":"1.00"
+          , "parent":"if_loop_1.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/if_loop_1/if_loop_1.cpp"
+                , "line":12
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"if_loop_1.B2"
+          , "id":1291806800
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/if_loop_1/if_loop_1.cpp"
+                , "line":25
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":1292160576
+          , "end":"2.00"
+          , "parent":"if_loop_1.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/if_loop_1/if_loop_1.cpp"
+                , "line":35
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":1291806800
+          , "to":1291806800
+        }
+        , {
+          "from":1293977088
+          , "to":1291806800
+        }
+        , {
+          "from":1291806800
+          , "to":1292160576
+        }
+        , {
+          "from":1293977088
+          , "to":1292160576
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}
