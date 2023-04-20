@@ -1,0 +1,56 @@
+
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler***********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Version 2.0 - Build 1.0 ************************************
+******************************************************************
+
+Dynamatic> set_project .
+set_project .
+Done 
+Dynamatic> set_top_file example.cpp
+set_top_file example.cpp
+set input file: example.cpp
+current input filename: ./src/example.cpp
+Done 
+Dynamatic> sybth                                       Dynamatic> sybt                                       Dynamatic> syb                                       Dynamatic> synthesize -use-lsq=true -simple-buffers=true -verbose
+synthesize -use-lsq=true -simple-buffers=true -verbose
+Synthesize
+compile example.cpp . -use-lsq=true -simple-buffers=true Andrea: arg1:  example.cpp arg2: . arg3 -use-lsq=true arg4 -simple-buffers=true
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/clang -emit-llvm -S   -c src/example.cpp -o .example.cpp.ll
+In file included from src/example.cpp:1:
+src/example.h:1:9: error: C++ requires a type specifier for all declarations
+typedef in_float_t;
+~~~~~~~ ^
+src/example.h:2:9: error: C++ requires a type specifier for all declarations
+typedef out_float_t;
+~~~~~~~ ^
+2 errors generated.
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/opt: .example.cpp.ll: error: Could not open input file: No such file or directory
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/opt: .example.cpp_mem2reg.ll: error: Could not open input file: No such file or directory
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/opt: .example.cpp_mem2reg_constprop.ll: error: Could not open input file: No such file or directory
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/opt: .example.cpp_mem2reg_constprop_simplifycfg.ll: error: Could not open input file: No such file or directory
+clang-6.0: error: no such file or directory: '.example.cpp_mem2reg_constprop_simplifycfg_die.ll'
+clang-6.0: error: no input files
+cc: error: .example.cpp_mem2reg_constprop_simplifycfg_die.o: No such file or directory
+/home/dynamatic/Dynamatic/bin//compile: 55: /home/dynamatic/Dynamatic/bin//compile: ./a.out: not found
+rm: cannot remove 'a.out': No such file or directory
+rm: cannot remove '.example.cpp_mem2reg_constprop_simplifycfg_die.o': No such file or directory
+clang-6.0: error: no such file or directory: '.example.cpp_mem2reg_constprop_simplifycfg_die.ll'
+clang-6.0: error: no input files
+rm: cannot remove '*.s': No such file or directory
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/opt: .example.cpp_mem2reg_constprop_simplifycfg_die.ll: error: Could not open input file: No such file or directory
+mv: cannot stat '*_bbgraph.dot': No such file or directory
+mv: cannot stat '*.dot': No such file or directory
+Error: dot: can't open reports/example_bbgraph.dot
+Error: dot: can't open reports/example.dot
+
+
+Done 
+Dynamatic> exit
+exit
+Exit...
+Goodbye!
+
+

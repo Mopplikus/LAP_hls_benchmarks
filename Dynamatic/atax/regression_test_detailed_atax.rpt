@@ -1,0 +1,1682 @@
+
+
+**************************************************
+Mi Apr 12 11:38:34 CEST 2023
+****Executing test case examples/atax ****
+filename examples/atax
+/home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax
+
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler***********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Version 2.0 - Build 1.0 ************************************
+******************************************************************
+
+synthesis.tcl
+Done 
+set input file: atax.cpp
+current input filename: ./src/atax.cpp
+Done 
+Synthesize
+compile atax.cpp . -use-lsq=true -simple-buffers=true Andrea: arg1:  atax.cpp arg2: . arg3 -use-lsq=true arg4 -simple-buffers=true
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/clang -emit-llvm -S   -c src/atax.cpp -o .atax.cpp.ll
+rm: cannot remove '*.s': No such file or directory
+0Time elapsed: 6.7e-05s.
+; ModuleID = '.atax.cpp_mem2reg_constprop_simplifycfg_die.ll'
+source_filename = "src/atax.cpp"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+; Function Attrs: noinline nounwind uwtable
+define i32 @_Z4ataxPA20_iPiS1_S1_([20 x i32]* %A, i32* %x, i32* %y, i32* %tmp) #0 {
+block1:
+  br label %block2
+
+block2:                                           ; preds = %block6, %block1
+  %i.04 = phi i32 [ 0, %block1 ], [ %inc29, %block6 ]
+  %"2" = zext i32 %i.04 to i64
+  %arrayidx = getelementptr inbounds i32, i32* %tmp, i64 %"2"
+  %"3" = load i32, i32* %arrayidx, align 4
+  br label %block3
+
+block3:                                           ; preds = %block3, %block2
+  %t.02 = phi i32 [ %"3", %block2 ], [ %add, %block3 ]
+  %j.01 = phi i32 [ 0, %block2 ], [ %inc, %block3 ]
+  %"5" = zext i32 %i.04 to i64
+  %"6" = zext i32 %j.01 to i64
+  %arrayidx7 = getelementptr inbounds [20 x i32], [20 x i32]* %A, i64 %"5", i64 %"6"
+  %"7" = load i32, i32* %arrayidx7, align 4
+  %"8" = zext i32 %j.01 to i64
+  %arrayidx9 = getelementptr inbounds i32, i32* %x, i64 %"8"
+  %"9" = load i32, i32* %arrayidx9, align 4
+  %mul = mul nsw i32 %"7", %"9"
+  %add = add nsw i32 %t.02, %mul
+  %inc = add nuw nsw i32 %j.01, 1
+  %cmp2 = icmp ult i32 %inc, 20
+  br i1 %cmp2, label %block3, label %block4
+
+block4:                                           ; preds = %block3
+  br label %block5
+
+block5:                                           ; preds = %block5, %block4
+  %j.13 = phi i32 [ 0, %block4 ], [ %inc24, %block5 ]
+  %"12" = zext i32 %j.13 to i64
+  %arrayidx14 = getelementptr inbounds i32, i32* %y, i64 %"12"
+  %"13" = load i32, i32* %arrayidx14, align 4
+  %"14" = zext i32 %i.04 to i64
+  %"15" = zext i32 %j.13 to i64
+  %arrayidx18 = getelementptr inbounds [20 x i32], [20 x i32]* %A, i64 %"14", i64 %"15"
+  %"16" = load i32, i32* %arrayidx18, align 4
+  %mul19 = mul nsw i32 %"16", %add
+  %add20 = add nsw i32 %"13", %mul19
+  %"17" = zext i32 %j.13 to i64
+  %arrayidx22 = getelementptr inbounds i32, i32* %y, i64 %"17"
+  store i32 %add20, i32* %arrayidx22, align 4
+  %inc24 = add nuw nsw i32 %j.13, 1
+  %cmp11 = icmp ult i32 %inc24, 20
+  br i1 %cmp11, label %block5, label %block6
+
+block6:                                           ; preds = %block5
+  %"19" = zext i32 %i.04 to i64
+  %arrayidx27 = getelementptr inbounds i32, i32* %tmp, i64 %"19"
+  store i32 %add, i32* %arrayidx27, align 4
+  %inc29 = add nuw nsw i32 %i.04, 1
+  %cmp = icmp ult i32 %inc29, 20
+  br i1 %cmp, label %block2, label %block7
+
+block7:                                           ; preds = %block6
+  ret i32 %inc29
+}
+
+; Function Attrs: noinline norecurse nounwind uwtable
+define i32 @main() #1 {
+entry:
+  %A = alloca [1 x [20 x [20 x i32]]], align 16
+  %x = alloca [1 x [20 x i32]], align 16
+  %y = alloca [1 x [20 x i32]], align 16
+  %tmp = alloca [1 x [20 x i32]], align 16
+  call void @srand(i32 13) #3
+  br label %for.body
+
+for.body:                                         ; preds = %for.inc29, %entry
+  br label %for.body3
+
+for.body3:                                        ; preds = %for.inc26, %for.body
+  %j.02 = phi i32 [ 0, %for.body ], [ %inc27, %for.inc26 ]
+  %call = call i32 @rand() #3
+  %rem = srem i32 %call, 100
+  %0 = zext i32 %j.02 to i64
+  %1 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %x, i64 0, i64 0, i64 %0
+  store i32 %rem, i32* %1, align 4
+  %2 = zext i32 %j.02 to i64
+  %3 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %y, i64 0, i64 0, i64 %2
+  store i32 0, i32* %3, align 4
+  %4 = zext i32 %j.02 to i64
+  %5 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %tmp, i64 0, i64 0, i64 %4
+  store i32 0, i32* %5, align 4
+  br label %for.body17
+
+for.body17:                                       ; preds = %for.body17, %for.body3
+  %x14.01 = phi i32 [ 0, %for.body3 ], [ %inc, %for.body17 ]
+  %call18 = call i32 @rand() #3
+  %rem19 = srem i32 %call18, 100
+  %6 = zext i32 %j.02 to i64
+  %7 = zext i32 %x14.01 to i64
+  %8 = getelementptr inbounds [1 x [20 x [20 x i32]]], [1 x [20 x [20 x i32]]]* %A, i64 0, i64 0, i64 %6, i64 %7
+  store i32 %rem19, i32* %8, align 4
+  %inc = add nuw nsw i32 %x14.01, 1
+  %cmp16 = icmp ult i32 %inc, 20
+  br i1 %cmp16, label %for.body17, label %for.inc26
+
+for.inc26:                                        ; preds = %for.body17
+  %inc27 = add nuw nsw i32 %j.02, 1
+  %cmp2 = icmp ult i32 %inc27, 20
+  br i1 %cmp2, label %for.body3, label %for.inc29
+
+for.inc29:                                        ; preds = %for.inc26
+  br i1 false, label %for.body, label %for.end31
+
+for.end31:                                        ; preds = %for.inc29
+  %arraydecay = getelementptr inbounds [1 x [20 x [20 x i32]]], [1 x [20 x [20 x i32]]]* %A, i64 0, i64 0, i64 0
+  %arraydecay35 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %x, i64 0, i64 0, i64 0
+  %arraydecay37 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %y, i64 0, i64 0, i64 0
+  %arraydecay39 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %tmp, i64 0, i64 0, i64 0
+  %call40 = call i32 @_Z4ataxPA20_iPiS1_S1_([20 x i32]* nonnull %arraydecay, i32* nonnull %arraydecay35, i32* nonnull %arraydecay37, i32* nonnull %arraydecay39)
+  ret i32 0
+}
+
+; Function Attrs: nounwind
+declare void @srand(i32) #2
+
+; Function Attrs: nounwind
+declare i32 @rand() #2
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline norecurse nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 6.0.1 (http://llvm.org/git/clang.git 2f27999df400d17b33cdd412fdd606a88208dfcc) (http://llvm.org/git/llvm.git 5136df4d089a086b70d452160ad5451861269498)"}
+OptimizeBitwidth : Optimization of function _Z4ataxPA20_iPiS1_S1_ finished in 2 iterations.
+Printing stats (for more details on states for each individual value, use dumpInfos).
+Saved bits during forward passes : 405
+Saved bits during backward passes : 0
+Saved bits in constants : 89
+Used bits after OB : 757, vs. Originaly used bits : 1251
+ => Reduction of used bits : 6.051159e+01
+
+
+Done 
+Write hdl
+write_hdl  . ./reports/atax
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler **********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Dot to VHDL Generator***************************************
+******************************************************************
+Parsing ./reports/atax.dot
+
+Report Modules 
++--------------------------------------------------------------------------+
+|   Node_ID|                Name|         Module_type|    Inputs|   Outputs|
++--------------------------------------------------------------------------+
+|         0|        brCst_block1|            Constant|         1|         1|
+|         1|               cst_0|            Constant|         1|         1|
+|         2|               phi_1|                 Mux|         3|         1|
+|         3|              load_4|            Operator|         2|         2|
+|         4|        brCst_block2|            Constant|         1|         1|
+|         5|               phi_6|                 Mux|         3|         1|
+|         6|               cst_1|            Constant|         1|         1|
+|         7|               phi_7|                 Mux|         3|         1|
+|         8|              zext_8|            Operator|         1|         1|
+|         9|              zext_9|            Operator|         1|         1|
+|        10|    getelementptr_10|            Operator|         3|         1|
+|        11|             load_11|            Operator|         2|         2|
+|        12|             load_14|            Operator|         2|         2|
+|        13|              mul_15|            Operator|         2|         1|
+|        14|              add_16|            Operator|         2|         1|
+|        15|               cst_2|            Constant|         1|         1|
+|        16|              add_17|            Operator|         2|         1|
+|        17|               cst_3|            Constant|         1|         1|
+|        18|             icmp_18|            Operator|         2|         1|
+|        19|        brCst_block4|            Constant|         1|         1|
+|        20|               cst_4|            Constant|         1|         1|
+|        21|              phi_21|                 Mux|         3|         1|
+|        22|             load_24|            Operator|         2|         2|
+|        23|             zext_25|            Operator|         1|         1|
+|        24|             zext_26|            Operator|         1|         1|
+|        25|    getelementptr_27|            Operator|         3|         1|
+|        26|             load_28|            Operator|         2|         2|
+|        27|              mul_29|            Operator|         2|         1|
+|        28|              add_30|            Operator|         2|         1|
+|        29|             store_0|            Operator|         2|         2|
+|        30|               cst_5|            Constant|         1|         1|
+|        31|              add_33|            Operator|         2|         1|
+|        32|               cst_6|            Constant|         1|         1|
+|        33|             icmp_34|            Operator|         2|         1|
+|        34|             store_1|            Operator|         2|         2|
+|        35|               cst_7|            Constant|         1|         1|
+|        36|              add_38|            Operator|         2|         1|
+|        37|               cst_8|            Constant|         1|         1|
+|        38|             icmp_39|            Operator|         2|         1|
+|        39|               ret_0|            Operator|         1|         1|
+|        40|               cst_9|            Constant|         1|         1|
+|        41|              cst_10|            Constant|         1|         1|
+|        42|              phi_n0|               Merge|         1|         1|
+|        43|              phi_n1|               Merge|         1|         1|
+|        44|              phi_n2|               Merge|         2|         1|
+|        45|              phi_n3|               Merge|         1|         1|
+|        46|              phi_n4|               Merge|         1|         1|
+|        47|              phi_n5|               Merge|         1|         1|
+|        48|              phi_n6|               Merge|         2|         1|
+|        49|              phi_n7|               Merge|         2|         1|
+|        50|              fork_0|                Fork|         1|         2|
+|        51|              fork_1|                Fork|         1|         3|
+|        52|              fork_3|                Fork|         1|         2|
+|        53|              fork_4|                Fork|         1|         4|
+|        54|              fork_5|                Fork|         1|         2|
+|        55|              fork_6|                Fork|         1|         2|
+|        56|              fork_7|                Fork|         1|         2|
+|        57|              fork_8|                Fork|         1|         2|
+|        58|              fork_9|                Fork|         1|         2|
+|        59|             fork_10|                Fork|         1|         2|
+|        60|            branch_0|              Branch|         2|         2|
+|        61|            branch_1|              Branch|         2|         2|
+|        62|            branch_2|              Branch|         2|         2|
+|        63|            branch_3|              Branch|         2|         2|
+|        64|             fork_12|                Fork|         1|         4|
+|        65|            branch_4|              Branch|         2|         2|
+|        66|            branch_5|              Branch|         2|         2|
+|        67|            branch_6|              Branch|         2|         2|
+|        68|             fork_13|                Fork|         1|         4|
+|        69|            branch_7|              Branch|         2|         2|
+|        70|            branch_8|              Branch|         2|         2|
+|        71|            branch_9|              Branch|         2|         2|
+|        72|             fork_14|                Fork|         1|         4|
+|        73|           branch_10|              Branch|         2|         2|
+|        74|           branch_11|              Branch|         2|         2|
+|        75|           branch_12|              Branch|         2|         2|
+|        76|             fork_15|                Fork|         1|         4|
+|        77|           branch_13|              Branch|         2|         2|
+|        78|               LSQ_y|                 LSQ|         4|         2|
+|        79|              MC_tmp|                  MC|         4|         2|
+|        80|                MC_A|                  MC|         5|         3|
+|        81|                MC_x|                  MC|         4|         2|
+|        82|              cst_11|            Constant|         1|         1|
+|        83|               end_0|                Exit|         5|         1|
+|        84|             start_0|               Entry|         1|         1|
+|        85|            forkC_18|                Fork|         1|         3|
+|        86|          branchC_14|              Branch|         2|         2|
+|        87|             fork_19|                Fork|         1|         2|
+|        88|              phiC_8|          CntrlMerge|         2|         2|
+|        89|            forkC_20|                Fork|         1|         3|
+|        90|          branchC_15|              Branch|         2|         2|
+|        91|              phiC_9|          CntrlMerge|         2|         2|
+|        92|          branchC_16|              Branch|         2|         2|
+|        93|             phiC_10|               Merge|         1|         1|
+|        94|            forkC_22|                Fork|         1|         3|
+|        95|          branchC_17|              Branch|         2|         2|
+|        96|             phiC_11|          CntrlMerge|         2|         2|
+|        97|            forkC_23|                Fork|         1|         2|
+|        98|          branchC_18|              Branch|         2|         2|
+|        99|             phiC_12|               Merge|         1|         1|
+|       100|            forkC_24|                Fork|         1|         2|
+|       101|          branchC_19|              Branch|         2|         2|
+|       102|             fork_25|                Fork|         1|         2|
+|       103|             phiC_13|               Merge|         1|         1|
+|       104|              sink_0|                Sink|         1|         0|
+|       105|              sink_1|                Sink|         1|         0|
+|       106|              sink_2|                Sink|         1|         0|
+|       107|              sink_3|                Sink|         1|         0|
+|       108|              sink_4|                Sink|         1|         0|
+|       109|              sink_5|                Sink|         1|         0|
+|       110|              sink_6|                Sink|         1|         0|
+|       111|              sink_7|                Sink|         1|         0|
+|       112|              sink_8|                Sink|         1|         0|
+|       113|              sink_9|                Sink|         1|         0|
+|       114|             sink_10|                Sink|         1|         0|
+|       115|             sink_11|                Sink|         1|         0|
+|       116|             sink_12|                Sink|         1|         0|
+|       117|            source_0|              Source|         0|         1|
+|       118|            source_1|              Source|         0|         1|
+|       119|            source_2|              Source|         0|         1|
+|       120|            source_3|              Source|         0|         1|
+|       121|            source_4|              Source|         0|         1|
+|       122|            source_5|              Source|         0|         1|
+|       123|            source_6|              Source|         0|         1|
+|       124|            source_7|              Source|         0|         1|
+|       125|             buffI_0|              Buffer|         1|         1|
+|       126|             buffI_1|              Buffer|         1|         1|
+|       127|             buffI_2|              Buffer|         1|         1|
+|       128|             buffI_3|              Buffer|         1|         1|
+|       129|             buffI_4|              Buffer|         1|         1|
+|       130|             buffI_5|              Buffer|         1|         1|
+|       131|             buffI_6|              Buffer|         1|         1|
+|       132|             buffA_7|              Buffer|         1|         1|
+|       133|             buffA_8|              Buffer|         1|         1|
+|       134|             buffA_9|              Buffer|         1|         1|
+|       135|             fork_28|                Fork|         1|         2|
++--------------------------------------------------------------------------+
+Generating ./reports/atax.vhd
+Generating LSQ 0 component...
+lsq_generate ./reports/atax_lsq0_configuration.json
+[[35minfo[0m] [0.010] Elaborating design...
+[[35minfo[0m] [8.589] Done elaborating.
+Total FIRRTL Compile Time: 44425.9 ms
+
+Done
+
+
+
+Done 
+Exit...
+Goodbye!
+
+
+examples/atax
+atax
+[INFO  CAnalyzer] Return identified: end of type int (return value).
+[INFO  CAnalyzer] Parsing parameter in_float_t A[20][20]
+array length 400
+[INFO  CAnalyzer] Parameter identified: A of type in_float_t[400].
+[INFO  CAnalyzer] Parsing parameter in_float_t x[20]
+array length 20
+[INFO  CAnalyzer] Parameter identified: x of type in_float_t[20].
+[INFO  CAnalyzer] Parsing parameter inout_float_t y[20]
+array length 20
+[INFO  CAnalyzer] Parameter identified: y of type inout_float_t[20].
+[INFO  CAnalyzer] Parsing parameter inout_float_t tmp[20]
+array length 20
+[INFO  CAnalyzer] Parameter identified: tmp of type inout_float_t[20].
+i0
+[INFO  CAnalyzer] Actual type of "A" is "int" (32 bits).
+i1
+[INFO  CAnalyzer] Actual type of "x" is "int" (32 bits).
+i2
+[INFO  CAnalyzer] Actual type of "y" is "int" (32 bits).
+i3
+[INFO  CAnalyzer] Actual type of "tmp" is "int" (32 bits).
+[INFO  CVER] Compiling C files [gcc ../C_SRC/hls_verify_atax.c -I../C_SRC -o ../C_SRC/hls_verify_atax.out]
+[INFO  CVER] Cleaning C output files [rm -rf ../C_OUT]
+[INFO  CVER] Cleaning existing input files [rm -rf ../INPUT_VECTORS]
+[INFO  CVER] Creating C output files directory [mkdir -p ../C_OUT]
+[INFO  CVER] Creating input files directory [mkdir -p ../INPUT_VECTORS]
+[INFO  CVER] Executing C test-bench [../C_SRC/hls_verify_atax.out]
+[INFO  CVER] C simulation finished. Outputs saved in directory ../C_OUT.
+[INFO  VVER] Generating VHDL testbench for entity atax
+[INFO  VVER] Transaction number computed : 1
+[INFO  VVER] Copying supplementary files: [cp /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/hls_verifier/HlsVerifier/build/resources/template_two_port_RAM.vhd ../VHDL_SRC/two_port_RAM.vhd]
+[INFO  VVER] Copying supplementary files: [cp /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/hls_verifier/HlsVerifier/build/resources/template_single_argument.vhd ../VHDL_SRC/single_argument.vhd]
+[INFO  VVER] Copying supplementary files: [cp /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/hls_verifier/HlsVerifier/build/resources/template_simpackage.vhd ../VHDL_SRC/simpackage.vhd]
+[INFO  VVER] Copying supplementary files: [cp /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/hls_verifier/HlsVerifier/build/resources/modelsim.ini ./modelsim.ini]
+[INFO  VVER] Cleaning VHDL output files [rm -rf ../VHDL_OUT]
+[INFO  VVER] Creating VHDL output files directory [mkdir -p ../VHDL_OUT]
+[INFO  VVER] Executing modelsim: [vsim -c -do simulation.do]
+Reading pref.tcl
+
+# 10.5b
+
+# do simulation.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Loading project simulation
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:05 on Apr 12,2023
+# vlog -work work /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/LSQ_y.v 
+# -- Compiling module STORE_QUEUE_LSQ_y
+# -- Compiling module LOAD_QUEUE_LSQ_y
+# -- Compiling module GROUP_ALLOCATOR_LSQ_y
+# -- Compiling module LOAD_PORT_LSQ_y
+# -- Compiling module STORE_DATA_PORT_LSQ_y
+# -- Compiling module LSQ_y
+# 
+# Top level modules:
+# 	LSQ_y
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# Compile of LSQ_y.v was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:07 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# ** Error: (vcom-11) Could not find work.sim_package.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(9): (vcom-1195) Cannot find expanded name "work.sim_package".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(9): Unknown expanded name.
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(13): VHDL Compiler exiting
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:07 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/delay_buffer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity delay_buffer
+# -- Compiling architecture arch of delay_buffer
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of delay_buffer.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:07 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/arithmetic_units.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Error: (vcom-11) Could not find work.customtypes.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/arithmetic_units.vhd(8): (vcom-1195) Cannot find expanded name "work.customTypes".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/arithmetic_units.vhd(8): Unknown expanded name.
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/arithmetic_units.vhd(10): VHDL Compiler exiting
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:07 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/sharing_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Error: (vcom-11) Could not find work.customtypes.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/sharing_components.vhd(6): (vcom-1195) Cannot find expanded name "work.customTypes".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/sharing_components.vhd(6): Unknown expanded name.
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/sharing_components.vhd(8): VHDL Compiler exiting
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:07 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/elastic_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package customTypes
+# -- Loading package customTypes
+# -- Compiling entity andN
+# -- Compiling architecture vanilla of andn
+# -- Compiling entity nandN
+# -- Compiling architecture arch of nandn
+# -- Compiling entity orN
+# -- Compiling architecture vanilla of orN
+# -- Compiling entity norN
+# -- Compiling architecture arch of norN
+# -- Compiling entity join
+# -- Compiling architecture arch of join
+# -- Loading entity andN
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TEHB
+# -- Compiling architecture arch of TEHB
+# -- Compiling entity OEHB
+# -- Compiling architecture arch of OEHB
+# -- Compiling entity elasticBuffer
+# -- Compiling architecture arch of elasticBuffer
+# -- Loading entity TEHB
+# -- Loading entity OEHB
+# -- Compiling entity end_node
+# -- Compiling architecture arch of end_node
+# -- Loading entity join
+# -- Compiling entity branchSimple
+# -- Compiling architecture arch of branchSimple
+# -- Compiling entity branch
+# -- Compiling architecture arch of branch
+# -- Loading entity branchSimple
+# -- Compiling entity eagerFork_RegisterBLock
+# -- Compiling architecture arch of eagerFork_RegisterBLock
+# -- Compiling entity fork
+# -- Compiling architecture arch of fork
+# -- Loading entity orN
+# -- Loading entity eagerFork_RegisterBLock
+# -- Compiling entity merge
+# -- Compiling architecture arch of merge
+# -- Compiling entity merge_notehb
+# -- Compiling architecture arch of merge_notehb
+# -- Compiling entity start_node_new
+# -- Compiling architecture arch of start_node_new
+# -- Loading entity elasticBuffer
+# -- Compiling entity start_node
+# -- Compiling architecture arch of start_node
+# -- Compiling entity sink
+# -- Compiling architecture arch of sink
+# -- Compiling entity source
+# -- Compiling architecture arch of source
+# -- Compiling entity elasticFifoInner
+# -- Compiling architecture arch of elasticFifoInner
+# -- Compiling entity nontranspFifo
+# -- Compiling architecture arch of nontranspFifo
+# -- Loading entity elasticFifoInner
+# -- Compiling entity transpFIFO
+# -- Compiling architecture arch of transpFIFO
+# -- Compiling entity load_op
+# -- Compiling architecture arch of load_op
+# -- Compiling entity Const
+# -- Compiling architecture arch of Const
+# -- Compiling entity write_memory_single_inside
+# -- Compiling architecture arch of write_memory_single_inside
+# -- Compiling entity store_op
+# -- Compiling architecture arch of store_op
+# -- Loading entity write_memory_single_inside
+# -- Loading package MATH_REAL
+# -- Compiling entity mux
+# -- Compiling architecture arch of mux
+# -- Compiling entity cntrlMerge
+# -- Compiling architecture arch of cntrlMerge
+# -- Loading entity merge_notehb
+# -- Loading entity fork
+# -- Compiling entity lsq_load_op
+# -- Compiling architecture arch of lsq_load_op
+# -- Compiling entity lsq_store_op
+# -- Compiling architecture arch of lsq_store_op
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of elastic_components.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:07 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/mul_wrapper.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity mul_op
+# -- Compiling architecture arch of mul_op
+# -- Loading entity join
+# ** Error: (vcom-11) Could not find work.mul_4_stage.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/mul_wrapper.vhd(45): (vcom-1195) Cannot find expanded name "work.mul_4_stage".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/mul_wrapper.vhd(45): Unknown expanded name.
+# -- Loading entity delay_buffer
+# -- Loading entity OEHB
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/mul_wrapper.vhd(76): VHDL Compiler exiting
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:07 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/MemCont.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity read_priority
+# -- Compiling architecture arch of read_priority
+# -- Compiling entity read_address_mux
+# -- Compiling architecture arch of read_address_mux
+# -- Compiling entity read_address_ready
+# -- Compiling architecture arch of read_address_ready
+# -- Compiling entity read_data_signals
+# -- Compiling architecture arch of read_data_signals
+# -- Compiling entity read_memory_arbiter
+# -- Compiling architecture arch of read_memory_arbiter
+# -- Loading entity read_priority
+# -- Loading entity read_address_mux
+# -- Loading entity read_address_ready
+# -- Loading entity read_data_signals
+# -- Compiling entity write_priority
+# -- Compiling architecture arch of write_priority
+# -- Compiling entity write_address_mux
+# -- Compiling architecture arch of write_address_mux
+# -- Compiling entity write_address_ready
+# -- Compiling architecture arch of write_address_ready
+# -- Compiling entity write_data_signals
+# -- Compiling architecture arch of write_data_signals
+# -- Compiling entity write_memory_arbiter
+# -- Compiling architecture arch of write_memory_arbiter
+# -- Loading entity write_priority
+# -- Loading entity write_address_mux
+# -- Loading entity write_address_ready
+# -- Loading entity write_data_signals
+# -- Compiling entity elasticBufferDummy
+# -- Compiling architecture arch of elasticBufferDummy
+# -- Compiling entity mc_load_op
+# -- Compiling architecture arch of mc_load_op
+# -- Loading entity TEHB
+# -- Compiling entity mc_store_op
+# -- Compiling architecture arch of mc_store_op
+# -- Loading entity join
+# -- Compiling entity MemCont
+# -- Compiling architecture arch of MemCont
+# -- Loading entity read_memory_arbiter
+# -- Loading entity write_memory_arbiter
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/MemCont.vhd(840): (vcom-1514) Range choice direction (downto) does not determine aggregate index range direction (to).
+# End time: 11:40:07 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Compile of MemCont.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:08 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity atax
+# -- Compiling architecture behavioral of atax
+# -- Loading entity Const
+# -- Loading package MATH_REAL
+# -- Loading entity mux
+# -- Loading entity mc_load_op
+# ** Error: (vcom-11) Could not find work.zext_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2835): (vcom-1195) Cannot find expanded name "work.zext_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2835): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.zext_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2847): (vcom-1195) Cannot find expanded name "work.zext_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2847): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.getelementptr_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2859): (vcom-1195) Cannot find expanded name "work.getelementptr_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2859): Unknown expanded name.
+# -- Loading entity mul_op
+# ** Error: (vcom-11) Could not find work.add_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2928): (vcom-1195) Cannot find expanded name "work.add_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2928): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.add_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2955): (vcom-1195) Cannot find expanded name "work.add_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2955): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.icmp_ult_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2982): (vcom-1195) Cannot find expanded name "work.icmp_ult_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(2982): Unknown expanded name.
+# -- Loading entity lsq_load_op
+# ** Error: (vcom-11) Could not find work.zext_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3057): (vcom-1195) Cannot find expanded name "work.zext_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3057): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.zext_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3069): (vcom-1195) Cannot find expanded name "work.zext_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3069): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.getelementptr_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3081): (vcom-1195) Cannot find expanded name "work.getelementptr_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3081): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.add_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3132): (vcom-1195) Cannot find expanded name "work.add_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3132): Unknown expanded name.
+# -- Loading entity lsq_store_op
+# ** Error: (vcom-11) Could not find work.add_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3177): (vcom-1195) Cannot find expanded name "work.add_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3177): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.icmp_ult_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3204): (vcom-1195) Cannot find expanded name "work.icmp_ult_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3204): Unknown expanded name.
+# -- Loading entity mc_store_op
+# ** Error: (vcom-11) Could not find work.add_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3249): (vcom-1195) Cannot find expanded name "work.add_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3249): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.icmp_ult_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3276): (vcom-1195) Cannot find expanded name "work.icmp_ult_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3276): Unknown expanded name.
+# ** Error: (vcom-11) Could not find work.ret_op.
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3291): (vcom-1195) Cannot find expanded name "work.ret_op".
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(3291): Unknown expanded name.
+# -- Loading entity merge
+# -- Loading entity fork
+# -- Loading entity branch
+# -- Loading entity MemCont
+# -- Loading entity end_node
+# -- Loading entity start_node
+# -- Loading entity cntrlMerge
+# -- Loading entity sink
+# -- Loading entity source
+# -- Loading entity elasticBuffer
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd(4733): VHDL Compiler exiting
+# End time: 11:40:08 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 46, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:08 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/multipliers.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mul_4_stage
+# -- Compiling architecture behav of mul_4_stage
+# -- Compiling entity mul_8_stage
+# -- Compiling architecture behav of mul_8_stage
+# End time: 11:40:08 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of multipliers.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:08 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/simpackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling package sim_package
+# -- Compiling package body sim_package
+# -- Loading package sim_package
+# End time: 11:40:08 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of simpackage.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:08 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/two_port_RAM.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package sim_package
+# -- Compiling entity two_port_RAM
+# -- Compiling architecture behav of two_port_RAM
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/two_port_RAM.vhd(47): (vcom-1236) Shared variables must be of a protected type.
+# End time: 11:40:08 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Compile of two_port_RAM.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:08 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/single_argument.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package sim_package
+# -- Compiling entity single_argument
+# -- Compiling architecture behav of single_argument
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/single_argument.vhd(35): (vcom-1236) Shared variables must be of a protected type.
+# End time: 11:40:08 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Compile of single_argument.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:08 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package sim_package
+# -- Compiling entity atax_tb
+# -- Compiling architecture behav of atax_tb
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(111): (vcom-1236) Shared variables must be of a protected type.
+# -- Loading package customTypes
+# -- Loading entity atax
+# -- Loading entity single_argument
+# -- Loading entity two_port_RAM
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(120): (vcom-1272) Length of formal "end_out" is 5; length of actual is 32.
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(463): VHDL Compiler exiting
+# End time: 11:40:08 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:08 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/arithmetic_units.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity ret_op
+# -- Compiling architecture arch of ret_op
+# -- Loading entity TEHB
+# -- Compiling entity add_op
+# -- Compiling architecture arch of add_op
+# -- Loading entity join
+# -- Compiling entity sub_op
+# -- Compiling architecture arch of sub_op
+# -- Compiling entity and_op
+# -- Compiling architecture arch of and_op
+# -- Compiling entity or_op
+# -- Compiling architecture arch of or_op
+# -- Compiling entity xor_op
+# -- Compiling architecture arch of xor_op
+# -- Compiling entity sext_op
+# -- Compiling architecture arch of sext_op
+# -- Compiling entity zext_op
+# -- Compiling architecture arch of zext_op
+# -- Compiling entity shl_op
+# -- Compiling architecture arch of shl_op
+# -- Compiling entity ashr_op
+# -- Compiling architecture arch of ashr_op
+# -- Compiling entity lshr_op
+# -- Compiling architecture arch of lshr_op
+# -- Compiling entity antitokens
+# -- Compiling architecture arch of antitokens
+# -- Compiling entity select_op
+# -- Compiling architecture arch of select_op
+# -- Loading entity antitokens
+# -- Compiling entity icmp_eq_op
+# -- Compiling architecture arch of icmp_eq_op
+# -- Compiling entity icmp_ne_op
+# -- Compiling architecture arch of icmp_ne_op
+# -- Compiling entity icmp_ugt_op
+# -- Compiling architecture arch of icmp_ugt_op
+# -- Compiling entity icmp_uge_op
+# -- Compiling architecture arch of icmp_uge_op
+# -- Compiling entity icmp_sgt_op
+# -- Compiling architecture arch of icmp_sgt_op
+# -- Compiling entity icmp_sge_op
+# -- Compiling architecture arch of icmp_sge_op
+# -- Compiling entity icmp_ult_op
+# -- Compiling architecture arch of icmp_ult_op
+# -- Compiling entity icmp_ule_op
+# -- Compiling architecture arch of icmp_ule_op
+# -- Compiling entity icmp_slt_op
+# -- Compiling architecture arch of icmp_slt_op
+# -- Compiling entity icmp_sle_op
+# -- Compiling architecture arch of icmp_sle_op
+# -- Compiling entity getelementptr_op
+# -- Compiling architecture arch of getelementptr_op
+# -- Compiling entity fcmp_oeq_op
+# -- Compiling architecture arch of fcmp_oeq_op
+# -- Loading entity delay_buffer
+# -- Compiling entity fcmp_ogt_op
+# -- Compiling architecture arch of fcmp_ogt_op
+# -- Compiling entity fcmp_oge_op
+# -- Compiling architecture arch of fcmp_oge_op
+# -- Compiling entity fcmp_olt_op
+# -- Compiling architecture arch of fcmp_olt_op
+# -- Compiling entity fcmp_ole_op
+# -- Compiling architecture arch of fcmp_ole_op
+# -- Compiling entity fcmp_one_op
+# -- Compiling architecture arch of fcmp_one_op
+# -- Compiling entity fcmp_ord_op
+# -- Compiling architecture arch of fcmp_ord_op
+# -- Compiling entity fcmp_uno_op
+# -- Compiling architecture arch of fcmp_uno_op
+# -- Compiling entity fcmp_ueq_op
+# -- Compiling architecture arch of fcmp_ueq_op
+# -- Compiling entity fcmp_uge_op
+# -- Compiling architecture arch of fcmp_uge_op
+# -- Compiling entity fcmp_ult_op
+# -- Compiling architecture arch of fcmp_ult_op
+# -- Compiling entity fcmp_ule
+# -- Compiling architecture arch of fcmp_ule
+# -- Compiling entity fcmp_une
+# -- Compiling architecture arch of fcmp_une
+# -- Compiling entity fcmp_ugt
+# -- Compiling architecture arch of fcmp_ugt
+# -- Compiling entity fadd_op
+# -- Compiling architecture arch of fadd_op
+# -- Loading entity OEHB
+# -- Compiling entity fsub_op
+# -- Compiling architecture arch of fsub_op
+# -- Compiling entity fmul_op
+# -- Compiling architecture arch of fmul_op
+# -- Compiling entity fneg_op
+# -- Compiling architecture arch of fneg_op
+# -- Compiling entity udiv_op
+# -- Compiling architecture arch of udiv_op
+# -- Compiling entity sdiv_op
+# -- Compiling architecture arch of sdiv_op
+# -- Compiling entity fdiv_op
+# -- Compiling architecture arch of fdiv_op
+# -- Compiling entity srem_op
+# -- Compiling architecture arch of srem_op
+# -- Compiling entity urem_op
+# -- Compiling architecture arch of urem_op
+# -- Compiling entity frem_op
+# -- Compiling architecture arch of frem_op
+# -- Compiling entity sinf_op
+# -- Compiling architecture arch of sinf_op
+# -- Compiling entity cosf_op
+# -- Compiling architecture arch of cosf_op
+# -- Compiling entity sqrtf_op
+# -- Compiling architecture arch of sqrtf_op
+# -- Compiling entity expf_op
+# -- Compiling architecture arch of expf_op
+# -- Compiling entity exp2f_op
+# -- Compiling architecture arch of exp2f_op
+# -- Compiling entity logf_op
+# -- Compiling architecture arch of logf_op
+# -- Compiling entity log2f_op
+# -- Compiling architecture arch of log2f_op
+# -- Compiling entity log10f_op
+# -- Compiling architecture arch of log10f_op
+# -- Compiling entity fabsf_op
+# -- Compiling architecture arch of fabsf_op
+# -- Compiling entity trunc_op
+# -- Compiling architecture arch of trunc_op
+# -- Compiling entity floorf_op
+# -- Compiling architecture arch of floorf_op
+# -- Compiling entity ceilf_op
+# -- Compiling architecture arch of ceilf_op
+# -- Compiling entity roundf_op
+# -- Compiling architecture arch of roundf_op
+# -- Compiling entity fminf_op
+# -- Compiling architecture arch of fminf_op
+# -- Compiling entity fmaxf_op
+# -- Compiling architecture arch of fmaxf_op
+# -- Compiling entity powf_op
+# -- Compiling architecture arch of powf_op
+# -- Compiling entity fabsf_op
+# -- Compiling architecture arch of fabsf_op
+# -- Compiling entity copysignf_op
+# -- Compiling architecture arch of copysignf_op
+# -- Compiling entity sitofp_op
+# -- Compiling architecture arch of sitofp_op
+# End time: 11:40:09 on Apr 12,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Compile of arithmetic_units.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:09 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/sharing_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity branchGen
+# -- Compiling architecture arch of branchGen
+# -- Loading entity join
+# -- Compiling entity merge_one_hot
+# -- Compiling architecture arch of merge_one_hot
+# -- Loading entity TEHB
+# -- Compiling entity distributor
+# -- Compiling architecture arch of distributor
+# -- Loading entity branchGen
+# -- Compiling package selectorTypes
+# -- Compiling entity bypassFIFO
+# -- Compiling architecture arch of bypassFIFO
+# -- Loading entity transpFIFO
+# -- Loading package selectorTypes
+# -- Compiling entity input_selector
+# -- Compiling architecture arch of input_selector
+# -- Loading entity merge_one_hot
+# -- Loading entity bypassFIFO
+# -- Compiling entity selector
+# -- Compiling architecture arch of selector
+# -- Loading entity input_selector
+# -- Loading entity fork
+# -- Loading package MATH_REAL
+# -- Loading entity mux
+# End time: 11:40:09 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of sharing_components.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:09 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/mul_wrapper.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity mul_op
+# -- Compiling architecture arch of mul_op
+# -- Loading entity join
+# -- Loading entity mul_4_stage
+# -- Loading entity delay_buffer
+# -- Loading entity OEHB
+# End time: 11:40:09 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of mul_wrapper.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:09 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity atax
+# -- Compiling architecture behavioral of atax
+# -- Loading entity Const
+# -- Loading package MATH_REAL
+# -- Loading entity mux
+# -- Loading entity mc_load_op
+# -- Loading entity zext_op
+# -- Loading entity getelementptr_op
+# -- Loading entity mul_op
+# -- Loading entity add_op
+# -- Loading entity icmp_ult_op
+# -- Loading entity lsq_load_op
+# -- Loading entity lsq_store_op
+# -- Loading entity mc_store_op
+# -- Loading entity ret_op
+# -- Loading entity merge
+# -- Loading entity fork
+# -- Loading entity branch
+# -- Loading entity MemCont
+# -- Loading entity end_node
+# -- Loading entity start_node
+# -- Loading entity cntrlMerge
+# -- Loading entity sink
+# -- Loading entity source
+# -- Loading entity elasticBuffer
+# End time: 11:40:09 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of atax.vhd was successful.
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:09 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package sim_package
+# -- Compiling entity atax_tb
+# -- Compiling architecture behav of atax_tb
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(111): (vcom-1236) Shared variables must be of a protected type.
+# -- Loading package customTypes
+# -- Loading entity atax
+# -- Loading entity single_argument
+# -- Loading entity two_port_RAM
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(120): (vcom-1272) Length of formal "end_out" is 5; length of actual is 32.
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(463): VHDL Compiler exiting
+# End time: 11:40:09 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:40:09 on Apr 12,2023
+# vcom -work work -2008 -explicit /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package sim_package
+# -- Compiling entity atax_tb
+# -- Compiling architecture behav of atax_tb
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(111): (vcom-1236) Shared variables must be of a protected type.
+# -- Loading package customTypes
+# -- Loading entity atax
+# -- Loading entity single_argument
+# -- Loading entity two_port_RAM
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(120): (vcom-1272) Length of formal "end_out" is 5; length of actual is 32.
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(463): VHDL Compiler exiting
+# End time: 11:40:09 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# Compile of hls_verify_atax_tb.vhd failed.
+# There were 1 file(s) that could not be compiled successfullyvlog -work work -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/LSQ_y.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# -- Compiling module STORE_QUEUE_LSQ_y
+# -- Compiling module LOAD_QUEUE_LSQ_y
+# -- Compiling module GROUP_ALLOCATOR_LSQ_y
+# -- Compiling module LOAD_PORT_LSQ_y
+# -- Compiling module STORE_DATA_PORT_LSQ_y
+# -- Compiling module LSQ_y
+# 
+# Top level modules:
+# 	LSQ_y
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/delay_buffer.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity delay_buffer
+# -- Compiling architecture arch of delay_buffer
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/elastic_components.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package customTypes
+# -- Loading package customTypes
+# -- Compiling entity andN
+# -- Compiling architecture vanilla of andn
+# -- Compiling entity nandN
+# -- Compiling architecture arch of nandn
+# -- Compiling entity orN
+# -- Compiling architecture vanilla of orN
+# -- Compiling entity norN
+# -- Compiling architecture arch of norN
+# -- Compiling entity join
+# -- Compiling architecture arch of join
+# -- Loading entity andN
+# -- Loading package NUMERIC_STD
+# -- Compiling entity TEHB
+# -- Compiling architecture arch of TEHB
+# -- Compiling entity OEHB
+# -- Compiling architecture arch of OEHB
+# -- Compiling entity elasticBuffer
+# -- Compiling architecture arch of elasticBuffer
+# -- Loading entity TEHB
+# -- Loading entity OEHB
+# -- Compiling entity end_node
+# -- Compiling architecture arch of end_node
+# -- Loading entity join
+# -- Compiling entity branchSimple
+# -- Compiling architecture arch of branchSimple
+# -- Compiling entity branch
+# -- Compiling architecture arch of branch
+# -- Loading entity branchSimple
+# -- Compiling entity eagerFork_RegisterBLock
+# -- Compiling architecture arch of eagerFork_RegisterBLock
+# -- Compiling entity fork
+# -- Compiling architecture arch of fork
+# -- Loading entity orN
+# -- Loading entity eagerFork_RegisterBLock
+# -- Compiling entity merge
+# -- Compiling architecture arch of merge
+# -- Compiling entity merge_notehb
+# -- Compiling architecture arch of merge_notehb
+# -- Compiling entity start_node_new
+# -- Compiling architecture arch of start_node_new
+# -- Loading entity elasticBuffer
+# -- Compiling entity start_node
+# -- Compiling architecture arch of start_node
+# -- Compiling entity sink
+# -- Compiling architecture arch of sink
+# -- Compiling entity source
+# -- Compiling architecture arch of source
+# -- Compiling entity elasticFifoInner
+# -- Compiling architecture arch of elasticFifoInner
+# -- Compiling entity nontranspFifo
+# -- Compiling architecture arch of nontranspFifo
+# -- Loading entity elasticFifoInner
+# -- Compiling entity transpFIFO
+# -- Compiling architecture arch of transpFIFO
+# -- Compiling entity load_op
+# -- Compiling architecture arch of load_op
+# -- Compiling entity Const
+# -- Compiling architecture arch of Const
+# -- Compiling entity write_memory_single_inside
+# -- Compiling architecture arch of write_memory_single_inside
+# -- Compiling entity store_op
+# -- Compiling architecture arch of store_op
+# -- Loading entity write_memory_single_inside
+# -- Loading package MATH_REAL
+# -- Compiling entity mux
+# -- Compiling architecture arch of mux
+# -- Compiling entity cntrlMerge
+# -- Compiling architecture arch of cntrlMerge
+# -- Loading entity merge_notehb
+# -- Loading entity fork
+# -- Compiling entity lsq_load_op
+# -- Compiling architecture arch of lsq_load_op
+# -- Compiling entity lsq_store_op
+# -- Compiling architecture arch of lsq_store_op
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/MemCont.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity read_priority
+# -- Compiling architecture arch of read_priority
+# -- Compiling entity read_address_mux
+# -- Compiling architecture arch of read_address_mux
+# -- Compiling entity read_address_ready
+# -- Compiling architecture arch of read_address_ready
+# -- Compiling entity read_data_signals
+# -- Compiling architecture arch of read_data_signals
+# -- Compiling entity read_memory_arbiter
+# -- Compiling architecture arch of read_memory_arbiter
+# -- Loading entity read_priority
+# -- Loading entity read_address_mux
+# -- Loading entity read_address_ready
+# -- Loading entity read_data_signals
+# -- Compiling entity write_priority
+# -- Compiling architecture arch of write_priority
+# -- Compiling entity write_address_mux
+# -- Compiling architecture arch of write_address_mux
+# -- Compiling entity write_address_ready
+# -- Compiling architecture arch of write_address_ready
+# -- Compiling entity write_data_signals
+# -- Compiling architecture arch of write_data_signals
+# -- Compiling entity write_memory_arbiter
+# -- Compiling architecture arch of write_memory_arbiter
+# -- Loading entity write_priority
+# -- Loading entity write_address_mux
+# -- Loading entity write_address_ready
+# -- Loading entity write_data_signals
+# -- Compiling entity elasticBufferDummy
+# -- Compiling architecture arch of elasticBufferDummy
+# -- Compiling entity mc_load_op
+# -- Compiling architecture arch of mc_load_op
+# -- Loading entity TEHB
+# -- Compiling entity mc_store_op
+# -- Compiling architecture arch of mc_store_op
+# -- Loading entity join
+# -- Compiling entity MemCont
+# -- Compiling architecture arch of MemCont
+# -- Loading entity read_memory_arbiter
+# -- Loading entity write_memory_arbiter
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/MemCont.vhd(840): (vcom-1514) Range choice direction (downto) does not determine aggregate index range direction (to).
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/multipliers.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mul_4_stage
+# -- Compiling architecture behav of mul_4_stage
+# -- Compiling entity mul_8_stage
+# -- Compiling architecture behav of mul_8_stage
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/simpackage.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Compiling package sim_package
+# -- Compiling package body sim_package
+# -- Loading package sim_package
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/two_port_RAM.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package sim_package
+# -- Compiling entity two_port_RAM
+# -- Compiling architecture behav of two_port_RAM
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/two_port_RAM.vhd(47): (vcom-1236) Shared variables must be of a protected type.
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/single_argument.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_textio
+# -- Loading package sim_package
+# -- Compiling entity single_argument
+# -- Compiling architecture behav of single_argument
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/single_argument.vhd(35): (vcom-1236) Shared variables must be of a protected type.
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/arithmetic_units.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity ret_op
+# -- Compiling architecture arch of ret_op
+# -- Loading entity TEHB
+# -- Compiling entity add_op
+# -- Compiling architecture arch of add_op
+# -- Loading entity join
+# -- Compiling entity sub_op
+# -- Compiling architecture arch of sub_op
+# -- Compiling entity and_op
+# -- Compiling architecture arch of and_op
+# -- Compiling entity or_op
+# -- Compiling architecture arch of or_op
+# -- Compiling entity xor_op
+# -- Compiling architecture arch of xor_op
+# -- Compiling entity sext_op
+# -- Compiling architecture arch of sext_op
+# -- Compiling entity zext_op
+# -- Compiling architecture arch of zext_op
+# -- Compiling entity shl_op
+# -- Compiling architecture arch of shl_op
+# -- Compiling entity ashr_op
+# -- Compiling architecture arch of ashr_op
+# -- Compiling entity lshr_op
+# -- Compiling architecture arch of lshr_op
+# -- Compiling entity antitokens
+# -- Compiling architecture arch of antitokens
+# -- Compiling entity select_op
+# -- Compiling architecture arch of select_op
+# -- Loading entity antitokens
+# -- Compiling entity icmp_eq_op
+# -- Compiling architecture arch of icmp_eq_op
+# -- Compiling entity icmp_ne_op
+# -- Compiling architecture arch of icmp_ne_op
+# -- Compiling entity icmp_ugt_op
+# -- Compiling architecture arch of icmp_ugt_op
+# -- Compiling entity icmp_uge_op
+# -- Compiling architecture arch of icmp_uge_op
+# -- Compiling entity icmp_sgt_op
+# -- Compiling architecture arch of icmp_sgt_op
+# -- Compiling entity icmp_sge_op
+# -- Compiling architecture arch of icmp_sge_op
+# -- Compiling entity icmp_ult_op
+# -- Compiling architecture arch of icmp_ult_op
+# -- Compiling entity icmp_ule_op
+# -- Compiling architecture arch of icmp_ule_op
+# -- Compiling entity icmp_slt_op
+# -- Compiling architecture arch of icmp_slt_op
+# -- Compiling entity icmp_sle_op
+# -- Compiling architecture arch of icmp_sle_op
+# -- Compiling entity getelementptr_op
+# -- Compiling architecture arch of getelementptr_op
+# -- Compiling entity fcmp_oeq_op
+# -- Compiling architecture arch of fcmp_oeq_op
+# -- Loading entity delay_buffer
+# -- Compiling entity fcmp_ogt_op
+# -- Compiling architecture arch of fcmp_ogt_op
+# -- Compiling entity fcmp_oge_op
+# -- Compiling architecture arch of fcmp_oge_op
+# -- Compiling entity fcmp_olt_op
+# -- Compiling architecture arch of fcmp_olt_op
+# -- Compiling entity fcmp_ole_op
+# -- Compiling architecture arch of fcmp_ole_op
+# -- Compiling entity fcmp_one_op
+# -- Compiling architecture arch of fcmp_one_op
+# -- Compiling entity fcmp_ord_op
+# -- Compiling architecture arch of fcmp_ord_op
+# -- Compiling entity fcmp_uno_op
+# -- Compiling architecture arch of fcmp_uno_op
+# -- Compiling entity fcmp_ueq_op
+# -- Compiling architecture arch of fcmp_ueq_op
+# -- Compiling entity fcmp_uge_op
+# -- Compiling architecture arch of fcmp_uge_op
+# -- Compiling entity fcmp_ult_op
+# -- Compiling architecture arch of fcmp_ult_op
+# -- Compiling entity fcmp_ule
+# -- Compiling architecture arch of fcmp_ule
+# -- Compiling entity fcmp_une
+# -- Compiling architecture arch of fcmp_une
+# -- Compiling entity fcmp_ugt
+# -- Compiling architecture arch of fcmp_ugt
+# -- Compiling entity fadd_op
+# -- Compiling architecture arch of fadd_op
+# -- Loading entity OEHB
+# -- Compiling entity fsub_op
+# -- Compiling architecture arch of fsub_op
+# -- Compiling entity fmul_op
+# -- Compiling architecture arch of fmul_op
+# -- Compiling entity fneg_op
+# -- Compiling architecture arch of fneg_op
+# -- Compiling entity udiv_op
+# -- Compiling architecture arch of udiv_op
+# -- Compiling entity sdiv_op
+# -- Compiling architecture arch of sdiv_op
+# -- Compiling entity fdiv_op
+# -- Compiling architecture arch of fdiv_op
+# -- Compiling entity srem_op
+# -- Compiling architecture arch of srem_op
+# -- Compiling entity urem_op
+# -- Compiling architecture arch of urem_op
+# -- Compiling entity frem_op
+# -- Compiling architecture arch of frem_op
+# -- Compiling entity sinf_op
+# -- Compiling architecture arch of sinf_op
+# -- Compiling entity cosf_op
+# -- Compiling architecture arch of cosf_op
+# -- Compiling entity sqrtf_op
+# -- Compiling architecture arch of sqrtf_op
+# -- Compiling entity expf_op
+# -- Compiling architecture arch of expf_op
+# -- Compiling entity exp2f_op
+# -- Compiling architecture arch of exp2f_op
+# -- Compiling entity logf_op
+# -- Compiling architecture arch of logf_op
+# -- Compiling entity log2f_op
+# -- Compiling architecture arch of log2f_op
+# -- Compiling entity log10f_op
+# -- Compiling architecture arch of log10f_op
+# -- Compiling entity fabsf_op
+# -- Compiling architecture arch of fabsf_op
+# -- Compiling entity trunc_op
+# -- Compiling architecture arch of trunc_op
+# -- Compiling entity floorf_op
+# -- Compiling architecture arch of floorf_op
+# -- Compiling entity ceilf_op
+# -- Compiling architecture arch of ceilf_op
+# -- Compiling entity roundf_op
+# -- Compiling architecture arch of roundf_op
+# -- Compiling entity fminf_op
+# -- Compiling architecture arch of fminf_op
+# -- Compiling entity fmaxf_op
+# -- Compiling architecture arch of fmaxf_op
+# -- Compiling entity powf_op
+# -- Compiling architecture arch of powf_op
+# -- Compiling entity fabsf_op
+# -- Compiling architecture arch of fabsf_op
+# -- Compiling entity copysignf_op
+# -- Compiling architecture arch of copysignf_op
+# -- Compiling entity sitofp_op
+# -- Compiling architecture arch of sitofp_op
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/sharing_components.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity branchGen
+# -- Compiling architecture arch of branchGen
+# -- Loading entity join
+# -- Compiling entity merge_one_hot
+# -- Compiling architecture arch of merge_one_hot
+# -- Loading entity TEHB
+# -- Compiling entity distributor
+# -- Compiling architecture arch of distributor
+# -- Loading entity branchGen
+# -- Compiling package selectorTypes
+# -- Compiling entity bypassFIFO
+# -- Compiling architecture arch of bypassFIFO
+# -- Loading entity transpFIFO
+# -- Loading package selectorTypes
+# -- Compiling entity input_selector
+# -- Compiling architecture arch of input_selector
+# -- Loading entity merge_one_hot
+# -- Loading entity bypassFIFO
+# -- Compiling entity selector
+# -- Compiling architecture arch of selector
+# -- Loading entity input_selector
+# -- Loading entity fork
+# -- Loading package MATH_REAL
+# -- Loading entity mux
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/mul_wrapper.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity mul_op
+# -- Compiling architecture arch of mul_op
+# -- Loading entity join
+# -- Loading entity mul_4_stage
+# -- Loading entity delay_buffer
+# -- Loading entity OEHB
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/atax.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package customTypes
+# -- Compiling entity atax
+# -- Compiling architecture behavioral of atax
+# -- Loading entity Const
+# -- Loading package MATH_REAL
+# -- Loading entity mux
+# -- Loading entity mc_load_op
+# -- Loading entity zext_op
+# -- Loading entity getelementptr_op
+# -- Loading entity mul_op
+# -- Loading entity add_op
+# -- Loading entity icmp_ult_op
+# -- Loading entity lsq_load_op
+# -- Loading entity lsq_store_op
+# -- Loading entity mc_store_op
+# -- Loading entity ret_op
+# -- Loading entity merge
+# -- Loading entity fork
+# -- Loading entity branch
+# -- Loading entity MemCont
+# -- Loading entity end_node
+# -- Loading entity start_node
+# -- Loading entity cntrlMerge
+# -- Loading entity sink
+# -- Loading entity source
+# -- Loading entity elasticBuffer
+ModelSim> # vcom -work work -2008 -explicit -stats=none /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package sim_package
+# -- Compiling entity atax_tb
+# -- Compiling architecture behav of atax_tb
+# ** Warning: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(111): (vcom-1236) Shared variables must be of a protected type.
+# -- Loading package customTypes
+# -- Loading entity atax
+# -- Loading entity single_argument
+# -- Loading entity two_port_RAM
+# ** Error (suppressible): /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(120): (vcom-1272) Length of formal "end_out" is 5; length of actual is 32.
+# ** Error: /home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/VHDL_SRC/hls_verify_atax_tb.vhd(463): VHDL Compiler exiting
+# /opt/intelFPGA/18.1/modelsim_ase/linuxaloem/vcom failed.
+ModelSim> # 13 compiles, 0 failed with no errors.
+# vsim atax_tb 
+# Start time: 11:40:13 on Apr 12,2023
+# Loading std.standard
+# ** Error: (vsim-3173) Entity '/home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax/sim/HLS_VERIFY/work.atax_tb' has no architecture.
+# Error loading design
+# End time: 11:40:13 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+
+--- Comparison Results ---
+
+Comparison of [end] : Fail
+****Executing test case examples/atax optimized ****
+filename examples/atax optimized
+/home/dynamatic/Dynamatic/etc/dynamatic/Regression_test/examples/atax
+
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler***********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Version 2.0 - Build 1.0 ************************************
+******************************************************************
+
+synthesis_optimized.tcl
+Done 
+set input file: atax.cpp
+current input filename: ./src/atax.cpp
+Done 
+Synthesize
+compile atax.cpp . -use-lsq=true Andrea: arg1:  atax.cpp arg2: . arg3 -use-lsq=true arg4
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/clang -emit-llvm -S   -c src/atax.cpp -o .atax.cpp.ll
+rm: cannot remove '*.s': No such file or directory
+0Time elapsed: 1e-06s.
+; ModuleID = '.atax.cpp_mem2reg_constprop_simplifycfg_die.ll'
+source_filename = "src/atax.cpp"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+; Function Attrs: noinline nounwind uwtable
+define i32 @_Z4ataxPA20_iPiS1_S1_([20 x i32]* %A, i32* %x, i32* %y, i32* %tmp) #0 {
+block1:
+  br label %block2
+
+block2:                                           ; preds = %block6, %block1
+  %i.04 = phi i32 [ 0, %block1 ], [ %inc29, %block6 ]
+  %"2" = zext i32 %i.04 to i64
+  %arrayidx = getelementptr inbounds i32, i32* %tmp, i64 %"2"
+  %"3" = load i32, i32* %arrayidx, align 4
+  br label %block3
+
+block3:                                           ; preds = %block3, %block2
+  %t.02 = phi i32 [ %"3", %block2 ], [ %add, %block3 ]
+  %j.01 = phi i32 [ 0, %block2 ], [ %inc, %block3 ]
+  %"5" = zext i32 %i.04 to i64
+  %"6" = zext i32 %j.01 to i64
+  %arrayidx7 = getelementptr inbounds [20 x i32], [20 x i32]* %A, i64 %"5", i64 %"6"
+  %"7" = load i32, i32* %arrayidx7, align 4
+  %"8" = zext i32 %j.01 to i64
+  %arrayidx9 = getelementptr inbounds i32, i32* %x, i64 %"8"
+  %"9" = load i32, i32* %arrayidx9, align 4
+  %mul = mul nsw i32 %"7", %"9"
+  %add = add nsw i32 %t.02, %mul
+  %inc = add nuw nsw i32 %j.01, 1
+  %cmp2 = icmp ult i32 %inc, 20
+  br i1 %cmp2, label %block3, label %block4
+
+block4:                                           ; preds = %block3
+  br label %block5
+
+block5:                                           ; preds = %block5, %block4
+  %j.13 = phi i32 [ 0, %block4 ], [ %inc24, %block5 ]
+  %"12" = zext i32 %j.13 to i64
+  %arrayidx14 = getelementptr inbounds i32, i32* %y, i64 %"12"
+  %"13" = load i32, i32* %arrayidx14, align 4
+  %"14" = zext i32 %i.04 to i64
+  %"15" = zext i32 %j.13 to i64
+  %arrayidx18 = getelementptr inbounds [20 x i32], [20 x i32]* %A, i64 %"14", i64 %"15"
+  %"16" = load i32, i32* %arrayidx18, align 4
+  %mul19 = mul nsw i32 %"16", %add
+  %add20 = add nsw i32 %"13", %mul19
+  %"17" = zext i32 %j.13 to i64
+  %arrayidx22 = getelementptr inbounds i32, i32* %y, i64 %"17"
+  store i32 %add20, i32* %arrayidx22, align 4
+  %inc24 = add nuw nsw i32 %j.13, 1
+  %cmp11 = icmp ult i32 %inc24, 20
+  br i1 %cmp11, label %block5, label %block6
+
+block6:                                           ; preds = %block5
+  %"19" = zext i32 %i.04 to i64
+  %arrayidx27 = getelementptr inbounds i32, i32* %tmp, i64 %"19"
+  store i32 %add, i32* %arrayidx27, align 4
+  %inc29 = add nuw nsw i32 %i.04, 1
+  %cmp = icmp ult i32 %inc29, 20
+  br i1 %cmp, label %block2, label %block7
+
+block7:                                           ; preds = %block6
+  ret i32 %inc29
+}
+
+; Function Attrs: noinline norecurse nounwind uwtable
+define i32 @main() #1 {
+entry:
+  %A = alloca [1 x [20 x [20 x i32]]], align 16
+  %x = alloca [1 x [20 x i32]], align 16
+  %y = alloca [1 x [20 x i32]], align 16
+  %tmp = alloca [1 x [20 x i32]], align 16
+  call void @srand(i32 13) #3
+  br label %for.body
+
+for.body:                                         ; preds = %for.inc29, %entry
+  br label %for.body3
+
+for.body3:                                        ; preds = %for.inc26, %for.body
+  %j.02 = phi i32 [ 0, %for.body ], [ %inc27, %for.inc26 ]
+  %call = call i32 @rand() #3
+  %rem = srem i32 %call, 100
+  %0 = zext i32 %j.02 to i64
+  %1 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %x, i64 0, i64 0, i64 %0
+  store i32 %rem, i32* %1, align 4
+  %2 = zext i32 %j.02 to i64
+  %3 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %y, i64 0, i64 0, i64 %2
+  store i32 0, i32* %3, align 4
+  %4 = zext i32 %j.02 to i64
+  %5 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %tmp, i64 0, i64 0, i64 %4
+  store i32 0, i32* %5, align 4
+  br label %for.body17
+
+for.body17:                                       ; preds = %for.body17, %for.body3
+  %x14.01 = phi i32 [ 0, %for.body3 ], [ %inc, %for.body17 ]
+  %call18 = call i32 @rand() #3
+  %rem19 = srem i32 %call18, 100
+  %6 = zext i32 %j.02 to i64
+  %7 = zext i32 %x14.01 to i64
+  %8 = getelementptr inbounds [1 x [20 x [20 x i32]]], [1 x [20 x [20 x i32]]]* %A, i64 0, i64 0, i64 %6, i64 %7
+  store i32 %rem19, i32* %8, align 4
+  %inc = add nuw nsw i32 %x14.01, 1
+  %cmp16 = icmp ult i32 %inc, 20
+  br i1 %cmp16, label %for.body17, label %for.inc26
+
+for.inc26:                                        ; preds = %for.body17
+  %inc27 = add nuw nsw i32 %j.02, 1
+  %cmp2 = icmp ult i32 %inc27, 20
+  br i1 %cmp2, label %for.body3, label %for.inc29
+
+for.inc29:                                        ; preds = %for.inc26
+  br i1 false, label %for.body, label %for.end31
+
+for.end31:                                        ; preds = %for.inc29
+  %arraydecay = getelementptr inbounds [1 x [20 x [20 x i32]]], [1 x [20 x [20 x i32]]]* %A, i64 0, i64 0, i64 0
+  %arraydecay35 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %x, i64 0, i64 0, i64 0
+  %arraydecay37 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %y, i64 0, i64 0, i64 0
+  %arraydecay39 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %tmp, i64 0, i64 0, i64 0
+  %call40 = call i32 @_Z4ataxPA20_iPiS1_S1_([20 x i32]* nonnull %arraydecay, i32* nonnull %arraydecay35, i32* nonnull %arraydecay37, i32* nonnull %arraydecay39)
+  ret i32 0
+}
+
+; Function Attrs: nounwind
+declare void @srand(i32) #2
+
+; Function Attrs: nounwind
+declare i32 @rand() #2
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline norecurse nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 6.0.1 (http://llvm.org/git/clang.git 2f27999df400d17b33cdd412fdd606a88208dfcc) (http://llvm.org/git/llvm.git 5136df4d089a086b70d452160ad5451861269498)"}
+OptimizeBitwidth : Optimization of function _Z4ataxPA20_iPiS1_S1_ finished in 2 iterations.
+Printing stats (for more details on states for each individual value, use dumpInfos).
+Saved bits during forward passes : 405
+Saved bits during backward passes : 0
+Saved bits in constants : 89
+Used bits after OB : 757, vs. Originaly used bits : 1251
+ => Reduction of used bits : 6.051159e+01
+
+
+Done 
+Done 
+Optimize
+buffers buffers -filename=./reports/atax -period=4 

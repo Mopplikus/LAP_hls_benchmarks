@@ -4,8 +4,6 @@
 
 #define AMOUNT_OF_TEST 1
 
-#define N 100
-
 int example(in_float_t A[N], in_float_t B[N], out_float_t out)
 {
     float d, s = 0.0;
