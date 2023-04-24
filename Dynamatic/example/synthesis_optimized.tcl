@@ -1,8 +1,9 @@
+
 set_project .
 set_top_file example.cpp
-synthesize -use-lsq=true -verbose
+synthesize -verbose
 set_period 4
-optimize
+optimize -area
 write_hdl
 
 exit
