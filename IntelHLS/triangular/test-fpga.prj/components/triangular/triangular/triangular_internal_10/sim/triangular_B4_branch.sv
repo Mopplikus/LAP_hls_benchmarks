@@ -16,15 +16,15 @@
 
 // SystemVerilog created from triangular_B4_branch
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_B4_branch (
     input wire [31:0] in_c0_exe10,
     input wire [31:0] in_c0_exe11,
-    input wire [32:0] in_c0_exe158,
-    input wire [31:0] in_c0_exe259,
+    input wire [32:0] in_c0_exe159,
+    input wire [31:0] in_c0_exe260,
     input wire [31:0] in_c0_exe3,
     input wire [0:0] in_c0_exe4,
     input wire [0:0] in_c0_exe5,
@@ -36,8 +36,8 @@ module triangular_B4_branch (
     input wire [0:0] in_valid_in,
     output wire [31:0] out_c0_exe10,
     output wire [31:0] out_c0_exe11,
-    output wire [32:0] out_c0_exe158,
-    output wire [31:0] out_c0_exe259,
+    output wire [32:0] out_c0_exe159,
+    output wire [31:0] out_c0_exe260,
     output wire [31:0] out_c0_exe3,
     output wire [0:0] out_c0_exe4,
     output wire [0:0] out_c0_exe5,
@@ -52,6 +52,7 @@ module triangular_B4_branch (
     );
 
     wire [0:0] stall_out_q;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
     // out_c0_exe10(GPOUT,15)
@@ -60,11 +61,11 @@ module triangular_B4_branch (
     // out_c0_exe11(GPOUT,16)
     assign out_c0_exe11 = in_c0_exe11;
 
-    // out_c0_exe158(GPOUT,17)
-    assign out_c0_exe158 = in_c0_exe158;
+    // out_c0_exe159(GPOUT,17)
+    assign out_c0_exe159 = in_c0_exe159;
 
-    // out_c0_exe259(GPOUT,18)
-    assign out_c0_exe259 = in_c0_exe259;
+    // out_c0_exe260(GPOUT,18)
+    assign out_c0_exe260 = in_c0_exe260;
 
     // out_c0_exe3(GPOUT,19)
     assign out_c0_exe3 = in_c0_exe3;
@@ -95,5 +96,18 @@ module triangular_B4_branch (
 
     // out_valid_out_0(GPOUT,27)
     assign out_valid_out_0 = in_valid_in;
+
+    // rst_sync(RESETSYNC,29)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

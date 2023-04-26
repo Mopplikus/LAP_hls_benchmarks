@@ -16,21 +16,19 @@
 
 // SystemVerilog created from bb_triangular_B4_sr_1
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:15 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_bb_B4_sr_1 (
     input wire [0:0] in_i_stall,
     input wire [0:0] in_i_valid,
-    input wire [0:0] in_i_data_0_tpl,
+    input wire [31:0] in_i_data_0_tpl,
     input wire [31:0] in_i_data_1_tpl,
-    input wire [31:0] in_i_data_2_tpl,
     output wire [0:0] out_o_stall,
     output wire [0:0] out_o_valid,
-    output wire [0:0] out_o_data_0_tpl,
+    output wire [31:0] out_o_data_0_tpl,
     output wire [31:0] out_o_data_1_tpl,
-    output wire [31:0] out_o_data_2_tpl,
     input wire clock,
     input wire resetn
     );
@@ -41,14 +39,11 @@ module triangular_bb_B4_sr_1 (
     reg [0:0] sr_valid_q;
     wire [0:0] stall_and_valid_q;
     wire [0:0] data_mux_0_x_s;
-    reg [0:0] data_mux_0_x_q;
+    reg [31:0] data_mux_0_x_q;
     wire [0:0] data_mux_1_x_s;
     reg [31:0] data_mux_1_x_q;
-    wire [0:0] data_mux_2_x_s;
-    reg [31:0] data_mux_2_x_q;
-    reg [0:0] sr_0_x_q;
+    reg [31:0] sr_0_x_q;
     reg [31:0] sr_1_x_q;
-    reg [31:0] sr_2_x_q;
 
 
     // combined_valid(LOGICAL,2)
@@ -58,7 +53,7 @@ module triangular_bb_B4_sr_1 (
     assign stall_and_valid_q = in_i_stall & combined_valid_q;
 
     // sr_valid(REG,4)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
@@ -70,21 +65,21 @@ module triangular_bb_B4_sr_1 (
         end
     end
 
-    // out_o_stall(GPOUT,15)
+    // out_o_stall(GPOUT,13)
     assign out_o_stall = sr_valid_q;
 
-    // out_o_valid(GPOUT,16)
+    // out_o_valid(GPOUT,14)
     assign out_o_valid = combined_valid_q;
 
     // not_sr_valid(LOGICAL,3)
     assign not_sr_valid_q = ~ (sr_valid_q);
 
-    // sr_0_x(REG,20)
-    always @ (posedge clock or negedge resetn)
+    // sr_0_x(REG,17)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
-            sr_0_x_q <= $unsigned(1'b0);
+            sr_0_x_q <= $unsigned(32'b00000000000000000000000000000000);
         end
         else if (not_sr_valid_q == 1'b1)
         begin
@@ -102,15 +97,15 @@ module triangular_bb_B4_sr_1 (
         unique case (data_mux_0_x_s)
             1'b0 : data_mux_0_x_q = in_i_data_0_tpl;
             1'b1 : data_mux_0_x_q = sr_0_x_q;
-            default : data_mux_0_x_q = 1'b0;
+            default : data_mux_0_x_q = 32'b0;
         endcase
     end
 
-    // out_o_data_0_tpl(GPOUT,17)
+    // out_o_data_0_tpl(GPOUT,15)
     assign out_o_data_0_tpl = data_mux_0_x_q;
 
-    // sr_1_x(REG,21)
-    always @ (posedge clock or negedge resetn)
+    // sr_1_x(REG,18)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
@@ -133,34 +128,7 @@ module triangular_bb_B4_sr_1 (
         endcase
     end
 
-    // out_o_data_1_tpl(GPOUT,18)
+    // out_o_data_1_tpl(GPOUT,16)
     assign out_o_data_1_tpl = data_mux_1_x_q;
-
-    // sr_2_x(REG,22)
-    always @ (posedge clock or negedge resetn)
-    begin
-        if (!resetn)
-        begin
-            sr_2_x_q <= $unsigned(32'b00000000000000000000000000000000);
-        end
-        else if (not_sr_valid_q == 1'b1)
-        begin
-            sr_2_x_q <= in_i_data_2_tpl;
-        end
-    end
-
-    // data_mux_2_x(MUX,9)
-    assign data_mux_2_x_s = sr_valid_q;
-    always @(data_mux_2_x_s or in_i_data_2_tpl or sr_2_x_q)
-    begin
-        unique case (data_mux_2_x_s)
-            1'b0 : data_mux_2_x_q = in_i_data_2_tpl;
-            1'b1 : data_mux_2_x_q = sr_2_x_q;
-            default : data_mux_2_x_q = 32'b0;
-        endcase
-    end
-
-    // out_o_data_2_tpl(GPOUT,19)
-    assign out_o_data_2_tpl = data_mux_2_x_q;
 
 endmodule

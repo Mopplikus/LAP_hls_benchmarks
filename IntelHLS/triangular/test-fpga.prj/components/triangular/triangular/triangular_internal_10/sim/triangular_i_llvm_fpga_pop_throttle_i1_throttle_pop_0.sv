@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -113,7 +113,7 @@ module triangular_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 (
     acl_pop #(
         .INF_LOOP(0),
         .STYLE("REGULAR"),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .COALESCE_DISTANCE(1),
         .DATA_WIDTH(1),
         .SYNCHRONIZE_RESET(0)
@@ -139,7 +139,7 @@ module triangular_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 (
     // sync_out(GPOUT,10)@20000000
     assign out_stall_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,12)@2
+    // dupName_0_sync_out_x(GPOUT,12)@10
     assign out_data_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg_out_data_out;
     assign out_valid_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg_out_valid_out;
 

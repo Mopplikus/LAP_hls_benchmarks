@@ -25,7 +25,8 @@ component float getTanh () {
 		{
 			A[j] = 0.0f;
 		}
-	}*/
+	}
+	*/
 
 	float result, beta;
 	WORK:for(int i = 0; i < N; i++) {

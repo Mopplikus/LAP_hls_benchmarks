@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -52,7 +52,7 @@ module triangular_i_llvm_fpga_ffwd_dest_i1_cmp1615_0 (
     // element_extension2(BITJOIN,4)@20000000
     assign element_extension2_q = {c_i7_03_q, in_intel_reserved_ffwd_1_0};
 
-    // i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1(EXTIFACE,5)@1
+    // i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1(EXTIFACE,5)@4
     assign i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1_data_in = element_extension2_q;
     assign i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1_stall_in = in_stall_in;
     assign i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1_valid_in = in_valid_in;
@@ -76,13 +76,13 @@ module triangular_i_llvm_fpga_ffwd_dest_i1_cmp1615_0 (
         .resetn(resetn)
     );
 
-    // sync_out(GPOUT,8)@1
+    // sync_out(GPOUT,8)@4
     assign out_stall_out = i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1_stall_out;
 
-    // adapt_scalar_trunc4_sel_x(BITSELECT,10)@1
+    // adapt_scalar_trunc4_sel_x(BITSELECT,10)@4
     assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1_data_out[0:0];
 
-    // dupName_0_sync_out_x(GPOUT,11)@1
+    // dupName_0_sync_out_x(GPOUT,11)@4
     assign out_dest_data_out_1_0 = adapt_scalar_trunc4_sel_x_b;
     assign out_valid_out = i_llvm_fpga_ffwd_dest_i1_cmp1615_triangular1_valid_out;
 

@@ -16,17 +16,14 @@
 
 // SystemVerilog created from triangular_B1_start_merge
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_B1_start_merge (
-    input wire [0:0] in_forked27_0,
-    input wire [0:0] in_forked27_1,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
     input wire [0:0] in_valid_in_1,
-    output wire [0:0] out_forked27,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_stall_out_1,
     output wire [0:0] out_valid_out,
@@ -34,47 +31,41 @@ module triangular_B1_start_merge (
     input wire resetn
     );
 
-    wire [0:0] VCC_q;
-    wire [0:0] forked27_mux_s;
-    reg [0:0] forked27_mux_q;
     wire [0:0] stall_out_q;
     wire [0:0] stall_out_1_specific_q;
     wire [0:0] valid_or_q;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
-
-    // forked27_mux(MUX,2)
-    assign forked27_mux_s = in_valid_in_0;
-    always @(forked27_mux_s or in_forked27_1 or in_forked27_0)
-    begin
-        unique case (forked27_mux_s)
-            1'b0 : forked27_mux_q = in_forked27_1;
-            1'b1 : forked27_mux_q = in_forked27_0;
-            default : forked27_mux_q = 1'b0;
-        endcase
-    end
-
-    // out_forked27(GPOUT,8)
-    assign out_forked27 = forked27_mux_q;
-
-    // valid_or(LOGICAL,14)
+    // valid_or(LOGICAL,10)
     assign valid_or_q = in_valid_in_0 | in_valid_in_1;
 
-    // stall_out(LOGICAL,12)
+    // stall_out(LOGICAL,8)
     assign stall_out_q = valid_or_q & in_stall_in;
 
-    // out_stall_out_0(GPOUT,9)
+    // out_stall_out_0(GPOUT,5)
     assign out_stall_out_0 = stall_out_q;
 
-    // stall_out_1_specific(LOGICAL,13)
+    // stall_out_1_specific(LOGICAL,9)
     assign stall_out_1_specific_q = in_valid_in_0 | stall_out_q;
 
-    // out_stall_out_1(GPOUT,10)
+    // out_stall_out_1(GPOUT,6)
     assign out_stall_out_1 = stall_out_1_specific_q;
 
-    // out_valid_out(GPOUT,11)
+    // out_valid_out(GPOUT,7)
     assign out_valid_out = valid_or_q;
+
+    // rst_sync(RESETSYNC,11)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

@@ -1,34 +1,61 @@
 {
-  "4270896224":
+  "2772890128":
   {
     "nodes":
     [
       {
-        "name":"Exit"
-        , "id":4271409536
-        , "subtype":"exit"
-        , "start":"1.00"
-        , "end":"1.00"
+        "name":"Loop Orch"
+        , "id":2774529648
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"0.00"
         , "details":
         [
           {
             "type":"table"
-            , "Start Cycle":"1"
-            , "Latency":"0"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":39
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":2777311376
+        , "subtype":"exit"
+        , "start":"4.00"
+        , "end":"8.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"4"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"32"
+            , "Exit FIFO Width":"24"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
           }
         ]
         , "type":"inst"
       }
       , {
         "name":"Entry"
-        , "id":4278660160
+        , "id":2780470640
         , "subtype":"entry"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
+            , "Start Cycle":"0"
             , "Latency":"0"
           }
         ]
@@ -38,35 +65,35 @@
     , "links":
     [
       {
-        "from":4278660160
-        , "to":4271409536
+        "from":2774529648
+        , "to":2777311376
         , "details":
         [
           {
             "type":"table"
-            , "Width":"16"
+            , "Width":"1"
           }
         ]
       }
     ]
   }
-  , "4271076704":
+  , "2773111136":
   {
     "nodes":
     [
       {
         "name":"+"
-        , "id":4276041088
+        , "id":2773271168
         , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"16-bit Integer Add"
             , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"2"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -83,17 +110,17 @@
       }
       , {
         "name":"A_local"
-        , "id":4276057808
+        , "id":2774019424
         , "subtype":"pop"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Feedback Read"
             , "Variable":"A_local"
-            , "Start Cycle":"2"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -109,31 +136,34 @@
         , "type":"inst"
       }
       , {
+        "name":"Exit"
+        , "id":2786888656
+        , "subtype":"exit"
+        , "start":"12.00"
+        , "end":"16.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"12"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"32"
+            , "Exit FIFO Width":"64"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
         "name":"Entry"
-        , "id":4283095536
+        , "id":2786889728
         , "subtype":"entry"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Exit"
-        , "id":4285843408
-        , "subtype":"exit"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Start Cycle":"2"
+            , "Start Cycle":"8"
             , "Latency":"0"
           }
         ]
@@ -143,8 +173,8 @@
     , "links":
     [
       {
-        "from":4276041088
-        , "to":4276057808
+        "from":2773271168
+        , "to":2774019424
         , "reverse":1
         , "details":
         [
@@ -152,16 +182,14 @@
             "type":"table"
             , "Instruction":"Feedback Write"
             , "Variable":"A_local"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"16"
-            , "Start Cycle":"2"
-            , "Latency":"0"
+            , "Start Cycle":"9"
+            , "Latency":"3"
           }
         ]
       }
       , {
-        "from":4276057808
-        , "to":4276041088
+        "from":2774019424
+        , "to":2773271168
         , "details":
         [
           {
@@ -171,8 +199,8 @@
         ]
       }
       , {
-        "from":4276057808
-        , "to":4285843408
+        "from":2774019424
+        , "to":2786888656
         , "details":
         [
           {
@@ -182,8 +210,8 @@
         ]
       }
       , {
-        "from":4283095536
-        , "to":4276057808
+        "from":2786889728
+        , "to":2774019424
         , "details":
         [
           {
@@ -194,56 +222,163 @@
       }
     ]
   }
-  , "4271628976":
+  , "2773234992":
   {
     "nodes":
     [
       {
-        "name":"Entry"
-        , "id":4272449664
-        , "subtype":"entry"
+        "name":"FFwd Src"
+        , "id":2772926016
+        , "subtype":"ffwdSource"
+        , "start":"13.00"
+        , "end":"13.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"13"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":2773954832
+        , "subtype":"ffwdSource"
+        , "start":"11.00"
+        , "end":"11.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"11"
             , "Latency":"0"
           }
         ]
         , "type":"inst"
       }
       , {
-        "name":"Exit"
-        , "id":4273278496
-        , "subtype":"exit"
-        , "start":"3.00"
-        , "end":"6.00"
+        "name":"FFwd Src"
+        , "id":2774847520
+        , "subtype":"ffwdSource"
+        , "start":"11.00"
+        , "end":"11.00"
         , "details":
         [
           {
             "type":"table"
-            , "Start Cycle":"3"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"11"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"-"
+        , "id":2774905888
+        , "subtype":"default"
+        , "start":"12.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Subtract"
+            , "Start Cycle":"12"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2774906592
+        , "subtype":"default"
+        , "start":"13.00"
+        , "end":"13.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"33-bit Integer Add"
+            , "Constant Operand":"-1 (0x1FFFFFFFF)"
+            , "Start Cycle":"13"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":2775205392
+        , "subtype":"exit"
+        , "start":"13.00"
+        , "end":"17.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"13"
             , "Latency":"3"
             , "Exit FIFO Depth":"32"
-            , "Exit FIFO Width":"384"
+            , "Exit FIFO Width":"8"
             , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
           }
         ]
         , "type":"inst"
       }
       , {
-        "name":"FFwd Dest"
-        , "id":4276651472
-        , "subtype":"ffwdDest"
-        , "start":"1.00"
-        , "end":"1.00"
+        "name":"FFwd Src"
+        , "id":2778653040
+        , "subtype":"ffwdSource"
+        , "start":"11.00"
+        , "end":"11.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"1"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"11"
             , "Latency":"0"
           }
         ]
@@ -259,37 +394,381 @@
         , "type":"inst"
       }
       , {
-        "name":"FFwd Dest"
-        , "id":4276828272
-        , "subtype":"ffwdDest"
-        , "start":"3.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":23
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Loop Orch"
-        , "id":4276853696
+        "name":"Compare"
+        , "id":2785373792
         , "subtype":"default"
-        , "start":"3.00"
-        , "end":"3.00"
+        , "start":"11.00"
+        , "end":"11.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Compare"
+            , "Start Cycle":"11"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2785374144
+        , "subtype":"default"
+        , "start":"11.00"
+        , "end":"11.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"-2 (0xFFFFFFFE)"
+            , "Start Cycle":"11"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":2789492992
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"10"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2789930032
+        , "subtype":"default"
+        , "start":"10.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"-1 (0xFFFFFFFF)"
+            , "Start Cycle":"10"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Compare"
+        , "id":2789930384
+        , "subtype":"default"
+        , "start":"11.00"
+        , "end":"11.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Compare"
+            , "Start Cycle":"11"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":2789930736
+        , "subtype":"select"
+        , "start":"11.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Select"
+            , "Start Cycle":"11"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":2774905888
+        , "to":2774906592
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2774906592
+        , "to":2772926016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2785373792
+        , "to":2774847520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785374144
+        , "to":2778653040
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2789492992
+        , "to":2773954832
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+      , {
+        "from":2789492992
+        , "to":2785373792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+      , {
+        "from":2789492992
+        , "to":2785374144
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+      , {
+        "from":2789492992
+        , "to":2789930032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+      , {
+        "from":2789930032
+        , "to":2774905888
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2789930032
+        , "to":2789930384
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2789930032
+        , "to":2789930736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2789930384
+        , "to":2789930736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2789930736
+        , "to":2774905888
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+    ]
+  }
+  , "2773496880":
+  {
+    "nodes":
+    [
+      {
+        "name":"Exit"
+        , "id":2775663856
+        , "subtype":"exit"
+        , "start":"2.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"2"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"32"
+            , "Exit FIFO Width":"8"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"wg.limiter.exit"
+        , "id":2787080032
+        , "subtype":"default"
+        , "start":"1.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"wg.limiter.exit"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":2790045408
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":2790045408
+        , "to":2787080032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+    ]
+  }
+  , "2773649088":
+  {
+    "nodes":
+    [
+      {
+        "name":"Loop Orch"
+        , "id":2773301648
+        , "subtype":"default"
+        , "start":"6.00"
+        , "end":"6.00"
         , "details":
         [
           {
@@ -309,36 +788,69 @@
         , "type":"inst"
       }
       , {
+        "name":"Exit"
+        , "id":2773552096
+        , "subtype":"exit"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"6"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"32"
+            , "Exit FIFO Width":"384"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
         "name":"?"
-        , "id":4276873024
+        , "id":2773714112
         , "subtype":"pop"
-        , "start":"3.00"
-        , "end":"3.00"
+        , "start":"6.00"
+        , "end":"6.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Feedback Read"
             , "Variable":"Unknown variable"
-            , "Start Cycle":"3"
+            , "Start Cycle":"6"
             , "Latency":"0"
           }
         ]
         , "type":"inst"
       }
       , {
-        "name":"+"
-        , "id":4276957200
-        , "subtype":"default"
-        , "start":"3.00"
-        , "end":"3.00"
+        "name":"Entry"
+        , "id":2774558432
+        , "subtype":"entry"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"33-bit Integer Add"
-            , "Constant Operand":"-1 (0x1FFFFFFFF)"
-            , "Start Cycle":"3"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":2775444368
+        , "subtype":"ffwdDest"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"6"
             , "Latency":"0"
           }
         ]
@@ -355,16 +867,166 @@
       }
       , {
         "name":"FFwd Dest"
-        , "id":4276965168
+        , "id":2777398464
         , "subtype":"ffwdDest"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"4.00"
+        , "end":"4.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"FFwd Destination"
-            , "Start Cycle":"2"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2783884160
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"-1 (0xFFFFFFFF)"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":2785479936
+        , "subtype":"ffwdDest"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2785869536
+        , "subtype":"default"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"33-bit Integer Add"
+            , "Constant Operand":"-1 (0x1FFFFFFFF)"
+            , "Start Cycle":"6"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":2786112032
+        , "subtype":"pop"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"6"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":8
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":2786302512
+        , "subtype":"ffwdDest"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":2786656176
+        , "subtype":"ffwdDest"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"4"
             , "Latency":"0"
           }
         ]
@@ -381,16 +1043,16 @@
       }
       , {
         "name":"And"
-        , "id":4276974528
+        , "id":2789720720
         , "subtype":"default"
-        , "start":"3.00"
-        , "end":"3.00"
+        , "start":"6.00"
+        , "end":"6.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"1-bit And"
-            , "Start Cycle":"3"
+            , "Start Cycle":"6"
             , "Latency":"0"
           }
         ]
@@ -405,36 +1067,479 @@
         ]
         , "type":"inst"
       }
-      , {
-        "name":"FFwd Dest"
-        , "id":4276999216
-        , "subtype":"ffwdDest"
-        , "start":"2.00"
-        , "end":"2.00"
+    ]
+    , "links":
+    [
+      {
+        "from":2773301648
+        , "to":2773552096
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"2"
-            , "Latency":"0"
+            , "Width":"1"
           }
+        ]
+      }
+      , {
+        "from":2773301648
+        , "to":2773714112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773301648
+        , "to":2786112032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773301648
+        , "to":2783884160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773301648
+        , "to":2785869536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773301648
+        , "to":2786112032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773301648
+        , "to":2773714112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773301648
+        , "to":2789720720
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773714112
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2773714112
+        , "to":2773714112
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"5"
+          }
+        ]
+      }
+      , {
+        "from":2774558432
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"96"
+          }
+        ]
+      }
+      , {
+        "from":2774558432
+        , "to":2773714112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"96"
+          }
+        ]
+      }
+      , {
+        "from":2774558432
+        , "to":2786112032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"96"
+          }
+        ]
+      }
+      , {
+        "from":2775444368
+        , "to":2789720720
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2777398464
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2777398464
+        , "to":2789720720
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2783884160
+        , "to":2783884160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2783884160
+        , "to":2785869536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2785479936
+        , "to":2773301648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785479936
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785479936
+        , "to":2786112032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785479936
+        , "to":2783884160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785479936
+        , "to":2785869536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785479936
+        , "to":2773714112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785479936
+        , "to":2789720720
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785869536
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786112032
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2786112032
+        , "to":2786112032
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"5"
+          }
+        ]
+      }
+      , {
+        "from":2786302512
+        , "to":2773301648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786302512
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786302512
+        , "to":2786112032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786302512
+        , "to":2783884160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786302512
+        , "to":2785869536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786302512
+        , "to":2773714112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786302512
+        , "to":2789720720
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2786656176
+        , "to":2783884160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2786656176
+        , "to":2785869536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2789720720
+        , "to":2773552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "2774299920":
+  {
+    "nodes":
+    [
+      {
+        "name":"A_local"
+        , "id":2773210288
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"5.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"A_local"
+            , "Start Cycle":"4"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":25
+            }
+          ]
         ]
         , "type":"inst"
       }
       , {
-        "name":"FFwd Dest"
-        , "id":4277008032
-        , "subtype":"ffwdDest"
-        , "start":"1.00"
-        , "end":"1.00"
+        "name":"Loop Orch"
+        , "id":2773423408
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"16.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"1"
-            , "Latency":"0"
+            , "Instruction":"Loop Orchestration Logic"
           }
         ]
         , "debug":
@@ -449,421 +1554,17 @@
         , "type":"inst"
       }
       , {
-        "name":"?"
-        , "id":4277042720
-        , "subtype":"pop"
-        , "start":"3.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":8
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":4272449664
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4272449664
-        , "to":4276873024
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4272449664
-        , "to":4277042720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4272449664
-        , "to":4276853696
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4272449664
-        , "to":4276873024
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4272449664
-        , "to":4276957200
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4272449664
-        , "to":4276974528
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4272449664
-        , "to":4277042720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"96"
-          }
-        ]
-      }
-      , {
-        "from":4276651472
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":4276651472
-        , "to":4276873024
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":4276651472
-        , "to":4277042720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":4276651472
-        , "to":4276853696
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":4276651472
-        , "to":4276957200
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":4276651472
-        , "to":4276974528
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":4276828272
-        , "to":4276974528
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4276853696
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4276873024
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4276873024
-        , "to":4276873024
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Unknown variable"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":4276957200
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":4276965168
-        , "to":4276957200
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4276974528
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4276999216
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4276999216
-        , "to":4276974528
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4277008032
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4277008032
-        , "to":4276873024
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4277008032
-        , "to":4277042720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4277008032
-        , "to":4276853696
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4277008032
-        , "to":4276957200
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4277008032
-        , "to":4276974528
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4277042720
-        , "to":4273278496
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4277042720
-        , "to":4277042720
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"Unknown variable"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"3"
-            , "Latency":"0"
-          }
-        ]
-      }
-    ]
-  }
-  , "4272261776":
-  {
-    "nodes":
-    [
-      {
-        "name":"Loop Orch"
-        , "id":4270670032
-        , "subtype":"pop"
-        , "start":"5.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"FFwd Dest"
-        , "id":4271795888
+        , "id":2773953088
         , "subtype":"ffwdDest"
-        , "start":"5.00"
-        , "end":"5.00"
+        , "start":"8.00"
+        , "end":"8.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"FFwd Destination"
-            , "Start Cycle":"5"
+            , "Start Cycle":"8"
             , "Latency":"0"
           }
         ]
@@ -871,62 +1572,32 @@
       }
       , {
         "name":"Entry"
-        , "id":4273231680
+        , "id":2774000032
         , "subtype":"entry"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Cluster Entry"
-            , "Start Cycle":"1"
+            , "Start Cycle":"0"
             , "Latency":"0"
           }
         ]
         , "type":"inst"
       }
       , {
-        "name":"Or"
-        , "id":4276160688
+        "name":"*"
+        , "id":2774060992
         , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"9.00"
+        , "end":"15.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"1-bit Or"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":25
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":4276161040
-        , "subtype":"load/store"
-        , "start":"2.00"
-        , "end":"6.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"2"
-            , "Latency":"4"
+            , "Instruction":"32-bit Integer Multiply"
+            , "Start Cycle":"9"
+            , "Latency":"6"
           }
         ]
         , "debug":
@@ -942,16 +1613,112 @@
       }
       , {
         "name":"Ptr. Comp."
-        , "id":4276174304
+        , "id":2774061344
         , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"5.00"
+        , "end":"14.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
+            , "Start Cycle":"5"
+            , "Latency":"9"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":2774428752
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"8.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Or"
+        , "id":2777559152
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"1-bit Or"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":2777563136
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":8
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Or"
+        , "id":2782074032
+        , "subtype":"default"
+        , "start":"8.00"
+        , "end":"8.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"1-bit Or"
+            , "Start Cycle":"8"
             , "Latency":"0"
           }
         ]
@@ -968,16 +1735,16 @@
       }
       , {
         "name":"Or"
-        , "id":4276705376
+        , "id":2782074384
         , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
+        , "start":"4.00"
+        , "end":"4.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"1-bit Or"
-            , "Start Cycle":"5"
+            , "Start Cycle":"4"
             , "Latency":"0"
           }
         ]
@@ -986,7 +1753,33 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":26
+              , "line":25
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Or"
+        , "id":2783521808
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"1-bit Or"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":25
             }
           ]
         ]
@@ -994,91 +1787,7 @@
       }
       , {
         "name":"LD"
-        , "id":4276705728
-        , "subtype":"load/store"
-        , "start":"5.00"
-        , "end":"6.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"No"
-            , "Start Cycle":"5"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":26
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"A_local"
-        , "id":4276708576
-        , "subtype":"pop"
-        , "start":"5.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"A_local"
-            , "Start Cycle":"5"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":26
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"?"
-        , "id":4277632848
-        , "subtype":"pop"
-        , "start":"2.00"
-        , "end":"2.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":8
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":4278097712
+        , "id":2785461440
         , "subtype":"load/store"
         , "start":"8.00"
         , "end":"9.00"
@@ -1108,17 +1817,17 @@
       }
       , {
         "name":"Xor"
-        , "id":4280385312
+        , "id":2786210512
         , "subtype":"default"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"4.00"
+        , "end":"4.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"1-bit Xor"
             , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"2"
+            , "Start Cycle":"4"
             , "Latency":"0"
           }
         ]
@@ -1135,17 +1844,17 @@
       }
       , {
         "name":"?"
-        , "id":4280385664
+        , "id":2786210864
         , "subtype":"pop"
-        , "start":"2.00"
-        , "end":"2.00"
+        , "start":"4.00"
+        , "end":"4.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Feedback Read"
             , "Variable":"Unknown variable"
-            , "Start Cycle":"2"
+            , "Start Cycle":"4"
             , "Latency":"0"
           }
         ]
@@ -1161,37 +1870,157 @@
         , "type":"inst"
       }
       , {
-        "name":"Exit"
-        , "id":4282011984
-        , "subtype":"exit"
-        , "start":"10.00"
-        , "end":"13.00"
+        "name":"A_local"
+        , "id":2786352368
+        , "subtype":"pop"
+        , "start":"8.00"
+        , "end":"8.00"
         , "details":
         [
           {
             "type":"table"
-            , "Start Cycle":"10"
-            , "Latency":"3"
-            , "Exit FIFO Depth":"32"
-            , "Exit FIFO Width":"192"
-            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+            , "Instruction":"Feedback Read"
+            , "Variable":"A_local"
+            , "Start Cycle":"8"
+            , "Latency":"0"
           }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":26
+            }
+          ]
         ]
         , "type":"inst"
       }
       , {
         "name":"Ptr. Comp."
-        , "id":4282513424
+        , "id":2786617808
         , "subtype":"default"
-        , "start":"2.00"
-        , "end":"5.00"
+        , "start":"4.00"
+        , "end":"4.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Pointer Computation"
-            , "Start Cycle":"2"
-            , "Latency":"3"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":2786931952
+        , "subtype":"load/store"
+        , "start":"4.00"
+        , "end":"9.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"4"
+            , "Latency":"5"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"-"
+        , "id":2786990608
+        , "subtype":"default"
+        , "start":"15.00"
+        , "end":"15.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Subtract"
+            , "Start Cycle":"15"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":26
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Or"
+        , "id":2786990960
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"1-bit Or"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+              , "line":25
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"ST"
+        , "id":2786991312
+        , "subtype":"load/store"
+        , "start":"15.00"
+        , "end":"16.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Store"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"15"
+            , "Latency":"1"
           }
         ]
         , "debug":
@@ -1207,7 +2036,7 @@
       }
       , {
         "name":"+"
-        , "id":4283774656
+        , "id":2787058544
         , "subtype":"default"
         , "start":"5.00"
         , "end":"5.00"
@@ -1233,70 +2062,17 @@
         , "type":"inst"
       }
       , {
-        "name":"*"
-        , "id":4285621328
-        , "subtype":"default"
-        , "start":"6.00"
-        , "end":"9.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Multiply"
-            , "Start Cycle":"6"
-            , "Latency":"3"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":26
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Ptr. Comp."
-        , "id":4285621680
+        "name":"Or"
+        , "id":2787768832
         , "subtype":"default"
         , "start":"4.00"
-        , "end":"8.00"
+        , "end":"4.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Pointer Computation"
+            , "Instruction":"1-bit Or"
             , "Start Cycle":"4"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":26
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"A_local"
-        , "id":4285691136
-        , "subtype":"pop"
-        , "start":"3.00"
-        , "end":"3.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"A_local"
-            , "Start Cycle":"3"
             , "Latency":"0"
           }
         ]
@@ -1312,47 +2088,21 @@
         , "type":"inst"
       }
       , {
-        "name":"-"
-        , "id":4286173072
-        , "subtype":"default"
-        , "start":"9.00"
-        , "end":"9.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Subtract"
-            , "Start Cycle":"9"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-              , "line":26
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"ST"
-        , "id":4287205472
+        "name":"LD"
+        , "id":2787769184
         , "subtype":"load/store"
-        , "start":"9.00"
-        , "end":"10.00"
+        , "start":"14.00"
+        , "end":"15.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Store"
+            , "Instruction":"Load"
             , "Width":"32 bits"
             , "LSU Style":"Pipelined never-stall"
             , "Stall-free":"Yes"
             , "Global Memory":"No"
-            , "Start Cycle":"9"
+            , "Start Cycle":"14"
             , "Latency":"1"
           }
         ]
@@ -1367,12 +2117,31 @@
         ]
         , "type":"inst"
       }
+      , {
+        "name":"Exit"
+        , "id":2788125520
+        , "subtype":"exit"
+        , "start":"16.00"
+        , "end":"20.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"16"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"32"
+            , "Exit FIFO Width":"192"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
     ]
     , "links":
     [
       {
-        "from":4270670032
-        , "to":4277632848
+        "from":2773210288
+        , "to":2774061344
         , "details":
         [
           {
@@ -1382,8 +2151,8 @@
         ]
       }
       , {
-        "from":4270670032
-        , "to":4276160688
+        "from":2773210288
+        , "to":2774428752
         , "details":
         [
           {
@@ -1393,8 +2162,8 @@
         ]
       }
       , {
-        "from":4270670032
-        , "to":4276705376
+        "from":2773210288
+        , "to":2787058544
         , "details":
         [
           {
@@ -1404,195 +2173,8 @@
         ]
       }
       , {
-        "from":4270670032
-        , "to":4276708576
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4270670032
-        , "to":4282011984
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4270670032
-        , "to":4285691136
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4270670032
-        , "to":4280385664
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4271795888
-        , "to":4285621680
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4270670032
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4277632848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4276705376
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4276708576
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4277632848
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4276708576
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4280385312
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4280385664
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4282011984
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4285691136
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4285691136
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4273231680
-        , "to":4280385664
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"384"
-          }
-        ]
-      }
-      , {
-        "from":4276160688
-        , "to":4276161040
+        "from":2773423408
+        , "to":2773210288
         , "details":
         [
           {
@@ -1602,8 +2184,8 @@
         ]
       }
       , {
-        "from":4276160688
-        , "to":4276705728
+        "from":2773423408
+        , "to":2777563136
         , "details":
         [
           {
@@ -1613,8 +2195,8 @@
         ]
       }
       , {
-        "from":4276160688
-        , "to":4278097712
+        "from":2773423408
+        , "to":2786210864
         , "details":
         [
           {
@@ -1624,8 +2206,8 @@
         ]
       }
       , {
-        "from":4276160688
-        , "to":4287205472
+        "from":2773423408
+        , "to":2786352368
         , "details":
         [
           {
@@ -1635,8 +2217,140 @@
         ]
       }
       , {
-        "from":4276161040
-        , "to":4285621328
+        "from":2773423408
+        , "to":2773210288
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2777559152
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2777563136
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2782074032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2782074384
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2783521808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2786210512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2786210864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2786352368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2786990960
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2787768832
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773423408
+        , "to":2788125520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2773953088
+        , "to":2774061344
         , "details":
         [
           {
@@ -1646,8 +2360,140 @@
         ]
       }
       , {
-        "from":4276174304
-        , "to":4276161040
+        "from":2774000032
+        , "to":2773210288
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2773423408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2777563136
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2786210864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2786352368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2773210288
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2777563136
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2782074032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2786210512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2786210864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774000032
+        , "to":2788125520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"384"
+          }
+        ]
+      }
+      , {
+        "from":2774060992
+        , "to":2786990608
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2774061344
+        , "to":2786991312
         , "details":
         [
           {
@@ -1657,8 +2503,30 @@
         ]
       }
       , {
-        "from":4276705376
-        , "to":4276705728
+        "from":2774061344
+        , "to":2787769184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2774428752
+        , "to":2785461440
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2777559152
+        , "to":2773423408
         , "details":
         [
           {
@@ -1668,41 +2536,8 @@
         ]
       }
       , {
-        "from":4276705376
-        , "to":4278097712
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4276705728
-        , "to":4285621328
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4276708576
-        , "to":4276705376
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":4277632848
-        , "to":4277632848
+        "from":2777563136
+        , "to":2777563136
         , "reverse":1
         , "details":
         [
@@ -1710,16 +2545,14 @@
             "type":"table"
             , "Instruction":"Feedback Write"
             , "Variable":"Unknown variable"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"5"
-            , "Latency":"0"
+            , "Start Cycle":"1"
+            , "Latency":"3"
           }
         ]
       }
       , {
-        "from":4277632848
-        , "to":4282011984
+        "from":2777563136
+        , "to":2788125520
         , "details":
         [
           {
@@ -1729,19 +2562,8 @@
         ]
       }
       , {
-        "from":4278097712
-        , "to":4286173072
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4280385312
-        , "to":4276160688
+        "from":2782074032
+        , "to":2785461440
         , "details":
         [
           {
@@ -1751,8 +2573,41 @@
         ]
       }
       , {
-        "from":4280385664
-        , "to":4276174304
+        "from":2782074032
+        , "to":2787769184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2782074384
+        , "to":2785461440
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2783521808
+        , "to":2786931952
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2785461440
+        , "to":2774060992
         , "details":
         [
           {
@@ -1762,8 +2617,52 @@
         ]
       }
       , {
-        "from":4280385664
-        , "to":4282513424
+        "from":2786210512
+        , "to":2782074384
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2786210512
+        , "to":2783521808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2786210512
+        , "to":2786990960
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2786210512
+        , "to":2787768832
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2786210864
+        , "to":2774428752
         , "details":
         [
           {
@@ -1773,8 +2672,8 @@
         ]
       }
       , {
-        "from":4280385664
-        , "to":4280385664
+        "from":2786210864
+        , "to":2786210864
         , "reverse":1
         , "details":
         [
@@ -1782,44 +2681,14 @@
             "type":"table"
             , "Instruction":"Feedback Write"
             , "Variable":"Unknown variable"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"5"
-            , "Latency":"0"
+            , "Start Cycle":"1"
+            , "Latency":"3"
           }
         ]
       }
       , {
-        "from":4282513424
-        , "to":4276705728
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":4283774656
-        , "to":4285691136
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"A_local"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"32"
-            , "Start Cycle":"5"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":4285621328
-        , "to":4286173072
+        "from":2786210864
+        , "to":2786617808
         , "details":
         [
           {
@@ -1829,96 +2698,120 @@
         ]
       }
       , {
-        "from":4285621680
-        , "to":4278097712
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":4285621680
-        , "to":4287205472
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":4285691136
-        , "to":4282513424
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4285691136
-        , "to":4283774656
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4285691136
-        , "to":4285621680
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4286173072
-        , "to":4287205472
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":4287205472
-        , "to":4276708576
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"A_local"
-            , "Feedback FIFO Depth":"1"
-            , "Feedback FIFO Width":"1"
-            , "Start Cycle":"10"
-            , "Latency":"0"
-          }
-        ]
-      }
-      , {
-        "from":4287205472
-        , "to":4282011984
+        "from":2786352368
+        , "to":2782074032
         , "details":
         [
           {
             "type":"table"
             , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2786617808
+        , "to":2786931952
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2786931952
+        , "to":2774060992
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2786990608
+        , "to":2786991312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2786990960
+        , "to":2786991312
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2786991312
+        , "to":2786352368
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"A_local"
+            , "Start Cycle":"1"
+            , "Latency":"15"
+          }
+        ]
+      }
+      , {
+        "from":2786991312
+        , "to":2788125520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2787058544
+        , "to":2773210288
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"A_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":2787768832
+        , "to":2787769184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2787769184
+        , "to":2786990608
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
           }
         ]
       }

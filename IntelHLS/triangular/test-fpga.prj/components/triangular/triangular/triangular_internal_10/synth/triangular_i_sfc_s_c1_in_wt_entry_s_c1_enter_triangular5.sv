@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_sfc_s_c1_in_wt_entry_triangulars_c1_enter_triangular5
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -35,27 +35,26 @@ module triangular_i_sfc_s_c1_in_wt_entry_s_c1_enter_triangular5 (
     input wire resetn
     );
 
+    wire [0:0] GND_q;
     wire [0:0] VCC_q;
     wire [0:0] input_accepted_and_q;
     wire [0:0] not_stall_out_q;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_enable;
     wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_stall_entry;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_valid_mask;
     wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_valid_out;
     wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_data_out_0_tpl;
     wire [31:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_data_out_1_tpl;
     wire [0:0] i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_o_valid;
     wire [0:0] i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_c1_exi1_0_tpl;
     wire [31:0] i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_c1_exi1_1_tpl;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
-    // i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x(BLACKBOX,7)@1
-    // out out_o_valid@2
-    // out out_unnamed_triangular0@2
-    // out out_c1_exi1_0_tpl@2
-    // out out_c1_exi1_1_tpl@2
+    // i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x(BLACKBOX,8)@8
+    // out out_o_valid@12
+    // out out_unnamed_triangular0@12
+    // out out_c1_exi1_0_tpl@12
+    // out out_c1_exi1_1_tpl@12
     triangular_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_triangular0 thei_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x (
-        .in_enable(i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_enable),
         .in_i_valid(input_accepted_and_q),
         .in_c1_eni1_0_tpl(in_c1_eni1_0_tpl),
         .in_c1_eni1_1_tpl(in_c1_eni1_1_tpl),
@@ -64,45 +63,64 @@ module triangular_i_sfc_s_c1_in_wt_entry_s_c1_enter_triangular5 (
         .out_c1_exi1_0_tpl(i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_c1_exi1_0_tpl),
         .out_c1_exi1_1_tpl(i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_c1_exi1_1_tpl),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
+
+    // GND(CONSTANT,0)
+    assign GND_q = $unsigned(1'b0);
 
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // not_stall_out(LOGICAL,3)
-    assign not_stall_out_q = ~ (i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_valid_mask);
+    // not_stall_out(LOGICAL,4)
+    assign not_stall_out_q = ~ (i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_stall_entry);
 
-    // input_accepted_and(LOGICAL,2)
+    // input_accepted_and(LOGICAL,3)
     assign input_accepted_and_q = in_i_valid & not_stall_out_q;
 
-    // i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x(BLACKBOX,6)@2
+    // i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x(BLACKBOX,7)@12
+    // in in_mask_valid@20000000
     // in in_stall_in@20000000
     // out out_stall_entry@20000000
+    // out out_valid_out@16
+    // out out_data_out_0_tpl@16
+    // out out_data_out_1_tpl@16
     triangular_i_llvm_fpga_sfc_exit_s_c1_out0000_c1_exit_triangular0 thei_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x (
         .in_dec_pipelined_thread(in_c0_exe1),
         .in_inc_pipelined_thread(in_c0_exe2),
         .in_input_accepted(input_accepted_and_q),
+        .in_mask_valid(GND_q),
         .in_stall_in(in_i_stall),
         .in_valid_in(i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_o_valid),
         .in_data_in_0_tpl(i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_c1_exi1_0_tpl),
         .in_data_in_1_tpl(i_sfc_logic_s_c1_in_wt_entry_triangulars_c1_enter_triangular0_aunroll_x_out_c1_exi1_1_tpl),
-        .out_enable(i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_enable),
         .out_stall_entry(i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_stall_entry),
-        .out_valid_mask(i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_valid_mask),
         .out_valid_out(i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_valid_out),
         .out_data_out_0_tpl(i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_data_out_0_tpl),
         .out_data_out_1_tpl(i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_data_out_1_tpl),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
-    // sync_out(GPOUT,5)@20000000
+    // sync_out(GPOUT,6)@20000000
     assign out_o_stall = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_stall_entry;
 
-    // dupName_0_sync_out_aunroll_x(GPOUT,9)@2
+    // dupName_0_sync_out_aunroll_x(GPOUT,10)@16
     assign out_c1_exit_0_tpl = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_data_out_0_tpl;
     assign out_c1_exit_1_tpl = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_data_out_1_tpl;
     assign out_o_valid = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_triangulars_c1_exit_triangular1_aunroll_x_out_valid_out;
+
+    // rst_sync(RESETSYNC,11)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

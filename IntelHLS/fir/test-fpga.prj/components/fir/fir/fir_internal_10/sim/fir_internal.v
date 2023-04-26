@@ -34,6 +34,7 @@ module fir_internal
    genvar __i;
    genvar __j;
    genvar __k;
+   logic resetn_extended;
    logic local_avm_aspace64_enable [1][1];
    logic local_avm_aspace64_read [1][1];
    logic local_avm_aspace64_write [1][1];
@@ -61,7 +62,7 @@ module fir_internal
    fir_function_wrapper fir_internal
    (
       .clock(clock),
-      .resetn(resetn),
+      .resetn(resetn_extended),
       .d_i(d_i),
       .idx(idx),
       .start(start),
@@ -69,30 +70,45 @@ module fir_internal
       .done(done),
       .stall(stall),
       .returndata(returndata),
+      // AVM avm_unnamed_fir6_fir
+      .avm_unnamed_fir6_fir_enable(local_avm_aspace64_enable[0][0]),
+      .avm_unnamed_fir6_fir_read(local_avm_aspace64_read[0][0]),
+      .avm_unnamed_fir6_fir_write(local_avm_aspace64_write[0][0]),
+      .avm_unnamed_fir6_fir_address(local_avm_aspace64_address[0][0]),
+      .avm_unnamed_fir6_fir_writedata(local_avm_aspace64_writedata[0][0]),
+      .avm_unnamed_fir6_fir_byteenable(local_avm_aspace64_byteenable[0][0]),
+      .avm_unnamed_fir6_fir_waitrequest(local_avm_aspace64_waitrequest[0][0]),
+      .avm_unnamed_fir6_fir_readdata(local_avm_aspace64_readdata[0][0]),
+      .avm_unnamed_fir6_fir_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
+      .avm_unnamed_fir6_fir_burstcount(local_avm_aspace64_burstcount[0][0]),
+      .avm_unnamed_fir6_fir_writeack(local_avm_aspace64_writeack[0][0]),
       // AVM avm_unnamed_fir5_fir
-      .avm_unnamed_fir5_fir_enable(local_avm_aspace64_enable[0][0]),
-      .avm_unnamed_fir5_fir_read(local_avm_aspace64_read[0][0]),
-      .avm_unnamed_fir5_fir_write(local_avm_aspace64_write[0][0]),
-      .avm_unnamed_fir5_fir_address(local_avm_aspace64_address[0][0]),
-      .avm_unnamed_fir5_fir_writedata(local_avm_aspace64_writedata[0][0]),
-      .avm_unnamed_fir5_fir_byteenable(local_avm_aspace64_byteenable[0][0]),
-      .avm_unnamed_fir5_fir_waitrequest(local_avm_aspace64_waitrequest[0][0]),
-      .avm_unnamed_fir5_fir_readdata(local_avm_aspace64_readdata[0][0]),
-      .avm_unnamed_fir5_fir_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
-      .avm_unnamed_fir5_fir_burstcount(local_avm_aspace64_burstcount[0][0]),
-      .avm_unnamed_fir5_fir_writeack(local_avm_aspace64_writeack[0][0]),
-      // AVM avm_unnamed_fir4_fir
-      .avm_unnamed_fir4_fir_enable(local_avm_aspace65_enable[0][0]),
-      .avm_unnamed_fir4_fir_read(local_avm_aspace65_read[0][0]),
-      .avm_unnamed_fir4_fir_write(local_avm_aspace65_write[0][0]),
-      .avm_unnamed_fir4_fir_address(local_avm_aspace65_address[0][0]),
-      .avm_unnamed_fir4_fir_writedata(local_avm_aspace65_writedata[0][0]),
-      .avm_unnamed_fir4_fir_byteenable(local_avm_aspace65_byteenable[0][0]),
-      .avm_unnamed_fir4_fir_waitrequest(local_avm_aspace65_waitrequest[0][0]),
-      .avm_unnamed_fir4_fir_readdata(local_avm_aspace65_readdata[0][0]),
-      .avm_unnamed_fir4_fir_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
-      .avm_unnamed_fir4_fir_burstcount(local_avm_aspace65_burstcount[0][0]),
-      .avm_unnamed_fir4_fir_writeack(local_avm_aspace65_writeack[0][0])
+      .avm_unnamed_fir5_fir_enable(local_avm_aspace65_enable[0][0]),
+      .avm_unnamed_fir5_fir_read(local_avm_aspace65_read[0][0]),
+      .avm_unnamed_fir5_fir_write(local_avm_aspace65_write[0][0]),
+      .avm_unnamed_fir5_fir_address(local_avm_aspace65_address[0][0]),
+      .avm_unnamed_fir5_fir_writedata(local_avm_aspace65_writedata[0][0]),
+      .avm_unnamed_fir5_fir_byteenable(local_avm_aspace65_byteenable[0][0]),
+      .avm_unnamed_fir5_fir_waitrequest(local_avm_aspace65_waitrequest[0][0]),
+      .avm_unnamed_fir5_fir_readdata(local_avm_aspace65_readdata[0][0]),
+      .avm_unnamed_fir5_fir_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
+      .avm_unnamed_fir5_fir_burstcount(local_avm_aspace65_burstcount[0][0]),
+      .avm_unnamed_fir5_fir_writeack(local_avm_aspace65_writeack[0][0])
+   );
+
+   // INST global_reset_extender_inst of acl_reset_handler
+   acl_reset_handler
+   #(
+      .ASYNC_RESET(0),
+      .USE_SYNCHRONIZER(0),
+      .PULSE_EXTENSION(70),
+      .PIPE_DEPTH(0)
+   )
+   global_reset_extender_inst
+   (
+      .clk(clock),
+      .i_resetn(resetn),
+      .o_sclrn(resetn_extended)
    );
 
    generate
@@ -169,12 +185,12 @@ module fir_internal
             // INST mem0 of acl_mem1x
             acl_mem1x
             #(
-               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .INTENDED_DEVICE_FAMILY("Stratix 10"),
                .DEPTH_WORDS(1024),
                .WIDTH(32),
-               .MEM_LATENCY(3),
-               .ASYNC_RESET(1),
-               .SYNCHRONIZE_RESET(0),
+               .MEM_LATENCY(4),
+               .ASYNC_RESET(0),
+               .SYNCHRONIZE_RESET(1),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
                .RAM_OPERATION_MODE("DUAL_PORT"),
@@ -185,7 +201,7 @@ module fir_internal
             mem0
             (
                .clk(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // AVS avs_port1
                .avs_port1_enable(port_enable[1]),
                .avs_port1_read(port_read[1]),
@@ -238,7 +254,7 @@ module fir_internal
             router
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                .bank_select(bank_select),
                // ICM m
                .m_arb_request(local_icm_arb_request[__i][__j]),
@@ -320,11 +336,11 @@ module fir_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of fir_internal_ic_17240874513320749926
-            fir_internal_ic_17240874513320749926 data_ic
+            // INST data_ic of fir_internal_ic_2063673880803286865
+            fir_internal_ic_2063673880803286865 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -445,12 +461,12 @@ module fir_internal
             // INST mem0 of acl_mem1x
             acl_mem1x
             #(
-               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .INTENDED_DEVICE_FAMILY("Stratix 10"),
                .DEPTH_WORDS(1024),
                .WIDTH(32),
-               .MEM_LATENCY(3),
-               .ASYNC_RESET(1),
-               .SYNCHRONIZE_RESET(0),
+               .MEM_LATENCY(4),
+               .ASYNC_RESET(0),
+               .SYNCHRONIZE_RESET(1),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
                .RAM_OPERATION_MODE("DUAL_PORT"),
@@ -461,7 +477,7 @@ module fir_internal
             mem0
             (
                .clk(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // AVS avs_port1
                .avs_port1_enable(port_enable[1]),
                .avs_port1_read(port_read[1]),
@@ -514,7 +530,7 @@ module fir_internal
             router
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                .bank_select(bank_select),
                // ICM m
                .m_arb_request(local_icm_arb_request[__j][__k]),
@@ -596,11 +612,11 @@ module fir_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of fir_internal_ic_17240874513320749926
-            fir_internal_ic_17240874513320749926 data_ic
+            // INST data_ic of fir_internal_ic_2063673880803286865
+            fir_internal_ic_2063673880803286865 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -650,9 +666,9 @@ module fir_internal
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE fir_internal_ic_17240874513320749926
+// MODULE fir_internal_ic_2063673880803286865
 /////////////////////////////////////////////////////////////////
-module fir_internal_ic_17240874513320749926
+module fir_internal_ic_2063673880803286865
 (
    input logic clock,
    input logic resetn,
@@ -797,10 +813,10 @@ module fir_internal_ic_17240874513320749926
          .WRP_FIFO_DEPTH(0),
          .RRP_FIFO_DEPTH(0),
          .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(3),
+         .AGENT_FIXED_LATENCY(4),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
+         .ASYNC_RESET(0),
+         .SYNCHRONIZE_RESET(1)
       )
       s_endp
       (

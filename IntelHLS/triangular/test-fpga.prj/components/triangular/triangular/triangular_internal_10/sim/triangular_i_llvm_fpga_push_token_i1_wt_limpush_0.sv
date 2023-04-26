@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_token_i1_wt_limpush_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -117,7 +117,7 @@ module triangular_i_llvm_fpga_push_token_i1_wt_limpush_0 (
         .INF_LOOP_INITIALIZATION(1'b0),
         .MIN_FIFO_LATENCY(0),
         .STYLE("TOKEN"),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .DATA_WIDTH(1),
         .ENABLED(0),
         .RAM_FIFO_DEPTH_INC(0),

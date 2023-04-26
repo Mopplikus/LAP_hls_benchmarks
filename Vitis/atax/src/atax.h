@@ -4,6 +4,7 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include <stdio.h>
 
 typedef uint32_t out_int_t; 
 typedef uint32_t in_int_t;

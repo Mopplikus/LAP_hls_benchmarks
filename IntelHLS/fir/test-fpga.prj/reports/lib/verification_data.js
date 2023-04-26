@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"fir"
       , "data":
-      ['1', '1015,1015,1015', 'n/a,n/a,n/a']
+      ['1', '1110,1110,1110', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '1015,1015,1015', 'n/a,n/a,n/a']
+      ['1', '1110,1110,1110', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

@@ -4,12 +4,12 @@
   , "debug_enabled":"true"
   , "type":"module"
   , "total_percent":
-  [0.0498507, 0.0318352, 0.0209504, 0.147438, 0.131752]
+  [0.0295129, 0.0172004, 0.0136638, 0.0597219, 0.0347222]
   , "total":
-  [252, 358, 4, 2, 1]
+  [321, 510, 7, 2, 0]
   , "name":"System"
   , "max_resources":
-  [854400, 1708800, 2713, 1518, 42720]
+  [1866240, 3732480, 11721, 5760, 93312]
   , "children":
   [
     {
@@ -17,9 +17,9 @@
       , "compute_units":1
       , "type":"function"
       , "total_percent":
-      [0.0498507, 0.0318352, 0.0209504, 0.147438, 0.131752]
+      [0.0295129, 0.0172004, 0.0136638, 0.0597219, 0.0347222]
       , "total_kernel_resources":
-      [252, 358, 4, 1.5, 1]
+      [321, 510, 7, 1.5, 0]
       , "details":
       [
         {
@@ -71,7 +71,7 @@
           "name":"Variable: \n - 'i' (fir.cpp:23)"
           , "type":"resource"
           , "data":
-          [14, 51, 0, 0, 0]
+          [16, 86, 0, 0, 0]
           , "debug":
           [
             [
@@ -89,15 +89,15 @@
             }
             , {
               "type":"text"
-              , "text":"1 register of width 11 bits and depth 1"
+              , "text":"1 register of width 11 bits"
             }
             , {
               "type":"text"
-              , "text":"1 register of width 32 bits and depth 1"
+              , "text":"1 register of width 32 bits"
             }
             , {
               "type":"brief"
-              , "text":"Register,\n1 reg, 11 width by 1 depth,\n1 reg, 32 width by 1 depth"
+              , "text":"Register,\n1 reg, 11 width,\n1 reg, 32 width"
             }
           ]
         }
@@ -105,7 +105,7 @@
           "name":"Variable: \n - 'tmp' (fir.cpp:21)"
           , "type":"resource"
           , "data":
-          [7, 36, 0, 0, 0]
+          [8, 64, 0, 0, 0]
           , "debug":
           [
             [
@@ -123,11 +123,11 @@
             }
             , {
               "type":"text"
-              , "text":"1 register of width 32 bits and depth 1"
+              , "text":"1 register of width 32 bits"
             }
             , {
               "type":"brief"
-              , "text":"Register,\n1 reg, 32 width by 1 depth"
+              , "text":"Register,\n1 reg, 32 width"
             }
           ]
         }
@@ -209,24 +209,32 @@
           , "children":
           [
             {
-              "name":"Feedback"
+              "name":"State"
               , "type":"resource"
               , "data":
-              [14, 9, 0, 0, 0]
+              [3, 14, 0, 0, 0]
               , "details":
               [
                 {
                   "type":"brief"
-                  , "text":"Loop-carried dependencies"
+                  , "text":"Live values and control logic"
                 }
                 , {
                   "type":"text"
-                  , "text":"Resources for loop-carried dependencies. To reduce this area:"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
                   , "details":
                   [
                     {
                       "type":"text"
-                      , "text":"reduce number and size of loop-carried variables"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
                     }
                   ]
                 }
@@ -234,84 +242,18 @@
               , "children":
               [
                 {
-                  "name":"fir.cpp:9"
+                  "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [14, 9, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/fir/fir.cpp"
-                        , "line":9
-                      }
-                    ]
-                  ]
+                  [3, 14, 0, 0, 0]
                 }
               ]
             }
             , {
-              "name":"Cluster logic"
-              , "type":"resource"
-              , "data":
-              [1, 0, 0, 0, 0]
-              , "details":
-              [
-                {
-                  "type":"brief"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall"
-                }
-                , {
-                  "type":"text"
-                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
-                }
-              ]
-            }
-            , {
-              "name":"Computation"
-              , "type":"resource"
-              , "children":
-              [
-                {
-                  "name":"fir.cpp:9"
-                  , "type":"resource"
-                  , "data":
-                  [2, 0, 0, 0, 0]
-                  , "debug":
-                  [
-                    [
-                      {
-                        "filename":"/home/dirren/IntelHLS/fir/fir.cpp"
-                        , "line":9
-                      }
-                    ]
-                  ]
-                  , "children":
-                  [
-                    {
-                      "name":"Stream Read"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [2, 0, 0, 0, 0]
-                    }
-                  ]
-                  , "replace_name":"true"
-                }
-              ]
-            }
-          ]
-        }
-        , {
-          "name":"fir.B2"
-          , "type":"basicblock"
-          , "children":
-          [
-            {
               "name":"Feedback"
               , "type":"resource"
               , "data":
-              [5, 8, 0, 0, 0]
+              [16, 9, 0, 0, 0]
               , "details":
               [
                 {
@@ -336,7 +278,39 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [5, 8, 0, 0, 0]
+                  [9, 2, 0, 0, 0]
+                }
+                , {
+                  "name":"fir.cpp:9"
+                  , "type":"resource"
+                  , "data":
+                  [7, 7, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/fir/fir.cpp"
+                        , "line":9
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [16, 13, 1, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
                 }
               ]
             }
@@ -346,32 +320,88 @@
               , "children":
               [
                 {
-                  "name":"fir.cpp:24"
+                  "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [2, 0, 0, 0, 0]
+                  [1, 0, 0, 0, 0]
                   , "debug":
                   [
                     [
                       {
-                        "filename":"/home/dirren/IntelHLS/fir/fir.cpp"
-                        , "line":24
+                        "filename":""
+                        , "line":0
                       }
                     ]
                   ]
                   , "children":
                   [
                     {
-                      "name":"FFwd Destination"
+                      "name":"1-bit And"
                       , "type":"resource"
                       , "count":1
                       , "data":
-                      [2, 0, 0, 0, 0]
+                      [1, 0, 0, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"fir.cpp:9"
+                  , "type":"resource"
+                  , "data":
+                  [1, 0, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"/home/dirren/IntelHLS/fir/fir.cpp"
+                        , "line":9
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Stream Read"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1, 0, 0, 0, 0]
                     }
                   ]
                   , "replace_name":"true"
                 }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"fir.B2"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [29, 44, 1, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall"
+                }
                 , {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
                   "name":"fir.cpp:27"
                   , "type":"resource"
                   , "data":
@@ -410,7 +440,7 @@
               "name":"State"
               , "type":"resource"
               , "data":
-              [18, 128, 0, 0, 0]
+              [37, 193, 0, 0, 0]
               , "details":
               [
                 {
@@ -443,7 +473,7 @@
                   "name":"No Source Line"
                   , "type":"resource"
                   , "data":
-                  [18, 96, 0, 0, 0]
+                  [37, 161, 0, 0, 0]
                 }
                 , {
                   "name":"fir.cpp:24"
@@ -466,7 +496,7 @@
               "name":"Feedback"
               , "type":"resource"
               , "data":
-              [42, 35, 0, 0, 0]
+              [54, 9, 0, 0, 0]
               , "details":
               [
                 {
@@ -491,7 +521,7 @@
                   "name":"fir.cpp:21"
                   , "type":"resource"
                   , "data":
-                  [1, 0, 0, 0, 0]
+                  [16, 0, 0, 0, 0]
                   , "debug":
                   [
                     [
@@ -506,7 +536,7 @@
                   "name":"fir.cpp:23"
                   , "type":"resource"
                   , "data":
-                  [41, 35, 0, 0, 0]
+                  [38, 9, 0, 0, 0]
                   , "debug":
                   [
                     [
@@ -523,7 +553,7 @@
               "name":"Cluster logic"
               , "type":"resource"
               , "data":
-              [8, 6, 0, 0, 1]
+              [17, 14, 1, 0, 0]
               , "details":
               [
                 {
@@ -545,7 +575,7 @@
                   "name":"fir.cpp:23"
                   , "type":"resource"
                   , "data":
-                  [10, 1, 0, 0, 0]
+                  [5, 0, 0, 0, 0]
                   , "debug":
                   [
                     [
@@ -562,24 +592,10 @@
                       , "type":"resource"
                       , "count":1
                       , "data":
-                      [1, 1, 0, 0, 0]
-                    }
-                    , {
-                      "name":"1-bit Or"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
                       [1, 0, 0, 0, 0]
                     }
                     , {
                       "name":"11-bit Integer Compare"
-                      , "type":"resource"
-                      , "count":1
-                      , "data":
-                      [4, 0, 0, 0, 0]
-                    }
-                    , {
-                      "name":"4-bit Select"
                       , "type":"resource"
                       , "count":1
                       , "data":
@@ -592,7 +608,7 @@
                   "name":"fir.cpp:24"
                   , "type":"resource"
                   , "data":
-                  [126, 82, 0, 1.5, 0]
+                  [115, 62, 0, 1.5, 0]
                   , "debug":
                   [
                     [
@@ -616,7 +632,7 @@
                       , "type":"resource"
                       , "count":1
                       , "data":
-                      [32, 0, 0, 1.5, 0]
+                      [55, 46, 0, 1.5, 0]
                     }
                     , {
                       "name":"32-bit Integer Subtract"
@@ -630,7 +646,7 @@
                       , "type":"resource"
                       , "count":2
                       , "data":
-                      [52, 82, 0, 0, 0]
+                      [18, 16, 0, 0, 0]
                       , "details":
                       [
                         {

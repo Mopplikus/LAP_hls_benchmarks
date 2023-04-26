@@ -1,0 +1,6 @@
+`ifndef KS_SLICE_EXTERNAL_INTERFACES_DEF_E_SV
+`define KS_SLICE_EXTERNAL_INTERFACES_DEF_E_SV
+
+`include "cpm5n_ks_slice_external_interfaces_v10_def.svh"
+
+`endif //KS_SLICE_EXTERNAL_INTERFACES_DEF_E_SV

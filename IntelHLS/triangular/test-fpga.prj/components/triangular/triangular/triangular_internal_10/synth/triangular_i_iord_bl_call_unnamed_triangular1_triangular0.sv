@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_iord_bl_call_triangular_unnamed_triangular1_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -68,6 +68,7 @@ module triangular_i_iord_bl_call_unnamed_triangular1_triangular0 (
     wire [63:0] ip_dsdk_adapt_bitselect2_b;
     wire [63:0] ip_dsdk_adapt_bitselect4_b;
     wire [31:0] ip_dsdk_adapt_bitselect6_b;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
     // c32_0(CONSTANT,3)
@@ -103,10 +104,10 @@ module triangular_i_iord_bl_call_unnamed_triangular1_triangular0 (
         .CAPACITY_FROM_CHANNEL(0),
         .DISCONNECT_UPSTREAM(0),
         .INTER_KERNEL_PIPELINING(0),
-        .STAGING_CAPACITY(1),
+        .STAGING_CAPACITY(0),
         .USE_STALL_LATENCY_SIDEPATH(0),
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .CUTPATHS(0),
         .DATA_WIDTH(192),
         .EMPTY_WIDTH(0),
@@ -130,7 +131,7 @@ module triangular_i_iord_bl_call_unnamed_triangular1_triangular0 (
         .o_valid(iord_o_valid_bitsignaltemp),
         .profile_total_fifo_size_incr(),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
     // regfree_osync(GPOUT,14)
@@ -151,10 +152,23 @@ module triangular_i_iord_bl_call_unnamed_triangular1_triangular0 (
     // ip_dsdk_adapt_bitselect2(BITSELECT,6)
     assign ip_dsdk_adapt_bitselect2_b = iord_o_data[63:0];
 
-    // dupName_0_sync_out_aunroll_x(GPOUT,19)@2
+    // dupName_0_sync_out_aunroll_x(GPOUT,19)@10
     assign out_o_data_0_tpl = ip_dsdk_adapt_bitselect2_b;
     assign out_o_data_1_tpl = ip_dsdk_adapt_bitselect4_b;
     assign out_o_data_2_tpl = ip_dsdk_adapt_bitselect6_b;
     assign out_o_valid = iord_o_valid;
+
+    // rst_sync(RESETSYNC,20)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

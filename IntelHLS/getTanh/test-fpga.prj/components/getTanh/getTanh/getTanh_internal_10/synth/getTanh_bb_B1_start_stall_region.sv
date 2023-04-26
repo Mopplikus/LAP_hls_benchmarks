@@ -16,212 +16,654 @@
 
 // SystemVerilog created from bb_getTanh_B1_start_stall_region
 // Created for function/kernel getTanh
-// SystemVerilog created on Fri Apr  7 17:19:40 2023
+// SystemVerilog created on Tue Apr 25 16:39:38 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module getTanh_bb_B1_start_stall_region (
     input wire [0:0] in_iord_bl_call_getTanh_i_fifodata,
     input wire [0:0] in_iord_bl_call_getTanh_i_fifovalid,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out,
-    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out,
-    input wire [0:0] in_feedback_in_1,
-    output wire [0:0] out_feedback_stall_out_1,
-    input wire [0:0] in_feedback_valid_in_1,
-    input wire [0:0] in_pipeline_stall_in,
-    output wire [0:0] out_pipeline_valid_out,
-    input wire [0:0] in_stall_in,
-    output wire [0:0] out_stall_out,
-    input wire [0:0] in_valid_in,
     output wire [0:0] out_iord_bl_call_getTanh_o_fifoready,
     output wire [0:0] out_iord_bl_call_getTanh_o_fifoalmost_full,
+    input wire [0:0] in_feedback_almost_empty_in_1,
+    input wire [0:0] in_feedback_data_in_1,
+    input wire [0:0] in_feedback_empty_in_1,
+    output wire [0:0] out_feedback_stall_out_1,
+    input wire [0:0] in_stall_in,
+    output wire [0:0] out_stall_out,
+    input wire [0:0] in_almost_empty_in,
+    input wire [0:0] in_empty_in,
+    input wire [0:0] in_valid_in,
+    output wire [0:0] out_almost_empty_out,
+    output wire [0:0] out_empty_out,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
-    wire [0:0] getTanh_B1_start_merge_reg_out_stall_out;
-    wire [0:0] getTanh_B1_start_merge_reg_out_valid_out;
-    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_iord_bl_call_getTanh_o_fifoalmost_full;
-    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_iord_bl_call_getTanh_o_fifoready;
-    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_o_stall;
-    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_o_valid;
+    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_iord_bl_call_getTanh_o_fifoalmost_full;
+    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_iord_bl_call_getTanh_o_fifoready;
+    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty;
+    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty;
+    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_stall;
+    wire [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid;
+    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out;
+    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_feedback_stall_out_1;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_stall_out;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out;
     wire [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_stall;
     wire [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_pipeline_valid_out;
     wire [0:0] bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_q;
     wire [0:0] bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_b;
-    wire [0:0] SE_out_getTanh_B1_start_merge_reg_wireValid;
-    wire [0:0] SE_out_getTanh_B1_start_merge_reg_backStall;
-    wire [0:0] SE_out_getTanh_B1_start_merge_reg_V0;
-    wire [0:0] SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_wireValid;
-    wire [0:0] SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_backStall;
-    wire [0:0] SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_V0;
-    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_wireValid;
-    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_backStall;
-    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V0;
-    wire [0:0] SE_stall_entry_wireValid;
-    wire [0:0] SE_stall_entry_backStall;
-    wire [0:0] SE_stall_entry_V0;
-    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_wireValid;
-    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_backStall;
-    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V0;
+    wire [0:0] merged_in_SE_stall_entry_backStall;
+    wire [0:0] merged_in_SE_stall_entry_V0;
+    wire [0:0] merged_in_SE_stall_entry_V1;
+    wire [0:0] merged_in_SE_stall_entry_V2;
+    wire [0:0] merged_in_SE_stall_entry_temp_back_stall;
+    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_backStall;
+    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V0;
+    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V1;
+    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V2;
+    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_temp_back_stall;
+    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_backStall;
+    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V0;
+    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V1;
+    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V2;
+    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_temp_back_stall;
+    wire [0:0] merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_backStall;
+    wire [0:0] merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V0;
+    wire [0:0] merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V1;
+    wire [0:0] merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V2;
+    wire [0:0] merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_temp_back_stall;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg0_q;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg1_q;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg1_q;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg0_q;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg1_q;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg0_q;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg1_q;
+    reg [0:0] i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg0_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg0_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg1_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg1_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg0_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg1_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg0_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg1_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg0_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg1_q;
+    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg0_q;
+    reg [0:0] stall_entry_frontStall_reg0_q;
+    reg [0:0] stall_entry_frontStall_reg1_q;
+    reg [0:0] stall_entry_frontValid_reg1_q;
+    reg [0:0] stall_entry_frontValid_reg0_q;
+    reg [0:0] stall_entry_frontEmpty_reg1_q;
+    reg [0:0] stall_entry_frontEmpty_reg0_q;
+    reg [0:0] stall_entry_frontAlmostEmpty_reg1_q;
+    reg [0:0] stall_entry_frontAlmostEmpty_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg0_q;
+    reg [0:0] rst_sync_rst_sclrn;
 
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg0(REG,58)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg0_q <= $unsigned(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty);
+        end
+    end
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg1(REG,57)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg1_q <= $unsigned(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg0_q);
+        end
+    end
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg0(REG,60)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg0_q <= $unsigned(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty);
+        end
+    end
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg1(REG,59)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg1_q <= $unsigned(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg0_q);
+        end
+    end
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg0(REG,62)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg0_q <= $unsigned(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid);
+        end
+    end
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg1(REG,61)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg1_q <= $unsigned(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg0_q);
+        end
+    end
+
+    // merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2(STALLENABLE,54)
+    assign merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_backStall = in_stall_in;
+    assign merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V0 = i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid_reg1_q;
+    assign merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V1 = i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty_reg1_q;
+    assign merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V2 = i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty_reg1_q;
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg0(REG,55)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg0_q <= $unsigned(merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_backStall);
+        end
+    end
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg1(REG,56)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg1_q <= $unsigned(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg0_q);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg0(REG,63)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg0_q <= $unsigned(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_backStall);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg1(REG,64)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg0_q);
+        end
+    end
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // SE_stall_entry(STALLENABLE,46)
-    // Valid signal propagation
-    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
-    // Backward Stall generation
-    assign SE_stall_entry_backStall = getTanh_B1_start_merge_reg_out_stall_out | ~ (SE_stall_entry_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_stall_entry_wireValid = in_valid_in;
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg0(REG,81)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg0_q <= $unsigned(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_backStall);
+        end
+    end
 
-    // getTanh_B1_start_merge_reg(BLACKBOX,12)@0
-    // in in_stall_in@20000000
-    // out out_data_out@1
-    // out out_stall_out@20000000
-    // out out_valid_out@1
-    getTanh_B1_start_merge_reg thegetTanh_B1_start_merge_reg (
-        .in_data_in(GND_q),
-        .in_stall_in(SE_out_getTanh_B1_start_merge_reg_backStall),
-        .in_valid_in(SE_stall_entry_V0),
-        .out_data_out(),
-        .out_stall_out(getTanh_B1_start_merge_reg_out_stall_out),
-        .out_valid_out(getTanh_B1_start_merge_reg_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg1(REG,82)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg0_q);
+        end
+    end
 
-    // SE_out_getTanh_B1_start_merge_reg(STALLENABLE,41)
-    // Valid signal propagation
-    assign SE_out_getTanh_B1_start_merge_reg_V0 = SE_out_getTanh_B1_start_merge_reg_wireValid;
-    // Backward Stall generation
-    assign SE_out_getTanh_B1_start_merge_reg_backStall = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_stall | ~ (SE_out_getTanh_B1_start_merge_reg_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_getTanh_B1_start_merge_reg_wireValid = getTanh_B1_start_merge_reg_out_valid_out;
+    // stall_entry_frontAlmostEmpty_reg0(REG,80)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontAlmostEmpty_reg0_q <= $unsigned(in_almost_empty_in);
+        end
+    end
 
-    // SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2(STALLENABLE,43)
-    // Valid signal propagation
-    assign SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_V0 = SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_wireValid;
-    // Backward Stall generation
-    assign SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_backStall = in_stall_in | ~ (SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_wireValid = i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_o_valid;
+    // stall_entry_frontAlmostEmpty_reg1(REG,79)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontAlmostEmpty_reg1_q <= $unsigned(stall_entry_frontAlmostEmpty_reg0_q);
+        end
+    end
 
-    // bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(BITJOIN,36)
-    assign bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_q = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out;
+    // stall_entry_frontEmpty_reg0(REG,78)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontEmpty_reg0_q <= $unsigned(in_empty_in);
+        end
+    end
 
-    // bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(BITSELECT,37)
-    assign bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_b = $unsigned(bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_q[0:0]);
+    // stall_entry_frontEmpty_reg1(REG,77)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontEmpty_reg1_q <= $unsigned(stall_entry_frontEmpty_reg0_q);
+        end
+    end
 
-    // i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2(BLACKBOX,13)@2
+    // stall_entry_frontValid_reg0(REG,76)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontValid_reg0_q <= $unsigned(in_valid_in);
+        end
+    end
+
+    // stall_entry_frontValid_reg1(REG,75)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontValid_reg1_q <= $unsigned(stall_entry_frontValid_reg0_q);
+        end
+    end
+
+    // merged_in_SE_stall_entry(STALLENABLE,51)
+    assign merged_in_SE_stall_entry_backStall = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_stall;
+    assign merged_in_SE_stall_entry_V0 = stall_entry_frontValid_reg1_q;
+    assign merged_in_SE_stall_entry_V1 = stall_entry_frontEmpty_reg1_q;
+    assign merged_in_SE_stall_entry_V2 = stall_entry_frontAlmostEmpty_reg1_q;
+
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x(BLACKBOX,26)@0
     // in in_i_stall@20000000
-    // out out_iord_bl_call_getTanh_o_fifoalmost_full@20000000
-    // out out_iord_bl_call_getTanh_o_fifoready@20000000
+    // out out_almost_empty_out@35
+    // out out_empty_out@35
     // out out_o_stall@20000000
-    getTanh_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh0 thei_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2 (
-        .in_i_dependence(bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_b),
-        .in_i_stall(SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_backStall),
-        .in_i_valid(SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V0),
-        .in_iord_bl_call_getTanh_i_fifodata(in_iord_bl_call_getTanh_i_fifodata),
-        .in_iord_bl_call_getTanh_i_fifovalid(in_iord_bl_call_getTanh_i_fifovalid),
-        .out_iord_bl_call_getTanh_o_fifoalmost_full(i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_iord_bl_call_getTanh_o_fifoalmost_full),
-        .out_iord_bl_call_getTanh_o_fifoready(i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_iord_bl_call_getTanh_o_fifoready),
-        .out_o_data(),
-        .out_o_stall(i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_o_stall),
-        .out_o_valid(i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_o_valid),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(STALLENABLE,45)
-    // Valid signal propagation
-    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V0 = SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_wireValid;
-    // Backward Stall generation
-    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_backStall = i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_o_stall | ~ (SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_wireValid = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out;
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(BLACKBOX,14)@1
-    // in in_stall_in@20000000
-    // out out_data_out@2
-    // out out_feedback_stall_out_1@20000000
-    // out out_stall_out@20000000
-    // out out_valid_out@2
-    getTanh_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh0 thei_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1 (
-        .in_data_in(GND_q),
-        .in_dir(GND_q),
-        .in_feedback_in_1(in_feedback_in_1),
-        .in_feedback_valid_in_1(in_feedback_valid_in_1),
-        .in_predicate(GND_q),
-        .in_stall_in(SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_backStall),
-        .in_valid_in(SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V0),
-        .out_data_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out),
-        .out_feedback_stall_out_1(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_feedback_stall_out_1),
-        .out_stall_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x(STALLENABLE,49)
-    // Valid signal propagation
-    assign SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V0 = SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_wireValid;
-    // Backward Stall generation
-    assign SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_backStall = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_stall_out | ~ (SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_wireValid = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid;
-
-    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x(BLACKBOX,32)@1
-    // in in_i_stall@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out@20000000
-    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out@20000000
-    // out out_o_stall@20000000
-    // out out_pipeline_valid_out@20000000
+    // out out_o_valid@35
+    // out out_c0_exit_0_tpl@35
+    // out out_c0_exit_1_tpl@35
     getTanh_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0 thei_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x (
-        .in_i_stall(SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_backStall),
-        .in_i_valid(SE_out_getTanh_B1_start_merge_reg_V0),
-        .in_pipeline_stall_in(in_pipeline_stall_in),
+        .in_almost_empty_in(merged_in_SE_stall_entry_V2),
+        .in_empty_in(merged_in_SE_stall_entry_V1),
+        .in_i_stall(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_in_i_stall_reg1_q),
+        .in_i_valid(merged_in_SE_stall_entry_V0),
         .in_unnamed_getTanh0_0_tpl(GND_q),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out),
-        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out),
+        .out_almost_empty_out(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out),
+        .out_empty_out(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out),
         .out_o_stall(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_stall),
         .out_o_valid(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid),
-        .out_pipeline_valid_out(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_pipeline_valid_out),
         .out_c0_exit_0_tpl(),
         .out_c0_exit_1_tpl(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // ext_sig_sync_out(GPOUT,8)
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_valid_out;
-    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going4_gettanh1_exiting_stall_out;
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg0(REG,84)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg0_q <= $unsigned(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out);
+        end
+    end
 
-    // feedback_stall_out_1_sync(GPOUT,10)
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg1(REG,83)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg0_q);
+        end
+    end
+
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg0(REG,86)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg0_q <= $unsigned(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out);
+        end
+    end
+
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg1(REG,85)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg0_q);
+        end
+    end
+
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg0(REG,88)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg0_q <= $unsigned(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid);
+        end
+    end
+
+    // i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg1(REG,87)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg0_q);
+        end
+    end
+
+    // merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x(STALLENABLE,52)
+    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_backStall = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_stall_out;
+    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V0 = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_o_valid_reg1_q;
+    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V1 = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_empty_out_reg1_q;
+    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V2 = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_almost_empty_out_reg1_q;
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(BLACKBOX,13)@35
+    // in in_stall_in@20000000
+    // out out_almost_empty_out@52
+    // out out_data_out@52
+    // out out_empty_out@52
+    // out out_feedback_stall_out_1@20000000
+    // out out_stall_out@20000000
+    // out out_valid_out@52
+    getTanh_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh0 thei_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1 (
+        .in_almost_empty_in(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V2),
+        .in_data_in(GND_q),
+        .in_dir_in(GND_q),
+        .in_empty_in(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V1),
+        .in_feedback_almost_empty_in_1(in_feedback_almost_empty_in_1),
+        .in_feedback_data_in_1(in_feedback_data_in_1),
+        .in_feedback_empty_in_1(in_feedback_empty_in_1),
+        .in_stall_in(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_in_stall_in_reg1_q),
+        .in_valid_in(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_V0),
+        .out_almost_empty_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out),
+        .out_data_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out),
+        .out_empty_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out),
+        .out_feedback_stall_out_1(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_feedback_stall_out_1),
+        .out_stall_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out),
+        .clock(clock),
+        .resetn(rst_sync_rst_sclrn[0])
+    );
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg0(REG,68)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg1(REG,67)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg0_q);
+        end
+    end
+
+    // bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(BITJOIN,29)
+    assign bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_q = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_data_out_reg1_q;
+
+    // bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(BITSELECT,30)
+    assign bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_b = $unsigned(bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_q[0:0]);
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg0(REG,66)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg1(REG,65)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg0_q);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg0(REG,70)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg1(REG,69)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg0_q);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg0(REG,72)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out);
+        end
+    end
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg1(REG,71)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg0_q);
+        end
+    end
+
+    // merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1(STALLENABLE,53)
+    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_backStall = i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_stall;
+    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V0 = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_valid_out_reg1_q;
+    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_empty_out_reg1_q;
+    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V2 = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_almost_empty_out_reg1_q;
+
+    // i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2(BLACKBOX,12)@52
+    // in in_i_stall@20000000
+    // out out_iord_bl_call_getTanh_o_fifoalmost_full@20000000
+    // out out_iord_bl_call_getTanh_o_fifoready@20000000
+    // out out_o_almost_empty@76
+    // out out_o_data@76
+    // out out_o_empty@76
+    // out out_o_stall@20000000
+    // out out_o_valid@76
+    getTanh_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh0 thei_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2 (
+        .in_almost_empty_in(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V2),
+        .in_empty_in(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V1),
+        .in_i_dependence(bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_b),
+        .in_i_stall(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_in_i_stall_reg1_q),
+        .in_i_valid(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_V0),
+        .in_iord_bl_call_getTanh_i_fifodata(in_iord_bl_call_getTanh_i_fifodata),
+        .in_iord_bl_call_getTanh_i_fifovalid(in_iord_bl_call_getTanh_i_fifovalid),
+        .out_iord_bl_call_getTanh_o_fifoalmost_full(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_iord_bl_call_getTanh_o_fifoalmost_full),
+        .out_iord_bl_call_getTanh_o_fifoready(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_iord_bl_call_getTanh_o_fifoready),
+        .out_o_almost_empty(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_almost_empty),
+        .out_o_data(),
+        .out_o_empty(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_empty),
+        .out_o_stall(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_stall),
+        .out_o_valid(i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_o_valid),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // ext_sig_sync_out(GPOUT,7)
+    assign out_iord_bl_call_getTanh_o_fifoready = i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_iord_bl_call_getTanh_o_fifoready;
+    assign out_iord_bl_call_getTanh_o_fifoalmost_full = i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_out_iord_bl_call_getTanh_o_fifoalmost_full;
+
+    // feedback_stall_out_1_sync(GPOUT,11)
     assign out_feedback_stall_out_1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_gettanh1_out_feedback_stall_out_1;
 
-    // pipeline_valid_out_sync(GPOUT,24)
-    assign out_pipeline_valid_out = i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0_aunroll_x_out_pipeline_valid_out;
+    // stall_entry_frontStall_reg0(REG,73)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontStall_reg0_q <= $unsigned(merged_in_SE_stall_entry_backStall);
+        end
+    end
 
-    // sync_out(GPOUT,28)@0
-    assign out_stall_out = SE_stall_entry_backStall;
+    // stall_entry_frontStall_reg1(REG,74)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontStall_reg1_q <= $unsigned(stall_entry_frontStall_reg0_q);
+        end
+    end
 
-    // dupName_0_ext_sig_sync_out_x(GPOUT,30)
-    assign out_iord_bl_call_getTanh_o_fifoready = i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_iord_bl_call_getTanh_o_fifoready;
-    assign out_iord_bl_call_getTanh_o_fifoalmost_full = i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_out_iord_bl_call_getTanh_o_fifoalmost_full;
+    // sync_out(GPOUT,23)@0
+    assign out_stall_out = stall_entry_frontStall_reg1_q;
 
-    // dupName_0_sync_out_x(GPOUT,31)@2
-    assign out_valid_out = SE_out_i_iord_bl_call_gettanh_unnamed_gettanh2_gettanh2_V0;
+    // dupName_0_sync_out_x(GPOUT,25)@76
+    assign out_almost_empty_out = merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V2;
+    assign out_empty_out = merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V1;
+    assign out_valid_out = merged_in_SE_out_i_iord_bl_call_gettanh_unnamed_gettanh1_gettanh2_V0;
+
+    // rst_sync(RESETSYNC,89)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

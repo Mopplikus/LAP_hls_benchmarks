@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i1_notexitcond_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:15 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -27,7 +27,6 @@ module triangular_i_llvm_fpga_push_i1_notexitcond_0 (
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_data_in,
-    input wire [0:0] in_first_cleanup,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_data_out,
     output wire [0:0] out_valid_out,
@@ -36,6 +35,7 @@ module triangular_i_llvm_fpga_push_i1_notexitcond_0 (
     );
 
     wire [0:0] GND_q;
+    wire [0:0] VCC_q;
     wire [6:0] c_i7_03_q;
     wire [7:0] element_extension2_q;
     wire [0:0] i_llvm_fpga_push_i1_notexitcond_triangular1_data_in;
@@ -65,15 +65,18 @@ module triangular_i_llvm_fpga_push_i1_notexitcond_0 (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // c_i7_03(CONSTANT,4)
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
+
+    // c_i7_03(CONSTANT,5)
     assign c_i7_03_q = $unsigned(7'b0000000);
 
-    // element_extension2(BITJOIN,5)@5
+    // element_extension2(BITJOIN,6)@4
     assign element_extension2_q = {c_i7_03_q, in_data_in};
 
-    // i_llvm_fpga_push_i1_notexitcond_triangular1(EXTIFACE,8)@5
+    // i_llvm_fpga_push_i1_notexitcond_triangular1(EXTIFACE,9)@4
     assign i_llvm_fpga_push_i1_notexitcond_triangular1_data_in = element_extension2_q[0:0];
-    assign i_llvm_fpga_push_i1_notexitcond_triangular1_dir = in_first_cleanup;
+    assign i_llvm_fpga_push_i1_notexitcond_triangular1_dir = VCC_q;
     assign i_llvm_fpga_push_i1_notexitcond_triangular1_feedback_stall_in = in_feedback_stall_in_3;
     assign i_llvm_fpga_push_i1_notexitcond_triangular1_predicate = GND_q;
     assign i_llvm_fpga_push_i1_notexitcond_triangular1_stall_in = in_stall_in;
@@ -90,12 +93,12 @@ module triangular_i_llvm_fpga_push_i1_notexitcond_0 (
     assign i_llvm_fpga_push_i1_notexitcond_triangular1_stall_out[0] = i_llvm_fpga_push_i1_notexitcond_triangular1_stall_out_bitsignaltemp;
     assign i_llvm_fpga_push_i1_notexitcond_triangular1_valid_out[0] = i_llvm_fpga_push_i1_notexitcond_triangular1_valid_out_bitsignaltemp;
     acl_push #(
-        .FIFO_DEPTH(1),
+        .FIFO_DEPTH(0),
         .INF_LOOP(0),
         .INF_LOOP_INITIALIZATION(1'b0),
-        .MIN_FIFO_LATENCY(5),
+        .MIN_FIFO_LATENCY(0),
         .STYLE("REGULAR"),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .DATA_WIDTH(1),
         .ENABLED(0),
         .RAM_FIFO_DEPTH_INC(0),
@@ -117,14 +120,14 @@ module triangular_i_llvm_fpga_push_i1_notexitcond_0 (
         .resetn(resetn)
     );
 
-    // feedback_sync_out(GPOUT,7)
+    // feedback_sync_out(GPOUT,8)
     assign out_feedback_out_3 = i_llvm_fpga_push_i1_notexitcond_triangular1_feedback_out;
     assign out_feedback_valid_out_3 = i_llvm_fpga_push_i1_notexitcond_triangular1_feedback_valid_out;
 
-    // sync_out(GPOUT,10)@5
+    // sync_out(GPOUT,11)@4
     assign out_stall_out = i_llvm_fpga_push_i1_notexitcond_triangular1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,13)@5
+    // dupName_0_sync_out_x(GPOUT,14)@4
     assign out_data_out = i_llvm_fpga_push_i1_notexitcond_triangular1_data_out;
     assign out_valid_out = i_llvm_fpga_push_i1_notexitcond_triangular1_valid_out;
 

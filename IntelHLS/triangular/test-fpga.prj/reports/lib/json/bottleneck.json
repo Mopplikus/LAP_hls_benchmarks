@@ -2,10 +2,457 @@
   "bottlenecks":
   [
     {
+      "name":"A_local"
+      , "id":4294967295
+      , "src":"2787062976"
+      , "dst":"2777712688"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"triangular.B4"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"A_local"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"10"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: triangular.B5(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"23"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"A_local"
+          , "id":2787062976
+          , "start":"10.00"
+          , "parent":"triangular.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"triangular.B5"
+          , "id":2778566960
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":23
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2777712688
+          , "end":"1.00"
+          , "parent":"triangular.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2778566960
+          , "to":2778566960
+        }
+        , {
+          "from":2787062976
+          , "to":2778566960
+        }
+        , {
+          "from":2778566960
+          , "to":2777712688
+        }
+        , {
+          "from":2787062976
+          , "to":2777712688
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"A_local"
+      , "id":4294967295
+      , "src":"2786352368"
+      , "dst":"2775573984"
+      , "type":"fMAX/II"
+      , "brief":"Memory dependency"
+      , "loop":"triangular.B5"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"A_local"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"10"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Estimated fmax reduced to: ":"213.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"LD(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"26"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"LD(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"26"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"ST(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"26"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"A_local"
+          , "id":2786352368
+          , "start":"8.00"
+          , "parent":"triangular.B5"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":2787769184
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":2785461440
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"ST"
+          , "id":2786991312
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2775573984
+          , "end":"16.00"
+          , "parent":"triangular.B5"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2786352368
+          , "to":2787769184
+        }
+        , {
+          "from":2786352368
+          , "to":2785461440
+        }
+        , {
+          "from":2787769184
+          , "to":2786991312
+        }
+        , {
+          "from":2785461440
+          , "to":2786991312
+        }
+        , {
+          "from":2786991312
+          , "to":2775573984
+        }
+        , {
+          "from":2786352368
+          , "to":2775573984
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Unknown variable"
+      , "id":4294967295
+      , "type":"fMAX/II"
+      , "brief":"N/A"
+      , "loop":"triangular.B5"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"triangular.B5"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"23"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"N/A"
+          , "Estimated fmax reduced to: ":"213.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"LD(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"26"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"*(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"26"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"-(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                  , "line":"26"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Or"
+          , "id":2782074032
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":2785461440
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"*"
+          , "id":2774060992
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"-"
+          , "id":2786990608
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"ST"
+          , "id":2786991312
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
+                , "line":26
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2782074032
+          , "to":2785461440
+        }
+        , {
+          "from":2785461440
+          , "to":2774060992
+        }
+        , {
+          "from":2774060992
+          , "to":2786990608
+        }
+        , {
+          "from":2786990608
+          , "to":2786991312
+        }
+      ]
+    }
+    , {
       "name":"?"
       , "id":4294967295
-      , "src":"4287666448"
-      , "dst":"4276123760"
+      , "src":"2786659984"
+      , "dst":"2777732320"
       , "concurrency":"1"
       , "type":"Occupancy limiter"
       , "brief":"Data dependency"
@@ -60,8 +507,8 @@
       [
         {
           "name":"?"
-          , "id":4287666448
-          , "start":"1.00"
+          , "id":2786659984
+          , "start":"9.00"
           , "parent":"triangular.B1.start"
           , "debug":
           [
@@ -76,7 +523,7 @@
         }
         , {
           "name":"triangular.B4"
-          , "id":4282831008
+          , "id":2778573552
           , "debug":
           [
             [
@@ -90,7 +537,7 @@
         }
         , {
           "name":"triangular.B5"
-          , "id":4278566176
+          , "id":2778566960
           , "debug":
           [
             [
@@ -104,7 +551,7 @@
         }
         , {
           "name":"triangular.B2"
-          , "id":4286053152
+          , "id":2774701072
           , "debug":
           [
             [
@@ -118,7 +565,7 @@
         }
         , {
           "name":"Feedback"
-          , "id":4276123760
+          , "id":2777732320
           , "end":"1.00"
           , "parent":"triangular.B3"
           , "debug":
@@ -136,371 +583,28 @@
       , "links":
       [
         {
-          "from":4278566176
-          , "to":4278566176
+          "from":2778566960
+          , "to":2778566960
         }
         , {
-          "from":4282831008
-          , "to":4278566176
+          "from":2778573552
+          , "to":2778566960
         }
         , {
-          "from":4278566176
-          , "to":4286053152
+          "from":2778566960
+          , "to":2774701072
         }
         , {
-          "from":4287666448
-          , "to":4282831008
+          "from":2786659984
+          , "to":2778573552
         }
         , {
-          "from":4286053152
-          , "to":4276123760
+          "from":2774701072
+          , "to":2777732320
         }
         , {
-          "from":4287666448
-          , "to":4276123760
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"A_local"
-      , "id":4294967295
-      , "src":"4276708576"
-      , "dst":"4278165792"
-      , "type":"fMAX/II"
-      , "brief":"Memory dependency"
-      , "loop":"triangular.B5"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"A_local"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"10"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Estimated fmax reduced to: ":"168.0"
-          , "Loop feedback path that lowered II and Fmax: ":
-          [
-            {
-              "type":"text"
-              , "text":"Or(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"26"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"LD(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"26"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"*(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"26"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"-(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"26"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"ST(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"26"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"A_local"
-          , "id":4276708576
-          , "start":"5.00"
-          , "parent":"triangular.B5"
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Or"
-          , "id":4276705376
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"LD"
-          , "id":4276705728
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"*"
-          , "id":4285621328
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"-"
-          , "id":4286173072
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"ST"
-          , "id":4287205472
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Feedback"
-          , "id":4278165792
-          , "end":"10.00"
-          , "parent":"triangular.B5"
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":4276708576
-          , "to":4276705376
-        }
-        , {
-          "from":4276705376
-          , "to":4276705728
-        }
-        , {
-          "from":4276705728
-          , "to":4285621328
-        }
-        , {
-          "from":4285621328
-          , "to":4286173072
-        }
-        , {
-          "from":4286173072
-          , "to":4287205472
-        }
-        , {
-          "from":4287205472
-          , "to":4278165792
-        }
-        , {
-          "from":4276708576
-          , "to":4278165792
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"A_local"
-      , "id":4294967295
-      , "src":"4271028192"
-      , "dst":"4274141040"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Memory dependency"
-      , "loop":"triangular.B4"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"A_local"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"10"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: triangular.B5(%L)"
-              , "links":
-              [
-                {
-                  "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                  , "line":"23"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"A_local"
-          , "id":4271028192
-          , "start":"6.00"
-          , "parent":"triangular.B4"
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"triangular.B5"
-          , "id":4278566176
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":23
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"Feedback"
-          , "id":4274141040
-          , "end":"1.00"
-          , "parent":"triangular.B2"
-          , "debug":
-          [
-            [
-              {
-                "filename":"/home/dirren/IntelHLS/triangular/triangular.cpp"
-                , "line":26
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":4278566176
-          , "to":4278566176
-        }
-        , {
-          "from":4271028192
-          , "to":4278566176
-        }
-        , {
-          "from":4278566176
-          , "to":4274141040
-        }
-        , {
-          "from":4271028192
-          , "to":4274141040
+          "from":2786659984
+          , "to":2777732320
           , "reverse":1
         }
       ]

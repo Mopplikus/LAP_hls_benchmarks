@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.04.07.17:34:48
+# ACDS 21.4 67 linux 2023.04.25.23:40:45
 
 # ----------------------------------------
 # Initialize variables
@@ -197,7 +197,7 @@ alias file_copy {
 # ----------------------------------------
 # Create compilation libraries
 
-set logical_libraries [list "work" "work_lib" "altera_ver" "lpm_ver" "sgate_ver" "altera_mf_ver" "altera_lnsim_ver" "twentynm_ver" "twentynm_hssi_ver" "twentynm_hip_ver"]
+set logical_libraries [list "work" "work_lib" "altera_ver" "lpm_ver" "sgate_ver" "altera_mf_ver" "altera_lnsim_ver" "fourteennm_ver" "fourteennm_hssi_ver"]
 
 proc ensure_lib { lib } { if ![file isdirectory $lib] { vlib $lib } }
 ensure_lib          ./libraries/     
@@ -205,22 +205,20 @@ ensure_lib          ./libraries/work/
 vmap       work     ./libraries/work/
 vmap       work_lib ./libraries/work/
 if [string is false -strict [modelsim_ae_select $FORCE_MODELSIM_AE_SELECTION]] {
-  ensure_lib                   ./libraries/altera_ver/       
-  vmap       altera_ver        ./libraries/altera_ver/       
-  ensure_lib                   ./libraries/lpm_ver/          
-  vmap       lpm_ver           ./libraries/lpm_ver/          
-  ensure_lib                   ./libraries/sgate_ver/        
-  vmap       sgate_ver         ./libraries/sgate_ver/        
-  ensure_lib                   ./libraries/altera_mf_ver/    
-  vmap       altera_mf_ver     ./libraries/altera_mf_ver/    
-  ensure_lib                   ./libraries/altera_lnsim_ver/ 
-  vmap       altera_lnsim_ver  ./libraries/altera_lnsim_ver/ 
-  ensure_lib                   ./libraries/twentynm_ver/     
-  vmap       twentynm_ver      ./libraries/twentynm_ver/     
-  ensure_lib                   ./libraries/twentynm_hssi_ver/
-  vmap       twentynm_hssi_ver ./libraries/twentynm_hssi_ver/
-  ensure_lib                   ./libraries/twentynm_hip_ver/ 
-  vmap       twentynm_hip_ver  ./libraries/twentynm_hip_ver/ 
+  ensure_lib                     ./libraries/altera_ver/         
+  vmap       altera_ver          ./libraries/altera_ver/         
+  ensure_lib                     ./libraries/lpm_ver/            
+  vmap       lpm_ver             ./libraries/lpm_ver/            
+  ensure_lib                     ./libraries/sgate_ver/          
+  vmap       sgate_ver           ./libraries/sgate_ver/          
+  ensure_lib                     ./libraries/altera_mf_ver/      
+  vmap       altera_mf_ver       ./libraries/altera_mf_ver/      
+  ensure_lib                     ./libraries/altera_lnsim_ver/   
+  vmap       altera_lnsim_ver    ./libraries/altera_lnsim_ver/   
+  ensure_lib                     ./libraries/fourteennm_ver/     
+  vmap       fourteennm_ver      ./libraries/fourteennm_ver/     
+  ensure_lib                     ./libraries/fourteennm_hssi_ver/
+  vmap       fourteennm_hssi_ver ./libraries/fourteennm_hssi_ver/
 }
 set design_libraries [dict create]
 set design_libraries [dict merge $design_libraries [fir_cfan::get_design_libraries]]
@@ -238,17 +236,17 @@ alias dev_com {
     echo "\[exec\] dev_com"
   }
   if [string is false -strict [modelsim_ae_select $FORCE_MODELSIM_AE_SELECTION]] {
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.v"                 -work altera_ver       
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/220model.v"                          -work lpm_ver          
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.v"                             -work sgate_ver        
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.v"                         -work altera_mf_ver    
-    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv"                     -work altera_lnsim_ver 
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/twentynm_atoms.v"                    -work twentynm_ver     
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/twentynm_atoms_ncrypt.v"      -work twentynm_ver     
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/twentynm_hssi_atoms_ncrypt.v" -work twentynm_hssi_ver
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/twentynm_hssi_atoms.v"               -work twentynm_hssi_ver
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/twentynm_hip_atoms_ncrypt.v"  -work twentynm_hip_ver 
-    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/twentynm_hip_atoms.v"                -work twentynm_hip_ver 
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_primitives.v"               -work altera_ver         
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/220model.v"                        -work lpm_ver            
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.v"                           -work sgate_ver          
+    eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.v"                       -work altera_mf_ver      
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv"                   -work altera_lnsim_ver   
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/fourteennm_atoms.sv"               -work fourteennm_ver     
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/mentor/fourteennm_atoms_ncrypt.sv" -work fourteennm_ver     
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hssi_atoms.sv"                 -work fourteennm_hssi_ver
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hssi_atoms_ncrypt.sv"          -work fourteennm_hssi_ver
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hip_atoms.sv"                  -work fourteennm_hssi_ver
+    eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hip_atoms_ncrypt.sv"           -work fourteennm_hssi_ver
   }
 }
 

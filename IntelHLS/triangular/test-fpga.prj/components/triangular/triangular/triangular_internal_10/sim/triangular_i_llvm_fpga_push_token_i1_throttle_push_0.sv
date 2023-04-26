@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_token_i1_throttle_push_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -62,25 +62,25 @@ module triangular_i_llvm_fpga_push_token_i1_throttle_push_0 (
     wire i_llvm_fpga_push_token_i1_throttle_push_triangular1_stall_out_bitsignaltemp;
     wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_triangular1_valid_out;
     wire i_llvm_fpga_push_token_i1_throttle_push_triangular1_valid_out_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_data_out;
-    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_stall_out;
-    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_valid_out;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_data_out;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_stall_out;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_valid_out;
 
 
     // adapt_scalar_trunc4(ROUND,2)
     assign adapt_scalar_trunc4_in = i_llvm_fpga_push_token_i1_throttle_push_triangular1_data_out;
     assign adapt_scalar_trunc4_q = adapt_scalar_trunc4_in[0:0];
 
-    // i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg(BLACKBOX,10)@20000000
+    // i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg(BLACKBOX,10)@20000000
     // out out_data_out@20000001
     // out out_valid_out@20000001
-    triangular_i_llvm_fpga_push_token_i1_throttle_push_2_reg thei_llvm_fpga_push_token_i1_throttle_push_triangular2_reg (
+    triangular_i_llvm_fpga_push_token_i1_throttle_push_3_reg thei_llvm_fpga_push_token_i1_throttle_push_triangular3_reg (
         .in_data_in(adapt_scalar_trunc4_q),
         .in_stall_in(in_stall_in),
         .in_valid_in(i_llvm_fpga_push_token_i1_throttle_push_triangular1_valid_out),
-        .out_data_out(i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_data_out),
-        .out_stall_out(i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_stall_out),
-        .out_valid_out(i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_valid_out),
+        .out_data_out(i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_data_out),
+        .out_stall_out(i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_stall_out),
+        .out_valid_out(i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
@@ -102,7 +102,7 @@ module triangular_i_llvm_fpga_push_token_i1_throttle_push_0 (
     assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_dir = VCC_q;
     assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_feedback_stall_in = in_feedback_stall_in_1;
     assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_predicate = GND_q;
-    assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_stall_in = i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_stall_out;
+    assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_stall_in = i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_stall_out;
     assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_valid_in = in_valid_in;
     assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_data_in_bitsignaltemp = i_llvm_fpga_push_token_i1_throttle_push_triangular1_data_in[0];
     assign i_llvm_fpga_push_token_i1_throttle_push_triangular1_dir_bitsignaltemp = i_llvm_fpga_push_token_i1_throttle_push_triangular1_dir[0];
@@ -121,7 +121,7 @@ module triangular_i_llvm_fpga_push_token_i1_throttle_push_0 (
         .INF_LOOP_INITIALIZATION(1'b0),
         .MIN_FIFO_LATENCY(0),
         .STYLE("TOKEN"),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .DATA_WIDTH(1),
         .ENABLED(0),
         .RAM_FIFO_DEPTH_INC(0),
@@ -151,7 +151,7 @@ module triangular_i_llvm_fpga_push_token_i1_throttle_push_0 (
     assign out_stall_out = i_llvm_fpga_push_token_i1_throttle_push_triangular1_stall_out;
 
     // dupName_0_sync_out_x(GPOUT,14)@1
-    assign out_data_out = i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_data_out;
-    assign out_valid_out = i_llvm_fpga_push_token_i1_throttle_push_triangular2_reg_out_valid_out;
+    assign out_data_out = i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_data_out;
+    assign out_valid_out = i_llvm_fpga_push_token_i1_throttle_push_triangular3_reg_out_valid_out;
 
 endmodule

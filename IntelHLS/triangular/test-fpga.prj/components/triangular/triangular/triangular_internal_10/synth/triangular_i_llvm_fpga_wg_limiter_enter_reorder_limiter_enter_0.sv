@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -76,7 +76,7 @@ module triangular_i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_0 (
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular1_exit_stall_out[0] = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular1_exit_stall_out_bitsignaltemp;
     assign i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular1_exit_valid_out[0] = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular1_exit_valid_out_bitsignaltemp;
     acl_work_group_limiter_dspba #(
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .KERNEL_WG_LIMIT(1),
         .MAX_WG_SIZE(1),
         .SYNCHRONIZE_RESET(0),
@@ -107,7 +107,7 @@ module triangular_i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_0 (
     // dupName_0_regfree_osync_x(GPOUT,10)
     assign out_wgl_6_enter_exit_valid_out = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular1_exit_valid_out;
 
-    // dupName_0_sync_out_x(GPOUT,11)@3
+    // dupName_0_sync_out_x(GPOUT,11)@17
     assign out_o_data = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular1_entry_l_wgid;
     assign out_o_valid = i_llvm_fpga_wg_limiter_enter_reorder_limiter_enter_triangular1_entry_valid_out;
 

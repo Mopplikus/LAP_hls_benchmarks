@@ -16,7 +16,7 @@
 
 // SystemVerilog created from fir_function
 // Created for function/kernel fir
-// SystemVerilog created on Fri Apr  7 17:34:03 2023
+// SystemVerilog created on Tue Apr 25 23:40:01 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -30,27 +30,20 @@ module fir_function (
     input wire [0:0] in_iowr_bl_return_fir_i_fifoready,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_start,
-    input wire [31:0] in_unnamed_fir4_fir_avm_readdata,
-    input wire [0:0] in_unnamed_fir4_fir_avm_readdatavalid,
-    input wire [0:0] in_unnamed_fir4_fir_avm_waitrequest,
-    input wire [0:0] in_unnamed_fir4_fir_avm_writeack,
     input wire [31:0] in_unnamed_fir5_fir_avm_readdata,
     input wire [0:0] in_unnamed_fir5_fir_avm_readdatavalid,
     input wire [0:0] in_unnamed_fir5_fir_avm_waitrequest,
     input wire [0:0] in_unnamed_fir5_fir_avm_writeack,
+    input wire [31:0] in_unnamed_fir6_fir_avm_readdata,
+    input wire [0:0] in_unnamed_fir6_fir_avm_readdatavalid,
+    input wire [0:0] in_unnamed_fir6_fir_avm_waitrequest,
+    input wire [0:0] in_unnamed_fir6_fir_avm_writeack,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_iord_bl_call_fir_o_fifoalmost_full,
     output wire [0:0] out_iord_bl_call_fir_o_fifoready,
     output wire [31:0] out_iowr_bl_return_fir_o_fifodata,
     output wire [0:0] out_iowr_bl_return_fir_o_fifovalid,
     output wire [0:0] out_stall_out,
-    output wire [31:0] out_unnamed_fir4_fir_avm_address,
-    output wire [0:0] out_unnamed_fir4_fir_avm_burstcount,
-    output wire [3:0] out_unnamed_fir4_fir_avm_byteenable,
-    output wire [0:0] out_unnamed_fir4_fir_avm_enable,
-    output wire [0:0] out_unnamed_fir4_fir_avm_read,
-    output wire [0:0] out_unnamed_fir4_fir_avm_write,
-    output wire [31:0] out_unnamed_fir4_fir_avm_writedata,
     output wire [31:0] out_unnamed_fir5_fir_avm_address,
     output wire [0:0] out_unnamed_fir5_fir_avm_burstcount,
     output wire [3:0] out_unnamed_fir5_fir_avm_byteenable,
@@ -58,6 +51,13 @@ module fir_function (
     output wire [0:0] out_unnamed_fir5_fir_avm_read,
     output wire [0:0] out_unnamed_fir5_fir_avm_write,
     output wire [31:0] out_unnamed_fir5_fir_avm_writedata,
+    output wire [31:0] out_unnamed_fir6_fir_avm_address,
+    output wire [0:0] out_unnamed_fir6_fir_avm_burstcount,
+    output wire [3:0] out_unnamed_fir6_fir_avm_byteenable,
+    output wire [0:0] out_unnamed_fir6_fir_avm_enable,
+    output wire [0:0] out_unnamed_fir6_fir_avm_read,
+    output wire [0:0] out_unnamed_fir6_fir_avm_write,
+    output wire [31:0] out_unnamed_fir6_fir_avm_writedata,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
@@ -66,35 +66,26 @@ module fir_function (
     wire [0:0] GND_q;
     wire [0:0] VCC_q;
     wire [0:0] bb_fir_B0_runOnce_out_stall_out_0;
+    wire [0:0] bb_fir_B0_runOnce_out_valid_out_0;
     wire [0:0] bb_fir_B1_start_out_feedback_stall_out_1;
     wire [0:0] bb_fir_B1_start_out_iord_bl_call_fir_o_fifoalmost_full;
     wire [0:0] bb_fir_B1_start_out_iord_bl_call_fir_o_fifoready;
-    wire [0:0] bb_fir_B1_start_out_pipeline_valid_out;
     wire [0:0] bb_fir_B1_start_out_stall_out_0;
     wire [0:0] bb_fir_B1_start_out_valid_in_0;
-    wire [0:0] bb_fir_B1_start_out_valid_in_1;
     wire [0:0] bb_fir_B1_start_out_valid_out_0;
-    wire [0:0] bb_fir_B2_out_feedback_out_1;
-    wire [0:0] bb_fir_B2_out_feedback_valid_out_1;
+    wire [0:0] bb_fir_B2_out_feedback_almost_empty_out_1;
+    wire [0:0] bb_fir_B2_out_feedback_data_out_1;
+    wire [0:0] bb_fir_B2_out_feedback_empty_out_1;
     wire [31:0] bb_fir_B2_out_iowr_bl_return_fir_o_fifodata;
     wire [0:0] bb_fir_B2_out_iowr_bl_return_fir_o_fifovalid;
     wire [0:0] bb_fir_B2_out_stall_in_0;
     wire [0:0] bb_fir_B2_out_stall_out_0;
+    wire [0:0] bb_fir_B2_out_valid_in_0;
     wire [0:0] bb_fir_B2_out_valid_out_0;
-    wire [0:0] bb_fir_B3_out_exiting_stall_out;
-    wire [0:0] bb_fir_B3_out_exiting_valid_out;
     wire [31:0] bb_fir_B3_out_intel_reserved_ffwd_0_0;
-    wire [0:0] bb_fir_B3_out_pipeline_valid_out;
+    wire [0:0] bb_fir_B3_out_profile_loop_o_valid;
     wire [0:0] bb_fir_B3_out_stall_in_0;
     wire [0:0] bb_fir_B3_out_stall_out_0;
-    wire [0:0] bb_fir_B3_out_stall_out_1;
-    wire [31:0] bb_fir_B3_out_unnamed_fir4_fir_avm_address;
-    wire [0:0] bb_fir_B3_out_unnamed_fir4_fir_avm_burstcount;
-    wire [3:0] bb_fir_B3_out_unnamed_fir4_fir_avm_byteenable;
-    wire [0:0] bb_fir_B3_out_unnamed_fir4_fir_avm_enable;
-    wire [0:0] bb_fir_B3_out_unnamed_fir4_fir_avm_read;
-    wire [0:0] bb_fir_B3_out_unnamed_fir4_fir_avm_write;
-    wire [31:0] bb_fir_B3_out_unnamed_fir4_fir_avm_writedata;
     wire [31:0] bb_fir_B3_out_unnamed_fir5_fir_avm_address;
     wire [0:0] bb_fir_B3_out_unnamed_fir5_fir_avm_burstcount;
     wire [3:0] bb_fir_B3_out_unnamed_fir5_fir_avm_byteenable;
@@ -102,10 +93,15 @@ module fir_function (
     wire [0:0] bb_fir_B3_out_unnamed_fir5_fir_avm_read;
     wire [0:0] bb_fir_B3_out_unnamed_fir5_fir_avm_write;
     wire [31:0] bb_fir_B3_out_unnamed_fir5_fir_avm_writedata;
+    wire [31:0] bb_fir_B3_out_unnamed_fir6_fir_avm_address;
+    wire [0:0] bb_fir_B3_out_unnamed_fir6_fir_avm_burstcount;
+    wire [3:0] bb_fir_B3_out_unnamed_fir6_fir_avm_byteenable;
+    wire [0:0] bb_fir_B3_out_unnamed_fir6_fir_avm_enable;
+    wire [0:0] bb_fir_B3_out_unnamed_fir6_fir_avm_read;
+    wire [0:0] bb_fir_B3_out_unnamed_fir6_fir_avm_write;
+    wire [31:0] bb_fir_B3_out_unnamed_fir6_fir_avm_writedata;
     wire [0:0] bb_fir_B3_out_valid_in_0;
-    wire [0:0] bb_fir_B3_out_valid_in_1;
     wire [0:0] bb_fir_B3_out_valid_out_0;
-    wire [1:0] c_i2_010_q;
     wire [0:0] fir_B1_start_x_i_capture;
     wire fir_B1_start_x_i_capture_bitsignaltemp;
     wire [0:0] fir_B1_start_x_i_clear;
@@ -142,108 +138,26 @@ module fir_function (
     wire fir_B3_x_i_valid_pred_bitsignaltemp;
     wire [0:0] fir_B3_x_i_valid_succ;
     wire fir_B3_x_i_valid_succ_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going4_fir1_sr_out_o_stall;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going4_fir1_sr_out_o_valid;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo_out_stall_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo_out_valid_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going_fir6_sr_out_o_stall;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going_fir6_sr_out_o_valid;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going_fir6_valid_fifo_out_stall_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going_fir6_valid_fifo_out_valid_out;
-    wire [0:0] loop_limiter_fir0_out_o_stall;
-    wire [0:0] loop_limiter_fir0_out_o_valid;
-    wire [0:0] bb_fir_B2_sr_0_aunroll_x_out_o_stall;
-    wire [0:0] bb_fir_B2_sr_0_aunroll_x_out_o_valid;
-    wire [0:0] bb_fir_B3_sr_1_aunroll_x_out_o_stall;
-    wire [0:0] bb_fir_B3_sr_1_aunroll_x_out_o_valid;
-    wire [0:0] bb_fir_B3_sr_1_aunroll_x_out_o_data_0_tpl;
+    reg [0:0] rst_sync_rst_sclrn;
 
-
-    // c_i2_010(CONSTANT,18)
-    assign c_i2_010_q = $unsigned(2'b00);
-
-    // i_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo(BLACKBOX,24)
-    fir_i_llvm_fpga_pipeline_keep_going4_1_valid_fifo thei_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo (
-        .in_data_in(c_i2_010_q),
-        .in_stall_in(bb_fir_B1_start_out_stall_out_0),
-        .in_valid_in(i_llvm_fpga_pipeline_keep_going4_fir1_sr_out_o_valid),
-        .out_almost_full(),
-        .out_data_out(),
-        .out_stall_out(i_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_pipeline_keep_going_fir6_valid_fifo(BLACKBOX,26)
-    fir_i_llvm_fpga_pipeline_keep_going_6_valid_fifo thei_llvm_fpga_pipeline_keep_going_fir6_valid_fifo (
-        .in_data_in(c_i2_010_q),
-        .in_stall_in(bb_fir_B3_out_stall_out_0),
-        .in_valid_in(i_llvm_fpga_pipeline_keep_going_fir6_sr_out_o_valid),
-        .out_almost_full(),
-        .out_data_out(),
-        .out_stall_out(i_llvm_fpga_pipeline_keep_going_fir6_valid_fifo_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pipeline_keep_going_fir6_valid_fifo_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // bb_fir_B2_sr_0_aunroll_x(BLACKBOX,66)
-    fir_bb_B2_sr_0 thebb_fir_B2_sr_0_aunroll_x (
-        .in_i_stall(bb_fir_B2_out_stall_out_0),
-        .in_i_valid(bb_fir_B3_out_valid_out_0),
-        .in_i_data_0_tpl(GND_q),
-        .out_o_stall(bb_fir_B2_sr_0_aunroll_x_out_o_stall),
-        .out_o_valid(bb_fir_B2_sr_0_aunroll_x_out_o_valid),
-        .out_o_data_0_tpl(),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_pipeline_keep_going_fir6_sr(BLACKBOX,25)
-    fir_i_llvm_fpga_pipeline_keep_going_6_sr thei_llvm_fpga_pipeline_keep_going_fir6_sr (
-        .in_i_data(GND_q),
-        .in_i_stall(i_llvm_fpga_pipeline_keep_going_fir6_valid_fifo_out_stall_out),
-        .in_i_valid(bb_fir_B3_out_pipeline_valid_out),
-        .out_o_data(),
-        .out_o_stall(i_llvm_fpga_pipeline_keep_going_fir6_sr_out_o_stall),
-        .out_o_valid(i_llvm_fpga_pipeline_keep_going_fir6_sr_out_o_valid),
-        .clock(clock),
-        .resetn(resetn)
-    );
 
     // bb_fir_B3(BLACKBOX,5)
     fir_bb_B3 thebb_fir_B3 (
         .in_flush(in_start),
-        .in_forked_0(GND_q),
-        .in_forked_1(bb_fir_B3_sr_1_aunroll_x_out_o_data_0_tpl),
-        .in_pipeline_stall_in(i_llvm_fpga_pipeline_keep_going_fir6_sr_out_o_stall),
-        .in_stall_in_0(bb_fir_B2_sr_0_aunroll_x_out_o_stall),
-        .in_stall_in_1(GND_q),
-        .in_unnamed_fir4_fir_avm_readdata(in_unnamed_fir4_fir_avm_readdata),
-        .in_unnamed_fir4_fir_avm_readdatavalid(in_unnamed_fir4_fir_avm_readdatavalid),
-        .in_unnamed_fir4_fir_avm_waitrequest(in_unnamed_fir4_fir_avm_waitrequest),
-        .in_unnamed_fir4_fir_avm_writeack(in_unnamed_fir4_fir_avm_writeack),
+        .in_stall_in_0(bb_fir_B2_out_stall_out_0),
         .in_unnamed_fir5_fir_avm_readdata(in_unnamed_fir5_fir_avm_readdata),
         .in_unnamed_fir5_fir_avm_readdatavalid(in_unnamed_fir5_fir_avm_readdatavalid),
         .in_unnamed_fir5_fir_avm_waitrequest(in_unnamed_fir5_fir_avm_waitrequest),
         .in_unnamed_fir5_fir_avm_writeack(in_unnamed_fir5_fir_avm_writeack),
-        .in_valid_in_0(i_llvm_fpga_pipeline_keep_going_fir6_valid_fifo_out_valid_out),
-        .in_valid_in_1(bb_fir_B3_sr_1_aunroll_x_out_o_valid),
-        .out_exiting_stall_out(bb_fir_B3_out_exiting_stall_out),
-        .out_exiting_valid_out(bb_fir_B3_out_exiting_valid_out),
+        .in_unnamed_fir6_fir_avm_readdata(in_unnamed_fir6_fir_avm_readdata),
+        .in_unnamed_fir6_fir_avm_readdatavalid(in_unnamed_fir6_fir_avm_readdatavalid),
+        .in_unnamed_fir6_fir_avm_waitrequest(in_unnamed_fir6_fir_avm_waitrequest),
+        .in_unnamed_fir6_fir_avm_writeack(in_unnamed_fir6_fir_avm_writeack),
+        .in_valid_in_0(bb_fir_B1_start_out_valid_out_0),
         .out_intel_reserved_ffwd_0_0(bb_fir_B3_out_intel_reserved_ffwd_0_0),
-        .out_pipeline_valid_out(bb_fir_B3_out_pipeline_valid_out),
+        .out_profile_loop_o_valid(bb_fir_B3_out_profile_loop_o_valid),
         .out_stall_in_0(bb_fir_B3_out_stall_in_0),
         .out_stall_out_0(bb_fir_B3_out_stall_out_0),
-        .out_stall_out_1(bb_fir_B3_out_stall_out_1),
-        .out_unnamed_fir4_fir_avm_address(bb_fir_B3_out_unnamed_fir4_fir_avm_address),
-        .out_unnamed_fir4_fir_avm_burstcount(bb_fir_B3_out_unnamed_fir4_fir_avm_burstcount),
-        .out_unnamed_fir4_fir_avm_byteenable(bb_fir_B3_out_unnamed_fir4_fir_avm_byteenable),
-        .out_unnamed_fir4_fir_avm_enable(bb_fir_B3_out_unnamed_fir4_fir_avm_enable),
-        .out_unnamed_fir4_fir_avm_read(bb_fir_B3_out_unnamed_fir4_fir_avm_read),
-        .out_unnamed_fir4_fir_avm_write(bb_fir_B3_out_unnamed_fir4_fir_avm_write),
-        .out_unnamed_fir4_fir_avm_writedata(bb_fir_B3_out_unnamed_fir4_fir_avm_writedata),
         .out_unnamed_fir5_fir_avm_address(bb_fir_B3_out_unnamed_fir5_fir_avm_address),
         .out_unnamed_fir5_fir_avm_burstcount(bb_fir_B3_out_unnamed_fir5_fir_avm_burstcount),
         .out_unnamed_fir5_fir_avm_byteenable(bb_fir_B3_out_unnamed_fir5_fir_avm_byteenable),
@@ -251,71 +165,15 @@ module fir_function (
         .out_unnamed_fir5_fir_avm_read(bb_fir_B3_out_unnamed_fir5_fir_avm_read),
         .out_unnamed_fir5_fir_avm_write(bb_fir_B3_out_unnamed_fir5_fir_avm_write),
         .out_unnamed_fir5_fir_avm_writedata(bb_fir_B3_out_unnamed_fir5_fir_avm_writedata),
+        .out_unnamed_fir6_fir_avm_address(bb_fir_B3_out_unnamed_fir6_fir_avm_address),
+        .out_unnamed_fir6_fir_avm_burstcount(bb_fir_B3_out_unnamed_fir6_fir_avm_burstcount),
+        .out_unnamed_fir6_fir_avm_byteenable(bb_fir_B3_out_unnamed_fir6_fir_avm_byteenable),
+        .out_unnamed_fir6_fir_avm_enable(bb_fir_B3_out_unnamed_fir6_fir_avm_enable),
+        .out_unnamed_fir6_fir_avm_read(bb_fir_B3_out_unnamed_fir6_fir_avm_read),
+        .out_unnamed_fir6_fir_avm_write(bb_fir_B3_out_unnamed_fir6_fir_avm_write),
+        .out_unnamed_fir6_fir_avm_writedata(bb_fir_B3_out_unnamed_fir6_fir_avm_writedata),
         .out_valid_in_0(bb_fir_B3_out_valid_in_0),
-        .out_valid_in_1(bb_fir_B3_out_valid_in_1),
         .out_valid_out_0(bb_fir_B3_out_valid_out_0),
-        .out_valid_out_1(),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // bb_fir_B3_sr_1_aunroll_x(BLACKBOX,67)
-    fir_bb_B3_sr_1 thebb_fir_B3_sr_1_aunroll_x (
-        .in_i_stall(bb_fir_B3_out_stall_out_1),
-        .in_i_valid(loop_limiter_fir0_out_o_valid),
-        .in_i_data_0_tpl(VCC_q),
-        .out_o_stall(bb_fir_B3_sr_1_aunroll_x_out_o_stall),
-        .out_o_valid(bb_fir_B3_sr_1_aunroll_x_out_o_valid),
-        .out_o_data_0_tpl(bb_fir_B3_sr_1_aunroll_x_out_o_data_0_tpl),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // loop_limiter_fir0(BLACKBOX,45)
-    fir_loop_limiter_0 theloop_limiter_fir0 (
-        .in_i_stall(bb_fir_B3_sr_1_aunroll_x_out_o_stall),
-        .in_i_stall_exit(bb_fir_B3_out_exiting_stall_out),
-        .in_i_valid(bb_fir_B1_start_out_valid_out_0),
-        .in_i_valid_exit(bb_fir_B3_out_exiting_valid_out),
-        .out_o_stall(loop_limiter_fir0_out_o_stall),
-        .out_o_valid(loop_limiter_fir0_out_o_valid),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // i_llvm_fpga_pipeline_keep_going4_fir1_sr(BLACKBOX,23)
-    fir_i_llvm_fpga_pipeline_keep_going4_1_sr thei_llvm_fpga_pipeline_keep_going4_fir1_sr (
-        .in_i_data(GND_q),
-        .in_i_stall(i_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo_out_stall_out),
-        .in_i_valid(bb_fir_B1_start_out_pipeline_valid_out),
-        .out_o_data(),
-        .out_o_stall(i_llvm_fpga_pipeline_keep_going4_fir1_sr_out_o_stall),
-        .out_o_valid(i_llvm_fpga_pipeline_keep_going4_fir1_sr_out_o_valid),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // bb_fir_B1_start(BLACKBOX,3)
-    fir_bb_B1_start thebb_fir_B1_start (
-        .in_feedback_in_1(bb_fir_B2_out_feedback_out_1),
-        .in_feedback_valid_in_1(bb_fir_B2_out_feedback_valid_out_1),
-        .in_iord_bl_call_fir_i_fifodata(in_iord_bl_call_fir_i_fifodata),
-        .in_iord_bl_call_fir_i_fifovalid(in_iord_bl_call_fir_i_fifovalid),
-        .in_pipeline_stall_in(i_llvm_fpga_pipeline_keep_going4_fir1_sr_out_o_stall),
-        .in_stall_in_0(loop_limiter_fir0_out_o_stall),
-        .in_valid_in_0(i_llvm_fpga_pipeline_keep_going4_fir1_valid_fifo_out_valid_out),
-        .in_valid_in_1(in_valid_in),
-        .out_exiting_stall_out(),
-        .out_exiting_valid_out(),
-        .out_feedback_stall_out_1(bb_fir_B1_start_out_feedback_stall_out_1),
-        .out_iord_bl_call_fir_o_fifoalmost_full(bb_fir_B1_start_out_iord_bl_call_fir_o_fifoalmost_full),
-        .out_iord_bl_call_fir_o_fifoready(bb_fir_B1_start_out_iord_bl_call_fir_o_fifoready),
-        .out_pipeline_valid_out(bb_fir_B1_start_out_pipeline_valid_out),
-        .out_stall_out_0(bb_fir_B1_start_out_stall_out_0),
-        .out_stall_out_1(),
-        .out_valid_in_0(bb_fir_B1_start_out_valid_in_0),
-        .out_valid_in_1(bb_fir_B1_start_out_valid_in_1),
-        .out_valid_out_0(bb_fir_B1_start_out_valid_out_0),
         .clock(clock),
         .resetn(resetn)
     );
@@ -325,15 +183,46 @@ module fir_function (
         .in_feedback_stall_in_1(bb_fir_B1_start_out_feedback_stall_out_1),
         .in_intel_reserved_ffwd_0_0(bb_fir_B3_out_intel_reserved_ffwd_0_0),
         .in_iowr_bl_return_fir_i_fifoready(in_iowr_bl_return_fir_i_fifoready),
-        .in_stall_in_0(GND_q),
-        .in_valid_in_0(bb_fir_B2_sr_0_aunroll_x_out_o_valid),
-        .out_feedback_out_1(bb_fir_B2_out_feedback_out_1),
-        .out_feedback_valid_out_1(bb_fir_B2_out_feedback_valid_out_1),
+        .in_stall_in_0(in_stall_in),
+        .in_valid_in_0(bb_fir_B3_out_valid_out_0),
+        .out_feedback_almost_empty_out_1(bb_fir_B2_out_feedback_almost_empty_out_1),
+        .out_feedback_data_out_1(bb_fir_B2_out_feedback_data_out_1),
+        .out_feedback_empty_out_1(bb_fir_B2_out_feedback_empty_out_1),
         .out_iowr_bl_return_fir_o_fifodata(bb_fir_B2_out_iowr_bl_return_fir_o_fifodata),
         .out_iowr_bl_return_fir_o_fifovalid(bb_fir_B2_out_iowr_bl_return_fir_o_fifovalid),
         .out_stall_in_0(bb_fir_B2_out_stall_in_0),
         .out_stall_out_0(bb_fir_B2_out_stall_out_0),
+        .out_valid_in_0(bb_fir_B2_out_valid_in_0),
         .out_valid_out_0(bb_fir_B2_out_valid_out_0),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // bb_fir_B0_runOnce(BLACKBOX,2)
+    fir_bb_B0_runOnce thebb_fir_B0_runOnce (
+        .in_stall_in_0(bb_fir_B1_start_out_stall_out_0),
+        .in_valid_in_0(in_valid_in),
+        .out_stall_out_0(bb_fir_B0_runOnce_out_stall_out_0),
+        .out_valid_out_0(bb_fir_B0_runOnce_out_valid_out_0),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // bb_fir_B1_start(BLACKBOX,3)
+    fir_bb_B1_start thebb_fir_B1_start (
+        .in_feedback_almost_empty_in_1(bb_fir_B2_out_feedback_almost_empty_out_1),
+        .in_feedback_data_in_1(bb_fir_B2_out_feedback_data_out_1),
+        .in_feedback_empty_in_1(bb_fir_B2_out_feedback_empty_out_1),
+        .in_iord_bl_call_fir_i_fifodata(in_iord_bl_call_fir_i_fifodata),
+        .in_iord_bl_call_fir_i_fifovalid(in_iord_bl_call_fir_i_fifovalid),
+        .in_stall_in_0(bb_fir_B3_out_stall_out_0),
+        .in_valid_in_0(bb_fir_B0_runOnce_out_valid_out_0),
+        .out_feedback_stall_out_1(bb_fir_B1_start_out_feedback_stall_out_1),
+        .out_iord_bl_call_fir_o_fifoalmost_full(bb_fir_B1_start_out_iord_bl_call_fir_o_fifoalmost_full),
+        .out_iord_bl_call_fir_o_fifoready(bb_fir_B1_start_out_iord_bl_call_fir_o_fifoready),
+        .out_stall_out_0(bb_fir_B1_start_out_stall_out_0),
+        .out_valid_in_0(bb_fir_B1_start_out_valid_in_0),
+        .out_valid_out_0(bb_fir_B1_start_out_valid_out_0),
         .clock(clock),
         .resetn(resetn)
     );
@@ -344,15 +233,15 @@ module fir_function (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // fir_B1_start_x(EXTIFACE,21)
+    // fir_B1_start_x(EXTIFACE,10)
     assign fir_B1_start_x_i_capture = GND_q;
     assign fir_B1_start_x_i_clear = GND_q;
     assign fir_B1_start_x_i_enable = VCC_q;
     assign fir_B1_start_x_i_shift = GND_q;
-    assign fir_B1_start_x_i_stall_pred = GND_q;
+    assign fir_B1_start_x_i_stall_pred = bb_fir_B1_start_out_stall_out_0;
     assign fir_B1_start_x_i_stall_succ = bb_fir_B2_out_stall_in_0;
-    assign fir_B1_start_x_i_valid_loop = bb_fir_B1_start_out_valid_in_0;
-    assign fir_B1_start_x_i_valid_pred = bb_fir_B1_start_out_valid_in_1;
+    assign fir_B1_start_x_i_valid_loop = bb_fir_B2_out_valid_in_0;
+    assign fir_B1_start_x_i_valid_pred = bb_fir_B1_start_out_valid_in_0;
     assign fir_B1_start_x_i_valid_succ = bb_fir_B2_out_valid_out_0;
     assign fir_B1_start_x_i_capture_bitsignaltemp = fir_B1_start_x_i_capture[0];
     assign fir_B1_start_x_i_clear_bitsignaltemp = fir_B1_start_x_i_clear[0];
@@ -376,18 +265,18 @@ module fir_function (
         .i_valid_pred(fir_B1_start_x_i_valid_pred_bitsignaltemp),
         .i_valid_succ(fir_B1_start_x_i_valid_succ_bitsignaltemp),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
-    // fir_B3_x(EXTIFACE,22)
+    // fir_B3_x(EXTIFACE,11)
     assign fir_B3_x_i_capture = GND_q;
     assign fir_B3_x_i_clear = GND_q;
     assign fir_B3_x_i_enable = VCC_q;
     assign fir_B3_x_i_shift = GND_q;
-    assign fir_B3_x_i_stall_pred = loop_limiter_fir0_out_o_stall;
+    assign fir_B3_x_i_stall_pred = bb_fir_B3_out_stall_out_0;
     assign fir_B3_x_i_stall_succ = bb_fir_B3_out_stall_in_0;
-    assign fir_B3_x_i_valid_loop = bb_fir_B3_out_valid_in_0;
-    assign fir_B3_x_i_valid_pred = bb_fir_B3_out_valid_in_1;
+    assign fir_B3_x_i_valid_loop = bb_fir_B3_out_profile_loop_o_valid;
+    assign fir_B3_x_i_valid_pred = bb_fir_B3_out_valid_in_0;
     assign fir_B3_x_i_valid_succ = bb_fir_B3_out_valid_out_0;
     assign fir_B3_x_i_capture_bitsignaltemp = fir_B3_x_i_capture[0];
     assign fir_B3_x_i_clear_bitsignaltemp = fir_B3_x_i_clear[0];
@@ -411,77 +300,80 @@ module fir_function (
         .i_valid_pred(fir_B3_x_i_valid_pred_bitsignaltemp),
         .i_valid_succ(fir_B3_x_i_valid_succ_bitsignaltemp),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
-    // out_iord_bl_call_fir_o_fifoalmost_full(GPOUT,46)
+    // out_iord_bl_call_fir_o_fifoalmost_full(GPOUT,30)
     assign out_iord_bl_call_fir_o_fifoalmost_full = bb_fir_B1_start_out_iord_bl_call_fir_o_fifoalmost_full;
 
-    // out_iord_bl_call_fir_o_fifoready(GPOUT,47)
+    // out_iord_bl_call_fir_o_fifoready(GPOUT,31)
     assign out_iord_bl_call_fir_o_fifoready = bb_fir_B1_start_out_iord_bl_call_fir_o_fifoready;
 
-    // out_iowr_bl_return_fir_o_fifodata(GPOUT,48)
+    // out_iowr_bl_return_fir_o_fifodata(GPOUT,32)
     assign out_iowr_bl_return_fir_o_fifodata = bb_fir_B2_out_iowr_bl_return_fir_o_fifodata;
 
-    // out_iowr_bl_return_fir_o_fifovalid(GPOUT,49)
+    // out_iowr_bl_return_fir_o_fifovalid(GPOUT,33)
     assign out_iowr_bl_return_fir_o_fifovalid = bb_fir_B2_out_iowr_bl_return_fir_o_fifovalid;
 
-    // bb_fir_B0_runOnce(BLACKBOX,2)
-    fir_bb_B0_runOnce thebb_fir_B0_runOnce (
-        .in_stall_in_0(GND_q),
-        .in_valid_in_0(in_valid_in),
-        .out_stall_out_0(bb_fir_B0_runOnce_out_stall_out_0),
-        .out_valid_out_0(),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // out_stall_out(GPOUT,50)
+    // out_stall_out(GPOUT,34)
     assign out_stall_out = bb_fir_B0_runOnce_out_stall_out_0;
 
-    // out_unnamed_fir4_fir_avm_address(GPOUT,51)
-    assign out_unnamed_fir4_fir_avm_address = bb_fir_B3_out_unnamed_fir4_fir_avm_address;
-
-    // out_unnamed_fir4_fir_avm_burstcount(GPOUT,52)
-    assign out_unnamed_fir4_fir_avm_burstcount = bb_fir_B3_out_unnamed_fir4_fir_avm_burstcount;
-
-    // out_unnamed_fir4_fir_avm_byteenable(GPOUT,53)
-    assign out_unnamed_fir4_fir_avm_byteenable = bb_fir_B3_out_unnamed_fir4_fir_avm_byteenable;
-
-    // out_unnamed_fir4_fir_avm_enable(GPOUT,54)
-    assign out_unnamed_fir4_fir_avm_enable = bb_fir_B3_out_unnamed_fir4_fir_avm_enable;
-
-    // out_unnamed_fir4_fir_avm_read(GPOUT,55)
-    assign out_unnamed_fir4_fir_avm_read = bb_fir_B3_out_unnamed_fir4_fir_avm_read;
-
-    // out_unnamed_fir4_fir_avm_write(GPOUT,56)
-    assign out_unnamed_fir4_fir_avm_write = bb_fir_B3_out_unnamed_fir4_fir_avm_write;
-
-    // out_unnamed_fir4_fir_avm_writedata(GPOUT,57)
-    assign out_unnamed_fir4_fir_avm_writedata = bb_fir_B3_out_unnamed_fir4_fir_avm_writedata;
-
-    // out_unnamed_fir5_fir_avm_address(GPOUT,58)
+    // out_unnamed_fir5_fir_avm_address(GPOUT,35)
     assign out_unnamed_fir5_fir_avm_address = bb_fir_B3_out_unnamed_fir5_fir_avm_address;
 
-    // out_unnamed_fir5_fir_avm_burstcount(GPOUT,59)
+    // out_unnamed_fir5_fir_avm_burstcount(GPOUT,36)
     assign out_unnamed_fir5_fir_avm_burstcount = bb_fir_B3_out_unnamed_fir5_fir_avm_burstcount;
 
-    // out_unnamed_fir5_fir_avm_byteenable(GPOUT,60)
+    // out_unnamed_fir5_fir_avm_byteenable(GPOUT,37)
     assign out_unnamed_fir5_fir_avm_byteenable = bb_fir_B3_out_unnamed_fir5_fir_avm_byteenable;
 
-    // out_unnamed_fir5_fir_avm_enable(GPOUT,61)
+    // out_unnamed_fir5_fir_avm_enable(GPOUT,38)
     assign out_unnamed_fir5_fir_avm_enable = bb_fir_B3_out_unnamed_fir5_fir_avm_enable;
 
-    // out_unnamed_fir5_fir_avm_read(GPOUT,62)
+    // out_unnamed_fir5_fir_avm_read(GPOUT,39)
     assign out_unnamed_fir5_fir_avm_read = bb_fir_B3_out_unnamed_fir5_fir_avm_read;
 
-    // out_unnamed_fir5_fir_avm_write(GPOUT,63)
+    // out_unnamed_fir5_fir_avm_write(GPOUT,40)
     assign out_unnamed_fir5_fir_avm_write = bb_fir_B3_out_unnamed_fir5_fir_avm_write;
 
-    // out_unnamed_fir5_fir_avm_writedata(GPOUT,64)
+    // out_unnamed_fir5_fir_avm_writedata(GPOUT,41)
     assign out_unnamed_fir5_fir_avm_writedata = bb_fir_B3_out_unnamed_fir5_fir_avm_writedata;
 
-    // out_valid_out(GPOUT,65)
-    assign out_valid_out = GND_q;
+    // out_unnamed_fir6_fir_avm_address(GPOUT,42)
+    assign out_unnamed_fir6_fir_avm_address = bb_fir_B3_out_unnamed_fir6_fir_avm_address;
+
+    // out_unnamed_fir6_fir_avm_burstcount(GPOUT,43)
+    assign out_unnamed_fir6_fir_avm_burstcount = bb_fir_B3_out_unnamed_fir6_fir_avm_burstcount;
+
+    // out_unnamed_fir6_fir_avm_byteenable(GPOUT,44)
+    assign out_unnamed_fir6_fir_avm_byteenable = bb_fir_B3_out_unnamed_fir6_fir_avm_byteenable;
+
+    // out_unnamed_fir6_fir_avm_enable(GPOUT,45)
+    assign out_unnamed_fir6_fir_avm_enable = bb_fir_B3_out_unnamed_fir6_fir_avm_enable;
+
+    // out_unnamed_fir6_fir_avm_read(GPOUT,46)
+    assign out_unnamed_fir6_fir_avm_read = bb_fir_B3_out_unnamed_fir6_fir_avm_read;
+
+    // out_unnamed_fir6_fir_avm_write(GPOUT,47)
+    assign out_unnamed_fir6_fir_avm_write = bb_fir_B3_out_unnamed_fir6_fir_avm_write;
+
+    // out_unnamed_fir6_fir_avm_writedata(GPOUT,48)
+    assign out_unnamed_fir6_fir_avm_writedata = bb_fir_B3_out_unnamed_fir6_fir_avm_writedata;
+
+    // out_valid_out(GPOUT,49)
+    assign out_valid_out = bb_fir_B2_out_valid_out_0;
+
+    // rst_sync(RESETSYNC,50)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

@@ -34,6 +34,7 @@ module triangular_internal
    genvar __i;
    genvar __j;
    genvar __k;
+   logic resetn_extended;
    logic local_avm_aspace64_enable [1][1];
    logic local_avm_aspace64_read [1][1];
    logic local_avm_aspace64_write [1][1];
@@ -61,7 +62,7 @@ module triangular_internal
    triangular_function_wrapper triangular_internal
    (
       .clock(clock),
-      .resetn(resetn),
+      .resetn(resetn_extended),
       .x(x),
       .A(A),
       .n(n),
@@ -117,6 +118,21 @@ module triangular_internal
       .avm_memdep_triangular_readdatavalid(local_avm_aspace65_readdatavalid[0][2]),
       .avm_memdep_triangular_burstcount(local_avm_aspace65_burstcount[0][2]),
       .avm_memdep_triangular_writeack(local_avm_aspace65_writeack[0][2])
+   );
+
+   // INST global_reset_extender_inst of acl_reset_handler
+   acl_reset_handler
+   #(
+      .ASYNC_RESET(0),
+      .USE_SYNCHRONIZER(0),
+      .PULSE_EXTENSION(70),
+      .PIPE_DEPTH(0)
+   )
+   global_reset_extender_inst
+   (
+      .clk(clock),
+      .i_resetn(resetn),
+      .o_sclrn(resetn_extended)
    );
 
    generate
@@ -193,12 +209,12 @@ module triangular_internal
             // INST mem0 of acl_mem1x
             acl_mem1x
             #(
-               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .INTENDED_DEVICE_FAMILY("Stratix 10"),
                .DEPTH_WORDS(128),
                .WIDTH(32),
-               .MEM_LATENCY(3),
-               .ASYNC_RESET(1),
-               .SYNCHRONIZE_RESET(0),
+               .MEM_LATENCY(4),
+               .ASYNC_RESET(0),
+               .SYNCHRONIZE_RESET(1),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
                .RAM_OPERATION_MODE("DUAL_PORT"),
@@ -209,7 +225,7 @@ module triangular_internal
             mem0
             (
                .clk(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // AVS avs_port1
                .avs_port1_enable(port_enable[1]),
                .avs_port1_read(port_read[1]),
@@ -262,7 +278,7 @@ module triangular_internal
             router
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                .bank_select(bank_select),
                // ICM m
                .m_arb_request(local_icm_arb_request[__i][__j]),
@@ -344,11 +360,11 @@ module triangular_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of triangular_internal_ic_1308630933056187501
-            triangular_internal_ic_1308630933056187501 data_ic
+            // INST data_ic of triangular_internal_ic_5796937053656915610
+            triangular_internal_ic_5796937053656915610 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -469,12 +485,12 @@ module triangular_internal
             // INST mem0 of acl_mem1x
             acl_mem1x
             #(
-               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .INTENDED_DEVICE_FAMILY("Stratix 10"),
                .DEPTH_WORDS(16384),
                .WIDTH(32),
                .MEM_LATENCY(1),
-               .ASYNC_RESET(1),
-               .SYNCHRONIZE_RESET(0),
+               .ASYNC_RESET(0),
+               .SYNCHRONIZE_RESET(1),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
                .RAM_OPERATION_MODE("DUAL_PORT"),
@@ -485,7 +501,7 @@ module triangular_internal
             mem0
             (
                .clk(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // AVS avs_port1
                .avs_port1_enable(port_enable[1]),
                .avs_port1_read(port_read[1]),
@@ -511,12 +527,12 @@ module triangular_internal
             // INST mem1 of acl_mem1x
             acl_mem1x
             #(
-               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .INTENDED_DEVICE_FAMILY("Stratix 10"),
                .DEPTH_WORDS(16384),
                .WIDTH(32),
                .MEM_LATENCY(1),
-               .ASYNC_RESET(1),
-               .SYNCHRONIZE_RESET(0),
+               .ASYNC_RESET(0),
+               .SYNCHRONIZE_RESET(1),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
                .RAM_OPERATION_MODE("DUAL_PORT"),
@@ -527,7 +543,7 @@ module triangular_internal
             mem1
             (
                .clk(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // AVS avs_port1
                .avs_port1_enable(port_enable[3]),
                .avs_port1_read(port_read[3]),
@@ -580,7 +596,7 @@ module triangular_internal
             router
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                .bank_select(bank_select),
                // ICM m
                .m_arb_request(local_icm_arb_request[__j][__k]),
@@ -652,11 +668,11 @@ module triangular_internal
             assign router[2].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[2].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[2].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of triangular_internal_ic_17660968519235119953
-            triangular_internal_ic_17660968519235119953 data_ic
+            // INST data_ic of triangular_internal_ic_17660897875613033934
+            triangular_internal_ic_17660897875613033934 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -737,11 +753,11 @@ module triangular_internal
             assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of triangular_internal_ic_11528392131029696139
-            triangular_internal_ic_11528392131029696139 data_ic
+            // INST data_ic of triangular_internal_ic_11528313790826212192
+            triangular_internal_ic_11528313790826212192 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -819,11 +835,11 @@ module triangular_internal
             assign icm_in_arb_address[0] = router[2].b_arb_address[0];
             assign icm_in_arb_writedata[0] = router[2].b_arb_writedata[0];
             assign icm_in_arb_byteenable[0] = router[2].b_arb_byteenable[0];
-            // INST data_ic of triangular_internal_ic_17660968519235119953
-            triangular_internal_ic_17660968519235119953 data_ic
+            // INST data_ic of triangular_internal_ic_17660897875613033934
+            triangular_internal_ic_17660897875613033934 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -904,11 +920,11 @@ module triangular_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of triangular_internal_ic_11528392131029696139
-            triangular_internal_ic_11528392131029696139 data_ic
+            // INST data_ic of triangular_internal_ic_11528313790826212192
+            triangular_internal_ic_11528313790826212192 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -958,9 +974,9 @@ module triangular_internal
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE triangular_internal_ic_1308630933056187501
+// MODULE triangular_internal_ic_5796937053656915610
 /////////////////////////////////////////////////////////////////
-module triangular_internal_ic_1308630933056187501
+module triangular_internal_ic_5796937053656915610
 (
    input logic clock,
    input logic resetn,
@@ -1105,10 +1121,10 @@ module triangular_internal_ic_1308630933056187501
          .WRP_FIFO_DEPTH(0),
          .RRP_FIFO_DEPTH(0),
          .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(3),
+         .AGENT_FIXED_LATENCY(4),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
+         .ASYNC_RESET(0),
+         .SYNCHRONIZE_RESET(1)
       )
       s_endp
       (
@@ -1154,9 +1170,9 @@ module triangular_internal_ic_1308630933056187501
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE triangular_internal_ic_17660968519235119953
+// MODULE triangular_internal_ic_17660897875613033934
 /////////////////////////////////////////////////////////////////
-module triangular_internal_ic_17660968519235119953
+module triangular_internal_ic_17660897875613033934
 (
    input logic clock,
    input logic resetn,
@@ -1303,8 +1319,8 @@ module triangular_internal_ic_17660968519235119953
          .RRP_USE_LL_FIFO(1),
          .AGENT_FIXED_LATENCY(1),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
+         .ASYNC_RESET(0),
+         .SYNCHRONIZE_RESET(1)
       )
       s_endp
       (
@@ -1349,9 +1365,9 @@ module triangular_internal_ic_17660968519235119953
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE triangular_internal_ic_11528392131029696139
+// MODULE triangular_internal_ic_11528313790826212192
 /////////////////////////////////////////////////////////////////
-module triangular_internal_ic_11528392131029696139
+module triangular_internal_ic_11528313790826212192
 (
    input logic clock,
    input logic resetn,
@@ -1498,8 +1514,8 @@ module triangular_internal_ic_11528392131029696139
          .RRP_USE_LL_FIFO(1),
          .AGENT_FIXED_LATENCY(1),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
+         .ASYNC_RESET(0),
+         .SYNCHRONIZE_RESET(1)
       )
       s_endp
       (

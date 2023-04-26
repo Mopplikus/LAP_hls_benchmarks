@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_triangular_B2_sr_0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:15 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -63,7 +63,7 @@ module triangular_bb_B2_sr_0 (
     assign stall_and_valid_q = in_i_stall & combined_valid_q;
 
     // sr_valid(REG,4)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
@@ -85,7 +85,7 @@ module triangular_bb_B2_sr_0 (
     assign not_sr_valid_q = ~ (sr_valid_q);
 
     // sr_0_x(REG,23)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
@@ -115,7 +115,7 @@ module triangular_bb_B2_sr_0 (
     assign out_o_data_0_tpl = data_mux_0_x_q;
 
     // sr_1_x(REG,24)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
@@ -142,7 +142,7 @@ module triangular_bb_B2_sr_0 (
     assign out_o_data_1_tpl = data_mux_1_x_q;
 
     // sr_2_x(REG,25)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
@@ -169,7 +169,7 @@ module triangular_bb_B2_sr_0 (
     assign out_o_data_2_tpl = data_mux_2_x_q;
 
     // sr_3_x(REG,26)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin

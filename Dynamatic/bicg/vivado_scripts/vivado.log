@@ -1,0 +1,1005 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Apr 25 09:59:18 2023
+# Process ID: 6076
+# Current directory: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/vivado_scripts
+# Command line: vivado.exe -mode tcl -source synthesize_4.tcl
+# Log file: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/vivado_scripts/vivado.log
+# Journal file: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/vivado_scripts\vivado.jou
+# Running On: Frostspark, OS: Windows, CPU Frequency: 3504 MHz, CPU Physical cores: 4, Host memory: 17116 MB
+#-----------------------------------------------------------
+source synthesize_4.tcl
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/arithmetic_units.vhd
+read_vhdl: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 377.660 ; gain = 67.152
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/delay_buffer.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/elastic_components.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/MemCont.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/multipliers.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/mul_wrapper.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/sharing_components.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/simpackage.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/single_argument.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/two_port_RAM.vhd
+# read_verilog  ../sim/VHDL_SRC/LSQ_s.v
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/bicg_optimized.vhd
+# read_xdc period_4.xdc
+# synth_design -top bicg -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
+Command: synth_design -top bicg -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Device 21-403] Loading part xc7k160tfbg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 13232
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1216.707 ; gain = 408.617
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-4747] shared variables must be of a protected type [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/single_argument.vhd:35]
+WARNING: [Synth 8-4747] shared variables must be of a protected type [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/two_port_RAM.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'bicg' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'Const' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1369]
+	Parameter SIZE bound to: 1 - type: integer 
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Const' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1369]
+INFO: [Synth 8-638] synthesizing module 'branch' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module '\join ' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:113]
+	Parameter SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'andN' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:24]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'andN' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:24]
+INFO: [Synth 8-256] done synthesizing module '\join ' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:113]
+INFO: [Synth 8-638] synthesizing module 'branchSimple' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:447]
+INFO: [Synth 8-256] done synthesizing module 'branchSimple' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:447]
+INFO: [Synth 8-256] done synthesizing module 'branch' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'start_node' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:839]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'OEHB' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-256] done synthesizing module 'start_node' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:839]
+INFO: [Synth 8-638] synthesizing module '\fork ' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 3 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'eagerFork_RegisterBLock' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:517]
+INFO: [Synth 8-256] done synthesizing module 'eagerFork_RegisterBLock' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:517]
+INFO: [Synth 8-256] done synthesizing module '\fork ' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1527]
+	Parameter INPUTS bound to: 3 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+	Parameter COND_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1527]
+INFO: [Synth 8-638] synthesizing module 'mc_load_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:583]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'mc_load_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:583]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'branch__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'branch__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'branch__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'branch__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 4 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'cntrlMerge' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1599]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+	Parameter COND_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'merge_notehb' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:704]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge_notehb' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:704]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-256] done synthesizing module 'cntrlMerge' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1599]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'OEHB__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'mux__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1527]
+	Parameter INPUTS bound to: 3 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter COND_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized4' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized4' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'mux__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1527]
+INFO: [Synth 8-638] synthesizing module 'zext_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:309]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'zext_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'getelementptr_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:1005]
+	Parameter INPUTS bound to: 3 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter INPUT_SIZE bound to: 32 - type: integer 
+	Parameter OUTPUT_SIZE bound to: 32 - type: integer 
+	Parameter CONST_SIZE bound to: 1 - type: integer 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-638] synthesizing module 'join__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:113]
+	Parameter SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'join__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'getelementptr_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:1005]
+INFO: [Synth 8-638] synthesizing module 'mc_load_op__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:583]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mc_load_op__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:583]
+INFO: [Synth 8-638] synthesizing module 'lsq_load_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1704]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lsq_load_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1704]
+INFO: [Synth 8-638] synthesizing module 'mul_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/mul_wrapper.vhd:26]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mul_4_stage' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:23]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mul_4_stage' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'delay_buffer' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/delay_buffer.vhd:16]
+	Parameter SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'delay_buffer' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/delay_buffer.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'mul_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/mul_wrapper.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'add_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:67]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'add_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'lsq_store_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1750]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lsq_store_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1750]
+INFO: [Synth 8-638] synthesizing module 'add_op__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:67]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'add_op__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'Const__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1369]
+	Parameter SIZE bound to: 1 - type: integer 
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Const__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1369]
+INFO: [Synth 8-638] synthesizing module 'icmp_ult_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:827]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'icmp_ult_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:827]
+INFO: [Synth 8-638] synthesizing module 'merge' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized4' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 5 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized4' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized5' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized5' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized6' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 3 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized6' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'source' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:940]
+	Parameter INPUT_COUNT bound to: 0 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'source' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'source__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:940]
+	Parameter INPUT_COUNT bound to: 0 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'source__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'nontranspFifo' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1162]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'nontranspFifo' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1162]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+	Parameter FIFO_DEPTH bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+	Parameter FIFO_DEPTH bound to: 5 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'mc_store_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:686]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mc_store_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:686]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'OEHB__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'ret_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:24]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ret_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/arithmetic_units.vhd:24]
+INFO: [Synth 8-3491] module 'LSQ_s' declared at 'C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39714' bound to instance 'c_LSQ_s' of component 'LSQ_s' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:3583]
+INFO: [Synth 8-6157] synthesizing module 'LSQ_s' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39714]
+INFO: [Synth 8-6157] synthesizing module 'STORE_QUEUE_LSQ_s' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_QUEUE_LSQ_s' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_QUEUE_LSQ_s' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:9077]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_QUEUE_LSQ_s' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:9077]
+INFO: [Synth 8-6157] synthesizing module 'GROUP_ALLOCATOR_LSQ_s' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39337]
+INFO: [Synth 8-6155] done synthesizing module 'GROUP_ALLOCATOR_LSQ_s' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39337]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_PORT_LSQ_s' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39523]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_PORT_LSQ_s' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39523]
+INFO: [Synth 8-6157] synthesizing module 'STORE_DATA_PORT_LSQ_s' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39623]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_DATA_PORT_LSQ_s' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39623]
+INFO: [Synth 8-6155] done synthesizing module 'LSQ_s' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/LSQ_s.v:39714]
+INFO: [Synth 8-638] synthesizing module 'MemCont' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:753]
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter BB_COUNT bound to: 1 - type: integer 
+	Parameter LOAD_COUNT bound to: 1 - type: integer 
+	Parameter STORE_COUNT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_memory_arbiter' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:202]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_priority' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:17]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_priority' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'read_address_mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:52]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'read_address_ready' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:86]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_ready' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'read_data_signals' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:116]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_data_signals' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:116]
+INFO: [Synth 8-256] done synthesizing module 'read_memory_arbiter' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:202]
+INFO: [Synth 8-638] synthesizing module 'write_memory_arbiter' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:464]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'write_priority' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:287]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_priority' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:287]
+INFO: [Synth 8-638] synthesizing module 'write_address_mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:326]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_address_mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:326]
+INFO: [Synth 8-638] synthesizing module 'write_address_ready' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:362]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_address_ready' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:362]
+INFO: [Synth 8-638] synthesizing module 'write_data_signals' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:396]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_data_signals' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:396]
+INFO: [Synth 8-256] done synthesizing module 'write_memory_arbiter' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:464]
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:814]
+INFO: [Synth 8-256] done synthesizing module 'MemCont' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:753]
+INFO: [Synth 8-638] synthesizing module 'MemCont__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:753]
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter BB_COUNT bound to: 1 - type: integer 
+	Parameter LOAD_COUNT bound to: 1 - type: integer 
+	Parameter STORE_COUNT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_memory_arbiter__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:202]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_address_mux__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:52]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_mux__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'read_memory_arbiter__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:202]
+INFO: [Synth 8-638] synthesizing module 'write_memory_arbiter__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:464]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'write_address_mux__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:326]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_address_mux__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:326]
+INFO: [Synth 8-256] done synthesizing module 'write_memory_arbiter__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:464]
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:814]
+INFO: [Synth 8-256] done synthesizing module 'MemCont__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:753]
+INFO: [Synth 8-638] synthesizing module 'MemCont__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:753]
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter BB_COUNT bound to: 1 - type: integer 
+	Parameter LOAD_COUNT bound to: 1 - type: integer 
+	Parameter STORE_COUNT bound to: 1 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:814]
+INFO: [Synth 8-256] done synthesizing module 'MemCont__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/MemCont.vhd:753]
+INFO: [Synth 8-638] synthesizing module 'end_node' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:375]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter MEM_INPUTS bound to: 5 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'andN__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:24]
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'andN__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'end_node' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:375]
+INFO: [Synth 8-638] synthesizing module 'sink' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-638] synthesizing module 'sink__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-638] synthesizing module 'sink__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-256] done synthesizing module 'bicg' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:73]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity cntrlMerge does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1596]
+WARNING: [Synth 8-3848] Net oehb_datain in module/entity mul_op does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/mul_wrapper.vhd:31]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity source does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:932]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity source__parameterized0 does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:932]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1092]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1048]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1122]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1069]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1092]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1048]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1122]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1069]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1092]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1048]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1122]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1069]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1092]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1048]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1122]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:1069]
+WARNING: [Synth 8-3848] Net eReadyArray in module/entity end_node does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/elastic_components.vhd:371]
+WARNING: [Synth 8-3848] Net s_we1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:28]
+WARNING: [Synth 8-3848] Net s_dout1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:29]
+WARNING: [Synth 8-3848] Net q_we1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:38]
+WARNING: [Synth 8-3848] Net q_dout1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:39]
+WARNING: [Synth 8-3848] Net A_we1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:48]
+WARNING: [Synth 8-3848] Net A_dout1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:49]
+WARNING: [Synth 8-3848] Net r_we1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:58]
+WARNING: [Synth 8-3848] Net r_dout1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:59]
+WARNING: [Synth 8-3848] Net p_we1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:68]
+WARNING: [Synth 8-3848] Net p_dout1 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:69]
+WARNING: [Synth 8-3848] Net start_0_dataInArray_0 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:110]
+WARNING: [Synth 8-3848] Net MC_A_pValidArray_2 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1229]
+WARNING: [Synth 8-3848] Net MC_A_dataInArray_2 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1225]
+WARNING: [Synth 8-3848] Net MC_A_pValidArray_3 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1230]
+WARNING: [Synth 8-3848] Net MC_A_dataInArray_3 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1226]
+WARNING: [Synth 8-3848] Net MC_r_pValidArray_2 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1251]
+WARNING: [Synth 8-3848] Net MC_r_dataInArray_2 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1247]
+WARNING: [Synth 8-3848] Net MC_r_pValidArray_3 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1252]
+WARNING: [Synth 8-3848] Net MC_r_dataInArray_3 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1248]
+WARNING: [Synth 8-3848] Net MC_p_pValidArray_2 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1273]
+WARNING: [Synth 8-3848] Net MC_p_dataInArray_2 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1269]
+WARNING: [Synth 8-3848] Net MC_p_pValidArray_3 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1274]
+WARNING: [Synth 8-3848] Net MC_p_dataInArray_3 in module/entity bicg does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/bicg_optimized.vhd:1270]
+WARNING: [Synth 8-3917] design bicg has port s_address0[31] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[30] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[29] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[28] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[27] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[26] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[25] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[24] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[23] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[22] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[21] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[20] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[19] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[18] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[17] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[16] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[15] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[14] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[13] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[12] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[11] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[10] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[9] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[8] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[7] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[6] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[5] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[31] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[30] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[29] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[28] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[27] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[26] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[25] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[24] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[23] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[22] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[21] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[20] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[19] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[18] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[17] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[16] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[15] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[14] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[13] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[12] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[11] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[10] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[9] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[8] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[7] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[6] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[5] driven by constant 0
+WARNING: [Synth 8-7129] Port clk in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][31] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][30] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][29] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][28] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][27] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][26] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][25] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][24] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][23] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][22] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][21] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][20] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][19] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][18] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][17] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][16] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][15] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][14] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][13] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][12] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][11] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][10] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][9] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][8] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][7] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][6] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][5] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][4] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][3] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][2] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][1] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][4] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][3] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][2] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][1] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[4] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[3] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[2] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[1] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[0] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_Empty_Ready in module MemCont__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_wrDataPorts_valid[0] in module MemCont__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_Empty_Ready in module MemCont__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_wrDataPorts_valid[0] in module MemCont__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_Empty_Ready in module MemCont is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_wrDataPorts_valid[0] in module MemCont is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][4] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][3] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][2] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][1] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port nReadyArray[0] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port nReadyArray[0] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module Const is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module Const is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module icmp_ult_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module icmp_ult_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module Const__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module Const__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module add_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module add_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module mc_store_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module mc_store_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port nReadyArray[1] in module mc_store_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module merge_notehb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module merge_notehb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[1][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module add_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module add_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module lsq_store_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module lsq_store_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module lsq_load_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module lsq_load_op is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1587.371 ; gain = 779.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1587.371 ; gain = 779.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1587.371 ; gain = 779.281
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.450 . Memory (MB): peak = 1587.371 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/vivado_scripts/period_4.xdc]
+Finished Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/vivado_scripts/period_4.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1629.383 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.186 . Memory (MB): peak = 1629.383 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1629.383 ; gain = 821.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k160tfbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1629.383 ; gain = 821.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 1629.383 ; gain = 821.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:49 ; elapsed = 00:01:03 . Memory (MB): peak = 1629.383 ; gain = 821.293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 67    
+	   3 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 6     
+	   3 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 4     
+	   2 Input    2 Bit       Adders := 6     
++---Registers : 
+	               32 Bit    Registers := 83    
+	                5 Bit    Registers := 48    
+	                4 Bit    Registers := 38    
+	                1 Bit    Registers := 931   
++---Multipliers : 
+	              32x32  Multipliers := 3     
++---RAMs : 
+	               96 Bit	(3 X 32 bit)          RAMs := 1     
+	               15 Bit	(3 X 5 bit)          RAMs := 1     
+	                5 Bit	(5 X 1 bit)          RAMs := 2     
+	                3 Bit	(3 X 1 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 16    
+	   2 Input   32 Bit        Muxes := 49    
+	   2 Input   16 Bit        Muxes := 608   
+	  17 Input   16 Bit        Muxes := 80    
+	   2 Input    5 Bit        Muxes := 26    
+	  15 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 549   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q1_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q2_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:44]
+WARNING: [Synth 8-6014] Unused sequential element mul_25/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_25/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_25/multiply_unit/q1_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element mul_25/multiply_unit/q2_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/bicg/sim/VHDL_SRC/multipliers.vhd:44]
+DSP Report: Generating DSP mul_18/multiply_unit/q0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: Generating DSP mul_18/multiply_unit/q1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register mul_18/multiply_unit/q1_reg is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: register mul_18/multiply_unit/q1_reg is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: Generating DSP mul_18/multiply_unit/q2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q2_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q2_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q1_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: Generating DSP mul_25/multiply_unit/q0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_25/multiply_unit/q0_reg is absorbed into DSP mul_25/multiply_unit/q0_reg.
+DSP Report: register mul_25/multiply_unit/q0_reg is absorbed into DSP mul_25/multiply_unit/q0_reg.
+DSP Report: register mul_25/multiply_unit/q0_reg is absorbed into DSP mul_25/multiply_unit/q0_reg.
+DSP Report: operator mul_25/multiply_unit/mul is absorbed into DSP mul_25/multiply_unit/q0_reg.
+DSP Report: operator mul_25/multiply_unit/mul is absorbed into DSP mul_25/multiply_unit/q0_reg.
+DSP Report: Generating DSP mul_25/multiply_unit/q1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register mul_25/multiply_unit/q1_reg is absorbed into DSP mul_25/multiply_unit/q1_reg.
+DSP Report: register mul_25/multiply_unit/q1_reg is absorbed into DSP mul_25/multiply_unit/q1_reg.
+DSP Report: register mul_25/multiply_unit/q0_reg is absorbed into DSP mul_25/multiply_unit/q1_reg.
+DSP Report: operator mul_25/multiply_unit/mul is absorbed into DSP mul_25/multiply_unit/q1_reg.
+DSP Report: operator mul_25/multiply_unit/mul is absorbed into DSP mul_25/multiply_unit/q1_reg.
+DSP Report: Generating DSP mul_25/multiply_unit/q2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register mul_25/multiply_unit/q0_reg is absorbed into DSP mul_25/multiply_unit/q2_reg.
+DSP Report: register mul_25/multiply_unit/q2_reg is absorbed into DSP mul_25/multiply_unit/q2_reg.
+DSP Report: register mul_25/multiply_unit/q0_reg is absorbed into DSP mul_25/multiply_unit/q2_reg.
+DSP Report: register mul_25/multiply_unit/q2_reg is absorbed into DSP mul_25/multiply_unit/q2_reg.
+DSP Report: register mul_25/multiply_unit/q1_reg is absorbed into DSP mul_25/multiply_unit/q2_reg.
+DSP Report: operator mul_25/multiply_unit/mul is absorbed into DSP mul_25/multiply_unit/q2_reg.
+DSP Report: operator mul_25/multiply_unit/mul is absorbed into DSP mul_25/multiply_unit/q2_reg.
+WARNING: [Synth 8-3917] design bicg has port s_address0[31] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[30] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[29] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[28] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[27] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[26] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[25] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[24] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[23] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[22] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[21] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[20] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[19] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[18] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[17] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[16] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[15] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[14] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[13] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[12] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[11] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[10] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[9] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[8] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[7] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[6] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address0[5] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[31] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[30] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[29] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[28] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[27] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[26] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[25] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[24] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[23] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[22] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[21] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[20] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[19] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[18] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[17] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[16] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[15] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[14] driven by constant 0
+WARNING: [Synth 8-3917] design bicg has port s_address1[13] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:00 ; elapsed = 00:03:38 . Memory (MB): peak = 2173.605 ; gain = 1365.516
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+---------------------------+-----------+----------------------+---------------+
+|Module Name | RTL Object                | Inference | Size (Depth x Width) | Primitives    | 
++------------+---------------------------+-----------+----------------------+---------------+
+|bicg        | Buffer_2/fifo/Memory_reg  | Implied   | 4 x 32               | RAM32M x 6    | 
+|bicg        | Buffer_10/fifo/Memory_reg | Implied   | 8 x 1                | RAM16X1D x 1  | 
+|bicg        | Buffer_17/fifo/Memory_reg | Implied   | 8 x 1                | RAM16X1D x 1  | 
+|bicg        | Buffer_6/fifo/Memory_reg  | Implied   | 4 x 5                | RAM32M x 1    | 
+|bicg        | Buffer_12/fifo/Memory_reg | Implied   | 4 x 1                | RAM16X1D x 1  | 
++------------+---------------------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|bicg        | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|bicg        | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|bicg        | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|bicg        | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|bicg        | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|bicg        | (PCIN+(A''*B2)')'  | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
++------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:12 ; elapsed = 00:03:50 . Memory (MB): peak = 2173.605 ; gain = 1365.516
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+1
+INFO: [Common 17-83] Releasing license: Synthesis
+208 Infos, 267 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+INFO: [Common 17-344] 'source' was cancelled
+Vivado% 

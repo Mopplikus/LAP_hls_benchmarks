@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_triangular_B0_runOnce_stall_region
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -60,6 +60,7 @@ module triangular_bb_B0_runOnce_stall_region (
     wire [0:0] SE_out_triangular_B0_runOnce_merge_reg_backStall;
     wire [0:0] SE_out_triangular_B0_runOnce_merge_reg_V0;
     wire [0:0] SE_out_triangular_B0_runOnce_merge_reg_V1;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
     // SE_out_i_llvm_fpga_push_token_i1_wt_limpush_triangular1(STALLENABLE,29)
@@ -86,7 +87,7 @@ module triangular_bb_B0_runOnce_stall_region (
         .out_stall_out(i_llvm_fpga_push_token_i1_wt_limpush_triangular1_out_stall_out),
         .out_valid_out(i_llvm_fpga_push_token_i1_wt_limpush_triangular1_out_valid_out),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
     // SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_triangular0(STALLENABLE,27)
@@ -116,13 +117,13 @@ module triangular_bb_B0_runOnce_stall_region (
         .out_stall_out(i_llvm_fpga_pop_token_i1_wt_limpop_triangular0_out_stall_out),
         .out_valid_out(i_llvm_fpga_pop_token_i1_wt_limpop_triangular0_out_valid_out),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
     // SE_out_triangular_B0_runOnce_merge_reg(STALLENABLE,33)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
             SE_out_triangular_B0_runOnce_merge_reg_fromReg0 <= '0;
             SE_out_triangular_B0_runOnce_merge_reg_fromReg1 <= '0;
@@ -168,7 +169,7 @@ module triangular_bb_B0_runOnce_stall_region (
         .out_stall_out(triangular_B0_runOnce_merge_reg_out_stall_out),
         .out_valid_out(triangular_B0_runOnce_merge_reg_out_valid_out),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
     // SE_stall_entry(STALLENABLE,30)
@@ -184,5 +185,18 @@ module triangular_bb_B0_runOnce_stall_region (
 
     // dupName_0_sync_out_x(GPOUT,21)@2
     assign out_valid_out = SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_triangular0_V0;
+
+    // rst_sync(RESETSYNC,42)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

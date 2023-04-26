@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_triangular_B2_stall_region
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -26,13 +26,13 @@ module triangular_bb_B2_stall_region (
     output wire [0:0] out_feedback_valid_out_13,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
-    input wire [0:0] in_c0_exe2771,
-    input wire [0:0] in_c0_exe4792,
-    input wire [31:0] in_c0_exe5804,
-    input wire [0:0] in_c0_exe6815,
+    input wire [0:0] in_c0_exe1771,
+    input wire [0:0] in_c0_exe4802,
+    input wire [31:0] in_c0_exe5814,
+    input wire [0:0] in_c0_exe6825,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_c0_exe4792,
-    output wire [31:0] out_c0_exe5804,
+    output wire [0:0] out_c0_exe4802,
+    output wire [31:0] out_c0_exe5814,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
@@ -62,12 +62,13 @@ module triangular_bb_B2_stall_region (
     wire [0:0] SE_stall_entry_backStall;
     wire [0:0] SE_stall_entry_V0;
     wire [0:0] SE_stall_entry_V1;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
     // SE_stall_entry(STALLENABLE,22)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
             SE_stall_entry_fromReg0 <= '0;
             SE_stall_entry_fromReg1 <= '0;
@@ -104,7 +105,7 @@ module triangular_bb_B2_stall_region (
     assign SE_out_i_llvm_fpga_push_i1_memdep_phi4_push13_triangular0_wireValid = i_llvm_fpga_push_i1_memdep_phi4_push13_triangular0_out_valid_out;
 
     // bubble_join_stall_entry(BITJOIN,17)
-    assign bubble_join_stall_entry_q = {in_c0_exe6815, in_c0_exe5804, in_c0_exe4792, in_c0_exe2771};
+    assign bubble_join_stall_entry_q = {in_c0_exe6825, in_c0_exe5814, in_c0_exe4802, in_c0_exe1771};
 
     // bubble_select_stall_entry(BITSELECT,18)
     assign bubble_select_stall_entry_b = $unsigned(bubble_join_stall_entry_q[0:0]);
@@ -120,7 +121,7 @@ module triangular_bb_B2_stall_region (
     // out out_stall_out@20000000
     // out out_valid_out@1
     triangular_i_llvm_fpga_push_i1_memdep_phi4_push13_0 thei_llvm_fpga_push_i1_memdep_phi4_push13_triangular0 (
-        .in_c0_exe6815(bubble_select_stall_entry_e),
+        .in_c0_exe6825(bubble_select_stall_entry_e),
         .in_data_in(bubble_select_stall_entry_b),
         .in_feedback_stall_in_13(in_feedback_stall_in_13),
         .in_stall_in(SE_out_i_llvm_fpga_push_i1_memdep_phi4_push13_triangular0_backStall),
@@ -131,7 +132,7 @@ module triangular_bb_B2_stall_region (
         .out_stall_out(i_llvm_fpga_push_i1_memdep_phi4_push13_triangular0_out_stall_out),
         .out_valid_out(i_llvm_fpga_push_i1_memdep_phi4_push13_triangular0_out_valid_out),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
     // feedback_out_13_sync(GPOUT,4)
@@ -144,8 +145,21 @@ module triangular_bb_B2_stall_region (
     assign out_stall_out = SE_stall_entry_backStall;
 
     // dupName_0_sync_out_x(GPOUT,15)@0
-    assign out_c0_exe4792 = bubble_select_stall_entry_c;
-    assign out_c0_exe5804 = bubble_select_stall_entry_d;
+    assign out_c0_exe4802 = bubble_select_stall_entry_c;
+    assign out_c0_exe5814 = bubble_select_stall_entry_d;
     assign out_valid_out = SE_stall_entry_V0;
+
+    // rst_sync(RESETSYNC,30)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

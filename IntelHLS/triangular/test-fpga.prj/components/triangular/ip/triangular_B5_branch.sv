@@ -16,23 +16,23 @@
 
 // SystemVerilog created from triangular_B5_branch
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:15 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_B5_branch (
-    input wire [0:0] in_c0_exe277,
-    input wire [0:0] in_c0_exe378,
-    input wire [0:0] in_c0_exe479,
-    input wire [31:0] in_c0_exe580,
-    input wire [0:0] in_c0_exe681,
+    input wire [0:0] in_c0_exe177,
+    input wire [0:0] in_c0_exe379,
+    input wire [0:0] in_c0_exe480,
+    input wire [31:0] in_c0_exe581,
+    input wire [0:0] in_c0_exe682,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_stall_in_1,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_c0_exe277,
-    output wire [0:0] out_c0_exe479,
-    output wire [31:0] out_c0_exe580,
-    output wire [0:0] out_c0_exe681,
+    output wire [0:0] out_c0_exe177,
+    output wire [0:0] out_c0_exe480,
+    output wire [31:0] out_c0_exe581,
+    output wire [0:0] out_c0_exe682,
     output wire [0:0] out_stall_out,
     output wire [0:0] out_valid_out_0,
     output wire [0:0] out_valid_out_1,
@@ -41,11 +41,11 @@ module triangular_B5_branch (
     );
 
     wire [0:0] VCC_q;
-    reg [0:0] c0_exe277_reg_q;
-    wire [0:0] c0_exe378_cmp_q;
-    reg [0:0] c0_exe479_reg_q;
-    reg [31:0] c0_exe580_reg_q;
-    reg [0:0] c0_exe681_reg_q;
+    reg [0:0] c0_exe177_reg_q;
+    wire [0:0] c0_exe379_cmp_q;
+    reg [0:0] c0_exe480_reg_q;
+    reg [31:0] c0_exe581_reg_q;
+    reg [0:0] c0_exe682_reg_q;
     wire [0:0] not_stall_in_0_q;
     wire [0:0] not_stall_in_1_q;
     wire [0:0] not_valid_0_q;
@@ -58,6 +58,7 @@ module triangular_B5_branch (
     reg [0:0] valid_1_reg_q;
     wire [0:0] valid_out_0_and_q;
     wire [0:0] valid_out_1_and_q;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
     // VCC(CONSTANT,1)
@@ -66,16 +67,16 @@ module triangular_B5_branch (
     // not_stall_in_1(LOGICAL,16)
     assign not_stall_in_1_q = ~ (in_stall_in_1);
 
-    // c0_exe378_cmp(LOGICAL,3)
-    assign c0_exe378_cmp_q = ~ (in_c0_exe378);
+    // c0_exe379_cmp(LOGICAL,3)
+    assign c0_exe379_cmp_q = ~ (in_c0_exe379);
 
     // valid_out_1_and(LOGICAL,33)
-    assign valid_out_1_and_q = in_valid_in & c0_exe378_cmp_q;
+    assign valid_out_1_and_q = in_valid_in & c0_exe379_cmp_q;
 
     // valid_1_reg(REG,31)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
             valid_1_reg_q <= $unsigned(1'b0);
         end
@@ -95,12 +96,12 @@ module triangular_B5_branch (
     assign not_stall_in_0_q = ~ (in_stall_in_0);
 
     // valid_out_0_and(LOGICAL,32)
-    assign valid_out_0_and_q = in_valid_in & in_c0_exe378;
+    assign valid_out_0_and_q = in_valid_in & in_c0_exe379;
 
     // valid_0_reg(REG,30)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
             valid_0_reg_q <= $unsigned(1'b0);
         end
@@ -119,69 +120,69 @@ module triangular_B5_branch (
     // triangular_B5_branch_enable(LOGICAL,28)
     assign triangular_B5_branch_enable_q = not_valid_or_not_stall_0_q & not_valid_or_not_stall_1_q;
 
-    // c0_exe277_reg(REG,2)
-    always @ (posedge clock or negedge resetn)
+    // c0_exe177_reg(REG,2)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
-            c0_exe277_reg_q <= $unsigned(1'b0);
+            c0_exe177_reg_q <= $unsigned(1'b0);
         end
         else if (triangular_B5_branch_enable_q == 1'b1)
         begin
-            c0_exe277_reg_q <= in_c0_exe277;
+            c0_exe177_reg_q <= in_c0_exe177;
         end
     end
 
-    // out_c0_exe277(GPOUT,21)
-    assign out_c0_exe277 = c0_exe277_reg_q;
+    // out_c0_exe177(GPOUT,21)
+    assign out_c0_exe177 = c0_exe177_reg_q;
 
-    // c0_exe479_reg(REG,4)
-    always @ (posedge clock or negedge resetn)
+    // c0_exe480_reg(REG,4)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
-            c0_exe479_reg_q <= $unsigned(1'b0);
+            c0_exe480_reg_q <= $unsigned(1'b0);
         end
         else if (triangular_B5_branch_enable_q == 1'b1)
         begin
-            c0_exe479_reg_q <= in_c0_exe479;
+            c0_exe480_reg_q <= in_c0_exe480;
         end
     end
 
-    // out_c0_exe479(GPOUT,22)
-    assign out_c0_exe479 = c0_exe479_reg_q;
+    // out_c0_exe480(GPOUT,22)
+    assign out_c0_exe480 = c0_exe480_reg_q;
 
-    // c0_exe580_reg(REG,5)
-    always @ (posedge clock or negedge resetn)
+    // c0_exe581_reg(REG,5)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
-            c0_exe580_reg_q <= $unsigned(32'b00000000000000000000000000000000);
+            c0_exe581_reg_q <= $unsigned(32'b00000000000000000000000000000000);
         end
         else if (triangular_B5_branch_enable_q == 1'b1)
         begin
-            c0_exe580_reg_q <= in_c0_exe580;
+            c0_exe581_reg_q <= in_c0_exe581;
         end
     end
 
-    // out_c0_exe580(GPOUT,23)
-    assign out_c0_exe580 = c0_exe580_reg_q;
+    // out_c0_exe581(GPOUT,23)
+    assign out_c0_exe581 = c0_exe581_reg_q;
 
-    // c0_exe681_reg(REG,6)
-    always @ (posedge clock or negedge resetn)
+    // c0_exe682_reg(REG,6)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (!rst_sync_rst_sclrn[0])
         begin
-            c0_exe681_reg_q <= $unsigned(1'b0);
+            c0_exe682_reg_q <= $unsigned(1'b0);
         end
         else if (triangular_B5_branch_enable_q == 1'b1)
         begin
-            c0_exe681_reg_q <= in_c0_exe681;
+            c0_exe682_reg_q <= in_c0_exe682;
         end
     end
 
-    // out_c0_exe681(GPOUT,24)
-    assign out_c0_exe681 = c0_exe681_reg_q;
+    // out_c0_exe682(GPOUT,24)
+    assign out_c0_exe682 = c0_exe682_reg_q;
 
     // triangular_B5_branch_enable_not(LOGICAL,29)
     assign triangular_B5_branch_enable_not_q = ~ (triangular_B5_branch_enable_q);
@@ -194,5 +195,18 @@ module triangular_B5_branch (
 
     // out_valid_out_1(GPOUT,27)
     assign out_valid_out_1 = valid_1_reg_q;
+
+    // rst_sync(RESETSYNC,34)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

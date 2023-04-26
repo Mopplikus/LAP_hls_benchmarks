@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_getTanh_B0_runOnce
 // Created for function/kernel getTanh
-// SystemVerilog created on Fri Apr  7 17:19:40 2023
+// SystemVerilog created on Tue Apr 25 16:39:38 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -29,16 +29,23 @@ module getTanh_bb_B0_runOnce (
     input wire resetn
     );
 
+    wire [0:0] bb_getTanh_B0_runOnce_stall_region_out_almost_empty_out;
+    wire [0:0] bb_getTanh_B0_runOnce_stall_region_out_empty_out;
     wire [0:0] bb_getTanh_B0_runOnce_stall_region_out_stall_out;
     wire [0:0] bb_getTanh_B0_runOnce_stall_region_out_valid_out;
     wire [0:0] getTanh_B0_runOnce_branch_out_stall_out;
     wire [0:0] getTanh_B0_runOnce_branch_out_valid_out_0;
+    wire [0:0] getTanh_B0_runOnce_merge_out_almost_empty_out;
+    wire [0:0] getTanh_B0_runOnce_merge_out_empty_out;
     wire [0:0] getTanh_B0_runOnce_merge_out_stall_out_0;
     wire [0:0] getTanh_B0_runOnce_merge_out_valid_out;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
     // getTanh_B0_runOnce_branch(BLACKBOX,3)
     getTanh_B0_runOnce_branch thegetTanh_B0_runOnce_branch (
+        .in_almost_empty_in(bb_getTanh_B0_runOnce_stall_region_out_almost_empty_out),
+        .in_empty_in(bb_getTanh_B0_runOnce_stall_region_out_empty_out),
         .in_stall_in_0(in_stall_in_0),
         .in_valid_in(bb_getTanh_B0_runOnce_stall_region_out_valid_out),
         .out_stall_out(getTanh_B0_runOnce_branch_out_stall_out),
@@ -49,8 +56,12 @@ module getTanh_bb_B0_runOnce (
 
     // bb_getTanh_B0_runOnce_stall_region(BLACKBOX,2)
     getTanh_bb_B0_runOnce_stall_region thebb_getTanh_B0_runOnce_stall_region (
+        .in_almost_empty_in(getTanh_B0_runOnce_merge_out_almost_empty_out),
+        .in_empty_in(getTanh_B0_runOnce_merge_out_empty_out),
         .in_stall_in(getTanh_B0_runOnce_branch_out_stall_out),
         .in_valid_in(getTanh_B0_runOnce_merge_out_valid_out),
+        .out_almost_empty_out(bb_getTanh_B0_runOnce_stall_region_out_almost_empty_out),
+        .out_empty_out(bb_getTanh_B0_runOnce_stall_region_out_empty_out),
         .out_stall_out(bb_getTanh_B0_runOnce_stall_region_out_stall_out),
         .out_valid_out(bb_getTanh_B0_runOnce_stall_region_out_valid_out),
         .clock(clock),
@@ -61,6 +72,8 @@ module getTanh_bb_B0_runOnce (
     getTanh_B0_runOnce_merge thegetTanh_B0_runOnce_merge (
         .in_stall_in(bb_getTanh_B0_runOnce_stall_region_out_stall_out),
         .in_valid_in_0(in_valid_in_0),
+        .out_almost_empty_out(getTanh_B0_runOnce_merge_out_almost_empty_out),
+        .out_empty_out(getTanh_B0_runOnce_merge_out_empty_out),
         .out_stall_out_0(getTanh_B0_runOnce_merge_out_stall_out_0),
         .out_valid_out(getTanh_B0_runOnce_merge_out_valid_out),
         .clock(clock),
@@ -72,5 +85,18 @@ module getTanh_bb_B0_runOnce (
 
     // out_valid_out_0(GPOUT,8)
     assign out_valid_out_0 = getTanh_B0_runOnce_branch_out_valid_out_0;
+
+    // rst_sync(RESETSYNC,9)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

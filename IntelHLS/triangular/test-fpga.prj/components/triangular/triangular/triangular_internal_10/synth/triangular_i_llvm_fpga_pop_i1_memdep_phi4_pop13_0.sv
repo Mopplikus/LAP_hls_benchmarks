@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -62,25 +62,25 @@ module triangular_i_llvm_fpga_pop_i1_memdep_phi4_pop13_0 (
     wire i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_stall_out_bitsignaltemp;
     wire [0:0] i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_valid_out;
     wire i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_valid_out_bitsignaltemp;
-    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_data_out;
-    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_stall_out;
-    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_valid_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_data_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_stall_out;
+    wire [0:0] i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_valid_out;
 
 
     // adapt_scalar_trunc4(ROUND,2)
     assign adapt_scalar_trunc4_in = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_data_out;
     assign adapt_scalar_trunc4_q = adapt_scalar_trunc4_in[0:0];
 
-    // i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg(BLACKBOX,8)@20000000
+    // i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg(BLACKBOX,8)@20000000
     // out out_data_out@20000001
     // out out_valid_out@20000001
-    triangular_i_llvm_fpga_pop_i1_memdep_phi4_pop13_3_reg thei_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg (
+    triangular_i_llvm_fpga_pop_i1_memdep_phi4_pop13_5_reg thei_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg (
         .in_data_in(adapt_scalar_trunc4_q),
         .in_stall_in(in_stall_in),
         .in_valid_in(i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_valid_out),
-        .out_data_out(i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_data_out),
-        .out_stall_out(i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_valid_out),
+        .out_data_out(i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_data_out),
+        .out_stall_out(i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
@@ -97,7 +97,7 @@ module triangular_i_llvm_fpga_pop_i1_memdep_phi4_pop13_0 (
     assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_feedback_in = in_feedback_in_13;
     assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_feedback_valid_in = in_feedback_valid_in_13;
     assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_predicate = in_predicate;
-    assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_stall_in = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_stall_out;
+    assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_stall_in = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_stall_out;
     assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_valid_in = in_valid_in;
     assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_data_in_bitsignaltemp = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_data_in[0];
     assign i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_dir_bitsignaltemp = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_dir[0];
@@ -113,7 +113,7 @@ module triangular_i_llvm_fpga_pop_i1_memdep_phi4_pop13_0 (
     acl_pop #(
         .INF_LOOP(0),
         .STYLE("REGULAR"),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .COALESCE_DISTANCE(1),
         .DATA_WIDTH(1),
         .SYNCHRONIZE_RESET(0)
@@ -139,8 +139,8 @@ module triangular_i_llvm_fpga_pop_i1_memdep_phi4_pop13_0 (
     // sync_out(GPOUT,10)@20000000
     assign out_stall_out = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular1_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,12)@7
-    assign out_data_out = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_data_out;
-    assign out_valid_out = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular3_reg_out_valid_out;
+    // dupName_0_sync_out_x(GPOUT,12)@11
+    assign out_data_out = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_data_out;
+    assign out_valid_out = i_llvm_fpga_pop_i1_memdep_phi4_pop13_triangular5_reg_out_valid_out;
 
 endmodule

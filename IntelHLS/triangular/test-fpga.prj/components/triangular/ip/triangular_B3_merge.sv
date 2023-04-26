@@ -16,15 +16,15 @@
 
 // SystemVerilog created from triangular_B3_merge
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module triangular_B3_merge (
-    input wire [31:0] in_c0_exe5803_0,
+    input wire [31:0] in_c0_exe5813_0,
     input wire [0:0] in_stall_in,
     input wire [0:0] in_valid_in_0,
-    output wire [31:0] out_c0_exe5803,
+    output wire [31:0] out_c0_exe5813,
     output wire [0:0] out_stall_out_0,
     output wire [0:0] out_valid_out,
     input wire clock,
@@ -32,10 +32,11 @@ module triangular_B3_merge (
     );
 
     wire [0:0] stall_out_q;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
-    // out_c0_exe5803(GPOUT,5)
-    assign out_c0_exe5803 = in_c0_exe5803_0;
+    // out_c0_exe5813(GPOUT,5)
+    assign out_c0_exe5813 = in_c0_exe5813_0;
 
     // stall_out(LOGICAL,8)
     assign stall_out_q = in_valid_in_0 & in_stall_in;
@@ -45,5 +46,18 @@ module triangular_B3_merge (
 
     // out_valid_out(GPOUT,7)
     assign out_valid_out = in_valid_in_0;
+
+    // rst_sync(RESETSYNC,9)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

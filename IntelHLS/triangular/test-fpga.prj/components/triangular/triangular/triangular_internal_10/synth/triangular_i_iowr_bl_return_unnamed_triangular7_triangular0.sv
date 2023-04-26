@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_iowr_bl_return_triangular_unnamed_triangular7_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -64,6 +64,7 @@ module triangular_i_iowr_bl_return_unnamed_triangular7_triangular0 (
     wire [0:0] iowr_o_valid;
     wire iowr_o_valid_bitsignaltemp;
     wire [31:0] iowr_profile_total_fifo_size_incr;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
     // c32_0(CONSTANT,2)
@@ -105,7 +106,7 @@ module triangular_i_iowr_bl_return_unnamed_triangular7_triangular0 (
         .INTER_KERNEL_PIPELINING(0),
         .USE_STALL_LATENCY_SIDEPATH(0),
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .CUTPATHS(0),
         .DATA_WIDTH(1),
         .EMPTY_WIDTH(0),
@@ -131,7 +132,7 @@ module triangular_i_iowr_bl_return_unnamed_triangular7_triangular0 (
         .o_valid(iowr_o_valid_bitsignaltemp),
         .profile_total_fifo_size_incr(),
         .clock(clock),
-        .resetn(resetn)
+        .resetn(rst_sync_rst_sclrn[0])
     );
 
     // regfree_osync(GPOUT,9)
@@ -146,5 +147,18 @@ module triangular_i_iowr_bl_return_unnamed_triangular7_triangular0 (
     // dupName_0_sync_out_x(GPOUT,15)@0
     assign out_o_ack = iowr_o_ack;
     assign out_o_valid = iowr_o_valid;
+
+    // rst_sync(RESETSYNC,16)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

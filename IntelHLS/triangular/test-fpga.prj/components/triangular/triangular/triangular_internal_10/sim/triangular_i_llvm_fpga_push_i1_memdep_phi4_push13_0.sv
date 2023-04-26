@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i1_memdep_phi4_push13_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -26,7 +26,7 @@ module triangular_i_llvm_fpga_push_i1_memdep_phi4_push13_0 (
     output wire [0:0] out_feedback_valid_out_13,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
-    input wire [0:0] in_c0_exe6815,
+    input wire [0:0] in_c0_exe6825,
     input wire [0:0] in_data_in,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_data_out,
@@ -96,7 +96,7 @@ module triangular_i_llvm_fpga_push_i1_memdep_phi4_push13_0 (
 
     // i_llvm_fpga_push_i1_memdep_phi4_push13_triangular1(EXTIFACE,9)
     assign i_llvm_fpga_push_i1_memdep_phi4_push13_triangular1_data_in = element_extension2_q[0:0];
-    assign i_llvm_fpga_push_i1_memdep_phi4_push13_triangular1_dir = in_c0_exe6815;
+    assign i_llvm_fpga_push_i1_memdep_phi4_push13_triangular1_dir = in_c0_exe6825;
     assign i_llvm_fpga_push_i1_memdep_phi4_push13_triangular1_feedback_stall_in = in_feedback_stall_in_13;
     assign i_llvm_fpga_push_i1_memdep_phi4_push13_triangular1_predicate = GND_q;
     assign i_llvm_fpga_push_i1_memdep_phi4_push13_triangular1_stall_in = i_llvm_fpga_push_i1_memdep_phi4_push13_triangular0_reg_out_stall_out;
@@ -118,7 +118,7 @@ module triangular_i_llvm_fpga_push_i1_memdep_phi4_push13_0 (
         .INF_LOOP_INITIALIZATION(1'b0),
         .MIN_FIFO_LATENCY(3),
         .STYLE("REGULAR"),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .DATA_WIDTH(1),
         .ENABLED(0),
         .RAM_FIFO_DEPTH_INC(0),

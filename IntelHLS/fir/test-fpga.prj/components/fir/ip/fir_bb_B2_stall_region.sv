@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_fir_B2_stall_region
 // Created for function/kernel fir
-// SystemVerilog created on Fri Apr  7 17:34:03 2023
+// SystemVerilog created on Tue Apr 25 23:40:01 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -24,194 +24,692 @@ module fir_bb_B2_stall_region (
     input wire [0:0] in_iowr_bl_return_fir_i_fifoready,
     output wire [31:0] out_iowr_bl_return_fir_o_fifodata,
     output wire [0:0] out_iowr_bl_return_fir_o_fifovalid,
-    output wire [0:0] out_feedback_out_1,
+    output wire [0:0] out_feedback_almost_empty_out_1,
+    output wire [0:0] out_feedback_data_out_1,
+    output wire [0:0] out_feedback_empty_out_1,
     input wire [0:0] in_feedback_stall_in_1,
-    output wire [0:0] out_feedback_valid_out_1,
     input wire [31:0] in_intel_reserved_ffwd_0_0,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
+    input wire [0:0] in_almost_empty_in,
+    input wire [0:0] in_empty_in,
     input wire [0:0] in_valid_in,
+    output wire [0:0] out_almost_empty_out,
+    output wire [0:0] out_empty_out,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
-    wire [31:0] i_iowr_bl_return_fir_unnamed_fir3_fir1_out_iowr_bl_return_fir_o_fifodata;
-    wire [0:0] i_iowr_bl_return_fir_unnamed_fir3_fir1_out_iowr_bl_return_fir_o_fifovalid;
-    wire [0:0] i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_ack;
-    wire [0:0] i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_stall;
-    wire [0:0] i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_valid;
-    wire [31:0] i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_dest_data_out_0_0;
-    wire [0:0] i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_stall_out;
-    wire [0:0] i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_valid_out;
-    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir2_out_feedback_out_1;
-    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir2_out_feedback_valid_out_1;
-    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir2_out_stall_out;
-    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir2_out_valid_out;
-    wire [0:0] bubble_join_i_iowr_bl_return_fir_unnamed_fir3_fir1_q;
-    wire [0:0] bubble_select_i_iowr_bl_return_fir_unnamed_fir3_fir1_b;
-    wire [31:0] bubble_join_i_llvm_fpga_ffwd_dest_i32_add1_fir0_q;
-    wire [31:0] bubble_select_i_llvm_fpga_ffwd_dest_i32_add1_fir0_b;
-    wire [0:0] SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_wireValid;
-    wire [0:0] SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_backStall;
-    wire [0:0] SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_V0;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireValid;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireStall;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_StallValid;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_toReg0;
-    reg [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg0;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed0;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_toReg1;
-    reg [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg1;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed1;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_or0;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_backStall;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_V0;
-    wire [0:0] SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_V1;
-    wire [0:0] SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir2_wireValid;
-    wire [0:0] SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir2_backStall;
-    wire [0:0] SE_stall_entry_wireValid;
-    wire [0:0] SE_stall_entry_backStall;
-    wire [0:0] SE_stall_entry_V0;
+    wire [0:0] GND_q;
+    wire [31:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_iowr_bl_return_fir_o_fifodata;
+    wire [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_iowr_bl_return_fir_o_fifovalid;
+    wire [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack;
+    wire [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty;
+    wire [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty;
+    wire [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_stall;
+    wire [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_almost_empty_out_1;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_data_out_1;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_empty_out_1;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_stall_out;
+    wire [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out;
+    wire [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out;
+    wire [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out;
+    wire [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_stall;
+    wire [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid;
+    wire [31:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl;
+    wire [0:0] bubble_join_i_iowr_bl_return_fir_unnamed_fir4_fir2_q;
+    wire [0:0] bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_b;
+    wire [31:0] bubble_join_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_q;
+    wire [31:0] bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_b;
+    wire [0:0] SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir3_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir3_temp_back_stall;
+    wire [0:0] merged_in_SE_stall_entry_backStall;
+    wire [0:0] merged_in_SE_stall_entry_V0;
+    wire [0:0] merged_in_SE_stall_entry_V1;
+    wire [0:0] merged_in_SE_stall_entry_V2;
+    wire [0:0] merged_in_SE_stall_entry_temp_back_stall;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_backStall;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V0;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V2;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V4;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V1;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V3;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V5;
+    wire [0:0] merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_temp_back_stall;
+    wire [0:0] merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_backStall;
+    wire [0:0] merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V0;
+    wire [0:0] merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V1;
+    wire [0:0] merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V2;
+    wire [0:0] merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_temp_back_stall;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg0_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg1_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg1_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg0_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg1_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg0_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg1_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg0_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg1_q;
+    reg [0:0] i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg0_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg0_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg1_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out_reg1_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out_reg0_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out_reg1_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out_reg0_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out_reg1_q;
+    reg [0:0] i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out_reg0_q;
+    reg [0:0] stall_entry_frontStall_reg0_q;
+    reg [0:0] stall_entry_frontStall_reg1_q;
+    reg [0:0] stall_entry_frontValid_reg1_q;
+    reg [0:0] stall_entry_frontValid_reg0_q;
+    reg [0:0] stall_entry_frontEmpty_reg1_q;
+    reg [0:0] stall_entry_frontEmpty_reg0_q;
+    reg [0:0] stall_entry_frontAlmostEmpty_reg1_q;
+    reg [0:0] stall_entry_frontAlmostEmpty_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg0_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg1_q;
+    reg [0:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg0_q;
+    reg [31:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg1_q;
+    reg [31:0] i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg0_q;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
-    // SE_stall_entry(STALLENABLE,39)
-    // Valid signal propagation
-    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
-    // Backward Stall generation
-    assign SE_stall_entry_backStall = i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_stall_out | ~ (SE_stall_entry_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_stall_entry_wireValid = in_valid_in;
-
-    // i_llvm_fpga_ffwd_dest_i32_add1_fir0(BLACKBOX,10)@0
-    // in in_stall_in@20000000
-    // out out_dest_data_out_0_0@1
-    // out out_stall_out@20000000
-    // out out_valid_out@1
-    fir_i_llvm_fpga_ffwd_dest_i32_add1_0 thei_llvm_fpga_ffwd_dest_i32_add1_fir0 (
-        .in_intel_reserved_ffwd_0_0(in_intel_reserved_ffwd_0_0),
-        .in_stall_in(SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_backStall),
-        .in_valid_in(SE_stall_entry_V0),
-        .out_dest_data_out_0_0(i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_dest_data_out_0_0),
-        .out_stall_out(i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_stall_out),
-        .out_valid_out(i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0(STALLENABLE,36)
-    always @ (posedge clock or negedge resetn)
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg0(REG,63)
+    always @ (posedge clock)
     begin
-        if (!resetn)
+        if (0)
         begin
-            SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg0 <= '0;
-            SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg1 <= '0;
         end
         else
         begin
-            // Successor 0
-            SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg0 <= SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_toReg0;
-            // Successor 1
-            SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg1 <= SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_toReg1;
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg0_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty);
         end
     end
-    // Input Stall processing
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed0 = (~ (in_stall_in) & SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireValid) | SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg0;
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed1 = (~ (i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_stall) & SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireValid) | SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg1;
-    // Consuming
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_StallValid = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_backStall & SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireValid;
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_toReg0 = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_StallValid & SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed0;
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_toReg1 = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_StallValid & SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed1;
-    // Backward Stall generation
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_or0 = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed0;
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireStall = ~ (SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_consumed1 & SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_or0);
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_backStall = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireStall;
-    // Valid signal propagation
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_V0 = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireValid & ~ (SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg0);
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_V1 = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireValid & ~ (SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_fromReg1);
-    // Computing multiple Valid(s)
-    assign SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_wireValid = i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_valid_out;
 
-    // SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir2(STALLENABLE,38)
-    // Backward Stall generation
-    assign SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir2_backStall = $unsigned(1'b0);
-    // Computing multiple Valid(s)
-    assign SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir2_wireValid = i_llvm_fpga_push_token_i1_throttle_push_fir2_out_valid_out;
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg1(REG,62)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg1_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg0_q);
+        end
+    end
 
-    // bubble_join_i_iowr_bl_return_fir_unnamed_fir3_fir1(BITJOIN,26)
-    assign bubble_join_i_iowr_bl_return_fir_unnamed_fir3_fir1_q = i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_ack;
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg0(REG,65)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg0_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty);
+        end
+    end
 
-    // bubble_select_i_iowr_bl_return_fir_unnamed_fir3_fir1(BITSELECT,27)
-    assign bubble_select_i_iowr_bl_return_fir_unnamed_fir3_fir1_b = $unsigned(bubble_join_i_iowr_bl_return_fir_unnamed_fir3_fir1_q[0:0]);
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg1(REG,64)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg1_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg0_q);
+        end
+    end
 
-    // i_llvm_fpga_push_token_i1_throttle_push_fir2(BLACKBOX,11)@1
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out_reg0(REG,71)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out_reg0_q <= $unsigned(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out);
+        end
+    end
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out_reg1(REG,70)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out_reg1_q <= $unsigned(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out_reg0_q);
+        end
+    end
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out_reg0(REG,73)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out_reg0_q <= $unsigned(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out);
+        end
+    end
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out_reg1(REG,72)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out_reg1_q <= $unsigned(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out_reg0_q);
+        end
+    end
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out_reg0(REG,75)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out_reg0_q <= $unsigned(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out);
+        end
+    end
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out_reg1(REG,74)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out_reg1_q <= $unsigned(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out_reg0_q);
+        end
+    end
+
+    // SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir3(STALLENABLE,38)
+    assign SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir3_backStall = $unsigned(1'b0);
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg0(REG,68)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg0_q <= $unsigned(SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir3_backStall);
+        end
+    end
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg1(REG,69)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg1_q <= $unsigned(i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg0_q);
+        end
+    end
+
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg0(REG,61)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg0_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack);
+        end
+    end
+
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg1(REG,60)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg1_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg0_q);
+        end
+    end
+
+    // bubble_join_i_iowr_bl_return_fir_unnamed_fir4_fir2(BITJOIN,28)
+    assign bubble_join_i_iowr_bl_return_fir_unnamed_fir4_fir2_q = i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack_reg1_q;
+
+    // bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2(BITSELECT,29)
+    assign bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_b = $unsigned(bubble_join_i_iowr_bl_return_fir_unnamed_fir4_fir2_q[0:0]);
+
+    // i_llvm_fpga_push_token_i1_throttle_push_fir3(BLACKBOX,12)@56
     // in in_stall_in@20000000
-    // out out_data_out@2
-    // out out_feedback_out_1@20000000
-    // out out_feedback_valid_out_1@20000000
+    // out out_almost_empty_out@73
+    // out out_data_out@73
+    // out out_empty_out@73
+    // out out_feedback_almost_empty_out_1@20000000
+    // out out_feedback_data_out_1@20000000
+    // out out_feedback_empty_out_1@20000000
     // out out_stall_out@20000000
-    // out out_valid_out@2
-    fir_i_llvm_fpga_push_token_i1_throttle_push_0 thei_llvm_fpga_push_token_i1_throttle_push_fir2 (
-        .in_data_in(bubble_select_i_iowr_bl_return_fir_unnamed_fir3_fir1_b),
+    // out out_valid_out@73
+    fir_i_llvm_fpga_push_token_i1_throttle_push_0 thei_llvm_fpga_push_token_i1_throttle_push_fir3 (
+        .in_almost_empty_in(merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V2),
+        .in_data_in(bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_b),
+        .in_empty_in(merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V1),
         .in_feedback_stall_in_1(in_feedback_stall_in_1),
-        .in_stall_in(SE_out_i_llvm_fpga_push_token_i1_throttle_push_fir2_backStall),
-        .in_valid_in(SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_V0),
+        .in_stall_in(i_llvm_fpga_push_token_i1_throttle_push_fir3_in_stall_in_reg1_q),
+        .in_valid_in(merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V0),
+        .out_almost_empty_out(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_almost_empty_out),
         .out_data_out(),
-        .out_feedback_out_1(i_llvm_fpga_push_token_i1_throttle_push_fir2_out_feedback_out_1),
-        .out_feedback_valid_out_1(i_llvm_fpga_push_token_i1_throttle_push_fir2_out_feedback_valid_out_1),
-        .out_stall_out(i_llvm_fpga_push_token_i1_throttle_push_fir2_out_stall_out),
-        .out_valid_out(i_llvm_fpga_push_token_i1_throttle_push_fir2_out_valid_out),
+        .out_empty_out(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_empty_out),
+        .out_feedback_almost_empty_out_1(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_almost_empty_out_1),
+        .out_feedback_data_out_1(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_data_out_1),
+        .out_feedback_empty_out_1(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_empty_out_1),
+        .out_stall_out(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_stall_out),
+        .out_valid_out(i_llvm_fpga_push_token_i1_throttle_push_fir3_out_valid_out),
+        .clock(clock),
+        .resetn(rst_sync_rst_sclrn[0])
+    );
+
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg0(REG,67)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg0_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid);
+        end
+    end
+
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg1(REG,66)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg1_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg0_q);
+        end
+    end
+
+    // merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2(STALLENABLE,57)
+    assign merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_backStall = i_llvm_fpga_push_token_i1_throttle_push_fir3_out_stall_out;
+    assign merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V0 = i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid_reg1_q;
+    assign merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V1 = i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty_reg1_q;
+    assign merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_V2 = i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty_reg1_q;
+
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg0(REG,58)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg0_q <= $unsigned(merged_in_SE_bubble_select_i_iowr_bl_return_fir_unnamed_fir4_fir2_backStall);
+        end
+    end
+
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg1(REG,59)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg1_q <= $unsigned(i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg0_q);
+        end
+    end
+
+    // GND(CONSTANT,0)
+    assign GND_q = $unsigned(1'b0);
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg0(REG,84)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg0_q <= $unsigned(merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_backStall);
+        end
+    end
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg1(REG,85)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg1_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg0_q);
+        end
+    end
+
+    // stall_entry_frontAlmostEmpty_reg0(REG,83)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontAlmostEmpty_reg0_q <= $unsigned(in_almost_empty_in);
+        end
+    end
+
+    // stall_entry_frontAlmostEmpty_reg1(REG,82)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontAlmostEmpty_reg1_q <= $unsigned(stall_entry_frontAlmostEmpty_reg0_q);
+        end
+    end
+
+    // stall_entry_frontEmpty_reg0(REG,81)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontEmpty_reg0_q <= $unsigned(in_empty_in);
+        end
+    end
+
+    // stall_entry_frontEmpty_reg1(REG,80)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontEmpty_reg1_q <= $unsigned(stall_entry_frontEmpty_reg0_q);
+        end
+    end
+
+    // stall_entry_frontValid_reg0(REG,79)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontValid_reg0_q <= $unsigned(in_valid_in);
+        end
+    end
+
+    // stall_entry_frontValid_reg1(REG,78)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontValid_reg1_q <= $unsigned(stall_entry_frontValid_reg0_q);
+        end
+    end
+
+    // merged_in_SE_stall_entry(STALLENABLE,55)
+    assign merged_in_SE_stall_entry_backStall = i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_stall;
+    assign merged_in_SE_stall_entry_V0 = stall_entry_frontValid_reg1_q;
+    assign merged_in_SE_stall_entry_V1 = stall_entry_frontEmpty_reg1_q;
+    assign merged_in_SE_stall_entry_V2 = stall_entry_frontAlmostEmpty_reg1_q;
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x(BLACKBOX,26)@0
+    // in in_i_stall@20000000
+    // out out_almost_empty_out@32
+    // out out_empty_out@32
+    // out out_o_stall@20000000
+    // out out_o_valid@32
+    // out out_c0_exit8_0_tpl@32
+    // out out_c0_exit8_1_tpl@32
+    fir_i_sfc_s_c0_in_for_cond_cleanup_s_c0_enter6_fir0 thei_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x (
+        .in_almost_empty_in(merged_in_SE_stall_entry_V2),
+        .in_empty_in(merged_in_SE_stall_entry_V1),
+        .in_i_stall(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_in_i_stall_reg1_q),
+        .in_i_valid(merged_in_SE_stall_entry_V0),
+        .in_intel_reserved_ffwd_0_0(in_intel_reserved_ffwd_0_0),
+        .in_unnamed_fir2_0_tpl(GND_q),
+        .out_almost_empty_out(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out),
+        .out_empty_out(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out),
+        .out_o_stall(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_stall),
+        .out_o_valid(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid),
+        .out_c0_exit8_0_tpl(),
+        .out_c0_exit8_1_tpl(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1(STALLENABLE,34)
-    // Valid signal propagation
-    assign SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_V0 = SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_wireValid;
-    // Backward Stall generation
-    assign SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_backStall = i_llvm_fpga_push_token_i1_throttle_push_fir2_out_stall_out | ~ (SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_wireValid);
-    // Computing multiple Valid(s)
-    assign SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_wireValid = i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_valid;
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg0(REG,93)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg0_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl);
+        end
+    end
 
-    // bubble_join_i_llvm_fpga_ffwd_dest_i32_add1_fir0(BITJOIN,29)
-    assign bubble_join_i_llvm_fpga_ffwd_dest_i32_add1_fir0_q = i_llvm_fpga_ffwd_dest_i32_add1_fir0_out_dest_data_out_0_0;
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg1(REG,92)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg1_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg0_q);
+        end
+    end
 
-    // bubble_select_i_llvm_fpga_ffwd_dest_i32_add1_fir0(BITSELECT,30)
-    assign bubble_select_i_llvm_fpga_ffwd_dest_i32_add1_fir0_b = $unsigned(bubble_join_i_llvm_fpga_ffwd_dest_i32_add1_fir0_q[31:0]);
+    // bubble_join_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x(BITJOIN,32)
+    assign bubble_join_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_q = i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_c0_exit8_1_tpl_reg1_q;
 
-    // i_iowr_bl_return_fir_unnamed_fir3_fir1(BLACKBOX,9)@1
+    // bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x(BITSELECT,33)
+    assign bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_b = $unsigned(bubble_join_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_q[31:0]);
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg0(REG,87)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg0_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out);
+        end
+    end
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg1(REG,86)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg1_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg0_q);
+        end
+    end
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg0(REG,89)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg0_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out);
+        end
+    end
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg1(REG,88)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg1_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg0_q);
+        end
+    end
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg0(REG,91)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg0_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid);
+        end
+    end
+
+    // i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg1(REG,90)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg1_q <= $unsigned(i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg0_q);
+        end
+    end
+
+    // merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x(STALLENABLE,56)
+    // Desync
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_temp_back_stall = in_stall_in | i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_stall;
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_backStall = merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_temp_back_stall;
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V0 = i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_o_valid_reg1_q;
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V2 = i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_empty_out_reg1_q;
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V4 = i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_out_almost_empty_out_reg1_q;
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V1 = merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V0;
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V3 = merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V2;
+    assign merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V5 = merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V4;
+
+    // i_iowr_bl_return_fir_unnamed_fir4_fir2(BLACKBOX,11)@32
     // in in_i_stall@20000000
     // out out_iowr_bl_return_fir_o_fifodata@20000000
     // out out_iowr_bl_return_fir_o_fifovalid@20000000
+    // out out_o_ack@56
+    // out out_o_almost_empty@56
+    // out out_o_empty@56
     // out out_o_stall@20000000
-    fir_i_iowr_bl_return_unnamed_fir3_fir0 thei_iowr_bl_return_fir_unnamed_fir3_fir1 (
-        .in_i_data(bubble_select_i_llvm_fpga_ffwd_dest_i32_add1_fir0_b),
-        .in_i_stall(SE_out_i_iowr_bl_return_fir_unnamed_fir3_fir1_backStall),
-        .in_i_valid(SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_V1),
+    // out out_o_valid@56
+    fir_i_iowr_bl_return_unnamed_fir4_fir0 thei_iowr_bl_return_fir_unnamed_fir4_fir2 (
+        .in_almost_empty_in(merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V5),
+        .in_empty_in(merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V3),
+        .in_i_data(bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_b),
+        .in_i_stall(i_iowr_bl_return_fir_unnamed_fir4_fir2_in_i_stall_reg1_q),
+        .in_i_valid(merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V1),
         .in_iowr_bl_return_fir_i_fifoready(in_iowr_bl_return_fir_i_fifoready),
-        .out_iowr_bl_return_fir_o_fifodata(i_iowr_bl_return_fir_unnamed_fir3_fir1_out_iowr_bl_return_fir_o_fifodata),
-        .out_iowr_bl_return_fir_o_fifovalid(i_iowr_bl_return_fir_unnamed_fir3_fir1_out_iowr_bl_return_fir_o_fifovalid),
-        .out_o_ack(i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_ack),
-        .out_o_stall(i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_stall),
-        .out_o_valid(i_iowr_bl_return_fir_unnamed_fir3_fir1_out_o_valid),
+        .out_iowr_bl_return_fir_o_fifodata(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_iowr_bl_return_fir_o_fifodata),
+        .out_iowr_bl_return_fir_o_fifovalid(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_iowr_bl_return_fir_o_fifovalid),
+        .out_o_ack(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_ack),
+        .out_o_almost_empty(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_almost_empty),
+        .out_o_empty(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_empty),
+        .out_o_stall(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_stall),
+        .out_o_valid(i_iowr_bl_return_fir_unnamed_fir4_fir2_out_o_valid),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // ext_sig_sync_out(GPOUT,5)
-    assign out_iowr_bl_return_fir_o_fifodata = i_iowr_bl_return_fir_unnamed_fir3_fir1_out_iowr_bl_return_fir_o_fifodata;
-    assign out_iowr_bl_return_fir_o_fifovalid = i_iowr_bl_return_fir_unnamed_fir3_fir1_out_iowr_bl_return_fir_o_fifovalid;
+    // ext_sig_sync_out(GPOUT,6)
+    assign out_iowr_bl_return_fir_o_fifodata = i_iowr_bl_return_fir_unnamed_fir4_fir2_out_iowr_bl_return_fir_o_fifodata;
+    assign out_iowr_bl_return_fir_o_fifovalid = i_iowr_bl_return_fir_unnamed_fir4_fir2_out_iowr_bl_return_fir_o_fifovalid;
 
-    // feedback_out_1_sync(GPOUT,6)
-    assign out_feedback_out_1 = i_llvm_fpga_push_token_i1_throttle_push_fir2_out_feedback_out_1;
+    // feedback_almost_empty_out_1_sync(GPOUT,7)
+    assign out_feedback_almost_empty_out_1 = i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_almost_empty_out_1;
 
-    // feedback_valid_out_1_sync(GPOUT,8)
-    assign out_feedback_valid_out_1 = i_llvm_fpga_push_token_i1_throttle_push_fir2_out_feedback_valid_out_1;
+    // feedback_data_out_1_sync(GPOUT,8)
+    assign out_feedback_data_out_1 = i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_data_out_1;
 
-    // sync_out(GPOUT,22)@0
-    assign out_stall_out = SE_stall_entry_backStall;
+    // feedback_empty_out_1_sync(GPOUT,9)
+    assign out_feedback_empty_out_1 = i_llvm_fpga_push_token_i1_throttle_push_fir3_out_feedback_empty_out_1;
 
-    // dupName_0_sync_out_x(GPOUT,24)@1
-    assign out_valid_out = SE_out_i_llvm_fpga_ffwd_dest_i32_add1_fir0_V0;
+    // stall_entry_frontStall_reg0(REG,76)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontStall_reg0_q <= $unsigned(merged_in_SE_stall_entry_backStall);
+        end
+    end
+
+    // stall_entry_frontStall_reg1(REG,77)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            stall_entry_frontStall_reg1_q <= $unsigned(stall_entry_frontStall_reg0_q);
+        end
+    end
+
+    // sync_out(GPOUT,23)@0
+    assign out_stall_out = stall_entry_frontStall_reg1_q;
+
+    // dupName_0_sync_out_x(GPOUT,25)@32
+    assign out_almost_empty_out = merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V4;
+    assign out_empty_out = merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V2;
+    assign out_valid_out = merged_in_SE_bubble_select_i_sfc_s_c0_in_for_cond_cleanup_firs_c0_enter6_fir0_aunroll_x_V0;
+
+    // rst_sync(RESETSYNC,94)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

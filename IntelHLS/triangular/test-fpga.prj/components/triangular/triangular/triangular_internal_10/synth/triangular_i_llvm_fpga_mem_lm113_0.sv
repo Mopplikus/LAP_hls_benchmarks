@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_lm113_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -109,13 +109,13 @@ module triangular_i_llvm_fpga_mem_lm113_0 (
     // c_i3_09(CONSTANT,10)
     assign c_i3_09_q = $unsigned(3'b000);
 
-    // addr_trunc_sel_x(BITSELECT,20)@8
+    // addr_trunc_sel_x(BITSELECT,20)@14
     assign addr_trunc_sel_x_b = in_i_address[31:0];
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_lm113_triangular1(EXTIFACE,14)@8 + 1
+    // i_llvm_fpga_mem_lm113_triangular1(EXTIFACE,14)@14 + 1
     assign i_llvm_fpga_mem_lm113_triangular1_avm_readdata = in_lm113_triangular_avm_readdata;
     assign i_llvm_fpga_mem_lm113_triangular1_avm_readdatavalid = in_lm113_triangular_avm_readdatavalid;
     assign i_llvm_fpga_mem_lm113_triangular1_avm_waitrequest = in_lm113_triangular_avm_waitrequest;
@@ -155,7 +155,7 @@ module triangular_i_llvm_fpga_mem_lm113_0 (
         .ADDRSPACE(65),
         .ALIGNMENT_BYTES(4),
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .ATOMIC(0),
         .ATOMIC_WIDTH(3),
         .AVM_READ_DATA_LATENESS(0),
@@ -231,10 +231,10 @@ module triangular_i_llvm_fpga_mem_lm113_0 (
     assign out_lm113_triangular_avm_byteenable = i_llvm_fpga_mem_lm113_triangular1_avm_byteenable;
     assign out_lm113_triangular_avm_burstcount = i_llvm_fpga_mem_lm113_triangular1_avm_burstcount;
 
-    // sync_out(GPOUT,18)@9
+    // sync_out(GPOUT,18)@15
     assign out_o_stall = i_llvm_fpga_mem_lm113_triangular1_o_stall;
 
-    // dupName_0_sync_out_x(GPOUT,21)@9
+    // dupName_0_sync_out_x(GPOUT,21)@15
     assign out_o_readdata = i_llvm_fpga_mem_lm113_triangular1_o_readdata;
     assign out_o_valid = i_llvm_fpga_mem_lm113_triangular1_o_valid;
 

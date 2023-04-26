@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -40,7 +40,7 @@ module triangular_i_llvm_fpga_ffwd_source_i32_unnamed_4_triangular0 (
     wire [31:0] i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular1_source_out;
 
 
-    // i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular1(EXTIFACE,2)
+    // i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular1(EXTIFACE,2)@11
     assign i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular1_predicate_in = in_predicate_in;
     assign i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular1_source_in = in_src_data_in_2_0;
     assign i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular1_valid_in = in_valid_in;
@@ -61,10 +61,10 @@ module triangular_i_llvm_fpga_ffwd_source_i32_unnamed_4_triangular0 (
     // regfree_osync(GPOUT,4)
     assign out_intel_reserved_ffwd_2_0 = i_llvm_fpga_ffwd_source_i32_unnamed_triangular4_triangular1_source_out;
 
-    // sync_out(GPOUT,6)@20000000
+    // sync_out(GPOUT,6)@11
     assign out_stall_out = in_stall_in;
 
-    // dupName_0_sync_out_x(GPOUT,8)@2
+    // dupName_0_sync_out_x(GPOUT,8)@11
     assign out_valid_out = in_valid_in;
 
 endmodule

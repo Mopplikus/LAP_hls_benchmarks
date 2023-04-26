@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -53,7 +53,7 @@ module triangular_i_llvm_fpga_pop_throttle_i1_throttle_pop_3_reg (
     assign stall_in_not_or_i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg_valid_reg_q = i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg_valid_reg_not_q | stall_in_not_q;
 
     // i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg_valid_reg(REG,3)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin
@@ -72,7 +72,7 @@ module triangular_i_llvm_fpga_pop_throttle_i1_throttle_pop_3_reg (
     assign out_stall_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg_valid_reg_and_stall_in_q;
 
     // i_llvm_fpga_pop_throttle_i1_throttle_pop_triangular3_reg_data_reg(REG,2)
-    always @ (posedge clock or negedge resetn)
+    always @ (posedge clock)
     begin
         if (!resetn)
         begin

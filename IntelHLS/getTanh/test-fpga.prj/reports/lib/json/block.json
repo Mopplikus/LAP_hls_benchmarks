@@ -1,21 +1,21 @@
 {
-  "1970636368":
+  "3635697488":
   {
     "nodes":
     [
       {
         "name":"Cluster 0"
-        , "id":1972852832
-        , "start":"1.00"
-        , "end":"1.00"
+        , "id":3638260416
+        , "start":"0.00"
+        , "end":"35.00"
         , "details":
         [
           {
             "type":"table"
             , "Cluster Name":"i_sfc_s_c0_in_wt_entry_gettanhs_c0_enter1_gettanh0"
-            , "Cluster Type":"Stall-Enable"
-            , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"0"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"0"
+            , "Cluster Latency":"35"
           }
         ]
         , "type":"cluster"
@@ -23,14 +23,31 @@
         [
           {
             "name":"Logic"
-            , "id":1972859856
+            , "id":3638261152
             , "subtype":"entry"
             , "details":
             [
               {
                 "type":"table"
-                , "Cluster Logic Start Cycle":"1"
-                , "Cluster Logic Latency":"0"
+                , "Cluster Logic Start Cycle":"0"
+                , "Cluster Logic Latency":"4"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":3638377104
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"4"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"512"
+                , "Exit FIFO Width":"16"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
               }
             ]
             , "type":"inst"
@@ -38,10 +55,37 @@
         ]
       }
       , {
+        "name":"?"
+        , "id":3640170096
+        , "start":"35.00"
+        , "end":"52.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"35"
+            , "Latency":"17"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
+              , "line":13
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
         "name":"RD"
-        , "id":1974018448
-        , "start":"2.00"
-        , "end":"2.00"
+        , "id":3642815360
+        , "start":"52.00"
+        , "end":"76.00"
         , "subtype":"default"
         , "details":
         [
@@ -52,35 +96,8 @@
             , "Depth":"0"
             , "Stream Name":"call.getTanh"
             , "Stall-free":"No"
-            , "Start Cycle":"2"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-              , "line":13
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"?"
-        , "id":1975798896
-        , "start":"1.00"
-        , "end":"2.00"
-        , "subtype":"pop"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"Unknown variable"
-            , "Start Cycle":"1"
-            , "Latency":"1"
+            , "Start Cycle":"52"
+            , "Latency":"24"
           }
         ]
         , "debug":
@@ -98,8 +115,12 @@
     , "links":
     [
       {
-        "from":1975798896
-        , "to":1974018448
+        "from":3638261152
+        , "to":3638377104
+      }
+      , {
+        "from":3640170096
+        , "to":3642815360
         , "details":
         [
           {
@@ -110,15 +131,66 @@
       }
     ]
   }
-  , "1970636448":
+  , "3635697568":
   {
     "nodes":
     [
       {
+        "name":"Cluster 1"
+        , "id":3638529600
+        , "start":"0.00"
+        , "end":"32.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_cond_cleanup_gettanhs_c0_enter7_gettanh0"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"0"
+            , "Cluster Latency":"32"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":3638536736
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"0"
+                , "Cluster Logic Latency":"1"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":3638558624
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"1"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"512"
+                , "Exit FIFO Width":"64"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
         "name":"WR"
-        , "id":1973304560
-        , "start":"1.00"
-        , "end":"1.00"
+        , "id":3640154240
+        , "start":"32.00"
+        , "end":"56.00"
         , "subtype":"default"
         , "details":
         [
@@ -129,8 +201,8 @@
             , "Depth":"0"
             , "Stream Name":"return.getTanh"
             , "Stall-free":"No"
-            , "Start Cycle":"1"
-            , "Latency":"0"
+            , "Start Cycle":"32"
+            , "Latency":"24"
           }
         ]
         , "debug":
@@ -138,33 +210,7 @@
           [
             {
               "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-              , "line":46
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":1975898384
-        , "start":"0.00"
-        , "end":"1.00"
-        , "subtype":"ffwdDest"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"0"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-              , "line":41
+              , "line":47
             }
           ]
         ]
@@ -172,9 +218,9 @@
       }
       , {
         "name":"Feedback"
-        , "id":1975935296
-        , "start":"1.00"
-        , "end":"2.00"
+        , "id":3640354576
+        , "start":"56.00"
+        , "end":"73.00"
         , "subtype":"push"
         , "details":
         [
@@ -184,8 +230,8 @@
             , "Variable":"Unknown variable"
             , "Feedback FIFO Depth":"1"
             , "Feedback FIFO Width":"1"
-            , "Start Cycle":"1"
-            , "Latency":"1"
+            , "Start Cycle":"56"
+            , "Latency":"17"
           }
         ]
         , "type":"inst"
@@ -194,8 +240,12 @@
     , "links":
     [
       {
-        "from":1973304560
-        , "to":1975935296
+        "from":3638536736
+        , "to":3638558624
+      }
+      , {
+        "from":3640154240
+        , "to":3640354576
         , "details":
         [
           {
@@ -205,35 +255,35 @@
         ]
       }
       , {
-        "from":1975898384
-        , "to":1973304560
+        "from":3638558624
+        , "to":3640154240
         , "details":
         [
           {
             "type":"table"
-            , "Width":"32"
+            , "Width":"64"
           }
         ]
       }
     ]
   }
-  , "1970636528":
+  , "3635697648":
   {
     "nodes":
     [
       {
-        "name":"Cluster 1"
-        , "id":1973519472
-        , "start":"1.00"
-        , "end":"39.00"
+        "name":"Cluster 2"
+        , "id":3638681024
+        , "start":"0.00"
+        , "end":"66.00"
         , "details":
         [
           {
             "type":"table"
-            , "Cluster Name":"i_sfc_s_c0_in_for_body_gettanhs_c0_enter82_gettanh1"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body_gettanhs_c0_enter112_gettanh1"
             , "Cluster Type":"Stall-Free"
-            , "Cluster Start Cycle":"1"
-            , "Cluster Latency":"38"
+            , "Cluster Start Cycle":"0"
+            , "Cluster Latency":"66"
           }
         ]
         , "type":"cluster"
@@ -241,13 +291,13 @@
         [
           {
             "name":"Logic"
-            , "id":1973525840
+            , "id":3638687280
             , "subtype":"entry"
             , "details":
             [
               {
                 "type":"table"
-                , "Cluster Logic Start Cycle":"1"
+                , "Cluster Logic Start Cycle":"0"
                 , "Cluster Logic Latency":"35"
               }
             ]
@@ -255,13 +305,13 @@
           }
           , {
             "name":"Exit"
-            , "id":1974123888
+            , "id":3639097472
             , "subtype":"exit"
             , "details":
             [
               {
                 "type":"table"
-                , "Start Cycle":"36"
+                , "Start Cycle":"35"
                 , "Latency":"3"
                 , "Exit FIFO Depth":"512"
                 , "Exit FIFO Width":"24"
@@ -272,57 +322,24 @@
           }
         ]
       }
-      , {
-        "name":"Loop Orch"
-        , "id":1974566048
-        , "subtype":"default"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/getTanh/getTanh.cpp"
-              , "line":31
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
     ]
     , "links":
     [
       {
-        "from":1973525840
-        , "to":1974123888
-      }
-      , {
-        "from":1974566048
-        , "to":1973525840
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
+        "from":3638687280
+        , "to":3639097472
       }
     ]
   }
-  , "1970717728":
+  , "3635778736":
   {
     "nodes":
     [
       {
         "name":"?"
-        , "id":1973688336
-        , "start":"1.00"
-        , "end":"2.00"
+        , "id":3641842032
+        , "start":"0.00"
+        , "end":"17.00"
         , "subtype":"pop"
         , "details":
         [
@@ -330,17 +347,17 @@
             "type":"table"
             , "Instruction":"Feedback Read"
             , "Variable":"Unknown variable"
-            , "Start Cycle":"1"
-            , "Latency":"1"
+            , "Start Cycle":"0"
+            , "Latency":"17"
           }
         ]
         , "type":"inst"
       }
       , {
         "name":"Feedback"
-        , "id":1975846528
-        , "start":"1.00"
-        , "end":"2.00"
+        , "id":3644908912
+        , "start":"0.00"
+        , "end":"17.00"
         , "subtype":"push"
         , "details":
         [
@@ -350,8 +367,8 @@
             , "Variable":"Unknown variable"
             , "Feedback FIFO Depth":"1"
             , "Feedback FIFO Width":"1"
-            , "Start Cycle":"1"
-            , "Latency":"1"
+            , "Start Cycle":"0"
+            , "Latency":"17"
           }
         ]
         , "debug":
@@ -369,8 +386,8 @@
     , "links":
     [
       {
-        "from":1975846528
-        , "to":1973688336
+        "from":3644908912
+        , "to":3641842032
         , "details":
         [
           {

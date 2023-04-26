@@ -16,7 +16,7 @@
 
 // SystemVerilog created from triangular_function_wrapper
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:15 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -96,8 +96,7 @@ module triangular_function_wrapper (
     wire [0:0] not_ready_q;
     wire [0:0] not_stall_q;
     wire [0:0] pos_reset_q;
-    wire [0:0] reset_wire_inst_o_resetn;
-    wire reset_wire_inst_o_resetn_bitsignaltemp;
+    wire [0:0] start_pulse_out_o_valid;
     wire [0:0] triangular_function_out_iord_bl_call_triangular_o_fifoalmost_full;
     wire [0:0] triangular_function_out_iord_bl_call_triangular_o_fifoready;
     wire [0:0] triangular_function_out_iowr_bl_return_triangular_o_fifodata;
@@ -130,27 +129,46 @@ module triangular_function_wrapper (
     wire [0:0] triangular_function_out_memdep_triangular_avm_read;
     wire [0:0] triangular_function_out_memdep_triangular_avm_write;
     wire [31:0] triangular_function_out_memdep_triangular_avm_writedata;
+    wire [0:0] triangular_function_out_stall_out;
+    wire [0:0] wait_pulse_extender_inst_out_o_sclrn;
+    reg [0:0] rst_sync_rst_sclrn;
 
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
+    // wait_pulse_extender_inst(BLACKBOX,76)
+    triangular_wait_pulse_extender_inst thewait_pulse_extender_inst (
+        .out_o_sclrn(wait_pulse_extender_inst_out_o_sclrn),
+        .clock(clock),
+        .resetn(rst_sync_rst_sclrn[0])
+    );
+
+    // start_pulse(BLACKBOX,74)
+    triangular_start_pulse thestart_pulse (
+        .in_i_stall(triangular_function_out_stall_out),
+        .in_i_valid(wait_pulse_extender_inst_out_o_sclrn),
+        .out_o_valid(start_pulse_out_o_valid),
+        .clock(clock),
+        .resetn(rst_sync_rst_sclrn[0])
+    );
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // not_stall(LOGICAL,38)
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
+
+    // not_stall(LOGICAL,37)
     assign not_stall_q = ~ (stall);
 
-    // implicit_input_pad_const_end(CONSTANT,9)
+    // implicit_input_pad_const_end(CONSTANT,8)
     assign implicit_input_pad_const_end_q = $unsigned(32'b00000000000000000000000000000000);
 
-    // implicit_input(BITJOIN,8)
+    // implicit_input(BITJOIN,7)
     assign implicit_input_q = {implicit_input_pad_const_end_q, n, A, x};
 
     // A_const(CONSTANT,2)
     assign A_const_q = $unsigned(64'b0000000000000000000000000000000000000000000000000000000000000000);
 
-    // triangular_function(BLACKBOX,76)
+    // triangular_function(BLACKBOX,75)
     triangular_function thetriangular_function (
         .in_arg_A(A_const_q),
         .in_arg_call(A_const_q),
@@ -177,7 +195,7 @@ module triangular_function_wrapper (
         .in_memdep_triangular_avm_writeack(avm_memdep_triangular_writeack),
         .in_stall_in(GND_q),
         .in_start(GND_q),
-        .in_valid_in(VCC_q),
+        .in_valid_in(start_pulse_out_o_valid),
         .out_iord_bl_call_triangular_o_fifoalmost_full(triangular_function_out_iord_bl_call_triangular_o_fifoalmost_full),
         .out_iord_bl_call_triangular_o_fifoready(triangular_function_out_iord_bl_call_triangular_o_fifoready),
         .out_iowr_bl_return_triangular_o_fifodata(triangular_function_out_iowr_bl_return_triangular_o_fifodata),
@@ -210,132 +228,137 @@ module triangular_function_wrapper (
         .out_memdep_triangular_avm_read(triangular_function_out_memdep_triangular_avm_read),
         .out_memdep_triangular_avm_write(triangular_function_out_memdep_triangular_avm_write),
         .out_memdep_triangular_avm_writedata(triangular_function_out_memdep_triangular_avm_writedata),
-        .out_stall_out(),
+        .out_stall_out(triangular_function_out_stall_out),
         .out_valid_out(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // avm_lm113_triangular_address(GPOUT,39)
+    // avm_lm113_triangular_address(GPOUT,38)
     assign avm_lm113_triangular_address = triangular_function_out_lm113_triangular_avm_address;
 
-    // avm_lm113_triangular_burstcount(GPOUT,40)
+    // avm_lm113_triangular_burstcount(GPOUT,39)
     assign avm_lm113_triangular_burstcount = triangular_function_out_lm113_triangular_avm_burstcount;
 
-    // avm_lm113_triangular_byteenable(GPOUT,41)
+    // avm_lm113_triangular_byteenable(GPOUT,40)
     assign avm_lm113_triangular_byteenable = triangular_function_out_lm113_triangular_avm_byteenable;
 
-    // avm_lm113_triangular_enable(GPOUT,42)
+    // avm_lm113_triangular_enable(GPOUT,41)
     assign avm_lm113_triangular_enable = triangular_function_out_lm113_triangular_avm_enable;
 
-    // avm_lm113_triangular_read(GPOUT,43)
+    // avm_lm113_triangular_read(GPOUT,42)
     assign avm_lm113_triangular_read = triangular_function_out_lm113_triangular_avm_read;
 
-    // avm_lm113_triangular_write(GPOUT,44)
+    // avm_lm113_triangular_write(GPOUT,43)
     assign avm_lm113_triangular_write = triangular_function_out_lm113_triangular_avm_write;
 
-    // avm_lm113_triangular_writedata(GPOUT,45)
+    // avm_lm113_triangular_writedata(GPOUT,44)
     assign avm_lm113_triangular_writedata = triangular_function_out_lm113_triangular_avm_writedata;
 
-    // avm_lm1_triangular_address(GPOUT,46)
+    // avm_lm1_triangular_address(GPOUT,45)
     assign avm_lm1_triangular_address = triangular_function_out_lm1_triangular_avm_address;
 
-    // avm_lm1_triangular_burstcount(GPOUT,47)
+    // avm_lm1_triangular_burstcount(GPOUT,46)
     assign avm_lm1_triangular_burstcount = triangular_function_out_lm1_triangular_avm_burstcount;
 
-    // avm_lm1_triangular_byteenable(GPOUT,48)
+    // avm_lm1_triangular_byteenable(GPOUT,47)
     assign avm_lm1_triangular_byteenable = triangular_function_out_lm1_triangular_avm_byteenable;
 
-    // avm_lm1_triangular_enable(GPOUT,49)
+    // avm_lm1_triangular_enable(GPOUT,48)
     assign avm_lm1_triangular_enable = triangular_function_out_lm1_triangular_avm_enable;
 
-    // avm_lm1_triangular_read(GPOUT,50)
+    // avm_lm1_triangular_read(GPOUT,49)
     assign avm_lm1_triangular_read = triangular_function_out_lm1_triangular_avm_read;
 
-    // avm_lm1_triangular_write(GPOUT,51)
+    // avm_lm1_triangular_write(GPOUT,50)
     assign avm_lm1_triangular_write = triangular_function_out_lm1_triangular_avm_write;
 
-    // avm_lm1_triangular_writedata(GPOUT,52)
+    // avm_lm1_triangular_writedata(GPOUT,51)
     assign avm_lm1_triangular_writedata = triangular_function_out_lm1_triangular_avm_writedata;
 
-    // avm_lm92_triangular_address(GPOUT,53)
+    // avm_lm92_triangular_address(GPOUT,52)
     assign avm_lm92_triangular_address = triangular_function_out_lm92_triangular_avm_address;
 
-    // avm_lm92_triangular_burstcount(GPOUT,54)
+    // avm_lm92_triangular_burstcount(GPOUT,53)
     assign avm_lm92_triangular_burstcount = triangular_function_out_lm92_triangular_avm_burstcount;
 
-    // avm_lm92_triangular_byteenable(GPOUT,55)
+    // avm_lm92_triangular_byteenable(GPOUT,54)
     assign avm_lm92_triangular_byteenable = triangular_function_out_lm92_triangular_avm_byteenable;
 
-    // avm_lm92_triangular_enable(GPOUT,56)
+    // avm_lm92_triangular_enable(GPOUT,55)
     assign avm_lm92_triangular_enable = triangular_function_out_lm92_triangular_avm_enable;
 
-    // avm_lm92_triangular_read(GPOUT,57)
+    // avm_lm92_triangular_read(GPOUT,56)
     assign avm_lm92_triangular_read = triangular_function_out_lm92_triangular_avm_read;
 
-    // avm_lm92_triangular_write(GPOUT,58)
+    // avm_lm92_triangular_write(GPOUT,57)
     assign avm_lm92_triangular_write = triangular_function_out_lm92_triangular_avm_write;
 
-    // avm_lm92_triangular_writedata(GPOUT,59)
+    // avm_lm92_triangular_writedata(GPOUT,58)
     assign avm_lm92_triangular_writedata = triangular_function_out_lm92_triangular_avm_writedata;
 
-    // avm_memdep_triangular_address(GPOUT,60)
+    // avm_memdep_triangular_address(GPOUT,59)
     assign avm_memdep_triangular_address = triangular_function_out_memdep_triangular_avm_address;
 
-    // avm_memdep_triangular_burstcount(GPOUT,61)
+    // avm_memdep_triangular_burstcount(GPOUT,60)
     assign avm_memdep_triangular_burstcount = triangular_function_out_memdep_triangular_avm_burstcount;
 
-    // avm_memdep_triangular_byteenable(GPOUT,62)
+    // avm_memdep_triangular_byteenable(GPOUT,61)
     assign avm_memdep_triangular_byteenable = triangular_function_out_memdep_triangular_avm_byteenable;
 
-    // avm_memdep_triangular_enable(GPOUT,63)
+    // avm_memdep_triangular_enable(GPOUT,62)
     assign avm_memdep_triangular_enable = triangular_function_out_memdep_triangular_avm_enable;
 
-    // avm_memdep_triangular_read(GPOUT,64)
+    // avm_memdep_triangular_read(GPOUT,63)
     assign avm_memdep_triangular_read = triangular_function_out_memdep_triangular_avm_read;
 
-    // avm_memdep_triangular_write(GPOUT,65)
+    // avm_memdep_triangular_write(GPOUT,64)
     assign avm_memdep_triangular_write = triangular_function_out_memdep_triangular_avm_write;
 
-    // avm_memdep_triangular_writedata(GPOUT,66)
+    // avm_memdep_triangular_writedata(GPOUT,65)
     assign avm_memdep_triangular_writedata = triangular_function_out_memdep_triangular_avm_writedata;
 
-    // avst_iord_bl_call_triangular_almost_full(GPOUT,67)
+    // avst_iord_bl_call_triangular_almost_full(GPOUT,66)
     assign avst_iord_bl_call_triangular_almost_full = triangular_function_out_iord_bl_call_triangular_o_fifoalmost_full;
 
-    // avst_iord_bl_call_triangular_ready(GPOUT,68)
+    // avst_iord_bl_call_triangular_ready(GPOUT,67)
     assign avst_iord_bl_call_triangular_ready = triangular_function_out_iord_bl_call_triangular_o_fifoready;
 
-    // avst_iowr_bl_return_triangular_data(GPOUT,69)
+    // avst_iowr_bl_return_triangular_data(GPOUT,68)
     assign avst_iowr_bl_return_triangular_data = triangular_function_out_iowr_bl_return_triangular_o_fifodata;
 
-    // avst_iowr_bl_return_triangular_valid(GPOUT,70)
+    // avst_iowr_bl_return_triangular_valid(GPOUT,69)
     assign avst_iowr_bl_return_triangular_valid = triangular_function_out_iowr_bl_return_triangular_o_fifovalid;
 
-    // not_ready(LOGICAL,37)
+    // not_ready(LOGICAL,36)
     assign not_ready_q = ~ (triangular_function_out_iord_bl_call_triangular_o_fifoready);
 
     // busy_and(LOGICAL,3)
     assign busy_and_q = not_ready_q & start;
 
-    // reset_wire_inst(EXTIFACE,74)
-    assign reset_wire_inst_o_resetn[0] = reset_wire_inst_o_resetn_bitsignaltemp;
-    acl_reset_wire thereset_wire_inst (
-        .o_resetn(reset_wire_inst_o_resetn_bitsignaltemp),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // pos_reset(LOGICAL,73)
-    assign pos_reset_q = ~ (reset_wire_inst_o_resetn);
+    // pos_reset(LOGICAL,72)
+    assign pos_reset_q = ~ (wait_pulse_extender_inst_out_o_sclrn);
 
     // busy_or(LOGICAL,4)
     assign busy_or_q = pos_reset_q | busy_and_q;
 
-    // busy(GPOUT,71)
+    // busy(GPOUT,70)
     assign busy = busy_or_q;
 
-    // done(GPOUT,72)
+    // done(GPOUT,71)
     assign done = triangular_function_out_iowr_bl_return_triangular_o_fifovalid;
+
+    // rst_sync(RESETSYNC,78)
+    acl_reset_handler #(
+        .ASYNC_RESET(0),
+        .USE_SYNCHRONIZER(1),
+        .PULSE_EXTENSION(0),
+        .PIPE_DEPTH(3),
+        .DUPLICATE(1)
+    ) therst_sync (
+        .clk(clock),
+        .i_resetn(resetn),
+        .o_sclrn(rst_sync_rst_sclrn)
+    );
 
 endmodule

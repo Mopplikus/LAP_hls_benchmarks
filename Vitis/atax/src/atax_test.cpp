@@ -83,7 +83,7 @@ int main(void){
                 return 1;
             }
         }
-        printf("PASSED TEST %d\n", i + 1)
+        printf("PASSED TEST %d\n", i + 1);
     }
     return 0;
 }

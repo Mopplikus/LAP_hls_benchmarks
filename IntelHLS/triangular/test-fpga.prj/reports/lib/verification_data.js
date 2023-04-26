@@ -5,7 +5,7 @@ var verifJSON={
     {
       "name":"triangular"
       , "data":
-      ['1', '25862,25862,25862', 'n/a,n/a,n/a']
+      ['1', '41229,41229,41229', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"
@@ -23,7 +23,7 @@ var verifJSON={
     {
       "name":"Explicit component invocations"
       , "data":
-      ['1', '25862,25862,25862', 'n/a,n/a,n/a']
+      ['1', '41229,41229,41229', 'n/a,n/a,n/a']
       , "details":
       [
         "Click for details"

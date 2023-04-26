@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:05 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -56,7 +56,7 @@ module triangular_i_llvm_fpga_pipeline_order_pa0000i32_reorder_parent_0 (
     wire i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1_o_valid_bitsignaltemp;
 
 
-    // i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1(EXTIFACE,2)@5 + 3
+    // i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1(EXTIFACE,2)@4 + 3
     assign i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1_i_exit_inner_loop = in_i_exit_inner_loop;
     assign i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1_i_exit_outer_loop = in_i_exit_outer_loop;
     assign i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1_i_outer_loop_token = in_i_outer_loop_token;
@@ -76,7 +76,7 @@ module triangular_i_llvm_fpga_pipeline_order_pa0000i32_reorder_parent_0 (
     hld_loop_exit_reorder_counter #(
         .COUNTER_WIDTH(1),
         .PASSTHROUGH(0),
-        .ASYNC_RESET(1),
+        .ASYNC_RESET(0),
         .NUM_TOKENS(1),
         .SYNCHRONIZE_RESET(0)
     ) thei_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1 (
@@ -94,10 +94,10 @@ module triangular_i_llvm_fpga_pipeline_order_pa0000i32_reorder_parent_0 (
         .i_resetn(resetn)
     );
 
-    // sync_out(GPOUT,4)@8
+    // sync_out(GPOUT,4)@7
     assign out_o_stall = i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1_o_stall;
 
-    // dupName_0_sync_out_x(GPOUT,6)@8
+    // dupName_0_sync_out_x(GPOUT,6)@7
     assign out_o_exit_outer_loop = i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1_o_exit_outer_loop;
     assign out_o_valid = i_llvm_fpga_pipeline_order_parent_loop_i32_reorder_parent_triangular1_o_valid;
 

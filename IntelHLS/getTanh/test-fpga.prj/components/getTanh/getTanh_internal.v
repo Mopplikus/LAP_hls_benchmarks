@@ -32,6 +32,7 @@ module getTanh_internal
    genvar __i;
    genvar __j;
    genvar __k;
+   logic resetn_extended;
    logic local_avm_aspace64_enable [1][2];
    logic local_avm_aspace64_read [1][2];
    logic local_avm_aspace64_write [1][2];
@@ -59,7 +60,7 @@ module getTanh_internal
    getTanh_function_wrapper getTanh_internal
    (
       .clock(clock),
-      .resetn(resetn),
+      .resetn(resetn_extended),
       .start(start),
       .busy(busy),
       .done(done),
@@ -77,30 +78,45 @@ module getTanh_internal
       .avm_memdep_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][0]),
       .avm_memdep_getTanh_burstcount(local_avm_aspace64_burstcount[0][0]),
       .avm_memdep_getTanh_writeack(local_avm_aspace64_writeack[0][0]),
+      // AVM avm_unnamed_getTanh6_getTanh
+      .avm_unnamed_getTanh6_getTanh_enable(local_avm_aspace64_enable[0][1]),
+      .avm_unnamed_getTanh6_getTanh_read(local_avm_aspace64_read[0][1]),
+      .avm_unnamed_getTanh6_getTanh_write(local_avm_aspace64_write[0][1]),
+      .avm_unnamed_getTanh6_getTanh_address(local_avm_aspace64_address[0][1]),
+      .avm_unnamed_getTanh6_getTanh_writedata(local_avm_aspace64_writedata[0][1]),
+      .avm_unnamed_getTanh6_getTanh_byteenable(local_avm_aspace64_byteenable[0][1]),
+      .avm_unnamed_getTanh6_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][1]),
+      .avm_unnamed_getTanh6_getTanh_readdata(local_avm_aspace64_readdata[0][1]),
+      .avm_unnamed_getTanh6_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][1]),
+      .avm_unnamed_getTanh6_getTanh_burstcount(local_avm_aspace64_burstcount[0][1]),
+      .avm_unnamed_getTanh6_getTanh_writeack(local_avm_aspace64_writeack[0][1]),
       // AVM avm_unnamed_getTanh5_getTanh
-      .avm_unnamed_getTanh5_getTanh_enable(local_avm_aspace64_enable[0][1]),
-      .avm_unnamed_getTanh5_getTanh_read(local_avm_aspace64_read[0][1]),
-      .avm_unnamed_getTanh5_getTanh_write(local_avm_aspace64_write[0][1]),
-      .avm_unnamed_getTanh5_getTanh_address(local_avm_aspace64_address[0][1]),
-      .avm_unnamed_getTanh5_getTanh_writedata(local_avm_aspace64_writedata[0][1]),
-      .avm_unnamed_getTanh5_getTanh_byteenable(local_avm_aspace64_byteenable[0][1]),
-      .avm_unnamed_getTanh5_getTanh_waitrequest(local_avm_aspace64_waitrequest[0][1]),
-      .avm_unnamed_getTanh5_getTanh_readdata(local_avm_aspace64_readdata[0][1]),
-      .avm_unnamed_getTanh5_getTanh_readdatavalid(local_avm_aspace64_readdatavalid[0][1]),
-      .avm_unnamed_getTanh5_getTanh_burstcount(local_avm_aspace64_burstcount[0][1]),
-      .avm_unnamed_getTanh5_getTanh_writeack(local_avm_aspace64_writeack[0][1]),
-      // AVM avm_unnamed_getTanh4_getTanh
-      .avm_unnamed_getTanh4_getTanh_enable(local_avm_aspace65_enable[0][0]),
-      .avm_unnamed_getTanh4_getTanh_read(local_avm_aspace65_read[0][0]),
-      .avm_unnamed_getTanh4_getTanh_write(local_avm_aspace65_write[0][0]),
-      .avm_unnamed_getTanh4_getTanh_address(local_avm_aspace65_address[0][0]),
-      .avm_unnamed_getTanh4_getTanh_writedata(local_avm_aspace65_writedata[0][0]),
-      .avm_unnamed_getTanh4_getTanh_byteenable(local_avm_aspace65_byteenable[0][0]),
-      .avm_unnamed_getTanh4_getTanh_waitrequest(local_avm_aspace65_waitrequest[0][0]),
-      .avm_unnamed_getTanh4_getTanh_readdata(local_avm_aspace65_readdata[0][0]),
-      .avm_unnamed_getTanh4_getTanh_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
-      .avm_unnamed_getTanh4_getTanh_burstcount(local_avm_aspace65_burstcount[0][0]),
-      .avm_unnamed_getTanh4_getTanh_writeack(local_avm_aspace65_writeack[0][0])
+      .avm_unnamed_getTanh5_getTanh_enable(local_avm_aspace65_enable[0][0]),
+      .avm_unnamed_getTanh5_getTanh_read(local_avm_aspace65_read[0][0]),
+      .avm_unnamed_getTanh5_getTanh_write(local_avm_aspace65_write[0][0]),
+      .avm_unnamed_getTanh5_getTanh_address(local_avm_aspace65_address[0][0]),
+      .avm_unnamed_getTanh5_getTanh_writedata(local_avm_aspace65_writedata[0][0]),
+      .avm_unnamed_getTanh5_getTanh_byteenable(local_avm_aspace65_byteenable[0][0]),
+      .avm_unnamed_getTanh5_getTanh_waitrequest(local_avm_aspace65_waitrequest[0][0]),
+      .avm_unnamed_getTanh5_getTanh_readdata(local_avm_aspace65_readdata[0][0]),
+      .avm_unnamed_getTanh5_getTanh_readdatavalid(local_avm_aspace65_readdatavalid[0][0]),
+      .avm_unnamed_getTanh5_getTanh_burstcount(local_avm_aspace65_burstcount[0][0]),
+      .avm_unnamed_getTanh5_getTanh_writeack(local_avm_aspace65_writeack[0][0])
+   );
+
+   // INST global_reset_extender_inst of acl_reset_handler
+   acl_reset_handler
+   #(
+      .ASYNC_RESET(0),
+      .USE_SYNCHRONIZER(0),
+      .PULSE_EXTENSION(70),
+      .PIPE_DEPTH(0)
+   )
+   global_reset_extender_inst
+   (
+      .clk(clock),
+      .i_resetn(resetn),
+      .o_sclrn(resetn_extended)
    );
 
    generate
@@ -177,12 +193,12 @@ module getTanh_internal
             // INST mem0 of acl_mem1x
             acl_mem1x
             #(
-               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .INTENDED_DEVICE_FAMILY("Stratix 10"),
                .DEPTH_WORDS(1024),
                .WIDTH(32),
                .MEM_LATENCY(1),
-               .ASYNC_RESET(1),
-               .SYNCHRONIZE_RESET(0),
+               .ASYNC_RESET(0),
+               .SYNCHRONIZE_RESET(1),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
                .RAM_OPERATION_MODE("DUAL_PORT"),
@@ -193,7 +209,7 @@ module getTanh_internal
             mem0
             (
                .clk(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // AVS avs_port1
                .avs_port1_enable(port_enable[1]),
                .avs_port1_read(port_read[1]),
@@ -246,7 +262,7 @@ module getTanh_internal
             router
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                .bank_select(bank_select),
                // ICM m
                .m_arb_request(local_icm_arb_request[__i][__j]),
@@ -318,11 +334,11 @@ module getTanh_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of getTanh_internal_ic_12564195338966864784
-            getTanh_internal_ic_12564195338966864784 data_ic
+            // INST data_ic of getTanh_internal_ic_12564403971298287819
+            getTanh_internal_ic_12564403971298287819 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -403,11 +419,11 @@ module getTanh_internal
             assign router[1].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[1].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[1].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of getTanh_internal_ic_16657900664427986554
-            getTanh_internal_ic_16657900664427986554 data_ic
+            // INST data_ic of getTanh_internal_ic_16654602404422576742
+            getTanh_internal_ic_16654602404422576742 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -528,12 +544,12 @@ module getTanh_internal
             // INST mem0 of acl_mem1x
             acl_mem1x
             #(
-               .INTENDED_DEVICE_FAMILY("Arria 10"),
+               .INTENDED_DEVICE_FAMILY("Stratix 10"),
                .DEPTH_WORDS(1024),
                .WIDTH(32),
-               .MEM_LATENCY(3),
-               .ASYNC_RESET(1),
-               .SYNCHRONIZE_RESET(0),
+               .MEM_LATENCY(4),
+               .ASYNC_RESET(0),
+               .SYNCHRONIZE_RESET(1),
                .ENABLED(0),
                .RDW_MODE("DONT_CARE"),
                .RAM_OPERATION_MODE("DUAL_PORT"),
@@ -544,7 +560,7 @@ module getTanh_internal
             mem0
             (
                .clk(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // AVS avs_port1
                .avs_port1_enable(port_enable[1]),
                .avs_port1_read(port_read[1]),
@@ -597,7 +613,7 @@ module getTanh_internal
             router
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                .bank_select(bank_select),
                // ICM m
                .m_arb_request(local_icm_arb_request[__j][__k]),
@@ -679,11 +695,11 @@ module getTanh_internal
             assign router[0].b_wrp_ack[0] = icm_in_wrp_ack[0];
             assign router[0].b_rrp_datavalid[0] = icm_in_rrp_datavalid[0];
             assign router[0].b_rrp_data[0] = icm_in_rrp_data[0];
-            // INST data_ic of getTanh_internal_ic_17240874513320749926
-            getTanh_internal_ic_17240874513320749926 data_ic
+            // INST data_ic of getTanh_internal_ic_2063673880803286865
+            getTanh_internal_ic_2063673880803286865 data_ic
             (
                .clock(clock),
-               .resetn(resetn),
+               .resetn(resetn_extended),
                // ICM m
                .m_arb_request(icm_in_arb_request),
                .m_arb_enable(icm_in_arb_enable),
@@ -733,9 +749,9 @@ module getTanh_internal
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE getTanh_internal_ic_12564195338966864784
+// MODULE getTanh_internal_ic_12564403971298287819
 /////////////////////////////////////////////////////////////////
-module getTanh_internal_ic_12564195338966864784
+module getTanh_internal_ic_12564403971298287819
 (
    input logic clock,
    input logic resetn,
@@ -882,8 +898,8 @@ module getTanh_internal_ic_12564195338966864784
          .RRP_USE_LL_FIFO(1),
          .AGENT_FIXED_LATENCY(1),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
+         .ASYNC_RESET(0),
+         .SYNCHRONIZE_RESET(1)
       )
       s_endp
       (
@@ -928,9 +944,9 @@ module getTanh_internal_ic_12564195338966864784
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE getTanh_internal_ic_16657900664427986554
+// MODULE getTanh_internal_ic_16654602404422576742
 /////////////////////////////////////////////////////////////////
-module getTanh_internal_ic_16657900664427986554
+module getTanh_internal_ic_16654602404422576742
 (
    input logic clock,
    input logic resetn,
@@ -1077,8 +1093,8 @@ module getTanh_internal_ic_16657900664427986554
          .RRP_USE_LL_FIFO(1),
          .AGENT_FIXED_LATENCY(1),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
+         .ASYNC_RESET(0),
+         .SYNCHRONIZE_RESET(1)
       )
       s_endp
       (
@@ -1124,9 +1140,9 @@ module getTanh_internal_ic_16657900664427986554
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE getTanh_internal_ic_17240874513320749926
+// MODULE getTanh_internal_ic_2063673880803286865
 /////////////////////////////////////////////////////////////////
-module getTanh_internal_ic_17240874513320749926
+module getTanh_internal_ic_2063673880803286865
 (
    input logic clock,
    input logic resetn,
@@ -1271,10 +1287,10 @@ module getTanh_internal_ic_17240874513320749926
          .WRP_FIFO_DEPTH(0),
          .RRP_FIFO_DEPTH(0),
          .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(3),
+         .AGENT_FIXED_LATENCY(4),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(1),
-         .SYNCHRONIZE_RESET(0)
+         .ASYNC_RESET(0),
+         .SYNCHRONIZE_RESET(1)
       )
       s_endp
       (

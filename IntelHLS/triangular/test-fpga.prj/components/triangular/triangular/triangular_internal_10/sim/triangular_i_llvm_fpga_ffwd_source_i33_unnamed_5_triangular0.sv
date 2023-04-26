@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular0
 // Created for function/kernel triangular
-// SystemVerilog created on Fri Apr  7 16:28:14 2023
+// SystemVerilog created on Tue Apr 25 22:47:04 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -32,8 +32,6 @@ module triangular_i_llvm_fpga_ffwd_source_i33_unnamed_5_triangular0 (
     input wire resetn
     );
 
-    wire [32:0] adapt_scalar_trunc4_in;
-    wire [32:0] adapt_scalar_trunc4_q;
     wire [30:0] c_i31_03_q;
     wire [63:0] element_extension2_q;
     wire [0:0] i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_predicate_in;
@@ -42,15 +40,16 @@ module triangular_i_llvm_fpga_ffwd_source_i33_unnamed_5_triangular0 (
     wire [0:0] i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_valid_in;
     wire i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_valid_in_bitsignaltemp;
     wire [63:0] i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_source_out;
+    wire [32:0] adapt_scalar_trunc4_sel_x_b;
 
 
     // c_i31_03(CONSTANT,3)
     assign c_i31_03_q = $unsigned(31'b0000000000000000000000000000000);
 
-    // element_extension2(BITJOIN,4)
+    // element_extension2(BITJOIN,4)@13
     assign element_extension2_q = {c_i31_03_q, in_src_data_in_3_0};
 
-    // i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1(EXTIFACE,5)
+    // i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1(EXTIFACE,5)@13
     assign i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_predicate_in = in_predicate_in;
     assign i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_source_in = element_extension2_q;
     assign i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_valid_in = in_valid_in;
@@ -68,17 +67,16 @@ module triangular_i_llvm_fpga_ffwd_source_i33_unnamed_5_triangular0 (
         .clock(clock)
     );
 
-    // adapt_scalar_trunc4(ROUND,2)
-    assign adapt_scalar_trunc4_in = i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_source_out[32:0];
-    assign adapt_scalar_trunc4_q = adapt_scalar_trunc4_in[32:0];
+    // adapt_scalar_trunc4_sel_x(BITSELECT,10)@20000000
+    assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_ffwd_source_i33_unnamed_triangular5_triangular1_source_out[32:0];
 
     // regfree_osync(GPOUT,6)
-    assign out_intel_reserved_ffwd_3_0 = adapt_scalar_trunc4_q;
+    assign out_intel_reserved_ffwd_3_0 = adapt_scalar_trunc4_sel_x_b;
 
-    // sync_out(GPOUT,8)@20000000
+    // sync_out(GPOUT,8)@13
     assign out_stall_out = in_stall_in;
 
-    // dupName_0_sync_out_x(GPOUT,10)@3
+    // dupName_0_sync_out_x(GPOUT,11)@13
     assign out_valid_out = in_valid_in;
 
 endmodule

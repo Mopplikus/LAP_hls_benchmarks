@@ -1,1 +1,1 @@
-var infoJSON={"compileInfo":{"nodes":[{"command":"i++ fir.cpp -v -march=Arria 10 -o test-fpga","family":"Arria10, 10AX115U1F45I1SG","id":1,"name":"./test-fpga","product":"HLS","quartus":"21.4.0 Build 67 Pro","time":"Fri Apr  7 17:34:19 2023","version":"21.4.0 Build 53.1"}]}};
+var infoJSON={"compileInfo":{"nodes":[{"command":"i++ fir.cpp -v -march=1SX280HH3F55I1VG -o test-fpga","family":"Stratix10, 1SX280HH3F55I1VG","id":1,"name":"./test-fpga","product":"HLS","quartus":"21.4.0 Build 67 Pro","time":"Tue Apr 25 23:40:17 2023","version":"21.4.0 Build 53.1"}]}};
