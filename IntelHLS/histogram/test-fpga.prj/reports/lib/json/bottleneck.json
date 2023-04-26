@@ -1,0 +1,348 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"hist"
+      , "id":4294967295
+      , "src":"3470565008"
+      , "dst":"3473072368"
+      , "type":"fMAX/II"
+      , "brief":"Memory dependency"
+      , "loop":"histogram.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"hist"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                  , "line":"16"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Estimated fmax reduced to: ":"480.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"LD(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                  , "line":"31"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"ST(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                  , "line":"32"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"hist"
+          , "id":3470565008
+          , "start":"8.00"
+          , "parent":"histogram.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":3470665888
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":31
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"ST"
+          , "id":3472636816
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":3473072368
+          , "end":"15.00"
+          , "parent":"histogram.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":3470565008
+          , "to":3470665888
+        }
+        , {
+          "from":3470665888
+          , "to":3472636816
+        }
+        , {
+          "from":3472636816
+          , "to":3473072368
+        }
+        , {
+          "from":3470565008
+          , "to":3473072368
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Unknown variable"
+      , "id":4294967295
+      , "type":"fMAX/II"
+      , "brief":"N/A"
+      , "loop":"histogram.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"histogram.B2"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                  , "line":"27"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"N/A"
+          , "Estimated fmax reduced to: ":"480.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"f32 +(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                  , "line":"32"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"LD"
+          , "id":3470665888
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":31
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"f32 +"
+          , "id":3474888464
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"ST"
+          , "id":3472636816
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":3470665888
+          , "to":3474888464
+        }
+        , {
+          "from":3474888464
+          , "to":3472636816
+        }
+      ]
+    }
+    , {
+      "name":"?"
+      , "id":4294967295
+      , "src":"3477308048"
+      , "dst":"3478268864"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"histogram.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"histogram.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: histogram.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                  , "line":"27"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":3477308048
+          , "start":"35.00"
+          , "parent":"histogram.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":9
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"histogram.B2"
+          , "id":3476691024
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":27
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":3478268864
+          , "end":"41.00"
+          , "parent":"histogram.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/histogram/histogram.cpp"
+                , "line":41
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":3476691024
+          , "to":3476691024
+        }
+        , {
+          "from":3477308048
+          , "to":3476691024
+        }
+        , {
+          "from":3476691024
+          , "to":3478268864
+        }
+        , {
+          "from":3477308048
+          , "to":3478268864
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

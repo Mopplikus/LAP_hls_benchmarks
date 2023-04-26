@@ -1,0 +1,170 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"A_1_local"
+      , "id":4294967295
+      , "src":"4184826400"
+      , "dst":"4186182816"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"jacobi_1d.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"A_1_local"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                  , "line":"12"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: jacobi_1d.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                  , "line":"24"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: Fused loop jacobi_1d.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                  , "line":"31"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: jacobi_1d.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                  , "line":"24"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"A_1_local"
+          , "id":4184826400
+          , "start":"1.00"
+          , "parent":"jacobi_1d.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                , "line":10
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"jacobi_1d.B2"
+          , "id":4185537168
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                , "line":24
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Fused loop jacobi_1d.B3"
+          , "id":4186124608
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                , "line":31
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"jacobi_1d.B4"
+          , "id":4185538032
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/jacobi_1d/jacobi_1d.cpp"
+                , "line":24
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Feedback"
+          , "id":4186182816
+          , "end":"1.00"
+          , "parent":"jacobi_1d.B5"
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":4185537168
+          , "to":4186124608
+        }
+        , {
+          "from":4186124608
+          , "to":4186124608
+        }
+        , {
+          "from":4186124608
+          , "to":4185538032
+        }
+        , {
+          "from":4184826400
+          , "to":4185537168
+        }
+        , {
+          "from":4185538032
+          , "to":4186182816
+        }
+        , {
+          "from":4184826400
+          , "to":4186182816
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

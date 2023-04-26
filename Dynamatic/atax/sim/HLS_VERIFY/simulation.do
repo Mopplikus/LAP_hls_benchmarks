@@ -18,5 +18,3 @@ project addfile ../VHDL_SRC/LSQ_y.v
 project calculateorder
 project compileall
 eval vsim atax_tb
-run -all
-exit

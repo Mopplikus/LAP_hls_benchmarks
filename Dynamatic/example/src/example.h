@@ -3,4 +3,4 @@ typedef float out_float_t;
 
 #define N 100
 
-float example(in_float_t A[N], in_float_t B[N]);
+float example(in_float_t A[N], in_float_t B[N], out_float_t out);

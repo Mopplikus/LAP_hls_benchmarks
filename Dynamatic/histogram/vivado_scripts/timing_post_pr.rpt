@@ -1,0 +1,99 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Wed Apr 26 23:18:07 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : histogram
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -1.578ns  (required time - arrival time)
+  Source:                 Buffer_1/oehb1/data_reg_reg[10]/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            c_LSQ_hist/storeQ/checkBits_4_reg/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (clk rise@5.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.725ns  (logic 1.771ns (26.336%)  route 4.954ns (73.664%))
+  Logic Levels:           14  (CARRY4=7 LUT3=1 LUT4=1 LUT5=1 LUT6=4)
+  Clock Path Skew:        0.110ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.669ns = ( 6.669 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.571ns
+    Clock Pessimism Removal (CPR):    0.012ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=4408, unset)         1.571     1.571    Buffer_1/oehb1/clk
+    SLICE_X58Y72         FDCE                                         r  Buffer_1/oehb1/data_reg_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X58Y72         FDCE (Prop_fdce_C_Q)         0.308     1.879 r  Buffer_1/oehb1/data_reg_reg[10]/Q
+                         net (fo=6, routed)           0.503     2.382    add_16/D[10]
+    SLICE_X57Y72         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.377     2.759 r  add_16/dataOutArray[0]_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.759    add_16/dataOutArray[0]_carry__1_n_0
+    SLICE_X57Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.817 r  add_16/dataOutArray[0]_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     2.817    add_16/dataOutArray[0]_carry__2_n_0
+    SLICE_X57Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.875 r  add_16/dataOutArray[0]_carry__3/CO[3]
+                         net (fo=1, routed)           0.008     2.883    add_16/dataOutArray[0]_carry__3_n_0
+    SLICE_X57Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.941 r  add_16/dataOutArray[0]_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     2.941    add_16/dataOutArray[0]_carry__4_n_0
+    SLICE_X57Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.058     2.999 r  add_16/dataOutArray[0]_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     2.999    add_16/dataOutArray[0]_carry__5_n_0
+    SLICE_X57Y77         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.146     3.145 r  add_16/dataOutArray[0]_carry__6/O[0]
+                         net (fo=7, routed)           0.589     3.733    add_16/data_reg_reg[29][28]
+    SLICE_X56Y75         LUT4 (Prop_lut4_I0_O)        0.155     3.888 r  add_16/dataOutArray[0]0_carry__2_i_6__0/O
+                         net (fo=1, routed)           0.000     3.888    icmp_17/reg_value_reg_0[2]
+    SLICE_X56Y75         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.235     4.123 f  icmp_17/dataOutArray[0]0_carry__2/CO[3]
+                         net (fo=19, routed)          0.740     4.863    Buffer_3/oehb1/CO[0]
+    SLICE_X56Y67         LUT6 (Prop_lut6_I3_O)        0.053     4.916 r  Buffer_3/oehb1/reg_value_i_3__5/O
+                         net (fo=14, routed)          0.546     5.462    Buffer_3/oehb1/validArray_reg[0]_1
+    SLICE_X59Y61         LUT3 (Prop_lut3_I0_O)        0.053     5.515 f  Buffer_3/oehb1/tail[3]_i_1__0/O
+                         net (fo=157, routed)         1.016     6.532    c_LSQ_hist/loadQ/E[0]
+    SLICE_X59Y42         LUT5 (Prop_lut5_I4_O)        0.053     6.585 f  c_LSQ_hist/loadQ/offsetQ_15[3]_i_3/O
+                         net (fo=16, routed)          0.910     7.495    c_LSQ_hist/storeQ/offsetQ_3_reg[3]_1[2]
+    SLICE_X66Y38         LUT6 (Prop_lut6_I0_O)        0.053     7.548 r  c_LSQ_hist/storeQ/checkBits_4_i_9/O
+                         net (fo=1, routed)           0.431     7.979    c_LSQ_hist/storeQ/checkBits_4_i_9_n_0
+    SLICE_X66Y36         LUT6 (Prop_lut6_I5_O)        0.053     8.032 r  c_LSQ_hist/storeQ/checkBits_4_i_3__0/O
+                         net (fo=1, routed)           0.211     8.243    c_LSQ_hist/storeQ/checkBits_4_i_3__0_n_0
+    SLICE_X66Y36         LUT6 (Prop_lut6_I1_O)        0.053     8.296 r  c_LSQ_hist/storeQ/checkBits_4_i_1__0/O
+                         net (fo=1, routed)           0.000     8.296    c_LSQ_hist/storeQ/checkBits_4_i_1__0_n_0
+    SLICE_X66Y36         FDRE                                         r  c_LSQ_hist/storeQ/checkBits_4_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        5.000     5.000 r  
+                                                      0.000     5.000 r  clk (IN)
+                         net (fo=4408, unset)         1.669     6.669    c_LSQ_hist/storeQ/clk
+    SLICE_X66Y36         FDRE                                         r  c_LSQ_hist/storeQ/checkBits_4_reg/C
+                         clock pessimism              0.012     6.681    
+                         clock uncertainty           -0.035     6.646    
+    SLICE_X66Y36         FDRE (Setup_fdre_C_D)        0.072     6.718    c_LSQ_hist/storeQ/checkBits_4_reg
+  -------------------------------------------------------------------
+                         required time                          6.718    
+                         arrival time                          -8.296    
+  -------------------------------------------------------------------
+                         slack                                 -1.578    
+
+
+
+

@@ -1,0 +1,116 @@
+{
+  "nodes":
+  [
+    {
+      "name":"bicg"
+      , "id":4187567544
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"Stream Read"
+          , "id":4187759456
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"bicg.B1.start"
+              , "Width":"320 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"24"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":15
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Write"
+          , "id":4187793056
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"bicg.B2"
+              , "Width":"1 bit"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"24"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":56
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"call.bicg"
+      , "id":4187083056
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"320 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"320 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+    , {
+      "name":"return.bicg"
+      , "id":4187084800
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":4187083056
+      , "to":4187759456
+    }
+    , {
+      "from":4187793056
+      , "to":4187084800
+    }
+    , {
+      "from":4187759456
+      , "to":4187793056
+    }
+  ]
+}

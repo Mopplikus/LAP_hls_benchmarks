@@ -18,5 +18,3 @@ project addfile ../VHDL_SRC/LSQ_B.v
 project calculateorder
 project compileall
 eval vsim jacobi_1d_tb
-run -all
-exit

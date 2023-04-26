@@ -18,5 +18,3 @@ project addfile ../VHDL_SRC/LSQ_s.v
 project calculateorder
 project compileall
 eval vsim bicg_tb
-run -all
-exit

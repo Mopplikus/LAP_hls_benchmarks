@@ -18,5 +18,3 @@ project addfile ../VHDL_SRC/LSQ_hist.v
 project calculateorder
 project compileall
 eval vsim histogram_tb
-run -all
-exit

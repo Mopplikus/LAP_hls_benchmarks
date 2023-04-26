@@ -4,7 +4,7 @@
 
 #define AMOUNT_OF_TEST 1
 
-float example(in_float_t A[N], in_float_t B[N])
+float example(in_float_t A[N], in_float_t B[N], out_float_t out)
 {
     float d, s = 0.0;
     int i;
@@ -16,13 +16,15 @@ float example(in_float_t A[N], in_float_t B[N])
             s += d;
         }
     }
-    return s;
+    out = s;
+    return i;
 }
 
 int main(void)
 {
     in_float_t A[AMOUNT_OF_TEST][N];
     in_float_t B[AMOUNT_OF_TEST][N];
+    out_float_t out;
     int a = 5;
 
 
@@ -38,7 +40,7 @@ int main(void)
 
     for(int i = 0; i < AMOUNT_OF_TEST; i++)
     {
-    	example(A[i], B[i]);
+    	example(A[i], B[i], out);
     }
 
     return 0;

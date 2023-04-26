@@ -5,7 +5,7 @@ INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max 
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Wed Apr 26 01:30:08 2023
+| Date         : Thu Apr 27 00:07:02 2023
 | Host         : Frostspark running 64-bit major release  (build 9200)
 | Command      : report_timing
 | Design       : getTanh
@@ -15,18 +15,18 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 Timing Report
 
-Slack (VIOLATED) :        -3.897ns  (required time - arrival time)
+Slack (MET) :             1.103ns  (required time - arrival time)
   Source:                 c_LSQ_A/loadQ/head_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Destination:            c_LSQ_A/loadQ/head_reg[0]/CE
-                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
   Path Group:             clk
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            5.000ns  (clk rise@5.000ns - clk rise@0.000ns)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
   Data Path Delay:        8.529ns  (logic 1.980ns (23.215%)  route 6.549ns (76.785%))
   Logic Levels:           17  (CARRY4=4 LUT2=1 LUT5=3 LUT6=8 MUXF7=1)
   Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    0.638ns = ( 5.638 - 5.000 ) 
+    Destination Clock Delay (DCD):    0.638ns = ( 10.638 - 10.000 ) 
     Source Clock Delay      (SCD):    0.672ns
     Clock Pessimism Removal (CPR):    0.000ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -68,8 +68,8 @@ Slack (VIOLATED) :        -3.897ns  (required time - arrival time)
                          CARRY4 (Prop_carry4_CI_CO[2])
                                                       0.149     5.224 f  icmp_8/dataOutArray[0]0_carry__2/CO[2]
                          net (fo=35, unplaced)        0.412     5.636    icmp_8/CO[0]
-                         LUT5 (Prop_lut5_I0_O)        0.160     5.796 r  icmp_8/Memory_reg_0_1_0_0_i_5/O
-                         net (fo=2, unplaced)         0.532     6.328    phiC_8/fork_C1/generateBlocks[1].regblock/Tail_reg[0]
+                         LUT5 (Prop_lut5_I0_O)        0.160     5.796 r  icmp_8/loadCompleted_1_i_10/O
+                         net (fo=2, unplaced)         0.532     6.328    phiC_8/fork_C1/generateBlocks[1].regblock/loadCompleted_2_i_2
                          LUT6 (Prop_lut6_I0_O)        0.053     6.381 f  phiC_8/fork_C1/generateBlocks[1].regblock/loadCompleted_1_i_5/O
                          net (fo=6, unplaced)         0.372     6.753    fork_2/generateBlocks[0].regblock/reg_value_reg_4
                          LUT6 (Prop_lut6_I2_O)        0.053     6.806 r  fork_2/generateBlocks[0].regblock/loadCompleted_1_i_3/O
@@ -85,20 +85,20 @@ Slack (VIOLATED) :        -3.897ns  (required time - arrival time)
                          FDRE                                         r  c_LSQ_A/loadQ/head_reg[0]/CE
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk rise edge)        5.000     5.000 r  
-                                                      0.000     5.000 r  clk (IN)
-                         net (fo=4277, unset)         0.638     5.638    c_LSQ_A/loadQ/clk
+                         (clock clk rise edge)       10.000    10.000 r  
+                                                      0.000    10.000 r  clk (IN)
+                         net (fo=4277, unset)         0.638    10.638    c_LSQ_A/loadQ/clk
                          FDRE                                         r  c_LSQ_A/loadQ/head_reg[0]/C
-                         clock pessimism              0.000     5.638    
-                         clock uncertainty           -0.035     5.603    
-                         FDRE (Setup_fdre_C_CE)      -0.299     5.304    c_LSQ_A/loadQ/head_reg[0]
+                         clock pessimism              0.000    10.638    
+                         clock uncertainty           -0.035    10.603    
+                         FDRE (Setup_fdre_C_CE)      -0.299    10.304    c_LSQ_A/loadQ/head_reg[0]
   -------------------------------------------------------------------
-                         required time                          5.304    
+                         required time                         10.304    
                          arrival time                          -9.201    
   -------------------------------------------------------------------
-                         slack                                 -3.897    
+                         slack                                  1.103    
 
 
 
 
-report_timing: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 2883.562 ; gain = 0.000
+report_timing: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2878.613 ; gain = 0.000

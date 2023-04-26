@@ -1,0 +1,282 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"s_local"
+      , "id":4294967295
+      , "src":"4195873264"
+      , "dst":"4192618832"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"bicg.B3"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"s_local"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                  , "line":"18"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: bicg.B5(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                  , "line":"41"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"s_local"
+          , "id":4195873264
+          , "start":"39.00"
+          , "parent":"bicg.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":44
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"bicg.B5"
+          , "id":4196174752
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":41
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":4192618832
+          , "end":"17.00"
+          , "parent":"bicg.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":44
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":4196174752
+          , "to":4196174752
+        }
+        , {
+          "from":4195873264
+          , "to":4196174752
+        }
+        , {
+          "from":4196174752
+          , "to":4192618832
+        }
+        , {
+          "from":4195873264
+          , "to":4192618832
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"?"
+      , "id":4294967295
+      , "src":"4192579616"
+      , "dst":"4196429504"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"bicg.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"bicg.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: bicg.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                  , "line":"38"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: bicg.B5(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                  , "line":"41"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: bicg.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                  , "line":"38"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":4192579616
+          , "start":"42.00"
+          , "parent":"bicg.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":47
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"bicg.B3"
+          , "id":4203083008
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":38
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"bicg.B5"
+          , "id":4196174752
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":41
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"bicg.B4"
+          , "id":4196184560
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":38
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Feedback"
+          , "id":4196429504
+          , "end":"17.00"
+          , "parent":"bicg.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/bicg/bicg.cpp"
+                , "line":47
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":4196174752
+          , "to":4196174752
+        }
+        , {
+          "from":4203083008
+          , "to":4196174752
+        }
+        , {
+          "from":4196174752
+          , "to":4196184560
+        }
+        , {
+          "from":4192579616
+          , "to":4203083008
+        }
+        , {
+          "from":4196184560
+          , "to":4196429504
+        }
+        , {
+          "from":4192579616
+          , "to":4196429504
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

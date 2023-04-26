@@ -1,0 +1,299 @@
+// ------------------------------------------------------------------------- 
+// High Level Design Compiler for Intel(R) FPGAs Version 21.4 (Release Build #53.1)
+// 
+// Legal Notice: Copyright 2021 Intel Corporation.  All rights reserved.
+// Your use of  Intel Corporation's design tools,  logic functions and other
+// software and  tools, and its AMPP partner logic functions, and any output
+// files any  of the foregoing (including  device programming  or simulation
+// files), and  any associated  documentation  or information  are expressly
+// subject  to the terms and  conditions of the  Intel FPGA Software License
+// Agreement, Intel MegaCore Function License Agreement, or other applicable
+// license agreement,  including,  without limitation,  that your use is for
+// the  sole  purpose of  programming  logic devices  manufactured by  Intel
+// and  sold by Intel  or its authorized  distributors. Please refer  to the
+// applicable agreement for further details.
+// ---------------------------------------------------------------------------
+
+// SystemVerilog created from i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30
+// Created for function/kernel if_loop_3
+// SystemVerilog created on Thu Apr 27 00:22:52 2023
+
+
+(* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
+module if_loop_3_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_if_loop_30 (
+    output wire [0:0] out_intel_reserved_ffwd_0_0,
+    output wire [32:0] out_intel_reserved_ffwd_1_0,
+    output wire [0:0] out_o_valid,
+    output wire [0:0] out_unnamed_if_loop_34_0_tpl,
+    output wire [0:0] out_unnamed_if_loop_35,
+    input wire [0:0] in_c1_eni1_0_tpl,
+    input wire [63:0] in_c1_eni1_1_tpl,
+    input wire [63:0] in_c1_eni1_2_tpl,
+    input wire [31:0] in_c1_eni1_3_tpl,
+    input wire [0:0] in_i_valid,
+    input wire clock,
+    input wire resetn
+    );
+
+    wire [0:0] GND_q;
+    wire [0:0] VCC_q;
+    wire [31:0] c_i32_117_q;
+    wire [31:0] c_i32_118_q;
+    wire [32:0] c_i33_119_q;
+    wire [33:0] i_cmp9_if_loop_33_a;
+    wire [33:0] i_cmp9_if_loop_33_b;
+    logic [33:0] i_cmp9_if_loop_33_o;
+    wire [0:0] i_cmp9_if_loop_33_c;
+    wire [0:0] i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_32_if_loop_311_out_intel_reserved_ffwd_0_0;
+    wire [32:0] i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_33_if_loop_312_out_intel_reserved_ffwd_1_0;
+    wire [0:0] i_smax_if_loop_37_s;
+    reg [31:0] i_smax_if_loop_37_q;
+    wire [31:0] i_smax_if_loop_37_vt_join_q;
+    wire [30:0] i_smax_if_loop_37_vt_select_30_b;
+    wire [33:0] i_unnamed_if_loop_310_a;
+    wire [33:0] i_unnamed_if_loop_310_b;
+    logic [33:0] i_unnamed_if_loop_310_o;
+    wire [33:0] i_unnamed_if_loop_310_q;
+    wire [33:0] i_unnamed_if_loop_35_a;
+    wire [33:0] i_unnamed_if_loop_35_b;
+    logic [33:0] i_unnamed_if_loop_35_o;
+    wire [0:0] i_unnamed_if_loop_35_c;
+    wire [32:0] i_unnamed_if_loop_38_a;
+    wire [32:0] i_unnamed_if_loop_38_b;
+    logic [32:0] i_unnamed_if_loop_38_o;
+    wire [32:0] i_unnamed_if_loop_38_q;
+    wire [32:0] i_unnamed_if_loop_39_vt_join_q;
+    wire [31:0] i_unnamed_if_loop_39_vt_select_31_b;
+    wire [32:0] bgTrunc_i_unnamed_if_loop_310_sel_x_b;
+    wire [31:0] bgTrunc_i_unnamed_if_loop_38_sel_x_b;
+    wire [31:0] c_i32_016_recast_x_q;
+    wire [32:0] i_unnamed_if_loop_39_sel_x_b;
+    (* preserve_syn_only *) reg [0:0] valid_fanout_reg0_q;
+    (* preserve_syn_only *) reg [0:0] valid_fanout_reg1_q;
+    (* preserve_syn_only *) reg [0:0] valid_fanout_reg2_q;
+    reg [31:0] redist0_sync_together20_aunroll_x_in_c1_eni1_3_tpl_1_q;
+    reg [0:0] redist1_sync_together20_aunroll_x_in_i_valid_2_q;
+    reg [0:0] redist1_sync_together20_aunroll_x_in_i_valid_2_delay_0;
+    reg [31:0] redist2_i_unnamed_if_loop_39_vt_select_31_b_1_q;
+    reg [30:0] redist3_i_smax_if_loop_37_vt_select_30_b_1_q;
+
+
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
+
+    // valid_fanout_reg1(REG,36)@76 + 1
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            valid_fanout_reg1_q <= $unsigned(in_i_valid);
+        end
+    end
+
+    // redist0_sync_together20_aunroll_x_in_c1_eni1_3_tpl_1(DELAY,41)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            redist0_sync_together20_aunroll_x_in_c1_eni1_3_tpl_1_q <= $unsigned(in_c1_eni1_3_tpl);
+        end
+    end
+
+    // c_i32_016_recast_x(CONSTANT,29)
+    assign c_i32_016_recast_x_q = $unsigned(32'b00000000000000000000000000000000);
+
+    // i_cmp9_if_loop_33(COMPARE,9)@77
+    assign i_cmp9_if_loop_33_a = $unsigned({{2{c_i32_016_recast_x_q[31]}}, c_i32_016_recast_x_q});
+    assign i_cmp9_if_loop_33_b = $unsigned({{2{redist0_sync_together20_aunroll_x_in_c1_eni1_3_tpl_1_q[31]}}, redist0_sync_together20_aunroll_x_in_c1_eni1_3_tpl_1_q});
+    assign i_cmp9_if_loop_33_o = $unsigned($signed(i_cmp9_if_loop_33_a) - $signed(i_cmp9_if_loop_33_b));
+    assign i_cmp9_if_loop_33_c[0] = i_cmp9_if_loop_33_o[33];
+
+    // GND(CONSTANT,0)
+    assign GND_q = $unsigned(1'b0);
+
+    // i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_32_if_loop_311(BLACKBOX,10)@77
+    // out out_intel_reserved_ffwd_0_0@20000000
+    if_loop_3_i_llvm_fpga_ffwd_source_i1_unnamed_2_if_loop_30 thei_llvm_fpga_ffwd_source_i1_unnamed_if_loop_32_if_loop_311 (
+        .in_predicate_in(GND_q),
+        .in_src_data_in_0_0(i_cmp9_if_loop_33_c),
+        .in_stall_in(GND_q),
+        .in_valid_in(valid_fanout_reg1_q),
+        .out_intel_reserved_ffwd_0_0(i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_32_if_loop_311_out_intel_reserved_ffwd_0_0),
+        .out_stall_out(),
+        .out_valid_out(),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // regfree_osync(GPOUT,25)
+    assign out_intel_reserved_ffwd_0_0 = i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_32_if_loop_311_out_intel_reserved_ffwd_0_0;
+
+    // redist1_sync_together20_aunroll_x_in_i_valid_2(DELAY,42)
+    always @ (posedge clock)
+    begin
+        if (!resetn)
+        begin
+            redist1_sync_together20_aunroll_x_in_i_valid_2_delay_0 <= '0;
+        end
+        else
+        begin
+            redist1_sync_together20_aunroll_x_in_i_valid_2_delay_0 <= $unsigned(in_i_valid);
+        end
+    end
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            redist1_sync_together20_aunroll_x_in_i_valid_2_q <= redist1_sync_together20_aunroll_x_in_i_valid_2_delay_0;
+        end
+    end
+
+    // valid_fanout_reg2(REG,37)@78 + 1
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            valid_fanout_reg2_q <= $unsigned(redist1_sync_together20_aunroll_x_in_i_valid_2_q);
+        end
+    end
+
+    // c_i33_119(CONSTANT,8)
+    assign c_i33_119_q = $unsigned(33'b111111111111111111111111111111111);
+
+    // c_i32_118(CONSTANT,7)
+    assign c_i32_118_q = $unsigned(32'b11111111111111111111111111111111);
+
+    // c_i32_117(CONSTANT,6)
+    assign c_i32_117_q = $unsigned(32'b00000000000000000000000000000001);
+
+    // i_unnamed_if_loop_35(COMPARE,17)@76 + 1
+    assign i_unnamed_if_loop_35_a = $unsigned({{2{c_i32_117_q[31]}}, c_i32_117_q});
+    assign i_unnamed_if_loop_35_b = $unsigned({{2{in_c1_eni1_3_tpl[31]}}, in_c1_eni1_3_tpl});
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            i_unnamed_if_loop_35_o <= $unsigned($signed(i_unnamed_if_loop_35_a) - $signed(i_unnamed_if_loop_35_b));
+        end
+    end
+    assign i_unnamed_if_loop_35_c[0] = i_unnamed_if_loop_35_o[33];
+
+    // i_smax_if_loop_37(MUX,12)@77
+    assign i_smax_if_loop_37_s = i_unnamed_if_loop_35_c;
+    always @(i_smax_if_loop_37_s or c_i32_117_q or redist0_sync_together20_aunroll_x_in_c1_eni1_3_tpl_1_q)
+    begin
+        unique case (i_smax_if_loop_37_s)
+            1'b0 : i_smax_if_loop_37_q = c_i32_117_q;
+            1'b1 : i_smax_if_loop_37_q = redist0_sync_together20_aunroll_x_in_c1_eni1_3_tpl_1_q;
+            default : i_smax_if_loop_37_q = 32'b0;
+        endcase
+    end
+
+    // i_smax_if_loop_37_vt_select_30(BITSELECT,15)@77
+    assign i_smax_if_loop_37_vt_select_30_b = i_smax_if_loop_37_q[30:0];
+
+    // redist3_i_smax_if_loop_37_vt_select_30_b_1(DELAY,44)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            redist3_i_smax_if_loop_37_vt_select_30_b_1_q <= $unsigned(i_smax_if_loop_37_vt_select_30_b);
+        end
+    end
+
+    // i_smax_if_loop_37_vt_join(BITJOIN,14)@78
+    assign i_smax_if_loop_37_vt_join_q = {GND_q, redist3_i_smax_if_loop_37_vt_select_30_b_1_q};
+
+    // i_unnamed_if_loop_38(ADD,18)@78
+    assign i_unnamed_if_loop_38_a = {1'b0, i_smax_if_loop_37_vt_join_q};
+    assign i_unnamed_if_loop_38_b = {1'b0, c_i32_118_q};
+    assign i_unnamed_if_loop_38_o = $unsigned(i_unnamed_if_loop_38_a) + $unsigned(i_unnamed_if_loop_38_b);
+    assign i_unnamed_if_loop_38_q = i_unnamed_if_loop_38_o[32:0];
+
+    // bgTrunc_i_unnamed_if_loop_38_sel_x(BITSELECT,28)@78
+    assign bgTrunc_i_unnamed_if_loop_38_sel_x_b = i_unnamed_if_loop_38_q[31:0];
+
+    // i_unnamed_if_loop_39_sel_x(BITSELECT,32)@78
+    assign i_unnamed_if_loop_39_sel_x_b = {1'b0, bgTrunc_i_unnamed_if_loop_38_sel_x_b[31:0]};
+
+    // i_unnamed_if_loop_39_vt_select_31(BITSELECT,22)@78
+    assign i_unnamed_if_loop_39_vt_select_31_b = i_unnamed_if_loop_39_sel_x_b[31:0];
+
+    // redist2_i_unnamed_if_loop_39_vt_select_31_b_1(DELAY,43)
+    always @ (posedge clock)
+    begin
+        if (0)
+        begin
+        end
+        else
+        begin
+            redist2_i_unnamed_if_loop_39_vt_select_31_b_1_q <= $unsigned(i_unnamed_if_loop_39_vt_select_31_b);
+        end
+    end
+
+    // i_unnamed_if_loop_39_vt_join(BITJOIN,21)@79
+    assign i_unnamed_if_loop_39_vt_join_q = {GND_q, redist2_i_unnamed_if_loop_39_vt_select_31_b_1_q};
+
+    // i_unnamed_if_loop_310(ADD,16)@79
+    assign i_unnamed_if_loop_310_a = {1'b0, i_unnamed_if_loop_39_vt_join_q};
+    assign i_unnamed_if_loop_310_b = {1'b0, c_i33_119_q};
+    assign i_unnamed_if_loop_310_o = $unsigned(i_unnamed_if_loop_310_a) + $unsigned(i_unnamed_if_loop_310_b);
+    assign i_unnamed_if_loop_310_q = i_unnamed_if_loop_310_o[33:0];
+
+    // bgTrunc_i_unnamed_if_loop_310_sel_x(BITSELECT,27)@79
+    assign bgTrunc_i_unnamed_if_loop_310_sel_x_b = i_unnamed_if_loop_310_q[32:0];
+
+    // i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_33_if_loop_312(BLACKBOX,11)@79
+    // out out_intel_reserved_ffwd_1_0@20000000
+    if_loop_3_i_llvm_fpga_ffwd_source_i33_unnamed_3_if_loop_30 thei_llvm_fpga_ffwd_source_i33_unnamed_if_loop_33_if_loop_312 (
+        .in_predicate_in(GND_q),
+        .in_src_data_in_1_0(bgTrunc_i_unnamed_if_loop_310_sel_x_b),
+        .in_stall_in(GND_q),
+        .in_valid_in(valid_fanout_reg2_q),
+        .out_intel_reserved_ffwd_1_0(i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_33_if_loop_312_out_intel_reserved_ffwd_1_0),
+        .out_stall_out(),
+        .out_valid_out(),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // dupName_0_regfree_osync_x(GPOUT,31)
+    assign out_intel_reserved_ffwd_1_0 = i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_33_if_loop_312_out_intel_reserved_ffwd_1_0;
+
+    // valid_fanout_reg0(REG,35)@78 + 1
+    always @ (posedge clock)
+    begin
+        if (!resetn)
+        begin
+            valid_fanout_reg0_q <= $unsigned(1'b0);
+        end
+        else
+        begin
+            valid_fanout_reg0_q <= $unsigned(redist1_sync_together20_aunroll_x_in_i_valid_2_q);
+        end
+    end
+
+    // sync_out_aunroll_x(GPOUT,33)@79
+    assign out_o_valid = valid_fanout_reg0_q;
+    assign out_unnamed_if_loop_34_0_tpl = GND_q;
+    assign out_unnamed_if_loop_35 = GND_q;
+
+endmodule
