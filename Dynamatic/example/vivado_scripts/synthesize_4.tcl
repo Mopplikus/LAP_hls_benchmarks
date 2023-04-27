@@ -4,14 +4,13 @@ read_vhdl -vhdl2008 ../hdl/elastic_components.vhd
 read_vhdl -vhdl2008 ../hdl/MemCont.vhd
 read_vhdl -vhdl2008 ../hdl/multipliers.vhd
 read_vhdl -vhdl2008 ../hdl/mul_wrapper.vhd
-read_vhdl -vhdl2008 ../hdl/simpackage.vhd
 
 #read_verilog  ../sim/VHDL_SRC/LSQ_s.v
 #read_vhdl -vhdl2008 ../../../components/array_RAM_fadd_32bkb.vhd
 
 #source ../../../components/array_RAM_ap_fadd_8_full_dsp_32_ip.tcl
 
-read_vhdl -vhdl2008 ../sim/VHDL_SRC/fir_area_optimized.vhd
+read_vhdl -vhdl2008 ../hdl/example_area_optimized.vhd
 
 #comment line below out if no clock constraints
 read_xdc period_4.xdc
