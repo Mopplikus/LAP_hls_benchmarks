@@ -1,0 +1,1 @@
+var infoJSON={"compileInfo":{"nodes":[{"command":"i++ matvec.cpp -v -march=1SX280HH3F55I1VG -o test-fpga","family":"Stratix10, 1SX280HH3F55I1VG","id":1,"name":"./test-fpga","product":"HLS","quartus":"21.4.0 Build 67 Pro","time":"Thu Apr 27 14:30:10 2023","version":"21.4.0 Build 53.1"}]}};

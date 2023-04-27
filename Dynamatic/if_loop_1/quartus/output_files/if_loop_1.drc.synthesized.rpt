@@ -1,0 +1,944 @@
+Design Assistant report for if_loop_1
+Thu Apr 27 19:11:15 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Synthesized) Results - 2 of 11 Rules Failed
+  3. RES-30134 - Registers Not Reachable from Reset Release IP
+  4. FLP-10500 - Non Driving Top Level Inputs Found
+  5. RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes
+  6. LNT-30023 - Reset Nets with Polarity Conflict
+  7. RES-30132 - Registers May Not Be Properly Reset
+  8. TMC-20052 - Paths with Post Synthesis Inferred Latches
+  9. LNT-30010 - Nets Driving both Reset and Clock Enable Signals
+ 10. LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch
+ 11. TMC-20053 - DSP Inputs Driven by High Fan-Out Net
+ 12. TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible
+ 13. TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Synthesized) Results - 2 of 11 Rules Failed                                                                                                            ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; Rule                                                                                                  ; Severity ; Violations ; Waived ; Tags                            ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP                                             ; Medium   ; 741        ; 0      ; reset-usage, reset-reachability ;
+; FLP-10500 - Non Driving Top Level Inputs Found                                                        ; Low      ; 34         ; 0      ; system                          ;
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ; High     ; 0          ; 0      ; ram, reset-usage                ;
+; LNT-30023 - Reset Nets with Polarity Conflict                                                         ; Medium   ; 0          ; 0      ; reset-usage                     ;
+; RES-30132 - Registers May Not Be Properly Reset                                                       ; Medium   ; 0          ; 0      ; reset-usage, reset-reachability ;
+; TMC-20052 - Paths with Post Synthesis Inferred Latches                                                ; Medium   ; 0          ; 0      ; nonstandard-timing, latch       ;
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                          ; Low      ; 0          ; 0      ; reset-usage                     ;
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch                                          ; Low      ; 0          ; 0      ; dsp, reset-usage                ;
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net                                                     ; Low      ; 0          ; 0      ; dsp                             ;
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible                                 ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested                                ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	741
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP    ;
++-----------------------------------------------------+--------+
+; Register Node                                       ; Waived ;
++-----------------------------------------------------+--------+
+; n|set                                               ;        ;
+; fork_7|generateBlocks[2].regblock|reg_value         ;        ;
+; phi_n0|tehb1|data_reg[14]                           ;        ;
+; Buffer_6|tehb1|data_reg[14]                         ;        ;
+; Buffer_6|oehb1|data_reg[14]                         ;        ;
+; phi_n1|tehb1|data_reg[14]                           ;        ;
+; Buffer_3|tehb1|data_reg[14]                         ;        ;
+; Buffer_3|oehb1|data_reg[14]                         ;        ;
+; phi_n0|tehb1|data_reg[15]                           ;        ;
+; Buffer_6|tehb1|data_reg[15]                         ;        ;
+; Buffer_6|oehb1|data_reg[15]                         ;        ;
+; phi_n1|tehb1|data_reg[15]                           ;        ;
+; Buffer_8|fifo|Memory[3][0]                          ;        ;
+; Buffer_3|tehb1|data_reg[15]                         ;        ;
+; Buffer_3|oehb1|data_reg[15]                         ;        ;
+; phi_n0|tehb1|data_reg[16]                           ;        ;
+; Buffer_6|tehb1|data_reg[16]                         ;        ;
+; Buffer_6|oehb1|data_reg[16]                         ;        ;
+; phi_n1|tehb1|data_reg[16]                           ;        ;
+; Buffer_3|tehb1|data_reg[16]                         ;        ;
+; Buffer_3|oehb1|data_reg[16]                         ;        ;
+; phi_n0|tehb1|data_reg[17]                           ;        ;
+; Buffer_6|tehb1|data_reg[17]                         ;        ;
+; Buffer_8|fifo|Memory[2][0]                          ;        ;
+; Buffer_6|oehb1|data_reg[17]                         ;        ;
+; phi_n1|tehb1|data_reg[17]                           ;        ;
+; Buffer_3|tehb1|data_reg[17]                         ;        ;
+; Buffer_3|oehb1|data_reg[17]                         ;        ;
+; phi_n0|tehb1|data_reg[18]                           ;        ;
+; Buffer_6|tehb1|data_reg[18]                         ;        ;
+; Buffer_6|oehb1|data_reg[18]                         ;        ;
+; phi_n1|tehb1|data_reg[18]                           ;        ;
+; Buffer_3|tehb1|data_reg[18]                         ;        ;
+; Buffer_3|oehb1|data_reg[18]                         ;        ;
+; Buffer_8|fifo|Memory[1][0]                          ;        ;
+; phi_n0|tehb1|data_reg[19]                           ;        ;
+; Buffer_6|tehb1|data_reg[19]                         ;        ;
+; Buffer_6|oehb1|data_reg[19]                         ;        ;
+; phi_n1|tehb1|data_reg[19]                           ;        ;
+; Buffer_3|tehb1|data_reg[19]                         ;        ;
+; Buffer_3|oehb1|data_reg[19]                         ;        ;
+; phi_n0|tehb1|data_reg[20]                           ;        ;
+; Buffer_6|tehb1|data_reg[20]                         ;        ;
+; Buffer_6|oehb1|data_reg[20]                         ;        ;
+; phi_n1|tehb1|data_reg[20]                           ;        ;
+; Buffer_8|fifo|Memory[0][0]                          ;        ;
+; Buffer_3|tehb1|data_reg[20]                         ;        ;
+; Buffer_3|oehb1|data_reg[20]                         ;        ;
+; phi_n0|tehb1|data_reg[21]                           ;        ;
+; Buffer_6|tehb1|data_reg[21]                         ;        ;
+; Buffer_6|oehb1|data_reg[21]                         ;        ;
+; phi_n1|tehb1|data_reg[21]                           ;        ;
+; Buffer_3|tehb1|data_reg[21]                         ;        ;
+; Buffer_3|oehb1|data_reg[21]                         ;        ;
+; phi_n0|tehb1|data_reg[22]                           ;        ;
+; Buffer_6|tehb1|data_reg[22]                         ;        ;
+; Buffer_8|fifo|Memory[4][0]                          ;        ;
+; Buffer_6|oehb1|data_reg[22]                         ;        ;
+; phi_n1|tehb1|data_reg[22]                           ;        ;
+; Buffer_3|tehb1|data_reg[22]                         ;        ;
+; Buffer_3|oehb1|data_reg[22]                         ;        ;
+; phi_n0|tehb1|data_reg[23]                           ;        ;
+; Buffer_6|tehb1|data_reg[23]                         ;        ;
+; Buffer_6|oehb1|data_reg[23]                         ;        ;
+; phi_n1|tehb1|data_reg[23]                           ;        ;
+; Buffer_3|tehb1|data_reg[23]                         ;        ;
+; Buffer_3|oehb1|data_reg[23]                         ;        ;
+; phi_n0|tehb1|data_reg[0]                            ;        ;
+; phi_n0|tehb1|data_reg[24]                           ;        ;
+; Buffer_6|tehb1|data_reg[24]                         ;        ;
+; Buffer_6|oehb1|data_reg[24]                         ;        ;
+; phi_n1|tehb1|data_reg[24]                           ;        ;
+; Buffer_3|tehb1|data_reg[24]                         ;        ;
+; Buffer_3|oehb1|data_reg[24]                         ;        ;
+; phi_n0|tehb1|data_reg[25]                           ;        ;
+; Buffer_6|tehb1|data_reg[25]                         ;        ;
+; Buffer_6|oehb1|data_reg[25]                         ;        ;
+; phi_n1|tehb1|data_reg[25]                           ;        ;
+; Buffer_6|tehb1|data_reg[0]                          ;        ;
+; Buffer_3|tehb1|data_reg[25]                         ;        ;
+; Buffer_3|oehb1|data_reg[25]                         ;        ;
+; phi_n0|tehb1|data_reg[26]                           ;        ;
+; Buffer_6|tehb1|data_reg[26]                         ;        ;
+; Buffer_6|oehb1|data_reg[26]                         ;        ;
+; phi_n1|tehb1|data_reg[26]                           ;        ;
+; Buffer_3|tehb1|data_reg[26]                         ;        ;
+; Buffer_3|oehb1|data_reg[26]                         ;        ;
+; phi_n0|tehb1|data_reg[27]                           ;        ;
+; Buffer_6|tehb1|data_reg[27]                         ;        ;
+; Buffer_6|oehb1|data_reg[0]                          ;        ;
+; Buffer_6|oehb1|data_reg[27]                         ;        ;
+; phi_n1|tehb1|data_reg[27]                           ;        ;
+; Buffer_3|tehb1|data_reg[27]                         ;        ;
+; Buffer_3|oehb1|data_reg[27]                         ;        ;
+; phi_n0|tehb1|data_reg[28]                           ;        ;
+; Buffer_6|tehb1|data_reg[28]                         ;        ;
+; Buffer_6|oehb1|data_reg[28]                         ;        ;
+; phi_n1|tehb1|data_reg[28]                           ;        ;
+; Buffer_3|tehb1|data_reg[28]                         ;        ;
+; Buffer_3|oehb1|data_reg[28]                         ;        ;
+; phi_n1|tehb1|data_reg[0]                            ;        ;
+; phi_n0|tehb1|data_reg[29]                           ;        ;
+; Buffer_6|tehb1|data_reg[29]                         ;        ;
+; Buffer_6|oehb1|data_reg[29]                         ;        ;
+; phi_n1|tehb1|data_reg[29]                           ;        ;
+; Buffer_3|tehb1|data_reg[29]                         ;        ;
+; Buffer_3|oehb1|data_reg[29]                         ;        ;
+; phi_4|tehb1|data_reg[0]                             ;        ;
+; Buffer_2|tehb1|data_reg[0]                          ;        ;
+; Buffer_2|oehb1|data_reg[0]                          ;        ;
+; phi_4|tehb1|data_reg[1]                             ;        ;
+; start_0|set                                         ;        ;
+; Buffer_3|tehb1|data_reg[0]                          ;        ;
+; Buffer_2|tehb1|data_reg[1]                          ;        ;
+; Buffer_2|oehb1|data_reg[1]                          ;        ;
+; phi_4|tehb1|data_reg[2]                             ;        ;
+; Buffer_2|tehb1|data_reg[2]                          ;        ;
+; Buffer_2|oehb1|data_reg[2]                          ;        ;
+; phi_4|tehb1|data_reg[3]                             ;        ;
+; Buffer_2|tehb1|data_reg[3]                          ;        ;
+; Buffer_2|oehb1|data_reg[3]                          ;        ;
+; phi_4|tehb1|data_reg[4]                             ;        ;
+; Buffer_2|tehb1|data_reg[4]                          ;        ;
+; Buffer_3|oehb1|data_reg[0]                          ;        ;
+; Buffer_2|oehb1|data_reg[4]                          ;        ;
+; phi_4|tehb1|data_reg[5]                             ;        ;
+; Buffer_2|tehb1|data_reg[5]                          ;        ;
+; Buffer_2|oehb1|data_reg[5]                          ;        ;
+; phi_4|tehb1|data_reg[6]                             ;        ;
+; Buffer_2|tehb1|data_reg[6]                          ;        ;
+; Buffer_2|oehb1|data_reg[6]                          ;        ;
+; phi_4|tehb1|data_reg[7]                             ;        ;
+; Buffer_2|tehb1|data_reg[7]                          ;        ;
+; Buffer_2|oehb1|data_reg[7]                          ;        ;
+; phi_n0|tehb1|data_reg[1]                            ;        ;
+; phi_4|tehb1|data_reg[8]                             ;        ;
+; Buffer_2|tehb1|data_reg[8]                          ;        ;
+; Buffer_2|oehb1|data_reg[8]                          ;        ;
+; phi_4|tehb1|data_reg[9]                             ;        ;
+; Buffer_2|tehb1|data_reg[9]                          ;        ;
+; Buffer_2|oehb1|data_reg[9]                          ;        ;
+; phi_4|tehb1|data_reg[10]                            ;        ;
+; Buffer_2|tehb1|data_reg[10]                         ;        ;
+; Buffer_2|oehb1|data_reg[10]                         ;        ;
+; phi_4|tehb1|data_reg[11]                            ;        ;
+; Buffer_6|tehb1|data_reg[1]                          ;        ;
+; Buffer_2|tehb1|data_reg[11]                         ;        ;
+; Buffer_2|oehb1|data_reg[11]                         ;        ;
+; phi_4|tehb1|data_reg[12]                            ;        ;
+; Buffer_2|tehb1|data_reg[12]                         ;        ;
+; Buffer_2|oehb1|data_reg[12]                         ;        ;
+; phi_4|tehb1|data_reg[13]                            ;        ;
+; Buffer_2|tehb1|data_reg[13]                         ;        ;
+; Buffer_2|oehb1|data_reg[13]                         ;        ;
+; phi_4|tehb1|data_reg[14]                            ;        ;
+; Buffer_2|tehb1|data_reg[14]                         ;        ;
+; Buffer_6|oehb1|data_reg[1]                          ;        ;
+; Buffer_2|oehb1|data_reg[14]                         ;        ;
+; phi_4|tehb1|data_reg[15]                            ;        ;
+; Buffer_2|tehb1|data_reg[15]                         ;        ;
+; Buffer_2|oehb1|data_reg[15]                         ;        ;
+; phi_4|tehb1|data_reg[16]                            ;        ;
+; Buffer_2|tehb1|data_reg[16]                         ;        ;
+; Buffer_2|oehb1|data_reg[16]                         ;        ;
+; phi_4|tehb1|data_reg[17]                            ;        ;
+; Buffer_2|tehb1|data_reg[17]                         ;        ;
+; Buffer_2|oehb1|data_reg[17]                         ;        ;
+; phi_n1|tehb1|data_reg[1]                            ;        ;
+; phi_4|tehb1|data_reg[18]                            ;        ;
+; Buffer_2|tehb1|data_reg[18]                         ;        ;
+; Buffer_2|oehb1|data_reg[18]                         ;        ;
+; phi_4|tehb1|data_reg[19]                            ;        ;
+; Buffer_2|tehb1|data_reg[19]                         ;        ;
+; Buffer_2|oehb1|data_reg[19]                         ;        ;
+; phi_4|tehb1|data_reg[20]                            ;        ;
+; Buffer_2|tehb1|data_reg[20]                         ;        ;
+; Buffer_2|oehb1|data_reg[20]                         ;        ;
+; phi_4|tehb1|data_reg[21]                            ;        ;
+; Buffer_3|tehb1|data_reg[1]                          ;        ;
+; Buffer_2|tehb1|data_reg[21]                         ;        ;
+; Buffer_2|oehb1|data_reg[21]                         ;        ;
+; phi_4|tehb1|data_reg[22]                            ;        ;
+; Buffer_2|tehb1|data_reg[22]                         ;        ;
+; Buffer_2|oehb1|data_reg[22]                         ;        ;
+; phi_4|tehb1|data_reg[23]                            ;        ;
+; Buffer_2|tehb1|data_reg[23]                         ;        ;
+; Buffer_2|oehb1|data_reg[23]                         ;        ;
+; phi_4|tehb1|data_reg[24]                            ;        ;
+; Buffer_2|tehb1|data_reg[24]                         ;        ;
+; Buffer_3|oehb1|data_reg[1]                          ;        ;
+; Buffer_2|oehb1|data_reg[24]                         ;        ;
+; phi_4|tehb1|data_reg[25]                            ;        ;
+; Buffer_2|tehb1|data_reg[25]                         ;        ;
+; Buffer_2|oehb1|data_reg[25]                         ;        ;
+; phi_4|tehb1|data_reg[26]                            ;        ;
+; Buffer_2|tehb1|data_reg[26]                         ;        ;
+; Buffer_2|oehb1|data_reg[26]                         ;        ;
+; phi_4|tehb1|data_reg[27]                            ;        ;
+; Buffer_2|tehb1|data_reg[27]                         ;        ;
+; Buffer_2|oehb1|data_reg[27]                         ;        ;
+; phi_n0|tehb1|data_reg[2]                            ;        ;
+; phi_4|tehb1|data_reg[28]                            ;        ;
+; Buffer_2|tehb1|data_reg[28]                         ;        ;
+; Buffer_2|oehb1|data_reg[28]                         ;        ;
+; phi_4|tehb1|data_reg[29]                            ;        ;
+; Buffer_2|tehb1|data_reg[29]                         ;        ;
+; Buffer_2|oehb1|data_reg[29]                         ;        ;
+; phi_4|tehb1|data_reg[30]                            ;        ;
+; Buffer_2|tehb1|data_reg[30]                         ;        ;
+; fork_8|generateBlocks[3].regblock|reg_value         ;        ;
+; mul_8|multiply_unit|q0[11]                          ;        ;
+; Buffer_6|tehb1|data_reg[2]                          ;        ;
+; mul_8|multiply_unit|q1[11]                          ;        ;
+; mul_8|multiply_unit|q2[11]                          ;        ;
+; mul_8|multiply_unit|q0[10]                          ;        ;
+; mul_8|multiply_unit|q1[10]                          ;        ;
+; mul_8|multiply_unit|q2[10]                          ;        ;
+; mul_8|multiply_unit|q0[12]                          ;        ;
+; mul_8|multiply_unit|q1[12]                          ;        ;
+; mul_8|multiply_unit|q2[12]                          ;        ;
+; mul_8|multiply_unit|q0[13]                          ;        ;
+; mul_8|multiply_unit|q1[13]                          ;        ;
+; MC_a|read_arbiter|data|out_reg[0][31]               ;        ;
+; Buffer_6|oehb1|data_reg[2]                          ;        ;
+; mul_8|multiply_unit|q2[13]                          ;        ;
+; mul_8|multiply_unit|q0[14]                          ;        ;
+; mul_8|multiply_unit|q1[14]                          ;        ;
+; mul_8|multiply_unit|q2[14]                          ;        ;
+; mul_8|multiply_unit|q0[15]                          ;        ;
+; mul_8|multiply_unit|q1[15]                          ;        ;
+; mul_8|multiply_unit|q2[15]                          ;        ;
+; mul_8|multiply_unit|q0[5]                           ;        ;
+; mul_8|multiply_unit|q1[5]                           ;        ;
+; mul_8|multiply_unit|q2[5]                           ;        ;
+; phi_n1|tehb1|data_reg[2]                            ;        ;
+; mul_8|multiply_unit|q0[4]                           ;        ;
+; mul_8|multiply_unit|q1[4]                           ;        ;
+; mul_8|multiply_unit|q2[4]                           ;        ;
+; mul_8|multiply_unit|q0[6]                           ;        ;
+; mul_8|multiply_unit|q1[6]                           ;        ;
+; mul_8|multiply_unit|q2[6]                           ;        ;
+; mul_8|multiply_unit|q0[7]                           ;        ;
+; mul_8|multiply_unit|q1[7]                           ;        ;
+; mul_8|multiply_unit|q2[7]                           ;        ;
+; mul_8|multiply_unit|q0[8]                           ;        ;
+; Buffer_3|tehb1|data_reg[2]                          ;        ;
+; mul_8|multiply_unit|q1[8]                           ;        ;
+; mul_8|multiply_unit|q2[8]                           ;        ;
+; mul_8|multiply_unit|q0[9]                           ;        ;
+; mul_8|multiply_unit|q1[9]                           ;        ;
+; mul_8|multiply_unit|q2[9]                           ;        ;
+; mul_8|multiply_unit|q0[17]                          ;        ;
+; mul_8|multiply_unit|q1[17]                          ;        ;
+; mul_8|multiply_unit|q2[17]                          ;        ;
+; mul_8|multiply_unit|q0[16]                          ;        ;
+; mul_8|multiply_unit|q1[16]                          ;        ;
+; Buffer_3|oehb1|data_reg[2]                          ;        ;
+; mul_8|multiply_unit|q2[16]                          ;        ;
+; mul_8|multiply_unit|q0[18]                          ;        ;
+; mul_8|multiply_unit|q1[18]                          ;        ;
+; mul_8|multiply_unit|q2[18]                          ;        ;
+; mul_8|multiply_unit|q0[19]                          ;        ;
+; mul_8|multiply_unit|q1[19]                          ;        ;
+; mul_8|multiply_unit|q2[19]                          ;        ;
+; mul_8|multiply_unit|q0[20]                          ;        ;
+; mul_8|multiply_unit|q1[20]                          ;        ;
+; mul_8|multiply_unit|q2[20]                          ;        ;
+; phi_n0|tehb1|data_reg[3]                            ;        ;
+; mul_8|multiply_unit|q0[21]                          ;        ;
+; mul_8|multiply_unit|q1[21]                          ;        ;
+; mul_8|multiply_unit|q2[21]                          ;        ;
+; mul_8|multiply_unit|q0[23]                          ;        ;
+; mul_8|multiply_unit|q1[23]                          ;        ;
+; mul_8|multiply_unit|q2[23]                          ;        ;
+; mul_8|multiply_unit|q0[22]                          ;        ;
+; mul_8|multiply_unit|q1[22]                          ;        ;
+; mul_8|multiply_unit|q2[22]                          ;        ;
+; mul_8|multiply_unit|q0[24]                          ;        ;
+; Buffer_6|tehb1|data_reg[3]                          ;        ;
+; mul_8|multiply_unit|q1[24]                          ;        ;
+; mul_8|multiply_unit|q2[24]                          ;        ;
+; mul_8|multiply_unit|q0[25]                          ;        ;
+; mul_8|multiply_unit|q1[25]                          ;        ;
+; mul_8|multiply_unit|q2[25]                          ;        ;
+; mul_8|multiply_unit|q0[26]                          ;        ;
+; mul_8|multiply_unit|q1[26]                          ;        ;
+; mul_8|multiply_unit|q2[26]                          ;        ;
+; mul_8|multiply_unit|q0[27]                          ;        ;
+; mul_8|multiply_unit|q1[27]                          ;        ;
+; Buffer_6|oehb1|data_reg[3]                          ;        ;
+; mul_8|multiply_unit|q2[27]                          ;        ;
+; mul_8|multiply_unit|q0[1]                           ;        ;
+; mul_8|multiply_unit|q1[1]                           ;        ;
+; mul_8|multiply_unit|q2[1]                           ;        ;
+; mul_8|multiply_unit|q0[0]                           ;        ;
+; mul_8|multiply_unit|q1[0]                           ;        ;
+; mul_8|multiply_unit|q2[0]                           ;        ;
+; mul_8|multiply_unit|q0[2]                           ;        ;
+; mul_8|multiply_unit|q1[2]                           ;        ;
+; mul_8|multiply_unit|q2[2]                           ;        ;
+; phi_n1|tehb1|data_reg[3]                            ;        ;
+; mul_8|multiply_unit|q0[3]                           ;        ;
+; mul_8|multiply_unit|q1[3]                           ;        ;
+; mul_8|multiply_unit|q2[3]                           ;        ;
+; mul_8|multiply_unit|q0[29]                          ;        ;
+; mul_8|multiply_unit|q1[29]                          ;        ;
+; mul_8|multiply_unit|q2[29]                          ;        ;
+; mul_8|multiply_unit|q0[28]                          ;        ;
+; mul_8|multiply_unit|q1[28]                          ;        ;
+; mul_8|multiply_unit|q2[28]                          ;        ;
+; MC_a|read_arbiter|data|out_reg[0][0]                ;        ;
+; Buffer_3|tehb1|data_reg[3]                          ;        ;
+; load_7|Buffer_2|data_reg[0]                         ;        ;
+; mul_8|multiply_unit|a_reg[0]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][1]                ;        ;
+; load_7|Buffer_2|data_reg[1]                         ;        ;
+; mul_8|multiply_unit|a_reg[1]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][2]                ;        ;
+; load_7|Buffer_2|data_reg[2]                         ;        ;
+; mul_8|multiply_unit|a_reg[2]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][3]                ;        ;
+; load_7|Buffer_2|data_reg[3]                         ;        ;
+; Buffer_3|oehb1|data_reg[3]                          ;        ;
+; mul_8|multiply_unit|a_reg[3]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][4]                ;        ;
+; load_7|Buffer_2|data_reg[4]                         ;        ;
+; mul_8|multiply_unit|a_reg[4]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][5]                ;        ;
+; load_7|Buffer_2|data_reg[5]                         ;        ;
+; mul_8|multiply_unit|a_reg[5]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][6]                ;        ;
+; load_7|Buffer_2|data_reg[6]                         ;        ;
+; mul_8|multiply_unit|a_reg[6]                        ;        ;
+; load_7|Buffer_2|data_reg[31]                        ;        ;
+; phi_n0|tehb1|data_reg[4]                            ;        ;
+; MC_a|read_arbiter|data|out_reg[0][7]                ;        ;
+; load_7|Buffer_2|data_reg[7]                         ;        ;
+; mul_8|multiply_unit|a_reg[7]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][8]                ;        ;
+; load_7|Buffer_2|data_reg[8]                         ;        ;
+; mul_8|multiply_unit|a_reg[8]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][9]                ;        ;
+; load_7|Buffer_2|data_reg[9]                         ;        ;
+; mul_8|multiply_unit|a_reg[9]                        ;        ;
+; MC_a|read_arbiter|data|out_reg[0][10]               ;        ;
+; Buffer_6|tehb1|data_reg[4]                          ;        ;
+; load_7|Buffer_2|data_reg[10]                        ;        ;
+; mul_8|multiply_unit|a_reg[10]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][11]               ;        ;
+; load_7|Buffer_2|data_reg[11]                        ;        ;
+; mul_8|multiply_unit|a_reg[11]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][12]               ;        ;
+; load_7|Buffer_2|data_reg[12]                        ;        ;
+; mul_8|multiply_unit|a_reg[12]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][13]               ;        ;
+; load_7|Buffer_2|data_reg[13]                        ;        ;
+; Buffer_6|oehb1|data_reg[4]                          ;        ;
+; mul_8|multiply_unit|a_reg[13]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][14]               ;        ;
+; load_7|Buffer_2|data_reg[14]                        ;        ;
+; mul_8|multiply_unit|a_reg[14]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][15]               ;        ;
+; load_7|Buffer_2|data_reg[15]                        ;        ;
+; mul_8|multiply_unit|a_reg[15]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][16]               ;        ;
+; load_7|Buffer_2|data_reg[16]                        ;        ;
+; mul_8|multiply_unit|a_reg[16]                       ;        ;
+; phi_n1|tehb1|data_reg[4]                            ;        ;
+; MC_a|read_arbiter|data|out_reg[0][17]               ;        ;
+; load_7|Buffer_2|data_reg[17]                        ;        ;
+; mul_8|multiply_unit|a_reg[17]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][18]               ;        ;
+; load_7|Buffer_2|data_reg[18]                        ;        ;
+; mul_8|multiply_unit|a_reg[18]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][19]               ;        ;
+; load_7|Buffer_2|data_reg[19]                        ;        ;
+; mul_8|multiply_unit|a_reg[19]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][20]               ;        ;
+; Buffer_3|tehb1|data_reg[4]                          ;        ;
+; load_7|Buffer_2|data_reg[20]                        ;        ;
+; mul_8|multiply_unit|a_reg[20]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][21]               ;        ;
+; load_7|Buffer_2|data_reg[21]                        ;        ;
+; mul_8|multiply_unit|a_reg[21]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][22]               ;        ;
+; load_7|Buffer_2|data_reg[22]                        ;        ;
+; mul_8|multiply_unit|a_reg[22]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][23]               ;        ;
+; load_7|Buffer_2|data_reg[23]                        ;        ;
+; Buffer_3|oehb1|data_reg[4]                          ;        ;
+; mul_8|multiply_unit|a_reg[23]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][24]               ;        ;
+; load_7|Buffer_2|data_reg[24]                        ;        ;
+; mul_8|multiply_unit|a_reg[24]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][25]               ;        ;
+; load_7|Buffer_2|data_reg[25]                        ;        ;
+; mul_8|multiply_unit|a_reg[25]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][26]               ;        ;
+; load_7|Buffer_2|data_reg[26]                        ;        ;
+; mul_8|multiply_unit|a_reg[26]                       ;        ;
+; phi_n0|tehb1|data_reg[5]                            ;        ;
+; MC_a|read_arbiter|data|out_reg[0][27]               ;        ;
+; load_7|Buffer_2|data_reg[27]                        ;        ;
+; mul_8|multiply_unit|a_reg[27]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][29]               ;        ;
+; load_7|Buffer_2|data_reg[29]                        ;        ;
+; mul_8|multiply_unit|a_reg[29]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][28]               ;        ;
+; load_7|Buffer_2|data_reg[28]                        ;        ;
+; mul_8|multiply_unit|a_reg[28]                       ;        ;
+; MC_a|read_arbiter|data|out_reg[0][30]               ;        ;
+; Buffer_6|tehb1|data_reg[5]                          ;        ;
+; load_7|Buffer_2|data_reg[30]                        ;        ;
+; MC_a|read_arbiter|data|sel_prev[0]                  ;        ;
+; mul_8|multiply_unit|a_reg[30]                       ;        ;
+; mul_8|multiply_unit|q0[30]                          ;        ;
+; mul_8|multiply_unit|q1[30]                          ;        ;
+; mul_8|multiply_unit|q2[30]                          ;        ;
+; mul_8|buff|regs[0]                                  ;        ;
+; mul_8|buff|regs[1]                                  ;        ;
+; mul_8|buff|regs[2]                                  ;        ;
+; fork_2|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_6|oehb1|data_reg[5]                          ;        ;
+; mul_8|oehb|validArray[0]                            ;        ;
+; select_0|Antitokens|reg_out0                        ;        ;
+; fork_2|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_4|generateBlocks[1].regblock|reg_value         ;        ;
+; Buffer_5|tehb1|full_reg                             ;        ;
+; forkC_11|generateBlocks[1].regblock|reg_value       ;        ;
+; fork_7|generateBlocks[1].regblock|reg_value         ;        ;
+; Buffer_12|fifo|Memory[4][0]                         ;        ;
+; Buffer_12|fifo|Memory[5][0]                         ;        ;
+; Buffer_12|fifo|Head[1]                              ;        ;
+; phi_n1|tehb1|data_reg[5]                            ;        ;
+; Buffer_12|fifo|Memory[3][0]                         ;        ;
+; Buffer_12|fifo|Memory[2][0]                         ;        ;
+; Buffer_12|fifo|Memory[1][0]                         ;        ;
+; Buffer_12|fifo|Tail[1]                              ;        ;
+; Buffer_12|fifo|Tail[0]                              ;        ;
+; Buffer_12|fifo|Tail[2]                              ;        ;
+; Buffer_12|fifo|Memory[0][0]                         ;        ;
+; phiC_3|oehb1|data_reg[0]                            ;        ;
+; Buffer_5|oehb1|validArray[0]                        ;        ;
+; phiC_3|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; Buffer_6|tehb1|data_reg[31]                         ;        ;
+; Buffer_3|tehb1|data_reg[5]                          ;        ;
+; fork_14|generateBlocks[1].regblock|reg_value        ;        ;
+; Buffer_2|tehb1|full_reg                             ;        ;
+; phi_4|tehb1|full_reg                                ;        ;
+; Buffer_2|oehb1|data_reg[30]                         ;        ;
+; phi_n0|tehb1|data_reg[30]                           ;        ;
+; Buffer_6|tehb1|data_reg[30]                         ;        ;
+; Buffer_6|oehb1|data_reg[30]                         ;        ;
+; phi_n1|tehb1|data_reg[30]                           ;        ;
+; Buffer_3|tehb1|data_reg[30]                         ;        ;
+; Buffer_3|oehb1|data_reg[30]                         ;        ;
+; Buffer_3|oehb1|data_reg[5]                          ;        ;
+; Buffer_8|fifo|Tail[2]                               ;        ;
+; Buffer_8|fifo|Tail[1]                               ;        ;
+; Buffer_8|fifo|Tail[0]                               ;        ;
+; Buffer_8|fifo|Memory[5][0]                          ;        ;
+; Buffer_8|fifo|Head[1]                               ;        ;
+; Buffer_8|fifo|Head[0]                               ;        ;
+; Buffer_8|fifo|Head[2]                               ;        ;
+; Buffer_7|tehb1|full_reg                             ;        ;
+; phiC_4|oehb1|data_reg[0]                            ;        ;
+; Buffer_7|oehb1|validArray[0]                        ;        ;
+; phi_n0|tehb1|data_reg[6]                            ;        ;
+; ret_0|tehb|full_reg                                 ;        ;
+; phi_14|tehb1|full_reg                               ;        ;
+; forkC_10|generateBlocks[0].regblock|reg_value       ;        ;
+; fork_6|generateBlocks[1].regblock|reg_value         ;        ;
+; forkC_10|generateBlocks[1].regblock|reg_value       ;        ;
+; start_0|startBuff|tehb1|full_reg                    ;        ;
+; start_0|startBuff|oehb1|validArray[0]               ;        ;
+; fork_6|generateBlocks[2].regblock|reg_value         ;        ;
+; fork_6|generateBlocks[0].regblock|reg_value         ;        ;
+; n|startBuff|oehb1|validArray[0]                     ;        ;
+; Buffer_6|tehb1|data_reg[6]                          ;        ;
+; fork_0|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_0|generateBlocks[1].regblock|reg_value         ;        ;
+; n|startBuff|tehb1|data_reg[5]                       ;        ;
+; n|startBuff|oehb1|data_reg[5]                       ;        ;
+; n|startBuff|tehb1|data_reg[4]                       ;        ;
+; n|startBuff|oehb1|data_reg[4]                       ;        ;
+; n|startBuff|tehb1|data_reg[3]                       ;        ;
+; n|startBuff|oehb1|data_reg[3]                       ;        ;
+; n|startBuff|tehb1|data_reg[2]                       ;        ;
+; n|startBuff|oehb1|data_reg[2]                       ;        ;
+; Buffer_6|oehb1|data_reg[6]                          ;        ;
+; n|startBuff|tehb1|data_reg[1]                       ;        ;
+; n|startBuff|oehb1|data_reg[1]                       ;        ;
+; n|startBuff|tehb1|data_reg[0]                       ;        ;
+; n|startBuff|oehb1|data_reg[0]                       ;        ;
+; n|startBuff|tehb1|data_reg[17]                      ;        ;
+; n|startBuff|oehb1|data_reg[17]                      ;        ;
+; n|startBuff|tehb1|data_reg[16]                      ;        ;
+; n|startBuff|oehb1|data_reg[16]                      ;        ;
+; n|startBuff|tehb1|data_reg[15]                      ;        ;
+; n|startBuff|oehb1|data_reg[15]                      ;        ;
+; phi_n1|tehb1|data_reg[6]                            ;        ;
+; n|startBuff|tehb1|data_reg[14]                      ;        ;
+; n|startBuff|oehb1|data_reg[14]                      ;        ;
+; n|startBuff|tehb1|data_reg[13]                      ;        ;
+; n|startBuff|oehb1|data_reg[13]                      ;        ;
+; n|startBuff|tehb1|data_reg[12]                      ;        ;
+; n|startBuff|oehb1|data_reg[12]                      ;        ;
+; n|startBuff|tehb1|data_reg[23]                      ;        ;
+; n|startBuff|oehb1|data_reg[23]                      ;        ;
+; n|startBuff|tehb1|data_reg[22]                      ;        ;
+; n|startBuff|oehb1|data_reg[22]                      ;        ;
+; Buffer_3|tehb1|data_reg[6]                          ;        ;
+; n|startBuff|tehb1|data_reg[21]                      ;        ;
+; n|startBuff|oehb1|data_reg[21]                      ;        ;
+; n|startBuff|tehb1|data_reg[20]                      ;        ;
+; n|startBuff|oehb1|data_reg[20]                      ;        ;
+; n|startBuff|tehb1|data_reg[19]                      ;        ;
+; n|startBuff|oehb1|data_reg[19]                      ;        ;
+; n|startBuff|tehb1|data_reg[18]                      ;        ;
+; n|startBuff|oehb1|data_reg[18]                      ;        ;
+; n|startBuff|tehb1|data_reg[29]                      ;        ;
+; n|startBuff|oehb1|data_reg[29]                      ;        ;
+; Buffer_3|oehb1|data_reg[6]                          ;        ;
+; n|startBuff|tehb1|data_reg[28]                      ;        ;
+; n|startBuff|oehb1|data_reg[28]                      ;        ;
+; n|startBuff|tehb1|data_reg[27]                      ;        ;
+; n|startBuff|oehb1|data_reg[27]                      ;        ;
+; n|startBuff|tehb1|data_reg[26]                      ;        ;
+; n|startBuff|oehb1|data_reg[26]                      ;        ;
+; n|startBuff|tehb1|data_reg[25]                      ;        ;
+; n|startBuff|oehb1|data_reg[25]                      ;        ;
+; n|startBuff|tehb1|data_reg[24]                      ;        ;
+; n|startBuff|oehb1|data_reg[24]                      ;        ;
+; phi_n0|tehb1|data_reg[7]                            ;        ;
+; n|startBuff|tehb1|data_reg[10]                      ;        ;
+; n|startBuff|oehb1|data_reg[10]                      ;        ;
+; n|startBuff|tehb1|data_reg[9]                       ;        ;
+; n|startBuff|oehb1|data_reg[9]                       ;        ;
+; n|startBuff|tehb1|data_reg[8]                       ;        ;
+; n|startBuff|oehb1|data_reg[8]                       ;        ;
+; n|startBuff|tehb1|data_reg[7]                       ;        ;
+; n|startBuff|oehb1|data_reg[7]                       ;        ;
+; n|startBuff|tehb1|data_reg[6]                       ;        ;
+; n|startBuff|oehb1|data_reg[6]                       ;        ;
+; Buffer_6|tehb1|data_reg[7]                          ;        ;
+; n|startBuff|tehb1|data_reg[11]                      ;        ;
+; n|startBuff|oehb1|data_reg[11]                      ;        ;
+; n|startBuff|tehb1|data_reg[30]                      ;        ;
+; n|startBuff|oehb1|data_reg[30]                      ;        ;
+; n|startBuff|tehb1|full_reg                          ;        ;
+; n|startBuff|tehb1|data_reg[31]                      ;        ;
+; n|startBuff|oehb1|data_reg[31]                      ;        ;
+; phiC_4|oehb1|full_reg                               ;        ;
+; Buffer_11|oehb1|validArray[0]                       ;        ;
+; Buffer_11|tehb1|full_reg                            ;        ;
+; Buffer_6|oehb1|data_reg[31]                         ;        ;
+; Buffer_6|oehb1|data_reg[7]                          ;        ;
+; Buffer_10|oehb1|validArray[0]                       ;        ;
+; Buffer_9|oehb1|validArray[0]                        ;        ;
+; phiC_3|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; Buffer_10|tehb1|full_reg                            ;        ;
+; phiC_3|oehb1|full_reg                               ;        ;
+; Buffer_9|tehb1|full_reg                             ;        ;
+; forkC_11|generateBlocks[2].regblock|reg_value       ;        ;
+; fork_7|generateBlocks[3].regblock|reg_value         ;        ;
+; phiC_2|tehb1|full_reg                               ;        ;
+; phi_n0|tehb1|full_reg                               ;        ;
+; phi_n1|tehb1|data_reg[7]                            ;        ;
+; Buffer_6|oehb1|validArray[0]                        ;        ;
+; Buffer_6|tehb1|full_reg                             ;        ;
+; fork_7|generateBlocks[0].regblock|reg_value         ;        ;
+; forkC_11|generateBlocks[3].regblock|reg_value       ;        ;
+; Buffer_4|oehb1|validArray[0]                        ;        ;
+; phi_3|tehb1|full_reg                                ;        ;
+; Buffer_12|fifo|Head[0]                              ;        ;
+; Buffer_12|fifo|Head[2]                              ;        ;
+; Buffer_12|fifo|Empty                                ;        ;
+; Buffer_12|fifo|Full                                 ;        ;
+; Buffer_3|tehb1|data_reg[7]                          ;        ;
+; fork_14|generateBlocks[0].regblock|reg_value        ;        ;
+; Buffer_1|tehb1|full_reg                             ;        ;
+; Buffer_1|oehb1|validArray[0]                        ;        ;
+; fork_5|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_8|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_3|tehb1|full_reg                             ;        ;
+; phi_n1|tehb1|full_reg                               ;        ;
+; Buffer_3|tehb1|data_reg[31]                         ;        ;
+; Buffer_3|oehb1|data_reg[31]                         ;        ;
+; Buffer_3|oehb1|validArray[0]                        ;        ;
+; Buffer_3|oehb1|data_reg[7]                          ;        ;
+; fork_4|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_5|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_8|fifo|Empty                                 ;        ;
+; Buffer_8|fifo|Full                                  ;        ;
+; fork_8|generateBlocks[2].regblock|reg_value         ;        ;
+; fork_8|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_1|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_2|oehb1|validArray[0]                        ;        ;
+; fork_1|generateBlocks[1].regblock|reg_value         ;        ;
+; load_7|Buffer_1|full_reg                            ;        ;
+; phi_n0|tehb1|data_reg[8]                            ;        ;
+; MC_a|read_arbiter|data|valid[0]                     ;        ;
+; load_7|Buffer_2|full_reg                            ;        ;
+; mul_8|multiply_unit|a_reg[31]                       ;        ;
+; mul_8|multiply_unit|q0[31]                          ;        ;
+; mul_8|multiply_unit|q1[31]                          ;        ;
+; mul_8|multiply_unit|q2[31]                          ;        ;
+; phi_3|tehb1|data_reg[0]                             ;        ;
+; Buffer_1|tehb1|data_reg[0]                          ;        ;
+; Buffer_1|oehb1|data_reg[0]                          ;        ;
+; phi_3|tehb1|data_reg[1]                             ;        ;
+; Buffer_6|tehb1|data_reg[8]                          ;        ;
+; Buffer_1|tehb1|data_reg[1]                          ;        ;
+; Buffer_1|oehb1|data_reg[1]                          ;        ;
+; phi_3|tehb1|data_reg[2]                             ;        ;
+; Buffer_1|tehb1|data_reg[2]                          ;        ;
+; Buffer_1|oehb1|data_reg[2]                          ;        ;
+; phi_3|tehb1|data_reg[3]                             ;        ;
+; Buffer_1|tehb1|data_reg[3]                          ;        ;
+; Buffer_1|oehb1|data_reg[3]                          ;        ;
+; phi_3|tehb1|data_reg[4]                             ;        ;
+; Buffer_1|tehb1|data_reg[4]                          ;        ;
+; Buffer_6|oehb1|data_reg[8]                          ;        ;
+; Buffer_1|oehb1|data_reg[4]                          ;        ;
+; phi_3|tehb1|data_reg[5]                             ;        ;
+; Buffer_1|tehb1|data_reg[5]                          ;        ;
+; Buffer_1|oehb1|data_reg[5]                          ;        ;
+; phi_3|tehb1|data_reg[6]                             ;        ;
+; Buffer_1|tehb1|data_reg[6]                          ;        ;
+; Buffer_1|oehb1|data_reg[6]                          ;        ;
+; phi_3|tehb1|data_reg[7]                             ;        ;
+; Buffer_1|tehb1|data_reg[7]                          ;        ;
+; Buffer_1|oehb1|data_reg[7]                          ;        ;
+; phi_n1|tehb1|data_reg[8]                            ;        ;
+; phi_3|tehb1|data_reg[8]                             ;        ;
+; Buffer_1|tehb1|data_reg[8]                          ;        ;
+; Buffer_1|oehb1|data_reg[8]                          ;        ;
+; phi_3|tehb1|data_reg[9]                             ;        ;
+; Buffer_1|tehb1|data_reg[9]                          ;        ;
+; Buffer_1|oehb1|data_reg[9]                          ;        ;
+; phi_3|tehb1|data_reg[10]                            ;        ;
+; Buffer_1|tehb1|data_reg[10]                         ;        ;
+; Buffer_1|oehb1|data_reg[10]                         ;        ;
+; phi_3|tehb1|data_reg[11]                            ;        ;
+; Buffer_3|tehb1|data_reg[8]                          ;        ;
+; Buffer_1|tehb1|data_reg[11]                         ;        ;
+; Buffer_1|oehb1|data_reg[11]                         ;        ;
+; phi_3|tehb1|data_reg[12]                            ;        ;
+; Buffer_1|tehb1|data_reg[12]                         ;        ;
+; Buffer_1|oehb1|data_reg[12]                         ;        ;
+; phi_3|tehb1|data_reg[13]                            ;        ;
+; Buffer_1|tehb1|data_reg[13]                         ;        ;
+; Buffer_1|oehb1|data_reg[13]                         ;        ;
+; phi_3|tehb1|data_reg[14]                            ;        ;
+; Buffer_1|tehb1|data_reg[14]                         ;        ;
+; Buffer_3|oehb1|data_reg[8]                          ;        ;
+; Buffer_1|oehb1|data_reg[14]                         ;        ;
+; phi_3|tehb1|data_reg[15]                            ;        ;
+; Buffer_1|tehb1|data_reg[15]                         ;        ;
+; Buffer_1|oehb1|data_reg[15]                         ;        ;
+; phi_3|tehb1|data_reg[16]                            ;        ;
+; Buffer_1|tehb1|data_reg[16]                         ;        ;
+; Buffer_1|oehb1|data_reg[16]                         ;        ;
+; phi_3|tehb1|data_reg[17]                            ;        ;
+; Buffer_1|tehb1|data_reg[17]                         ;        ;
+; Buffer_1|oehb1|data_reg[17]                         ;        ;
+; phi_n1|tehb1|data_reg[31]                           ;        ;
+; phi_n0|tehb1|data_reg[9]                            ;        ;
+; phi_3|tehb1|data_reg[18]                            ;        ;
+; Buffer_1|tehb1|data_reg[18]                         ;        ;
+; Buffer_1|oehb1|data_reg[18]                         ;        ;
+; phi_3|tehb1|data_reg[19]                            ;        ;
+; Buffer_1|tehb1|data_reg[19]                         ;        ;
+; Buffer_1|oehb1|data_reg[19]                         ;        ;
+; phi_3|tehb1|data_reg[20]                            ;        ;
+; Buffer_1|tehb1|data_reg[20]                         ;        ;
+; Buffer_1|oehb1|data_reg[20]                         ;        ;
+; phi_3|tehb1|data_reg[21]                            ;        ;
+; Buffer_6|tehb1|data_reg[9]                          ;        ;
+; Buffer_1|tehb1|data_reg[21]                         ;        ;
+; Buffer_1|oehb1|data_reg[21]                         ;        ;
+; phi_3|tehb1|data_reg[22]                            ;        ;
+; Buffer_1|tehb1|data_reg[22]                         ;        ;
+; Buffer_1|oehb1|data_reg[22]                         ;        ;
+; phi_3|tehb1|data_reg[23]                            ;        ;
+; Buffer_1|tehb1|data_reg[23]                         ;        ;
+; Buffer_1|oehb1|data_reg[23]                         ;        ;
+; phi_3|tehb1|data_reg[24]                            ;        ;
+; Buffer_1|tehb1|data_reg[24]                         ;        ;
+; Buffer_6|oehb1|data_reg[9]                          ;        ;
+; Buffer_1|oehb1|data_reg[24]                         ;        ;
+; phi_3|tehb1|data_reg[25]                            ;        ;
+; Buffer_1|tehb1|data_reg[25]                         ;        ;
+; Buffer_1|oehb1|data_reg[25]                         ;        ;
+; phi_3|tehb1|data_reg[26]                            ;        ;
+; Buffer_1|tehb1|data_reg[26]                         ;        ;
+; Buffer_1|oehb1|data_reg[26]                         ;        ;
+; phi_3|tehb1|data_reg[27]                            ;        ;
+; Buffer_1|tehb1|data_reg[27]                         ;        ;
+; Buffer_1|oehb1|data_reg[27]                         ;        ;
+; phi_n1|tehb1|data_reg[9]                            ;        ;
+; phi_3|tehb1|data_reg[28]                            ;        ;
+; Buffer_1|tehb1|data_reg[28]                         ;        ;
+; Buffer_1|oehb1|data_reg[28]                         ;        ;
+; phi_3|tehb1|data_reg[29]                            ;        ;
+; Buffer_1|tehb1|data_reg[29]                         ;        ;
+; Buffer_1|oehb1|data_reg[29]                         ;        ;
+; phi_3|tehb1|data_reg[30]                            ;        ;
+; Buffer_1|tehb1|data_reg[30]                         ;        ;
+; Buffer_1|oehb1|data_reg[30]                         ;        ;
+; phi_3|tehb1|data_reg[31]                            ;        ;
+; Buffer_3|tehb1|data_reg[9]                          ;        ;
+; Buffer_1|tehb1|data_reg[31]                         ;        ;
+; Buffer_1|oehb1|data_reg[31]                         ;        ;
+; Buffer_3|oehb1|data_reg[9]                          ;        ;
+; phi_n0|tehb1|data_reg[10]                           ;        ;
+; Buffer_6|tehb1|data_reg[10]                         ;        ;
+; Buffer_6|oehb1|data_reg[10]                         ;        ;
+; phi_n1|tehb1|data_reg[10]                           ;        ;
+; Buffer_4|tehb1|full_reg                             ;        ;
+; Buffer_3|tehb1|data_reg[10]                         ;        ;
+; Buffer_3|oehb1|data_reg[10]                         ;        ;
+; phi_n0|tehb1|data_reg[11]                           ;        ;
+; Buffer_6|tehb1|data_reg[11]                         ;        ;
+; Buffer_6|oehb1|data_reg[11]                         ;        ;
+; phi_n1|tehb1|data_reg[11]                           ;        ;
+; Buffer_3|tehb1|data_reg[11]                         ;        ;
+; Buffer_3|oehb1|data_reg[11]                         ;        ;
+; phi_n0|tehb1|data_reg[12]                           ;        ;
+; Buffer_6|tehb1|data_reg[12]                         ;        ;
+; forkC_11|generateBlocks[0].regblock|reg_value       ;        ;
+; Buffer_6|oehb1|data_reg[12]                         ;        ;
+; phi_n1|tehb1|data_reg[12]                           ;        ;
+; Buffer_3|tehb1|data_reg[12]                         ;        ;
+; Buffer_3|oehb1|data_reg[12]                         ;        ;
+; phi_n0|tehb1|data_reg[13]                           ;        ;
+; Buffer_6|tehb1|data_reg[13]                         ;        ;
+; Buffer_6|oehb1|data_reg[13]                         ;        ;
+; phi_n1|tehb1|data_reg[13]                           ;        ;
+; Buffer_3|tehb1|data_reg[13]                         ;        ;
+; Buffer_3|oehb1|data_reg[13]                         ;        ;
++-----------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	34
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------+
+; FLP-10500 - Non Driving Top Level Inputs Found ;
++-------------+----------------------------------+
+; Input Name  ; Waived                           ;
++-------------+----------------------------------+
+; a_din0[0]   ;                                  ;
+; a_din0[10]  ;                                  ;
+; a_din0[11]  ;                                  ;
+; a_din0[12]  ;                                  ;
+; a_din0[13]  ;                                  ;
+; a_din0[14]  ;                                  ;
+; a_din0[15]  ;                                  ;
+; a_din0[16]  ;                                  ;
+; a_din0[17]  ;                                  ;
+; a_din0[18]  ;                                  ;
+; a_din0[19]  ;                                  ;
+; a_din0[1]   ;                                  ;
+; a_din0[20]  ;                                  ;
+; a_din0[21]  ;                                  ;
+; a_din0[22]  ;                                  ;
+; a_din0[23]  ;                                  ;
+; a_din0[24]  ;                                  ;
+; a_din0[25]  ;                                  ;
+; a_din0[26]  ;                                  ;
+; a_din0[27]  ;                                  ;
+; a_din0[28]  ;                                  ;
+; a_din0[29]  ;                                  ;
+; a_din0[2]   ;                                  ;
+; a_din0[30]  ;                                  ;
+; a_din0[31]  ;                                  ;
+; a_din0[3]   ;                                  ;
+; a_din0[4]   ;                                  ;
+; a_din0[5]   ;                                  ;
+; a_din0[6]   ;                                  ;
+; a_din0[7]   ;                                  ;
+; a_din0[8]   ;                                  ;
+; a_din0[9]   ;                                  ;
+; n_valid_in  ;                                  ;
+; start_in[0] ;                                  ;
++-------------+----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------------------------------------------+
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ;
++-------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; LNT-30023 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------+
+; RES-30132 - Registers May Not Be Properly Reset ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------+
+; TMC-20052 - Paths with Post Synthesis Inferred Latches ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
+		DSP_HFN_Threshold = 500
++---------------------------------------------------+
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net ;
++---------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------+
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------------------+
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested ;
++------------------------------------------------------------------------+
+
+

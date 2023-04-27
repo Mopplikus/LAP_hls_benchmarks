@@ -1,0 +1,175 @@
+Fitter Retime Stage Report for histogram
+Thu Apr 27 19:20:59 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Hyper-Retimer Settings
+  3. Reset Sequence Requirement
+  4. Retiming Limit Summary
+  5. Critical Chain Summary for Clock Domain clk
+  6. Retime Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------+
+; Hyper-Retimer Settings                           ;
++------------------------+---------+---------------+
+; Option                 ; Setting ; Default Value ;
++------------------------+---------+---------------+
+; Enable Auto-Pipelining ; On      ; On            ;
++------------------------+---------+---------------+
+
+
++------------------------------------------+
+; Reset Sequence Requirement               ;
++------------+-----------------------------+
+; Clock Name ; Number of additional cycles ;
++------------+-----------------------------+
+; clk        ; 4                           ;
++------------+-----------------------------+
+Note: Due to retiming optimizations, a clock domain may require a longer reset sequence to ensure correct functionality.  The table above indicates the minimum number of additional reset sequence cycles needed for each clock domain.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Retiming Limit Summary                                                                                                                      ;
++------------------+-----------------+--------------------------------------------------------------------------------------------------------+
+; Clock Transfer   ; Limiting Reason ; Recommendation                                                                                         ;
++------------------+-----------------+--------------------------------------------------------------------------------------------------------+
+; Clock Domain clk ; RTL Loop        ; The critical chain has a RTL loop that restricts retiming.                                             ;
+;                  ;                 ;    Reduce the delay of 'Long Paths' in the loop                                                        ;
+;                  ;                 ;   or insert more pipeline stages in 'Long Paths' in the loop                                           ;
+;                  ;                 ;   or see the Stratix 10 High Performance Design Handbook for information about restructuring RTL loops ;
++------------------+-----------------+--------------------------------------------------------------------------------------------------------+
+
+
+Critical Chain Summary for Clock Domain clk
+===============================================================================
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendations for Critical Chain                                                                                                                                                                                                                     ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendation                                                                                                                                                                                                                                         ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; The critical chain is limited by: RTL Loop                                                                                                                                                                                                             ;
+;                                                                                                                                                                                                                                                        ;
+; The critical chain has a RTL loop that restricts retiming.                                                                                                                                                                                             ;
+;    Reduce the delay of 'Long Paths' in the loop                                                                                                                                                                                                        ;
+;   or insert more pipeline stages in 'Long Paths' in the loop                                                                                                                                                                                           ;
+;   or see the Stratix 10 High Performance Design Handbook for information about restructuring RTL loops                                                                                                                                                 ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270758674'>Loops</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information.            ;
+;                                                                                                                                                                                                                                                        ;
+; Retiming Restriction: Metastability Synchronizer                                                                                                                                                                                                       ;
+;  Add additional pipeline stages to isolate the register(s), to allow retiming optimizations to improve performance                                                                                                                                     ;
+;  or set Synchronization Register Chain Length to 1 if evaluating IP module performance                                                                                                                                                                 ;
+;   c_LSQ_hist|storeQ|head[1]                                                                                                                                                                                                                            ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#esc1445881961208'>Hyper-Pipelining</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information. ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Chain Details                                                                                                                                      ;
++----------------------+------------------------------+-------------+-----------------------------------------------------------------------------------------+
+; Path Info            ; Register                     ; Register ID ; Element                                                                                 ;
++----------------------+------------------------------+-------------+-----------------------------------------------------------------------------------------+
+; Long Path (Critical) ; REG (Metastability required) ; #1          ; c_LSQ_hist|storeQ|head[1]                                                               ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|head[1]|q                                                             ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|head[1]~la_lab/laboutt[14]                                            ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|head[1]~LAB_RE_X156_Y144_N0_I108                                      ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|head[1]~R2_X155_Y144_N0_I44                                           ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|head[1]~R24_C16_INTERCONNECT_DRIVER_X154_Y144_N0_I0                   ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|head[1]~R24_X155_Y144_N0_I34                                          ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|head[1]~R24_C16_INTERCONNECT_DRIVER_X169_Y144_N0_I3                   ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|head[1]~C16_X169_Y144_N0_I26                                          ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|head[1]~C4_X169_Y152_N0_I46                                           ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|head[1]~R10_X170_Y154_N0_I43                                          ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|head[1]~LOCAL_INTERCONNECT_X172_Y154_N0_I49                           ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|head[1]~LAB_RE_X172_Y154_N0_I56                                       ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~96|datae                                                 ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~96|combout                                               ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~96~_LAB_RE_X172_Y154_N0_I122                             ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~96~_LOCAL_INTERCONNECT_X171_Y154_N0_I51                  ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~96~_LAB_RE_X171_Y154_N0_I50                              ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99|datac                                                 ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99|combout                                               ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99~_LAB_RE_X171_Y154_N0_I118                             ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99~_C4_X170_Y150_N0_I46                                  ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99~_R4_X167_Y153_N0_I14                                  ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99~_C4_X166_Y149_N0_I46                                  ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99~_LOCAL_INTERCONNECT_X167_Y149_N0_I21                  ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|_GEN_911[19]~99~_LAB_RE_X167_Y149_N0_I56                              ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN|datae                                           ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN|combout                                         ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN~_LAB_RE_X167_Y149_N0_I122                       ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN~_LOCAL_INTERCONNECT_X167_Y149_N0_I22            ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN~_LAB_RE_X167_Y149_N0_I55                        ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16|dataf                                        ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16|combout                                      ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_LAB_RE_X167_Y149_N0_I118                    ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_R10_X157_Y149_N0_I61                        ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_R24_C16_INTERCONNECT_DRIVER_X156_Y149_N0_I2 ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_C16_X156_Y133_N0_I53                        ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_C2_X156_Y141_N0_I15                         ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_R2_X157_Y142_N0_I21                         ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_LOCAL_INTERCONNECT_X158_Y142_N0_I33         ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|reduce_or_13~12_RESYN_16~_LAB_RE_X158_Y142_N0_I75                     ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn|dataa                                              ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn|combout                                            ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn~_LAB_RE_X158_Y142_N0_I130                          ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn~_R2_X157_Y142_N0_I39                               ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn~_LOCAL_INTERCONNECT_X157_Y142_N0_I29               ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn~_LAB_RE_X157_Y142_N0_I76                           ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn_12|datab                                           ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn_12|combout                                         ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn_12~_LAB_RE_X157_Y142_N0_I130                       ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn_12~_R2_X156_Y142_N0_I39                            ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn_12~_C2_X155_Y142_N0_I12                            ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn_12~_LOCAL_INTERCONNECT_X156_Y144_N0_I58            ;
+; Long Path (Critical) ; Bypassed Hyper-Register      ;             ; c_LSQ_hist|storeQ|storeRequest~0xsyn_12~_LAB_RE_X156_Y144_N0_I25                        ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|i18681~1|datad                                                        ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|i18681~1|combout                                                      ;
+; Long Path (Critical) ;                              ;             ; c_LSQ_hist|storeQ|head[1]|d                                                             ;
+; Long Path (Critical) ; REG (Metastability required) ; #1          ; c_LSQ_hist|storeQ|head[1]                                                               ;
++----------------------+------------------------------+-------------+-----------------------------------------------------------------------------------------+
+
+
+
++-----------------+
+; Retime Messages ;
++-----------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 40 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+    Info: Processing started: Thu Apr 27 19:04:43 2023
+    Info: System process ID: 91253
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off histogram -c histogram
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = histogram
+Info: Revision = histogram
+Info (17966): Starting Hyper-Retimer operations.
+Info (17968): Completed Hyper-Retimer operations.
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:11
+
+

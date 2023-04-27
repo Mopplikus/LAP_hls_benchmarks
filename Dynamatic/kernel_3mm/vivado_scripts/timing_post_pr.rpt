@@ -1,0 +1,87 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 16:31:09 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : kernel_3mm
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -3.042ns  (required time - arrival time)
+  Source:                 c_LSQ_F/loadQ/conflictPReg_2_15_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            c_LSQ_F/loadQ/dataQ_2_reg[10]/R
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.551ns  (logic 1.063ns (16.227%)  route 5.488ns (83.773%))
+  Logic Levels:           10  (CARRY4=2 LUT3=3 LUT5=4 LUT6=1)
+  Clock Path Skew:        -0.112ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.266ns = ( 5.266 - 4.000 ) 
+    Source Clock Delay      (SCD):    1.388ns
+    Clock Pessimism Removal (CPR):    0.010ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=10125, unset)        1.388     1.388    c_LSQ_F/loadQ/clk
+    SLICE_X39Y183        FDRE                                         r  c_LSQ_F/loadQ/conflictPReg_2_15_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y183        FDRE (Prop_fdre_C_Q)         0.269     1.657 f  c_LSQ_F/loadQ/conflictPReg_2_15_reg/Q
+                         net (fo=11, routed)          0.832     2.489    c_LSQ_F/loadQ/conflictPReg_2_15
+    SLICE_X41Y186        LUT6 (Prop_lut6_I2_O)        0.053     2.542 f  c_LSQ_F/loadQ/dataQ_2[31]_i_12__0/O
+                         net (fo=3, routed)           0.453     2.995    c_LSQ_F/loadQ/dataQ_2[31]_i_12__0_n_0
+    SLICE_X41Y184        LUT3 (Prop_lut3_I0_O)        0.053     3.048 r  c_LSQ_F/loadQ/dataQ_2[31]_i_7/O
+                         net (fo=38, routed)          0.430     3.478    c_LSQ_F/loadQ/dataQ_2[31]_i_7_n_0
+    SLICE_X43Y184        LUT5 (Prop_lut5_I0_O)        0.053     3.531 r  c_LSQ_F/loadQ/dataQ_2[31]_i_20/O
+                         net (fo=6, routed)           0.499     4.030    c_LSQ_F/loadQ/dataQ_2[31]_i_20_n_0
+    SLICE_X48Y184        LUT5 (Prop_lut5_I4_O)        0.053     4.083 r  c_LSQ_F/loadQ/dataQ_2[31]_i_14/O
+                         net (fo=66, routed)          0.416     4.499    c_LSQ_F/loadQ/dataQ_2[31]_i_14_n_0
+    SLICE_X50Y184        LUT3 (Prop_lut3_I0_O)        0.053     4.552 r  c_LSQ_F/loadQ/dataQ_2[31]_i_50/O
+                         net (fo=4, routed)           0.438     4.991    c_LSQ_F/loadQ/dataQ_2[31]_i_50_n_0
+    SLICE_X50Y182        LUT5 (Prop_lut5_I0_O)        0.053     5.044 r  c_LSQ_F/loadQ/dataQ_2[31]_i_42__0/O
+                         net (fo=1, routed)           0.000     5.044    c_LSQ_F/loadQ/dataQ_2[31]_i_42__0_n_0
+    SLICE_X50Y182        CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.310     5.354 r  c_LSQ_F/loadQ/dataQ_2_reg[31]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.354    c_LSQ_F/loadQ/dataQ_2_reg[31]_i_25_n_0
+    SLICE_X50Y183        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     5.414 r  c_LSQ_F/loadQ/dataQ_2_reg[31]_i_11/CO[3]
+                         net (fo=1, routed)           0.651     6.065    c_LSQ_F/loadQ/_T_92499
+    SLICE_X56Y179        LUT5 (Prop_lut5_I4_O)        0.053     6.118 r  c_LSQ_F/loadQ/dataQ_2[31]_i_4/O
+                         net (fo=36, routed)          0.722     6.840    c_LSQ_F/loadQ/bypassRequest_2
+    SLICE_X65Y175        LUT3 (Prop_lut3_I0_O)        0.053     6.893 r  c_LSQ_F/loadQ/dataQ_2[31]_i_1__4/O
+                         net (fo=32, routed)          1.046     7.939    c_LSQ_F/loadQ/dataQ_2[31]_i_1__4_n_0
+    SLICE_X74Y165        FDRE                                         r  c_LSQ_F/loadQ/dataQ_2_reg[10]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clk (IN)
+                         net (fo=10125, unset)        1.266     5.266    c_LSQ_F/loadQ/clk
+    SLICE_X74Y165        FDRE                                         r  c_LSQ_F/loadQ/dataQ_2_reg[10]/C
+                         clock pessimism              0.010     5.276    
+                         clock uncertainty           -0.035     5.241    
+    SLICE_X74Y165        FDRE (Setup_fdre_C_R)       -0.344     4.897    c_LSQ_F/loadQ/dataQ_2_reg[10]
+  -------------------------------------------------------------------
+                         required time                          4.897    
+                         arrival time                          -7.939    
+  -------------------------------------------------------------------
+                         slack                                 -3.042    
+
+
+
+
+report_timing: Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 2606.824 ; gain = 0.000

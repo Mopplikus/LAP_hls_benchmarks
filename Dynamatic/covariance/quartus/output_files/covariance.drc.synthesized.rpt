@@ -1,0 +1,1257 @@
+Design Assistant report for covariance
+Thu Apr 27 19:25:14 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Synthesized) Results - 3 of 11 Rules Failed
+  3. RES-30134 - Registers Not Reachable from Reset Release IP
+  4. FLP-10500 - Non Driving Top Level Inputs Found
+  5. LNT-30010 - Nets Driving both Reset and Clock Enable Signals
+  6. RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes
+  7. LNT-30023 - Reset Nets with Polarity Conflict
+  8. RES-30132 - Registers May Not Be Properly Reset
+  9. TMC-20052 - Paths with Post Synthesis Inferred Latches
+ 10. LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch
+ 11. TMC-20053 - DSP Inputs Driven by High Fan-Out Net
+ 12. TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible
+ 13. TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Synthesized) Results - 3 of 11 Rules Failed                                                                                                            ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; Rule                                                                                                  ; Severity ; Violations ; Waived ; Tags                            ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP                                             ; Medium   ; 987        ; 0      ; reset-usage, reset-reachability ;
+; FLP-10500 - Non Driving Top Level Inputs Found                                                        ; Low      ; 97         ; 0      ; system                          ;
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                          ; Low      ; 1          ; 0      ; reset-usage                     ;
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ; High     ; 0          ; 0      ; ram, reset-usage                ;
+; LNT-30023 - Reset Nets with Polarity Conflict                                                         ; Medium   ; 0          ; 0      ; reset-usage                     ;
+; RES-30132 - Registers May Not Be Properly Reset                                                       ; Medium   ; 0          ; 0      ; reset-usage, reset-reachability ;
+; TMC-20052 - Paths with Post Synthesis Inferred Latches                                                ; Medium   ; 0          ; 0      ; nonstandard-timing, latch       ;
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch                                          ; Low      ; 0          ; 0      ; dsp, reset-usage                ;
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net                                                     ; Low      ; 0          ; 0      ; dsp                             ;
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible                                 ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested                                ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	987
+Rule Parameters:      	max_violations = 5000
++---------------------------------------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP     ;
++------------------------------------------------------+--------+
+; Register Node                                        ; Waived ;
++------------------------------------------------------+--------+
+; start_0|set                                          ;        ;
+; buffI_3|oehb1|data_reg[4]                            ;        ;
+; MC_data|counter1[10]                                 ;        ;
+; MC_data|counter1[9]                                  ;        ;
+; MC_data|counter1[8]                                  ;        ;
+; MC_data|counter1[7]                                  ;        ;
+; MC_data|counter1[6]                                  ;        ;
+; MC_data|counter1[17]                                 ;        ;
+; MC_data|counter1[16]                                 ;        ;
+; MC_data|counter1[15]                                 ;        ;
+; MC_data|counter1[14]                                 ;        ;
+; MC_data|counter1[13]                                 ;        ;
+; phi_15|tehb1|data_reg[3]                             ;        ;
+; MC_data|counter1[12]                                 ;        ;
+; MC_data|counter1[23]                                 ;        ;
+; MC_data|counter1[22]                                 ;        ;
+; MC_data|counter1[21]                                 ;        ;
+; MC_data|counter1[20]                                 ;        ;
+; MC_data|counter1[19]                                 ;        ;
+; MC_data|counter1[18]                                 ;        ;
+; MC_cov|Counter.counter[31]                           ;        ;
+; MC_cov|counter1[31]                                  ;        ;
+; MC_cov|Counter.counter[30]                           ;        ;
+; buffI_3|tehb1|data_reg[3]                            ;        ;
+; MC_cov|counter1[30]                                  ;        ;
+; MC_cov|Counter.counter[29]                           ;        ;
+; MC_cov|counter1[29]                                  ;        ;
+; MC_cov|Counter.counter[28]                           ;        ;
+; MC_cov|counter1[28]                                  ;        ;
+; MC_cov|counter1[15]                                  ;        ;
+; MC_cov|counter1[14]                                  ;        ;
+; MC_cov|counter1[13]                                  ;        ;
+; MC_cov|counter1[12]                                  ;        ;
+; MC_cov|counter1[11]                                  ;        ;
+; buffI_3|oehb1|data_reg[3]                            ;        ;
+; MC_cov|counter1[10]                                  ;        ;
+; MC_cov|counter1[21]                                  ;        ;
+; MC_cov|counter1[20]                                  ;        ;
+; MC_cov|counter1[19]                                  ;        ;
+; MC_cov|counter1[18]                                  ;        ;
+; MC_cov|counter1[17]                                  ;        ;
+; MC_cov|counter1[16]                                  ;        ;
+; MC_cov|counter1[8]                                   ;        ;
+; MC_cov|counter1[7]                                   ;        ;
+; MC_cov|counter1[6]                                   ;        ;
+; phi_15|tehb1|data_reg[2]                             ;        ;
+; MC_cov|counter1[5]                                   ;        ;
+; MC_cov|counter1[4]                                   ;        ;
+; MC_cov|counter1[2]                                   ;        ;
+; MC_cov|counter1[1]                                   ;        ;
+; MC_cov|counter1[0]                                   ;        ;
+; MC_data|Counter.counter[31]                          ;        ;
+; MC_data|counter1[31]                                 ;        ;
+; MC_data|Counter.counter[30]                          ;        ;
+; MC_data|counter1[30]                                 ;        ;
+; MC_cov|counter1[9]                                   ;        ;
+; buffI_3|tehb1|data_reg[2]                            ;        ;
+; MC_cov|counter1[3]                                   ;        ;
+; MC_cov|Counter.counter[27]                           ;        ;
+; MC_cov|counter1[27]                                  ;        ;
+; MC_cov|Counter.counter[26]                           ;        ;
+; MC_cov|counter1[26]                                  ;        ;
+; MC_cov|Counter.counter[25]                           ;        ;
+; MC_cov|counter1[25]                                  ;        ;
+; MC_cov|Counter.counter[24]                           ;        ;
+; MC_cov|counter1[24]                                  ;        ;
+; MC_cov|Counter.counter[23]                           ;        ;
+; buffI_3|oehb1|data_reg[2]                            ;        ;
+; MC_cov|counter1[23]                                  ;        ;
+; MC_cov|Counter.counter[0]                            ;        ;
+; MC_cov|Counter.counter[1]                            ;        ;
+; MC_cov|Counter.counter[2]                            ;        ;
+; MC_cov|Counter.counter[3]                            ;        ;
+; MC_cov|Counter.counter[4]                            ;        ;
+; MC_cov|Counter.counter[5]                            ;        ;
+; MC_cov|Counter.counter[6]                            ;        ;
+; MC_cov|Counter.counter[7]                            ;        ;
+; MC_cov|Counter.counter[8]                            ;        ;
+; phi_15|tehb1|data_reg[1]                             ;        ;
+; MC_cov|Counter.counter[9]                            ;        ;
+; MC_cov|Counter.counter[10]                           ;        ;
+; MC_cov|Counter.counter[11]                           ;        ;
+; MC_cov|Counter.counter[12]                           ;        ;
+; MC_cov|Counter.counter[13]                           ;        ;
+; MC_cov|Counter.counter[14]                           ;        ;
+; MC_cov|Counter.counter[15]                           ;        ;
+; MC_cov|Counter.counter[16]                           ;        ;
+; MC_cov|Counter.counter[17]                           ;        ;
+; MC_cov|Counter.counter[18]                           ;        ;
+; buffI_3|tehb1|data_reg[1]                            ;        ;
+; MC_cov|Counter.counter[19]                           ;        ;
+; MC_cov|Counter.counter[20]                           ;        ;
+; MC_cov|Counter.counter[21]                           ;        ;
+; MC_cov|Counter.counter[22]                           ;        ;
+; MC_cov|counter1[22]                                  ;        ;
+; MC_data|Counter.counter[29]                          ;        ;
+; MC_data|counter1[29]                                 ;        ;
+; MC_data|Counter.counter[28]                          ;        ;
+; MC_data|counter1[28]                                 ;        ;
+; MC_data|Counter.counter[27]                          ;        ;
+; buffI_3|oehb1|data_reg[1]                            ;        ;
+; MC_data|counter1[27]                                 ;        ;
+; MC_data|Counter.counter[26]                          ;        ;
+; MC_data|counter1[26]                                 ;        ;
+; MC_data|Counter.counter[25]                          ;        ;
+; MC_data|counter1[25]                                 ;        ;
+; MC_data|Counter.counter[0]                           ;        ;
+; MC_data|Counter.counter[1]                           ;        ;
+; MC_data|Counter.counter[2]                           ;        ;
+; MC_data|Counter.counter[3]                           ;        ;
+; MC_data|Counter.counter[4]                           ;        ;
+; phi_n3|tehb1|data_reg[5]                             ;        ;
+; phi_4|tehb1|data_reg[4]                              ;        ;
+; MC_data|Counter.counter[5]                           ;        ;
+; MC_data|Counter.counter[6]                           ;        ;
+; MC_data|Counter.counter[7]                           ;        ;
+; MC_data|Counter.counter[8]                           ;        ;
+; MC_data|Counter.counter[9]                           ;        ;
+; MC_data|Counter.counter[10]                          ;        ;
+; MC_data|Counter.counter[11]                          ;        ;
+; MC_data|Counter.counter[12]                          ;        ;
+; MC_data|Counter.counter[13]                          ;        ;
+; MC_data|Counter.counter[14]                          ;        ;
+; buffI_2|tehb1|data_reg[4]                            ;        ;
+; MC_data|Counter.counter[15]                          ;        ;
+; MC_data|Counter.counter[16]                          ;        ;
+; MC_data|Counter.counter[17]                          ;        ;
+; MC_data|Counter.counter[18]                          ;        ;
+; MC_data|Counter.counter[19]                          ;        ;
+; MC_data|Counter.counter[20]                          ;        ;
+; MC_data|Counter.counter[21]                          ;        ;
+; MC_data|Counter.counter[22]                          ;        ;
+; MC_data|Counter.counter[23]                          ;        ;
+; forkC_40|generateBlocks[0].regblock|reg_value        ;        ;
+; buffI_2|oehb1|data_reg[4]                            ;        ;
+; MC_data|Counter.counter[24]                          ;        ;
+; MC_data|counter1[24]                                 ;        ;
+; forkC_50|generateBlocks[0].regblock|reg_value        ;        ;
+; ret_0|tehb|full_reg                                  ;        ;
+; phi_n6|tehb1|full_reg                                ;        ;
+; phi_n11|tehb1|data_reg[5]                            ;        ;
+; phi_n9|tehb1|data_reg[5]                             ;        ;
+; buffI_12|tehb1|data_reg[5]                           ;        ;
+; buffI_12|oehb1|data_reg[5]                           ;        ;
+; phi_n13|tehb1|data_reg[5]                            ;        ;
+; phi_4|tehb1|data_reg[3]                              ;        ;
+; buffI_13|tehb1|data_reg[5]                           ;        ;
+; buffI_13|oehb1|data_reg[5]                           ;        ;
+; phi_n7|tehb1|data_reg[5]                             ;        ;
+; buffI_11|tehb1|data_reg[5]                           ;        ;
+; buffI_11|oehb1|data_reg[5]                           ;        ;
+; phi_n11|tehb1|data_reg[0]                            ;        ;
+; phi_n12|tehb1|data_reg[5]                            ;        ;
+; phi_n8|tehb1|data_reg[4]                             ;        ;
+; phi_n11|tehb1|data_reg[4]                            ;        ;
+; phi_n9|tehb1|data_reg[4]                             ;        ;
+; buffI_2|tehb1|data_reg[3]                            ;        ;
+; buffI_12|tehb1|data_reg[4]                           ;        ;
+; buffI_12|oehb1|data_reg[4]                           ;        ;
+; phi_n13|tehb1|data_reg[4]                            ;        ;
+; buffI_13|tehb1|data_reg[4]                           ;        ;
+; buffI_13|oehb1|data_reg[4]                           ;        ;
+; phi_n7|tehb1|data_reg[4]                             ;        ;
+; buffI_11|tehb1|data_reg[4]                           ;        ;
+; buffI_11|oehb1|data_reg[4]                           ;        ;
+; phi_28|tehb1|data_reg[4]                             ;        ;
+; buffI_4|tehb1|data_reg[4]                            ;        ;
+; buffI_2|oehb1|data_reg[3]                            ;        ;
+; buffI_4|oehb1|data_reg[4]                            ;        ;
+; phi_32|tehb1|data_reg[4]                             ;        ;
+; buffI_5|tehb1|data_reg[4]                            ;        ;
+; buffI_5|oehb1|data_reg[4]                            ;        ;
+; phi_n14|tehb1|data_reg[4]                            ;        ;
+; buffI_14|tehb1|data_reg[4]                           ;        ;
+; buffI_14|oehb1|data_reg[4]                           ;        ;
+; phi_n12|tehb1|data_reg[4]                            ;        ;
+; phi_n14|tehb1|data_reg[5]                            ;        ;
+; buffI_14|tehb1|data_reg[5]                           ;        ;
+; phi_4|tehb1|data_reg[2]                              ;        ;
+; buffI_14|oehb1|data_reg[5]                           ;        ;
+; phi_n12|tehb1|data_reg[3]                            ;        ;
+; phi_n11|tehb1|data_reg[3]                            ;        ;
+; phi_n8|tehb1|data_reg[3]                             ;        ;
+; phi_n9|tehb1|data_reg[3]                             ;        ;
+; buffI_12|tehb1|data_reg[3]                           ;        ;
+; buffI_12|oehb1|data_reg[3]                           ;        ;
+; phi_n13|tehb1|data_reg[3]                            ;        ;
+; buffI_13|tehb1|data_reg[3]                           ;        ;
+; buffI_13|oehb1|data_reg[3]                           ;        ;
+; buffI_2|tehb1|data_reg[2]                            ;        ;
+; phi_n7|tehb1|data_reg[3]                             ;        ;
+; buffI_11|tehb1|data_reg[3]                           ;        ;
+; buffI_11|oehb1|data_reg[3]                           ;        ;
+; phi_28|tehb1|data_reg[3]                             ;        ;
+; buffI_4|tehb1|data_reg[3]                            ;        ;
+; buffI_4|oehb1|data_reg[3]                            ;        ;
+; phi_32|tehb1|data_reg[3]                             ;        ;
+; buffI_5|tehb1|data_reg[3]                            ;        ;
+; buffI_5|oehb1|data_reg[3]                            ;        ;
+; phi_n14|tehb1|data_reg[3]                            ;        ;
+; buffI_2|oehb1|data_reg[2]                            ;        ;
+; buffI_14|tehb1|data_reg[3]                           ;        ;
+; buffI_14|oehb1|data_reg[3]                           ;        ;
+; phi_n12|tehb1|data_reg[1]                            ;        ;
+; phi_32|tehb1|data_reg[1]                             ;        ;
+; buffI_5|tehb1|data_reg[1]                            ;        ;
+; buffI_5|oehb1|data_reg[1]                            ;        ;
+; phi_n14|tehb1|data_reg[1]                            ;        ;
+; buffI_14|tehb1|data_reg[1]                           ;        ;
+; buffI_14|oehb1|data_reg[1]                           ;        ;
+; phi_n12|tehb1|data_reg[0]                            ;        ;
+; phi_4|tehb1|data_reg[1]                              ;        ;
+; phi_32|tehb1|data_reg[0]                             ;        ;
+; buffI_5|tehb1|data_reg[0]                            ;        ;
+; buffI_5|oehb1|data_reg[0]                            ;        ;
+; phi_n14|tehb1|data_reg[0]                            ;        ;
+; buffI_14|tehb1|data_reg[0]                           ;        ;
+; buffI_14|oehb1|data_reg[0]                           ;        ;
+; phi_n12|tehb1|data_reg[2]                            ;        ;
+; phi_n11|tehb1|data_reg[2]                            ;        ;
+; phi_n8|tehb1|data_reg[2]                             ;        ;
+; phi_n9|tehb1|data_reg[2]                             ;        ;
+; phi_n1|tehb1|data_reg[5]                             ;        ;
+; buffI_2|tehb1|data_reg[1]                            ;        ;
+; buffI_12|tehb1|data_reg[2]                           ;        ;
+; buffI_12|oehb1|data_reg[2]                           ;        ;
+; phi_n13|tehb1|data_reg[2]                            ;        ;
+; buffI_13|tehb1|data_reg[2]                           ;        ;
+; buffI_13|oehb1|data_reg[2]                           ;        ;
+; phi_n7|tehb1|data_reg[2]                             ;        ;
+; buffI_11|tehb1|data_reg[2]                           ;        ;
+; buffI_11|oehb1|data_reg[2]                           ;        ;
+; phi_n11|tehb1|data_reg[1]                            ;        ;
+; phiC_23|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; buffI_2|oehb1|data_reg[1]                            ;        ;
+; fork_32|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_11|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_18|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_11|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_30|generateBlocks[2].regblock|reg_value         ;        ;
+; forkC_48|generateBlocks[3].regblock|reg_value        ;        ;
+; forkC_48|generateBlocks[0].regblock|reg_value        ;        ;
+; fork_30|generateBlocks[3].regblock|reg_value         ;        ;
+; fork_30|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_30|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_4|tehb1|data_reg[0]                              ;        ;
+; fork_30|generateBlocks[4].regblock|reg_value         ;        ;
+; forkC_48|generateBlocks[2].regblock|reg_value        ;        ;
+; fork_31|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_20|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_31|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_19|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_17|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_n11|tehb1|full_reg                               ;        ;
+; fork_31|generateBlocks[4].regblock|reg_value         ;        ;
+; buffA_20|oehb1|validArray[0]                         ;        ;
+; buffI_2|tehb1|data_reg[0]                            ;        ;
+; fork_31|generateBlocks[3].regblock|reg_value         ;        ;
+; mul_44|buff|regs[0]                                  ;        ;
+; mul_44|buff|regs[1]                                  ;        ;
+; mul_44|buff|regs[2]                                  ;        ;
+; mul_44|oehb|validArray[0]                            ;        ;
+; phi_n10|tehb1|full_reg                               ;        ;
+; fork_4|generateBlocks[0].regblock|reg_value          ;        ;
+; load_19|Buffer_1|full_reg                            ;        ;
+; MC_data|read_arbiter|data|valid[1]                   ;        ;
+; load_19|Buffer_2|full_reg                            ;        ;
+; fork_22|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_8|generateBlocks[0].regblock|reg_value          ;        ;
+; load_39|Buffer_1|full_reg                            ;        ;
+; MC_data|read_arbiter|data|valid[2]                   ;        ;
+; MC_data|read_arbiter|data|valid[3]                   ;        ;
+; load_43|Buffer_2|full_reg                            ;        ;
+; load_39|Buffer_2|full_reg                            ;        ;
+; fork_8|generateBlocks[1].regblock|reg_value          ;        ;
+; load_43|Buffer_1|full_reg                            ;        ;
+; fork_20|generateBlocks[0].regblock|reg_value         ;        ;
+; buffI_14|oehb1|validArray[0]                         ;        ;
+; phi_n0|tehb1|data_reg[5]                             ;        ;
+; fork_18|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_n12|tehb1|full_reg                               ;        ;
+; phi_n8|tehb1|data_reg[1]                             ;        ;
+; phi_n9|tehb1|data_reg[1]                             ;        ;
+; buffI_12|tehb1|data_reg[1]                           ;        ;
+; buffI_12|oehb1|data_reg[1]                           ;        ;
+; phi_n13|tehb1|data_reg[1]                            ;        ;
+; buffI_13|tehb1|data_reg[1]                           ;        ;
+; buffI_13|oehb1|data_reg[1]                           ;        ;
+; phi_28|tehb1|data_reg[1]                             ;        ;
+; phi_n3|tehb1|data_reg[4]                             ;        ;
+; buffI_4|tehb1|data_reg[1]                            ;        ;
+; buffI_4|oehb1|data_reg[1]                            ;        ;
+; phi_n7|tehb1|data_reg[1]                             ;        ;
+; buffI_11|tehb1|data_reg[1]                           ;        ;
+; buffI_11|oehb1|data_reg[1]                           ;        ;
+; phi_28|tehb1|data_reg[2]                             ;        ;
+; buffI_4|tehb1|data_reg[2]                            ;        ;
+; buffI_4|oehb1|data_reg[2]                            ;        ;
+; phi_32|tehb1|data_reg[2]                             ;        ;
+; buffI_5|tehb1|data_reg[2]                            ;        ;
+; phi_1|tehb1|data_reg[4]                              ;        ;
+; buffI_5|oehb1|data_reg[2]                            ;        ;
+; phi_n14|tehb1|data_reg[2]                            ;        ;
+; buffI_14|tehb1|data_reg[2]                           ;        ;
+; buffI_14|oehb1|data_reg[2]                           ;        ;
+; phiC_25|tehb1|full_reg                               ;        ;
+; forkC_47|generateBlocks[1].regblock|reg_value        ;        ;
+; phiC_23|oehb1|data_reg[0]                            ;        ;
+; fork_29|generateBlocks[2].regblock|reg_value         ;        ;
+; forkC_47|generateBlocks[0].regblock|reg_value        ;        ;
+; fork_29|generateBlocks[1].regblock|reg_value         ;        ;
+; buffI_0|tehb1|data_reg[4]                            ;        ;
+; fork_16|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_46|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_7|generateBlocks[1].regblock|reg_value          ;        ;
+; phi_n8|tehb1|data_reg[0]                             ;        ;
+; phi_n9|tehb1|data_reg[0]                             ;        ;
+; buffI_12|tehb1|data_reg[0]                           ;        ;
+; buffI_12|oehb1|data_reg[0]                           ;        ;
+; phi_n13|tehb1|data_reg[0]                            ;        ;
+; buffI_13|tehb1|data_reg[0]                           ;        ;
+; buffI_13|oehb1|data_reg[0]                           ;        ;
+; buffI_0|oehb1|data_reg[4]                            ;        ;
+; phi_28|tehb1|data_reg[0]                             ;        ;
+; buffI_4|tehb1|data_reg[0]                            ;        ;
+; buffI_4|oehb1|data_reg[0]                            ;        ;
+; phi_n7|tehb1|data_reg[0]                             ;        ;
+; buffI_11|tehb1|data_reg[0]                           ;        ;
+; buffI_11|oehb1|data_reg[0]                           ;        ;
+; forkC_43|generateBlocks[0].regblock|reg_value        ;        ;
+; fork_44|generateBlocks[0].regblock|reg_value         ;        ;
+; forkC_43|generateBlocks[2].regblock|reg_value        ;        ;
+; fork_44|generateBlocks[1].regblock|reg_value         ;        ;
+; buffI_8|tehb1|data_reg[5]                            ;        ;
+; phi_n1|tehb1|data_reg[4]                             ;        ;
+; forkC_43|generateBlocks[1].regblock|reg_value        ;        ;
+; phiC_21|oehb1|data_reg[0]                            ;        ;
+; phiC_21|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; buffI_4|oehb1|validArray[0]                          ;        ;
+; fork_46|generateBlocks[1].regblock|reg_value         ;        ;
+; buffA_18|tehb1|full_reg                              ;        ;
+; phiC_21|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; buffA_18|oehb1|validArray[0]                         ;        ;
+; fork_7|generateBlocks[0].regblock|reg_value          ;        ;
+; buffI_5|oehb1|validArray[0]                          ;        ;
+; buffI_8|tehb1|data_reg[4]                            ;        ;
+; buffI_14|tehb1|full_reg                              ;        ;
+; phi_n14|tehb1|full_reg                               ;        ;
+; buffI_5|tehb1|full_reg                               ;        ;
+; phi_32|tehb1|full_reg                                ;        ;
+; phiC_23|oehb1|full_reg                               ;        ;
+; phiC_22|tehb1|full_reg                               ;        ;
+; fork_16|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_29|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_n8|tehb1|full_reg                                ;        ;
+; buffI_4|tehb1|full_reg                               ;        ;
+; buffI_8|oehb1|data_reg[4]                            ;        ;
+; phi_28|tehb1|full_reg                                ;        ;
+; fork_12|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_52|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_12|generateBlocks[0].regblock|reg_value         ;        ;
+; buffA_21|tehb1|full_reg                              ;        ;
+; phiC_26|tehb1|full_reg                               ;        ;
+; fork_32|generateBlocks[2].regblock|reg_value         ;        ;
+; buffA_19|tehb1|full_reg                              ;        ;
+; phiC_23|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; buffA_19|oehb1|validArray[0]                         ;        ;
+; phi_n4|tehb1|data_reg[4]                             ;        ;
+; phiC_24|oehb1|full_reg                               ;        ;
+; phiC_24|oehb1|data_reg[0]                            ;        ;
+; forkC_48|generateBlocks[1].regblock|reg_value        ;        ;
+; fork_59|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_34|tehb1|full_reg                                ;        ;
+; buffI_6|tehb1|data_reg[3]                            ;        ;
+; buffI_6|oehb1|data_reg[3]                            ;        ;
+; phi_34|tehb1|data_reg[4]                             ;        ;
+; buffI_6|tehb1|data_reg[4]                            ;        ;
+; buffI_6|oehb1|data_reg[4]                            ;        ;
+; buffI_9|tehb1|data_reg[4]                            ;        ;
+; buffA_20|tehb1|full_reg                              ;        ;
+; phiC_24|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; phiC_24|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; fork_59|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_35|tehb1|full_reg                                ;        ;
+; buffI_7|tehb1|full_reg                               ;        ;
+; buffI_7|oehb1|validArray[0]                          ;        ;
+; fork_10|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_10|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_31|generateBlocks[2].regblock|reg_value         ;        ;
+; buffI_9|oehb1|data_reg[4]                            ;        ;
+; fork_8|generateBlocks[2].regblock|reg_value          ;        ;
+; buffI_6|tehb1|full_reg                               ;        ;
+; buffI_6|oehb1|validArray[0]                          ;        ;
+; fork_19|generateBlocks[0].regblock|reg_value         ;        ;
+; buffI_13|oehb1|validArray[0]                         ;        ;
+; buffI_12|oehb1|validArray[0]                         ;        ;
+; buffI_13|tehb1|full_reg                              ;        ;
+; phi_n13|tehb1|full_reg                               ;        ;
+; buffI_12|tehb1|full_reg                              ;        ;
+; phi_n9|tehb1|full_reg                                ;        ;
+; phi_n0|tehb1|data_reg[4]                             ;        ;
+; fork_32|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_17|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_n7|tehb1|full_reg                                ;        ;
+; buffI_11|tehb1|full_reg                              ;        ;
+; buffI_11|oehb1|validArray[0]                         ;        ;
+; phiC_21|oehb1|full_reg                               ;        ;
+; phiC_20|tehb1|full_reg                               ;        ;
+; fork_42|generateBlocks[1].regblock|reg_value         ;        ;
+; phiC_15|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; fork_42|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_n3|tehb1|data_reg[3]                             ;        ;
+; fork_6|generateBlocks[0].regblock|reg_value          ;        ;
+; phi_n0|tehb1|data_reg[2]                             ;        ;
+; phi_1|tehb1|data_reg[2]                              ;        ;
+; buffI_0|tehb1|data_reg[2]                            ;        ;
+; buffI_0|oehb1|data_reg[2]                            ;        ;
+; phi_n1|tehb1|data_reg[2]                             ;        ;
+; buffI_8|tehb1|data_reg[2]                            ;        ;
+; buffI_8|oehb1|data_reg[2]                            ;        ;
+; phi_n4|tehb1|data_reg[2]                             ;        ;
+; buffI_9|tehb1|data_reg[2]                            ;        ;
+; phi_n0|tehb1|data_reg[3]                             ;        ;
+; buffI_9|oehb1|data_reg[2]                            ;        ;
+; fork_36|generateBlocks[1].regblock|reg_value         ;        ;
+; phiC_15|oehb1|data_reg[0]                            ;        ;
+; fork_6|generateBlocks[1].regblock|reg_value          ;        ;
+; phiC_18|oehb1|data_reg[0]                            ;        ;
+; fork_25|generateBlocks[3].regblock|reg_value         ;        ;
+; fork_25|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_15|generateBlocks[1].regblock|reg_value         ;        ;
+; buffI_10|oehb1|validArray[0]                         ;        ;
+; fork_25|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_1|tehb1|data_reg[3]                              ;        ;
+; fork_14|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_n0|tehb1|full_reg                                ;        ;
+; buffI_0|oehb1|validArray[0]                          ;        ;
+; fork_23|generateBlocks[3].regblock|reg_value         ;        ;
+; buffA_16|oehb1|validArray[0]                         ;        ;
+; fork_24|generateBlocks[3].regblock|reg_value         ;        ;
+; forkC_39|generateBlocks[1].regblock|reg_value        ;        ;
+; phiC_18|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; forkC_39|generateBlocks[0].regblock|reg_value        ;        ;
+; fork_24|generateBlocks[2].regblock|reg_value         ;        ;
+; buffI_8|oehb1|data_reg[5]                            ;        ;
+; buffI_0|tehb1|data_reg[3]                            ;        ;
+; fork_22|generateBlocks[3].regblock|reg_value         ;        ;
+; forkC_37|generateBlocks[2].regblock|reg_value        ;        ;
+; fork_0|generateBlocks[0].regblock|reg_value          ;        ;
+; fork_13|generateBlocks[0].regblock|reg_value         ;        ;
+; load_8|Buffer_1|full_reg                             ;        ;
+; MC_data|read_arbiter|data|valid[0]                   ;        ;
+; fork_55|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_3|tehb1|full_reg                                 ;        ;
+; buffI_1|tehb1|full_reg                               ;        ;
+; buffI_1|oehb1|validArray[0]                          ;        ;
+; buffI_0|oehb1|data_reg[3]                            ;        ;
+; fork_24|generateBlocks[1].regblock|reg_value         ;        ;
+; forkC_39|generateBlocks[2].regblock|reg_value        ;        ;
+; phi_n3|tehb1|full_reg                                ;        ;
+; fork_23|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_13|generateBlocks[1].regblock|reg_value         ;        ;
+; buffI_8|tehb1|full_reg                               ;        ;
+; phi_n1|tehb1|full_reg                                ;        ;
+; buffI_8|oehb1|validArray[0]                          ;        ;
+; fork_24|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_n4|tehb1|full_reg                                ;        ;
+; phi_n1|tehb1|data_reg[3]                             ;        ;
+; buffI_9|oehb1|validArray[0]                          ;        ;
+; fork_14|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_4|generateBlocks[1].regblock|reg_value          ;        ;
+; fork_15|generateBlocks[0].regblock|reg_value         ;        ;
+; buffI_10|tehb1|full_reg                              ;        ;
+; phi_n5|tehb1|full_reg                                ;        ;
+; phi_n2|tehb1|full_reg                                ;        ;
+; load_8|Buffer_2|full_reg                             ;        ;
+; fork_23|generateBlocks[2].regblock|reg_value         ;        ;
+; fork_2|generateBlocks[0].regblock|reg_value          ;        ;
+; buffI_8|tehb1|data_reg[3]                            ;        ;
+; fork_2|generateBlocks[1].regblock|reg_value          ;        ;
+; fork_23|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_0|generateBlocks[1].regblock|reg_value          ;        ;
+; buffI_2|oehb1|validArray[0]                          ;        ;
+; phiC_17|tehb1|full_reg                               ;        ;
+; buffA_16|tehb1|full_reg                              ;        ;
+; phiC_16|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; phiC_16|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; fork_55|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_4|tehb1|full_reg                                 ;        ;
+; buffI_8|oehb1|data_reg[3]                            ;        ;
+; buffI_2|tehb1|full_reg                               ;        ;
+; buffI_2|oehb1|data_reg[0]                            ;        ;
+; phiC_16|oehb1|full_reg                               ;        ;
+; phiC_16|oehb1|data_reg[0]                            ;        ;
+; fork_22|generateBlocks[2].regblock|reg_value         ;        ;
+; forkC_37|generateBlocks[0].regblock|reg_value        ;        ;
+; forkC_37|generateBlocks[3].regblock|reg_value        ;        ;
+; forkC_37|generateBlocks[1].regblock|reg_value        ;        ;
+; fork_22|generateBlocks[1].regblock|reg_value         ;        ;
+; buffA_15|tehb1|full_reg                              ;        ;
+; phi_n4|tehb1|data_reg[3]                             ;        ;
+; phiC_15|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; buffA_15|oehb1|validArray[0]                         ;        ;
+; buffI_0|tehb1|full_reg                               ;        ;
+; phi_1|tehb1|full_reg                                 ;        ;
+; forkC_35|generateBlocks[0].regblock|reg_value        ;        ;
+; fork_36|generateBlocks[0].regblock|reg_value         ;        ;
+; forkC_35|generateBlocks[2].regblock|reg_value        ;        ;
+; forkC_35|generateBlocks[1].regblock|reg_value        ;        ;
+; start_0|startBuff|tehb1|full_reg                     ;        ;
+; start_0|startBuff|oehb1|validArray[0]                ;        ;
+; buffI_9|tehb1|data_reg[3]                            ;        ;
+; phiC_15|oehb1|full_reg                               ;        ;
+; phiC_19|tehb1|full_reg                               ;        ;
+; phiC_18|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; buffA_17|tehb1|full_reg                              ;        ;
+; buffA_17|oehb1|validArray[0]                         ;        ;
+; phiC_18|oehb1|full_reg                               ;        ;
+; phi_15|tehb1|data_reg[0]                             ;        ;
+; buffI_3|tehb1|data_reg[0]                            ;        ;
+; buffI_3|tehb1|full_reg                               ;        ;
+; buffI_3|oehb1|data_reg[0]                            ;        ;
+; buffI_9|oehb1|data_reg[3]                            ;        ;
+; fork_5|generateBlocks[1].regblock|reg_value          ;        ;
+; fork_25|generateBlocks[2].regblock|reg_value         ;        ;
+; fork_3|generateBlocks[1].regblock|reg_value          ;        ;
+; fork_5|generateBlocks[0].regblock|reg_value          ;        ;
+; phi_15|tehb1|full_reg                                ;        ;
+; buffI_3|oehb1|validArray[0]                          ;        ;
+; fork_3|generateBlocks[0].regblock|reg_value          ;        ;
+; buffI_9|tehb1|full_reg                               ;        ;
+; buffI_9|oehb1|data_reg[5]                            ;        ;
+; MC_data|read_arbiter|data|out_reg[1][0]              ;        ;
+; phi_n3|tehb1|data_reg[2]                             ;        ;
+; phi_n5|tehb1|data_reg[0]                             ;        ;
+; buffI_10|tehb1|data_reg[0]                           ;        ;
+; buffI_10|oehb1|data_reg[0]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][1]              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][0]              ;        ;
+; phi_3|tehb1|data_reg[0]                              ;        ;
+; buffI_1|tehb1|data_reg[0]                            ;        ;
+; buffI_1|oehb1|data_reg[0]                            ;        ;
+; phi_n5|tehb1|data_reg[1]                             ;        ;
+; buffI_10|tehb1|data_reg[1]                           ;        ;
+; phi_n3|tehb1|data_reg[1]                             ;        ;
+; buffI_10|oehb1|data_reg[1]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][2]              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][1]              ;        ;
+; phi_3|tehb1|data_reg[1]                              ;        ;
+; buffI_1|tehb1|data_reg[1]                            ;        ;
+; buffI_1|oehb1|data_reg[1]                            ;        ;
+; phi_n5|tehb1|data_reg[2]                             ;        ;
+; buffI_10|tehb1|data_reg[2]                           ;        ;
+; buffI_10|oehb1|data_reg[2]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][3]              ;        ;
+; phi_n4|tehb1|data_reg[5]                             ;        ;
+; phi_n0|tehb1|data_reg[1]                             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][2]              ;        ;
+; phi_3|tehb1|data_reg[2]                              ;        ;
+; buffI_1|tehb1|data_reg[2]                            ;        ;
+; buffI_1|oehb1|data_reg[2]                            ;        ;
+; phi_n5|tehb1|data_reg[3]                             ;        ;
+; buffI_10|tehb1|data_reg[3]                           ;        ;
+; buffI_10|oehb1|data_reg[3]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][4]              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][3]              ;        ;
+; phi_3|tehb1|data_reg[3]                              ;        ;
+; phi_1|tehb1|data_reg[1]                              ;        ;
+; buffI_1|tehb1|data_reg[3]                            ;        ;
+; buffI_1|oehb1|data_reg[3]                            ;        ;
+; phi_n5|tehb1|data_reg[4]                             ;        ;
+; buffI_10|tehb1|data_reg[4]                           ;        ;
+; buffI_10|oehb1|data_reg[4]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][5]              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][4]              ;        ;
+; phi_3|tehb1|data_reg[4]                              ;        ;
+; buffI_1|tehb1|data_reg[4]                            ;        ;
+; buffI_1|oehb1|data_reg[4]                            ;        ;
+; buffI_0|tehb1|data_reg[1]                            ;        ;
+; phi_n5|tehb1|data_reg[5]                             ;        ;
+; buffI_10|tehb1|data_reg[5]                           ;        ;
+; buffI_10|oehb1|data_reg[5]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][6]              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][5]              ;        ;
+; phi_3|tehb1|data_reg[5]                              ;        ;
+; buffI_1|tehb1|data_reg[5]                            ;        ;
+; buffI_1|oehb1|data_reg[5]                            ;        ;
+; phi_n5|tehb1|data_reg[6]                             ;        ;
+; buffI_10|tehb1|data_reg[6]                           ;        ;
+; buffI_0|oehb1|data_reg[1]                            ;        ;
+; buffI_10|oehb1|data_reg[6]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][7]              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][6]              ;        ;
+; phi_3|tehb1|data_reg[6]                              ;        ;
+; buffI_1|tehb1|data_reg[6]                            ;        ;
+; buffI_1|oehb1|data_reg[6]                            ;        ;
+; phi_n5|tehb1|data_reg[7]                             ;        ;
+; buffI_10|tehb1|data_reg[7]                           ;        ;
+; buffI_10|oehb1|data_reg[7]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][8]              ;        ;
+; phi_n1|tehb1|data_reg[1]                             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][7]              ;        ;
+; phi_3|tehb1|data_reg[7]                              ;        ;
+; buffI_1|tehb1|data_reg[7]                            ;        ;
+; buffI_1|oehb1|data_reg[7]                            ;        ;
+; phi_n5|tehb1|data_reg[8]                             ;        ;
+; buffI_10|tehb1|data_reg[8]                           ;        ;
+; buffI_10|oehb1|data_reg[8]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][9]              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][8]              ;        ;
+; phi_3|tehb1|data_reg[8]                              ;        ;
+; buffI_8|tehb1|data_reg[1]                            ;        ;
+; buffI_1|tehb1|data_reg[8]                            ;        ;
+; buffI_1|oehb1|data_reg[8]                            ;        ;
+; phi_n5|tehb1|data_reg[9]                             ;        ;
+; buffI_10|tehb1|data_reg[9]                           ;        ;
+; buffI_10|oehb1|data_reg[9]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[1][10]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][9]              ;        ;
+; phi_3|tehb1|data_reg[9]                              ;        ;
+; buffI_1|tehb1|data_reg[9]                            ;        ;
+; buffI_1|oehb1|data_reg[9]                            ;        ;
+; buffI_8|oehb1|data_reg[1]                            ;        ;
+; phi_n5|tehb1|data_reg[10]                            ;        ;
+; buffI_10|tehb1|data_reg[10]                          ;        ;
+; buffI_10|oehb1|data_reg[10]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][11]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][10]             ;        ;
+; phi_3|tehb1|data_reg[10]                             ;        ;
+; buffI_1|tehb1|data_reg[10]                           ;        ;
+; buffI_1|oehb1|data_reg[10]                           ;        ;
+; phi_n5|tehb1|data_reg[11]                            ;        ;
+; buffI_10|tehb1|data_reg[11]                          ;        ;
+; phi_n4|tehb1|data_reg[1]                             ;        ;
+; buffI_10|oehb1|data_reg[11]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][12]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][11]             ;        ;
+; phi_3|tehb1|data_reg[11]                             ;        ;
+; buffI_1|tehb1|data_reg[11]                           ;        ;
+; buffI_1|oehb1|data_reg[11]                           ;        ;
+; phi_n5|tehb1|data_reg[12]                            ;        ;
+; buffI_10|tehb1|data_reg[12]                          ;        ;
+; buffI_10|oehb1|data_reg[12]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][13]             ;        ;
+; buffI_9|tehb1|data_reg[1]                            ;        ;
+; MC_data|read_arbiter|data|out_reg[0][12]             ;        ;
+; phi_3|tehb1|data_reg[12]                             ;        ;
+; buffI_1|tehb1|data_reg[12]                           ;        ;
+; buffI_1|oehb1|data_reg[12]                           ;        ;
+; phi_n5|tehb1|data_reg[13]                            ;        ;
+; buffI_10|tehb1|data_reg[13]                          ;        ;
+; buffI_10|oehb1|data_reg[13]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][14]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][13]             ;        ;
+; phi_3|tehb1|data_reg[13]                             ;        ;
+; buffI_9|oehb1|data_reg[1]                            ;        ;
+; buffI_1|tehb1|data_reg[13]                           ;        ;
+; buffI_1|oehb1|data_reg[13]                           ;        ;
+; phi_n5|tehb1|data_reg[14]                            ;        ;
+; buffI_10|tehb1|data_reg[14]                          ;        ;
+; buffI_10|oehb1|data_reg[14]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][15]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][14]             ;        ;
+; phi_3|tehb1|data_reg[14]                             ;        ;
+; buffI_1|tehb1|data_reg[14]                           ;        ;
+; buffI_1|oehb1|data_reg[14]                           ;        ;
+; buffI_9|tehb1|data_reg[5]                            ;        ;
+; phi_n3|tehb1|data_reg[0]                             ;        ;
+; phi_n5|tehb1|data_reg[15]                            ;        ;
+; buffI_10|tehb1|data_reg[15]                          ;        ;
+; buffI_10|oehb1|data_reg[15]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][16]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][15]             ;        ;
+; phi_3|tehb1|data_reg[15]                             ;        ;
+; buffI_1|tehb1|data_reg[15]                           ;        ;
+; buffI_1|oehb1|data_reg[15]                           ;        ;
+; phi_n5|tehb1|data_reg[16]                            ;        ;
+; buffI_10|tehb1|data_reg[16]                          ;        ;
+; phi_n0|tehb1|data_reg[0]                             ;        ;
+; buffI_10|oehb1|data_reg[16]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][17]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][16]             ;        ;
+; phi_3|tehb1|data_reg[16]                             ;        ;
+; buffI_1|tehb1|data_reg[16]                           ;        ;
+; buffI_1|oehb1|data_reg[16]                           ;        ;
+; phi_n5|tehb1|data_reg[17]                            ;        ;
+; buffI_10|tehb1|data_reg[17]                          ;        ;
+; buffI_10|oehb1|data_reg[17]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][18]             ;        ;
+; phi_1|tehb1|data_reg[0]                              ;        ;
+; MC_data|read_arbiter|data|out_reg[0][17]             ;        ;
+; phi_3|tehb1|data_reg[17]                             ;        ;
+; buffI_1|tehb1|data_reg[17]                           ;        ;
+; buffI_1|oehb1|data_reg[17]                           ;        ;
+; phi_n5|tehb1|data_reg[18]                            ;        ;
+; buffI_10|tehb1|data_reg[18]                          ;        ;
+; buffI_10|oehb1|data_reg[18]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][19]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][18]             ;        ;
+; phi_3|tehb1|data_reg[18]                             ;        ;
+; buffI_0|tehb1|data_reg[0]                            ;        ;
+; buffI_1|tehb1|data_reg[18]                           ;        ;
+; buffI_1|oehb1|data_reg[18]                           ;        ;
+; phi_n5|tehb1|data_reg[19]                            ;        ;
+; buffI_10|tehb1|data_reg[19]                          ;        ;
+; buffI_10|oehb1|data_reg[19]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][20]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][19]             ;        ;
+; phi_3|tehb1|data_reg[19]                             ;        ;
+; buffI_1|tehb1|data_reg[19]                           ;        ;
+; buffI_1|oehb1|data_reg[19]                           ;        ;
+; buffI_0|oehb1|data_reg[0]                            ;        ;
+; phi_n5|tehb1|data_reg[20]                            ;        ;
+; buffI_10|tehb1|data_reg[20]                          ;        ;
+; buffI_10|oehb1|data_reg[20]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][21]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][20]             ;        ;
+; phi_3|tehb1|data_reg[20]                             ;        ;
+; buffI_1|tehb1|data_reg[20]                           ;        ;
+; buffI_1|oehb1|data_reg[20]                           ;        ;
+; phi_n5|tehb1|data_reg[21]                            ;        ;
+; buffI_10|tehb1|data_reg[21]                          ;        ;
+; phi_n1|tehb1|data_reg[0]                             ;        ;
+; buffI_10|oehb1|data_reg[21]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][22]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][21]             ;        ;
+; phi_3|tehb1|data_reg[21]                             ;        ;
+; buffI_1|tehb1|data_reg[21]                           ;        ;
+; buffI_1|oehb1|data_reg[21]                           ;        ;
+; phi_n5|tehb1|data_reg[22]                            ;        ;
+; buffI_10|tehb1|data_reg[22]                          ;        ;
+; buffI_10|oehb1|data_reg[22]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][23]             ;        ;
+; buffI_8|tehb1|data_reg[0]                            ;        ;
+; MC_data|read_arbiter|data|out_reg[0][22]             ;        ;
+; phi_3|tehb1|data_reg[22]                             ;        ;
+; buffI_1|tehb1|data_reg[22]                           ;        ;
+; buffI_1|oehb1|data_reg[22]                           ;        ;
+; phi_n5|tehb1|data_reg[23]                            ;        ;
+; buffI_10|tehb1|data_reg[23]                          ;        ;
+; buffI_10|oehb1|data_reg[23]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][24]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][23]             ;        ;
+; phi_3|tehb1|data_reg[23]                             ;        ;
+; buffI_8|oehb1|data_reg[0]                            ;        ;
+; buffI_1|tehb1|data_reg[23]                           ;        ;
+; buffI_1|oehb1|data_reg[23]                           ;        ;
+; phi_n5|tehb1|data_reg[24]                            ;        ;
+; buffI_10|tehb1|data_reg[24]                          ;        ;
+; buffI_10|oehb1|data_reg[24]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][25]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][24]             ;        ;
+; phi_3|tehb1|data_reg[24]                             ;        ;
+; buffI_1|tehb1|data_reg[24]                           ;        ;
+; buffI_1|oehb1|data_reg[24]                           ;        ;
+; phi_n4|tehb1|data_reg[0]                             ;        ;
+; phi_n5|tehb1|data_reg[25]                            ;        ;
+; buffI_10|tehb1|data_reg[25]                          ;        ;
+; buffI_10|oehb1|data_reg[25]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][26]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][25]             ;        ;
+; phi_3|tehb1|data_reg[25]                             ;        ;
+; buffI_1|tehb1|data_reg[25]                           ;        ;
+; buffI_1|oehb1|data_reg[25]                           ;        ;
+; phi_n5|tehb1|data_reg[26]                            ;        ;
+; buffI_10|tehb1|data_reg[26]                          ;        ;
+; buffI_9|tehb1|data_reg[0]                            ;        ;
+; buffI_10|oehb1|data_reg[26]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][27]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][26]             ;        ;
+; phi_3|tehb1|data_reg[26]                             ;        ;
+; buffI_1|tehb1|data_reg[26]                           ;        ;
+; buffI_1|oehb1|data_reg[26]                           ;        ;
+; phi_n5|tehb1|data_reg[27]                            ;        ;
+; buffI_10|tehb1|data_reg[27]                          ;        ;
+; buffI_10|oehb1|data_reg[27]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][28]             ;        ;
+; phi_15|tehb1|data_reg[4]                             ;        ;
+; buffI_9|oehb1|data_reg[0]                            ;        ;
+; MC_data|read_arbiter|data|out_reg[0][27]             ;        ;
+; phi_3|tehb1|data_reg[27]                             ;        ;
+; buffI_1|tehb1|data_reg[27]                           ;        ;
+; buffI_1|oehb1|data_reg[27]                           ;        ;
+; phi_n5|tehb1|data_reg[28]                            ;        ;
+; buffI_10|tehb1|data_reg[28]                          ;        ;
+; buffI_10|oehb1|data_reg[28]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][29]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][28]             ;        ;
+; phi_3|tehb1|data_reg[28]                             ;        ;
+; phi_34|tehb1|data_reg[1]                             ;        ;
+; buffI_1|tehb1|data_reg[28]                           ;        ;
+; buffI_1|oehb1|data_reg[28]                           ;        ;
+; phi_n5|tehb1|data_reg[29]                            ;        ;
+; buffI_10|tehb1|data_reg[29]                          ;        ;
+; buffI_10|oehb1|data_reg[29]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][30]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][29]             ;        ;
+; phi_3|tehb1|data_reg[29]                             ;        ;
+; buffI_1|tehb1|data_reg[29]                           ;        ;
+; buffI_1|oehb1|data_reg[29]                           ;        ;
+; buffI_6|tehb1|data_reg[1]                            ;        ;
+; phi_n5|tehb1|data_reg[30]                            ;        ;
+; buffI_10|tehb1|data_reg[30]                          ;        ;
+; buffI_10|oehb1|data_reg[30]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[1][31]             ;        ;
+; MC_data|read_arbiter|data|out_reg[0][30]             ;        ;
+; phi_3|tehb1|data_reg[30]                             ;        ;
+; buffI_1|tehb1|data_reg[30]                           ;        ;
+; buffI_1|oehb1|data_reg[30]                           ;        ;
+; phi_n5|tehb1|data_reg[31]                            ;        ;
+; buffI_10|tehb1|data_reg[31]                          ;        ;
+; buffI_6|oehb1|data_reg[1]                            ;        ;
+; buffI_10|oehb1|data_reg[31]                          ;        ;
+; MC_data|read_arbiter|data|out_reg[3][0]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][1]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][2]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][3]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][4]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][5]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][6]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][7]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][8]              ;        ;
+; phi_34|tehb1|data_reg[0]                             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][9]              ;        ;
+; MC_data|read_arbiter|data|out_reg[3][10]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][11]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][12]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][13]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][14]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][15]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][16]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][17]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][0]              ;        ;
+; buffI_6|tehb1|data_reg[0]                            ;        ;
+; MC_data|read_arbiter|data|out_reg[2][1]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][2]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][3]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][4]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][5]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][6]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][7]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][8]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][9]              ;        ;
+; MC_data|read_arbiter|data|out_reg[2][10]             ;        ;
+; buffI_6|oehb1|data_reg[0]                            ;        ;
+; MC_data|read_arbiter|data|out_reg[2][11]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][12]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][13]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][14]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][15]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][16]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][17]             ;        ;
+; phi_35|tehb1|data_reg[0]                             ;        ;
+; buffI_7|tehb1|data_reg[0]                            ;        ;
+; buffI_7|oehb1|data_reg[0]                            ;        ;
+; phi_34|tehb1|data_reg[2]                             ;        ;
+; phi_35|tehb1|data_reg[1]                             ;        ;
+; buffI_7|tehb1|data_reg[1]                            ;        ;
+; buffI_7|oehb1|data_reg[1]                            ;        ;
+; phi_35|tehb1|data_reg[2]                             ;        ;
+; buffI_7|tehb1|data_reg[2]                            ;        ;
+; buffI_7|oehb1|data_reg[2]                            ;        ;
+; phi_35|tehb1|data_reg[3]                             ;        ;
+; buffI_7|tehb1|data_reg[3]                            ;        ;
+; buffI_7|oehb1|data_reg[3]                            ;        ;
+; phi_35|tehb1|data_reg[4]                             ;        ;
+; buffI_6|tehb1|data_reg[2]                            ;        ;
+; buffI_7|tehb1|data_reg[4]                            ;        ;
+; buffI_7|oehb1|data_reg[4]                            ;        ;
+; phi_35|tehb1|data_reg[5]                             ;        ;
+; buffI_7|tehb1|data_reg[5]                            ;        ;
+; buffI_7|oehb1|data_reg[5]                            ;        ;
+; phi_35|tehb1|data_reg[6]                             ;        ;
+; buffI_7|tehb1|data_reg[6]                            ;        ;
+; buffI_7|oehb1|data_reg[6]                            ;        ;
+; phi_35|tehb1|data_reg[7]                             ;        ;
+; buffI_7|tehb1|data_reg[7]                            ;        ;
+; buffI_6|oehb1|data_reg[2]                            ;        ;
+; buffI_7|oehb1|data_reg[7]                            ;        ;
+; phi_35|tehb1|data_reg[8]                             ;        ;
+; buffI_7|tehb1|data_reg[8]                            ;        ;
+; buffI_7|oehb1|data_reg[8]                            ;        ;
+; phi_35|tehb1|data_reg[9]                             ;        ;
+; buffI_7|tehb1|data_reg[9]                            ;        ;
+; buffI_7|oehb1|data_reg[9]                            ;        ;
+; phi_35|tehb1|data_reg[10]                            ;        ;
+; buffI_7|tehb1|data_reg[10]                           ;        ;
+; buffI_7|oehb1|data_reg[10]                           ;        ;
+; buffI_3|tehb1|data_reg[4]                            ;        ;
+; phi_34|tehb1|data_reg[3]                             ;        ;
+; phi_35|tehb1|data_reg[11]                            ;        ;
+; buffI_7|tehb1|data_reg[11]                           ;        ;
+; buffI_7|oehb1|data_reg[11]                           ;        ;
+; phi_35|tehb1|data_reg[12]                            ;        ;
+; buffI_7|tehb1|data_reg[12]                           ;        ;
+; buffI_7|oehb1|data_reg[12]                           ;        ;
+; phi_35|tehb1|data_reg[13]                            ;        ;
+; buffI_7|tehb1|data_reg[13]                           ;        ;
+; buffI_7|oehb1|data_reg[13]                           ;        ;
+; phi_35|tehb1|data_reg[14]                            ;        ;
+; fork_52|generateBlocks[1].regblock|reg_value         ;        ;
+; buffI_7|tehb1|data_reg[14]                           ;        ;
+; buffI_7|oehb1|data_reg[14]                           ;        ;
+; phi_35|tehb1|data_reg[15]                            ;        ;
+; buffI_7|tehb1|data_reg[15]                           ;        ;
+; buffI_7|oehb1|data_reg[15]                           ;        ;
+; phi_35|tehb1|data_reg[16]                            ;        ;
+; buffI_7|tehb1|data_reg[16]                           ;        ;
+; buffI_7|oehb1|data_reg[16]                           ;        ;
+; phi_35|tehb1|data_reg[17]                            ;        ;
+; buffI_7|tehb1|data_reg[17]                           ;        ;
+; buffA_21|oehb1|validArray[0]                         ;        ;
+; buffI_7|oehb1|data_reg[17]                           ;        ;
+; MC_data|read_arbiter|data|out_reg[2][18]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][19]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][20]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][21]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][22]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][23]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][24]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][25]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][26]             ;        ;
+; MC_data|counter1[5]                                  ;        ;
+; MC_data|read_arbiter|data|out_reg[2][27]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][28]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][29]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][30]             ;        ;
+; MC_data|read_arbiter|data|out_reg[2][31]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][18]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][19]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][20]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][21]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][22]             ;        ;
+; MC_data|counter1[4]                                  ;        ;
+; MC_data|read_arbiter|data|out_reg[3][23]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][24]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][25]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][26]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][27]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][28]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][29]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][30]             ;        ;
+; MC_data|read_arbiter|data|out_reg[3][31]             ;        ;
+; phi_35|tehb1|data_reg[18]                            ;        ;
+; MC_data|counter1[3]                                  ;        ;
+; buffI_7|tehb1|data_reg[18]                           ;        ;
+; buffI_7|oehb1|data_reg[18]                           ;        ;
+; phi_35|tehb1|data_reg[19]                            ;        ;
+; buffI_7|tehb1|data_reg[19]                           ;        ;
+; buffI_7|oehb1|data_reg[19]                           ;        ;
+; phi_35|tehb1|data_reg[20]                            ;        ;
+; buffI_7|tehb1|data_reg[20]                           ;        ;
+; buffI_7|oehb1|data_reg[20]                           ;        ;
+; phi_35|tehb1|data_reg[21]                            ;        ;
+; buffI_7|tehb1|data_reg[21]                           ;        ;
+; MC_data|counter1[2]                                  ;        ;
+; buffI_7|oehb1|data_reg[21]                           ;        ;
+; phi_35|tehb1|data_reg[22]                            ;        ;
+; buffI_7|tehb1|data_reg[22]                           ;        ;
+; buffI_7|oehb1|data_reg[22]                           ;        ;
+; phi_35|tehb1|data_reg[23]                            ;        ;
+; buffI_7|tehb1|data_reg[23]                           ;        ;
+; buffI_7|oehb1|data_reg[23]                           ;        ;
+; phi_35|tehb1|data_reg[24]                            ;        ;
+; buffI_7|tehb1|data_reg[24]                           ;        ;
+; buffI_7|oehb1|data_reg[24]                           ;        ;
+; MC_data|counter1[1]                                  ;        ;
+; phi_35|tehb1|data_reg[25]                            ;        ;
+; buffI_7|tehb1|data_reg[25]                           ;        ;
+; buffI_7|oehb1|data_reg[25]                           ;        ;
+; phi_35|tehb1|data_reg[26]                            ;        ;
+; buffI_7|tehb1|data_reg[26]                           ;        ;
+; buffI_7|oehb1|data_reg[26]                           ;        ;
+; phi_35|tehb1|data_reg[27]                            ;        ;
+; buffI_7|tehb1|data_reg[27]                           ;        ;
+; buffI_7|oehb1|data_reg[27]                           ;        ;
+; phi_35|tehb1|data_reg[28]                            ;        ;
+; MC_data|counter1[0]                                  ;        ;
+; buffI_7|tehb1|data_reg[28]                           ;        ;
+; buffI_7|oehb1|data_reg[28]                           ;        ;
+; phi_35|tehb1|data_reg[29]                            ;        ;
+; buffI_7|tehb1|data_reg[29]                           ;        ;
+; buffI_7|oehb1|data_reg[29]                           ;        ;
+; phi_35|tehb1|data_reg[30]                            ;        ;
+; buffI_7|tehb1|data_reg[30]                           ;        ;
+; buffI_7|oehb1|data_reg[30]                           ;        ;
+; MC_data|counter1[11]                                 ;        ;
++------------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	97
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------+
+; FLP-10500 - Non Driving Top Level Inputs Found ;
++---------------+--------------------------------+
+; Input Name    ; Waived                         ;
++---------------+--------------------------------+
+; cov_din0[0]   ;                                ;
+; cov_din0[10]  ;                                ;
+; cov_din0[11]  ;                                ;
+; cov_din0[12]  ;                                ;
+; cov_din0[13]  ;                                ;
+; cov_din0[14]  ;                                ;
+; cov_din0[15]  ;                                ;
+; cov_din0[16]  ;                                ;
+; cov_din0[17]  ;                                ;
+; cov_din0[18]  ;                                ;
+; cov_din0[19]  ;                                ;
+; cov_din0[1]   ;                                ;
+; cov_din0[20]  ;                                ;
+; cov_din0[21]  ;                                ;
+; cov_din0[22]  ;                                ;
+; cov_din0[23]  ;                                ;
+; cov_din0[24]  ;                                ;
+; cov_din0[25]  ;                                ;
+; cov_din0[26]  ;                                ;
+; cov_din0[27]  ;                                ;
+; cov_din0[28]  ;                                ;
+; cov_din0[29]  ;                                ;
+; cov_din0[2]   ;                                ;
+; cov_din0[30]  ;                                ;
+; cov_din0[31]  ;                                ;
+; cov_din0[3]   ;                                ;
+; cov_din0[4]   ;                                ;
+; cov_din0[5]   ;                                ;
+; cov_din0[6]   ;                                ;
+; cov_din0[7]   ;                                ;
+; cov_din0[8]   ;                                ;
+; cov_din0[9]   ;                                ;
+; cov_din1[0]   ;                                ;
+; cov_din1[10]  ;                                ;
+; cov_din1[11]  ;                                ;
+; cov_din1[12]  ;                                ;
+; cov_din1[13]  ;                                ;
+; cov_din1[14]  ;                                ;
+; cov_din1[15]  ;                                ;
+; cov_din1[16]  ;                                ;
+; cov_din1[17]  ;                                ;
+; cov_din1[18]  ;                                ;
+; cov_din1[19]  ;                                ;
+; cov_din1[1]   ;                                ;
+; cov_din1[20]  ;                                ;
+; cov_din1[21]  ;                                ;
+; cov_din1[22]  ;                                ;
+; cov_din1[23]  ;                                ;
+; cov_din1[24]  ;                                ;
+; cov_din1[25]  ;                                ;
+; cov_din1[26]  ;                                ;
+; cov_din1[27]  ;                                ;
+; cov_din1[28]  ;                                ;
+; cov_din1[29]  ;                                ;
+; cov_din1[2]   ;                                ;
+; cov_din1[30]  ;                                ;
+; cov_din1[31]  ;                                ;
+; cov_din1[3]   ;                                ;
+; cov_din1[4]   ;                                ;
+; cov_din1[5]   ;                                ;
+; cov_din1[6]   ;                                ;
+; cov_din1[7]   ;                                ;
+; cov_din1[8]   ;                                ;
+; cov_din1[9]   ;                                ;
+; data_din0[0]  ;                                ;
+; data_din0[10] ;                                ;
+; data_din0[11] ;                                ;
+; data_din0[12] ;                                ;
+; data_din0[13] ;                                ;
+; data_din0[14] ;                                ;
+; data_din0[15] ;                                ;
+; data_din0[16] ;                                ;
+; data_din0[17] ;                                ;
+; data_din0[18] ;                                ;
+; data_din0[19] ;                                ;
+; data_din0[1]  ;                                ;
+; data_din0[20] ;                                ;
+; data_din0[21] ;                                ;
+; data_din0[22] ;                                ;
+; data_din0[23] ;                                ;
+; data_din0[24] ;                                ;
+; data_din0[25] ;                                ;
+; data_din0[26] ;                                ;
+; data_din0[27] ;                                ;
+; data_din0[28] ;                                ;
+; data_din0[29] ;                                ;
+; data_din0[2]  ;                                ;
+; data_din0[30] ;                                ;
+; data_din0[31] ;                                ;
+; data_din0[3]  ;                                ;
+; data_din0[4]  ;                                ;
+; data_din0[5]  ;                                ;
+; data_din0[6]  ;                                ;
+; data_din0[7]  ;                                ;
+; data_din0[8]  ;                                ;
+; data_din0[9]  ;                                ;
+; start_in[0]   ;                                ;
++---------------+--------------------------------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                                                                                                                                   ;
++--------+---------------------------+--------------------------+-------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; Driver ; Asynchronous Reset Signal ; Synchronous Reset Signal ; Clock Enable Signal     ; Number of Asynchronous Reset Signals ; Number of Synchronous Reset Signals ; Number of Clock Enable Signals ; Waived ;
++--------+---------------------------+--------------------------+-------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; rst    ; phi_1|tehb1|full_reg|CLRN ; --                       ; MC_data|counter1[0]|ENA ; 1043                                 ; 0                                   ; 64                             ;        ;
++--------+---------------------------+--------------------------+-------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------------------------------------------+
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ;
++-------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; LNT-30023 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------+
+; RES-30132 - Registers May Not Be Properly Reset ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------+
+; TMC-20052 - Paths with Post Synthesis Inferred Latches ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
+		DSP_HFN_Threshold = 500
++---------------------------------------------------+
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net ;
++---------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------+
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------------------+
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested ;
++------------------------------------------------------------------------+
+
+

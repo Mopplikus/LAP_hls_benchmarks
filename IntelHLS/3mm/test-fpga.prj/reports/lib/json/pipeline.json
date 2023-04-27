@@ -1,0 +1,5595 @@
+{
+  "4135710144":
+  {
+    "nodes":
+    [
+      {
+        "name":"Loop Orch"
+        , "id":4140684448
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4177265984
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177286848
+        , "subtype":"exit"
+        , "start":"4.00"
+        , "end":"35.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"4"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"24"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4140684448
+        , "to":4177286848
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "4136349984":
+  {
+    "nodes":
+    [
+      {
+        "name":"Loop Orch"
+        , "id":4177290656
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":51
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4177675760
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'i'"
+        , "id":4177688736
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'i'"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4177689712
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":40
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4177699328
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177836480
+        , "subtype":"exit"
+        , "start":"4.00"
+        , "end":"35.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"4"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"160"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177290656
+        , "to":4177688736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177290656
+        , "to":4177688736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177290656
+        , "to":4177699328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177290656
+        , "to":4177699328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177290656
+        , "to":4177836480
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177675760
+        , "to":4177699328
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"56"
+          }
+        ]
+      }
+      , {
+        "from":4177675760
+        , "to":4177836480
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"56"
+          }
+        ]
+      }
+      , {
+        "from":4177688736
+        , "to":4177689712
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177688736
+        , "to":4177836480
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177689712
+        , "to":4177688736
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'i'"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4177699328
+        , "to":4177699328
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4177699328
+        , "to":4177836480
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "4137150304":
+  {
+    "nodes":
+    [
+      {
+        "name":"Loop Orch"
+        , "id":4177723888
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"0.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":53
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4177734320
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'j'"
+        , "id":4177735648
+        , "subtype":"pop"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'j'"
+            , "Start Cycle":"6"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4177736976
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4177742368
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4177757504
+        , "subtype":"default"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"6"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":42
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4177759856
+        , "subtype":"pop"
+        , "start":"10.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"10"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4177825008
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177866192
+        , "subtype":"exit"
+        , "start":"10.00"
+        , "end":"41.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"10"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"512"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177723888
+        , "to":4177734320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177723888
+        , "to":4177735648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177723888
+        , "to":4177742368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177723888
+        , "to":4177734320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177723888
+        , "to":4177735648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177723888
+        , "to":4177759856
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177723888
+        , "to":4177759856
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177723888
+        , "to":4177866192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177734320
+        , "to":4177736976
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177734320
+        , "to":4177734320
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4177734320
+        , "to":4177866192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177735648
+        , "to":4177736976
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177735648
+        , "to":4177757504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177735648
+        , "to":4177866192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177736976
+        , "to":4177742368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177736976
+        , "to":4177866192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177742368
+        , "to":4177866192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177757504
+        , "to":4177735648
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'j'"
+            , "Start Cycle":"1"
+            , "Latency":"5"
+          }
+        ]
+      }
+      , {
+        "from":4177759856
+        , "to":4177759856
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"9"
+          }
+        ]
+      }
+      , {
+        "from":4177759856
+        , "to":4177866192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177825008
+        , "to":4177723888
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"160"
+          }
+        ]
+      }
+      , {
+        "from":4177825008
+        , "to":4177734320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"160"
+          }
+        ]
+      }
+      , {
+        "from":4177825008
+        , "to":4177742368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"160"
+          }
+        ]
+      }
+      , {
+        "from":4177825008
+        , "to":4177759856
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"160"
+          }
+        ]
+      }
+      , {
+        "from":4177825008
+        , "to":4177866192
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"160"
+          }
+        ]
+      }
+    ]
+  }
+  , "4138480304":
+  {
+    "nodes":
+    [
+      {
+        "name":"Entry"
+        , "id":4177782704
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Orch"
+        , "id":4177783136
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"0.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":45
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'k'"
+        , "id":4177801168
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'k'"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4177802496
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4177803472
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":46
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4177807360
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":46
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4177811872
+        , "subtype":"pop"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"6"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4177812848
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":46
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177902704
+        , "subtype":"exit"
+        , "start":"18.00"
+        , "end":"49.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"18"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"640"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4180432016
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":46
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"*"
+        , "id":4180436528
+        , "subtype":"default"
+        , "start":"10.00"
+        , "end":"17.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Multiply"
+            , "Start Cycle":"10"
+            , "Latency":"7"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":46
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"E_local"
+        , "id":4180436880
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"E_local"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4180437856
+        , "subtype":"default"
+        , "start":"18.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Start Cycle":"18"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":46
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4180438208
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":45
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180452240
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180455104
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"5.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":47
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180465584
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180468560
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"5.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":51
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"E_local"
+        , "id":4180471424
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"E_local"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177782704
+        , "to":4177783136
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4177802496
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4177811872
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4180436880
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4180452240
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4180455104
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4180465584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4180468560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177782704
+        , "to":4180471424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177801168
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177802496
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177807360
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177811872
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180432016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180436880
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177811872
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177802496
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4177801168
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180436880
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180452240
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180452240
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180455104
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180455104
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180465584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180465584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180468560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180468560
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180471424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177783136
+        , "to":4180471424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177801168
+        , "to":4177803472
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177801168
+        , "to":4177812848
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177801168
+        , "to":4180438208
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177802496
+        , "to":4177803472
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177802496
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177802496
+        , "to":4177802496
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4177803472
+        , "to":4177807360
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177807360
+        , "to":4180436528
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4177811872
+        , "to":4177812848
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177811872
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177811872
+        , "to":4177811872
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"5"
+          }
+        ]
+      }
+      , {
+        "from":4177812848
+        , "to":4180432016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180432016
+        , "to":4180436528
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180436528
+        , "to":4180437856
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180436880
+        , "to":4180437856
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180437856
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180437856
+        , "to":4180436880
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"E_local"
+            , "Start Cycle":"1"
+            , "Latency":"16"
+          }
+        ]
+      }
+      , {
+        "from":4180438208
+        , "to":4177801168
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'k'"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4180452240
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4180452240
+        , "to":4180452240
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"17"
+          }
+        ]
+      }
+      , {
+        "from":4180455104
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4180455104
+        , "to":4180455104
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"4"
+          }
+        ]
+      }
+      , {
+        "from":4180465584
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180465584
+        , "to":4180465584
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"16"
+          }
+        ]
+      }
+      , {
+        "from":4180468560
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4180468560
+        , "to":4180468560
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"4"
+          }
+        ]
+      }
+      , {
+        "from":4180471424
+        , "to":4177902704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180471424
+        , "to":4180471424
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"E_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+    ]
+  }
+  , "4139631936":
+  {
+    "nodes":
+    [
+      {
+        "name":"Entry"
+        , "id":4177890848
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177911808
+        , "subtype":"exit"
+        , "start":"6.00"
+        , "end":"37.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"6"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"192"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4180509696
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"0"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":55
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4180513584
+        , "subtype":"load/store"
+        , "start":"2.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"2"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":55
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177890848
+        , "to":4180509696
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+      , {
+        "from":4177890848
+        , "to":4180513584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"256"
+          }
+        ]
+      }
+      , {
+        "from":4180509696
+        , "to":4177911808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180509696
+        , "to":4180513584
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180513584
+        , "to":4177911808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+    ]
+  }
+  , "4139756224":
+  {
+    "nodes":
+    [
+      {
+        "name":"Exit"
+        , "id":4177916144
+        , "subtype":"exit"
+        , "start":"6.00"
+        , "end":"37.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"6"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"16"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4180524592
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"ST"
+        , "id":4180526000
+        , "subtype":"load/store"
+        , "start":"1.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Store"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":47
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4180524592
+        , "to":4180526000
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"192"
+          }
+        ]
+      }
+      , {
+        "from":4180526000
+        , "to":4177916144
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "4140492384":
+  {
+    "nodes":
+    [
+      {
+        "name":"?"
+        , "id":4177915040
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"5.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":51
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Orch"
+        , "id":4177919728
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":56
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177953392
+        , "subtype":"exit"
+        , "start":"18.00"
+        , "end":"49.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"18"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"384"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4180535120
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'k'"
+        , "id":4180555200
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'k'"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"C_local"
+        , "id":4180556528
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"C_local"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4180557504
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":57
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4180561920
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":57
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"D_local"
+        , "id":4180566432
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"D_local"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":44
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4180567408
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":57
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4180571296
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":57
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"*"
+        , "id":4180575808
+        , "subtype":"default"
+        , "start":"10.00"
+        , "end":"17.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Multiply"
+            , "Start Cycle":"10"
+            , "Latency":"7"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":57
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"F_local"
+        , "id":4180576160
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"F_local"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":55
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4180577664
+        , "subtype":"default"
+        , "start":"18.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Start Cycle":"18"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":57
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4180578016
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":56
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180591520
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180594384
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":47
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180597776
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":58
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180600640
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":68
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180606368
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4180611248
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"5.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":53
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"F_local"
+        , "id":4180614112
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"F_local"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":47
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"F_local"
+        , "id":4180617504
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"F_local"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":55
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177915040
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177915040
+        , "to":4177915040
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"4"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4177915040
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180555200
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180556528
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180561920
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180566432
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180571296
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180576160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180566432
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180556528
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180555200
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180576160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180591520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180591520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180594384
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180594384
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180597776
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180597776
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180600640
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180600640
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180606368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180606368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4177915040
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180611248
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180611248
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180614112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180614112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180617504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177919728
+        , "to":4180617504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4177915040
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180556528
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180566432
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180576160
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180591520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180594384
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180597776
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180600640
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180606368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180611248
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180614112
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180535120
+        , "to":4180617504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"640"
+          }
+        ]
+      }
+      , {
+        "from":4180555200
+        , "to":4180557504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180555200
+        , "to":4180567408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180555200
+        , "to":4180578016
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180556528
+        , "to":4180557504
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180556528
+        , "to":4180556528
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"C_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4180557504
+        , "to":4180561920
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180561920
+        , "to":4180575808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180566432
+        , "to":4180567408
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180566432
+        , "to":4180566432
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"D_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4180567408
+        , "to":4180571296
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180571296
+        , "to":4180575808
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180575808
+        , "to":4180577664
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180576160
+        , "to":4180577664
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180577664
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4180577664
+        , "to":4180576160
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"F_local"
+            , "Start Cycle":"1"
+            , "Latency":"16"
+          }
+        ]
+      }
+      , {
+        "from":4180578016
+        , "to":4180555200
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'k'"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4180591520
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4180591520
+        , "to":4180591520
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"17"
+          }
+        ]
+      }
+      , {
+        "from":4180594384
+        , "to":4180594384
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+          }
+        ]
+      }
+      , {
+        "from":4180597776
+        , "to":4180597776
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+          }
+        ]
+      }
+      , {
+        "from":4180600640
+        , "to":4180600640
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+          }
+        ]
+      }
+      , {
+        "from":4180606368
+        , "to":4180606368
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+          }
+        ]
+      }
+      , {
+        "from":4180611248
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4180611248
+        , "to":4180611248
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"4"
+          }
+        ]
+      }
+      , {
+        "from":4180614112
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4180614112
+        , "to":4180614112
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"F_local"
+            , "Start Cycle":"1"
+            , "Latency":"17"
+          }
+        ]
+      }
+      , {
+        "from":4180617504
+        , "to":4177953392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4180617504
+        , "to":4180617504
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"F_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+    ]
+  }
+  , "4141389360":
+  {
+    "nodes":
+    [
+      {
+        "name":"Entry"
+        , "id":4177941728
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177957728
+        , "subtype":"exit"
+        , "start":"2.00"
+        , "end":"33.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"2"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"16"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"ST"
+        , "id":4178391232
+        , "subtype":"load/store"
+        , "start":"1.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Store"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":58
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177941728
+        , "to":4178391232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"192"
+          }
+        ]
+      }
+      , {
+        "from":4178391232
+        , "to":4177957728
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "4141747840":
+  {
+    "nodes":
+    [
+      {
+        "name":"Loop Orch"
+        , "id":4177960960
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":62
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177974512
+        , "subtype":"exit"
+        , "start":"4.00"
+        , "end":"35.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"4"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"96"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4178401056
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'i'"
+        , "id":4178420416
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'i'"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4178421392
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":62
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177960960
+        , "to":4177974512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177960960
+        , "to":4178420416
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177960960
+        , "to":4178420416
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4178401056
+        , "to":4177974512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"24"
+          }
+        ]
+      }
+      , {
+        "from":4178420416
+        , "to":4177974512
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178420416
+        , "to":4178421392
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178421392
+        , "to":4178420416
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'i'"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+    ]
+  }
+  , "4142168144":
+  {
+    "nodes":
+    [
+      {
+        "name":"Exit"
+        , "id":4177620736
+        , "subtype":"exit"
+        , "start":"10.00"
+        , "end":"41.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"10"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"448"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4177965344
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Orch"
+        , "id":4177978672
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":64
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4178448416
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'j'"
+        , "id":4178449744
+        , "subtype":"pop"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'j'"
+            , "Start Cycle":"6"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4178451072
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":66
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4178455936
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":66
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4178471600
+        , "subtype":"default"
+        , "start":"6.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"6"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":64
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177965344
+        , "to":4177620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"96"
+          }
+        ]
+      }
+      , {
+        "from":4177965344
+        , "to":4177978672
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"96"
+          }
+        ]
+      }
+      , {
+        "from":4177965344
+        , "to":4178448416
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"96"
+          }
+        ]
+      }
+      , {
+        "from":4177965344
+        , "to":4178455936
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"96"
+          }
+        ]
+      }
+      , {
+        "from":4177978672
+        , "to":4177620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177978672
+        , "to":4178448416
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177978672
+        , "to":4178449744
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177978672
+        , "to":4178455936
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177978672
+        , "to":4178448416
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177978672
+        , "to":4178449744
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4178448416
+        , "to":4177620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178448416
+        , "to":4178451072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178448416
+        , "to":4178448416
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4178449744
+        , "to":4177620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178449744
+        , "to":4178451072
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178449744
+        , "to":4178471600
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178451072
+        , "to":4177620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4178451072
+        , "to":4178455936
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4178455936
+        , "to":4177620736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178471600
+        , "to":4178449744
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'j'"
+            , "Start Cycle":"1"
+            , "Latency":"5"
+          }
+        ]
+      }
+    ]
+  }
+  , "4142837504":
+  {
+    "nodes":
+    [
+      {
+        "name":"Loop Orch"
+        , "id":4177624544
+        , "subtype":"default"
+        , "start":"0.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":67
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":4177653184
+        , "subtype":"exit"
+        , "start":"18.00"
+        , "end":"49.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"18"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"320"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"E_local"
+        , "id":4177992032
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"E_local"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":66
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4178493872
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"'k'"
+        , "id":4178509984
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'k'"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4178511648
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":68
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4178515536
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":68
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"F_local"
+        , "id":4178520400
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"F_local"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":66
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Ptr. Comp."
+        , "id":4178521376
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"6.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"4"
+            , "Latency":"2"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":68
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":4178525792
+        , "subtype":"load/store"
+        , "start":"6.00"
+        , "end":"10.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"6"
+            , "Latency":"4"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":68
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"*"
+        , "id":4178530656
+        , "subtype":"default"
+        , "start":"10.00"
+        , "end":"17.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Multiply"
+            , "Start Cycle":"10"
+            , "Latency":"7"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":68
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"G_local"
+        , "id":4178531008
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"G_local"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":66
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4178531984
+        , "subtype":"default"
+        , "start":"18.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Start Cycle":"18"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":68
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":4178532336
+        , "subtype":"default"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":67
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4178546368
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":69
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4178549232
+        , "subtype":"pop"
+        , "start":"17.00"
+        , "end":"18.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"17"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":62
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"?"
+        , "id":4178552096
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":23
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"G_local"
+        , "id":4178554544
+        , "subtype":"pop"
+        , "start":"4.00"
+        , "end":"4.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"G_local"
+            , "Start Cycle":"4"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":66
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4177624544
+        , "to":4177653184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4177992032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178509984
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178515536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178520400
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178525792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178531008
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178520400
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4177992032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178509984
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178531008
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178546368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178546368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178549232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178549232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178554544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177624544
+        , "to":4178554544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4177992032
+        , "to":4178511648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4177992032
+        , "to":4177992032
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"E_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4177624544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4177653184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4177992032
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4178520400
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4178531008
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4178546368
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4178549232
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4178552096
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178493872
+        , "to":4178554544
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"512"
+          }
+        ]
+      }
+      , {
+        "from":4178509984
+        , "to":4178511648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178509984
+        , "to":4178521376
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178509984
+        , "to":4178532336
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178511648
+        , "to":4178515536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4178515536
+        , "to":4177653184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178515536
+        , "to":4178530656
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178520400
+        , "to":4178521376
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4178520400
+        , "to":4178520400
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"F_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4178521376
+        , "to":4178525792
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4178525792
+        , "to":4177653184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178525792
+        , "to":4178530656
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178530656
+        , "to":4178531984
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178531008
+        , "to":4178531984
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178531984
+        , "to":4177653184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":4178531984
+        , "to":4178531008
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"G_local"
+            , "Start Cycle":"1"
+            , "Latency":"16"
+          }
+        ]
+      }
+      , {
+        "from":4178532336
+        , "to":4178509984
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'k'"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+      , {
+        "from":4178546368
+        , "to":4178546368
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+          }
+        ]
+      }
+      , {
+        "from":4178549232
+        , "to":4177653184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":4178549232
+        , "to":4178549232
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"1"
+            , "Latency":"17"
+          }
+        ]
+      }
+      , {
+        "from":4178552096
+        , "to":4178552096
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+          }
+        ]
+      }
+      , {
+        "from":4178554544
+        , "to":4177653184
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":4178554544
+        , "to":4178554544
+        , "reverse":1
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"G_local"
+            , "Start Cycle":"1"
+            , "Latency":"3"
+          }
+        ]
+      }
+    ]
+  }
+  , "4143560656":
+  {
+    "nodes":
+    [
+      {
+        "name":"Exit"
+        , "id":4177657520
+        , "subtype":"exit"
+        , "start":"2.00"
+        , "end":"33.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"2"
+            , "Latency":"3"
+            , "Exit FIFO Depth":"512"
+            , "Exit FIFO Width":"16"
+            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Entry"
+        , "id":4178577088
+        , "subtype":"entry"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"0"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"ST"
+        , "id":4178578144
+        , "subtype":"load/store"
+        , "start":"1.00"
+        , "end":"2.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Store"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"No"
+            , "Start Cycle":"1"
+            , "Latency":"1"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/3mm/kernel_3mm.cpp"
+              , "line":69
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":4178577088
+        , "to":4178578144
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"128"
+          }
+        ]
+      }
+      , {
+        "from":4178578144
+        , "to":4177657520
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+}

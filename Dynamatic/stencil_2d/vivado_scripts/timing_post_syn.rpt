@@ -1,0 +1,109 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 15:04:02 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : stencil_2d
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -2.762ns  (required time - arrival time)
+  Source:                 phiC_17/oehb1/full_reg_reg/C
+                            (rising edge-triggered cell FDCE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            MC_sol/counter1_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.511ns  (logic 1.750ns (26.878%)  route 4.761ns (73.122%))
+  Logic Levels:           18  (CARRY4=8 LUT2=1 LUT3=1 LUT5=2 LUT6=6)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.638ns = ( 4.638 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.672ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=1212, unset)         0.672     0.672    phiC_17/oehb1/clk
+                         FDCE                                         r  phiC_17/oehb1/full_reg_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDCE (Prop_fdce_C_Q)         0.209     0.881 f  phiC_17/oehb1/full_reg_reg/Q
+                         net (fo=19, unplaced)        0.717     1.598    phiC_17/oehb1/full_reg_reg_0
+                         LUT6 (Prop_lut6_I0_O)        0.153     1.751 r  phiC_17/oehb1/full_reg_i_3__15/O
+                         net (fo=22, unplaced)        0.402     2.153    forkC_27/generateBlocks[3].regblock/reg_value_reg_13
+                         LUT6 (Prop_lut6_I4_O)        0.053     2.206 r  forkC_27/generateBlocks[3].regblock/reg_value_i_2__23/O
+                         net (fo=35, unplaced)        0.413     2.619    forkC_27/generateBlocks[3].regblock/validArray_reg[0]
+                         LUT2 (Prop_lut2_I0_O)        0.053     2.672 r  forkC_27/generateBlocks[3].regblock/Memory_reg_0_15_0_0_i_3/O
+                         net (fo=2, unplaced)         0.351     3.023    phiC_19/oehb1/full_reg_reg_3
+                         LUT6 (Prop_lut6_I2_O)        0.053     3.076 r  phiC_19/oehb1/Memory_reg_0_15_0_0_i_1__0/O
+                         net (fo=20, unplaced)        0.400     3.476    phi_8/tehb1/phiC_19_dataOutArray_1
+                         LUT6 (Prop_lut6_I4_O)        0.053     3.529 r  phi_8/tehb1/Memory_reg_0_3_0_2_i_4/O
+                         net (fo=9, unplaced)         0.562     4.091    phi_8/tehb1/data_reg_reg[2]_0
+                         LUT5 (Prop_lut5_I0_O)        0.053     4.144 r  phi_8/tehb1/ready_i_1/O
+                         net (fo=4, unplaced)         0.364     4.508    phi_8/tehb1/branch_12_dataInArray_1
+                         LUT6 (Prop_lut6_I0_O)        0.053     4.561 f  phi_8/tehb1/sol_we0_INST_0_i_2/O
+                         net (fo=6, unplaced)         0.372     4.933    Buffer_30/fifo/branch_18_pValidArray_0
+                         LUT5 (Prop_lut5_I1_O)        0.053     4.986 f  Buffer_30/fifo/sol_we0_INST_0_i_1/O
+                         net (fo=2, unplaced)         0.351     5.337    Buffer_30/fifo/Empty_reg_2
+                         LUT6 (Prop_lut6_I0_O)        0.053     5.390 f  Buffer_30/fifo/sol_we0_INST_0/O
+                         net (fo=47, unplaced)        0.421     5.811    forkC_31/generateBlocks[0].regblock/counter1_reg[3]_0
+                         LUT3 (Prop_lut3_I2_O)        0.062     5.873 r  forkC_31/generateBlocks[0].regblock/Counter.counter[3]_i_2/O
+                         net (fo=1, unplaced)         0.000     5.873    MC_sol/DI[0]
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.322     6.195 r  MC_sol/Counter.counter_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.008     6.203    MC_sol/Counter.counter_reg[3]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.263 r  MC_sol/Counter.counter_reg[7]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     6.263    MC_sol/Counter.counter_reg[7]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.323 r  MC_sol/Counter.counter_reg[11]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     6.323    MC_sol/Counter.counter_reg[11]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.383 r  MC_sol/Counter.counter_reg[15]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     6.383    MC_sol/Counter.counter_reg[15]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.443 r  MC_sol/Counter.counter_reg[19]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     6.443    MC_sol/Counter.counter_reg[19]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.503 r  MC_sol/Counter.counter_reg[23]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     6.503    MC_sol/Counter.counter_reg[23]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.563 r  MC_sol/Counter.counter_reg[27]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     6.563    MC_sol/Counter.counter_reg[27]_i_1_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.220     6.783 r  MC_sol/Counter.counter_reg[31]_i_1/O[1]
+                         net (fo=2, unplaced)         0.400     7.183    MC_sol/counter[29]
+                         FDRE                                         r  MC_sol/counter1_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clk (IN)
+                         net (fo=1212, unset)         0.638     4.638    MC_sol/clk
+                         FDRE                                         r  MC_sol/counter1_reg[29]/C
+                         clock pessimism              0.000     4.638    
+                         clock uncertainty           -0.035     4.603    
+                         FDRE (Setup_fdre_C_D)       -0.182     4.421    MC_sol/counter1_reg[29]
+  -------------------------------------------------------------------
+                         required time                          4.421    
+                         arrival time                          -7.183    
+  -------------------------------------------------------------------
+                         slack                                 -2.762    
+
+
+
+

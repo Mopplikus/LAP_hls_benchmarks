@@ -1,0 +1,177 @@
+Fitter Retime Stage Report for jacobi_1d
+Thu Apr 27 19:23:29 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Hyper-Retimer Settings
+  3. Reset Sequence Requirement
+  4. Retiming Limit Summary
+  5. Critical Chain Summary for Clock Domain clk
+  6. Retime Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------+
+; Hyper-Retimer Settings                           ;
++------------------------+---------+---------------+
+; Option                 ; Setting ; Default Value ;
++------------------------+---------+---------------+
+; Enable Auto-Pipelining ; On      ; On            ;
++------------------------+---------+---------------+
+
+
++------------------------------------------+
+; Reset Sequence Requirement               ;
++------------+-----------------------------+
+; Clock Name ; Number of additional cycles ;
++------------+-----------------------------+
+; clk        ; 4                           ;
++------------+-----------------------------+
+Note: Due to retiming optimizations, a clock domain may require a longer reset sequence to ensure correct functionality.  The table above indicates the minimum number of additional reset sequence cycles needed for each clock domain.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Retiming Limit Summary                                                                                                                                                        ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Clock Transfer   ; Limiting Reason        ; Recommendation                                                                                                                    ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Clock Domain clk ; Insufficient Registers ; See the Fast Forward Timing Closure Recommendations report for step-by-step suggestions for RTL changes and estimated performance ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+
+Critical Chain Summary for Clock Domain clk
+===============================================================================
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendations for Critical Chain                                                                                                                                                                                                                               ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendation                                                                                                                                                                                                                                                   ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; The critical chain is limited by: Insufficient Registers                                                                                                                                                                                                         ;
+;                                                                                                                                                                                                                                                                  ;
+; Reduce the delay of 'Long Paths' in the chain                                                                                                                                                                                                                    ;
+;   or insert more pipeline stages for 'Long Paths' in the chain                                                                                                                                                                                                   ;
+;   or remove retiming restrictions                                                                                                                                                                                                                                ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270744844'>Insufficient Registers</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information.     ;
+;                                                                                                                                                                                                                                                                  ;
+; Add additional pipeline stages at Register #1:                                                                                                                                                                                                                   ;
+;  c_LSQ_B|storeQ|allocatedEntries_9                                                                                                                                                                                                                               ;
+;  Add additional pipeline stages along these paths BEFORE the destinations                                                                                                                                                                                        ;
+;   from rst to c_LSQ_B|storeQ|allocatedEntries_9                                                                                                                                                                                                                  ;
+;                                                                                                                                                                                                                                                                  ;
+; Add additional pipeline stages at Register #2:                                                                                                                                                                                                                   ;
+;  c_LSQ_B|storeQ|dataQ_7[30]                                                                                                                                                                                                                                      ;
+;  Add additional pipeline stages along these paths BEFORE the destinations                                                                                                                                                                                        ;
+;   from rst to bus c_LSQ_B|storeQ|dataQ_7[31:0]                                                                                                                                                                                                                   ;
+;                                                                                                                                                                                                                                                                  ;
+; Retiming Restriction: Metastability Synchronizer                                                                                                                                                                                                                 ;
+;  Add additional pipeline stages to isolate the register(s), to allow retiming optimizations to improve performance                                                                                                                                               ;
+;  or set Synchronization Register Chain Length to 1 if evaluating IP module performance                                                                                                                                                                           ;
+;   c_LSQ_B|storeQ|allocatedEntries_9                                                                                                                                                                                                                              ;
+;   c_LSQ_B|storeQ|dataQ_7[30]                                                                                                                                                                                                                                     ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#esc1445881961208'>Hyper-Pipelining</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information.           ;
+;                                                                                                                                                                                                                                                                  ;
+; The critical chain has Domain Boundary Entry/Exit Constraint                                                                                                                                                                                                     ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270804124'>Domain Boundary Entry/Exit</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information. ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Chain Details                                                                                                                               ;
++-----------------------+------------------------------+-------------+---------------------------------------------------------------------------------+
+; Path Info             ; Register                     ; Register ID ; Element                                                                         ;
++-----------------------+------------------------------+-------------+---------------------------------------------------------------------------------+
+; Domain Boundary Entry ; REG (Metastability required) ; #1          ; c_LSQ_B|storeQ|allocatedEntries_9                                               ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|allocatedEntries_9|q                                             ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|allocatedEntries_9~la_lab/laboutt[10]                            ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|allocatedEntries_9~LAB_RE_X157_Y149_N0_I104                      ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|allocatedEntries_9~R2_X156_Y149_N0_I42                           ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|allocatedEntries_9~C2_X155_Y149_N0_I20                           ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|allocatedEntries_9~LOCAL_INTERCONNECT_X156_Y150_N0_I38           ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|allocatedEntries_9~LAB_RE_X156_Y150_N0_I27                       ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~1|dataa                                            ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~1|combout                                          ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~1~_LAB_RE_X156_Y150_N0_I106                        ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~1~_LOCAL_INTERCONNECT_X156_Y150_N0_I11             ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|io_storeEmpty~1~_LAB_RE_X156_Y150_N0_I11                         ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~5_RESYN_9|dataa                                    ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~5_RESYN_9|combout                                  ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~5_RESYN_9~la_lab/laboutt[4]                        ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~5_RESYN_9~_LAB_RE_X156_Y150_N0_I98                 ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|io_storeEmpty~5_RESYN_9~_C3_X156_Y150_N0_I14                     ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|io_storeEmpty~5_RESYN_9~_LOCAL_INTERCONNECT_X157_Y151_N0_I30     ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|io_storeEmpty~5_RESYN_9~_LAB_RE_X157_Y151_N0_I18                 ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|GA|_T_303~0|datac                                                       ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|GA|_T_303~0|combout                                                     ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|GA|_T_303~0~_LAB_RE_X157_Y151_N0_I102                                   ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|GA|_T_303~0~_C4_X157_Y151_N0_I21                                        ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|GA|_T_303~0~_R2_X156_Y155_N0_I42                                        ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|GA|_T_303~0~_R2_X154_Y155_N0_I42                                        ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|GA|_T_303~0~_R24_C16_INTERCONNECT_DRIVER_X153_Y155_N0_I1                ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|GA|_T_303~0~_R24_X130_Y155_N0_I69                                       ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|GA|_T_303~0~_R2_X130_Y155_N0_I14                                        ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|GA|_T_303~0~_LOCAL_INTERCONNECT_X131_Y155_N0_I59                        ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|GA|_T_303~0~_LAB_RE_X131_Y155_N0_I49                                    ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|initBits_15~0xsyn_Duplicate|datad                                ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|initBits_15~0xsyn_Duplicate|combout                              ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|initBits_15~0xsyn_Duplicate~_LAB_RE_X131_Y155_N0_I118            ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|initBits_15~0xsyn_Duplicate~_C2_X131_Y155_N0_I2                  ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|initBits_15~0xsyn_Duplicate~_LOCAL_INTERCONNECT_X131_Y157_N0_I17 ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|initBits_15~0xsyn_Duplicate~_LAB_RE_X131_Y157_N0_I9              ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|i19445~0|datad                                                   ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|i19445~0|combout                                                 ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|i19445~0~la_lab/laboutt[5]                                       ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|i19445~0~_LAB_RE_X131_Y157_N0_I99                                ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|i19445~0~_R2_X129_Y157_N0_I40                                    ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|i19445~0~_C4_X129_Y153_N0_I49                                    ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|i19445~0~_C4_X129_Y149_N0_I49                                    ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|i19445~0~_R4_X130_Y150_N0_I17                                    ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|i19445~0~_LOCAL_INTERCONNECT_X131_Y150_N0_I31                    ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|i19445~0~_LAB_RE_X131_Y150_N0_I86                                ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; c_LSQ_B|storeQ|dataQ_7[30]~xbothalf/xale1/xlut/xreghipi/xcebot0/hipi_out        ;
+; Long Path (Critical)  ;                              ;             ; c_LSQ_B|storeQ|dataQ_7[30]|ena                                                  ;
+; Domain Boundary Exit  ; REG (Metastability required) ; #2          ; c_LSQ_B|storeQ|dataQ_7[30]                                                      ;
++-----------------------+------------------------------+-------------+---------------------------------------------------------------------------------+
+
+
+
++-----------------+
+; Retime Messages ;
++-----------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 40 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+    Info: Processing started: Thu Apr 27 19:06:49 2023
+    Info: System process ID: 93407
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off jacobi_1d -c jacobi_1d
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = jacobi_1d
+Info: Revision = jacobi_1d
+Info (17966): Starting Hyper-Retimer operations.
+Info (17968): Completed Hyper-Retimer operations.
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:09
+
+

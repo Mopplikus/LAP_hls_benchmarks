@@ -18,5 +18,3 @@ project addfile ../VHDL_SRC/LSQ_A.v
 project calculateorder
 project compileall
 eval vsim gaussian_tb
-run -all
-exit

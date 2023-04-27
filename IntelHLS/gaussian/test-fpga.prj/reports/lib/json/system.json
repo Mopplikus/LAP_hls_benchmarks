@@ -1,0 +1,116 @@
+{
+  "nodes":
+  [
+    {
+      "name":"gaussian"
+      , "id":1373512392
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"Stream Read"
+          , "id":1373633088
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"gaussian.B1.start"
+              , "Width":"64 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":7
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Write"
+          , "id":1373670512
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"gaussian.B3"
+              , "Width":"1 bit"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"/home/dirren/IntelHLS/gaussian/gaussian.cpp"
+                , "line":44
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"call.gaussian"
+      , "id":1373034352
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"64 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"64 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+    , {
+      "name":"return.gaussian"
+      , "id":1373055136
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":1373034352
+      , "to":1373633088
+    }
+    , {
+      "from":1373670512
+      , "to":1373055136
+    }
+    , {
+      "from":1373633088
+      , "to":1373670512
+    }
+  ]
+}

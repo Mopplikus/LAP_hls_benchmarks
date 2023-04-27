@@ -1,0 +1,790 @@
+{
+  "3836731480":
+  {
+    "nodes":
+    [
+      {
+        "name":"matvec.B0.runOnce"
+        , "id":3836810656
+        , "start":"0"
+        , "end":"17"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"?"
+            , "id":3840136608
+            , "start":"0"
+            , "end":"17"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Feedback Read"
+                , "Variable":"Unknown variable"
+                , "Start Cycle":"0"
+                , "Latency":"17"
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"matvec.B1.start"
+        , "id":3836810800
+        , "start":"17"
+        , "end":"76"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 0"
+            , "id":3839509200
+            , "start":"17"
+            , "end":"52"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_wt_entry_matvecs_c0_enter4_matvec0"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"35"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Exit"
+                , "id":3839963248
+                , "start":"21"
+                , "end":"52"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"4"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"16"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+          , {
+            "name":"RD"
+            , "id":3839717248
+            , "start":"52"
+            , "end":"76"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Read"
+                , "Width":"192 bits"
+                , "Depth":"0"
+                , "Stream Name":"call.matvec"
+                , "Stall-free":"No"
+                , "Start Cycle":"35"
+                , "Latency":"24"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                  , "line":9
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"matvec.B2"
+        , "id":3836756608
+        , "start":"76"
+        , "end":"111"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 1"
+            , "id":3839788352
+            , "start":"76"
+            , "end":"111"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_cond4_preheader_matvecs_c0_enter215_matvec1"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"35"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"'i'"
+                , "id":3848638608
+                , "start":"80"
+                , "end":"80"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'i'"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":14
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":3848639584
+                , "start":"80"
+                , "end":"80"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":27
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":3841208384
+                , "start":"80"
+                , "end":"111"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"4"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"64"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"matvec.B3"
+        , "id":3836756688
+        , "start":"111"
+        , "end":"160"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 2"
+            , "id":3840098912
+            , "start":"111"
+            , "end":"160"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_body6_matvecs_c0_enter266_matvec3"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"49"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Out_local"
+                , "id":3848755072
+                , "start":"129"
+                , "end":"129"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"Out_local"
+                    , "Start Cycle":"18"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":15
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"'j'"
+                , "id":3846468080
+                , "start":"117"
+                , "end":"117"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"'j'"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":14
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":3848756400
+                , "start":"117"
+                , "end":"117"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Constant Operand":"1 (0x1)"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":30
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":3846469408
+                , "start":"117"
+                , "end":"117"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"6"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":3849562992
+                , "start":"117"
+                , "end":"121"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"?"
+                , "id":3846466752
+                , "start":"115"
+                , "end":"115"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Feedback Read"
+                    , "Variable":"Unknown variable"
+                    , "Start Cycle":"4"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":14
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Ptr. Comp."
+                , "id":3849567504
+                , "start":"115"
+                , "end":"117"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"4"
+                    , "Latency":"2"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"LD"
+                , "id":3849571392
+                , "start":"117"
+                , "end":"121"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Load"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"6"
+                    , "Latency":"4"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"*"
+                , "id":3848754720
+                , "start":"121"
+                , "end":"128"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Multiply"
+                    , "Start Cycle":"10"
+                    , "Latency":"7"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"+"
+                , "id":3848756048
+                , "start":"129"
+                , "end":"129"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"32-bit Integer Add"
+                    , "Start Cycle":"18"
+                    , "Latency":"0"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":31
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":3849579536
+                , "start":"129"
+                , "end":"160"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"18"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"192"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"matvec.B4"
+        , "id":3836756768
+        , "start":"160"
+        , "end":"193"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"Cluster 3"
+            , "id":3840666736
+            , "start":"160"
+            , "end":"193"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Name":"i_sfc_s_c0_in_for_end_matvecs_c0_enter37_matvec2"
+                , "Cluster Type":"Stall-Free"
+                , "Cluster Start Cycle":"0"
+                , "Cluster Latency":"33"
+              }
+            ]
+            , "type":"cluster"
+            , "children":
+            [
+              {
+                "name":"Ptr. Comp."
+                , "id":3848750976
+                , "start":"160"
+                , "end":"161"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Pointer Computation"
+                    , "Start Cycle":"0"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":33
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"ST"
+                , "id":3849256480
+                , "start":"161"
+                , "end":"162"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Instruction":"Store"
+                    , "Width":"32 bits"
+                    , "LSU Style":"Pipelined never-stall"
+                    , "Stall-free":"Yes"
+                    , "Global Memory":"No"
+                    , "Start Cycle":"1"
+                    , "Latency":"1"
+                  }
+                ]
+                , "debug":
+                [
+                  [
+                    {
+                      "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                      , "line":33
+                    }
+                  ]
+                ]
+                , "type":"inst"
+              }
+              , {
+                "name":"Exit"
+                , "id":3849712816
+                , "start":"162"
+                , "end":"193"
+                , "details":
+                [
+                  {
+                    "type":"table"
+                    , "Start Cycle":"2"
+                    , "Latency":"3"
+                    , "Exit FIFO Depth":"512"
+                    , "Exit FIFO Width":"8"
+                    , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+                  }
+                ]
+                , "type":"inst"
+              }
+            ]
+          }
+        ]
+      }
+      , {
+        "name":"matvec.B5"
+        , "id":3836756848
+        , "start":"193"
+        , "end":"217"
+        , "details":
+        [
+          {
+            "type":"table"
+          }
+        ]
+        , "type":"bb"
+        , "children":
+        [
+          {
+            "name":"WR"
+            , "id":3850405312
+            , "start":"193"
+            , "end":"217"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Instruction":"Stream Write"
+                , "Width":"1 bit"
+                , "Depth":"0"
+                , "Stream Name":"return.matvec"
+                , "Stall-free":"No"
+                , "Start Cycle":"0"
+                , "Latency":"24"
+              }
+            ]
+            , "debug":
+            [
+              [
+                {
+                  "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+                  , "line":40
+                }
+              ]
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":3836756768
+        , "to":3836756848
+      }
+      , {
+        "from":3836756768
+        , "to":3836756608
+      }
+      , {
+        "from":3848756048
+        , "to":3849579536
+      }
+      , {
+        "from":3849567504
+        , "to":3849571392
+      }
+      , {
+        "from":3846466752
+        , "to":3849567504
+      }
+      , {
+        "from":3846466752
+        , "to":3849579536
+      }
+      , {
+        "from":3848750976
+        , "to":3849256480
+      }
+      , {
+        "from":3846469408
+        , "to":3849562992
+      }
+      , {
+        "from":3848754720
+        , "to":3848756048
+      }
+      , {
+        "from":3849562992
+        , "to":3848754720
+      }
+      , {
+        "from":3846468080
+        , "to":3846469408
+      }
+      , {
+        "from":3846468080
+        , "to":3848756400
+      }
+      , {
+        "from":3846468080
+        , "to":3849567504
+      }
+      , {
+        "from":3836810656
+        , "to":3836810800
+      }
+      , {
+        "from":3836810800
+        , "to":3836756608
+      }
+      , {
+        "from":3836756608
+        , "to":3836756688
+      }
+      , {
+        "from":3836756848
+        , "to":3836810800
+      }
+      , {
+        "from":3848638608
+        , "to":3841208384
+      }
+      , {
+        "from":3848638608
+        , "to":3848639584
+      }
+      , {
+        "from":3849571392
+        , "to":3848754720
+      }
+      , {
+        "from":3836756688
+        , "to":3836756768
+      }
+      , {
+        "from":3848755072
+        , "to":3848756048
+      }
+    ]
+  }
+}

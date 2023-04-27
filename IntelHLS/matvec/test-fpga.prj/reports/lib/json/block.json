@@ -1,0 +1,466 @@
+{
+  "3836756608":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 1"
+        , "id":3839788352
+        , "start":"0.00"
+        , "end":"35.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_cond4_preheader_matvecs_c0_enter215_matvec1"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"0"
+            , "Cluster Latency":"35"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":3839795104
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"0"
+                , "Cluster Logic Latency":"4"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":3839951856
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"4"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"512"
+                , "Exit FIFO Width":"64"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":3839795104
+        , "to":3839951856
+      }
+    ]
+  }
+  , "3836756688":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 2"
+        , "id":3840098912
+        , "start":"0.00"
+        , "end":"49.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_body6_matvecs_c0_enter266_matvec3"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"0"
+            , "Cluster Latency":"49"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":3840105424
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"0"
+                , "Cluster Logic Latency":"18"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":3840502752
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"18"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"512"
+                , "Exit FIFO Width":"192"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Loop Input"
+        , "id":3842681360
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Input"
+            , "Preceding Blocks":"matvec.B3, matvec.B2"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":3840105424
+        , "to":3840502752
+      }
+      , {
+        "from":3842681360
+        , "to":3840105424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3842681360
+        , "to":3840105424
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "3836756768":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 3"
+        , "id":3840666736
+        , "start":"0.00"
+        , "end":"33.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_for_end_matvecs_c0_enter37_matvec2"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"0"
+            , "Cluster Latency":"33"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":3840673616
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"0"
+                , "Cluster Logic Latency":"2"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":3840741904
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"2"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"512"
+                , "Exit FIFO Width":"8"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"Input"
+        , "id":3839714656
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Input"
+            , "Preceding Blocks":"matvec.B3"
+          }
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":3840673616
+        , "to":3840741904
+      }
+      , {
+        "from":3839714656
+        , "to":3840673616
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":3839714656
+        , "to":3840673616
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+    ]
+  }
+  , "3836756848":
+  {
+    "nodes":
+    [
+      {
+        "name":"WR"
+        , "id":3850405312
+        , "start":"0.00"
+        , "end":"24.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Stream Write"
+            , "Width":"1 bit"
+            , "Depth":"0"
+            , "Stream Name":"return.matvec"
+            , "Stall-free":"No"
+            , "Start Cycle":"0"
+            , "Latency":"24"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+              , "line":40
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+    ]
+  }
+  , "3836810656":
+  {
+    "nodes":
+    [
+      {
+        "name":"?"
+        , "id":3840136608
+        , "start":"0.00"
+        , "end":"17.00"
+        , "subtype":"pop"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Read"
+            , "Variable":"Unknown variable"
+            , "Start Cycle":"0"
+            , "Latency":"17"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Feedback"
+        , "id":3840293664
+        , "start":"0.00"
+        , "end":"17.00"
+        , "subtype":"push"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Feedback Write"
+            , "Variable":"Unknown variable"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"1"
+            , "Start Cycle":"0"
+            , "Latency":"17"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+              , "line":9
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":3840293664
+        , "to":3840136608
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+    ]
+  }
+  , "3836810800":
+  {
+    "nodes":
+    [
+      {
+        "name":"Cluster 0"
+        , "id":3839509200
+        , "start":"0.00"
+        , "end":"35.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Cluster Name":"i_sfc_s_c0_in_wt_entry_matvecs_c0_enter4_matvec0"
+            , "Cluster Type":"Stall-Free"
+            , "Cluster Start Cycle":"0"
+            , "Cluster Latency":"35"
+          }
+        ]
+        , "type":"cluster"
+        , "children":
+        [
+          {
+            "name":"Logic"
+            , "id":3839516240
+            , "subtype":"entry"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Cluster Logic Start Cycle":"0"
+                , "Cluster Logic Latency":"4"
+              }
+            ]
+            , "type":"inst"
+          }
+          , {
+            "name":"Exit"
+            , "id":3839635264
+            , "subtype":"exit"
+            , "details":
+            [
+              {
+                "type":"table"
+                , "Start Cycle":"4"
+                , "Latency":"3"
+                , "Exit FIFO Depth":"512"
+                , "Exit FIFO Width":"16"
+                , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
+              }
+            ]
+            , "type":"inst"
+          }
+        ]
+      }
+      , {
+        "name":"RD"
+        , "id":3839717248
+        , "start":"35.00"
+        , "end":"59.00"
+        , "subtype":"default"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Stream Read"
+            , "Width":"192 bits"
+            , "Depth":"0"
+            , "Stream Name":"call.matvec"
+            , "Stall-free":"No"
+            , "Start Cycle":"35"
+            , "Latency":"24"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/matvec/matvec.cpp"
+              , "line":9
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+    ]
+    , "links":
+    [
+      {
+        "from":3839516240
+        , "to":3839635264
+      }
+    ]
+  }
+}

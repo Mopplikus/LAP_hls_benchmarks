@@ -1,0 +1,765 @@
+Fitter Route Stage Report for covariance
+Thu Apr 27 19:33:53 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Delay Chain Summary
+  3. Routing Usage Summary
+  4. Route Messages
+  5. Global Router Wire Utilization Map
+  6. Peak Wire Demand Summary
+  7. Peak Wire Demand Details
+  8. Peak Total Grid Crossings
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                                                                ;
++-------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; Name              ; Pin Type ; Input Delay Chain 0 ; Output Delay Chain ; OE Delay Chain ; IO_12_LANE Input Data Delay Chain ; IO_12_LANE Input Strobe Delay Chain ;
++-------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; start_in[0]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; start_ready       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[0]        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[1]        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[2]        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[3]        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[4]        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[5]        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_valid         ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[0]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[1]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[2]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[3]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[4]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[5]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[6]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[7]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[8]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[9]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[10] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[11] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[12] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[13] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[14] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[15] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[16] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[17] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[18] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[19] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[20] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[21] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[22] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[23] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[24] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[25] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[26] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[27] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[28] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[29] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[30] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address0[31] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_ce0          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_we0          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[0]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[1]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[2]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[3]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[4]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[5]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[6]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[7]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[8]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[9]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[10]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[11]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[12]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[13]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[14]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[15]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[16]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[17]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[18]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[19]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[20]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[21]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[22]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[23]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[24]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[25]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[26]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[27]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[28]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[29]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[30]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout0[31]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_din0[0]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[1]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[2]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[3]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[4]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[5]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[6]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[7]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[8]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[9]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[10]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[11]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[12]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[13]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[14]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[15]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[16]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[17]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[18]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[19]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[20]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[21]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[22]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[23]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[24]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[25]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[26]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[27]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[28]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[29]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[30]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_din0[31]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; data_address1[0]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[1]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[2]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[3]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[4]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[5]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[6]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[7]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[8]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[9]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[10] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[11] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[12] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[13] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[14] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[15] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[16] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[17] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[18] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[19] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[20] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[21] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[22] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[23] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[24] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[25] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[26] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[27] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[28] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[29] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[30] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_address1[31] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_ce1          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_we1          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[0]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[1]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[2]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[3]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[4]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[5]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[6]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[7]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[8]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[9]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[10]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[11]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[12]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[13]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[14]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[15]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[16]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[17]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[18]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[19]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[20]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[21]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[22]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[23]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[24]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[25]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[26]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[27]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[28]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[29]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[30]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; data_dout1[31]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[0]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[1]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[2]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[3]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[4]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[5]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[6]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[7]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[8]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[9]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[10]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[11]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[12]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[13]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[14]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[15]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[16]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[17]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[18]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[19]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[20]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[21]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[22]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[23]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[24]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[25]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[26]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[27]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[28]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[29]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[30]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address0[31]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_ce0           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_we0           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[0]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[1]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[2]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[3]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[4]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[5]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[6]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[7]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[8]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[9]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[10]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[11]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[12]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[13]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[14]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[15]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[16]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[17]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[18]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[19]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[20]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[21]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[22]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[23]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[24]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[25]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[26]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[27]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[28]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[29]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[30]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout0[31]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_din0[0]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[1]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[2]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[3]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[4]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[5]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[6]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[7]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[8]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[9]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[10]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[11]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[12]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[13]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[14]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[15]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[16]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[17]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[18]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[19]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[20]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[21]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[22]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[23]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[24]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[25]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[26]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[27]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[28]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[29]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[30]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din0[31]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_address1[0]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[1]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[2]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[3]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[4]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[5]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[6]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[7]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[8]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[9]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[10]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[11]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[12]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[13]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[14]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[15]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[16]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[17]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[18]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[19]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[20]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[21]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[22]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[23]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[24]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[25]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[26]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[27]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[28]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[29]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[30]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_address1[31]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_ce1           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_we1           ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[0]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[1]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[2]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[3]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[4]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[5]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[6]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[7]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[8]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[9]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[10]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[11]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[12]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[13]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[14]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[15]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[16]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[17]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[18]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[19]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[20]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[21]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[22]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[23]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[24]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[25]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[26]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[27]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[28]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[29]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[30]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_dout1[31]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; cov_din1[0]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[1]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[2]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[3]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[4]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[5]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[6]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[7]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[8]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[9]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[10]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[11]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[12]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[13]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[14]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[15]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[16]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[17]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[18]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[19]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[20]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[21]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[22]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[23]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[24]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[25]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[26]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[27]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[28]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[29]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[30]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; cov_din1[31]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; clk               ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; rst               ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; end_ready         ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[0]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[1]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[2]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[3]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[4]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[5]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[6]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[7]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[8]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[9]      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[10]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[11]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[12]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[13]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[14]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[15]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[16]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[17]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[18]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[19]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[20]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[21]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[22]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[23]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[24]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[25]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[26]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[27]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[28]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[29]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[30]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; data_din1[31]     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; start_valid       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
++-------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+
+
++--------------------------------------------------------------+
+; Routing Usage Summary                                        ;
++--------------------------------+-----------------------------+
+; Routing Resource Type          ; Usage                       ;
++--------------------------------+-----------------------------+
+; Block Input Muxes              ; 113 / 675,444 ( < 1 % )     ;
+; Block interconnects            ; 5,198 / 9,132,912 ( < 1 % ) ;
+; C16 interconnects              ; 12 / 226,512 ( < 1 % )      ;
+; C2 interconnects               ; 519 / 1,359,072 ( < 1 % )   ;
+; C3 interconnects               ; 1,136 / 2,758,032 ( < 1 % ) ;
+; C4 interconnects               ; 3,293 / 1,772,208 ( < 1 % ) ;
+; CLOCK_INVERTs                  ; 2 / 7,616 ( < 1 % )         ;
+; DCM_muxes                      ; 2 / 1,632 ( < 1 % )         ;
+; Direct links                   ; 2,280 / 9,132,912 ( < 1 % ) ;
+; GAP Interconnects              ; 288 / 267,192 ( < 1 % )     ;
+; GAPs                           ; 0 / 29,304 ( 0 % )          ;
+; HIO Buffers                    ; 35 / 209,664 ( < 1 % )      ;
+; Horizontal Buffers             ; 180 / 176,364 ( < 1 % )     ;
+; Horizontal_clock_segment_muxes ; 4 / 7,488 ( < 1 % )         ;
+; Programmable Inverts           ; 111 / 318,960 ( < 1 % )     ;
+; R10 interconnects              ; 1,844 / 2,456,208 ( < 1 % ) ;
+; R2 interconnects               ; 691 / 2,265,120 ( < 1 % )   ;
+; R24 interconnects              ; 50 / 293,040 ( < 1 % )      ;
+; R24/C16 interconnect drivers   ; 30 / 453,024 ( < 1 % )      ;
+; R4 interconnects               ; 1,103 / 3,248,028 ( < 1 % ) ;
+; Row Clock Tap-Offs             ; 316 / 725,544 ( < 1 % )     ;
+; Switchbox_clock_muxes          ; 29 / 41,600 ( < 1 % )       ;
+; Vertical_seam_tap_muxes        ; 20 / 22,848 ( < 1 % )       ;
++--------------------------------+-----------------------------+
+
+
++----------------+
+; Route Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 40 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+    Info: Processing started: Thu Apr 27 19:25:16 2023
+    Info: System process ID: 161997
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off covariance -c covariance
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = covariance
+Info: Revision = covariance
+Info (170193): Fitter routing operations beginning
+Info (20215): Router estimated peak short interconnect demand : 5% of left directional wire in region X88_Y136 to X95_Y143
+    Info (20265): Estimated peak short right directional wire demand : 4% in region X96_Y136 to X103_Y143
+    Info (20265): Estimated peak short left directional wire demand : 5% in region X88_Y136 to X95_Y143
+    Info (20265): Estimated peak short up directional wire demand : 0% in region X232_Y376 to X239_Y383
+    Info (20265): Estimated peak short down directional wire demand : 3% in region X56_Y144 to X63_Y151
+Info (20215): Router estimated peak long high speed interconnect demand : 61% of right directional wire in region X72_Y136 to X79_Y143
+    Info (20265): Estimated peak long high speed right directional wire demand : 61% in region X72_Y136 to X79_Y143
+    Info (20265): Estimated peak long high speed left directional wire demand : 17% in region X72_Y136 to X79_Y143
+    Info (20265): Estimated peak long high speed up directional wire demand : 37% in region X232_Y136 to X239_Y143
+    Info (20265): Estimated peak long high speed down directional wire demand : 26% in region X56_Y168 to X63_Y175
+    Info (20315): Note that the router may use short wires to implement long connections at higher delay
+Info (170239): Router is attempting to preserve 0.06 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
+Info (11888): Total time spent on timing analysis during Routing is 0.33 seconds.
+Info (16607): Fitter routing operations ending: elapsed time is 00:01:52
+
+
+--------------------------------------
+; Global Router Wire Utilization Map ;
+--------------------------------------
+This report is unavailable in plain text report export.
+
+
++-------------------------------------------------------------------------------+
+; Peak Wire Demand Summary                                                      ;
++-----------------+-----------+-----------------------------------+-------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
++-----------------+-----------+-----------------------------------+-------------+
+; short           ; right     ; [(96, 136), (103, 143)]           ; 4.598 %     ;
+; short           ; left      ; [(88, 136), (95, 143)]            ; 5.048 %     ;
+; short           ; up        ; [(232, 376), (239, 383)]          ; 0.932 %     ;
+; short           ; down      ; [(56, 144), (63, 151)]            ; 3.023 %     ;
+; long high speed ; right     ; [(72, 136), (79, 143)]            ; 61.000 %    ;
+; long high speed ; left      ; [(72, 136), (79, 143)]            ; 17.857 %    ;
+; long high speed ; up        ; [(232, 136), (239, 143)]          ; 37.500 %    ;
+; long high speed ; down      ; [(56, 168), (63, 175)]            ; 26.562 %    ;
++-----------------+-----------+-----------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                                         ;
++-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                        ;
++-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------+
+; short           ; right     ; [(96, 136), (103, 143)]           ; 4.598 %     ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; load_39|Buffer_2|full_reg                        ;
+;     --          ;           ;                                   ;             ; load_43|Buffer_2|full_reg                        ;
+;     --          ;           ;                                   ;             ; mul_44|oehb|readyArray[0]                        ;
+;     --          ;           ;                                   ;             ; load_39|Buffer_2|reg_en~0                        ;
+;     --          ;           ;                                   ;             ; load_43|Buffer_2|reg_en~0                        ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|a_reg[31]                   ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|b_reg[31]                   ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|data|out_data[2][0]~90      ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|data|out_data[3][0]~115     ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|data|out_data[3][0]~67      ;
+; short           ; right     ; [(96, 136), (103, 143)]           ; 4.598 %     ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|data|out_data[2][0]~85      ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|data|out_data[2][0]~97      ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|b_reg[7]                    ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|b_reg[8]                    ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|b_reg[10]                   ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|b_reg[13]                   ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|b_reg[14]                   ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|b_reg[16]                   ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|a_reg[7]                    ;
+;     --          ;           ;                                   ;             ; mul_44|multiply_unit|a_reg[10]                   ;
+; short           ; left      ; [(88, 136), (95, 143)]            ; 5.048 %     ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; store_1|join_write|allPValidAndGate|reduce_nor_0 ;
+;     --          ;           ;                                   ;             ; forkC_50|generateBlocks[0].regblock|valid        ;
+;     --          ;           ;                                   ;             ; buffI_11|oehb1|validArray[0]                     ;
+;     --          ;           ;                                   ;             ; phi_28|tehb1|full_reg                            ;
+;     --          ;           ;                                   ;             ; add_56|add_0~4                                   ;
+;     --          ;           ;                                   ;             ; phiC_21|oehb1|full_reg                           ;
+;     --          ;           ;                                   ;             ; fork_12|generateBlocks[0].regblock|reg_value     ;
+;     --          ;           ;                                   ;             ; buffI_4|tehb1|data_reg[0]~RTM_3                  ;
+;     --          ;           ;                                   ;             ; buffI_4|tehb1|full_reg                           ;
+;     --          ;           ;                                   ;             ; buffI_11|oehb1|data_reg[0]                       ;
+; short           ; left      ; [(88, 136), (95, 143)]            ; 5.048 %     ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; store_1|join_write|allPValidAndGate|reduce_nor_0 ;
+;     --          ;           ;                                   ;             ; MC_cov|i201~22                                   ;
+;     --          ;           ;                                   ;             ; fork_12|genericOr|reduce_nor_0~0                 ;
+;     --          ;           ;                                   ;             ; MC_cov|add_0~21                                  ;
+;     --          ;           ;                                   ;             ; MC_cov|add_0~141                                 ;
+;     --          ;           ;                                   ;             ; MC_cov|add_0~36                                  ;
+;     --          ;           ;                                   ;             ; MC_cov|add_0~81                                  ;
+;     --          ;           ;                                   ;             ; MC_cov|add_0~91                                  ;
+;     --          ;           ;                                   ;             ; buffI_11|tehb1|data_reg[5]~RTM_16                ;
+;     --          ;           ;                                   ;             ; MC_cov|add_0~86                                  ;
+; short           ; up        ; [(232, 376), (239, 383)]          ; 0.932 %     ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[18]~17    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[22]~21    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[28]~27    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[31]~30    ;
+; short           ; up        ; [(232, 376), (239, 383)]          ; 0.932 %     ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[18]~17    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[22]~21    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[28]~27    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[31]~30    ;
+; short           ; down      ; [(56, 144), (63, 151)]            ; 3.023 %     ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; data_din1[2]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[5]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[6]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[7]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[10]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[16]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[17]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[20]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[26]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[28]~input                              ;
+; short           ; down      ; [(56, 144), (63, 151)]            ; 3.023 %     ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; data_din1[6]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[10]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[16]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[17]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[26]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[28]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[2]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[5]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[7]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[20]~input                              ;
+; long high speed ; right     ; [(72, 136), (79, 143)]            ; 61.000 %    ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; buffA_17|oehb1|validArray[0]                     ;
+;     --          ;           ;                                   ;             ; add_24|add_0~1                                   ;
+;     --          ;           ;                                   ;             ; add_21|add_0~0_RESYN                             ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|full_reg                            ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|priority|priority_out[0]~4  ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|adderssReady|ready[0]~0     ;
+;     --          ;           ;                                   ;             ; forkC_43|generateBlocks[1].regblock|valid~0      ;
+;     --          ;           ;                                   ;             ; buffI_9|oehb1|data_reg[3]                        ;
+;     --          ;           ;                                   ;             ; buffI_9|oehb1|data_reg[2]                        ;
+;     --          ;           ;                                   ;             ; branch_11|j|allPValidAndGate|reduce_nor_0~0      ;
+; long high speed ; right     ; [(72, 136), (79, 143)]            ; 61.000 %    ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[30]~30   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[31]~31   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[21]~21   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[26]~26   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[24]~24   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[19]~19   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[13]~13   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[18]~18   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[16]~16   ;
+;     --          ;           ;                                   ;             ; MC_data|write_arbiter|data|data_out_var[23]~23   ;
+; long high speed ; left      ; [(72, 136), (79, 143)]            ; 17.857 %    ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; phi_3|tehb_data_in[0]~0                          ;
+;     --          ;           ;                                   ;             ; load_8|Buffer_2|full_reg                         ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|data|sel_prev[1]            ;
+;     --          ;           ;                                   ;             ; add_10|add_0~0                                   ;
+;     --          ;           ;                                   ;             ; buffI_1|oehb1|reg_en                             ;
+;     --          ;           ;                                   ;             ; buffI_1|tehb1|reg_en~1                           ;
+;     --          ;           ;                                   ;             ; buffI_1|oehb1|readyArray[0]~0                    ;
+;     --          ;           ;                                   ;             ; load_8|Buffer_2|reg_en~0                         ;
+;     --          ;           ;                                   ;             ; load_8|Buffer_1|i8~0                             ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|reg_en~0                             ;
+; long high speed ; left      ; [(72, 136), (79, 143)]            ; 17.857 %    ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; phi_3|tehb_data_in[0]~0                          ;
+;     --          ;           ;                                   ;             ; load_8|Buffer_2|full_reg                         ;
+;     --          ;           ;                                   ;             ; MC_data|read_arbiter|data|sel_prev[1]            ;
+;     --          ;           ;                                   ;             ; add_10|add_0~0                                   ;
+;     --          ;           ;                                   ;             ; buffI_1|oehb1|reg_en                             ;
+;     --          ;           ;                                   ;             ; buffI_1|tehb1|reg_en~1                           ;
+;     --          ;           ;                                   ;             ; buffI_1|oehb1|readyArray[0]~0                    ;
+;     --          ;           ;                                   ;             ; load_8|Buffer_2|reg_en~0                         ;
+;     --          ;           ;                                   ;             ; load_8|Buffer_1|i8~0                             ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|reg_en~0                             ;
+; long high speed ; up        ; [(232, 136), (239, 143)]          ; 37.500 %    ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[20]~19    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[31]~30    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[30]~29    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[29]~28    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[28]~27    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[27]~26    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[26]~25    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[25]~24    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[24]~23    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[23]~22    ;
+; long high speed ; up        ; [(232, 136), (239, 143)]          ; 37.500 %    ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[29]~28    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[27]~26    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[23]~22    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[20]~19    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[31]~30    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[28]~27    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[18]~17    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[22]~21    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[30]~29    ;
+;     --          ;           ;                                   ;             ; MC_cov|write_arbiter|data|data_out_var[25]~24    ;
+; long high speed ; down      ; [(56, 168), (63, 175)]            ; 26.562 %    ;    High Routing Fan-Out                          ;
+;     --          ;           ;                                   ;             ; data_din1[0]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[30]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[29]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[28]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[27]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[26]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[25]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[24]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[23]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[22]~input                              ;
+; long high speed ; down      ; [(56, 168), (63, 175)]            ; 26.562 %    ;    Long Distance                                 ;
+;     --          ;           ;                                   ;             ; data_din1[1]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[12]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[9]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[8]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[4]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[3]~input                               ;
+;     --          ;           ;                                   ;             ; data_din1[22]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[14]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[19]~input                              ;
+;     --          ;           ;                                   ;             ; data_din1[18]~input                              ;
++-----------------+-----------+-----------------------------------+-------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Peak Total Grid Crossings                                                 ;
++----------------------------------------------------+----------------------+
+; Net Name                                           ; Total Grid Crossings ;
++----------------------------------------------------+----------------------+
+; MC_cov|write_arbiter|data|data_out_var[29]~28      ; 50                   ;
+; MC_cov|write_arbiter|data|data_out_var[27]~26      ; 50                   ;
+; MC_cov|write_arbiter|data|data_out_var[23]~22      ; 50                   ;
+; MC_cov|write_arbiter|data|data_out_var[20]~19      ; 50                   ;
+; MC_cov|write_arbiter|data|data_out_var[31]~30      ; 49                   ;
+; MC_cov|write_arbiter|data|data_out_var[28]~27      ; 49                   ;
+; MC_cov|write_arbiter|data|data_out_var[22]~21      ; 49                   ;
+; MC_cov|write_arbiter|data|data_out_var[18]~17      ; 49                   ;
+; MC_cov|write_arbiter|data|data_out_var[30]~29      ; 47                   ;
+; MC_cov|write_arbiter|data|data_out_var[25]~24      ; 47                   ;
+; MC_cov|write_arbiter|data|data_out_var[19]~18      ; 47                   ;
+; MC_cov|write_arbiter|data|data_out_var[26]~25      ; 46                   ;
+; MC_cov|write_arbiter|data|data_out_var[24]~23      ; 46                   ;
+; MC_cov|write_arbiter|data|data_out_var[21]~20      ; 46                   ;
+; MC_data|read_arbiter|read_en_var~0                 ; 32                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~33 ; 32                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~48 ; 32                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~53 ; 32                   ;
+; MC_data|write_arbiter|data|data_out_var[1]~1       ; 32                   ;
+; MC_data|write_arbiter|data|data_out_var[0]~0       ; 32                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~38 ; 31                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~63 ; 31                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~78 ; 31                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~83 ; 31                   ;
+; store_1|join_write|allPValidAndGate|reduce_nor_0   ; 30                   ;
+; MC_data|write_arbiter|data|data_out_var[3]~3       ; 30                   ;
+; MC_data|write_arbiter|data|data_out_var[2]~2       ; 30                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~68 ; 29                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~73 ; 29                   ;
+; MC_data|write_arbiter|data|data_out_var[31]~31     ; 29                   ;
+; MC_data|write_arbiter|data|data_out_var[30]~30     ; 29                   ;
+; MC_data|write_arbiter|data|data_out_var[26]~26     ; 29                   ;
+; MC_data|write_arbiter|data|data_out_var[24]~24     ; 29                   ;
+; MC_data|write_arbiter|data|data_out_var[21]~21     ; 29                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~43 ; 28                   ;
+; MC_data|read_arbiter|addressing|addr_out_var[0]~58 ; 28                   ;
+; MC_data|write_arbiter|data|data_out_var[22]~22     ; 28                   ;
+; MC_data|write_arbiter|data|data_out_var[19]~19     ; 28                   ;
+; MC_data|write_arbiter|data|data_out_var[18]~18     ; 28                   ;
+; MC_data|write_arbiter|data|data_out_var[16]~16     ; 28                   ;
+; MC_data|write_arbiter|data|data_out_var[13]~13     ; 28                   ;
+; MC_data|write_arbiter|data|data_out_var[11]~11     ; 27                   ;
+; MC_cov|write_arbiter|data|data_out_var[13]~12      ; 26                   ;
+; MC_cov|write_arbiter|data|data_out_var[11]~10      ; 26                   ;
+; MC_data|write_arbiter|data|data_out_var[27]~27     ; 26                   ;
+; MC_data|write_arbiter|data|data_out_var[25]~25     ; 26                   ;
+; MC_data|write_arbiter|data|data_out_var[23]~23     ; 26                   ;
+; MC_data|write_arbiter|data|data_out_var[10]~10     ; 26                   ;
+; MC_cov|write_arbiter|data|data_out_var[16]~15      ; 25                   ;
+; MC_cov|write_arbiter|data|data_out_var[14]~13      ; 25                   ;
++----------------------------------------------------+----------------------+
+
+

@@ -17,5 +17,3 @@ project addfile ../VHDL_SRC/single_argument.vhd
 project calculateorder
 project compileall
 eval vsim if_loop_1_tb
-run -all
-exit

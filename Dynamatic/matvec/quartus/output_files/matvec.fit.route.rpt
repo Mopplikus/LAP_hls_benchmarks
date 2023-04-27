@@ -1,0 +1,1080 @@
+Fitter Route Stage Report for matvec
+Thu Apr 27 19:34:52 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Delay Chain Summary
+  3. Routing Usage Summary
+  4. Route Messages
+  5. Estimated Delay Added for Hold Timing Summary
+  6. Estimated Delay Added for Hold Timing Details
+  7. Global Router Wire Utilization Map
+  8. Peak Wire Demand Summary
+  9. Peak Wire Demand Details
+ 10. Peak Total Grid Crossings
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Delay Chain Summary                                                                                                                                               ;
++------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; Name             ; Pin Type ; Input Delay Chain 0 ; Output Delay Chain ; OE Delay Chain ; IO_12_LANE Input Data Delay Chain ; IO_12_LANE Input Strobe Delay Chain ;
++------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+; start_in[0]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; start_ready      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[0]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[1]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[2]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[3]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[4]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[5]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[6]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[7]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[8]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[9]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[10]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[11]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[12]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[13]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[14]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[15]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[16]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[17]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[18]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[19]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[20]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[21]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[22]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[23]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[24]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[25]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[26]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[27]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[28]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[29]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[30]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_out[31]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; end_valid        ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[0]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[1]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[2]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[3]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[4]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[5]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[6]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[7]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[8]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[9]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[10]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[11]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[12]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[13]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[14]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[15]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[16]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[17]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[18]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[19]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[20]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[21]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[22]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[23]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[24]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[25]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[26]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[27]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[28]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[29]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[30]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address0[31]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_ce0            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_we0            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[0]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[1]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[2]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[3]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[4]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[5]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[6]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[7]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[8]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[9]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[10]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[11]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[12]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[13]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[14]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[15]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[16]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[17]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[18]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[19]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[20]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[21]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[22]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[23]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[24]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[25]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[26]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[27]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[28]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[29]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[30]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout0[31]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_din0[0]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[1]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[2]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[3]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[4]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[5]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[6]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[7]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[8]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[9]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[10]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[11]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[12]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[13]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[14]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[15]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[16]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[17]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[18]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[19]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[20]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[21]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[22]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[23]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[24]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[25]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[26]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[27]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[28]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[29]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[30]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_din0[31]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; V_address1[0]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[1]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[2]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[3]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[4]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[5]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[6]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[7]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[8]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[9]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[10]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[11]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[12]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[13]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[14]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[15]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[16]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[17]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[18]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[19]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[20]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[21]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[22]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[23]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[24]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[25]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[26]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[27]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[28]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[29]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[30]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_address1[31]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_ce1            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_we1            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[0]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[1]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[2]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[3]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[4]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[5]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[6]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[7]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[8]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[9]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[10]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[11]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[12]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[13]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[14]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[15]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[16]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[17]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[18]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[19]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[20]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[21]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[22]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[23]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[24]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[25]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[26]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[27]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[28]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[29]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[30]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; V_dout1[31]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[0]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[1]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[2]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[3]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[4]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[5]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[6]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[7]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[8]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[9]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[10]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[11]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[12]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[13]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[14]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[15]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[16]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[17]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[18]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[19]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[20]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[21]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[22]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[23]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[24]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[25]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[26]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[27]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[28]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[29]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[30]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address0[31]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_ce0            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_we0            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[0]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[1]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[2]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[3]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[4]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[5]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[6]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[7]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[8]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[9]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[10]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[11]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[12]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[13]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[14]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[15]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[16]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[17]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[18]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[19]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[20]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[21]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[22]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[23]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[24]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[25]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[26]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[27]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[28]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[29]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[30]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout0[31]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_din0[0]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[1]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[2]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[3]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[4]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[5]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[6]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[7]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[8]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[9]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[10]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[11]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[12]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[13]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[14]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[15]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[16]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[17]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[18]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[19]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[20]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[21]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[22]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[23]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[24]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[25]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[26]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[27]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[28]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[29]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[30]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_din0[31]       ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; M_address1[0]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[1]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[2]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[3]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[4]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[5]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[6]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[7]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[8]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[9]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[10]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[11]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[12]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[13]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[14]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[15]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[16]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[17]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[18]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[19]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[20]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[21]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[22]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[23]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[24]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[25]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[26]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[27]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[28]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[29]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[30]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_address1[31]   ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_ce1            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_we1            ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[0]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[1]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[2]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[3]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[4]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[5]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[6]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[7]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[8]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[9]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[10]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[11]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[12]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[13]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[14]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[15]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[16]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[17]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[18]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[19]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[20]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[21]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[22]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[23]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[24]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[25]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[26]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[27]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[28]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[29]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[30]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; M_dout1[31]      ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[0]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[1]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[2]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[3]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[4]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[5]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[6]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[7]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[8]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[9]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[10] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[11] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[12] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[13] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[14] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[15] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[16] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[17] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[18] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[19] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[20] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[21] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[22] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[23] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[24] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[25] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[26] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[27] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[28] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[29] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[30] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address0[31] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_ce0          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_we0          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[0]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[1]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[2]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[3]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[4]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[5]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[6]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[7]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[8]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[9]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[10]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[11]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[12]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[13]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[14]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[15]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[16]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[17]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[18]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[19]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[20]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[21]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[22]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[23]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[24]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[25]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[26]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[27]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[28]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[29]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[30]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout0[31]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_din0[0]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[1]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[2]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[3]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[4]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[5]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[6]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[7]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[8]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[9]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[10]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[11]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[12]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[13]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[14]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[15]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[16]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[17]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[18]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[19]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[20]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[21]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[22]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[23]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[24]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[25]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[26]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[27]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[28]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[29]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[30]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din0[31]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_address1[0]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[1]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[2]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[3]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[4]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[5]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[6]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[7]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[8]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[9]  ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[10] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[11] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[12] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[13] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[14] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[15] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[16] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[17] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[18] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[19] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[20] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[21] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[22] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[23] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[24] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[25] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[26] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[27] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[28] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[29] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[30] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_address1[31] ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_ce1          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_we1          ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[0]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[1]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[2]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[3]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[4]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[5]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[6]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[7]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[8]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[9]     ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[10]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[11]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[12]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[13]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[14]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[15]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[16]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[17]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[18]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[19]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[20]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[21]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[22]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[23]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[24]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[25]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[26]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[27]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[28]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[29]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[30]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_dout1[31]    ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
+; Out_din1[0]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[1]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[2]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[3]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[4]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[5]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[6]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[7]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[8]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[9]      ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[10]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[11]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[12]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[13]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[14]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[15]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[16]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[17]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[18]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[19]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[20]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[21]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[22]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[23]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[24]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[25]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[26]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[27]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[28]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[29]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[30]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; Out_din1[31]     ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
+; clk              ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; rst              ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; end_ready        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; start_valid      ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[0]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[1]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[2]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[3]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[4]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[5]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[6]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[7]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[8]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[9]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[10]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[11]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[12]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[13]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[14]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[15]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[16]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[17]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[0]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[1]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[2]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[3]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[4]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[5]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[6]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[7]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[8]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[9]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[10]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[11]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[12]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[13]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[14]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[15]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[16]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[17]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[18]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[19]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[20]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[21]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[22]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[23]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[24]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[25]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[26]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[27]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[28]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[29]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[30]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; V_din1[31]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[18]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[19]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[20]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[21]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[22]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[23]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[24]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[25]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[26]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[27]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[28]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[29]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[30]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; M_din1[31]       ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
++------------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
+
+
++--------------------------------------------------------------+
+; Routing Usage Summary                                        ;
++--------------------------------+-----------------------------+
+; Routing Resource Type          ; Usage                       ;
++--------------------------------+-----------------------------+
+; Block Input Muxes              ; 94 / 675,444 ( < 1 % )      ;
+; Block interconnects            ; 2,840 / 9,132,912 ( < 1 % ) ;
+; C16 interconnects              ; 0 / 226,512 ( 0 % )         ;
+; C2 interconnects               ; 311 / 1,359,072 ( < 1 % )   ;
+; C3 interconnects               ; 585 / 2,758,032 ( < 1 % )   ;
+; C4 interconnects               ; 2,786 / 1,772,208 ( < 1 % ) ;
+; CLOCK_INVERTs                  ; 20 / 7,616 ( < 1 % )        ;
+; DCM_muxes                      ; 2 / 1,632 ( < 1 % )         ;
+; Direct links                   ; 1,284 / 9,132,912 ( < 1 % ) ;
+; GAP Interconnects              ; 315 / 267,192 ( < 1 % )     ;
+; GAPs                           ; 0 / 29,304 ( 0 % )          ;
+; HIO Buffers                    ; 67 / 209,664 ( < 1 % )      ;
+; Horizontal Buffers             ; 162 / 176,364 ( < 1 % )     ;
+; Horizontal_clock_segment_muxes ; 28 / 7,488 ( < 1 % )        ;
+; Programmable Inverts           ; 93 / 318,960 ( < 1 % )      ;
+; R10 interconnects              ; 1,780 / 2,456,208 ( < 1 % ) ;
+; R2 interconnects               ; 413 / 2,265,120 ( < 1 % )   ;
+; R24 interconnects              ; 7 / 293,040 ( < 1 % )       ;
+; R24/C16 interconnect drivers   ; 7 / 453,024 ( < 1 % )       ;
+; R4 interconnects               ; 688 / 3,248,028 ( < 1 % )   ;
+; Row Clock Tap-Offs             ; 164 / 725,544 ( < 1 % )     ;
+; Switchbox_clock_muxes          ; 92 / 41,600 ( < 1 % )       ;
+; Vertical_seam_tap_muxes        ; 64 / 22,848 ( < 1 % )       ;
++--------------------------------+-----------------------------+
+
+
++----------------+
+; Route Messages ;
++----------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 40 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+    Info: Processing started: Thu Apr 27 19:26:32 2023
+    Info: System process ID: 169226
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off matvec -c matvec
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = matvec
+Info: Revision = matvec
+Info (170193): Fitter routing operations beginning
+Info (20215): Router estimated peak short interconnect demand : 4% of right directional wire in region X72_Y192 to X79_Y199
+    Info (20265): Estimated peak short right directional wire demand : 4% in region X72_Y192 to X79_Y199
+    Info (20265): Estimated peak short left directional wire demand : 2% in region X96_Y192 to X103_Y199
+    Info (20265): Estimated peak short up directional wire demand : 3% in region X56_Y184 to X63_Y191
+    Info (20265): Estimated peak short down directional wire demand : 1% in region X72_Y200 to X79_Y207
+Info (20215): Router estimated peak long high speed interconnect demand : 71% of up directional wire in region X88_Y192 to X95_Y199
+    Info (20265): Estimated peak long high speed right directional wire demand : 40% in region X72_Y200 to X79_Y207
+    Info (20265): Estimated peak long high speed left directional wire demand : 16% in region X80_Y200 to X87_Y207
+    Info (20265): Estimated peak long high speed up directional wire demand : 71% in region X88_Y192 to X95_Y199
+    Info (20265): Estimated peak long high speed down directional wire demand : 57% in region X88_Y200 to X95_Y207
+    Info (20315): Note that the router may use short wires to implement long connections at higher delay
+Info (170239): Router is attempting to preserve 0.10 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
+Info (11888): Total time spent on timing analysis during Routing is 0.70 seconds.
+Info (16607): Fitter routing operations ending: elapsed time is 00:01:45
+
+
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary              ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+; clk             ; clk                  ; 6.6               ;
++-----------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                              ;
++-----------------------------------------------------+--------------------------------------------------+-------------------+
+; Source Register                                     ; Destination Register                             ; Delay Added in ns ;
++-----------------------------------------------------+--------------------------------------------------+-------------------+
+; phi_3|tehb1|data_reg[20]~RTM                        ; phi_3|tehb1|data_reg[20]~RTM                     ; 0.231             ;
+; Buffer_2|tehb|data_reg[20]~RTM_24                   ; Buffer_2|tehb|data_reg[20]~RTM_24                ; 0.214             ;
+; Buffer_2|tehb|data_reg[2]~RTM                       ; Buffer_2|tehb|data_reg[2]~RTM_7                  ; 0.207             ;
+; Buffer_2|tehb|data_reg[20]~RTM                      ; Buffer_2|tehb|data_reg[20]~RTM_24                ; 0.197             ;
+; Buffer_2|tehb|data_reg[2]~RTM_7                     ; Buffer_2|tehb|data_reg[2]~RTM_7                  ; 0.196             ;
+; phi_3|tehb1|data_reg[30]~RTM                        ; phi_3|tehb1|data_reg[30]~RTM                     ; 0.165             ;
+; phi_3|tehb1|data_reg[2]~RTM                         ; phi_3|tehb1|data_reg[2]~RTM                      ; 0.158             ;
+; phi_3|tehb1|data_reg[11]~RTM                        ; phi_3|tehb1|data_reg[11]~RTM                     ; 0.141             ;
+; phi_3|tehb1|data_reg[16]~RTM                        ; phi_3|tehb1|data_reg[16]~RTM                     ; 0.135             ;
+; phi_3|tehb1|data_reg[12]~RTM                        ; phi_3|tehb1|data_reg[12]~RTM                     ; 0.127             ;
+; Buffer_2|tehb|data_reg[3]~RTM                       ; Buffer_2|tehb|data_reg[3]~RTM_8                  ; 0.125             ;
+; Buffer_2|tehb|data_reg[31]~RTM_35                   ; Buffer_2|tehb|data_reg[31]~RTM_35                ; 0.125             ;
+; phi_3|tehb1|data_reg[31]~RTM                        ; phi_3|tehb1|data_reg[31]~RTM                     ; 0.121             ;
+; Buffer_2|tehb|data_reg[30]~RTM_34                   ; Buffer_2|tehb|data_reg[30]~RTM_34                ; 0.120             ;
+; Buffer_2|tehb|data_reg[15]~RTM                      ; Buffer_2|tehb|data_reg[15]~RTM_19                ; 0.119             ;
+; Buffer_2|tehb|data_reg[30]~RTM                      ; Buffer_2|tehb|data_reg[30]~RTM_34                ; 0.118             ;
+; Buffer_2|tehb|data_reg[16]~RTM_20                   ; Buffer_2|tehb|data_reg[16]~RTM_20                ; 0.116             ;
+; Buffer_2|tehb|data_reg[3]~RTM_8                     ; Buffer_2|tehb|data_reg[3]~RTM_8                  ; 0.114             ;
+; Buffer_2|tehb|data_reg[15]~RTM_19                   ; Buffer_2|tehb|data_reg[15]~RTM_19                ; 0.114             ;
+; Buffer_2|tehb|data_reg[16]~RTM                      ; Buffer_2|tehb|data_reg[16]~RTM_20                ; 0.113             ;
+; Buffer_2|tehb|data_reg[19]~RTM_23                   ; Buffer_2|tehb|data_reg[19]~RTM_23                ; 0.113             ;
+; Buffer_2|tehb|data_reg[11]~RTM_16                   ; Buffer_2|tehb|data_reg[11]~RTM_16                ; 0.112             ;
+; Buffer_2|tehb|data_reg[12]~RTM                      ; Buffer_2|tehb|data_reg[12]~RTM_1                 ; 0.109             ;
+; Buffer_2|tehb|data_reg[19]~RTM                      ; Buffer_2|tehb|data_reg[19]~RTM_23                ; 0.109             ;
+; Buffer_2|tehb|data_reg[11]~RTM                      ; Buffer_2|tehb|data_reg[11]~RTM_16                ; 0.108             ;
+; Buffer_2|tehb|data_reg[12]~RTM_1                    ; Buffer_2|tehb|data_reg[12]~RTM_1                 ; 0.108             ;
+; phi_3|tehb1|data_reg[24]~RTM                        ; phi_3|tehb1|data_reg[24]~RTM                     ; 0.102             ;
+; Buffer_2|tehb|data_reg[18]~RTM                      ; Buffer_2|tehb|data_reg[18]~RTM_22                ; 0.098             ;
+; Buffer_2|tehb|data_reg[17]~RTM                      ; Buffer_2|tehb|data_reg[17]~RTM_21                ; 0.093             ;
+; Buffer_3|tehb1|data_reg[0]~RTM                      ; Buffer_3|tehb1|data_reg[0]~RTM                   ; 0.073             ;
+; phi_n0|tehb1|data_reg[17]~RTM_20                    ; Buffer_2|tehb|data_reg[17]~RTM_21                ; 0.073             ;
+; Buffer_2|tehb|data_reg[17]~RTM_21                   ; Buffer_2|tehb|data_reg[17]~RTM_21                ; 0.066             ;
+; Buffer_2|tehb|data_reg[13]~RTM                      ; Buffer_2|tehb|data_reg[13]~RTM_17                ; 0.063             ;
+; Buffer_2|tehb|data_reg[13]~RTM_17                   ; Buffer_2|tehb|data_reg[13]~RTM_17                ; 0.058             ;
+; phi_3|tehb1|data_reg[26]~RTM                        ; phi_3|tehb1|data_reg[26]~RTM                     ; 0.054             ;
+; phi_3|tehb1|data_reg[0]~RTM                         ; phi_3|tehb1|data_reg[0]~RTM                      ; 0.054             ;
+; Buffer_2|tehb|data_reg[18]~RTM_22                   ; Buffer_2|tehb|data_reg[18]~RTM_22                ; 0.042             ;
+; Buffer_2|tehb|data_reg[21]~RTM                      ; Buffer_2|tehb|data_reg[21]~RTM_25                ; 0.039             ;
+; phi_n0|tehb1|data_reg[18]~RTM_21                    ; Buffer_2|tehb|data_reg[18]~RTM_22                ; 0.039             ;
+; phi_3|tehb1|data_reg[10]~RTM                        ; phi_3|tehb1|data_reg[10]~RTM                     ; 0.038             ;
+; Buffer_2|tehb|data_reg[21]~RTM_25                   ; Buffer_2|tehb|data_reg[21]~RTM_25                ; 0.036             ;
+; phi_n0|tehb1|data_reg[16]~RTM_19                    ; Buffer_2|tehb|data_reg[16]~RTM_20                ; 0.035             ;
+; Buffer_2|tehb|data_reg[14]~RTM_18                   ; Buffer_2|tehb|data_reg[14]~RTM_18                ; 0.032             ;
+; phi_3|tehb1|data_reg[21]~RTM                        ; phi_3|tehb1|data_reg[21]~RTM                     ; 0.032             ;
+; Buffer_2|tehb|data_reg[14]~RTM                      ; Buffer_2|tehb|data_reg[14]~RTM_18                ; 0.030             ;
+; phi_3|tehb1|data_reg[9]~RTM                         ; phi_3|tehb1|data_reg[9]~RTM                      ; 0.028             ;
+; phi_3|tehb1|data_reg[22]~RTM                        ; phi_3|tehb1|data_reg[22]~RTM                     ; 0.025             ;
+; phi_3|tehb1|data_reg[18]~RTM                        ; phi_3|tehb1|data_reg[18]~RTM                     ; 0.025             ;
+; Buffer_2|tehb|data_reg[31]~RTM                      ; Buffer_2|tehb|data_reg[31]~RTM_35                ; 0.021             ;
+; Buffer_2|tehb|data_reg[26]~RTM                      ; Buffer_2|tehb|data_reg[26]~RTM_30                ; 0.020             ;
+; phi_3|tehb1|data_reg[6]~RTM                         ; phi_3|tehb1|data_reg[6]~RTM                      ; 0.019             ;
+; Buffer_2|tehb|data_reg[26]~RTM_30                   ; Buffer_2|tehb|data_reg[26]~RTM_30                ; 0.019             ;
+; phiC_4|fork_C1|generateBlocks[1].regblock|reg_value ; phi_1|tehb1|data_reg[0]~RTM_10                   ; 0.017             ;
+; Buffer_2|tehb|data_reg[9]~RTM                       ; Buffer_2|tehb|data_reg[9]~RTM_14                 ; 0.017             ;
+; Buffer_2|tehb|data_reg[9]~RTM_14                    ; Buffer_2|tehb|data_reg[9]~RTM_14                 ; 0.016             ;
+; fork_13|generateBlocks[0].regblock|reg_value~RTM_2  ; fork_13|generateBlocks[0].regblock|reg_value~RTM ; 0.015             ;
+; fork_13|generateBlocks[0].regblock|reg_value~RTM_3  ; fork_13|generateBlocks[0].regblock|reg_value~RTM ; 0.015             ;
+; Buffer_3|oehb1|data_reg[0]                          ; Buffer_3|oehb1|data_reg[0]                       ; 0.015             ;
+; fork_13|generateBlocks[0].regblock|reg_value~RTM_4  ; fork_13|generateBlocks[0].regblock|reg_value~RTM ; 0.013             ;
+; Buffer_2|tehb|data_reg[6]~RTM                       ; Buffer_2|tehb|data_reg[6]~RTM_11                 ; 0.012             ;
+; phi_3|tehb1|data_reg[17]~RTM                        ; phi_3|tehb1|data_reg[17]~RTM                     ; 0.011             ;
+; Buffer_2|tehb|data_reg[5]~RTM                       ; Buffer_2|tehb|data_reg[5]~RTM_10                 ; 0.011             ;
+; Buffer_2|tehb|data_reg[1]~RTM                       ; Buffer_2|tehb|data_reg[1]~RTM_6                  ; 0.010             ;
+; phi_n0|tehb1|data_reg[31]~RTM_33                    ; Buffer_2|tehb|data_reg[31]~RTM_35                ; 0.010             ;
+; Buffer_2|tehb|data_reg[7]~RTM                       ; Buffer_2|tehb|data_reg[7]~RTM_12                 ; 0.010             ;
++-----------------------------------------------------+--------------------------------------------------+-------------------+
+Note: This table only shows the top 65 path(s) that have the largest delay added for hold.
+
+
+--------------------------------------
+; Global Router Wire Utilization Map ;
+--------------------------------------
+This report is unavailable in plain text report export.
+
+
++-------------------------------------------------------------------------------+
+; Peak Wire Demand Summary                                                      ;
++-----------------+-----------+-----------------------------------+-------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
++-----------------+-----------+-----------------------------------+-------------+
+; short           ; right     ; [(72, 192), (79, 199)]            ; 4.604 %     ;
+; short           ; left      ; [(96, 192), (103, 199)]           ; 2.965 %     ;
+; short           ; up        ; [(56, 184), (63, 191)]            ; 3.953 %     ;
+; short           ; down      ; [(72, 200), (79, 207)]            ; 1.856 %     ;
+; long high speed ; right     ; [(72, 200), (79, 207)]            ; 40.789 %    ;
+; long high speed ; left      ; [(80, 200), (87, 207)]            ; 16.964 %    ;
+; long high speed ; up        ; [(88, 192), (95, 199)]            ; 71.875 %    ;
+; long high speed ; down      ; [(88, 200), (95, 207)]            ; 57.812 %    ;
++-----------------+-----------+-----------------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                                                                                              ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------------------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                                                                             ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------------------------------------+
+; short           ; right     ; [(72, 192), (79, 199)]            ; 4.604 %     ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; load_11|Buffer_2|full_reg                                                                             ;
+;     --          ;           ;                                   ;             ; load_7|Buffer_2|full_reg                                                                              ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|data|sel_prev[0]                                                                    ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|a_reg[31]                                                                        ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|b_reg[31]                                                                        ;
+;     --          ;           ;                                   ;             ; load_11|Buffer_2|dataOutArray[0][0]~7                                                                 ;
+;     --          ;           ;                                   ;             ; load_11|Buffer_2|dataOutArray[0][0]~1                                                                 ;
+;     --          ;           ;                                   ;             ; load_11|Buffer_2|dataOutArray[0][0]~13                                                                ;
+;     --          ;           ;                                   ;             ; load_11|Buffer_2|dataOutArray[0][0]~2                                                                 ;
+;     --          ;           ;                                   ;             ; load_11|Buffer_2|dataOutArray[0][0]~3                                                                 ;
+; short           ; right     ; [(72, 192), (79, 199)]            ; 4.604 %     ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|data|sel_prev[0]                                                                    ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|b_reg[22]                                                                        ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|a_reg[5]                                                                         ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|a_reg[4]                                                                         ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|a_reg[2]                                                                         ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|a_reg[1]                                                                         ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|a_reg[0]                                                                         ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|b_reg[17]                                                                        ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|b_reg[12]                                                                        ;
+;     --          ;           ;                                   ;             ; mul_12|multiply_unit|a_reg[23]                                                                        ;
+; short           ; left      ; [(96, 192), (103, 199)]           ; 2.965 %     ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Memory_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a0~ram2mlab_port_b_address_0 ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Memory_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a0~ram2mlab_port_b_address_1 ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|i37~0                                                                                   ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[9]~RTMUX                                                                         ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[1]~RTMUX                                                                         ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[18]~RTMUX                                                                        ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[17]~RTMUX                                                                        ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[15]~RTMUX                                                                        ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[3]~RTMUX                                                                         ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[5]~RTMUX                                                                         ;
+; short           ; left      ; [(96, 192), (103, 199)]           ; 2.965 %     ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[15]~RTMUX                                                                       ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|data_reg[24]~RTM                                                                        ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[19]~RTMUX                                                                       ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|dataOutArray[0][0]~24                                                                   ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Memory_rtl_0_bypass[5]                                                                  ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Memory_rtl_0_bypass[29]                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Memory~14                                                                               ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Memory~16                                                                               ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|data_reg[20]~RTMUXMERGEROT                                                              ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|data_reg[7]~RTMUXMERGEROT                                                               ;
+; short           ; up        ; [(56, 184), (63, 191)]            ; 3.953 %     ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; V_din1[18]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; M_din1[27]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; M_din1[26]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; M_din1[21]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[28]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[26]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[23]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[21]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[19]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[0]~input                                                                                       ;
+; short           ; up        ; [(56, 184), (63, 191)]            ; 3.953 %     ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[19]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[2]~input                                                                                       ;
+;     --          ;           ;                                   ;             ; V_din1[0]~input                                                                                       ;
+;     --          ;           ;                                   ;             ; M_din1[21]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[28]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[26]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[23]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[21]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; V_din1[18]~input                                                                                      ;
+;     --          ;           ;                                   ;             ; M_din1[26]~input                                                                                      ;
+; short           ; down      ; [(72, 200), (79, 207)]            ; 1.856 %     ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|full_reg                                                                                  ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|data|sel_prev[0]                                                                    ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|data|sel_prev[0]                                                                    ;
+;     --          ;           ;                                   ;             ; mul_12|oehb|validArray[0]                                                                             ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|priority|priority_out[0]~0xsyn                                                      ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|data|valid[0]                                                                       ;
+;     --          ;           ;                                   ;             ; M_din1[2]~input                                                                                       ;
+; short           ; down      ; [(72, 200), (79, 207)]            ; 1.856 %     ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; M_din1[2]~input                                                                                       ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|full_reg                                                                                  ;
+;     --          ;           ;                                   ;             ; mul_12|oehb|validArray[0]                                                                             ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|data|sel_prev[0]                                                                    ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|data|sel_prev[0]                                                                    ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|priority|priority_out[0]~0xsyn                                                      ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|data|valid[0]                                                                       ;
+; long high speed ; right     ; [(72, 200), (79, 207)]            ; 40.789 %    ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|data_reg[12]~RTM_3                                                                      ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|full_reg                                                                                  ;
+;     --          ;           ;                                   ;             ; forkC_16|generateBlocks[0].regblock|reg_value~RTM_2                                                   ;
+;     --          ;           ;                                   ;             ; phi_3|tehb_data_in[0]~0                                                                               ;
+;     --          ;           ;                                   ;             ; mul_12|oehb|readyArray[0]~0                                                                           ;
+;     --          ;           ;                                   ;             ; phi_n2|tehb1|full_reg                                                                                 ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|priority|priority_out[0]~0                                                          ;
+;     --          ;           ;                                   ;             ; Buffer_5|fifo|Empty                                                                                   ;
+;     --          ;           ;                                   ;             ; phi_n1|tehb1|validArray[0]                                                                            ;
+;     --          ;           ;                                   ;             ; Buffer_1|oehb1|validArray[0]~RTM                                                                      ;
+; long high speed ; right     ; [(72, 200), (79, 207)]            ; 40.789 %    ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; MC_M|read_arbiter|priority|priority_out[0]~0                                                          ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|addressing|addr_out_var[0]~1                                                        ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|addressing|addr_out_var[0]~4                                                        ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|addressing|addr_out_var[0]~0                                                        ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|addressing|addr_out_var[0]~3                                                        ;
+;     --          ;           ;                                   ;             ; MC_V|read_arbiter|addressing|addr_out_var[0]~2                                                        ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|full_reg                                                                                  ;
+;     --          ;           ;                                   ;             ; M_din1[8]~input                                                                                       ;
+;     --          ;           ;                                   ;             ; add_13|join_write_temp|readyArray[0]~0                                                                ;
+;     --          ;           ;                                   ;             ; mul_12|oehb|validArray[0]                                                                             ;
+; long high speed ; left      ; [(80, 200), (87, 207)]            ; 16.964 %    ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|full_reg                                                                                 ;
+;     --          ;           ;                                   ;             ; phi_n2|tehb1|dataOutArray[0][0]~1xsyn                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Empty                                                                                   ;
+;     --          ;           ;                                   ;             ; Buffer_8|fifo|Empty                                                                                   ;
+;     --          ;           ;                                   ;             ; phi_n2|tehb1|dataOutArray[0][0]~2xsyn                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_8|fifo|Head[2]                                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_10|fifo|Empty                                                                                  ;
+;     --          ;           ;                                   ;             ; branch_8|j|readyArray[1]~0                                                                            ;
+;     --          ;           ;                                   ;             ; phi_n2|tehb1|dataOutArray[0][0]~3xsyn                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_8|fifo|Head[0]                                                                                 ;
+; long high speed ; left      ; [(80, 200), (87, 207)]            ; 16.964 %    ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|Empty                                                                                   ;
+;     --          ;           ;                                   ;             ; phi_n2|tehb1|dataOutArray[0][0]~1xsyn                                                                 ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|full_reg                                                                                 ;
+;     --          ;           ;                                   ;             ; phi_n2|tehb1|dataOutArray[0][0]~2xsyn                                                                 ;
+;     --          ;           ;                                   ;             ; phi_n2|tehb1|dataOutArray[0][0]~3xsyn                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_8|fifo|Memory[4][0]                                                                            ;
+;     --          ;           ;                                   ;             ; fork_4|generateBlocks[0].regblock|reg_value                                                           ;
+;     --          ;           ;                                   ;             ; fork_10|genericOr|reduce_nor_0~0xsyn                                                                  ;
+;     --          ;           ;                                   ;             ; Buffer_6|oehb1|data_reg[2]                                                                            ;
+;     --          ;           ;                                   ;             ; Buffer_6|oehb1|data_reg[1]                                                                            ;
+; long high speed ; up        ; [(88, 192), (95, 199)]            ; 71.875 %    ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[27]~RTM_29                                                                      ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[9]~RTM_12                                                                       ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[8]~RTM_11                                                                       ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[7]~RTM_10                                                                       ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[6]~RTM_9                                                                        ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[5]~RTM_8                                                                        ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[3]~RTM_6                                                                        ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[1]~RTM_4                                                                        ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[0]~RTM_3                                                                        ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[26]~RTM_28                                                                      ;
+; long high speed ; up        ; [(88, 192), (95, 199)]            ; 71.875 %    ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[15]~RTMUX                                                                       ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|data_reg[19]~RTMUX                                                                       ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|data_reg[24]~RTM                                                                        ;
+;     --          ;           ;                                   ;             ; Buffer_9|tehb1|data_reg[20]~RTM_1                                                                     ;
+;     --          ;           ;                                   ;             ; Buffer_9|tehb1|data_reg[22]~RTM_24                                                                    ;
+;     --          ;           ;                                   ;             ; Buffer_9|tehb1|data_reg[30]~RTM_32                                                                    ;
+;     --          ;           ;                                   ;             ; add_13|add_0~121                                                                                      ;
+;     --          ;           ;                                   ;             ; add_13|add_0~16                                                                                       ;
+;     --          ;           ;                                   ;             ; add_13|add_0~21                                                                                       ;
+;     --          ;           ;                                   ;             ; add_13|add_0~26                                                                                       ;
+; long high speed ; down      ; [(88, 200), (95, 207)]            ; 57.812 %    ;    High Routing Fan-Out                                                                               ;
+;     --          ;           ;                                   ;             ; phi_n3|tehb1|full_reg                                                                                 ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|full_reg                                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_9|tehb1|data_reg[20]~RTM_36                                                                    ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|reg_en~1                                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_9|tehb1|reg_en~0                                                                               ;
+;     --          ;           ;                                   ;             ; Buffer_9|oehb1|reg_en~0xsyn                                                                           ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|reg_en                                                                                    ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|reg_en~1                                                                                ;
+;     --          ;           ;                                   ;             ; Buffer_2|fifo|i21~0                                                                                   ;
+;     --          ;           ;                                   ;             ; phi_n3|tehb1|reg_en~0                                                                                 ;
+; long high speed ; down      ; [(88, 200), (95, 207)]            ; 57.812 %    ;    Long Distance                                                                                      ;
+;     --          ;           ;                                   ;             ; ret_0|tehb|dataOutArray[0][0]~29                                                                      ;
+;     --          ;           ;                                   ;             ; phi_n0|tehb1|full_reg                                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|data_reg[0]~RTMUXMERGEROT                                                               ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|data_reg[24]~RTMUXMERGEROT                                                              ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[0]~RTMUX                                                                         ;
+;     --          ;           ;                                   ;             ; phi_3|tehb1|data_reg[7]~RTMUX                                                                         ;
+;     --          ;           ;                                   ;             ; ret_0|tehb|reg_en~2xsyn                                                                               ;
+;     --          ;           ;                                   ;             ; phi_n3|tehb1|reg_en~0                                                                                 ;
+;     --          ;           ;                                   ;             ; Buffer_2|tehb|reg_en~1                                                                                ;
+;     --          ;           ;                                   ;             ; Buffer_9|tehb1|data_reg[20]~RTM_36                                                                    ;
++-----------------+-----------+-----------------------------------+-------------+-------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Peak Total Grid Crossings                                                ;
++---------------------------------------------------+----------------------+
+; Net Name                                          ; Total Grid Crossings ;
++---------------------------------------------------+----------------------+
+; ret_0|tehb|dataOutArray[0][0]~20                  ; 43                   ;
+; ret_0|tehb|dataOutArray[0][0]~16                  ; 43                   ;
+; ret_0|tehb|dataOutArray[0][0]~13                  ; 43                   ;
+; ret_0|tehb|dataOutArray[0][0]~15                  ; 42                   ;
+; ret_0|tehb|dataOutArray[0][0]~11                  ; 42                   ;
+; MC_M|read_arbiter|priority|priority_out[0]~0      ; 41                   ;
+; ret_0|tehb|dataOutArray[0][0]~18                  ; 40                   ;
+; ret_0|tehb|dataOutArray[0][0]~12                  ; 40                   ;
+; ret_0|tehb|dataOutArray[0][0]~19                  ; 39                   ;
+; ret_0|tehb|dataOutArray[0][0]~17                  ; 39                   ;
+; ret_0|tehb|dataOutArray[0][0]~14                  ; 39                   ;
+; MC_V|read_arbiter|addressing|addr_out_var[0]~4    ; 36                   ;
+; MC_V|read_arbiter|addressing|addr_out_var[0]~1    ; 36                   ;
+; end_0|j|allPValidAndGate|reduce_nor_0~xsyn        ; 35                   ;
+; MC_V|read_arbiter|addressing|addr_out_var[0]~3    ; 34                   ;
+; MC_V|read_arbiter|addressing|addr_out_var[0]~0    ; 34                   ;
+; ret_0|tehb|dataOutArray[0][0]~30                  ; 34                   ;
+; ret_0|tehb|dataOutArray[0][0]~3                   ; 34                   ;
+; ret_0|tehb|dataOutArray[0][0]~0                   ; 34                   ;
+; MC_V|read_arbiter|addressing|addr_out_var[0]~2    ; 33                   ;
+; ret_0|tehb|dataOutArray[0][0]~26                  ; 33                   ;
+; ret_0|tehb|dataOutArray[0][0]~24                  ; 33                   ;
+; ret_0|tehb|dataOutArray[0][0]~9                   ; 33                   ;
+; ret_0|tehb|dataOutArray[0][0]~5                   ; 33                   ;
+; ret_0|tehb|dataOutArray[0][0]~4                   ; 33                   ;
+; ret_0|tehb|dataOutArray[0][0]~31                  ; 32                   ;
+; ret_0|tehb|dataOutArray[0][0]~28                  ; 32                   ;
+; ret_0|tehb|dataOutArray[0][0]~1                   ; 32                   ;
+; ret_0|tehb|dataOutArray[0][0]~23                  ; 31                   ;
+; ret_0|tehb|dataOutArray[0][0]~8                   ; 31                   ;
+; ret_0|tehb|dataOutArray[0][0]~7                   ; 31                   ;
+; ret_0|tehb|dataOutArray[0][0]~6                   ; 31                   ;
+; ret_0|tehb|dataOutArray[0][0]~2                   ; 31                   ;
+; start_0|startBuff|tehb1|full_reg                  ; 31                   ;
+; ret_0|tehb|dataOutArray[0][0]~29                  ; 30                   ;
+; ret_0|tehb|dataOutArray[0][0]~25                  ; 30                   ;
+; ret_0|tehb|dataOutArray[0][0]~22                  ; 30                   ;
+; ret_0|tehb|dataOutArray[0][0]~10                  ; 30                   ;
+; ret_0|tehb|dataOutArray[0][0]~27                  ; 29                   ;
+; ret_0|tehb|dataOutArray[0][0]~21                  ; 29                   ;
+; store_0|join_write|allPValidAndGate|reduce_nor_0  ; 26                   ;
+; MC_Out|write_arbiter|addressing|addr_out_var[0]~7 ; 26                   ;
+; MC_Out|write_arbiter|addressing|addr_out_var[0]~5 ; 26                   ;
+; MC_Out|write_arbiter|addressing|addr_out_var[0]~3 ; 26                   ;
+; MC_Out|write_arbiter|data|data_out_var[0]~6       ; 25                   ;
+; MC_Out|write_arbiter|data|data_out_var[0]~1       ; 25                   ;
+; MC_Out|write_arbiter|data|data_out_var[0]~17xsyn  ; 24                   ;
+; MC_Out|write_arbiter|data|data_out_var[0]~16xsyn  ; 24                   ;
+; MC_Out|write_arbiter|data|data_out_var[0]~12xsyn  ; 24                   ;
+; MC_Out|write_arbiter|data|data_out_var[0]~10xsyn  ; 24                   ;
++---------------------------------------------------+----------------------+
+
+

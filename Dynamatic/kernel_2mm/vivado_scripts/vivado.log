@@ -1,0 +1,2163 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Apr 27 15:55:12 2023
+# Process ID: 18016
+# Current directory: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts
+# Command line: vivado.exe -mode tcl -source synthesize_4.tcl
+# Log file: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts/vivado.log
+# Journal file: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts\vivado.jou
+# Running On: Frostspark, OS: Windows, CPU Frequency: 3504 MHz, CPU Physical cores: 4, Host memory: 17116 MB
+#-----------------------------------------------------------
+source synthesize_4.tcl
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/arithmetic_units.vhd
+read_vhdl: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 378.230 ; gain = 64.805
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/delay_buffer.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/elastic_components.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/MemCont.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/multipliers.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/mul_wrapper.vhd
+# read_verilog  ../sim/VHDL_SRC/LSQ_D.v
+# read_verilog  ../sim/VHDL_SRC/LSQ_tmp.v
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/kernel_2mm_optimized.vhd
+# read_xdc period_4.xdc
+# synth_design -top kernel_2mm -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
+Command: synth_design -top kernel_2mm -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Device 21-403] Loading part xc7k160tfbg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 11608
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1238.957 ; gain = 429.793
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'kernel_2mm' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:79]
+INFO: [Synth 8-638] synthesizing module 'start_node' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:839]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'OEHB' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-256] done synthesizing module 'start_node' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:839]
+INFO: [Synth 8-638] synthesizing module 'Const' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1369]
+	Parameter SIZE bound to: 1 - type: integer 
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Const' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1369]
+INFO: [Synth 8-638] synthesizing module 'branch' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module '\join ' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:113]
+	Parameter SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'andN' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:24]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'andN' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:24]
+INFO: [Synth 8-256] done synthesizing module '\join ' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:113]
+INFO: [Synth 8-638] synthesizing module 'branchSimple' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:447]
+INFO: [Synth 8-256] done synthesizing module 'branchSimple' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:447]
+INFO: [Synth 8-256] done synthesizing module 'branch' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'branch__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'branch__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module '\fork ' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 4 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'eagerFork_RegisterBLock' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:517]
+INFO: [Synth 8-256] done synthesizing module 'eagerFork_RegisterBLock' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:517]
+INFO: [Synth 8-256] done synthesizing module '\fork ' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'start_node__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:839]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'OEHB__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-256] done synthesizing module 'start_node__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:839]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 3 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1527]
+	Parameter INPUTS bound to: 3 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+	Parameter COND_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1527]
+INFO: [Synth 8-638] synthesizing module 'merge' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'branch__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'branch__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 5 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'cntrlMerge' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1599]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+	Parameter COND_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'merge_notehb' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:704]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge_notehb' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:704]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-256] done synthesizing module 'cntrlMerge' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1599]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'OEHB__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'zext_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:309]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'zext_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'getelementptr_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:1005]
+	Parameter INPUTS bound to: 3 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter INPUT_SIZE bound to: 32 - type: integer 
+	Parameter OUTPUT_SIZE bound to: 32 - type: integer 
+	Parameter CONST_SIZE bound to: 1 - type: integer 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-638] synthesizing module 'join__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:113]
+	Parameter SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'join__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'getelementptr_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:1005]
+INFO: [Synth 8-638] synthesizing module 'lsq_store_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1750]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter DATA_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lsq_store_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1750]
+INFO: [Synth 8-638] synthesizing module 'Const__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1369]
+	Parameter SIZE bound to: 1 - type: integer 
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Const__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1369]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized4' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 6 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized4' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'source' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:940]
+	Parameter INPUT_COUNT bound to: 0 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'source' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'mc_load_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:583]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'mc_load_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:583]
+INFO: [Synth 8-638] synthesizing module 'mul_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/mul_wrapper.vhd:26]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mul_4_stage' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:23]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mul_4_stage' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'delay_buffer' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/delay_buffer.vhd:16]
+	Parameter SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'delay_buffer' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/delay_buffer.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'mul_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/mul_wrapper.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'lsq_load_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1704]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lsq_load_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1704]
+INFO: [Synth 8-638] synthesizing module 'add_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:67]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'add_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'lsq_store_op__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1750]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lsq_store_op__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1750]
+INFO: [Synth 8-638] synthesizing module 'add_op__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:67]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'add_op__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'icmp_ult_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:827]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'icmp_ult_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:827]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized5' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 3 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized5' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized6' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized6' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'source__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:940]
+	Parameter INPUT_COUNT bound to: 0 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'source__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 4 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 5 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 2 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized4' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized4' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 6 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 6 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized7' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized7' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'ret_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:24]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ret_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/arithmetic_units.vhd:24]
+INFO: [Synth 8-3491] module 'LSQ_tmp' declared at 'C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:44130' bound to instance 'c_LSQ_tmp' of component 'LSQ_tmp' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:11241]
+INFO: [Synth 8-6157] synthesizing module 'LSQ_tmp' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:44130]
+INFO: [Synth 8-6157] synthesizing module 'STORE_QUEUE_LSQ_tmp' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_QUEUE_LSQ_tmp' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_QUEUE_LSQ_tmp' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:13462]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_QUEUE_LSQ_tmp' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:13462]
+INFO: [Synth 8-6157] synthesizing module 'GROUP_ALLOCATOR_LSQ_tmp' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:43722]
+INFO: [Synth 8-6155] done synthesizing module 'GROUP_ALLOCATOR_LSQ_tmp' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:43722]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_PORT_LSQ_tmp' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:43939]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_PORT_LSQ_tmp' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:43939]
+INFO: [Synth 8-6157] synthesizing module 'STORE_DATA_PORT_LSQ_tmp' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:44039]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_DATA_PORT_LSQ_tmp' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:44039]
+INFO: [Synth 8-6155] done synthesizing module 'LSQ_tmp' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_tmp.v:44130]
+INFO: [Synth 8-3491] module 'LSQ_D' declared at 'C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48420' bound to instance 'c_LSQ_D' of component 'LSQ_D' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:11279]
+INFO: [Synth 8-6157] synthesizing module 'LSQ_D' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48420]
+INFO: [Synth 8-6157] synthesizing module 'STORE_QUEUE_LSQ_D' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_QUEUE_LSQ_D' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_QUEUE_LSQ_D' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:13462]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_QUEUE_LSQ_D' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:13462]
+INFO: [Synth 8-6157] synthesizing module 'GROUP_ALLOCATOR_LSQ_D' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48008]
+INFO: [Synth 8-6155] done synthesizing module 'GROUP_ALLOCATOR_LSQ_D' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48008]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_PORT_LSQ_D' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48229]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_PORT_LSQ_D' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48229]
+INFO: [Synth 8-6157] synthesizing module 'STORE_DATA_PORT_LSQ_D' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48329]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_DATA_PORT_LSQ_D' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48329]
+INFO: [Synth 8-6155] done synthesizing module 'LSQ_D' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/LSQ_D.v:48420]
+INFO: [Synth 8-638] synthesizing module 'MemCont' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:753]
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter BB_COUNT bound to: 1 - type: integer 
+	Parameter LOAD_COUNT bound to: 1 - type: integer 
+	Parameter STORE_COUNT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_memory_arbiter' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:202]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_priority' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:17]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_priority' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'read_address_mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:52]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'read_address_ready' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:86]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_ready' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'read_data_signals' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:116]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_data_signals' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:116]
+INFO: [Synth 8-256] done synthesizing module 'read_memory_arbiter' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:202]
+INFO: [Synth 8-638] synthesizing module 'write_memory_arbiter' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:464]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'write_priority' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:287]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_priority' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:287]
+INFO: [Synth 8-638] synthesizing module 'write_address_mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:326]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_address_mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:326]
+INFO: [Synth 8-638] synthesizing module 'write_address_ready' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:362]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_address_ready' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:362]
+INFO: [Synth 8-638] synthesizing module 'write_data_signals' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:396]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_data_signals' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:396]
+INFO: [Synth 8-256] done synthesizing module 'write_memory_arbiter' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:464]
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:814]
+INFO: [Synth 8-256] done synthesizing module 'MemCont' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:753]
+INFO: [Synth 8-638] synthesizing module 'MemCont__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:753]
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter BB_COUNT bound to: 2 - type: integer 
+	Parameter LOAD_COUNT bound to: 2 - type: integer 
+	Parameter STORE_COUNT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_memory_arbiter__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:202]
+	Parameter ARBITER_SIZE bound to: 2 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_priority__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:17]
+	Parameter ARBITER_SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_priority__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'read_address_mux__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:52]
+	Parameter ARBITER_SIZE bound to: 2 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_mux__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'read_address_ready__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:86]
+	Parameter ARBITER_SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_ready__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'read_data_signals__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:116]
+	Parameter ARBITER_SIZE bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_data_signals__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:116]
+INFO: [Synth 8-256] done synthesizing module 'read_memory_arbiter__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:202]
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:814]
+INFO: [Synth 8-256] done synthesizing module 'MemCont__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/MemCont.vhd:753]
+INFO: [Synth 8-638] synthesizing module 'end_node' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:375]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter MEM_INPUTS bound to: 6 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'andN__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:24]
+	Parameter n bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'andN__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'end_node' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:375]
+INFO: [Synth 8-638] synthesizing module 'sink' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-638] synthesizing module 'sink__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-638] synthesizing module 'sink__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 4 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-256] done synthesizing module 'kernel_2mm' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:79]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity cntrlMerge does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1596]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity source does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:932]
+WARNING: [Synth 8-3848] Net oehb_datain in module/entity mul_op does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/mul_wrapper.vhd:31]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity source__parameterized0 does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:932]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1092]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1048]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1122]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1069]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1092]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1048]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1122]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:1069]
+WARNING: [Synth 8-3848] Net eReadyArray in module/entity end_node does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/elastic_components.vhd:371]
+WARNING: [Synth 8-3848] Net alpha_ready_out in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:23]
+WARNING: [Synth 8-3848] Net beta_ready_out in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:26]
+WARNING: [Synth 8-3848] Net D_we1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:34]
+WARNING: [Synth 8-3848] Net D_dout1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:35]
+WARNING: [Synth 8-3848] Net A_we1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:44]
+WARNING: [Synth 8-3848] Net A_dout1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:45]
+WARNING: [Synth 8-3848] Net B_we1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:54]
+WARNING: [Synth 8-3848] Net B_dout1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:55]
+WARNING: [Synth 8-3848] Net tmp_we1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:64]
+WARNING: [Synth 8-3848] Net tmp_dout1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:65]
+WARNING: [Synth 8-3848] Net C_we1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:74]
+WARNING: [Synth 8-3848] Net C_dout1 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:75]
+WARNING: [Synth 8-3848] Net start_0_dataInArray_0 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:182]
+WARNING: [Synth 8-3848] Net MC_A_pValidArray_2 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3780]
+WARNING: [Synth 8-3848] Net MC_A_dataInArray_2 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3776]
+WARNING: [Synth 8-3848] Net MC_A_pValidArray_3 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3781]
+WARNING: [Synth 8-3848] Net MC_A_dataInArray_3 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3777]
+WARNING: [Synth 8-3848] Net MC_B_pValidArray_2 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3802]
+WARNING: [Synth 8-3848] Net MC_B_dataInArray_2 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3798]
+WARNING: [Synth 8-3848] Net MC_B_pValidArray_3 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3803]
+WARNING: [Synth 8-3848] Net MC_B_dataInArray_3 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3799]
+WARNING: [Synth 8-3848] Net MC_C_pValidArray_2 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3855]
+WARNING: [Synth 8-3848] Net MC_C_dataInArray_2 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3851]
+WARNING: [Synth 8-3848] Net MC_C_pValidArray_3 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3856]
+WARNING: [Synth 8-3848] Net MC_C_dataInArray_3 in module/entity kernel_2mm does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/kernel_2mm_optimized.vhd:3852]
+WARNING: [Synth 8-7129] Port clk in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][3] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][2] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][1] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][31] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][30] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][29] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][28] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][27] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][26] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][25] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][24] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][23] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][22] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][21] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][20] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][19] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][18] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][17] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][16] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][15] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][14] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][13] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][12] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][11] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][10] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][9] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][8] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][7] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][6] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][5] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][4] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][3] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][2] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][1] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[5] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[4] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[3] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[2] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[1] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[0] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_Empty_Ready in module MemCont is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_wrDataPorts_valid[0] in module MemCont is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_Empty_Ready in module MemCont__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_wrDataPorts_valid[0] in module MemCont__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][3] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][2] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][1] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port nReadyArray[0] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port nReadyArray[0] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module icmp_ult_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module icmp_ult_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module Const__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module Const__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module add_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module add_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module Const is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module Const is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module merge_notehb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module merge_notehb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[1][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module lsq_store_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module lsq_store_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module add_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module add_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module lsq_load_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module lsq_load_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module getelementptr_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module getelementptr_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[2] in module getelementptr_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module zext_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module zext_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module lsq_store_op is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1924.262 ; gain = 1115.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1924.262 ; gain = 1115.098
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1924.262 ; gain = 1115.098
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1924.262 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts/period_4.xdc]
+Finished Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts/period_4.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2069.285 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.479 . Memory (MB): peak = 2069.285 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 2069.285 ; gain = 1260.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k160tfbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 2069.285 ; gain = 1260.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 2069.285 ; gain = 1260.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:28 ; elapsed = 00:01:30 . Memory (MB): peak = 2069.285 ; gain = 1260.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 10    
+	   3 Input   32 Bit       Adders := 3     
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 135   
+	   3 Input    5 Bit       Adders := 4     
+	   2 Input    4 Bit       Adders := 18    
+	   3 Input    4 Bit       Adders := 4     
+	   2 Input    3 Bit       Adders := 6     
+	   2 Input    2 Bit       Adders := 4     
+	   2 Input    1 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 241   
+	                5 Bit    Registers := 11    
+	                4 Bit    Registers := 126   
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 1961  
++---Multipliers : 
+	              32x32  Multipliers := 12    
++---RAMs : 
+	              192 Bit	(6 X 32 bit)          RAMs := 1     
+	              160 Bit	(5 X 32 bit)          RAMs := 1     
+	              128 Bit	(4 X 32 bit)          RAMs := 1     
+	               64 Bit	(2 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 32    
+	   2 Input   32 Bit        Muxes := 204   
+	   2 Input   16 Bit        Muxes := 1312  
+	  17 Input   16 Bit        Muxes := 256   
+	   2 Input    5 Bit        Muxes := 4     
+	  15 Input    4 Bit        Muxes := 5     
+	   2 Input    4 Bit        Muxes := 73    
+	   2 Input    2 Bit        Muxes := 11    
+	   2 Input    1 Bit        Muxes := 1206  
+	  16 Input    1 Bit        Muxes := 48    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (portQ_2_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (portQ_0_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (portQ_15_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (portQ_14_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (portQ_12_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (portQ_4_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (portQ_1_reg)
+WARNING: [Synth 8-3917] design LSQ_D__GC0 has port io_bbNumLoads[1] driven by constant 0
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:34]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:34]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:34]
+WARNING: [Synth 8-6014] Unused sequential element mul_13/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_13/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_13/multiply_unit/q1_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element mul_13/multiply_unit/q2_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:44]
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q1_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element mul_18/multiply_unit/q2_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:44]
+WARNING: [Synth 8-6014] Unused sequential element mul_41/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_41/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_41/multiply_unit/q1_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element mul_41/multiply_unit/q2_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:44]
+DSP Report: Generating DSP mul_13/multiply_unit/q0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_13/multiply_unit/q0_reg is absorbed into DSP mul_13/multiply_unit/q0_reg.
+DSP Report: register mul_13/multiply_unit/q0_reg is absorbed into DSP mul_13/multiply_unit/q0_reg.
+DSP Report: register mul_13/multiply_unit/q0_reg is absorbed into DSP mul_13/multiply_unit/q0_reg.
+DSP Report: operator mul_13/multiply_unit/mul is absorbed into DSP mul_13/multiply_unit/q0_reg.
+DSP Report: operator mul_13/multiply_unit/mul is absorbed into DSP mul_13/multiply_unit/q0_reg.
+DSP Report: Generating DSP mul_18/multiply_unit/q0_reg, operation Mode is: (A''*B2)'.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q0_reg.
+DSP Report: Generating DSP mul_18/multiply_unit/q1_reg, operation Mode is: (PCIN>>17)+(A''*B)'.
+DSP Report: register mul_18/multiply_unit/q1_reg is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: register mul_18/multiply_unit/q1_reg is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: register mul_18/multiply_unit/q1_reg is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q1_reg.
+DSP Report: Generating DSP mul_13/multiply_unit/q1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register mul_13/multiply_unit/q1_reg is absorbed into DSP mul_13/multiply_unit/q1_reg.
+DSP Report: register mul_13/multiply_unit/q1_reg is absorbed into DSP mul_13/multiply_unit/q1_reg.
+DSP Report: register mul_13/multiply_unit/q0_reg is absorbed into DSP mul_13/multiply_unit/q1_reg.
+DSP Report: operator mul_13/multiply_unit/mul is absorbed into DSP mul_13/multiply_unit/q1_reg.
+DSP Report: operator mul_13/multiply_unit/mul is absorbed into DSP mul_13/multiply_unit/q1_reg.
+DSP Report: Generating DSP mul_13/multiply_unit/q2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register mul_13/multiply_unit/q0_reg is absorbed into DSP mul_13/multiply_unit/q2_reg.
+DSP Report: register mul_13/multiply_unit/q2_reg is absorbed into DSP mul_13/multiply_unit/q2_reg.
+DSP Report: register mul_13/multiply_unit/q0_reg is absorbed into DSP mul_13/multiply_unit/q2_reg.
+DSP Report: register mul_13/multiply_unit/q2_reg is absorbed into DSP mul_13/multiply_unit/q2_reg.
+DSP Report: register mul_13/multiply_unit/q1_reg is absorbed into DSP mul_13/multiply_unit/q2_reg.
+DSP Report: operator mul_13/multiply_unit/mul is absorbed into DSP mul_13/multiply_unit/q2_reg.
+DSP Report: operator mul_13/multiply_unit/mul is absorbed into DSP mul_13/multiply_unit/q2_reg.
+DSP Report: Generating DSP mul_18/multiply_unit/q2_reg, operation Mode is: (PCIN+(A''*B'')')'.
+DSP Report: register mul_18/multiply_unit/a_reg_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q2_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q0_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q2_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: register mul_18/multiply_unit/q1_reg is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: operator mul_18/multiply_unit/mul is absorbed into DSP mul_18/multiply_unit/q2_reg.
+DSP Report: Generating DSP mul_41/multiply_unit/q0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_41/multiply_unit/q0_reg is absorbed into DSP mul_41/multiply_unit/q0_reg.
+DSP Report: register mul_41/multiply_unit/q0_reg is absorbed into DSP mul_41/multiply_unit/q0_reg.
+DSP Report: register mul_41/multiply_unit/q0_reg is absorbed into DSP mul_41/multiply_unit/q0_reg.
+DSP Report: operator mul_41/multiply_unit/mul is absorbed into DSP mul_41/multiply_unit/q0_reg.
+DSP Report: operator mul_41/multiply_unit/mul is absorbed into DSP mul_41/multiply_unit/q0_reg.
+DSP Report: Generating DSP mul_41/multiply_unit/q1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register mul_41/multiply_unit/q1_reg is absorbed into DSP mul_41/multiply_unit/q1_reg.
+DSP Report: register mul_41/multiply_unit/q1_reg is absorbed into DSP mul_41/multiply_unit/q1_reg.
+DSP Report: register mul_41/multiply_unit/q0_reg is absorbed into DSP mul_41/multiply_unit/q1_reg.
+DSP Report: operator mul_41/multiply_unit/mul is absorbed into DSP mul_41/multiply_unit/q1_reg.
+DSP Report: operator mul_41/multiply_unit/mul is absorbed into DSP mul_41/multiply_unit/q1_reg.
+DSP Report: Generating DSP mul_41/multiply_unit/q2_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register mul_41/multiply_unit/q0_reg is absorbed into DSP mul_41/multiply_unit/q2_reg.
+DSP Report: register mul_41/multiply_unit/q2_reg is absorbed into DSP mul_41/multiply_unit/q2_reg.
+DSP Report: register mul_41/multiply_unit/q0_reg is absorbed into DSP mul_41/multiply_unit/q2_reg.
+DSP Report: register mul_41/multiply_unit/q2_reg is absorbed into DSP mul_41/multiply_unit/q2_reg.
+DSP Report: register mul_41/multiply_unit/q1_reg is absorbed into DSP mul_41/multiply_unit/q2_reg.
+DSP Report: operator mul_41/multiply_unit/mul is absorbed into DSP mul_41/multiply_unit/q2_reg.
+DSP Report: operator mul_41/multiply_unit/mul is absorbed into DSP mul_41/multiply_unit/q2_reg.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_52/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_37/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_29/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[0] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[1]' (FDE) to 'MC_B/counter1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[1]' (FDE) to 'MC_A/counter1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[10]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[11]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[11]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[12]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[12]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[13]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[13]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[14]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[14]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[15]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[15]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[16]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[16]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[17]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[17]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[18]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[18]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[19]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[19]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[20]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[20]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[21]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[21]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[22]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[22]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[23]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[23]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[24]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[24]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[25]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[25]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[26]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[26]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[27]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[27]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[28]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[28]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[29]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[29]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[30]'
+INFO: [Synth 8-3886] merging instance 'load_12/Buffer_1/data_reg_reg[30]' (FDCE) to 'load_12/Buffer_1/data_reg_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (load_12/\Buffer_1/data_reg_reg[31] )
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_19/i_2/fifo/Memory_reg_0_7_30_31 from module transpFIFO__parameterized0 due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_19/i_2/fifo/Memory_reg_0_7_24_29 from module transpFIFO__parameterized0 due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_19/i_2/fifo/Memory_reg_0_7_18_23 from module transpFIFO__parameterized0 due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_19/i_2/fifo/Memory_reg_0_7_12_17 from module transpFIFO__parameterized0 due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_4/i_2/fifo/Memory_reg_0_3_30_31 from module transpFIFO due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_4/i_2/fifo/Memory_reg_0_3_24_29 from module transpFIFO due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_4/i_2/fifo/Memory_reg_0_3_18_23 from module transpFIFO due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_4/i_2/fifo/Memory_reg_0_3_12_17 from module transpFIFO due to constant propagation
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_52/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_37/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_29/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[2]' (FDE) to 'MC_B/counter1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[0] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[2]' (FDE) to 'MC_A/counter1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[0] )
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[10]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[11]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[11]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[12]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[12]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[13]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[13]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[14]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[14]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[15]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[15]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[16]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[16]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[17]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[17]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[18]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[18]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[19]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[19]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[20]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[20]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[21]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[21]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[22]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[22]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[23]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[23]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[24]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[24]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[25]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[25]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[26]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[26]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[27]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[27]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[28]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[28]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[29]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[29]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[30]'
+INFO: [Synth 8-3886] merging instance 'load_17/Buffer_1/data_reg_reg[30]' (FDCE) to 'load_17/Buffer_1/data_reg_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (load_17/\Buffer_1/data_reg_reg[31] )
+INFO: [Synth 8-7067] Removed DRAM instance Buffer_19/i_2/fifo/Memory_reg_0_7_24_29 from module transpFIFO__parameterized0 due to constant propagation
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_53/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[3] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[0]' (FDE) to 'MC_B/counter1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[0]' (FDE) to 'MC_A/counter1_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_53/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[4] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[4]' (FDE) to 'MC_B/counter1_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[3] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[4]' (FDE) to 'MC_A/counter1_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\phiC_37/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[5] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[3]' (FDE) to 'MC_B/counter1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[3]' (FDE) to 'MC_A/counter1_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_54/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[6] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[6]' (FDE) to 'MC_B/counter1_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[5] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[6]' (FDE) to 'MC_A/counter1_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_54/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[5]' (FDE) to 'MC_B/counter1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[5]' (FDE) to 'MC_A/counter1_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\phiC_38/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[8]' (FDE) to 'MC_B/counter1_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[7] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[8]' (FDE) to 'MC_A/counter1_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_55/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[7]' (FDE) to 'MC_B/counter1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[7]' (FDE) to 'MC_A/counter1_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[10] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[10]' (FDE) to 'MC_B/counter1_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[9] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[10]' (FDE) to 'MC_A/counter1_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_55/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[11] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[9]' (FDE) to 'MC_B/counter1_reg[11]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[9]' (FDE) to 'MC_A/counter1_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\phiC_39/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[12] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[12]' (FDE) to 'MC_B/counter1_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[11] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[12]' (FDE) to 'MC_A/counter1_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ret_0/tehb/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[13] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[11]' (FDE) to 'MC_B/counter1_reg[13]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[11]' (FDE) to 'MC_A/counter1_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[14] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[14]' (FDE) to 'MC_B/counter1_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[13] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[14]' (FDE) to 'MC_A/counter1_reg[13]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[15] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[13]' (FDE) to 'MC_B/counter1_reg[15]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[13]' (FDE) to 'MC_A/counter1_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[16] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[16]' (FDE) to 'MC_B/counter1_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[15] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[16]' (FDE) to 'MC_A/counter1_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[17] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[15]' (FDE) to 'MC_B/counter1_reg[17]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[15]' (FDE) to 'MC_A/counter1_reg[17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[18] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[18]' (FDE) to 'MC_B/counter1_reg[17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[17] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[18]' (FDE) to 'MC_A/counter1_reg[17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[19] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[17]' (FDE) to 'MC_B/counter1_reg[19]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[17]' (FDE) to 'MC_A/counter1_reg[19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[20] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[20]' (FDE) to 'MC_B/counter1_reg[19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[19] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[20]' (FDE) to 'MC_A/counter1_reg[19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[21] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[19]' (FDE) to 'MC_B/counter1_reg[21]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[19]' (FDE) to 'MC_A/counter1_reg[21]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[22] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[22]' (FDE) to 'MC_B/counter1_reg[21]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[21] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[22]' (FDE) to 'MC_A/counter1_reg[21]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[23] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[21]' (FDE) to 'MC_B/counter1_reg[23]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[21]' (FDE) to 'MC_A/counter1_reg[23]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\Counter.counter_reg[24] )
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[24]' (FDE) to 'MC_B/counter1_reg[23]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\counter1_reg[23] )
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[24]' (FDE) to 'MC_A/counter1_reg[23]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_A/\counter1_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (MC_B/\Counter.counter_reg[25] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[23]' (FDE) to 'MC_B/counter1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[23]' (FDE) to 'MC_A/counter1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[26]' (FDE) to 'MC_B/counter1_reg[25]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[26]' (FDE) to 'MC_A/counter1_reg[25]'
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[25]' (FDE) to 'MC_B/counter1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[25]' (FDE) to 'MC_A/counter1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[28]' (FDE) to 'MC_B/counter1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[28]' (FDE) to 'MC_A/counter1_reg[27]'
+INFO: [Synth 8-3886] merging instance 'MC_B/counter1_reg[27]' (FDE) to 'MC_B/counter1_reg[29]'
+INFO: [Synth 8-3886] merging instance 'MC_A/counter1_reg[27]' (FDE) to 'MC_A/counter1_reg[29]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:34]
+WARNING: [Synth 8-6014] Unused sequential element mul_52/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_52/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_52/multiply_unit/q1_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element mul_52/multiply_unit/q2_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/sim/VHDL_SRC/multipliers.vhd:44]
+DSP Report: Generating DSP mul_52/multiply_unit/q0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_52/multiply_unit/q0_reg is absorbed into DSP mul_52/multiply_unit/q0_reg.
+DSP Report: register mul_52/multiply_unit/q0_reg is absorbed into DSP mul_52/multiply_unit/q0_reg.
+DSP Report: register mul_52/multiply_unit/q0_reg is absorbed into DSP mul_52/multiply_unit/q0_reg.
+DSP Report: operator mul_52/multiply_unit/mul is absorbed into DSP mul_52/multiply_unit/q0_reg.
+DSP Report: operator mul_52/multiply_unit/mul is absorbed into DSP mul_52/multiply_unit/q0_reg.
+DSP Report: Generating DSP mul_52/multiply_unit/q1_reg, operation Mode is: (PCIN>>17)+(A2*B2)'.
+DSP Report: register mul_52/multiply_unit/b_reg_reg is absorbed into DSP mul_52/multiply_unit/q1_reg.
+DSP Report: register mul_52/multiply_unit/q1_reg is absorbed into DSP mul_52/multiply_unit/q1_reg.
+DSP Report: register mul_52/multiply_unit/q1_reg is absorbed into DSP mul_52/multiply_unit/q1_reg.
+DSP Report: register mul_52/multiply_unit/q0_reg is absorbed into DSP mul_52/multiply_unit/q1_reg.
+DSP Report: operator mul_52/multiply_unit/mul is absorbed into DSP mul_52/multiply_unit/q1_reg.
+DSP Report: operator mul_52/multiply_unit/mul is absorbed into DSP mul_52/multiply_unit/q1_reg.
+DSP Report: Generating DSP mul_52/multiply_unit/q2_reg, operation Mode is: (PCIN+(A''*B'')')'.
+DSP Report: register mul_52/multiply_unit/a_reg_reg is absorbed into DSP mul_52/multiply_unit/q2_reg.
+DSP Report: register mul_52/multiply_unit/q0_reg is absorbed into DSP mul_52/multiply_unit/q2_reg.
+DSP Report: register mul_52/multiply_unit/q2_reg is absorbed into DSP mul_52/multiply_unit/q2_reg.
+DSP Report: register mul_52/multiply_unit/q0_reg is absorbed into DSP mul_52/multiply_unit/q2_reg.
+DSP Report: register mul_52/multiply_unit/q2_reg is absorbed into DSP mul_52/multiply_unit/q2_reg.
+DSP Report: register mul_52/multiply_unit/q1_reg is absorbed into DSP mul_52/multiply_unit/q2_reg.
+DSP Report: operator mul_52/multiply_unit/mul is absorbed into DSP mul_52/multiply_unit/q2_reg.
+DSP Report: operator mul_52/multiply_unit/mul is absorbed into DSP mul_52/multiply_unit/q2_reg.
+WARNING: [Synth 8-3917] design kernel_2mm__GCB1 has port O112[0] driven by constant 1
+WARNING: [Synth 8-3917] design kernel_2mm__GCB1 has port O113[1] driven by constant 1
+WARNING: [Synth 8-3917] design kernel_2mm__GCB1 has port O114[0] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:45 ; elapsed = 00:03:00 . Memory (MB): peak = 2069.285 ; gain = 1260.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-----------------+-----------+----------------------+-------------+
+|Module Name | RTL Object      | Inference | Size (Depth x Width) | Primitives  | 
++------------+-----------------+-----------+----------------------+-------------+
+|Buffer_4    | fifo/Memory_reg | Implied   | 4 x 32               | RAM32M x 6  | 
+|Buffer_19   | fifo/Memory_reg | Implied   | 8 x 32               | RAM32M x 6  | 
+|Buffer_27   | fifo/Memory_reg | Implied   | 2 x 32               | RAM32M x 6  | 
+|Buffer_28   | fifo/Memory_reg | Implied   | 8 x 32               | RAM32M x 6  | 
++------------+-----------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-----------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping         | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|kernel_2mm__GCB0 | (A2*B2)'            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|kernel_2mm__GCB0 | (A''*B2)'           | 18     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 0    | 
+|kernel_2mm__GCB0 | (PCIN>>17)+(A''*B)' | 18     | 15     | -      | -      | 48     | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (PCIN>>17)+(A2*B)'  | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (PCIN+(A''*B2)')'   | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (PCIN+(A''*B'')')'  | 18     | 15     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (A2*B2)'            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|kernel_2mm__GCB0 | (PCIN>>17)+(A2*B)'  | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (PCIN+(A''*B2)')'   | 18     | 15     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB1 | (A2*B2)'            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|kernel_2mm__GCB1 | (PCIN>>17)+(A2*B2)' | 18     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB1 | (PCIN+(A''*B'')')'  | 18     | 15     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
++-----------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:58 ; elapsed = 00:03:13 . Memory (MB): peak = 2069.285 ; gain = 1260.121
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:06:44 ; elapsed = 00:07:01 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+-----------------+-----------+----------------------+-------------+
+|Module Name | RTL Object      | Inference | Size (Depth x Width) | Primitives  | 
++------------+-----------------+-----------+----------------------+-------------+
+|Buffer_4    | fifo/Memory_reg | Implied   | 4 x 32               | RAM32M x 6  | 
+|Buffer_19   | fifo/Memory_reg | Implied   | 8 x 32               | RAM32M x 6  | 
+|Buffer_27   | fifo/Memory_reg | Implied   | 2 x 32               | RAM32M x 6  | 
+|Buffer_28   | fifo/Memory_reg | Implied   | 8 x 32               | RAM32M x 6  | 
++------------+-----------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:07:02 ; elapsed = 00:07:37 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:07:17 ; elapsed = 00:07:53 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:07:17 ; elapsed = 00:07:53 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:24 ; elapsed = 00:07:59 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:07:24 ; elapsed = 00:08:00 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:07:29 ; elapsed = 00:08:05 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:07:30 ; elapsed = 00:08:05 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-----------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping           | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|kernel_2mm__GCB0 | (A'*B')'              | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|kernel_2mm__GCB0 | (PCIN>>17+(A*B')')'   | 0      | 18     | -      | -      | 0      | 0    | 1    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (PCIN+(A''*B'')')'    | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (A''*B')'             | 17     | 17     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 0    | 1    | 
+|kernel_2mm__GCB0 | (PCIN>>17+(A''*B')')' | 17     | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (PCIN+(A''*B'')')'    | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (A'*B')'              | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|kernel_2mm__GCB0 | (PCIN>>17+(A*B')')'   | 0      | 18     | -      | -      | 0      | 0    | 1    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB0 | (PCIN+(A''*B'')')'    | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB1 | (A'*B')'              | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|kernel_2mm__GCB1 | (PCIN>>17+(A*B')')'   | 0      | 18     | -      | -      | 0      | 0    | 1    | -    | -    | -     | 1    | 1    | 
+|kernel_2mm__GCB1 | (PCIN+(A''*B'')')'    | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
++-----------------+-----------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |  1784|
+|2     |DSP48E1  |    12|
+|7     |LUT1     |   101|
+|8     |LUT2     |  3560|
+|9     |LUT3     |  2323|
+|10    |LUT4     | 10159|
+|11    |LUT5     |  9814|
+|12    |LUT6     | 14670|
+|13    |MUXF7    |  2368|
+|14    |MUXF8    |   116|
+|15    |RAM32M   |    14|
+|16    |RAM32X1D |     4|
+|17    |FDCE     |  1897|
+|18    |FDPE     |   141|
+|19    |FDRE     |  6031|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:07:30 ; elapsed = 00:08:05 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 380 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:40 ; elapsed = 00:07:53 . Memory (MB): peak = 2071.305 ; gain = 1117.117
+Synthesis Optimization Complete : Time (s): cpu = 00:07:30 ; elapsed = 00:08:07 . Memory (MB): peak = 2071.305 ; gain = 1262.141
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.786 . Memory (MB): peak = 2071.305 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4298 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts/period_4.xdc]
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port clk. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts/period_4.xdc:2]
+Finished Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/kernel_2mm/vivado_scripts/period_4.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2071.305 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 18 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 14 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+Synth Design complete, checksum: 1f6f4c9
+INFO: [Common 17-83] Releasing license: Synthesis
+449 Infos, 169 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:07:45 ; elapsed = 00:08:33 . Memory (MB): peak = 2071.305 ; gain = 1693.074
+# report_utilization > utilization_post_syn.rpt
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 16:03:53 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_utilization
+| Design       : kernel_2mm
+| Device       : xc7k160tfbg484-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+1.1 Summary of Registers by Type
+2. Memory
+3. DSP
+4. IO and GT Specific
+5. Clocking
+6. Specific Feature
+7. Primitives
+8. Black Boxes
+9. Instantiated Netlists
+
+1. Slice Logic
+--------------
+
++----------------------------+-------+-------+------------+-----------+-------+
+|          Site Type         |  Used | Fixed | Prohibited | Available | Util% |
++----------------------------+-------+-------+------------+-----------+-------+
+| Slice LUTs*                | 35393 |     0 |          0 |    101400 | 34.90 |
+|   LUT as Logic             | 35329 |     0 |          0 |    101400 | 34.84 |
+|   LUT as Memory            |    64 |     0 |          0 |     35000 |  0.18 |
+|     LUT as Distributed RAM |    64 |     0 |            |           |       |
+|     LUT as Shift Register  |     0 |     0 |            |           |       |
+| Slice Registers            |  8069 |     0 |          0 |    202800 |  3.98 |
+|   Register as Flip Flop    |  8069 |     0 |          0 |    202800 |  3.98 |
+|   Register as Latch        |     0 |     0 |          0 |    202800 |  0.00 |
+| F7 Muxes                   |  2368 |     0 |          0 |     50700 |  4.67 |
+| F8 Muxes                   |   116 |     0 |          0 |     25350 |  0.46 |
++----------------------------+-------+-------+------------+-----------+-------+
+* Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
+Warning! LUT value is adjusted to account for LUT combining.
+
+
+1.1 Summary of Registers by Type
+--------------------------------
+
++-------+--------------+-------------+--------------+
+| Total | Clock Enable | Synchronous | Asynchronous |
++-------+--------------+-------------+--------------+
+| 0     |            _ |           - |            - |
+| 0     |            _ |           - |          Set |
+| 0     |            _ |           - |        Reset |
+| 0     |            _ |         Set |            - |
+| 0     |            _ |       Reset |            - |
+| 0     |          Yes |           - |            - |
+| 141   |          Yes |           - |          Set |
+| 1897  |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 6031  |          Yes |       Reset |            - |
++-------+--------------+-------------+--------------+
+
+
+2. Memory
+---------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| Block RAM Tile |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB36/FIFO* |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB18       |    0 |     0 |          0 |       650 |  0.00 |
++----------------+------+-------+------------+-----------+-------+
+* Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
+
+
+3. DSP
+------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| DSPs           |   12 |     0 |          0 |       600 |  2.00 |
+|   DSP48E1 only |   12 |       |            |           |       |
++----------------+------+-------+------------+-----------+-------+
+
+
+4. IO and GT Specific
+---------------------
+
++-----------------------------+------+-------+------------+-----------+-------+
+|          Site Type          | Used | Fixed | Prohibited | Available | Util% |
++-----------------------------+------+-------+------------+-----------+-------+
+| Bonded IOB                  |    0 |     0 |          0 |       285 |  0.00 |
+| Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
+| Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |          0 |         8 |  0.00 |
+| PHASER_REF                  |    0 |     0 |          0 |         8 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |          0 |        32 |  0.00 |
+| IN_FIFO                     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |          0 |         8 |  0.00 |
+| IBUFDS                      |    0 |     0 |          0 |       275 |  0.00 |
+| GTXE2_COMMON                |    0 |     0 |          0 |         1 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |          0 |         4 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        32 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       400 |  0.00 |
+| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |          0 |       150 |  0.00 |
+| IBUFDS_GTE2                 |    0 |     0 |          0 |         2 |  0.00 |
+| ILOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
+| OLOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
++-----------------------------+------+-------+------------+-----------+-------+
+
+
+5. Clocking
+-----------
+
++------------+------+-------+------------+-----------+-------+
+|  Site Type | Used | Fixed | Prohibited | Available | Util% |
++------------+------+-------+------------+-----------+-------+
+| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
+| BUFIO      |    0 |     0 |          0 |        32 |  0.00 |
+| MMCME2_ADV |    0 |     0 |          0 |         8 |  0.00 |
+| PLLE2_ADV  |    0 |     0 |          0 |         8 |  0.00 |
+| BUFMRCE    |    0 |     0 |          0 |        16 |  0.00 |
+| BUFHCE     |    0 |     0 |          0 |       120 |  0.00 |
+| BUFR       |    0 |     0 |          0 |        32 |  0.00 |
++------------+------+-------+------------+-----------+-------+
+
+
+6. Specific Feature
+-------------------
+
++-------------+------+-------+------------+-----------+-------+
+|  Site Type  | Used | Fixed | Prohibited | Available | Util% |
++-------------+------+-------+------------+-----------+-------+
+| BSCANE2     |    0 |     0 |          0 |         4 |  0.00 |
+| CAPTUREE2   |    0 |     0 |          0 |         1 |  0.00 |
+| DNA_PORT    |    0 |     0 |          0 |         1 |  0.00 |
+| EFUSE_USR   |    0 |     0 |          0 |         1 |  0.00 |
+| FRAME_ECCE2 |    0 |     0 |          0 |         1 |  0.00 |
+| ICAPE2      |    0 |     0 |          0 |         2 |  0.00 |
+| PCIE_2_1    |    0 |     0 |          0 |         1 |  0.00 |
+| STARTUPE2   |    0 |     0 |          0 |         1 |  0.00 |
+| XADC        |    0 |     0 |          0 |         1 |  0.00 |
++-------------+------+-------+------------+-----------+-------+
+
+
+7. Primitives
+-------------
+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT6     | 14670 |                 LUT |
+| LUT4     | 10159 |                 LUT |
+| LUT5     |  9814 |                 LUT |
+| FDRE     |  6031 |        Flop & Latch |
+| LUT2     |  3560 |                 LUT |
+| MUXF7    |  2368 |               MuxFx |
+| LUT3     |  2323 |                 LUT |
+| FDCE     |  1897 |        Flop & Latch |
+| CARRY4   |  1784 |          CarryLogic |
+| FDPE     |   141 |        Flop & Latch |
+| MUXF8    |   116 |               MuxFx |
+| LUT1     |   101 |                 LUT |
+| RAMD32   |    92 |  Distributed Memory |
+| RAMS32   |    28 |  Distributed Memory |
+| DSP48E1  |    12 |    Block Arithmetic |
++----------+-------+---------------------+
+
+
+8. Black Boxes
+--------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+9. Instantiated Netlists
+------------------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+# report_timing > timing_post_syn.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 16:04:01 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : kernel_2mm
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -3.357ns  (required time - arrival time)
+  Source:                 c_LSQ_tmp/storeQ/addrQ_3_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            MC_tmp/counter1_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.106ns  (logic 2.355ns (33.141%)  route 4.751ns (66.859%))
+  Logic Levels:           21  (CARRY4=11 LUT2=1 LUT4=2 LUT5=1 LUT6=6)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.638ns = ( 4.638 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.672ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=8200, unset)         0.672     0.672    c_LSQ_tmp/storeQ/clk
+                         FDRE                                         r  c_LSQ_tmp/storeQ/addrQ_3_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.209     0.881 f  c_LSQ_tmp/storeQ/addrQ_3_reg[3]/Q
+                         net (fo=17, unplaced)        0.714     1.595    c_LSQ_tmp/storeQ/addrQ_3_reg[8]_0[3]
+                         LUT6 (Prop_lut6_I0_O)        0.153     1.748 f  c_LSQ_tmp/storeQ/tmp_address0[3]_INST_0_i_3/O
+                         net (fo=1, unplaced)         0.521     2.269    c_LSQ_tmp/storeQ/tmp_address0[3]_INST_0_i_3_n_0
+                         LUT6 (Prop_lut6_I1_O)        0.053     2.322 r  c_LSQ_tmp/storeQ/tmp_address0[3]_INST_0_i_1/O
+                         net (fo=17, unplaced)        0.577     2.899    c_LSQ_tmp/storeQ/tmp_address0[3]_INST_0_i_1_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.053     2.952 r  c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_245/O
+                         net (fo=1, unplaced)         0.000     2.952    c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_245_n_0
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.310     3.262 r  c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_234/CO[3]
+                         net (fo=1, unplaced)         0.008     3.270    c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_234_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     3.330 r  c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_199/CO[3]
+                         net (fo=1, unplaced)         0.000     3.330    c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_199_n_0
+                         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.149     3.479 r  c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_168/CO[2]
+                         net (fo=1, unplaced)         0.339     3.818    c_LSQ_tmp/loadQ/tmp_we0_INST_0_i_85_0[0]
+                         LUT6 (Prop_lut6_I3_O)        0.160     3.978 r  c_LSQ_tmp/loadQ/tmp_we0_INST_0_i_136/O
+                         net (fo=1, unplaced)         0.340     4.318    c_LSQ_tmp/loadQ/tmp_we0_INST_0_i_136_n_0
+                         LUT4 (Prop_lut4_I3_O)        0.053     4.371 r  c_LSQ_tmp/loadQ/tmp_we0_INST_0_i_85/O
+                         net (fo=1, unplaced)         0.340     4.711    c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_8_2
+                         LUT6 (Prop_lut6_I3_O)        0.053     4.764 f  c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_39/O
+                         net (fo=1, unplaced)         0.340     5.104    c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_39_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053     5.157 f  c_LSQ_tmp/storeQ/tmp_we0_INST_0_i_8/O
+                         net (fo=1, unplaced)         0.340     5.497    c_LSQ_tmp/loadQ/head_reg[0]_rep__2_2
+                         LUT6 (Prop_lut6_I5_O)        0.053     5.550 r  c_LSQ_tmp/loadQ/tmp_we0_INST_0_i_1/O
+                         net (fo=17, unplaced)        0.396     5.946    c_LSQ_tmp/loadQ/tmp_we0_INST_0_i_8
+                         LUT2 (Prop_lut2_I0_O)        0.053     5.999 r  c_LSQ_tmp/loadQ/tmp_we0_INST_0/O
+                         net (fo=63, unplaced)        0.428     6.427    MC_tmp/counter1_reg[3]_0
+                         LUT4 (Prop_lut4_I2_O)        0.053     6.480 r  MC_tmp/minusOp_carry_i_6/O
+                         net (fo=1, unplaced)         0.000     6.480    MC_tmp/minusOp_carry_i_6_n_0
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.310     6.790 r  MC_tmp/minusOp_carry/CO[3]
+                         net (fo=1, unplaced)         0.008     6.798    MC_tmp/minusOp_carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.858 r  MC_tmp/minusOp_carry__0/CO[3]
+                         net (fo=1, unplaced)         0.000     6.858    MC_tmp/minusOp_carry__0_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.918 r  MC_tmp/minusOp_carry__1/CO[3]
+                         net (fo=1, unplaced)         0.000     6.918    MC_tmp/minusOp_carry__1_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     6.978 r  MC_tmp/minusOp_carry__2/CO[3]
+                         net (fo=1, unplaced)         0.000     6.978    MC_tmp/minusOp_carry__2_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.038 r  MC_tmp/minusOp_carry__3/CO[3]
+                         net (fo=1, unplaced)         0.000     7.038    MC_tmp/minusOp_carry__3_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.098 r  MC_tmp/minusOp_carry__4/CO[3]
+                         net (fo=1, unplaced)         0.000     7.098    MC_tmp/minusOp_carry__4_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.158 r  MC_tmp/minusOp_carry__5/CO[3]
+                         net (fo=1, unplaced)         0.000     7.158    MC_tmp/minusOp_carry__5_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.220     7.378 r  MC_tmp/minusOp_carry__6/O[1]
+                         net (fo=2, unplaced)         0.400     7.778    MC_tmp/minusOp_carry__6_n_6
+                         FDRE                                         r  MC_tmp/counter1_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clk (IN)
+                         net (fo=8200, unset)         0.638     4.638    MC_tmp/clk
+                         FDRE                                         r  MC_tmp/counter1_reg[29]/C
+                         clock pessimism              0.000     4.638    
+                         clock uncertainty           -0.035     4.603    
+                         FDRE (Setup_fdre_C_D)       -0.182     4.421    MC_tmp/counter1_reg[29]
+  -------------------------------------------------------------------
+                         required time                          4.421    
+                         arrival time                          -7.778    
+  -------------------------------------------------------------------
+                         slack                                 -3.357    
+
+
+
+
+report_timing: Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2071.305 ; gain = 0.000
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k160t'
+Running DRC as a precondition to command opt_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/loadQ/offsetQ_7[2]_i_1 into driver instance c_LSQ_D/loadQ/offsetQ_14[3]_i_2__0, which resulted in an inversion of 10 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/loadQ/prevPriorityRequest_1_i_1 into driver instance c_LSQ_D/loadQ/prevPriorityRequest_1_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/loadQ/tail[3]_i_1__0 into driver instance c_LSQ_D/loadQ/offsetQ_15[3]_i_3, which resulted in an inversion of 137 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[0]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[0]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[1]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[1]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[2]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[2]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[3]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[3]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[4]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[4]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[5]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[5]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[6]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[6]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[7]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[7]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[8]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[8]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_D/storeQ/D_address0[9]_INST_0 into driver instance c_LSQ_D/storeQ/D_address0[9]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/loadQ/offsetQ_0[2]_i_1 into driver instance c_LSQ_tmp/loadQ/offsetQ_0[2]_i_2, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/loadQ/offsetQ_12[1]_i_1__0 into driver instance c_LSQ_tmp/loadQ/offsetQ_12[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/loadQ/offsetQ_12[3]_i_2__0 into driver instance c_LSQ_tmp/loadQ/offsetQ_12[3]_i_3__0, which resulted in an inversion of 4 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/loadQ/offsetQ_4[1]_i_1__0 into driver instance c_LSQ_tmp/loadQ/offsetQ_4[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_10[1]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_10[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_10[3]_i_2__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_10[3]_i_3__0, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_11[2]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_11[2]_i_2__0, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_13[0]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_13[0]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_13[1]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_13[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_13[2]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_13[2]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_14[1]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_14[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_14[3]_i_2__1 into driver instance c_LSQ_tmp/storeQ/offsetQ_14[3]_i_3__0, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_1[2]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_1[2]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_1[3]_i_2__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_1[3]_i_3, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_2[1]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_2[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_2[3]_i_2__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_2[3]_i_3, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_3[0]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_3[0]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_3[2]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_3[2]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_5[1]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_5[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_5[2]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_5[2]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_5[3]_i_2__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_5[3]_i_3, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_6[1]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_6[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_6[3]_i_2__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_6[3]_i_3, which resulted in an inversion of 2 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_9[1]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_9[1]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_9[2]_i_1__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_9[2]_i_2, which resulted in an inversion of 3 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_tmp/storeQ/offsetQ_9[3]_i_2__0 into driver instance c_LSQ_tmp/storeQ/offsetQ_9[3]_i_3__0, which resulted in an inversion of 2 pins
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+INFO: [Opt 31-389] Phase Retarget created 1 cells and removed 40 cells
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               1  |              40  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2180.594 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+55 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 2180.594 ; gain = 109.289
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2180.594 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2180.594 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-1035] Found 4663 LUTNM shape to break, 95 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 129, two critical 4534, total 1000, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 1034 nets or LUTs. Breaked 1000 LUTs, combined 34 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-457] Pass 1. Identified 4 candidate cells for DSP register optimization.
+INFO: [Physopt 32-665] Processed cell mul_41/multiply_unit/q2_reg. 15 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell mul_41/multiply_unit/q1_reg. 15 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell mul_41/multiply_unit/q2_reg. 17 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell mul_41/multiply_unit/q0_reg. 17 registers were pushed out.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 4 nets or cells. Created 64 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.151 . Memory (MB): peak = 2180.594 ; gain = 0.000
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2180.594 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |         1000  |             34  |                  1034  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |           64  |              0  |                     4  |           0  |           1  |  00:00:01  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |         1064  |             34  |                  1038  |           0  |           9  |  00:00:02  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Post Placement Optimization Initialization | Checksum: 2267d672f
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.691 | TNS=-21408.387 |
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-2.887. For the most accurate timing information please run report_timing.
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                2x2|                4x4|
+|___________|___________________|___________________|
+|      South|                1x1|                4x4|
+|___________|___________________|___________________|
+|       East|                4x4|                2x2|
+|___________|___________________|___________________|
+|       West|                4x4|                1x1|
+|___________|___________________|___________________|
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2180.594 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+38 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:04:05 ; elapsed = 00:02:59 . Memory (MB): peak = 2180.594 ; gain = 0.000
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k160t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+INFO: [Common 17-14] Message 'Route 35-198' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Route 35-16] Router Completed Successfully
+INFO: [Common 17-83] Releasing license: Implementation
+16 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:05:33 ; elapsed = 00:04:34 . Memory (MB): peak = 2425.504 ; gain = 244.910
+# report_utilization > utilization_post_pr.rpt
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 16:11:45 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_utilization
+| Design       : kernel_2mm
+| Device       : xc7k160tfbg484-1
+| Speed File   : -1
+| Design State : Routed
+------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+1.1 Summary of Registers by Type
+2. Slice Logic Distribution
+3. Memory
+4. DSP
+5. IO and GT Specific
+6. Clocking
+7. Specific Feature
+8. Primitives
+9. Black Boxes
+10. Instantiated Netlists
+
+1. Slice Logic
+--------------
+
++----------------------------+-------+-------+------------+-----------+-------+
+|          Site Type         |  Used | Fixed | Prohibited | Available | Util% |
++----------------------------+-------+-------+------------+-----------+-------+
+| Slice LUTs                 | 36114 |     0 |          0 |    101400 | 35.62 |
+|   LUT as Logic             | 36054 |     0 |          0 |    101400 | 35.56 |
+|   LUT as Memory            |    60 |     0 |          0 |     35000 |  0.17 |
+|     LUT as Distributed RAM |    60 |     0 |            |           |       |
+|     LUT as Shift Register  |     0 |     0 |            |           |       |
+| Slice Registers            |  8133 |     0 |          0 |    202800 |  4.01 |
+|   Register as Flip Flop    |  8133 |     0 |          0 |    202800 |  4.01 |
+|   Register as Latch        |     0 |     0 |          0 |    202800 |  0.00 |
+| F7 Muxes                   |  2368 |     0 |          0 |     50700 |  4.67 |
+| F8 Muxes                   |   116 |     0 |          0 |     25350 |  0.46 |
++----------------------------+-------+-------+------------+-----------+-------+
+* Warning! LUT value is adjusted to account for LUT combining.
+
+
+1.1 Summary of Registers by Type
+--------------------------------
+
++-------+--------------+-------------+--------------+
+| Total | Clock Enable | Synchronous | Asynchronous |
++-------+--------------+-------------+--------------+
+| 0     |            _ |           - |            - |
+| 0     |            _ |           - |          Set |
+| 0     |            _ |           - |        Reset |
+| 0     |            _ |         Set |            - |
+| 0     |            _ |       Reset |            - |
+| 0     |          Yes |           - |            - |
+| 141   |          Yes |           - |          Set |
+| 1897  |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 6095  |          Yes |       Reset |            - |
++-------+--------------+-------------+--------------+
+
+
+2. Slice Logic Distribution
+---------------------------
+
++--------------------------------------------+-------+-------+------------+-----------+-------+
+|                  Site Type                 |  Used | Fixed | Prohibited | Available | Util% |
++--------------------------------------------+-------+-------+------------+-----------+-------+
+| Slice                                      | 11134 |     0 |          0 |     25350 | 43.92 |
+|   SLICEL                                   |  7230 |     0 |            |           |       |
+|   SLICEM                                   |  3904 |     0 |            |           |       |
+| LUT as Logic                               | 36054 |     0 |          0 |    101400 | 35.56 |
+|   using O5 output only                     |     8 |       |            |           |       |
+|   using O6 output only                     | 31512 |       |            |           |       |
+|   using O5 and O6                          |  4534 |       |            |           |       |
+| LUT as Memory                              |    60 |     0 |          0 |     35000 |  0.17 |
+|   LUT as Distributed RAM                   |    60 |     0 |            |           |       |
+|     using O5 output only                   |     0 |       |            |           |       |
+|     using O6 output only                   |     0 |       |            |           |       |
+|     using O5 and O6                        |    60 |       |            |           |       |
+|   LUT as Shift Register                    |     0 |     0 |            |           |       |
+| Slice Registers                            |  8133 |     0 |          0 |    202800 |  4.01 |
+|   Register driven from within the Slice    |  6415 |       |            |           |       |
+|   Register driven from outside the Slice   |  1718 |       |            |           |       |
+|     LUT in front of the register is unused |   864 |       |            |           |       |
+|     LUT in front of the register is used   |   854 |       |            |           |       |
+| Unique Control Sets                        |   328 |       |          0 |     25350 |  1.29 |
++--------------------------------------------+-------+-------+------------+-----------+-------+
+* * Note: Available Control Sets calculated as Slice * 1, Review the Control Sets Report for more information regarding control sets.
+
+
+3. Memory
+---------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| Block RAM Tile |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB36/FIFO* |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB18       |    0 |     0 |          0 |       650 |  0.00 |
++----------------+------+-------+------------+-----------+-------+
+* Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
+
+
+4. DSP
+------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| DSPs           |   12 |     0 |          0 |       600 |  2.00 |
+|   DSP48E1 only |   12 |       |            |           |       |
++----------------+------+-------+------------+-----------+-------+
+
+
+5. IO and GT Specific
+---------------------
+
++-----------------------------+------+-------+------------+-----------+-------+
+|          Site Type          | Used | Fixed | Prohibited | Available | Util% |
++-----------------------------+------+-------+------------+-----------+-------+
+| Bonded IOB                  |    0 |     0 |          0 |       285 |  0.00 |
+| Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
+| Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |          0 |         8 |  0.00 |
+| PHASER_REF                  |    0 |     0 |          0 |         8 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |          0 |        32 |  0.00 |
+| IN_FIFO                     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |          0 |         8 |  0.00 |
+| IBUFDS                      |    0 |     0 |          0 |       275 |  0.00 |
+| GTXE2_COMMON                |    0 |     0 |          0 |         1 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |          0 |         4 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        32 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       400 |  0.00 |
+| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |          0 |       150 |  0.00 |
+| IBUFDS_GTE2                 |    0 |     0 |          0 |         2 |  0.00 |
+| ILOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
+| OLOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
++-----------------------------+------+-------+------------+-----------+-------+
+
+
+6. Clocking
+-----------
+
++------------+------+-------+------------+-----------+-------+
+|  Site Type | Used | Fixed | Prohibited | Available | Util% |
++------------+------+-------+------------+-----------+-------+
+| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
+| BUFIO      |    0 |     0 |          0 |        32 |  0.00 |
+| MMCME2_ADV |    0 |     0 |          0 |         8 |  0.00 |
+| PLLE2_ADV  |    0 |     0 |          0 |         8 |  0.00 |
+| BUFMRCE    |    0 |     0 |          0 |        16 |  0.00 |
+| BUFHCE     |    0 |     0 |          0 |       120 |  0.00 |
+| BUFR       |    0 |     0 |          0 |        32 |  0.00 |
++------------+------+-------+------------+-----------+-------+
+
+
+7. Specific Feature
+-------------------
+
++-------------+------+-------+------------+-----------+-------+
+|  Site Type  | Used | Fixed | Prohibited | Available | Util% |
++-------------+------+-------+------------+-----------+-------+
+| BSCANE2     |    0 |     0 |          0 |         4 |  0.00 |
+| CAPTUREE2   |    0 |     0 |          0 |         1 |  0.00 |
+| DNA_PORT    |    0 |     0 |          0 |         1 |  0.00 |
+| EFUSE_USR   |    0 |     0 |          0 |         1 |  0.00 |
+| FRAME_ECCE2 |    0 |     0 |          0 |         1 |  0.00 |
+| ICAPE2      |    0 |     0 |          0 |         2 |  0.00 |
+| PCIE_2_1    |    0 |     0 |          0 |         1 |  0.00 |
+| STARTUPE2   |    0 |     0 |          0 |         1 |  0.00 |
+| XADC        |    0 |     0 |          0 |         1 |  0.00 |
++-------------+------+-------+------------+-----------+-------+
+
+
+8. Primitives
+-------------
+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT6     | 14669 |                 LUT |
+| LUT4     | 10159 |                 LUT |
+| LUT5     |  9815 |                 LUT |
+| FDRE     |  6095 |        Flop & Latch |
+| LUT2     |  3560 |                 LUT |
+| MUXF7    |  2368 |               MuxFx |
+| LUT3     |  2323 |                 LUT |
+| FDCE     |  1897 |        Flop & Latch |
+| CARRY4   |  1784 |          CarryLogic |
+| FDPE     |   141 |        Flop & Latch |
+| MUXF8    |   116 |               MuxFx |
+| RAMD32   |    92 |  Distributed Memory |
+| LUT1     |    62 |                 LUT |
+| RAMS32   |    28 |  Distributed Memory |
+| DSP48E1  |    12 |    Block Arithmetic |
++----------+-------+---------------------+
+
+
+9. Black Boxes
+--------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+10. Instantiated Netlists
+-------------------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+# report_timing > timing_post_pr.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 16:11:54 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : kernel_2mm
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -3.216ns  (required time - arrival time)
+  Source:                 c_LSQ_D/loadQ/portQ_6_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            c_LSQ_D/storeQ/dataQ_7_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        7.220ns  (logic 2.130ns (29.500%)  route 5.090ns (70.500%))
+  Logic Levels:           18  (CARRY4=8 LUT2=1 LUT3=1 LUT4=1 LUT5=1 LUT6=4 MUXF7=1 MUXF8=1)
+  Clock Path Skew:        -0.031ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.329ns = ( 5.329 - 4.000 ) 
+    Source Clock Delay      (SCD):    1.442ns
+    Clock Pessimism Removal (CPR):    0.082ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=8264, unset)         1.442     1.442    c_LSQ_D/loadQ/clk
+    SLICE_X88Y130        FDRE                                         r  c_LSQ_D/loadQ/portQ_6_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X88Y130        FDRE (Prop_fdre_C_Q)         0.282     1.724 r  c_LSQ_D/loadQ/portQ_6_reg/Q
+                         net (fo=64, routed)          0.728     2.452    c_LSQ_D/loadQ/portQ_6_reg_n_0
+    SLICE_X86Y130        LUT6 (Prop_lut6_I0_O)        0.157     2.609 f  c_LSQ_D/loadQ/loadCompleted_11_i_13/O
+                         net (fo=3, routed)           0.470     3.079    c_LSQ_D/loadQ/loadCompleted_11_i_13_n_0
+    SLICE_X87Y130        LUT6 (Prop_lut6_I1_O)        0.053     3.132 r  c_LSQ_D/loadQ/data_reg[31]_i_15/O
+                         net (fo=7, routed)           0.767     3.899    c_LSQ_D/loadQ/data_reg[31]_i_15_n_0
+    SLICE_X90Y126        LUT6 (Prop_lut6_I0_O)        0.053     3.952 r  c_LSQ_D/loadQ/loadCompleted_10_i_7/O
+                         net (fo=2, routed)           0.359     4.311    c_LSQ_D/loadQ/loadCompleted_10_i_7_n_0
+    SLICE_X90Y125        LUT6 (Prop_lut6_I0_O)        0.053     4.364 f  c_LSQ_D/loadQ/loadCompleted_10_i_3/O
+                         net (fo=3, routed)           0.467     4.832    c_LSQ_D/loadQ/loadCompleted_10_i_3_n_0
+    SLICE_X89Y125        LUT4 (Prop_lut4_I3_O)        0.053     4.885 f  c_LSQ_D/loadQ/i__i_1/O
+                         net (fo=36, routed)          0.470     5.354    c_LSQ_D/loadQ/portQ_9_reg_0
+    SLICE_X83Y123        LUT2 (Prop_lut2_I1_O)        0.053     5.407 r  c_LSQ_D/loadQ/data_reg[31]_i_9/O
+                         net (fo=64, routed)          0.822     6.229    c_LSQ_D/loadQ/_T_102156[2]
+    SLICE_X83Y115        MUXF7 (Prop_muxf7_S_O)       0.193     6.422 r  c_LSQ_D/loadQ/data_reg_reg[0]_i_2/O
+                         net (fo=2, routed)           0.000     6.422    c_LSQ_D/loadQ/data_reg_reg[0]_i_2_n_0
+    SLICE_X83Y115        MUXF8 (Prop_muxf8_I0_O)      0.056     6.478 r  c_LSQ_D/loadQ/dataOutArray[0]_carry_i_9/O
+                         net (fo=1, routed)           0.352     6.830    Buffer_8/dataOutArray[0]_carry
+    SLICE_X86Y114        LUT5 (Prop_lut5_I2_O)        0.153     6.983 r  Buffer_8/dataOutArray[0]_carry_i_4/O
+                         net (fo=1, routed)           0.000     6.983    add_57/dataQ_14_reg[3][0]
+    SLICE_X86Y114        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297     7.280 r  add_57/dataOutArray[0]_carry/CO[3]
+                         net (fo=1, routed)           0.000     7.280    add_57/dataOutArray[0]_carry_n_0
+    SLICE_X86Y115        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.340 r  add_57/dataOutArray[0]_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     7.340    add_57/dataOutArray[0]_carry__0_n_0
+    SLICE_X86Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.400 r  add_57/dataOutArray[0]_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.400    add_57/dataOutArray[0]_carry__1_n_0
+    SLICE_X86Y117        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.460 r  add_57/dataOutArray[0]_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     7.460    add_57/dataOutArray[0]_carry__2_n_0
+    SLICE_X86Y118        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.520 r  add_57/dataOutArray[0]_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.520    add_57/dataOutArray[0]_carry__3_n_0
+    SLICE_X86Y119        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.580 r  add_57/dataOutArray[0]_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     7.580    add_57/dataOutArray[0]_carry__4_n_0
+    SLICE_X86Y120        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     7.640 r  add_57/dataOutArray[0]_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     7.640    add_57/dataOutArray[0]_carry__5_n_0
+    SLICE_X86Y121        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.212     7.852 r  add_57/dataOutArray[0]_carry__6/O[1]
+                         net (fo=16, routed)          0.655     8.507    add_57/store_3_dataOutArray_0[29]
+    SLICE_X78Y120        LUT3 (Prop_lut3_I0_O)        0.155     8.662 r  add_57/dataQ_7[29]_i_1__0/O
+                         net (fo=1, routed)           0.000     8.662    c_LSQ_D/storeQ/dataQ_7_reg[31]_0[29]
+    SLICE_X78Y120        FDRE                                         r  c_LSQ_D/storeQ/dataQ_7_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clk (IN)
+                         net (fo=8264, unset)         1.329     5.329    c_LSQ_D/storeQ/clk
+    SLICE_X78Y120        FDRE                                         r  c_LSQ_D/storeQ/dataQ_7_reg[29]/C
+                         clock pessimism              0.082     5.411    
+                         clock uncertainty           -0.035     5.376    
+    SLICE_X78Y120        FDRE (Setup_fdre_C_D)        0.071     5.447    c_LSQ_D/storeQ/dataQ_7_reg[29]
+  -------------------------------------------------------------------
+                         required time                          5.447    
+                         arrival time                          -8.662    
+  -------------------------------------------------------------------
+                         slack                                 -3.216    
+
+
+
+
+report_timing: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 2425.504 ; gain = 0.000
+# exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 27 16:11:54 2023...

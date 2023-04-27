@@ -1,0 +1,1768 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Apr 27 15:21:33 2023
+# Process ID: 17800
+# Current directory: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts
+# Command line: vivado.exe -mode tcl -source synthesize_4.tcl
+# Log file: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts/vivado.log
+# Journal file: C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts\vivado.jou
+# Running On: Frostspark, OS: Windows, CPU Frequency: 3504 MHz, CPU Physical cores: 4, Host memory: 17116 MB
+#-----------------------------------------------------------
+source synthesize_4.tcl
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/arithmetic_units.vhd
+read_vhdl: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 376.230 ; gain = 63.230
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/delay_buffer.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/elastic_components.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/MemCont.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/multipliers.vhd
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/mul_wrapper.vhd
+# read_verilog  ../sim/VHDL_SRC/LSQ_A.v
+# read_vhdl -vhdl2008 ../sim/VHDL_SRC/gaussian_optimized.vhd
+# read_xdc period_4.xdc
+# synth_design -top gaussian -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
+Command: synth_design -top gaussian -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k160t'
+INFO: [Device 21-403] Loading part xc7k160tfbg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 10900
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1215.207 ; gain = 407.715
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'gaussian' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'Const' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1369]
+	Parameter SIZE bound to: 1 - type: integer 
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Const' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1369]
+INFO: [Synth 8-638] synthesizing module 'branch' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module '\join ' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:113]
+	Parameter SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'andN' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:24]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'andN' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:24]
+INFO: [Synth 8-256] done synthesizing module '\join ' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:113]
+INFO: [Synth 8-638] synthesizing module 'branchSimple' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:447]
+INFO: [Synth 8-256] done synthesizing module 'branchSimple' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:447]
+INFO: [Synth 8-256] done synthesizing module 'branch' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'start_node' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:839]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'OEHB' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-256] done synthesizing module 'start_node' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:839]
+INFO: [Synth 8-638] synthesizing module '\fork ' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 3 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'eagerFork_RegisterBLock' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:517]
+INFO: [Synth 8-256] done synthesizing module 'eagerFork_RegisterBLock' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:517]
+INFO: [Synth 8-256] done synthesizing module '\fork ' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1527]
+	Parameter INPUTS bound to: 3 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+	Parameter COND_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1527]
+INFO: [Synth 8-638] synthesizing module 'add_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:67]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 6 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'join__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:113]
+	Parameter SIZE bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'join__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'add_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'Const__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1369]
+	Parameter SIZE bound to: 1 - type: integer 
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Const__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1369]
+INFO: [Synth 8-638] synthesizing module 'icmp_ult_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:827]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'icmp_ult_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:827]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'branch__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'branch__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'branch__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:478]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'branch__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:478]
+INFO: [Synth 8-638] synthesizing module 'cntrlMerge' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1599]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+	Parameter COND_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'merge_notehb' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:704]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge_notehb' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:704]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 2 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-256] done synthesizing module 'cntrlMerge' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1599]
+INFO: [Synth 8-638] synthesizing module 'source' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:940]
+	Parameter INPUT_COUNT bound to: 0 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'source' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'source__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:940]
+	Parameter INPUT_COUNT bound to: 0 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'source__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:940]
+INFO: [Synth 8-638] synthesizing module 'elasticBuffer__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:303]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'OEHB__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:242]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OEHB__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:242]
+INFO: [Synth 8-256] done synthesizing module 'elasticBuffer__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:303]
+INFO: [Synth 8-638] synthesizing module 'merge' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 6 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'merge' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized4' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 4 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'orN__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:68]
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'orN__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:68]
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized4' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'sext_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:274]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sext_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:274]
+INFO: [Synth 8-638] synthesizing module 'zext_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:309]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'zext_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:309]
+INFO: [Synth 8-638] synthesizing module 'getelementptr_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:1005]
+	Parameter INPUTS bound to: 3 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter INPUT_SIZE bound to: 32 - type: integer 
+	Parameter OUTPUT_SIZE bound to: 32 - type: integer 
+	Parameter CONST_SIZE bound to: 1 - type: integer 
+WARNING: [Synth 8-5974] attribute "use_dsp48" has been deprecated, please use "use_dsp" instead 
+INFO: [Synth 8-256] done synthesizing module 'getelementptr_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:1005]
+INFO: [Synth 8-638] synthesizing module 'lsq_load_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1704]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lsq_load_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1704]
+INFO: [Synth 8-638] synthesizing module 'mc_load_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:583]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized2' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized2' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'mc_load_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:583]
+INFO: [Synth 8-638] synthesizing module 'mul_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/mul_wrapper.vhd:26]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'mul_4_stage' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/multipliers.vhd:23]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mul_4_stage' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/multipliers.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'delay_buffer' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/delay_buffer.vhd:16]
+	Parameter SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'delay_buffer' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/delay_buffer.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'mul_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/mul_wrapper.vhd:26]
+INFO: [Synth 8-638] synthesizing module 'sub_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:107]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sub_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:107]
+INFO: [Synth 8-638] synthesizing module 'lsq_store_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1750]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 2 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 32 - type: integer 
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lsq_store_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1750]
+INFO: [Synth 8-638] synthesizing module 'add_op__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:67]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'add_op__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'icmp_ult_op__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:827]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'icmp_ult_op__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:827]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized5' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 4 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized5' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'fork__parameterized6' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter SIZE bound to: 3 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'fork__parameterized6' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:565]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 4 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'transpFIFO__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1227]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'elasticFifoInner__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:972]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 32 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+	Parameter FIFO_DEPTH bound to: 3 - type: integer 
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1001]
+INFO: [Synth 8-256] done synthesizing module 'elasticFifoInner__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:972]
+INFO: [Synth 8-256] done synthesizing module 'transpFIFO__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1227]
+INFO: [Synth 8-638] synthesizing module 'TEHB__parameterized4' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'TEHB__parameterized4' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'icmp_slt_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:911]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'icmp_slt_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:911]
+INFO: [Synth 8-638] synthesizing module 'merge__parameterized3' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+	Parameter INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'merge__parameterized3' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:634]
+INFO: [Synth 8-638] synthesizing module 'ret_op' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:24]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'ret_op' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/arithmetic_units.vhd:24]
+INFO: [Synth 8-3491] module 'LSQ_A' declared at 'C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:44004' bound to instance 'c_LSQ_A' of component 'LSQ_A' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:4663]
+INFO: [Synth 8-6157] synthesizing module 'LSQ_A' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:44004]
+INFO: [Synth 8-6157] synthesizing module 'STORE_QUEUE_LSQ_A' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_QUEUE_LSQ_A' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_QUEUE_LSQ_A' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:9077]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_QUEUE_LSQ_A' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:9077]
+INFO: [Synth 8-6157] synthesizing module 'GROUP_ALLOCATOR_LSQ_A' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:43623]
+INFO: [Synth 8-6155] done synthesizing module 'GROUP_ALLOCATOR_LSQ_A' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:43623]
+INFO: [Synth 8-6157] synthesizing module 'LOAD_PORT_LSQ_A' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:43813]
+INFO: [Synth 8-6155] done synthesizing module 'LOAD_PORT_LSQ_A' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:43813]
+INFO: [Synth 8-6157] synthesizing module 'STORE_DATA_PORT_LSQ_A' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:43913]
+INFO: [Synth 8-6155] done synthesizing module 'STORE_DATA_PORT_LSQ_A' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:43913]
+INFO: [Synth 8-6155] done synthesizing module 'LSQ_A' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/LSQ_A.v:44004]
+INFO: [Synth 8-638] synthesizing module 'MemCont' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:753]
+	Parameter DATA_SIZE bound to: 32 - type: integer 
+	Parameter ADDRESS_SIZE bound to: 5 - type: integer 
+	Parameter BB_COUNT bound to: 1 - type: integer 
+	Parameter LOAD_COUNT bound to: 1 - type: integer 
+	Parameter STORE_COUNT bound to: 1 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_memory_arbiter' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:202]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'read_priority' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:17]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_priority' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'read_address_mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:52]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'read_address_ready' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:86]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_address_ready' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'read_data_signals' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:116]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'read_data_signals' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:116]
+INFO: [Synth 8-256] done synthesizing module 'read_memory_arbiter' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:202]
+INFO: [Synth 8-638] synthesizing module 'write_memory_arbiter' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:464]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'write_priority' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:287]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_priority' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:287]
+INFO: [Synth 8-638] synthesizing module 'write_address_mux' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:326]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_address_mux' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:326]
+INFO: [Synth 8-638] synthesizing module 'write_address_ready' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:362]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_address_ready' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:362]
+INFO: [Synth 8-638] synthesizing module 'write_data_signals' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:396]
+	Parameter ARBITER_SIZE bound to: 1 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'write_data_signals' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:396]
+INFO: [Synth 8-256] done synthesizing module 'write_memory_arbiter' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:464]
+WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sensitivity list [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:814]
+INFO: [Synth 8-256] done synthesizing module 'MemCont' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/MemCont.vhd:753]
+INFO: [Synth 8-638] synthesizing module 'end_node' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:375]
+	Parameter INPUTS bound to: 1 - type: integer 
+	Parameter MEM_INPUTS bound to: 2 - type: integer 
+	Parameter OUTPUTS bound to: 1 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'end_node' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:375]
+INFO: [Synth 8-638] synthesizing module 'sink' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 1 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-638] synthesizing module 'sink__parameterized0' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 6 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink__parameterized0' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-638] synthesizing module 'sink__parameterized1' [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:910]
+	Parameter INPUT_COUNT bound to: 1 - type: integer 
+	Parameter OUTPUT_COUNT bound to: 0 - type: integer 
+	Parameter DATA_SIZE_IN bound to: 5 - type: integer 
+	Parameter DATA_SIZE_OUT bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'sink__parameterized1' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:910]
+INFO: [Synth 8-256] done synthesizing module 'gaussian' (0#1) [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:43]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity cntrlMerge does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1596]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity source does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:932]
+WARNING: [Synth 8-3848] Net dataOutArray[0] in module/entity source__parameterized0 does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:932]
+WARNING: [Synth 8-3848] Net oehb_datain in module/entity mul_op does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/mul_wrapper.vhd:31]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-6014] Unused sequential element fifo_valid_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1004]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1092]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1048]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1122]
+WARNING: [Synth 8-5863] Implementing Library version of Mod/Rem due to signed path. This typically leads to poor QOR. Check RTL to see if unsigned path for the operator is possible  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:1069]
+WARNING: [Synth 8-3848] Net eReadyArray in module/entity end_node does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/elastic_components.vhd:371]
+WARNING: [Synth 8-3848] Net A_we1 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:28]
+WARNING: [Synth 8-3848] Net A_dout1 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:29]
+WARNING: [Synth 8-3848] Net c_we1 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:38]
+WARNING: [Synth 8-3848] Net c_dout1 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:39]
+WARNING: [Synth 8-3848] Net start_0_dataInArray_0 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:80]
+WARNING: [Synth 8-3848] Net MC_c_pValidArray_2 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:1585]
+WARNING: [Synth 8-3848] Net MC_c_dataInArray_2 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:1581]
+WARNING: [Synth 8-3848] Net MC_c_pValidArray_3 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:1586]
+WARNING: [Synth 8-3848] Net MC_c_dataInArray_3 in module/entity gaussian does not have driver. [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/gaussian_optimized.vhd:1582]
+WARNING: [Synth 8-7129] Port clk in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][4] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][3] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][2] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][1] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][5] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][4] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][3] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][2] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][1] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[0] in module sink__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[1] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port eReadyArray[0] in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module end_node is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_Empty_Ready in module MemCont is either unconnected or has no load
+WARNING: [Synth 8-7129] Port io_wrDataPorts_valid[0] in module MemCont is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][4] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][3] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][2] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][1] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port nReadyArray[0] in module source__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port nReadyArray[0] in module source is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module icmp_ult_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module icmp_ult_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module Const__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module Const__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module add_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module add_op__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module Const is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module Const is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module icmp_slt_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module icmp_slt_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module merge_notehb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module merge_notehb is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataOutArray[0][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[1][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataInArray[0][0] in module cntrlMerge is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module lsq_store_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module lsq_store_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module getelementptr_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module getelementptr_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pValidArray[2] in module getelementptr_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module zext_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module zext_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sext_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sext_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module sub_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module sub_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module lsq_load_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module lsq_load_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module branch__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module branch__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module icmp_ult_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module icmp_ult_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module add_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module add_op is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_we1 in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[31] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[30] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[29] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[28] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[27] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[26] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[25] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[24] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[23] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[22] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[21] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[20] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[19] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[18] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[17] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[16] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[15] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[14] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[13] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[12] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[11] in module gaussian is either unconnected or has no load
+WARNING: [Synth 8-7129] Port A_dout1[10] in module gaussian is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1617.871 ; gain = 810.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1617.871 ; gain = 810.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1617.871 ; gain = 810.379
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.486 . Memory (MB): peak = 1617.871 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts/period_4.xdc]
+Finished Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts/period_4.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1656.648 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.210 . Memory (MB): peak = 1656.648 ; gain = 0.000
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1656.648 ; gain = 849.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k160tfbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1656.648 ; gain = 849.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1656.648 ; gain = 849.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1656.648 ; gain = 849.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 3     
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 69    
+	   3 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 7     
+	   3 Input    4 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 89    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 37    
+	                4 Bit    Registers := 38    
+	                1 Bit    Registers := 940   
++---Multipliers : 
+	              32x32  Multipliers := 4     
++---RAMs : 
+	              128 Bit	(4 X 32 bit)          RAMs := 1     
+	               96 Bit	(3 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input  512 Bit        Muxes := 16    
+	   2 Input   32 Bit        Muxes := 42    
+	   2 Input   16 Bit        Muxes := 640   
+	  17 Input   16 Bit        Muxes := 112   
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 40    
+	  15 Input    4 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 598   
+	  15 Input    1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 600 (col length:100)
+BRAMs: 650 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3917] design LSQ_A__GC0 has port io_bbNumLoads[0] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_2_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_1_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_3_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_4_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_5_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_6_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_7_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_8_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_9_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_10_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_11_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_12_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_13_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_14_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_15_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (storeQ/portQ_0_reg)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/multipliers.vhd:34]
+WARNING: [Synth 8-6014] Unused sequential element mul_20/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_20/multiply_unit/q0_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/multipliers.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element mul_20/multiply_unit/q1_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/multipliers.vhd:43]
+WARNING: [Synth 8-6014] Unused sequential element mul_20/multiply_unit/q2_reg was removed.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/sim/VHDL_SRC/multipliers.vhd:44]
+DSP Report: Generating DSP mul_20/multiply_unit/q0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register mul_20/multiply_unit/q0_reg is absorbed into DSP mul_20/multiply_unit/q0_reg.
+DSP Report: register mul_20/multiply_unit/q0_reg is absorbed into DSP mul_20/multiply_unit/q0_reg.
+DSP Report: register mul_20/multiply_unit/q0_reg is absorbed into DSP mul_20/multiply_unit/q0_reg.
+DSP Report: operator mul_20/multiply_unit/mul is absorbed into DSP mul_20/multiply_unit/q0_reg.
+DSP Report: operator mul_20/multiply_unit/mul is absorbed into DSP mul_20/multiply_unit/q0_reg.
+DSP Report: Generating DSP mul_20/multiply_unit/q1_reg, operation Mode is: (PCIN>>17)+(A2*B)'.
+DSP Report: register mul_20/multiply_unit/q1_reg is absorbed into DSP mul_20/multiply_unit/q1_reg.
+DSP Report: register mul_20/multiply_unit/q1_reg is absorbed into DSP mul_20/multiply_unit/q1_reg.
+DSP Report: register mul_20/multiply_unit/q0_reg is absorbed into DSP mul_20/multiply_unit/q1_reg.
+DSP Report: operator mul_20/multiply_unit/mul is absorbed into DSP mul_20/multiply_unit/q1_reg.
+DSP Report: operator mul_20/multiply_unit/mul is absorbed into DSP mul_20/multiply_unit/q1_reg.
+DSP Report: Generating DSP mul_20/multiply_unit/q2_reg, operation Mode is: (PCIN+(A''*B'')')'.
+DSP Report: register mul_20/multiply_unit/a_reg_reg is absorbed into DSP mul_20/multiply_unit/q2_reg.
+DSP Report: register mul_20/multiply_unit/q0_reg is absorbed into DSP mul_20/multiply_unit/q2_reg.
+DSP Report: register mul_20/multiply_unit/q2_reg is absorbed into DSP mul_20/multiply_unit/q2_reg.
+DSP Report: register mul_20/multiply_unit/q0_reg is absorbed into DSP mul_20/multiply_unit/q2_reg.
+DSP Report: register mul_20/multiply_unit/q2_reg is absorbed into DSP mul_20/multiply_unit/q2_reg.
+DSP Report: register mul_20/multiply_unit/q1_reg is absorbed into DSP mul_20/multiply_unit/q2_reg.
+DSP Report: operator mul_20/multiply_unit/mul is absorbed into DSP mul_20/multiply_unit/q2_reg.
+DSP Report: operator mul_20/multiply_unit/mul is absorbed into DSP mul_20/multiply_unit/q2_reg.
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[31] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[30] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[29] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[28] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[27] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[26] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[25] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[24] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[23] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[22] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[21] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[20] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[19] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[18] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[17] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[16] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[15] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[14] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[13] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[12] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[11] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[10] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[9] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[8] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[7] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[6] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address0[5] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[31] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[30] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[29] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[28] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[27] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[26] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[25] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[24] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[23] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[22] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[21] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[20] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[19] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[18] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[17] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[16] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[15] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[14] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[13] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[12] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[11] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[10] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[9] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[8] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[7] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[6] driven by constant 0
+WARNING: [Synth 8-3917] design gaussian__GC0 has port c_address1[5] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_18/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_17/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-7067] Removed DRAM instance i_132/Buffer_2/fifo/Memory_reg_0_3_30_31 from module gaussian__GC0 due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance i_132/Buffer_2/fifo/Memory_reg_0_3_24_29 from module gaussian__GC0 due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance i_132/Buffer_2/fifo/Memory_reg_0_3_18_23 from module gaussian__GC0 due to constant propagation
+INFO: [Synth 8-7067] Removed DRAM instance i_132/Buffer_2/fifo/Memory_reg_0_3_12_17 from module gaussian__GC0 due to constant propagation
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_18/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_17/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-7067] Removed DRAM instance i_132/Buffer_2/fifo/Memory_reg_0_3_24_29 from module gaussian__GC0 due to constant propagation
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\phiC_12/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\phiC_13/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_20/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_20/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_21/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Buffer_21/oehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\phiC_14/tehb1/data_reg_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ret_0/tehb/data_reg_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:51 . Memory (MB): peak = 1656.648 ; gain = 849.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++--------------+--------------------------+-----------+----------------------+-------------+
+|Module Name   | RTL Object               | Inference | Size (Depth x Width) | Primitives  | 
++--------------+--------------------------+-----------+----------------------+-------------+
+|gaussian__GC0 | Buffer_3/fifo/Memory_reg | Implied   | 4 x 32               | RAM32M x 6  | 
+|gaussian__GC0 | Buffer_2/fifo/Memory_reg | Implied   | 4 x 32               | RAM32M x 6  | 
++--------------+--------------------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++--------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|gaussian__GC0 | (A2*B2)'           | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|gaussian__GC0 | (PCIN>>17)+(A2*B)' | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|gaussian__GC0 | (PCIN+(A''*B'')')' | 18     | 15     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
++--------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:02:03 . Memory (MB): peak = 1656.648 ; gain = 849.156
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:04:17 ; elapsed = 00:04:42 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++--------------+--------------------------+-----------+----------------------+-------------+
+|Module Name   | RTL Object               | Inference | Size (Depth x Width) | Primitives  | 
++--------------+--------------------------+-----------+----------------------+-------------+
+|gaussian__GC0 | Buffer_3/fifo/Memory_reg | Implied   | 4 x 32               | RAM32M x 6  | 
+|gaussian__GC0 | Buffer_2/fifo/Memory_reg | Implied   | 4 x 32               | RAM32M x 6  | 
++--------------+--------------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_2_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_3_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_2_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_3_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_2_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_2_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_3_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_1_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_0_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_1_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_0_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_1_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_0_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_1_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_4_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_5_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_4_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_5_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_4_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_5_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_4_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_6_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_7_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_6_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_7_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_6_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_6_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_7_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_8_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_9_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_8_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_9_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_8_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_9_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_8_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_9_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_13_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_12_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_13_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_12_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_13_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_12_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_13_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_12_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_14_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_15_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_14_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_15_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_14_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_15_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_14_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_15_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_11_reg[1]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_10_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_11_reg[0]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_10_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_11_reg[3]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_10_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_1/c_LSQ_A/loadQ/offsetQ_11_reg[2]' (FDRE) to 'i_1/c_LSQ_A/loadQ/offsetQ_10_reg[2]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:04:39 ; elapsed = 00:05:15 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:04:51 ; elapsed = 00:05:27 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:51 ; elapsed = 00:05:27 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:53 ; elapsed = 00:05:29 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:53 ; elapsed = 00:05:30 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:55 ; elapsed = 00:05:31 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:55 ; elapsed = 00:05:31 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++--------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping         | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|gaussian__GC0 | (A'*B')'            | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|gaussian__GC0 | (PCIN>>17+(A*B')')' | 0      | 18     | -      | -      | 0      | 0    | 1    | -    | -    | -     | 1    | 1    | 
+|gaussian__GC0 | (PCIN+(A''*B'')')'  | 17     | 18     | -      | -      | 48     | 2    | 2    | -    | -    | -     | 1    | 1    | 
++--------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   879|
+|2     |DSP48E1  |     3|
+|5     |LUT1     |    58|
+|6     |LUT2     |   317|
+|7     |LUT3     |   352|
+|8     |LUT4     |  5419|
+|9     |LUT5     |  5368|
+|10    |LUT6     |  5955|
+|11    |MUXF7    |  1140|
+|12    |MUXF8    |    36|
+|13    |RAM32M   |     7|
+|14    |RAM32X1D |     2|
+|15    |FDCE     |   305|
+|16    |FDPE     |    57|
+|17    |FDRE     |  2925|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:55 ; elapsed = 00:05:31 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 199 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:27 ; elapsed = 00:05:25 . Memory (MB): peak = 2396.863 ; gain = 1550.594
+Synthesis Optimization Complete : Time (s): cpu = 00:04:55 ; elapsed = 00:05:33 . Memory (MB): peak = 2396.863 ; gain = 1589.371
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.292 . Memory (MB): peak = 2396.863 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2067 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts/period_4.xdc]
+INFO: [Vivado 12-4761] HD.CLK_SRC property is set on port clk. The net connecting to the port drives either clock PIN or hierarchical black box. Use the create_clock constraint to create a clock on this port prior to setting HD.CLK_SRC.  [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts/period_4.xdc:2]
+Finished Parsing XDC File [C:/Users/Elija/Documents/LAP_hls_benchmarks/Dynamatic/gaussian/vivado_scripts/period_4.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2396.863 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 7 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
+
+Synth Design complete, checksum: dd4de928
+INFO: [Common 17-83] Releasing license: Synthesis
+255 Infos, 183 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:05:05 ; elapsed = 00:05:55 . Memory (MB): peak = 2396.863 ; gain = 2020.633
+# report_utilization > utilization_post_syn.rpt
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 15:27:36 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_utilization
+| Design       : gaussian
+| Device       : xc7k160tfbg484-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+1.1 Summary of Registers by Type
+2. Memory
+3. DSP
+4. IO and GT Specific
+5. Clocking
+6. Specific Feature
+7. Primitives
+8. Black Boxes
+9. Instantiated Netlists
+
+1. Slice Logic
+--------------
+
++----------------------------+-------+-------+------------+-----------+-------+
+|          Site Type         |  Used | Fixed | Prohibited | Available | Util% |
++----------------------------+-------+-------+------------+-----------+-------+
+| Slice LUTs*                | 15865 |     0 |          0 |    101400 | 15.65 |
+|   LUT as Logic             | 15833 |     0 |          0 |    101400 | 15.61 |
+|   LUT as Memory            |    32 |     0 |          0 |     35000 |  0.09 |
+|     LUT as Distributed RAM |    32 |     0 |            |           |       |
+|     LUT as Shift Register  |     0 |     0 |            |           |       |
+| Slice Registers            |  3287 |     0 |          0 |    202800 |  1.62 |
+|   Register as Flip Flop    |  3287 |     0 |          0 |    202800 |  1.62 |
+|   Register as Latch        |     0 |     0 |          0 |    202800 |  0.00 |
+| F7 Muxes                   |  1140 |     0 |          0 |     50700 |  2.25 |
+| F8 Muxes                   |    36 |     0 |          0 |     25350 |  0.14 |
++----------------------------+-------+-------+------------+-----------+-------+
+* Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
+Warning! LUT value is adjusted to account for LUT combining.
+
+
+1.1 Summary of Registers by Type
+--------------------------------
+
++-------+--------------+-------------+--------------+
+| Total | Clock Enable | Synchronous | Asynchronous |
++-------+--------------+-------------+--------------+
+| 0     |            _ |           - |            - |
+| 0     |            _ |           - |          Set |
+| 0     |            _ |           - |        Reset |
+| 0     |            _ |         Set |            - |
+| 0     |            _ |       Reset |            - |
+| 0     |          Yes |           - |            - |
+| 57    |          Yes |           - |          Set |
+| 305   |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 2925  |          Yes |       Reset |            - |
++-------+--------------+-------------+--------------+
+
+
+2. Memory
+---------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| Block RAM Tile |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB36/FIFO* |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB18       |    0 |     0 |          0 |       650 |  0.00 |
++----------------+------+-------+------------+-----------+-------+
+* Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
+
+
+3. DSP
+------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| DSPs           |    3 |     0 |          0 |       600 |  0.50 |
+|   DSP48E1 only |    3 |       |            |           |       |
++----------------+------+-------+------------+-----------+-------+
+
+
+4. IO and GT Specific
+---------------------
+
++-----------------------------+------+-------+------------+-----------+-------+
+|          Site Type          | Used | Fixed | Prohibited | Available | Util% |
++-----------------------------+------+-------+------------+-----------+-------+
+| Bonded IOB                  |    0 |     0 |          0 |       285 |  0.00 |
+| Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
+| Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |          0 |         8 |  0.00 |
+| PHASER_REF                  |    0 |     0 |          0 |         8 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |          0 |        32 |  0.00 |
+| IN_FIFO                     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |          0 |         8 |  0.00 |
+| IBUFDS                      |    0 |     0 |          0 |       275 |  0.00 |
+| GTXE2_COMMON                |    0 |     0 |          0 |         1 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |          0 |         4 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        32 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       400 |  0.00 |
+| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |          0 |       150 |  0.00 |
+| IBUFDS_GTE2                 |    0 |     0 |          0 |         2 |  0.00 |
+| ILOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
+| OLOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
++-----------------------------+------+-------+------------+-----------+-------+
+
+
+5. Clocking
+-----------
+
++------------+------+-------+------------+-----------+-------+
+|  Site Type | Used | Fixed | Prohibited | Available | Util% |
++------------+------+-------+------------+-----------+-------+
+| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
+| BUFIO      |    0 |     0 |          0 |        32 |  0.00 |
+| MMCME2_ADV |    0 |     0 |          0 |         8 |  0.00 |
+| PLLE2_ADV  |    0 |     0 |          0 |         8 |  0.00 |
+| BUFMRCE    |    0 |     0 |          0 |        16 |  0.00 |
+| BUFHCE     |    0 |     0 |          0 |       120 |  0.00 |
+| BUFR       |    0 |     0 |          0 |        32 |  0.00 |
++------------+------+-------+------------+-----------+-------+
+
+
+6. Specific Feature
+-------------------
+
++-------------+------+-------+------------+-----------+-------+
+|  Site Type  | Used | Fixed | Prohibited | Available | Util% |
++-------------+------+-------+------------+-----------+-------+
+| BSCANE2     |    0 |     0 |          0 |         4 |  0.00 |
+| CAPTUREE2   |    0 |     0 |          0 |         1 |  0.00 |
+| DNA_PORT    |    0 |     0 |          0 |         1 |  0.00 |
+| EFUSE_USR   |    0 |     0 |          0 |         1 |  0.00 |
+| FRAME_ECCE2 |    0 |     0 |          0 |         1 |  0.00 |
+| ICAPE2      |    0 |     0 |          0 |         2 |  0.00 |
+| PCIE_2_1    |    0 |     0 |          0 |         1 |  0.00 |
+| STARTUPE2   |    0 |     0 |          0 |         1 |  0.00 |
+| XADC        |    0 |     0 |          0 |         1 |  0.00 |
++-------------+------+-------+------------+-----------+-------+
+
+
+7. Primitives
+-------------
+
++----------+------+---------------------+
+| Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| LUT6     | 5955 |                 LUT |
+| LUT4     | 5419 |                 LUT |
+| LUT5     | 5368 |                 LUT |
+| FDRE     | 2925 |        Flop & Latch |
+| MUXF7    | 1140 |               MuxFx |
+| CARRY4   |  879 |          CarryLogic |
+| LUT3     |  352 |                 LUT |
+| LUT2     |  317 |                 LUT |
+| FDCE     |  305 |        Flop & Latch |
+| LUT1     |   58 |                 LUT |
+| FDPE     |   57 |        Flop & Latch |
+| RAMD32   |   46 |  Distributed Memory |
+| MUXF8    |   36 |               MuxFx |
+| RAMS32   |   14 |  Distributed Memory |
+| DSP48E1  |    3 |    Block Arithmetic |
++----------+------+---------------------+
+
+
+8. Black Boxes
+--------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+9. Instantiated Netlists
+------------------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+# report_timing > timing_post_syn.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 15:27:42 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : gaussian
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -2.396ns  (required time - arrival time)
+  Source:                 c_LSQ_A/loadQ/conflictPReg_8_15_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            c_LSQ_A/loadQ/dataQ_8_reg[0]/R
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        5.903ns  (logic 1.093ns (18.516%)  route 4.810ns (81.484%))
+  Logic Levels:           10  (CARRY4=1 LUT2=1 LUT4=3 LUT5=1 LUT6=4)
+  Clock Path Skew:        -0.034ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.638ns = ( 4.638 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.672ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=3349, unset)         0.672     0.672    c_LSQ_A/loadQ/clk
+                         FDRE                                         r  c_LSQ_A/loadQ/conflictPReg_8_15_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.209     0.881 f  c_LSQ_A/loadQ/conflictPReg_8_15_reg/Q
+                         net (fo=9, unplaced)         0.573     1.454    c_LSQ_A/loadQ/conflictPReg_8_15
+                         LUT4 (Prop_lut4_I1_O)        0.153     1.607 f  c_LSQ_A/loadQ/dataQ_8[31]_i_9/O
+                         net (fo=7, unplaced)         0.375     1.982    c_LSQ_A/loadQ/dataQ_8[31]_i_9_n_0
+                         LUT5 (Prop_lut5_I1_O)        0.053     2.035 r  c_LSQ_A/loadQ/dataQ_8[31]_i_4/O
+                         net (fo=44, unplaced)        0.419     2.454    c_LSQ_A/loadQ/dataQ_8[31]_i_4_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.053     2.507 r  c_LSQ_A/loadQ/dataQ_8[31]_i_27/O
+                         net (fo=1, unplaced)         0.340     2.847    c_LSQ_A/loadQ/dataQ_8[31]_i_27_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.053     2.900 f  c_LSQ_A/loadQ/dataQ_8[31]_i_21/O
+                         net (fo=143, unplaced)       0.449     3.349    c_LSQ_A/loadQ/dataQ_8[31]_i_21_n_0
+                         LUT2 (Prop_lut2_I1_O)        0.053     3.402 r  c_LSQ_A/loadQ/dataQ_8[31]_i_49/O
+                         net (fo=2, unplaced)         0.351     3.753    c_LSQ_A/loadQ/dataQ_8[31]_i_49_n_0
+                         LUT6 (Prop_lut6_I4_O)        0.053     3.806 r  c_LSQ_A/loadQ/dataQ_8[31]_i_34/O
+                         net (fo=1, unplaced)         0.363     4.169    c_LSQ_A/loadQ/dataQ_8[31]_i_34_n_0
+                         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.307     4.476 r  c_LSQ_A/loadQ/dataQ_8_reg[31]_i_26/CO[3]
+                         net (fo=1, unplaced)         0.518     4.994    c_LSQ_A/loadQ/_T_93011
+                         LUT4 (Prop_lut4_I2_O)        0.053     5.047 f  c_LSQ_A/loadQ/dataQ_8[31]_i_15/O
+                         net (fo=1, unplaced)         0.340     5.387    c_LSQ_A/loadQ/dataQ_8[31]_i_15_n_0
+                         LUT6 (Prop_lut6_I5_O)        0.053     5.440 r  c_LSQ_A/loadQ/dataQ_8[31]_i_6/O
+                         net (fo=36, unplaced)        0.414     5.854    c_LSQ_A/loadQ/bypassRequest_8
+                         LUT4 (Prop_lut4_I3_O)        0.053     5.907 r  c_LSQ_A/loadQ/dataQ_8[31]_i_1__0/O
+                         net (fo=32, unplaced)        0.668     6.575    c_LSQ_A/loadQ/dataQ_8[31]_i_1__0_n_0
+                         FDRE                                         r  c_LSQ_A/loadQ/dataQ_8_reg[0]/R
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clk (IN)
+                         net (fo=3349, unset)         0.638     4.638    c_LSQ_A/loadQ/clk
+                         FDRE                                         r  c_LSQ_A/loadQ/dataQ_8_reg[0]/C
+                         clock pessimism              0.000     4.638    
+                         clock uncertainty           -0.035     4.603    
+                         FDRE (Setup_fdre_C_R)       -0.424     4.179    c_LSQ_A/loadQ/dataQ_8_reg[0]
+  -------------------------------------------------------------------
+                         required time                          4.179    
+                         arrival time                          -6.575    
+  -------------------------------------------------------------------
+                         slack                                 -2.396    
+
+
+
+
+report_timing: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 2396.863 ; gain = 0.000
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k160t'
+Running DRC as a precondition to command opt_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/loadQ/A_ce1_INST_0 into driver instance c_LSQ_A/loadQ/A_address1[11]_INST_0_i_6, which resulted in an inversion of 13 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[0]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[0]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[10]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[10]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[1]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[1]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[2]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[2]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[3]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[3]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[4]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[4]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[5]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[5]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[6]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[6]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[7]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[7]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[8]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[8]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-1287] Pulled Inverter c_LSQ_A/storeQ/A_address0[9]_INST_0 into driver instance c_LSQ_A/storeQ/A_address0[9]_INST_0_i_1, which resulted in an inversion of 17 pins
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 12 cells
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |              12  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2396.863 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2396.863 ; gain = 0.000
+# place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2396.863 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2396.863 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-1035] Found 1342 LUTNM shape to break, 50 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 77, two critical 1265, total 1000, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 1016 nets or LUTs. Breaked 1000 LUTs, combined 16 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-457] Pass 1. Identified 3 candidate cells for DSP register optimization.
+INFO: [Physopt 32-665] Processed cell mul_20/multiply_unit/q0_reg. 17 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell mul_20/multiply_unit/q2_reg. 17 registers were pushed out.
+INFO: [Physopt 32-665] Processed cell mul_20/multiply_unit/q1_reg. 15 registers were pushed out.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 3 nets or cells. Created 49 new cells, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 2396.863 ; gain = 0.000
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2396.863 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |         1000  |             16  |                  1016  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |           49  |              0  |                     3  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |         1049  |             16  |                  1019  |           0  |           9  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Post Placement Optimization Initialization | Checksum: 1034987e1
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-3.014 | TNS=-7821.037 |
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-2.293. For the most accurate timing information please run report_timing.
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                2x2|
+|___________|___________________|___________________|
+|      South|                1x1|                2x2|
+|___________|___________________|___________________|
+|       East|                4x4|                2x2|
+|___________|___________________|___________________|
+|       West|                8x8|                1x1|
+|___________|___________________|___________________|
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2396.863 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+37 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:02:32 ; elapsed = 00:01:59 . Memory (MB): peak = 2396.863 ; gain = 0.000
+# route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k160t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k160t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+INFO: [Route 35-16] Router Completed Successfully
+INFO: [Common 17-83] Releasing license: Implementation
+16 Infos, 68 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:03:26 ; elapsed = 00:02:52 . Memory (MB): peak = 2396.863 ; gain = 0.000
+# report_utilization > utilization_post_pr.rpt
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 15:32:40 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_utilization
+| Design       : gaussian
+| Device       : xc7k160tfbg484-1
+| Speed File   : -1
+| Design State : Routed
+------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+1.1 Summary of Registers by Type
+2. Slice Logic Distribution
+3. Memory
+4. DSP
+5. IO and GT Specific
+6. Clocking
+7. Specific Feature
+8. Primitives
+9. Black Boxes
+10. Instantiated Netlists
+
+1. Slice Logic
+--------------
+
++----------------------------+-------+-------+------------+-----------+-------+
+|          Site Type         |  Used | Fixed | Prohibited | Available | Util% |
++----------------------------+-------+-------+------------+-----------+-------+
+| Slice LUTs                 | 16801 |     0 |          0 |    101400 | 16.57 |
+|   LUT as Logic             | 16771 |     0 |          0 |    101400 | 16.54 |
+|   LUT as Memory            |    30 |     0 |          0 |     35000 |  0.09 |
+|     LUT as Distributed RAM |    30 |     0 |            |           |       |
+|     LUT as Shift Register  |     0 |     0 |            |           |       |
+| Slice Registers            |  3336 |     0 |          0 |    202800 |  1.64 |
+|   Register as Flip Flop    |  3336 |     0 |          0 |    202800 |  1.64 |
+|   Register as Latch        |     0 |     0 |          0 |    202800 |  0.00 |
+| F7 Muxes                   |  1140 |     0 |          0 |     50700 |  2.25 |
+| F8 Muxes                   |    36 |     0 |          0 |     25350 |  0.14 |
++----------------------------+-------+-------+------------+-----------+-------+
+* Warning! LUT value is adjusted to account for LUT combining.
+
+
+1.1 Summary of Registers by Type
+--------------------------------
+
++-------+--------------+-------------+--------------+
+| Total | Clock Enable | Synchronous | Asynchronous |
++-------+--------------+-------------+--------------+
+| 0     |            _ |           - |            - |
+| 0     |            _ |           - |          Set |
+| 0     |            _ |           - |        Reset |
+| 0     |            _ |         Set |            - |
+| 0     |            _ |       Reset |            - |
+| 0     |          Yes |           - |            - |
+| 57    |          Yes |           - |          Set |
+| 305   |          Yes |           - |        Reset |
+| 0     |          Yes |         Set |            - |
+| 2974  |          Yes |       Reset |            - |
++-------+--------------+-------------+--------------+
+
+
+2. Slice Logic Distribution
+---------------------------
+
++--------------------------------------------+-------+-------+------------+-----------+-------+
+|                  Site Type                 |  Used | Fixed | Prohibited | Available | Util% |
++--------------------------------------------+-------+-------+------------+-----------+-------+
+| Slice                                      |  5223 |     0 |          0 |     25350 | 20.60 |
+|   SLICEL                                   |  3327 |     0 |            |           |       |
+|   SLICEM                                   |  1896 |     0 |            |           |       |
+| LUT as Logic                               | 16771 |     0 |          0 |    101400 | 16.54 |
+|   using O5 output only                     |     3 |       |            |           |       |
+|   using O6 output only                     | 16082 |       |            |           |       |
+|   using O5 and O6                          |   686 |       |            |           |       |
+| LUT as Memory                              |    30 |     0 |          0 |     35000 |  0.09 |
+|   LUT as Distributed RAM                   |    30 |     0 |            |           |       |
+|     using O5 output only                   |     0 |       |            |           |       |
+|     using O6 output only                   |     0 |       |            |           |       |
+|     using O5 and O6                        |    30 |       |            |           |       |
+|   LUT as Shift Register                    |     0 |     0 |            |           |       |
+| Slice Registers                            |  3336 |     0 |          0 |    202800 |  1.64 |
+|   Register driven from within the Slice    |  2168 |       |            |           |       |
+|   Register driven from outside the Slice   |  1168 |       |            |           |       |
+|     LUT in front of the register is unused |   816 |       |            |           |       |
+|     LUT in front of the register is used   |   352 |       |            |           |       |
+| Unique Control Sets                        |   144 |       |          0 |     25350 |  0.57 |
++--------------------------------------------+-------+-------+------------+-----------+-------+
+* * Note: Available Control Sets calculated as Slice * 1, Review the Control Sets Report for more information regarding control sets.
+
+
+3. Memory
+---------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| Block RAM Tile |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB36/FIFO* |    0 |     0 |          0 |       325 |  0.00 |
+|   RAMB18       |    0 |     0 |          0 |       650 |  0.00 |
++----------------+------+-------+------------+-----------+-------+
+* Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
+
+
+4. DSP
+------
+
++----------------+------+-------+------------+-----------+-------+
+|    Site Type   | Used | Fixed | Prohibited | Available | Util% |
++----------------+------+-------+------------+-----------+-------+
+| DSPs           |    3 |     0 |          0 |       600 |  0.50 |
+|   DSP48E1 only |    3 |       |            |           |       |
++----------------+------+-------+------------+-----------+-------+
+
+
+5. IO and GT Specific
+---------------------
+
++-----------------------------+------+-------+------------+-----------+-------+
+|          Site Type          | Used | Fixed | Prohibited | Available | Util% |
++-----------------------------+------+-------+------------+-----------+-------+
+| Bonded IOB                  |    0 |     0 |          0 |       285 |  0.00 |
+| Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
+| Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |          0 |         8 |  0.00 |
+| PHASER_REF                  |    0 |     0 |          0 |         8 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |          0 |        32 |  0.00 |
+| IN_FIFO                     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |          0 |         8 |  0.00 |
+| IBUFDS                      |    0 |     0 |          0 |       275 |  0.00 |
+| GTXE2_COMMON                |    0 |     0 |          0 |         1 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |          0 |         4 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        32 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        32 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       400 |  0.00 |
+| ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |          0 |       150 |  0.00 |
+| IBUFDS_GTE2                 |    0 |     0 |          0 |         2 |  0.00 |
+| ILOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
+| OLOGIC                      |    0 |     0 |          0 |       285 |  0.00 |
++-----------------------------+------+-------+------------+-----------+-------+
+
+
+6. Clocking
+-----------
+
++------------+------+-------+------------+-----------+-------+
+|  Site Type | Used | Fixed | Prohibited | Available | Util% |
++------------+------+-------+------------+-----------+-------+
+| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
+| BUFIO      |    0 |     0 |          0 |        32 |  0.00 |
+| MMCME2_ADV |    0 |     0 |          0 |         8 |  0.00 |
+| PLLE2_ADV  |    0 |     0 |          0 |         8 |  0.00 |
+| BUFMRCE    |    0 |     0 |          0 |        16 |  0.00 |
+| BUFHCE     |    0 |     0 |          0 |       120 |  0.00 |
+| BUFR       |    0 |     0 |          0 |        32 |  0.00 |
++------------+------+-------+------------+-----------+-------+
+
+
+7. Specific Feature
+-------------------
+
++-------------+------+-------+------------+-----------+-------+
+|  Site Type  | Used | Fixed | Prohibited | Available | Util% |
++-------------+------+-------+------------+-----------+-------+
+| BSCANE2     |    0 |     0 |          0 |         4 |  0.00 |
+| CAPTUREE2   |    0 |     0 |          0 |         1 |  0.00 |
+| DNA_PORT    |    0 |     0 |          0 |         1 |  0.00 |
+| EFUSE_USR   |    0 |     0 |          0 |         1 |  0.00 |
+| FRAME_ECCE2 |    0 |     0 |          0 |         1 |  0.00 |
+| ICAPE2      |    0 |     0 |          0 |         2 |  0.00 |
+| PCIE_2_1    |    0 |     0 |          0 |         1 |  0.00 |
+| STARTUPE2   |    0 |     0 |          0 |         1 |  0.00 |
+| XADC        |    0 |     0 |          0 |         1 |  0.00 |
++-------------+------+-------+------------+-----------+-------+
+
+
+8. Primitives
+-------------
+
++----------+------+---------------------+
+| Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| LUT6     | 5955 |                 LUT |
+| LUT4     | 5419 |                 LUT |
+| LUT5     | 5368 |                 LUT |
+| FDRE     | 2974 |        Flop & Latch |
+| MUXF7    | 1140 |               MuxFx |
+| CARRY4   |  879 |          CarryLogic |
+| LUT3     |  352 |                 LUT |
+| LUT2     |  317 |                 LUT |
+| FDCE     |  305 |        Flop & Latch |
+| FDPE     |   57 |        Flop & Latch |
+| RAMD32   |   46 |  Distributed Memory |
+| LUT1     |   46 |                 LUT |
+| MUXF8    |   36 |               MuxFx |
+| RAMS32   |   14 |  Distributed Memory |
+| DSP48E1  |    3 |    Block Arithmetic |
++----------+------+---------------------+
+
+
+9. Black Boxes
+--------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+10. Instantiated Netlists
+-------------------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+# report_timing > timing_post_pr.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 15:32:44 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : gaussian
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -2.562ns  (required time - arrival time)
+  Source:                 c_LSQ_A/storeQ/head_reg[0]_rep__1/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            c_LSQ_A/storeQ/head_reg[0]_rep__0/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.183ns  (logic 1.289ns (20.846%)  route 4.894ns (79.154%))
+  Logic Levels:           11  (CARRY4=3 LUT3=1 LUT6=7)
+  Clock Path Skew:        -0.099ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.284ns = ( 5.284 - 4.000 ) 
+    Source Clock Delay      (SCD):    1.393ns
+    Clock Pessimism Removal (CPR):    0.010ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=3398, unset)         1.393     1.393    c_LSQ_A/storeQ/clk
+    SLICE_X60Y100        FDRE                                         r  c_LSQ_A/storeQ/head_reg[0]_rep__1/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y100        FDRE (Prop_fdre_C_Q)         0.269     1.662 r  c_LSQ_A/storeQ/head_reg[0]_rep__1/Q
+                         net (fo=201, routed)         1.060     2.722    c_LSQ_A/storeQ/head_reg[0]_rep__1_0
+    SLICE_X63Y91         LUT6 (Prop_lut6_I4_O)        0.053     2.775 r  c_LSQ_A/storeQ/A_address0[2]_INST_0_i_4/O
+                         net (fo=1, routed)           0.622     3.397    c_LSQ_A/storeQ/A_address0[2]_INST_0_i_4_n_0
+    SLICE_X63Y102        LUT6 (Prop_lut6_I2_O)        0.053     3.450 r  c_LSQ_A/storeQ/A_address0[2]_INST_0_i_1/O
+                         net (fo=16, routed)          0.615     4.065    c_LSQ_A/storeQ/A_address0[2]
+    SLICE_X62Y96         LUT6 (Prop_lut6_I3_O)        0.053     4.118 r  c_LSQ_A/storeQ/A_we0_INST_0_i_237/O
+                         net (fo=1, routed)           0.000     4.118    c_LSQ_A/storeQ/A_we0_INST_0_i_237_n_0
+    SLICE_X62Y96         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297     4.415 r  c_LSQ_A/storeQ/A_we0_INST_0_i_219/CO[3]
+                         net (fo=1, routed)           0.000     4.415    c_LSQ_A/storeQ/A_we0_INST_0_i_219_n_0
+    SLICE_X62Y97         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     4.475 r  c_LSQ_A/storeQ/A_we0_INST_0_i_193/CO[3]
+                         net (fo=1, routed)           0.000     4.475    c_LSQ_A/storeQ/A_we0_INST_0_i_193_n_0
+    SLICE_X62Y98         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.132     4.607 r  c_LSQ_A/storeQ/A_we0_INST_0_i_152/CO[2]
+                         net (fo=1, routed)           0.507     5.114    c_LSQ_A/loadQ/A_we0_INST_0_i_76_0[0]
+    SLICE_X59Y101        LUT3 (Prop_lut3_I1_O)        0.160     5.274 r  c_LSQ_A/loadQ/A_we0_INST_0_i_113/O
+                         net (fo=1, routed)           0.350     5.624    c_LSQ_A/loadQ/A_we0_INST_0_i_113_n_0
+    SLICE_X58Y104        LUT6 (Prop_lut6_I0_O)        0.053     5.677 r  c_LSQ_A/loadQ/A_we0_INST_0_i_76/O
+                         net (fo=1, routed)           0.371     6.048    c_LSQ_A/loadQ/A_we0_INST_0_i_76_n_0
+    SLICE_X59Y106        LUT6 (Prop_lut6_I0_O)        0.053     6.101 r  c_LSQ_A/loadQ/A_we0_INST_0_i_30/O
+                         net (fo=1, routed)           0.462     6.563    c_LSQ_A/loadQ/A_we0_INST_0_i_30_n_0
+    SLICE_X59Y106        LUT6 (Prop_lut6_I2_O)        0.053     6.616 r  c_LSQ_A/loadQ/A_we0_INST_0_i_6/O
+                         net (fo=17, routed)          0.354     6.970    c_LSQ_A/loadQ/tail_reg[3]_0
+    SLICE_X59Y105        LUT6 (Prop_lut6_I5_O)        0.053     7.023 r  c_LSQ_A/loadQ/A_we0_INST_0/O
+                         net (fo=13, routed)          0.553     7.576    c_LSQ_A/storeQ/E[0]
+    SLICE_X52Y105        FDRE                                         r  c_LSQ_A/storeQ/head_reg[0]_rep__0/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clk (IN)
+                         net (fo=3398, unset)         1.284     5.284    c_LSQ_A/storeQ/clk
+    SLICE_X52Y105        FDRE                                         r  c_LSQ_A/storeQ/head_reg[0]_rep__0/C
+                         clock pessimism              0.010     5.294    
+                         clock uncertainty           -0.035     5.259    
+    SLICE_X52Y105        FDRE (Setup_fdre_C_CE)      -0.244     5.015    c_LSQ_A/storeQ/head_reg[0]_rep__0
+  -------------------------------------------------------------------
+                         required time                          5.015    
+                         arrival time                          -7.576    
+  -------------------------------------------------------------------
+                         slack                                 -2.562    
+
+
+
+
+# exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 27 15:32:44 2023...

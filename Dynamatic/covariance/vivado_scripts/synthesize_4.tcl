@@ -15,7 +15,7 @@ read_vhdl -vhdl2008 ../sim/VHDL_SRC/covariance.vhd
 #comment line below out if no clock constraints
 read_xdc period_4.xdc
 
-synth_design -top fir -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
+synth_design -top covariance -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
 
 report_utilization > utilization_post_syn.rpt
 report_timing > timing_post_syn.rpt
@@ -24,4 +24,4 @@ place_design
 route_design
 report_utilization > utilization_post_pr.rpt
 report_timing > timing_post_pr.rpt
-
+exit

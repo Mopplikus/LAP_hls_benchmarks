@@ -19,5 +19,3 @@ project addfile ../VHDL_SRC/LSQ_D.v
 project calculateorder
 project compileall
 eval vsim kernel_2mm_tb
-run -all
-exit

@@ -1,0 +1,27 @@
+	component matvec is
+		port (
+			clock  : in  std_logic                     := 'X';             -- clk
+			resetn : in  std_logic                     := 'X';             -- reset_n
+			start  : in  std_logic                     := 'X';             -- valid
+			busy   : out std_logic;                                        -- stall
+			done   : out std_logic;                                        -- valid
+			stall  : in  std_logic                     := 'X';             -- stall
+			M      : in  std_logic_vector(63 downto 0) := (others => 'X'); -- data
+			V      : in  std_logic_vector(63 downto 0) := (others => 'X'); -- data
+			Out0   : in  std_logic_vector(63 downto 0) := (others => 'X')  -- data
+		);
+	end component matvec;
+
+	u0 : component matvec
+		port map (
+			clock  => CONNECTED_TO_clock,  --  clock.clk
+			resetn => CONNECTED_TO_resetn, --  reset.reset_n
+			start  => CONNECTED_TO_start,  --   call.valid
+			busy   => CONNECTED_TO_busy,   --       .stall
+			done   => CONNECTED_TO_done,   -- return.valid
+			stall  => CONNECTED_TO_stall,  --       .stall
+			M      => CONNECTED_TO_M,      --      M.data
+			V      => CONNECTED_TO_V,      --      V.data
+			Out0   => CONNECTED_TO_Out0    --   Out0.data
+		);
+

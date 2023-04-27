@@ -1,0 +1,710 @@
+Design Assistant report for matvec
+Thu Apr 27 19:26:30 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Synthesized) Results - 3 of 11 Rules Failed
+  3. RES-30134 - Registers Not Reachable from Reset Release IP
+  4. FLP-10500 - Non Driving Top Level Inputs Found
+  5. LNT-30010 - Nets Driving both Reset and Clock Enable Signals
+  6. RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes
+  7. LNT-30023 - Reset Nets with Polarity Conflict
+  8. RES-30132 - Registers May Not Be Properly Reset
+  9. TMC-20052 - Paths with Post Synthesis Inferred Latches
+ 10. LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch
+ 11. TMC-20053 - DSP Inputs Driven by High Fan-Out Net
+ 12. TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible
+ 13. TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Synthesized) Results - 3 of 11 Rules Failed                                                                                                            ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; Rule                                                                                                  ; Severity ; Violations ; Waived ; Tags                            ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP                                             ; Medium   ; 408        ; 0      ; reset-usage, reset-reachability ;
+; FLP-10500 - Non Driving Top Level Inputs Found                                                        ; Low      ; 129        ; 0      ; system                          ;
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                          ; Low      ; 1          ; 0      ; reset-usage                     ;
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ; High     ; 0          ; 0      ; ram, reset-usage                ;
+; LNT-30023 - Reset Nets with Polarity Conflict                                                         ; Medium   ; 0          ; 0      ; reset-usage                     ;
+; RES-30132 - Registers May Not Be Properly Reset                                                       ; Medium   ; 0          ; 0      ; reset-usage, reset-reachability ;
+; TMC-20052 - Paths with Post Synthesis Inferred Latches                                                ; Medium   ; 0          ; 0      ; nonstandard-timing, latch       ;
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch                                          ; Low      ; 0          ; 0      ; dsp, reset-usage                ;
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net                                                     ; Low      ; 0          ; 0      ; dsp                             ;
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible                                 ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested                                ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
++-------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	408
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP    ;
++-----------------------------------------------------+--------+
+; Register Node                                       ; Waived ;
++-----------------------------------------------------+--------+
+; start_0|set                                         ;        ;
+; MC_V|read_arbiter|data|valid[0]                     ;        ;
+; MC_Out|Counter.counter[21]                          ;        ;
+; MC_Out|Counter.counter[22]                          ;        ;
+; MC_Out|Counter.counter[23]                          ;        ;
+; MC_Out|Counter.counter[24]                          ;        ;
+; MC_Out|Counter.counter[25]                          ;        ;
+; MC_Out|Counter.counter[26]                          ;        ;
+; MC_Out|Counter.counter[27]                          ;        ;
+; MC_Out|Counter.counter[28]                          ;        ;
+; MC_Out|Counter.counter[29]                          ;        ;
+; Buffer_5|fifo|Tail[1]                               ;        ;
+; MC_M|read_arbiter|data|valid[0]                     ;        ;
+; Buffer_5|fifo|Tail[0]                               ;        ;
+; fork_4|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_5|fifo|Head[1]                               ;        ;
+; Buffer_5|fifo|Head[0]                               ;        ;
+; Buffer_5|fifo|Full                                  ;        ;
+; Buffer_5|fifo|Empty                                 ;        ;
+; forkC_16|generateBlocks[0].regblock|reg_value       ;        ;
+; Buffer_8|fifo|Tail[1]                               ;        ;
+; Buffer_8|fifo|Tail[2]                               ;        ;
+; Buffer_8|fifo|Tail[0]                               ;        ;
+; Buffer_8|fifo|Head[1]                               ;        ;
+; Buffer_8|fifo|Memory[4][0]                          ;        ;
+; phi_n1|tehb1|data_reg[4]                            ;        ;
+; phi_1|tehb1|data_reg[4]                             ;        ;
+; Buffer_1|tehb1|data_reg[4]                          ;        ;
+; Buffer_1|oehb1|data_reg[4]                          ;        ;
+; phi_n2|tehb1|data_reg[4]                            ;        ;
+; Buffer_6|tehb1|data_reg[4]                          ;        ;
+; Buffer_6|oehb1|data_reg[4]                          ;        ;
+; phi_n1|tehb1|data_reg[3]                            ;        ;
+; phi_1|tehb1|data_reg[3]                             ;        ;
+; Buffer_8|fifo|Memory[3][0]                          ;        ;
+; Buffer_1|tehb1|data_reg[3]                          ;        ;
+; Buffer_1|oehb1|data_reg[3]                          ;        ;
+; phi_n2|tehb1|data_reg[3]                            ;        ;
+; Buffer_6|tehb1|data_reg[3]                          ;        ;
+; Buffer_6|oehb1|data_reg[3]                          ;        ;
+; phi_n1|tehb1|data_reg[2]                            ;        ;
+; phi_1|tehb1|data_reg[2]                             ;        ;
+; Buffer_1|tehb1|data_reg[2]                          ;        ;
+; Buffer_1|oehb1|data_reg[2]                          ;        ;
+; phi_n2|tehb1|data_reg[2]                            ;        ;
+; Buffer_8|fifo|Memory[2][0]                          ;        ;
+; Buffer_6|tehb1|data_reg[2]                          ;        ;
+; Buffer_6|oehb1|data_reg[2]                          ;        ;
+; phi_n1|tehb1|data_reg[1]                            ;        ;
+; phiC_4|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; fork_10|generateBlocks[1].regblock|reg_value        ;        ;
+; phi_1|tehb1|data_reg[1]                             ;        ;
+; Buffer_1|tehb1|data_reg[1]                          ;        ;
+; Buffer_1|oehb1|data_reg[1]                          ;        ;
+; phi_n2|tehb1|data_reg[1]                            ;        ;
+; Buffer_6|tehb1|data_reg[1]                          ;        ;
+; Buffer_8|fifo|Memory[1][0]                          ;        ;
+; Buffer_6|oehb1|data_reg[1]                          ;        ;
+; fork_4|generateBlocks[1].regblock|reg_value         ;        ;
+; Buffer_10|fifo|Memory[0][0]                         ;        ;
+; Buffer_10|fifo|Memory[2][0]                         ;        ;
+; Buffer_10|fifo|Tail[1]                              ;        ;
+; Buffer_10|fifo|Tail[0]                              ;        ;
+; Buffer_10|fifo|Memory[1][0]                         ;        ;
+; fork_10|generateBlocks[2].regblock|reg_value        ;        ;
+; phiC_6|tehb1|full_reg                               ;        ;
+; MC_Out|Counter.counter[30]                          ;        ;
+; Buffer_4|tehb1|data_reg[4]                          ;        ;
+; MC_Out|counter1[30]                                 ;        ;
+; ret_0|tehb|full_reg                                 ;        ;
+; phi_n3|tehb1|full_reg                               ;        ;
+; Buffer_9|tehb1|full_reg                             ;        ;
+; Buffer_10|fifo|Head[1]                              ;        ;
+; Buffer_10|fifo|Head[0]                              ;        ;
+; Buffer_10|fifo|Empty                                ;        ;
+; Buffer_10|fifo|Full                                 ;        ;
+; fork_10|generateBlocks[0].regblock|reg_value        ;        ;
+; fork_3|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_4|oehb1|data_reg[4]                          ;        ;
+; fork_3|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_5|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_5|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_n1|tehb1|full_reg                               ;        ;
+; fork_9|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_6|oehb1|validArray[0]                        ;        ;
+; Buffer_6|tehb1|data_reg[0]                          ;        ;
+; Buffer_6|oehb1|data_reg[0]                          ;        ;
+; phiC_4|oehb1|data_reg[0]                            ;        ;
+; Buffer_7|oehb1|validArray[0]                        ;        ;
+; phi_4|tehb1|data_reg[4]                             ;        ;
+; Buffer_1|oehb1|validArray[0]                        ;        ;
+; fork_6|generateBlocks[0].regblock|reg_value         ;        ;
+; load_11|Buffer_1|full_reg                           ;        ;
+; fork_9|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_2|generateBlocks[0].regblock|reg_value         ;        ;
+; fork_0|generateBlocks[1].regblock|reg_value         ;        ;
+; Buffer_4|tehb1|full_reg                             ;        ;
+; fork_2|generateBlocks[1].regblock|reg_value         ;        ;
+; Buffer_4|oehb1|validArray[0]                        ;        ;
+; fork_0|generateBlocks[2].regblock|reg_value         ;        ;
+; Buffer_4|tehb1|data_reg[3]                          ;        ;
+; load_7|Buffer_1|full_reg                            ;        ;
+; fork_0|generateBlocks[0].regblock|reg_value         ;        ;
+; phi_4|tehb1|full_reg                                ;        ;
+; forkC_14|generateBlocks[1].regblock|reg_value       ;        ;
+; fork_8|generateBlocks[1].regblock|reg_value         ;        ;
+; fork_8|generateBlocks[3].regblock|reg_value         ;        ;
+; forkC_14|generateBlocks[2].regblock|reg_value       ;        ;
+; phiC_5|oehb1|data_reg[0]                            ;        ;
+; Buffer_15|fifo|Tail[2]                              ;        ;
+; Buffer_15|fifo|Tail[0]                              ;        ;
+; phi_1|tehb1|data_reg[0]                             ;        ;
+; Buffer_4|oehb1|data_reg[3]                          ;        ;
+; Buffer_15|fifo|Tail[1]                              ;        ;
+; Buffer_15|fifo|Memory[4][0]                         ;        ;
+; phiC_5|fork_C1|generateBlocks[1].regblock|reg_value ;        ;
+; forkC_14|generateBlocks[3].regblock|reg_value       ;        ;
+; Buffer_1|tehb1|full_reg                             ;        ;
+; phi_1|tehb1|full_reg                                ;        ;
+; Buffer_7|tehb1|full_reg                             ;        ;
+; fork_13|generateBlocks[0].regblock|reg_value        ;        ;
+; start_0|startBuff|tehb1|full_reg                    ;        ;
+; start_0|startBuff|oehb1|validArray[0]               ;        ;
+; phi_4|tehb1|data_reg[3]                             ;        ;
+; Buffer_11|oehb1|validArray[0]                       ;        ;
+; phiC_4|oehb1|full_reg                               ;        ;
+; phiC_4|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; Buffer_12|tehb1|full_reg                            ;        ;
+; Buffer_12|oehb1|validArray[0]                       ;        ;
+; Buffer_2|tehb|full_reg                              ;        ;
+; phi_3|tehb1|full_reg                                ;        ;
+; Buffer_15|fifo|Head[0]                              ;        ;
+; Buffer_15|fifo|Head[2]                              ;        ;
+; Buffer_15|fifo|Empty                                ;        ;
+; Buffer_4|tehb1|data_reg[2]                          ;        ;
+; Buffer_15|fifo|Full                                 ;        ;
+; fork_19|generateBlocks[0].regblock|reg_value        ;        ;
+; fork_19|generateBlocks[1].regblock|reg_value        ;        ;
+; phiC_5|oehb1|full_reg                               ;        ;
+; fork_9|generateBlocks[3].regblock|reg_value         ;        ;
+; phiC_5|fork_C1|generateBlocks[0].regblock|reg_value ;        ;
+; Buffer_13|tehb1|full_reg                            ;        ;
+; Buffer_13|oehb1|validArray[0]                       ;        ;
+; Buffer_3|tehb1|full_reg                             ;        ;
+; Buffer_3|oehb1|data_reg[0]                          ;        ;
+; Buffer_4|oehb1|data_reg[2]                          ;        ;
+; Buffer_8|fifo|Memory[0][0]                          ;        ;
+; phi_n0|tehb1|full_reg                               ;        ;
+; load_11|Buffer_2|full_reg                           ;        ;
+; load_7|Buffer_2|full_reg                            ;        ;
+; mul_12|buff|regs[0]                                 ;        ;
+; mul_12|buff|regs[1]                                 ;        ;
+; mul_12|buff|regs[2]                                 ;        ;
+; mul_12|oehb|validArray[0]                           ;        ;
+; Buffer_2|fifo|Full                                  ;        ;
+; Buffer_2|fifo|Empty                                 ;        ;
+; phi_4|tehb1|data_reg[2]                             ;        ;
+; Buffer_8|fifo|Head[0]                               ;        ;
+; Buffer_8|fifo|Head[2]                               ;        ;
+; Buffer_8|fifo|Empty                                 ;        ;
+; Buffer_8|fifo|Full                                  ;        ;
+; fork_9|generateBlocks[2].regblock|reg_value         ;        ;
+; Buffer_3|oehb1|validArray[0]                        ;        ;
+; Buffer_6|tehb1|full_reg                             ;        ;
+; fork_6|generateBlocks[1].regblock|reg_value         ;        ;
+; phi_n2|tehb1|full_reg                               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][0]                ;        ;
+; Buffer_4|tehb1|data_reg[1]                          ;        ;
+; MC_M|read_arbiter|data|out_reg[0][1]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][2]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][3]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][4]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][5]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][6]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][7]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][8]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][9]                ;        ;
+; MC_M|read_arbiter|data|out_reg[0][10]               ;        ;
+; Buffer_4|oehb1|data_reg[1]                          ;        ;
+; MC_M|read_arbiter|data|out_reg[0][11]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][12]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][13]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][14]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][15]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][16]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][17]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][0]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][1]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][2]                ;        ;
+; phi_4|tehb1|data_reg[1]                             ;        ;
+; MC_V|read_arbiter|data|out_reg[0][3]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][4]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][5]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][6]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][7]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][8]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][9]                ;        ;
+; MC_V|read_arbiter|data|out_reg[0][10]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][11]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][12]               ;        ;
+; Buffer_4|tehb1|data_reg[0]                          ;        ;
+; MC_V|read_arbiter|data|out_reg[0][13]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][14]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][15]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][16]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][17]               ;        ;
+; phi_3|tehb1|data_reg[0]                             ;        ;
+; Buffer_2|tehb|data_reg[0]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[5]                ;        ;
+; phi_3|tehb1|data_reg[1]                             ;        ;
+; Buffer_2|tehb|data_reg[1]                           ;        ;
+; Buffer_4|oehb1|data_reg[0]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[6]                ;        ;
+; phi_3|tehb1|data_reg[2]                             ;        ;
+; Buffer_2|tehb|data_reg[2]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[7]                ;        ;
+; phi_3|tehb1|data_reg[3]                             ;        ;
+; Buffer_2|tehb|data_reg[3]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[8]                ;        ;
+; phi_3|tehb1|data_reg[4]                             ;        ;
+; Buffer_2|tehb|data_reg[4]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[9]                ;        ;
+; Buffer_1|tehb1|data_reg[0]                          ;        ;
+; phi_4|tehb1|data_reg[0]                             ;        ;
+; phi_3|tehb1|data_reg[5]                             ;        ;
+; Buffer_2|tehb|data_reg[5]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[10]               ;        ;
+; phi_3|tehb1|data_reg[6]                             ;        ;
+; Buffer_2|tehb|data_reg[6]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[11]               ;        ;
+; phi_3|tehb1|data_reg[7]                             ;        ;
+; Buffer_2|tehb|data_reg[7]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[12]               ;        ;
+; phi_3|tehb1|data_reg[8]                             ;        ;
+; Buffer_3|tehb1|data_reg[0]                          ;        ;
+; Buffer_2|tehb|data_reg[8]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[13]               ;        ;
+; phi_3|tehb1|data_reg[9]                             ;        ;
+; Buffer_2|tehb|data_reg[9]                           ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[14]               ;        ;
+; phi_3|tehb1|data_reg[10]                            ;        ;
+; Buffer_2|tehb|data_reg[10]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[15]               ;        ;
+; phi_3|tehb1|data_reg[11]                            ;        ;
+; Buffer_2|tehb|data_reg[11]                          ;        ;
+; Buffer_15|fifo|Head[1]                              ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[16]               ;        ;
+; phi_3|tehb1|data_reg[12]                            ;        ;
+; Buffer_2|tehb|data_reg[12]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[17]               ;        ;
+; phi_3|tehb1|data_reg[13]                            ;        ;
+; Buffer_2|tehb|data_reg[13]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[18]               ;        ;
+; phi_3|tehb1|data_reg[14]                            ;        ;
+; Buffer_2|tehb|data_reg[14]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[19]               ;        ;
+; Buffer_15|fifo|Memory[3][0]                         ;        ;
+; phi_3|tehb1|data_reg[15]                            ;        ;
+; Buffer_2|tehb|data_reg[15]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[20]               ;        ;
+; phi_3|tehb1|data_reg[16]                            ;        ;
+; Buffer_2|tehb|data_reg[16]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[21]               ;        ;
+; phi_3|tehb1|data_reg[17]                            ;        ;
+; Buffer_2|tehb|data_reg[17]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[22]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][18]               ;        ;
+; Buffer_15|fifo|Memory[2][0]                         ;        ;
+; MC_V|read_arbiter|data|out_reg[0][19]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][20]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][21]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][22]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][23]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][24]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][25]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][26]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][27]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][28]               ;        ;
+; Buffer_15|fifo|Memory[1][0]                         ;        ;
+; MC_V|read_arbiter|data|out_reg[0][29]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][30]               ;        ;
+; MC_V|read_arbiter|data|out_reg[0][31]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][18]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][19]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][20]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][21]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][22]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][23]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][24]               ;        ;
+; Buffer_15|fifo|Memory[0][0]                         ;        ;
+; MC_M|read_arbiter|data|out_reg[0][25]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][26]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][27]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][28]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][29]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][30]               ;        ;
+; MC_M|read_arbiter|data|out_reg[0][31]               ;        ;
+; phi_3|tehb1|data_reg[18]                            ;        ;
+; Buffer_2|tehb|data_reg[18]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[23]               ;        ;
+; fork_8|generateBlocks[2].regblock|reg_value         ;        ;
+; phi_3|tehb1|data_reg[19]                            ;        ;
+; Buffer_2|tehb|data_reg[19]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[24]               ;        ;
+; phi_3|tehb1|data_reg[20]                            ;        ;
+; Buffer_2|tehb|data_reg[20]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[25]               ;        ;
+; phi_3|tehb1|data_reg[21]                            ;        ;
+; Buffer_2|tehb|data_reg[21]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[26]               ;        ;
+; phi_3|tehb1|data_reg[22]                            ;        ;
+; forkC_14|generateBlocks[0].regblock|reg_value       ;        ;
+; Buffer_2|tehb|data_reg[22]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[27]               ;        ;
+; phi_3|tehb1|data_reg[23]                            ;        ;
+; Buffer_2|tehb|data_reg[23]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[28]               ;        ;
+; phi_3|tehb1|data_reg[24]                            ;        ;
+; Buffer_2|tehb|data_reg[24]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[29]               ;        ;
+; phi_3|tehb1|data_reg[25]                            ;        ;
+; Buffer_2|tehb|data_reg[25]                          ;        ;
+; fork_8|generateBlocks[0].regblock|reg_value         ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[30]               ;        ;
+; phi_3|tehb1|data_reg[26]                            ;        ;
+; Buffer_2|tehb|data_reg[26]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[31]               ;        ;
+; phi_3|tehb1|data_reg[27]                            ;        ;
+; Buffer_2|tehb|data_reg[27]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[32]               ;        ;
+; phi_3|tehb1|data_reg[28]                            ;        ;
+; Buffer_2|tehb|data_reg[28]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[33]               ;        ;
+; Buffer_1|oehb1|data_reg[0]                          ;        ;
+; forkC_12|generateBlocks[1].regblock|reg_value       ;        ;
+; phi_3|tehb1|data_reg[29]                            ;        ;
+; Buffer_2|tehb|data_reg[29]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[34]               ;        ;
+; phi_3|tehb1|data_reg[30]                            ;        ;
+; Buffer_2|tehb|data_reg[30]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[35]               ;        ;
+; phi_3|tehb1|data_reg[31]                            ;        ;
+; Buffer_2|tehb|data_reg[31]                          ;        ;
+; Buffer_2|fifo|Memory_rtl_0_bypass[36]               ;        ;
+; Buffer_11|tehb1|full_reg                            ;        ;
+; fork_13|generateBlocks[1].regblock|reg_value        ;        ;
+; forkC_12|generateBlocks[0].regblock|reg_value       ;        ;
+; forkC_12|generateBlocks[2].regblock|reg_value       ;        ;
+; phi_n1|tehb1|data_reg[0]                            ;        ;
+; MC_Out|counter1[11]                                 ;        ;
+; MC_Out|counter1[10]                                 ;        ;
+; MC_Out|counter1[9]                                  ;        ;
+; MC_Out|counter1[8]                                  ;        ;
+; phi_n2|tehb1|data_reg[0]                            ;        ;
+; MC_Out|counter1[7]                                  ;        ;
+; MC_Out|counter1[6]                                  ;        ;
+; MC_Out|counter1[17]                                 ;        ;
+; MC_Out|counter1[16]                                 ;        ;
+; MC_Out|counter1[15]                                 ;        ;
+; MC_Out|counter1[14]                                 ;        ;
+; MC_Out|counter1[13]                                 ;        ;
+; MC_Out|counter1[12]                                 ;        ;
+; MC_Out|counter1[23]                                 ;        ;
+; MC_Out|counter1[22]                                 ;        ;
+; Buffer_2|fifo|Tail[1]                               ;        ;
+; MC_Out|counter1[21]                                 ;        ;
+; MC_Out|counter1[20]                                 ;        ;
+; MC_Out|counter1[19]                                 ;        ;
+; MC_Out|counter1[18]                                 ;        ;
+; MC_Out|counter1[4]                                  ;        ;
+; MC_Out|counter1[3]                                  ;        ;
+; MC_Out|counter1[2]                                  ;        ;
+; MC_Out|counter1[1]                                  ;        ;
+; MC_Out|counter1[0]                                  ;        ;
+; MC_Out|counter1[5]                                  ;        ;
+; Buffer_2|fifo|Head[1]                               ;        ;
+; MC_Out|counter1[29]                                 ;        ;
+; MC_Out|counter1[28]                                 ;        ;
+; MC_Out|counter1[27]                                 ;        ;
+; MC_Out|counter1[26]                                 ;        ;
+; MC_Out|counter1[25]                                 ;        ;
+; MC_Out|counter1[24]                                 ;        ;
+; Buffer_9|oehb1|validArray[0]                        ;        ;
+; MC_Out|Counter.counter[31]                          ;        ;
+; MC_Out|counter1[31]                                 ;        ;
+; MC_Out|Counter.counter[0]                           ;        ;
+; Buffer_2|fifo|Tail[0]                               ;        ;
+; MC_Out|Counter.counter[1]                           ;        ;
+; MC_Out|Counter.counter[2]                           ;        ;
+; MC_Out|Counter.counter[3]                           ;        ;
+; MC_Out|Counter.counter[4]                           ;        ;
+; MC_Out|Counter.counter[5]                           ;        ;
+; MC_Out|Counter.counter[6]                           ;        ;
+; MC_Out|Counter.counter[7]                           ;        ;
+; MC_Out|Counter.counter[8]                           ;        ;
+; MC_Out|Counter.counter[9]                           ;        ;
+; MC_Out|Counter.counter[10]                          ;        ;
+; Buffer_2|fifo|Head[0]                               ;        ;
+; MC_Out|Counter.counter[11]                          ;        ;
+; MC_Out|Counter.counter[12]                          ;        ;
+; MC_Out|Counter.counter[13]                          ;        ;
+; MC_Out|Counter.counter[14]                          ;        ;
+; MC_Out|Counter.counter[15]                          ;        ;
+; MC_Out|Counter.counter[16]                          ;        ;
+; MC_Out|Counter.counter[17]                          ;        ;
+; MC_Out|Counter.counter[18]                          ;        ;
+; MC_Out|Counter.counter[19]                          ;        ;
+; MC_Out|Counter.counter[20]                          ;        ;
++-----------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	129
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------+
+; FLP-10500 - Non Driving Top Level Inputs Found ;
++--------------+---------------------------------+
+; Input Name   ; Waived                          ;
++--------------+---------------------------------+
+; M_din0[0]    ;                                 ;
+; M_din0[10]   ;                                 ;
+; M_din0[11]   ;                                 ;
+; M_din0[12]   ;                                 ;
+; M_din0[13]   ;                                 ;
+; M_din0[14]   ;                                 ;
+; M_din0[15]   ;                                 ;
+; M_din0[16]   ;                                 ;
+; M_din0[17]   ;                                 ;
+; M_din0[18]   ;                                 ;
+; M_din0[19]   ;                                 ;
+; M_din0[1]    ;                                 ;
+; M_din0[20]   ;                                 ;
+; M_din0[21]   ;                                 ;
+; M_din0[22]   ;                                 ;
+; M_din0[23]   ;                                 ;
+; M_din0[24]   ;                                 ;
+; M_din0[25]   ;                                 ;
+; M_din0[26]   ;                                 ;
+; M_din0[27]   ;                                 ;
+; M_din0[28]   ;                                 ;
+; M_din0[29]   ;                                 ;
+; M_din0[2]    ;                                 ;
+; M_din0[30]   ;                                 ;
+; M_din0[31]   ;                                 ;
+; M_din0[3]    ;                                 ;
+; M_din0[4]    ;                                 ;
+; M_din0[5]    ;                                 ;
+; M_din0[6]    ;                                 ;
+; M_din0[7]    ;                                 ;
+; M_din0[8]    ;                                 ;
+; M_din0[9]    ;                                 ;
+; Out_din0[0]  ;                                 ;
+; Out_din0[10] ;                                 ;
+; Out_din0[11] ;                                 ;
+; Out_din0[12] ;                                 ;
+; Out_din0[13] ;                                 ;
+; Out_din0[14] ;                                 ;
+; Out_din0[15] ;                                 ;
+; Out_din0[16] ;                                 ;
+; Out_din0[17] ;                                 ;
+; Out_din0[18] ;                                 ;
+; Out_din0[19] ;                                 ;
+; Out_din0[1]  ;                                 ;
+; Out_din0[20] ;                                 ;
+; Out_din0[21] ;                                 ;
+; Out_din0[22] ;                                 ;
+; Out_din0[23] ;                                 ;
+; Out_din0[24] ;                                 ;
+; Out_din0[25] ;                                 ;
+; Out_din0[26] ;                                 ;
+; Out_din0[27] ;                                 ;
+; Out_din0[28] ;                                 ;
+; Out_din0[29] ;                                 ;
+; Out_din0[2]  ;                                 ;
+; Out_din0[30] ;                                 ;
+; Out_din0[31] ;                                 ;
+; Out_din0[3]  ;                                 ;
+; Out_din0[4]  ;                                 ;
+; Out_din0[5]  ;                                 ;
+; Out_din0[6]  ;                                 ;
+; Out_din0[7]  ;                                 ;
+; Out_din0[8]  ;                                 ;
+; Out_din0[9]  ;                                 ;
+; Out_din1[0]  ;                                 ;
+; Out_din1[10] ;                                 ;
+; Out_din1[11] ;                                 ;
+; Out_din1[12] ;                                 ;
+; Out_din1[13] ;                                 ;
+; Out_din1[14] ;                                 ;
+; Out_din1[15] ;                                 ;
+; Out_din1[16] ;                                 ;
+; Out_din1[17] ;                                 ;
+; Out_din1[18] ;                                 ;
+; Out_din1[19] ;                                 ;
+; Out_din1[1]  ;                                 ;
+; Out_din1[20] ;                                 ;
+; Out_din1[21] ;                                 ;
+; Out_din1[22] ;                                 ;
+; Out_din1[23] ;                                 ;
+; Out_din1[24] ;                                 ;
+; Out_din1[25] ;                                 ;
+; Out_din1[26] ;                                 ;
+; Out_din1[27] ;                                 ;
+; Out_din1[28] ;                                 ;
+; Out_din1[29] ;                                 ;
+; Out_din1[2]  ;                                 ;
+; Out_din1[30] ;                                 ;
+; Out_din1[31] ;                                 ;
+; Out_din1[3]  ;                                 ;
+; Out_din1[4]  ;                                 ;
+; Out_din1[5]  ;                                 ;
+; Out_din1[6]  ;                                 ;
+; Out_din1[7]  ;                                 ;
+; Out_din1[8]  ;                                 ;
+; Out_din1[9]  ;                                 ;
+; V_din0[0]    ;                                 ;
+; V_din0[10]   ;                                 ;
+; V_din0[11]   ;                                 ;
+; V_din0[12]   ;                                 ;
+; V_din0[13]   ;                                 ;
+; V_din0[14]   ;                                 ;
+; V_din0[15]   ;                                 ;
+; V_din0[16]   ;                                 ;
+; V_din0[17]   ;                                 ;
+; V_din0[18]   ;                                 ;
+; V_din0[19]   ;                                 ;
+; V_din0[1]    ;                                 ;
+; V_din0[20]   ;                                 ;
+; V_din0[21]   ;                                 ;
+; V_din0[22]   ;                                 ;
+; V_din0[23]   ;                                 ;
+; V_din0[24]   ;                                 ;
+; V_din0[25]   ;                                 ;
+; V_din0[26]   ;                                 ;
+; V_din0[27]   ;                                 ;
+; V_din0[28]   ;                                 ;
+; V_din0[29]   ;                                 ;
+; V_din0[2]    ;                                 ;
+; V_din0[30]   ;                                 ;
+; V_din0[31]   ;                                 ;
+; V_din0[3]    ;                                 ;
+; V_din0[4]    ;                                 ;
+; V_din0[5]    ;                                 ;
+; V_din0[6]    ;                                 ;
+; V_din0[7]    ;                                 ;
+; V_din0[8]    ;                                 ;
+; V_din0[9]    ;                                 ;
+; start_in[0]  ;                                 ;
++--------------+---------------------------------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                                                                                                                                    ;
++--------+-----------------------------+--------------------------+------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; Driver ; Asynchronous Reset Signal   ; Synchronous Reset Signal ; Clock Enable Signal    ; Number of Asynchronous Reset Signals ; Number of Synchronous Reset Signals ; Number of Clock Enable Signals ; Waived ;
++--------+-----------------------------+--------------------------+------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; rst    ; start_0|start_internal|CLRN ; Buffer_2|fifo|Full|SCLR  ; MC_Out|counter1[0]|ENA ; 473                                  ; 7                                   ; 32                             ;        ;
++--------+-----------------------------+--------------------------+------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------------------------------------------+
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Affected by Spurious Writes ;
++-------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; LNT-30023 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------+
+; RES-30132 - Registers May Not Be Properly Reset ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------+
+; TMC-20052 - Paths with Post Synthesis Inferred Latches ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
+		DSP_HFN_Threshold = 500
++---------------------------------------------------+
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net ;
++---------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------+
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------------------+
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested ;
++------------------------------------------------------------------------+
+
+

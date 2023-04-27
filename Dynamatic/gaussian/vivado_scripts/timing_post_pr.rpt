@@ -1,0 +1,89 @@
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Thu Apr 27 15:32:44 2023
+| Host         : Frostspark running 64-bit major release  (build 9200)
+| Command      : report_timing
+| Design       : gaussian
+| Device       : 7k160t-fbg484
+| Speed File   : -1  PRODUCTION 1.12 2017-02-17
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -2.562ns  (required time - arrival time)
+  Source:                 c_LSQ_A/storeQ/head_reg[0]_rep__1/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            c_LSQ_A/storeQ/head_reg[0]_rep__0/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        6.183ns  (logic 1.289ns (20.846%)  route 4.894ns (79.154%))
+  Logic Levels:           11  (CARRY4=3 LUT3=1 LUT6=7)
+  Clock Path Skew:        -0.099ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.284ns = ( 5.284 - 4.000 ) 
+    Source Clock Delay      (SCD):    1.393ns
+    Clock Pessimism Removal (CPR):    0.010ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clk (IN)
+                         net (fo=3398, unset)         1.393     1.393    c_LSQ_A/storeQ/clk
+    SLICE_X60Y100        FDRE                                         r  c_LSQ_A/storeQ/head_reg[0]_rep__1/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y100        FDRE (Prop_fdre_C_Q)         0.269     1.662 r  c_LSQ_A/storeQ/head_reg[0]_rep__1/Q
+                         net (fo=201, routed)         1.060     2.722    c_LSQ_A/storeQ/head_reg[0]_rep__1_0
+    SLICE_X63Y91         LUT6 (Prop_lut6_I4_O)        0.053     2.775 r  c_LSQ_A/storeQ/A_address0[2]_INST_0_i_4/O
+                         net (fo=1, routed)           0.622     3.397    c_LSQ_A/storeQ/A_address0[2]_INST_0_i_4_n_0
+    SLICE_X63Y102        LUT6 (Prop_lut6_I2_O)        0.053     3.450 r  c_LSQ_A/storeQ/A_address0[2]_INST_0_i_1/O
+                         net (fo=16, routed)          0.615     4.065    c_LSQ_A/storeQ/A_address0[2]
+    SLICE_X62Y96         LUT6 (Prop_lut6_I3_O)        0.053     4.118 r  c_LSQ_A/storeQ/A_we0_INST_0_i_237/O
+                         net (fo=1, routed)           0.000     4.118    c_LSQ_A/storeQ/A_we0_INST_0_i_237_n_0
+    SLICE_X62Y96         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.297     4.415 r  c_LSQ_A/storeQ/A_we0_INST_0_i_219/CO[3]
+                         net (fo=1, routed)           0.000     4.415    c_LSQ_A/storeQ/A_we0_INST_0_i_219_n_0
+    SLICE_X62Y97         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.060     4.475 r  c_LSQ_A/storeQ/A_we0_INST_0_i_193/CO[3]
+                         net (fo=1, routed)           0.000     4.475    c_LSQ_A/storeQ/A_we0_INST_0_i_193_n_0
+    SLICE_X62Y98         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.132     4.607 r  c_LSQ_A/storeQ/A_we0_INST_0_i_152/CO[2]
+                         net (fo=1, routed)           0.507     5.114    c_LSQ_A/loadQ/A_we0_INST_0_i_76_0[0]
+    SLICE_X59Y101        LUT3 (Prop_lut3_I1_O)        0.160     5.274 r  c_LSQ_A/loadQ/A_we0_INST_0_i_113/O
+                         net (fo=1, routed)           0.350     5.624    c_LSQ_A/loadQ/A_we0_INST_0_i_113_n_0
+    SLICE_X58Y104        LUT6 (Prop_lut6_I0_O)        0.053     5.677 r  c_LSQ_A/loadQ/A_we0_INST_0_i_76/O
+                         net (fo=1, routed)           0.371     6.048    c_LSQ_A/loadQ/A_we0_INST_0_i_76_n_0
+    SLICE_X59Y106        LUT6 (Prop_lut6_I0_O)        0.053     6.101 r  c_LSQ_A/loadQ/A_we0_INST_0_i_30/O
+                         net (fo=1, routed)           0.462     6.563    c_LSQ_A/loadQ/A_we0_INST_0_i_30_n_0
+    SLICE_X59Y106        LUT6 (Prop_lut6_I2_O)        0.053     6.616 r  c_LSQ_A/loadQ/A_we0_INST_0_i_6/O
+                         net (fo=17, routed)          0.354     6.970    c_LSQ_A/loadQ/tail_reg[3]_0
+    SLICE_X59Y105        LUT6 (Prop_lut6_I5_O)        0.053     7.023 r  c_LSQ_A/loadQ/A_we0_INST_0/O
+                         net (fo=13, routed)          0.553     7.576    c_LSQ_A/storeQ/E[0]
+    SLICE_X52Y105        FDRE                                         r  c_LSQ_A/storeQ/head_reg[0]_rep__0/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clk (IN)
+                         net (fo=3398, unset)         1.284     5.284    c_LSQ_A/storeQ/clk
+    SLICE_X52Y105        FDRE                                         r  c_LSQ_A/storeQ/head_reg[0]_rep__0/C
+                         clock pessimism              0.010     5.294    
+                         clock uncertainty           -0.035     5.259    
+    SLICE_X52Y105        FDRE (Setup_fdre_C_CE)      -0.244     5.015    c_LSQ_A/storeQ/head_reg[0]_rep__0
+  -------------------------------------------------------------------
+                         required time                          5.015    
+                         arrival time                          -7.576    
+  -------------------------------------------------------------------
+                         slack                                 -2.562    
+
+
+
+

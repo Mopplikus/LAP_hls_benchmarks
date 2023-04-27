@@ -1,0 +1,173 @@
+Fitter Retime Stage Report for fir
+Wed Apr 26 00:24:44 2023
+Quartus Prime Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Hyper-Retimer Settings
+  3. Reset Sequence Requirement
+  4. Retiming Limit Summary
+  5. Critical Chain Summary for Clock Domain clk
+  6. Retime Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------+
+; Hyper-Retimer Settings                           ;
++------------------------+---------+---------------+
+; Option                 ; Setting ; Default Value ;
++------------------------+---------+---------------+
+; Enable Auto-Pipelining ; On      ; On            ;
++------------------------+---------+---------------+
+
+
++------------------------------------------+
+; Reset Sequence Requirement               ;
++------------+-----------------------------+
+; Clock Name ; Number of additional cycles ;
++------------+-----------------------------+
+; clk        ; 2                           ;
++------------+-----------------------------+
+Note: Due to retiming optimizations, a clock domain may require a longer reset sequence to ensure correct functionality.  The table above indicates the minimum number of additional reset sequence cycles needed for each clock domain.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Retiming Limit Summary                                                                                                                                                        ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Clock Transfer   ; Limiting Reason        ; Recommendation                                                                                                                    ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; Clock Domain clk ; Insufficient Registers ; See the Fast Forward Timing Closure Recommendations report for step-by-step suggestions for RTL changes and estimated performance ;
++------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+
+Critical Chain Summary for Clock Domain clk
+===============================================================================
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendations for Critical Chain                                                                                                                                                                                                                               ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recommendation                                                                                                                                                                                                                                                   ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; The critical chain is limited by: Insufficient Registers                                                                                                                                                                                                         ;
+;                                                                                                                                                                                                                                                                  ;
+; Reduce the delay of 'Long Paths' in the chain                                                                                                                                                                                                                    ;
+;   or insert more pipeline stages for 'Long Paths' in the chain                                                                                                                                                                                                   ;
+;   or remove retiming restrictions                                                                                                                                                                                                                                ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270744844'>Insufficient Registers</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information.     ;
+;                                                                                                                                                                                                                                                                  ;
+; Add additional pipeline stages at Register #1:                                                                                                                                                                                                                   ;
+;  Buffer_10|fifo|Empty                                                                                                                                                                                                                                            ;
+;  Add additional pipeline stages along these paths BEFORE the destinations                                                                                                                                                                                        ;
+;   from rst to Buffer_10|fifo|Empty                                                                                                                                                                                                                               ;
+;                                                                                                                                                                                                                                                                  ;
+; Retiming Restrictions at Register #2:                                                                                                                                                                                                                            ;
+;  Buffer_5|oehb1|data_reg[23]                                                                                                                                                                                                                                     ;
+;   Node uses an asynchronous clear port                                                                                                                                                                                                                           ;
+;                                                                                                                                                                                                                                                                  ;
+; Retiming Restriction: Metastability Synchronizer                                                                                                                                                                                                                 ;
+;  Add additional pipeline stages to isolate the register(s), to allow retiming optimizations to improve performance                                                                                                                                               ;
+;  or set Synchronization Register Chain Length to 1 if evaluating IP module performance                                                                                                                                                                           ;
+;   Buffer_10|fifo|Empty                                                                                                                                                                                                                                           ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#esc1445881961208'>Hyper-Pipelining</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information.           ;
+;                                                                                                                                                                                                                                                                  ;
+; The critical chain has Domain Boundary Entry/Exit Constraint                                                                                                                                                                                                     ;
+;    Refer to <a href='https://www.intel.com/content/www/us/en/programmable/documentation/jbr1444752564689.html#mtr1430270804124'>Domain Boundary Entry/Exit</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information. ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Critical Chain Details                                                                                                                 ;
++-----------------------+------------------------------+-------------+-------------------------------------------------------------------+
+; Path Info             ; Register                     ; Register ID ; Element                                                           ;
++-----------------------+------------------------------+-------------+-------------------------------------------------------------------+
+; Domain Boundary Entry ; REG (Metastability required) ; #1          ; Buffer_10|fifo|Empty                                              ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|fifo|Empty|q                                            ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|fifo|Empty~la_lab/laboutt[14]                           ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|fifo|Empty~LAB_RE_X69_Y197_N0_I108                      ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; Buffer_10|fifo|Empty~R2_X68_Y197_N0_I42                           ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|fifo|Empty~LOCAL_INTERCONNECT_X68_Y197_N0_I6            ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; Buffer_10|fifo|Empty~LAB_RE_X68_Y197_N0_I4                        ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|dataOutArray[0][0]~0|datab                              ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|dataOutArray[0][0]~0|combout                            ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|dataOutArray[0][0]~0~_LAB_RE_X68_Y197_N0_I94            ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; Buffer_10|dataOutArray[0][0]~0~_C2_X68_Y197_N0_I15                ;
+; Long Path (Critical)  ;                              ;             ; Buffer_10|dataOutArray[0][0]~0~_LOCAL_INTERCONNECT_X68_Y198_N0_I3 ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; Buffer_10|dataOutArray[0][0]~0~_LAB_RE_X68_Y198_N0_I7             ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~0|dataf                                     ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~0|combout                                   ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~0~la_lab/laboutt[0]                         ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~0~_LAB_RE_X68_Y198_N0_I94                   ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; phi_1|tehb_data_in[0]~0~_C2_X68_Y196_N0_I30                       ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~0~_LOCAL_INTERCONNECT_X69_Y196_N0_I30       ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; phi_1|tehb_data_in[0]~0~_LAB_RE_X69_Y196_N0_I13                   ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~4|datac                                     ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~4|combout                                   ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~4~la_lab/laboutt[6]                         ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~4~_LAB_RE_X69_Y196_N0_I100                  ;
+; Long Path (Critical)  ;                              ;             ; phi_1|tehb_data_in[0]~4~_LOCAL_INTERCONNECT_X69_Y196_N0_I4        ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; phi_1|tehb_data_in[0]~4~_LAB_RE_X69_Y196_N0_I62                   ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~26|datad                                             ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; add_11|add_0~46|cout                                              ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~46~_LAB_RE_X69_Y196_N0_I134                          ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~46~_LAB_RE_X69_Y195_N0_I146                          ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~51|cin                                               ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; add_11|add_0~96|cout                                              ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~96~_LAB_RE_X69_Y195_N0_I134                          ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~96~_LAB_RE_X69_Y194_N0_I146                          ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~101|cin                                              ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~106|cout                                             ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~111|cin                                              ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~116|sumout                                           ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~116~la_lab/laboutt[6]                                ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~116~_LAB_RE_X69_Y194_N0_I100                         ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; add_11|add_0~116~_R4_X66_Y194_N0_I54                              ;
+; Long Path (Critical)  ;                              ;             ; add_11|add_0~116~_LOCAL_INTERCONNECT_X68_Y194_N0_I5               ;
+; Long Path (Critical)  ; Bypassed Hyper-Register      ;             ; add_11|add_0~116~_LAB_RE_X68_Y194_N0_I72                          ;
+; Long Path (Critical)  ;                              ;             ; Buffer_5|tehb1|dataOutArray[0][0]~23|datae                        ;
+; Long Path (Critical)  ;                              ;             ; Buffer_5|tehb1|dataOutArray[0][0]~23|combout                      ;
+; Long Path (Critical)  ;                              ;             ; Buffer_5|oehb1|data_reg[23]|d                                     ;
+; Retiming Restriction  ; ALM Register                 ; #2          ; Buffer_5|oehb1|data_reg[23]                                       ;
++-----------------------+------------------------------+-------------+-------------------------------------------------------------------+
+
+
+
++-----------------+
+; Retime Messages ;
++-----------------+
+Info (20030): Parallel compilation is enabled and will use 16 of the 40 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.4.0 Build 67 12/06/2021 SC Pro Edition
+    Info: Processing started: Wed Apr 26 00:17:04 2023
+    Info: System process ID: 117860
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off fir -c fir
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = fir
+Info: Revision = fir
+Info (17966): Starting Hyper-Retimer operations.
+Info (18914): The Hyper-Retimer was unable to optimize the design due to retiming restrictions. Run Fast Forward Timing Closure Recommendations to see step-by-step suggestions for design changes and show the estimated performance improvement from making these changes.
+Info (17968): Completed Hyper-Retimer operations.
+Info (18821): Fitter Hyper-Retimer operations ending: elapsed time is 00:00:03
+
+
