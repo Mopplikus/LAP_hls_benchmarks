@@ -1,0 +1,131 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7k160t-fbg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7k160tfbg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.074 seconds; current allocated memory: 0.316 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 13.068 seconds; peak allocated memory: 88.926 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7k160t-fbg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7k160tfbg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.117 seconds; current allocated memory: 88.684 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.756 seconds; current allocated memory: 89.809 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.269 seconds; current allocated memory: 90.320 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.008 seconds; current allocated memory: 90.348 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.028 seconds; current allocated memory: 95.750 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 96.984 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_14_1' (../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:12) in function 'atax' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_14_1' (../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:12) in function 'atax' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_17_2' (../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:12) in function 'atax' completely with a factor of 20.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_19_3' (../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:12) in function 'atax' completely with a factor of 20.
+INFO: [XFORM 203-11] Balancing expressions in function 'atax' (../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:10)...39 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.196 seconds; current allocated memory: 118.926 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.105 seconds; current allocated memory: 122.320 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'atax' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'atax_Pipeline_VITIS_LOOP_14_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_14_1'.
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('y_addr_write_ln20', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:20) of variable 'add_ln20_19', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:20 on array 'y' and 'load' operation ('y_load_19', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:20) on array 'y'.
+WARNING: [HLS 200-880] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation ('y_addr_write_ln20', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:20) of variable 'add_ln20_19', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:20 on array 'y' and 'load' operation ('y_load_19', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:20) on array 'y'.
+WARNING: [HLS 200-885] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to schedule 'load' operation ('A_load_8', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:18) on array 'A' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to schedule 'load' operation ('A_load_5', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:18) on array 'A' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to schedule 'load' operation ('A_load_12', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:18) on array 'A' due to limited memory ports (II = 19). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to schedule 'load' operation ('A_load_12', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:18) on array 'A' due to limited memory ports (II = 27). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to schedule 'load' operation ('A_load_12', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:18) on array 'A' due to limited memory ports (II = 31). Please consider using a memory core with more ports or partitioning the array 'A'.
+WARNING: [HLS 200-885] The II Violation in module 'atax_Pipeline_VITIS_LOOP_14_1' (loop 'VITIS_LOOP_14_1'): Unable to schedule 'load' operation ('A_load_12', ../../../../Documents/LAP_hls_benchmarks/Vitis/atax/src/atax.cpp:18) on array 'A' due to limited memory ports (II = 33). Please consider using a memory core with more ports or partitioning the array 'A'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 34, Depth = 34, loop 'VITIS_LOOP_14_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 3.606 seconds; current allocated memory: 130.238 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.516 seconds; current allocated memory: 131.727 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'atax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.596 seconds; current allocated memory: 131.988 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.198 seconds; current allocated memory: 132.086 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'atax_Pipeline_VITIS_LOOP_14_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_5_1': 40 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'atax_Pipeline_VITIS_LOOP_14_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.413 seconds; current allocated memory: 136.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'atax' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/A' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/x' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/y' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'atax/tmp' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'atax' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'atax'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.612 seconds; current allocated memory: 142.883 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.888 seconds; current allocated memory: 147.832 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.682 seconds; current allocated memory: 152.125 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for atax.
+INFO: [VLOG 209-307] Generating Verilog RTL for atax.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 298.60 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7 seconds. CPU system time: 1 seconds. Elapsed time: 15.038 seconds; current allocated memory: 63.516 MB.
+INFO: [HLS 200-112] Total CPU user time: 8 seconds. Total CPU system time: 2 seconds. Total elapsed time: 26.864 seconds; peak allocated memory: 152.234 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7k160t-fbg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7k160tfbg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1510] Running: cosim_design -rtl vhdl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-322] Starting VHDL simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 20.146 seconds; current allocated memory: 5.078 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 32.001 seconds; peak allocated memory: 93.617 MB.

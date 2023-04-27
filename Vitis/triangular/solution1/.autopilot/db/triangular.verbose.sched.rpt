@@ -1,0 +1,207 @@
+
+
+================================================================
+== Vitis HLS Report for 'triangular'
+================================================================
+* Date:           Tue Apr 25 20:30:58 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        triangular
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: kintex7
+* Target device:  xc7k160t-fbg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  3.349 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_8_1  |        ?|        ?|         ?|          -|          -|     ?|        no|
+        +------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 6 2 
+2 --> 3 5 6 
+3 --> 4 
+4 --> 5 
+5 --> 2 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.81>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 7 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%spectopmodule_ln6 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_2" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:6]   --->   Operation 8 'spectopmodule' 'spectopmodule_ln6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %x, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %x"   --->   Operation 10 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %A, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %A"   --->   Operation 12 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %n"   --->   Operation 13 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %n, void @empty_1, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%n_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %n" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:6]   --->   Operation 15 'read' 'n_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (1.78ns)   --->   "%i = add i32 %n_read, i32 4294967295" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 16 'add' 'i' <Predicate = true> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%trunc_ln8 = trunc i32 %n_read" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 17 'trunc' 'trunc_ln8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (1.54ns)   --->   "%icmp_ln8 = icmp_sgt  i32 %n_read, i32 0" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 18 'icmp' 'icmp_ln8' <Predicate = true> <Delay = 1.54> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (1.02ns)   --->   "%br_ln8 = br i1 %icmp_ln8, void %for.end16, void %for.body.lr.ph" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 19 'br' 'br_ln8' <Predicate = true> <Delay = 1.02>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%indvars_iv = alloca i32 1"   --->   Operation 20 'alloca' 'indvars_iv' <Predicate = (icmp_ln8)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%i_1 = alloca i32 1"   --->   Operation 21 'alloca' 'i_1' <Predicate = (icmp_ln8)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.78ns)   --->   "%add_ln8 = add i32 %n_read, i32 4294967294" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 22 'add' 'add_ln8' <Predicate = (icmp_ln8)> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%sext_ln8 = sext i32 %add_ln8" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 23 'sext' 'sext_ln8' <Predicate = (icmp_ln8)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln8 = zext i32 %i" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 24 'zext' 'zext_ln8' <Predicate = (icmp_ln8)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (1.02ns)   --->   "%store_ln8 = store i64 %zext_ln8, i64 %i_1" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 25 'store' 'store_ln8' <Predicate = (icmp_ln8)> <Delay = 1.02>
+ST_1 : Operation 26 [1/1] (1.02ns)   --->   "%store_ln8 = store i64 %sext_ln8, i64 %indvars_iv" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 26 'store' 'store_ln8' <Predicate = (icmp_ln8)> <Delay = 1.02>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%br_ln8 = br void %VITIS_LOOP_10_2" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 27 'br' 'br_ln8' <Predicate = (icmp_ln8)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.66>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%i_2 = load i64 %i_1"   --->   Operation 28 'load' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%trunc_ln10 = trunc i64 %i_2" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 29 'trunc' 'trunc_ln10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %i_2, i32 63" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 30 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%br_ln8 = br i1 %tmp, void %VITIS_LOOP_10_2.split, void %for.end16.loopexit" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 31 'br' 'br_ln8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%specloopname_ln7 = specloopname void @_ssdm_op_SpecLoopName, void @empty_4" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:7]   --->   Operation 32 'specloopname' 'specloopname_ln7' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (1.98ns)   --->   "%add_ln8_1 = add i64 %i_2, i64 18446744073709551615" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 33 'add' 'add_ln8_1' <Predicate = (!tmp)> <Delay = 1.98> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (1.68ns)   --->   "%icmp_ln10 = icmp_sgt  i64 %i_2, i64 0" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 34 'icmp' 'icmp_ln10' <Predicate = (!tmp)> <Delay = 1.68> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.68> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%br_ln10 = br i1 %icmp_ln10, void %for.inc14, void %for.body4.lr.ph" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 35 'br' 'br_ln10' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%empty = trunc i64 %i_2"   --->   Operation 36 'trunc' 'empty' <Predicate = (!tmp & icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%i_1_cast_cast = zext i7 %empty"   --->   Operation 37 'zext' 'i_1_cast_cast' <Predicate = (!tmp & icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%x_addr = getelementptr i32 %x, i64 0, i64 %i_1_cast_cast"   --->   Operation 38 'getelementptr' 'x_addr' <Predicate = (!tmp & icmp_ln10)> <Delay = 0.00>
+ST_2 : Operation 39 [2/2] (2.66ns)   --->   "%x_load = load i7 %x_addr"   --->   Operation 39 'load' 'x_load' <Predicate = (!tmp & icmp_ln10)> <Delay = 2.66> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_2 : Operation 40 [1/1] (1.02ns)   --->   "%br_ln0 = br void %for.end16"   --->   Operation 40 'br' 'br_ln0' <Predicate = (tmp)> <Delay = 1.02>
+
+State 3 <SV = 2> <Delay = 2.66>
+ST_3 : Operation 41 [1/2] (2.66ns)   --->   "%x_load = load i7 %x_addr"   --->   Operation 41 'load' 'x_load' <Predicate = true> <Delay = 2.66> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+
+State 4 <SV = 3> <Delay = 1.80>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%indvars_iv_load = load i64 %indvars_iv" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 42 'load' 'indvars_iv_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_1 = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %indvars_iv_load, i32 63" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 43 'bitselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.77ns)   --->   "%select_ln10 = select i1 %tmp_1, i64 %indvars_iv_load, i64 0" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 44 'select' 'select_ln10' <Predicate = true> <Delay = 0.77> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 45 [2/2] (1.02ns)   --->   "%call_ln10 = call void @triangular_Pipeline_VITIS_LOOP_10_2, i64 %indvars_iv_load, i14 %trunc_ln10, i32 %A, i14 %trunc_ln8, i64 %select_ln10, i32 %x_load" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 45 'call' 'call_ln10' <Predicate = true> <Delay = 1.02> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 3.01>
+ST_5 : Operation 46 [1/2] (0.00ns)   --->   "%call_ln10 = call void @triangular_Pipeline_VITIS_LOOP_10_2, i64 %indvars_iv_load, i14 %trunc_ln10, i32 %A, i14 %trunc_ln8, i64 %select_ln10, i32 %x_load" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10]   --->   Operation 46 'call' 'call_ln10' <Predicate = (icmp_ln10)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc14"   --->   Operation 47 'br' 'br_ln0' <Predicate = (icmp_ln10)> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%indvars_iv_load_1 = load i64 %indvars_iv" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 48 'load' 'indvars_iv_load_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (1.98ns)   --->   "%add_ln8_2 = add i64 %indvars_iv_load_1, i64 18446744073709551615" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 49 'add' 'add_ln8_2' <Predicate = true> <Delay = 1.98> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.98> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 50 [1/1] (1.02ns)   --->   "%store_ln8 = store i64 %add_ln8_1, i64 %i_1" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 50 'store' 'store_ln8' <Predicate = true> <Delay = 1.02>
+ST_5 : Operation 51 [1/1] (1.02ns)   --->   "%store_ln8 = store i64 %add_ln8_2, i64 %indvars_iv" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 51 'store' 'store_ln8' <Predicate = true> <Delay = 1.02>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%br_ln8 = br void %VITIS_LOOP_10_2" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8]   --->   Operation 52 'br' 'br_ln8' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 2> <Delay = 1.78>
+ST_6 : Operation 53 [1/1] (0.00ns) (grouped into LUT with out node add_ln15)   --->   "%i_0_lcssa = phi i32 %i, void %entry, i32 4294967295, void %for.end16.loopexit"   --->   Operation 53 'phi' 'i_0_lcssa' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (1.78ns) (out node of the LUT)   --->   "%add_ln15 = add i32 %i_0_lcssa, i32 %n_read" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:15]   --->   Operation 54 'add' 'add_ln15' <Predicate = true> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%ret_ln15 = ret i32 %add_ln15" [../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:15]   --->   Operation 55 'ret' 'ret_ln15' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 2.81ns
+The critical path consists of the following:
+	wire read operation ('n', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:6) on port 'n' (../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:6) [12]  (0 ns)
+	'add' operation ('i', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8) [13]  (1.78 ns)
+	'store' operation ('store_ln8', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8) of variable 'zext_ln8', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8 on local variable 'i' [23]  (1.03 ns)
+
+ <State 2>: 2.66ns
+The critical path consists of the following:
+	'load' operation ('i') on local variable 'i' [27]  (0 ns)
+	'getelementptr' operation ('x_addr') [40]  (0 ns)
+	'load' operation ('x_load') on array 'x' [41]  (2.66 ns)
+
+ <State 3>: 2.66ns
+The critical path consists of the following:
+	'load' operation ('x_load') on array 'x' [41]  (2.66 ns)
+
+ <State 4>: 1.8ns
+The critical path consists of the following:
+	'load' operation ('indvars_iv_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10) on local variable 'indvars_iv' [37]  (0 ns)
+	'select' operation ('select_ln10', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10) [43]  (0.775 ns)
+	'call' operation ('call_ln10', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:10) to 'triangular_Pipeline_VITIS_LOOP_10_2' [44]  (1.03 ns)
+
+ <State 5>: 3.01ns
+The critical path consists of the following:
+	'load' operation ('indvars_iv_load_1', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8) on local variable 'indvars_iv' [47]  (0 ns)
+	'add' operation ('add_ln8_2', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8) [48]  (1.99 ns)
+	'store' operation ('store_ln8', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8) of variable 'add_ln8_2', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8 on local variable 'indvars_iv' [50]  (1.03 ns)
+
+ <State 6>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:8) [55]  (0 ns)
+	'add' operation ('add_ln15', ../../../../Documents/LAP_hls_benchmarks/Vitis/triangular/src/triangular.cpp:15) [56]  (1.78 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

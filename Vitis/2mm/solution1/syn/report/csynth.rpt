@@ -1,0 +1,208 @@
+
+
+================================================================
+== Synthesis Summary Report of 'kernel_2mm'
+================================================================
++ General Information: 
+    * Date:           Thu Apr 27 10:40:11 2023
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        2mm
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: kintex7
+    * Target device:  xc7k160t-fbg484-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+-----------+-----+
+    |                         Modules                        | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |          |            |           |     |
+    |                         & Loops                        | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |     FF     |    LUT    | URAM|
+    +--------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+-----------+-----+
+    |+ kernel_2mm                                            |     -|  0.24|     1030|  5.150e+03|         -|     1031|     -|        no|     -|  60 (10%)|   7378 (3%)|  2304 (2%)|    -|
+    | + kernel_2mm_Pipeline_VITIS_LOOP_15_1_VITIS_LOOP_16_2  |     -|  0.24|      516|  2.580e+03|         -|      516|     -|        no|     -|   27 (4%)|   3561 (1%)|  862 (~0%)|    -|
+    |  o VITIS_LOOP_15_1_VITIS_LOOP_16_2                     |    II|  3.65|      514|  2.570e+03|        20|        5|   100|       yes|     -|         -|           -|          -|    -|
+    | + kernel_2mm_Pipeline_VITIS_LOOP_22_4_VITIS_LOOP_23_5  |     -|  0.30|      511|  2.555e+03|         -|      511|     -|        no|     -|         -|  1446 (~0%)|  937 (~0%)|    -|
+    |  o VITIS_LOOP_22_4_VITIS_LOOP_23_5                     |    II|  3.65|      509|  2.545e+03|        15|        5|   100|       yes|     -|         -|           -|          -|    -|
+    +--------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+------------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++--------------+----------+
+| Interface    | Bitwidth |
++--------------+----------+
+| A_address0   | 7        |
+| A_address1   | 7        |
+| A_q0         | 32       |
+| A_q1         | 32       |
+| B_address0   | 7        |
+| B_address1   | 7        |
+| B_q0         | 32       |
+| B_q1         | 32       |
+| C_address0   | 7        |
+| C_address1   | 7        |
+| C_q0         | 32       |
+| C_q1         | 32       |
+| D_address0   | 7        |
+| D_d0         | 32       |
+| D_q0         | 32       |
+| tmp_address0 | 7        |
+| tmp_address1 | 7        |
+| tmp_d0       | 32       |
+| tmp_q0       | 32       |
+| tmp_q1       | 32       |
++--------------+----------+
+
+* Other Ports
++-----------+---------+----------+
+| Interface | Mode    | Bitwidth |
++-----------+---------+----------+
+| alpha     | ap_none | 32       |
+| beta      | ap_none | 32       |
++-----------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| alpha    | in        | int      |
+| beta     | in        | int      |
+| tmp      | inout     | int*     |
+| A        | in        | int*     |
+| B        | in        | int*     |
+| C        | in        | int*     |
+| D        | inout     | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+----------+
+| Argument | HW Interface | HW Type | HW Usage |
++----------+--------------+---------+----------+
+| alpha    | alpha        | port    |          |
+| beta     | beta         | port    |          |
+| tmp      | tmp_address0 | port    | offset   |
+| tmp      | tmp_ce0      | port    |          |
+| tmp      | tmp_we0      | port    |          |
+| tmp      | tmp_d0       | port    |          |
+| tmp      | tmp_q0       | port    |          |
+| tmp      | tmp_address1 | port    | offset   |
+| tmp      | tmp_ce1      | port    |          |
+| tmp      | tmp_q1       | port    |          |
+| A        | A_address0   | port    | offset   |
+| A        | A_ce0        | port    |          |
+| A        | A_q0         | port    |          |
+| A        | A_address1   | port    | offset   |
+| A        | A_ce1        | port    |          |
+| A        | A_q1         | port    |          |
+| B        | B_address0   | port    | offset   |
+| B        | B_ce0        | port    |          |
+| B        | B_q0         | port    |          |
+| B        | B_address1   | port    | offset   |
+| B        | B_ce1        | port    |          |
+| B        | B_q1         | port    |          |
+| C        | C_address0   | port    | offset   |
+| C        | C_ce0        | port    |          |
+| C        | C_q0         | port    |          |
+| C        | C_address1   | port    | offset   |
+| C        | C_ce1        | port    |          |
+| C        | C_q1         | port    |          |
+| D        | D_address0   | port    | offset   |
+| D        | D_ce0        | port    |          |
+| D        | D_we0        | port    |          |
+| D        | D_d0         | port    |          |
+| D        | D_q0         | port    |          |
++----------+--------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                                   | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++--------------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + kernel_2mm                                           | 60  |        |             |     |        |         |
+|  + kernel_2mm_Pipeline_VITIS_LOOP_15_1_VITIS_LOOP_16_2 | 27  |        |             |     |        |         |
+|    add_ln20_9_fu_392_p2                                | -   |        | add_ln20_9  | add | fabric | 0       |
+|    add_ln15_9_fu_330_p2                                | -   |        | add_ln15_9  | add | fabric | 0       |
+|    add_ln15_fu_339_p2                                  | -   |        | add_ln15    | add | fabric | 0       |
+|    add_ln20_10_fu_416_p2                               | -   |        | add_ln20_10 | add | fabric | 0       |
+|    add_ln15_1_fu_615_p2                                | -   |        | add_ln15_1  | add | fabric | 0       |
+|    add_ln15_2_fu_632_p2                                | -   |        | add_ln15_2  | add | fabric | 0       |
+|    add_ln15_3_fu_637_p2                                | -   |        | add_ln15_3  | add | fabric | 0       |
+|    add_ln15_4_fu_682_p2                                | -   |        | add_ln15_4  | add | fabric | 0       |
+|    add_ln15_5_fu_687_p2                                | -   |        | add_ln15_5  | add | fabric | 0       |
+|    add_ln15_6_fu_434_p2                                | -   |        | add_ln15_6  | add | fabric | 0       |
+|    add_ln15_7_fu_440_p2                                | -   |        | add_ln15_7  | add | fabric | 0       |
+|    add_ln15_8_fu_490_p2                                | -   |        | add_ln15_8  | add | fabric | 0       |
+|    add_ln20_11_fu_505_p2                               | -   |        | add_ln20_11 | add | fabric | 0       |
+|    add_ln20_12_fu_511_p2                               | -   |        | add_ln20_12 | add | fabric | 0       |
+|    add_ln20_13_fu_533_p2                               | -   |        | add_ln20_13 | add | fabric | 0       |
+|    add_ln20_14_fu_538_p2                               | -   |        | add_ln20_14 | add | fabric | 0       |
+|    add_ln20_15_fu_559_p2                               | -   |        | add_ln20_15 | add | fabric | 0       |
+|    add_ln20_16_fu_564_p2                               | -   |        | add_ln20_16 | add | fabric | 0       |
+|    add_ln20_17_fu_363_p2                               | -   |        | add_ln20_17 | add | fabric | 0       |
+|    add_ln20_18_fu_462_p2                               | -   |        | add_ln20_18 | add | fabric | 0       |
+|    mul_32s_32s_32_5_1_U13                              | 3   |        | mul_ln20_1  | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U15                              | 3   |        | mul_ln20_3  | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U16                              | 3   |        | mul_ln20_5  | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U17                              | 3   |        | mul_ln20_7  | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U18                              | 3   |        | mul_ln20_9  | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U19                              | 3   |        | mul_ln20_11 | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U20                              | 3   |        | mul_ln20_13 | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U12                              | 3   |        | mul_ln20_17 | mul | auto   | 4       |
+|    mul_32s_32s_32_5_1_U14                              | 3   |        | mul_ln20_19 | mul | auto   | 4       |
+|    add_ln20_fu_746_p2                                  | -   |        | add_ln20    | add | fabric | 0       |
+|    add_ln16_fu_467_p2                                  | -   |        | add_ln16    | add | fabric | 0       |
+|  + kernel_2mm_Pipeline_VITIS_LOOP_22_4_VITIS_LOOP_23_5 | 0   |        |             |     |        |         |
+|    add_ln27_10_fu_344_p2                               | -   |        | add_ln27_10 | add | fabric | 0       |
+|    add_ln22_9_fu_356_p2                                | -   |        | add_ln22_9  | add | fabric | 0       |
+|    add_ln22_fu_365_p2                                  | -   |        | add_ln22    | add | fabric | 0       |
+|    add_ln27_11_fu_405_p2                               | -   |        | add_ln27_11 | add | fabric | 0       |
+|    add_ln22_1_fu_571_p2                                | -   |        | add_ln22_1  | add | fabric | 0       |
+|    add_ln22_2_fu_619_p2                                | -   |        | add_ln22_2  | add | fabric | 0       |
+|    add_ln22_3_fu_624_p2                                | -   |        | add_ln22_3  | add | fabric | 0       |
+|    add_ln22_4_fu_485_p2                                | -   |        | add_ln22_4  | add | fabric | 0       |
+|    add_ln22_5_fu_490_p2                                | -   |        | add_ln22_5  | add | fabric | 0       |
+|    add_ln22_6_fu_536_p2                                | -   |        | add_ln22_6  | add | fabric | 0       |
+|    add_ln22_7_fu_541_p2                                | -   |        | add_ln22_7  | add | fabric | 0       |
+|    add_ln22_8_fu_584_p2                                | -   |        | add_ln22_8  | add | fabric | 0       |
+|    add_ln27_12_fu_599_p2                               | -   |        | add_ln27_12 | add | fabric | 0       |
+|    add_ln27_13_fu_605_p2                               | -   |        | add_ln27_13 | add | fabric | 0       |
+|    add_ln27_14_fu_641_p2                               | -   |        | add_ln27_14 | add | fabric | 0       |
+|    add_ln27_15_fu_646_p2                               | -   |        | add_ln27_15 | add | fabric | 0       |
+|    add_ln27_16_fu_423_p2                               | -   |        | add_ln27_16 | add | fabric | 0       |
+|    add_ln27_17_fu_429_p2                               | -   |        | add_ln27_17 | add | fabric | 0       |
+|    add_ln27_18_fu_503_p2                               | -   |        | add_ln27_18 | add | fabric | 0       |
+|    add_ln27_19_fu_562_p2                               | -   |        | add_ln27_19 | add | fabric | 0       |
+|    add_ln27_fu_715_p2                                  | -   |        | add_ln27    | add | fabric | 0       |
+|    add_ln27_4_fu_711_p2                                | -   |        | add_ln27_4  | add | fabric | 0       |
+|    add_ln23_fu_513_p2                                  | -   |        | add_ln23    | add | fabric | 0       |
++--------------------------------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+  No pragmas found
+

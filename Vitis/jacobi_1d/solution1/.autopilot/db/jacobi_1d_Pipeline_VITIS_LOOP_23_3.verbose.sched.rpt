@@ -1,0 +1,154 @@
+
+
+================================================================
+== Vitis HLS Report for 'jacobi_1d_Pipeline_VITIS_LOOP_23_3'
+================================================================
+* Date:           Wed Apr 26 11:09:35 2023
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        jacobi_1d
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: kintex7
+* Target device:  xc7k160t-fbg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.00 ns|  2.664 ns|     1.35 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      101|      101|  0.505 us|  0.505 us|  101|  101|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_23_3  |       99|       99|         3|          1|          1|    98|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.66>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 6 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %B, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %A_2, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (1.02ns)   --->   "%store_ln0 = store i7 1, i7 %j"   --->   Operation 9 'store' 'store_ln0' <Predicate = true> <Delay = 1.02>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc19"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%j_1 = load i7 %j" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23]   --->   Operation 11 'load' 'j_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 12 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (1.18ns)   --->   "%icmp_ln23 = icmp_eq  i7 %j_1, i7 99" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23]   --->   Operation 13 'icmp' 'icmp_ln23' <Predicate = true> <Delay = 1.18> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 98, i64 98, i64 98"   --->   Operation 14 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%br_ln23 = br i1 %icmp_ln23, void %for.inc19.split, void %for.inc22.exitStub" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23]   --->   Operation 15 'br' 'br_ln23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%j_cast = zext i7 %j_1" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23]   --->   Operation 16 'zext' 'j_cast' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%B_addr = getelementptr i32 %B, i64 0, i64 %j_cast" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24]   --->   Operation 17 'getelementptr' 'B_addr' <Predicate = (!icmp_ln23)> <Delay = 0.00>
+ST_1 : Operation 18 [2/2] (2.66ns)   --->   "%B_load = load i7 %B_addr" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24]   --->   Operation 18 'load' 'B_load' <Predicate = (!icmp_ln23)> <Delay = 2.66> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_1 : Operation 19 [1/1] (1.37ns)   --->   "%add_ln23 = add i7 %j_1, i7 1" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23]   --->   Operation 19 'add' 'add_ln23' <Predicate = (!icmp_ln23)> <Delay = 1.37> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (1.02ns)   --->   "%store_ln23 = store i7 %add_ln23, i7 %j" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23]   --->   Operation 20 'store' 'store_ln23' <Predicate = (!icmp_ln23)> <Delay = 1.02>
+
+State 2 <SV = 1> <Delay = 2.66>
+ST_2 : Operation 21 [1/2] (2.66ns)   --->   "%B_load = load i7 %B_addr" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24]   --->   Operation 21 'load' 'B_load' <Predicate = true> <Delay = 2.66> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 26 'ret' 'ret_ln0' <Predicate = (icmp_ln23)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.66>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%specloopname_ln14 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:14]   --->   Operation 22 'specloopname' 'specloopname_ln14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%A_2_addr = getelementptr i32 %A_2, i64 0, i64 %j_cast" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24]   --->   Operation 23 'getelementptr' 'A_2_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (2.66ns)   --->   "%store_ln24 = store i32 %B_load, i7 %A_2_addr" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24]   --->   Operation 24 'store' 'store_ln24' <Predicate = true> <Delay = 2.66> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.66> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 100> <RAM>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%br_ln23 = br void %for.inc19" [../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23]   --->   Operation 25 'br' 'br_ln23' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 2.66ns
+The critical path consists of the following:
+	'alloca' operation ('j') [3]  (0 ns)
+	'load' operation ('j', ../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:23) on local variable 'j' [9]  (0 ns)
+	'getelementptr' operation ('B_addr', ../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24) [17]  (0 ns)
+	'load' operation ('B_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24) on array 'B' [18]  (2.66 ns)
+
+ <State 2>: 2.66ns
+The critical path consists of the following:
+	'load' operation ('B_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24) on array 'B' [18]  (2.66 ns)
+
+ <State 3>: 2.66ns
+The critical path consists of the following:
+	'getelementptr' operation ('A_2_addr', ../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24) [19]  (0 ns)
+	'store' operation ('store_ln24', ../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24) of variable 'B_load', ../../../../Documents/LAP_hls_benchmarks/Vitis/jacobi_1d/src/jacobi_1d.cpp:24 on array 'A_2' [20]  (2.66 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
