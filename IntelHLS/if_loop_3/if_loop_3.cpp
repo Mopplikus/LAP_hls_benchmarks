@@ -17,11 +17,11 @@ component int if_loop_3 (int a[N], int b[N], int n) {
 	hls_memory hls_singlepump int a_local[N];
 	hls_memory hls_singlepump int b_local[N];
 
-	/*INIT:for(i = 0; i < N; i++)
+	INIT:for(i = 0; i < N; i++)
 	{
 		a_local[i] = a[i];
 		b_local[i] = b[i];
-	}*/
+	}
 
 	WORK:for (i=0; i<n; i++) {
 		dist = a_local[i] - b_local[i];
@@ -60,12 +60,14 @@ int main(void){
 	int a[AMOUNT_OF_TEST][N];
 	int b[AMOUNT_OF_TEST][N];
 	int n[AMOUNT_OF_TEST];
+
+	srand(13);
     
 	for(int i = 0; i < AMOUNT_OF_TEST; ++i){
     	n[i] = N;
 		for(int j = 0; j < N; ++j){
-    		a[i][j] = rand()%10;
-    		b[i][j] = a[i][j] + 1;
+    		a[i][j] = rand()%10 + 2;
+    		b[i][j] = a[i][j] - 1;
 		}
 	}
 
