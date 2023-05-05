@@ -16,7 +16,7 @@
 
 // SystemVerilog created from if_loop_3_B3_merge_storage
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Thu May  4 08:54:22 2023
+// SystemVerilog created on Fri May  5 14:34:33 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -63,7 +63,7 @@ module if_loop_3_B3_merge_storage (
     assign if_loop_3_B3_merge_storage_o_stall[0] = if_loop_3_B3_merge_storage_o_stall_bitsignaltemp;
     assign if_loop_3_B3_merge_storage_o_valid[0] = if_loop_3_B3_merge_storage_o_valid_bitsignaltemp;
     hld_fifo #(
-        .ALMOST_EMPTY_CUTOFF(5),
+        .ALMOST_EMPTY_CUTOFF(4),
         .ALMOST_FULL_CUTOFF(9),
         .ASYNC_RESET(0),
         .DEPTH(32),

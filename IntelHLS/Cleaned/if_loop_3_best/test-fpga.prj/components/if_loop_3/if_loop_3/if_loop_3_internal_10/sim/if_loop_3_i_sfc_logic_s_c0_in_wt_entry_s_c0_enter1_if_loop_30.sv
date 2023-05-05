@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_sfc_logic_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Thu May  4 08:08:13 2023
+// SystemVerilog created on Fri May  5 14:58:26 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -42,15 +42,15 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
     wire [0:0] i_if_loop_3_b1_start_next_iter_isreal_if_loop_36_q;
     wire [0:0] i_llvm_fpga_dummy_thread_if_loop_3_b1_start_dummy_if_loop_31_out_dummy_out;
     wire [0:0] i_llvm_fpga_forked_if_loop_3_b1_start_forked_if_loop_32_out_buffer_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_exiting_valid_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_not_exitcond_stall_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_dummy_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_forked_out;
-    wire [0:0] i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_valid_out;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_feedback_out_7;
-    wire [0:0] i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_feedback_valid_out_7;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_exiting_valid_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_not_exitcond_stall_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_dummy_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_forked_out;
+    wire [0:0] i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_valid_out;
+    wire [0:0] i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out;
+    wire [0:0] i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_feedback_out_5;
+    wire [0:0] i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_feedback_valid_out_5;
     wire [0:0] i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_30_i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_33_mux_x_s;
     reg [0:0] i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_30_i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_33_mux_x_q;
     wire [6:0] i_llvm_fpga_push_i1_if_loop_3_b1_start_next_iter_isreal_push_if_loop_30_c_i7_03_x_q;
@@ -73,12 +73,12 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
     reg [0:0] redist1_sync_together25_in_i_valid_2_q;
     reg [0:0] redist1_sync_together25_in_i_valid_2_delay_0;
     reg [0:0] redist2_sync_together25_in_i_valid_3_q;
-    reg [0:0] redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_q;
-    reg [0:0] redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_delay_0;
-    reg [0:0] redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_delay_1;
-    reg [0:0] redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_q;
-    reg [0:0] redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_delay_0;
-    reg [0:0] redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_delay_1;
+    reg [0:0] redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_q;
+    reg [0:0] redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_delay_0;
+    reg [0:0] redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_delay_1;
+    reg [0:0] redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_q;
+    reg [0:0] redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_delay_0;
+    reg [0:0] redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_delay_1;
     reg [0:0] redist5_i_llvm_fpga_forked_if_loop_3_b1_start_forked_if_loop_32_out_buffer_out_1_q;
     reg [0:0] redist6_i_llvm_fpga_forked_if_loop_3_b1_start_forked_if_loop_32_out_buffer_out_4_q;
     reg [0:0] redist6_i_llvm_fpga_forked_if_loop_3_b1_start_forked_if_loop_32_out_buffer_out_4_delay_0;
@@ -116,20 +116,20 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
         end
     end
 
-    // i_llvm_fpga_push_i1_notexitcond23_if_loop_38(BLACKBOX,18)@1
+    // i_llvm_fpga_push_i1_notexitcond11_if_loop_38(BLACKBOX,18)@1
     // in in_empty_in@20000000
-    // out out_feedback_out_7@20000000
-    // out out_feedback_valid_out_7@20000000
-    if_loop_3_i_llvm_fpga_push_i1_notexitcond23_0 thei_llvm_fpga_push_i1_notexitcond23_if_loop_38 (
+    // out out_feedback_out_5@20000000
+    // out out_feedback_valid_out_5@20000000
+    if_loop_3_i_llvm_fpga_push_i1_notexitcond11_0 thei_llvm_fpga_push_i1_notexitcond11_if_loop_38 (
         .in_almost_empty_in(GND_q),
         .in_data_in(VCC_q),
         .in_empty_in(GND_q),
-        .in_feedback_stall_in_7(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_not_exitcond_stall_out),
+        .in_feedback_stall_in_5(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_not_exitcond_stall_out),
         .in_stall_in(GND_q),
         .in_valid_in(valid_fanout_reg5_q),
-        .out_data_out(i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out),
-        .out_feedback_out_7(i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_feedback_out_7),
-        .out_feedback_valid_out_7(i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_feedback_valid_out_7),
+        .out_data_out(i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out),
+        .out_feedback_out_5(i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_feedback_out_5),
+        .out_feedback_valid_out_5(i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_feedback_valid_out_5),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -184,29 +184,29 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
         end
     end
 
-    // i_llvm_fpga_pipeline_keep_going22_if_loop_35(BLACKBOX,17)@1
+    // i_llvm_fpga_pipeline_keep_going10_if_loop_35(BLACKBOX,17)@1
     // out out_exiting_stall_out@20000000
     // out out_exiting_valid_out@20000000
     // out out_not_exitcond_stall_out@20000000
     // out out_pipeline_dummy_out@20000000
     // out out_pipeline_forked_out@20000000
     // out out_pipeline_valid_out@20000000
-    if_loop_3_i_llvm_fpga_pipeline_keep_going22_0 thei_llvm_fpga_pipeline_keep_going22_if_loop_35 (
+    if_loop_3_i_llvm_fpga_pipeline_keep_going10_0 thei_llvm_fpga_pipeline_keep_going10_if_loop_35 (
         .in_data_in(redist5_i_llvm_fpga_forked_if_loop_3_b1_start_forked_if_loop_32_out_buffer_out_1_q),
         .in_dummy_in(redist7_i_llvm_fpga_dummy_thread_if_loop_3_b1_start_dummy_if_loop_31_out_dummy_out_1_q),
         .in_forked_in(redist5_i_llvm_fpga_forked_if_loop_3_b1_start_forked_if_loop_32_out_buffer_out_1_q),
-        .in_not_exitcond_in(i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_feedback_out_7),
-        .in_not_exitcond_valid_in(i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_feedback_valid_out_7),
+        .in_not_exitcond_in(i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_feedback_out_5),
+        .in_not_exitcond_valid_in(i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_feedback_valid_out_5),
         .in_pipeline_stall_in(GND_q),
         .in_stall_in(GND_q),
         .in_valid_in(valid_fanout_reg2_q),
-        .out_data_out(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out),
+        .out_data_out(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out),
         .out_exiting_stall_out(),
-        .out_exiting_valid_out(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_exiting_valid_out),
-        .out_not_exitcond_stall_out(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_not_exitcond_stall_out),
-        .out_pipeline_dummy_out(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_dummy_out),
-        .out_pipeline_forked_out(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_forked_out),
-        .out_pipeline_valid_out(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_valid_out),
+        .out_exiting_valid_out(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_exiting_valid_out),
+        .out_not_exitcond_stall_out(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_not_exitcond_stall_out),
+        .out_pipeline_dummy_out(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_dummy_out),
+        .out_pipeline_forked_out(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_forked_out),
+        .out_pipeline_valid_out(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_valid_out),
         .out_stall_out(),
         .out_valid_out(),
         .clock(clock),
@@ -214,16 +214,16 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
     );
 
     // regfree_osync(GPOUT,19)
-    assign out_exiting_valid_out = i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_exiting_valid_out;
+    assign out_exiting_valid_out = i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_exiting_valid_out;
 
     // dupName_0_regfree_osync_x(GPOUT,22)
-    assign out_pipeline_dummy_out = i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_dummy_out;
+    assign out_pipeline_dummy_out = i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_dummy_out;
 
     // dupName_1_regfree_osync_x(GPOUT,23)
-    assign out_pipeline_forked_out = i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_forked_out;
+    assign out_pipeline_forked_out = i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_forked_out;
 
     // dupName_2_regfree_osync_x(GPOUT,24)
-    assign out_pipeline_valid_out = i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_pipeline_valid_out;
+    assign out_pipeline_valid_out = i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_pipeline_valid_out;
 
     // redist1_sync_together25_in_i_valid_2(DELAY,41)
     always @ (posedge clock)
@@ -276,7 +276,7 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
     // i_llvm_fpga_push_i1_if_loop_3_b1_start_next_iter_isreal_push_if_loop_30_c_i7_03_x(CONSTANT,27)
     assign i_llvm_fpga_push_i1_if_loop_3_b1_start_next_iter_isreal_push_if_loop_30_c_i7_03_x_q = $unsigned(7'b0000000);
 
-    // redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3(DELAY,44)
+    // redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3(DELAY,44)
     always @ (posedge clock)
     begin
         if (0)
@@ -284,14 +284,14 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
         end
         else
         begin
-            redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_delay_0 <= $unsigned(i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out);
-            redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_delay_1 <= redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_delay_0;
-            redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_q <= redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_delay_1;
+            redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_delay_0 <= $unsigned(i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out);
+            redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_delay_1 <= redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_delay_0;
+            redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_q <= redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_delay_1;
         end
     end
 
     // i_if_loop_3_b1_start_next_iter_isreal_if_loop_36(LOGICAL,14)@4
-    assign i_if_loop_3_b1_start_next_iter_isreal_if_loop_36_q = i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_30_i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_33_mux_x_q & redist4_i_llvm_fpga_pipeline_keep_going22_if_loop_35_out_data_out_3_q;
+    assign i_if_loop_3_b1_start_next_iter_isreal_if_loop_36_q = i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_30_i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_33_mux_x_q & redist4_i_llvm_fpga_pipeline_keep_going10_if_loop_35_out_data_out_3_q;
 
     // i_llvm_fpga_push_i1_if_loop_3_b1_start_next_iter_isreal_push_if_loop_30_element_extension2_x(BITJOIN,28)@4
     assign i_llvm_fpga_push_i1_if_loop_3_b1_start_next_iter_isreal_push_if_loop_30_element_extension2_x_q = {i_llvm_fpga_push_i1_if_loop_3_b1_start_next_iter_isreal_push_if_loop_30_c_i7_03_x_q, i_if_loop_3_b1_start_next_iter_isreal_if_loop_36_q};
@@ -402,7 +402,7 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
     // i_if_loop_3_b1_start_current_iter_isspec_if_loop_34(LOGICAL,13)@4
     assign i_if_loop_3_b1_start_current_iter_isspec_if_loop_34_q = i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_30_i_llvm_fpga_pop_coalesce_i1_if_loop_3_b1_start_current_iter_isreal_if_loop_33_mux_x_q ^ VCC_q;
 
-    // redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3(DELAY,43)
+    // redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3(DELAY,43)
     always @ (posedge clock)
     begin
         if (0)
@@ -410,15 +410,15 @@ module if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 (
         end
         else
         begin
-            redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_delay_0 <= $unsigned(i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out);
-            redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_delay_1 <= redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_delay_0;
-            redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_q <= redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_delay_1;
+            redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_delay_0 <= $unsigned(i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out);
+            redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_delay_1 <= redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_delay_0;
+            redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_q <= redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_delay_1;
         end
     end
 
     // sync_out_aunroll_x(GPOUT,32)@4
     assign out_c0_exi1_0_tpl = GND_q;
-    assign out_c0_exi1_1_tpl = redist3_i_llvm_fpga_push_i1_notexitcond23_if_loop_38_out_data_out_3_q;
+    assign out_c0_exi1_1_tpl = redist3_i_llvm_fpga_push_i1_notexitcond11_if_loop_38_out_data_out_3_q;
     assign out_if_loop_3_B1_start_current_iter_isspec = i_if_loop_3_b1_start_current_iter_isspec_if_loop_34_q;
     assign out_o_valid = valid_fanout_reg0_q;
 

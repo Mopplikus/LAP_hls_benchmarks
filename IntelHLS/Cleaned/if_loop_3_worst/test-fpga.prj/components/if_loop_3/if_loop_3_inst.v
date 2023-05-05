@@ -25,11 +25,18 @@ if_loop_3 if_loop_3_inst (
   .b                   ( ), // 64-bit data input
   // Interface: n (conduit sink)
   .n                   ( ), // 32-bit data input
-  // Interface: avmm_0_rw (avalon start)
-  .avmm_0_rw_address   ( ), // 64-bit address output
-  .avmm_0_rw_byteenable( ), // 8-bit byteenable output
-  .avmm_0_rw_read      ( ), // 1-bit read output
-  .avmm_0_rw_readdata  ( ), // 64-bit readdata input
-  .avmm_0_rw_write     ( ), // 1-bit write output
-  .avmm_0_rw_writedata ( )  // 64-bit writedata output
+  // Interface: avmm_1_rw (avalon start)
+  .avmm_1_rw_address   ( ), // 32-bit address output
+  .avmm_1_rw_byteenable( ), // 32-bit byteenable output
+  .avmm_1_rw_read      ( ), // 1-bit read output
+  .avmm_1_rw_readdata  ( ), // 256-bit readdata input
+  .avmm_1_rw_write     ( ), // 1-bit write output
+  .avmm_1_rw_writedata ( ), // 256-bit writedata output
+  // Interface: avmm_4_rw (avalon start)
+  .avmm_4_rw_address   ( ), // 32-bit address output
+  .avmm_4_rw_byteenable( ), // 32-bit byteenable output
+  .avmm_4_rw_read      ( ), // 1-bit read output
+  .avmm_4_rw_readdata  ( ), // 256-bit readdata input
+  .avmm_4_rw_write     ( ), // 1-bit write output
+  .avmm_4_rw_writedata ( )  // 256-bit writedata output
 );

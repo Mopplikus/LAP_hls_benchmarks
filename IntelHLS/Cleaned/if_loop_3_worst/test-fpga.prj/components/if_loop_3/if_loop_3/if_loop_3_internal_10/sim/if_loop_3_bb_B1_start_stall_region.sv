@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_if_loop_3_B1_start_stall_region
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Thu May  4 08:54:22 2023
+// SystemVerilog created on Fri May  5 14:34:32 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -29,7 +29,7 @@ module if_loop_3_bb_B1_start_stall_region (
     input wire [0:0] in_feedback_data_in_1,
     input wire [0:0] in_feedback_empty_in_1,
     output wire [0:0] out_feedback_stall_out_1,
-    output wire [63:0] out_intel_reserved_ffwd_0_0,
+    output wire [0:0] out_intel_reserved_ffwd_0_0,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_almost_empty_in,
@@ -39,7 +39,8 @@ module if_loop_3_bb_B1_start_stall_region (
     output wire [0:0] out_almost_empty_out,
     output wire [0:0] out_empty_out,
     output wire [0:0] out_valid_out,
-    output wire [31:0] out_intel_reserved_ffwd_2_0,
+    output wire [63:0] out_intel_reserved_ffwd_2_0,
+    output wire [32:0] out_intel_reserved_ffwd_3_0,
     input wire clock,
     input wire resetn
     );
@@ -66,9 +67,10 @@ module if_loop_3_bb_B1_start_stall_region (
     wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid;
     wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out;
     wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out;
-    wire [63:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_0_0;
+    wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_0_0;
     wire [63:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_1_0;
-    wire [31:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_2_0;
+    wire [63:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_2_0;
+    wire [32:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_3_0;
     wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_stall;
     wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid;
     wire [0:0] bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q;
@@ -153,7 +155,7 @@ module if_loop_3_bb_B1_start_stall_region (
     reg [0:0] rst_sync_rst_sclrn;
 
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg0(REG,92)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg0(REG,93)
     always @ (posedge clock)
     begin
         if (0)
@@ -165,7 +167,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg1(REG,91)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg1(REG,92)
     always @ (posedge clock)
     begin
         if (0)
@@ -177,7 +179,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg0(REG,94)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg0(REG,95)
     always @ (posedge clock)
     begin
         if (0)
@@ -189,7 +191,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg1(REG,93)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg1(REG,94)
     always @ (posedge clock)
     begin
         if (0)
@@ -201,7 +203,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg0(REG,102)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg0(REG,103)
     always @ (posedge clock)
     begin
         if (0)
@@ -213,7 +215,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg1(REG,101)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg1(REG,102)
     always @ (posedge clock)
     begin
         if (0)
@@ -225,7 +227,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg0(REG,100)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg0(REG,101)
     always @ (posedge clock)
     begin
         if (0)
@@ -237,7 +239,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg1(REG,99)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg1(REG,100)
     always @ (posedge clock)
     begin
         if (0)
@@ -249,7 +251,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg0(REG,98)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg0(REG,99)
     always @ (posedge clock)
     begin
         if (0)
@@ -261,7 +263,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg1(REG,97)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg1(REG,98)
     always @ (posedge clock)
     begin
         if (0)
@@ -273,10 +275,10 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BITJOIN,38)
+    // bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BITJOIN,39)
     assign bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q = {i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg1_q, i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg1_q, i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg1_q};
 
-    // bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BITSELECT,39)
+    // bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BITSELECT,40)
     assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_b = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q[63:0]);
     assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_c = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q[127:64]);
     assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_d = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q[159:128]);
@@ -284,7 +286,7 @@ module if_loop_3_bb_B1_start_stall_region (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg0(REG,114)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg0(REG,115)
     always @ (posedge clock)
     begin
         if (0)
@@ -296,7 +298,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg1(REG,113)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg1(REG,114)
     always @ (posedge clock)
     begin
         if (0)
@@ -308,7 +310,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg0(REG,116)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg0(REG,117)
     always @ (posedge clock)
     begin
         if (0)
@@ -320,7 +322,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg1(REG,115)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg1(REG,116)
     always @ (posedge clock)
     begin
         if (0)
@@ -332,7 +334,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg0(REG,118)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg0(REG,119)
     always @ (posedge clock)
     begin
         if (0)
@@ -344,7 +346,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg1(REG,117)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg1(REG,118)
     always @ (posedge clock)
     begin
         if (0)
@@ -356,13 +358,13 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x(STALLENABLE,70)
+    // merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x(STALLENABLE,71)
     assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_backStall = in_stall_in;
     assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg1_q;
     assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V1 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg1_q;
     assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V2 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg1_q;
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg0(REG,111)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg0(REG,112)
     always @ (posedge clock)
     begin
         if (0)
@@ -374,7 +376,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg1(REG,112)
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg1(REG,113)
     always @ (posedge clock)
     begin
         if (0)
@@ -386,16 +388,17 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x(BLACKBOX,32)@76
+    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x(BLACKBOX,33)@76
     // in in_i_stall@20000000
-    // out out_almost_empty_out@108
-    // out out_empty_out@108
+    // out out_almost_empty_out@110
+    // out out_empty_out@110
     // out out_intel_reserved_ffwd_0_0@20000000
     // out out_intel_reserved_ffwd_1_0@20000000
     // out out_intel_reserved_ffwd_2_0@20000000
+    // out out_intel_reserved_ffwd_3_0@20000000
     // out out_o_stall@20000000
-    // out out_o_valid@108
-    // out out_c1_exit_0_tpl@108
+    // out out_o_valid@110
+    // out out_c1_exit_0_tpl@110
     if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 thei_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x (
         .in_almost_empty_in(merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V2),
         .in_empty_in(merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V1),
@@ -410,6 +413,7 @@ module if_loop_3_bb_B1_start_stall_region (
         .out_intel_reserved_ffwd_0_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_0_0),
         .out_intel_reserved_ffwd_1_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_1_0),
         .out_intel_reserved_ffwd_2_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_2_0),
+        .out_intel_reserved_ffwd_3_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_3_0),
         .out_o_stall(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_stall),
         .out_o_valid(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid),
         .out_c1_exit_0_tpl(),
@@ -417,7 +421,7 @@ module if_loop_3_bb_B1_start_stall_region (
         .resetn(resetn)
     );
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg0(REG,96)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg0(REG,97)
     always @ (posedge clock)
     begin
         if (0)
@@ -429,7 +433,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg1(REG,95)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg1(REG,96)
     always @ (posedge clock)
     begin
         if (0)
@@ -441,13 +445,13 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(STALLENABLE,69)
+    // merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(STALLENABLE,70)
     assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_backStall = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_stall;
     assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V0 = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg1_q;
     assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V1 = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg1_q;
     assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V2 = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg1_q;
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg0(REG,89)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg0(REG,90)
     always @ (posedge clock)
     begin
         if (0)
@@ -459,7 +463,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg1(REG,90)
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg1(REG,91)
     always @ (posedge clock)
     begin
         if (0)
@@ -471,7 +475,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg0(REG,71)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg0(REG,72)
     always @ (posedge clock)
     begin
         if (0)
@@ -483,7 +487,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg1(REG,72)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg1(REG,73)
     always @ (posedge clock)
     begin
         if (0)
@@ -495,7 +499,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg0(REG,103)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg0(REG,104)
     always @ (posedge clock)
     begin
         if (0)
@@ -507,7 +511,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg1(REG,104)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg1(REG,105)
     always @ (posedge clock)
     begin
         if (0)
@@ -519,7 +523,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // stall_entry_frontAlmostEmpty_reg0(REG,88)
+    // stall_entry_frontAlmostEmpty_reg0(REG,89)
     always @ (posedge clock)
     begin
         if (0)
@@ -531,7 +535,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // stall_entry_frontAlmostEmpty_reg1(REG,87)
+    // stall_entry_frontAlmostEmpty_reg1(REG,88)
     always @ (posedge clock)
     begin
         if (0)
@@ -543,7 +547,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // stall_entry_frontEmpty_reg0(REG,86)
+    // stall_entry_frontEmpty_reg0(REG,87)
     always @ (posedge clock)
     begin
         if (0)
@@ -555,7 +559,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // stall_entry_frontEmpty_reg1(REG,85)
+    // stall_entry_frontEmpty_reg1(REG,86)
     always @ (posedge clock)
     begin
         if (0)
@@ -567,7 +571,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // stall_entry_frontValid_reg0(REG,84)
+    // stall_entry_frontValid_reg0(REG,85)
     always @ (posedge clock)
     begin
         if (0)
@@ -579,7 +583,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // stall_entry_frontValid_reg1(REG,83)
+    // stall_entry_frontValid_reg1(REG,84)
     always @ (posedge clock)
     begin
         if (0)
@@ -591,13 +595,13 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // merged_in_SE_stall_entry(STALLENABLE,66)
+    // merged_in_SE_stall_entry(STALLENABLE,67)
     assign merged_in_SE_stall_entry_backStall = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_stall;
     assign merged_in_SE_stall_entry_V0 = stall_entry_frontValid_reg1_q;
     assign merged_in_SE_stall_entry_V1 = stall_entry_frontEmpty_reg1_q;
     assign merged_in_SE_stall_entry_V2 = stall_entry_frontAlmostEmpty_reg1_q;
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(BLACKBOX,31)@0
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(BLACKBOX,32)@0
     // in in_i_stall@20000000
     // out out_almost_empty_out@35
     // out out_empty_out@35
@@ -621,7 +625,7 @@ module if_loop_3_bb_B1_start_stall_region (
         .resetn(resetn)
     );
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg0(REG,106)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg0(REG,107)
     always @ (posedge clock)
     begin
         if (0)
@@ -633,7 +637,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg1(REG,105)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg1(REG,106)
     always @ (posedge clock)
     begin
         if (0)
@@ -645,7 +649,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg0(REG,108)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg0(REG,109)
     always @ (posedge clock)
     begin
         if (0)
@@ -657,7 +661,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg1(REG,107)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg1(REG,108)
     always @ (posedge clock)
     begin
         if (0)
@@ -669,7 +673,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg0(REG,110)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg0(REG,111)
     always @ (posedge clock)
     begin
         if (0)
@@ -681,7 +685,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg1(REG,109)
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg1(REG,110)
     always @ (posedge clock)
     begin
         if (0)
@@ -693,7 +697,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(STALLENABLE,67)
+    // merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(STALLENABLE,68)
     assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_backStall = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_stall_out;
     assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V0 = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg1_q;
     assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V1 = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg1_q;
@@ -727,7 +731,7 @@ module if_loop_3_bb_B1_start_stall_region (
         .resetn(rst_sync_rst_sclrn[0])
     );
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg0(REG,76)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg0(REG,77)
     always @ (posedge clock)
     begin
         if (0)
@@ -739,7 +743,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg1(REG,75)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg1(REG,76)
     always @ (posedge clock)
     begin
         if (0)
@@ -751,13 +755,13 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITJOIN,34)
+    // bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITJOIN,35)
     assign bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg1_q;
 
-    // bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITSELECT,35)
+    // bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITSELECT,36)
     assign bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_b = $unsigned(bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q[0:0]);
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg0(REG,74)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg0(REG,75)
     always @ (posedge clock)
     begin
         if (0)
@@ -769,7 +773,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg1(REG,73)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg1(REG,74)
     always @ (posedge clock)
     begin
         if (0)
@@ -781,7 +785,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg0(REG,78)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg0(REG,79)
     always @ (posedge clock)
     begin
         if (0)
@@ -793,7 +797,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg1(REG,77)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg1(REG,78)
     always @ (posedge clock)
     begin
         if (0)
@@ -805,7 +809,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg0(REG,80)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg0(REG,81)
     always @ (posedge clock)
     begin
         if (0)
@@ -817,7 +821,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg1(REG,79)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg1(REG,80)
     always @ (posedge clock)
     begin
         if (0)
@@ -829,13 +833,13 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(STALLENABLE,68)
+    // merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(STALLENABLE,69)
     assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_backStall = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_stall;
     assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V0 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg1_q;
     assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg1_q;
     assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V2 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg1_q;
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BLACKBOX,30)@52
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BLACKBOX,31)@52
     // in in_i_stall@20000000
     // out out_iord_bl_call_if_loop_3_o_fifoalmost_full@20000000
     // out out_iord_bl_call_if_loop_3_o_fifoready@20000000
@@ -877,7 +881,7 @@ module if_loop_3_bb_B1_start_stall_region (
     // regfree_osync(GPOUT,21)
     assign out_intel_reserved_ffwd_0_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_0_0;
 
-    // stall_entry_frontStall_reg0(REG,81)
+    // stall_entry_frontStall_reg0(REG,82)
     always @ (posedge clock)
     begin
         if (0)
@@ -889,7 +893,7 @@ module if_loop_3_bb_B1_start_stall_region (
         end
     end
 
-    // stall_entry_frontStall_reg1(REG,82)
+    // stall_entry_frontStall_reg1(REG,83)
     always @ (posedge clock)
     begin
         if (0)
@@ -907,7 +911,7 @@ module if_loop_3_bb_B1_start_stall_region (
     // dupName_0_regfree_osync_x(GPOUT,27)
     assign out_intel_reserved_ffwd_1_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_1_0;
 
-    // dupName_0_sync_out_x(GPOUT,28)@108
+    // dupName_0_sync_out_x(GPOUT,28)@110
     assign out_almost_empty_out = merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V2;
     assign out_empty_out = merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V1;
     assign out_valid_out = merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V0;
@@ -915,7 +919,10 @@ module if_loop_3_bb_B1_start_stall_region (
     // dupName_1_regfree_osync_x(GPOUT,29)
     assign out_intel_reserved_ffwd_2_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_2_0;
 
-    // rst_sync(RESETSYNC,119)
+    // dupName_2_regfree_osync_x(GPOUT,30)
+    assign out_intel_reserved_ffwd_3_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_3_0;
+
+    // rst_sync(RESETSYNC,120)
     acl_reset_handler #(
         .ASYNC_RESET(0),
         .USE_SYNCHRONIZER(1),

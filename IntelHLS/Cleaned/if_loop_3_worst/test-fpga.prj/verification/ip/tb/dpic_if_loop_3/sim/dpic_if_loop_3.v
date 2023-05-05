@@ -25,7 +25,7 @@ module dpic_if_loop_3 (
 
 	hls_sim_component_dpi_controller #(
 		.COMPONENT_NAME               ("if_loop_3"),
-		.COMPONENT_MANGLED_NAME       ("_Z9if_loop_3PiS_i"),
+		.COMPONENT_MANGLED_NAME       ("_Z9if_loop_3RN3ihc7mm_hostIiJNS_6dwidthILi256EEENS_6awidthILi32EEENS_6aspaceILi1EEENS_7latencyILi1EEEEEERNS0_IiJS2_S4_NS5_ILi4EEES8_EEEi"),
 		.RETURN_DATAWIDTH             (32),
 		.COMPONENT_NUM_AGENTS         (0),
 		.COMPONENT_HAS_AGENT_RETURN   (0),

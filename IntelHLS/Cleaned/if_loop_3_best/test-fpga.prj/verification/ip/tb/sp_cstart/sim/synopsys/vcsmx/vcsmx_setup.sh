@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.4 67 linux 2023.05.04.08:08:56
+# ACDS 21.4 67 linux 2023.05.05.14:59:11
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.05.04.08:08:56
+# ACDS 21.4 67 linux 2023.05.05.14:59:11
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="sp_cstart.sp_cstart"

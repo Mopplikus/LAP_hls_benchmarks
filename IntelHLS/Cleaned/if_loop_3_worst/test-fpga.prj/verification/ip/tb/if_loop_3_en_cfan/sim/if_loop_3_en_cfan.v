@@ -8,15 +8,17 @@ module if_loop_3_en_cfan (
 		output wire  out_conduit_0, // out_conduit_0.conduit
 		output wire  out_conduit_1, // out_conduit_1.conduit
 		output wire  out_conduit_2, // out_conduit_2.conduit
-		output wire  out_conduit_3  // out_conduit_3.conduit
+		output wire  out_conduit_3, // out_conduit_3.conduit
+		output wire  out_conduit_4  // out_conduit_4.conduit
 	);
 
-	if_loop_3_en_cfan_avalon_conduit_fanout_10_joescla if_loop_3_en_cfan (
+	if_loop_3_en_cfan_avalon_conduit_fanout_10_mhqe7za if_loop_3_en_cfan (
 		.in_conduit    (in_conduit),    //   input,  width = 1,    in_conduit.conduit
 		.out_conduit_0 (out_conduit_0), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (out_conduit_1), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (out_conduit_2), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (out_conduit_3)  //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_3 (out_conduit_3), //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_4 (out_conduit_4)  //  output,  width = 1, out_conduit_4.conduit
 	);
 
 endmodule

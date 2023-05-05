@@ -16,12 +16,12 @@
 
 // SystemVerilog created from i_llvm_fpga_mem_lm1_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Thu May  4 08:54:22 2023
+// SystemVerilog created on Fri May  5 14:34:33 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_mem_lm1_0 (
-    input wire [31:0] in_lm1_if_loop_3_avm_readdata,
+    input wire [255:0] in_lm1_if_loop_3_avm_readdata,
     input wire [0:0] in_lm1_if_loop_3_avm_writeack,
     input wire [0:0] in_lm1_if_loop_3_avm_waitrequest,
     input wire [0:0] in_lm1_if_loop_3_avm_readdatavalid,
@@ -29,8 +29,8 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
     output wire [0:0] out_lm1_if_loop_3_avm_enable,
     output wire [0:0] out_lm1_if_loop_3_avm_read,
     output wire [0:0] out_lm1_if_loop_3_avm_write,
-    output wire [31:0] out_lm1_if_loop_3_avm_writedata,
-    output wire [3:0] out_lm1_if_loop_3_avm_byteenable,
+    output wire [255:0] out_lm1_if_loop_3_avm_writedata,
+    output wire [31:0] out_lm1_if_loop_3_avm_byteenable,
     output wire [0:0] out_lm1_if_loop_3_avm_burstcount,
     input wire [0:0] in_flush,
     input wire [0:0] in_i_stall,
@@ -52,7 +52,7 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
     wire [31:0] c_i32_010_q;
     wire [2:0] c_i3_09_q;
     wire [3:0] c_i4_05_q;
-    wire [31:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_readdata;
+    wire [255:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_readdata;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_readdatavalid;
     wire i_llvm_fpga_mem_lm1_if_loop_31_avm_readdatavalid_bitsignaltemp;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_waitrequest;
@@ -82,14 +82,14 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
     wire [31:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_address;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_burstcount;
     wire i_llvm_fpga_mem_lm1_if_loop_31_avm_burstcount_bitsignaltemp;
-    wire [3:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_byteenable;
+    wire [31:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_byteenable;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_enable;
     wire i_llvm_fpga_mem_lm1_if_loop_31_avm_enable_bitsignaltemp;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_read;
     wire i_llvm_fpga_mem_lm1_if_loop_31_avm_read_bitsignaltemp;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_write;
     wire i_llvm_fpga_mem_lm1_if_loop_31_avm_write_bitsignaltemp;
-    wire [31:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_writedata;
+    wire [255:0] i_llvm_fpga_mem_lm1_if_loop_31_avm_writedata;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_o_almost_empty;
     wire i_llvm_fpga_mem_lm1_if_loop_31_o_almost_empty_bitsignaltemp;
     wire [0:0] i_llvm_fpga_mem_lm1_if_loop_31_o_empty;
@@ -116,13 +116,13 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
     // c_i3_09(CONSTANT,9)
     assign c_i3_09_q = $unsigned(3'b000);
 
-    // addr_trunc_sel_x(BITSELECT,19)@4
+    // addr_trunc_sel_x(BITSELECT,19)@5
     assign addr_trunc_sel_x_b = in_i_address[31:0];
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_mem_lm1_if_loop_31(EXTIFACE,13)@4 + 4
+    // i_llvm_fpga_mem_lm1_if_loop_31(EXTIFACE,13)@5 + 4
     assign i_llvm_fpga_mem_lm1_if_loop_31_avm_readdata = in_lm1_if_loop_3_avm_readdata;
     assign i_llvm_fpga_mem_lm1_if_loop_31_avm_readdatavalid = in_lm1_if_loop_3_avm_readdatavalid;
     assign i_llvm_fpga_mem_lm1_if_loop_31_avm_waitrequest = in_lm1_if_loop_3_avm_waitrequest;
@@ -160,8 +160,8 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
     assign i_llvm_fpga_mem_lm1_if_loop_31_o_valid[0] = i_llvm_fpga_mem_lm1_if_loop_31_o_valid_bitsignaltemp;
     assign i_llvm_fpga_mem_lm1_if_loop_31_o_writeack[0] = i_llvm_fpga_mem_lm1_if_loop_31_o_writeack_bitsignaltemp;
     lsu_top #(
-        .ABITS_PER_LMEM_BANK(9),
-        .ADDRSPACE(64),
+        .ABITS_PER_LMEM_BANK(0),
+        .ADDRSPACE(1025),
         .ALIGNMENT_BYTES(4),
         .ALLOW_HIGH_SPEED_FIFO_USAGE(0),
         .ASYNC_RESET(0),
@@ -179,7 +179,7 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
         .KERNEL_SIDE_MEM_LATENCY(4),
         .LMEM_ADDR_PERMUTATION_STYLE(0),
         .MEMORY_SIDE_MEM_LATENCY(0),
-        .MWIDTH_BYTES(4),
+        .MWIDTH_BYTES(32),
         .NUMBER_BANKS(1),
         .PROFILE_ADDR_TOGGLE(0),
         .READ(1),
@@ -191,10 +191,10 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
         .USEOUTPUTFIFO(0),
         .USE_BYTE_EN(0),
         .USE_STALL_LATENCY(1),
-        .USE_WRITE_ACK(0),
+        .USE_WRITE_ACK(1),
         .WIDE_DATA_SLICING(0),
         .WIDTH_BYTES(4),
-        .WRITEDATAWIDTH_BYTES(4)
+        .WRITEDATAWIDTH_BYTES(32)
     ) thei_llvm_fpga_mem_lm1_if_loop_31 (
         .avm_readdata(in_lm1_if_loop_3_avm_readdata),
         .avm_readdatavalid(i_llvm_fpga_mem_lm1_if_loop_31_avm_readdatavalid_bitsignaltemp),
@@ -243,10 +243,10 @@ module if_loop_3_i_llvm_fpga_mem_lm1_0 (
     assign out_lm1_if_loop_3_avm_byteenable = i_llvm_fpga_mem_lm1_if_loop_31_avm_byteenable;
     assign out_lm1_if_loop_3_avm_burstcount = i_llvm_fpga_mem_lm1_if_loop_31_avm_burstcount;
 
-    // sync_out(GPOUT,17)@8
+    // sync_out(GPOUT,17)@9
     assign out_o_stall = i_llvm_fpga_mem_lm1_if_loop_31_o_stall;
 
-    // dupName_0_sync_out_x(GPOUT,20)@8
+    // dupName_0_sync_out_x(GPOUT,20)@9
     assign out_o_almost_empty = i_llvm_fpga_mem_lm1_if_loop_31_o_almost_empty;
     assign out_o_empty = i_llvm_fpga_mem_lm1_if_loop_31_o_empty;
     assign out_o_readdata = i_llvm_fpga_mem_lm1_if_loop_31_o_readdata;

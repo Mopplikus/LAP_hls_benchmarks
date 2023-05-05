@@ -19,7 +19,7 @@ namespace eval if_loop_3_cfan {
   
   proc get_design_files {USER_DEFINED_COMPILE_OPTIONS USER_DEFINED_VERILOG_COMPILE_OPTIONS USER_DEFINED_VHDL_COMPILE_OPTIONS QSYS_SIMDIR} {
     set design_files [list]
-    lappend design_files "xmvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/if_loop_3_cfan_avalon_conduit_fanout_10_joescla.sv\"  -work avalon_conduit_fanout_10 -cdslib  ./cds_libs/avalon_conduit_fanout_10.cds.lib"
+    lappend design_files "xmvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/../avalon_conduit_fanout_10/sim/if_loop_3_cfan_avalon_conduit_fanout_10_mhqe7za.sv\"  -work avalon_conduit_fanout_10 -cdslib  ./cds_libs/avalon_conduit_fanout_10.cds.lib"
     lappend design_files "xmvlog -compcnfg $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS  \"$QSYS_SIMDIR/if_loop_3_cfan.v\"  -work if_loop_3_cfan"                                                                                                                           
     return $design_files
   }

@@ -6,45 +6,53 @@
 module tb (
 	);
 
-	wire  [63:0] if_loop_3_inst_avmm_0_rw_readdata;                                                           // mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:avs_readdata -> if_loop_3_inst:avmm_0_rw_readdata
-	wire  [63:0] if_loop_3_inst_avmm_0_rw_address;                                                            // if_loop_3_inst:avmm_0_rw_address -> mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:avs_address
-	wire   [7:0] if_loop_3_inst_avmm_0_rw_byteenable;                                                         // if_loop_3_inst:avmm_0_rw_byteenable -> mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:avs_byteenable
-	wire         if_loop_3_inst_avmm_0_rw_read;                                                               // if_loop_3_inst:avmm_0_rw_read -> mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:avs_read
-	wire         if_loop_3_inst_avmm_0_rw_write;                                                              // if_loop_3_inst:avmm_0_rw_write -> mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:avs_write
-	wire  [63:0] if_loop_3_inst_avmm_0_rw_writedata;                                                          // if_loop_3_inst:avmm_0_rw_writedata -> mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:avs_writedata
-	wire         clock_reset_inst_clock_clk;                                                                  // clock_reset_inst:clock -> [component_dpi_controller_if_loop_3_inst:clock, if_loop_3_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:clock, stream_source_dpi_bfm_if_loop_3_a_inst:clock, stream_source_dpi_bfm_if_loop_3_b_inst:clock, stream_source_dpi_bfm_if_loop_3_n_inst:clock]
-	wire         clock_reset_inst_clock2x_clk;                                                                // clock_reset_inst:clock2x -> [component_dpi_controller_if_loop_3_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_if_loop_3_a_inst:clock2x, stream_source_dpi_bfm_if_loop_3_b_inst:clock2x, stream_source_dpi_bfm_if_loop_3_n_inst:clock2x]
-	wire         component_dpi_controller_if_loop_3_inst_component_call_valid;                                // component_dpi_controller_if_loop_3_inst:start -> if_loop_3_inst:start
-	wire         if_loop_3_inst_call_stall;                                                                   // if_loop_3_inst:busy -> component_dpi_controller_if_loop_3_inst:busy
-	wire         component_dpi_controller_if_loop_3_inst_component_done_conduit;                              // component_dpi_controller_if_loop_3_inst:component_done -> concatenate_component_done_inst:in_conduit_0
-	wire   [0:0] main_dpi_controller_inst_component_enabled_conduit;                                          // main_dpi_controller_inst:component_enabled -> split_component_start_inst:in_conduit
-	wire         component_dpi_controller_if_loop_3_inst_component_wait_for_stream_writes_conduit;            // component_dpi_controller_if_loop_3_inst:component_wait_for_stream_writes -> concatenate_component_wait_for_stream_writes_inst:in_conduit_0
-	wire         component_dpi_controller_if_loop_3_inst_dpi_control_bind_conduit;                            // component_dpi_controller_if_loop_3_inst:bind_interfaces -> if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:in_conduit
-	wire         component_dpi_controller_if_loop_3_inst_dpi_control_enable_conduit;                          // component_dpi_controller_if_loop_3_inst:enable_interfaces -> if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:in_conduit
-	wire         concatenate_component_done_inst_out_conduit_conduit;                                         // concatenate_component_done_inst:out_conduit -> main_dpi_controller_inst:component_done
-	wire         concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit;                       // concatenate_component_wait_for_stream_writes_inst:out_conduit -> main_dpi_controller_inst:component_wait_for_stream_writes
-	wire         split_component_start_inst_out_conduit_0_conduit;                                            // split_component_start_inst:out_conduit_0 -> component_dpi_controller_if_loop_3_inst:component_enabled
-	wire         if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_if_loop_3_a_inst:do_bind
-	wire         if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_if_loop_3_a_inst:enable
-	wire         if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_0_conduit; // if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_if_loop_3_a_inst:source_ready
-	wire         if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_if_loop_3_b_inst:do_bind
-	wire         if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_if_loop_3_b_inst:enable
-	wire         if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_1_conduit; // if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_if_loop_3_b_inst:source_ready
-	wire         if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_if_loop_3_n_inst:do_bind
-	wire         if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_if_loop_3_n_inst:enable
-	wire         if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_2_conduit; // if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_if_loop_3_n_inst:source_ready
-	wire         if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:do_bind
-	wire         if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:enable
-	wire         component_dpi_controller_if_loop_3_inst_read_implicit_streams_conduit;                       // component_dpi_controller_if_loop_3_inst:read_implicit_streams -> if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
-	wire         main_dpi_controller_inst_reset_ctrl_conduit;                                                 // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
-	wire         if_loop_3_inst_return_valid;                                                                 // if_loop_3_inst:done -> component_dpi_controller_if_loop_3_inst:done
-	wire         component_dpi_controller_if_loop_3_inst_component_return_stall;                              // component_dpi_controller_if_loop_3_inst:stall -> if_loop_3_inst:stall
-	wire  [31:0] if_loop_3_inst_returndata_data;                                                              // if_loop_3_inst:returndata -> component_dpi_controller_if_loop_3_inst:returndata
-	wire  [63:0] stream_source_dpi_bfm_if_loop_3_a_inst_source_data_data;                                     // stream_source_dpi_bfm_if_loop_3_a_inst:source_data -> if_loop_3_inst:a
-	wire  [63:0] stream_source_dpi_bfm_if_loop_3_b_inst_source_data_data;                                     // stream_source_dpi_bfm_if_loop_3_b_inst:source_data -> if_loop_3_inst:b
-	wire  [31:0] stream_source_dpi_bfm_if_loop_3_n_inst_source_data_data;                                     // stream_source_dpi_bfm_if_loop_3_n_inst:source_data -> if_loop_3_inst:n
-	wire         clock_reset_inst_reset_reset;                                                                // clock_reset_inst:resetn -> [component_dpi_controller_if_loop_3_inst:resetn, if_loop_3_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst:reset_n, stream_source_dpi_bfm_if_loop_3_a_inst:resetn, stream_source_dpi_bfm_if_loop_3_b_inst:resetn, stream_source_dpi_bfm_if_loop_3_n_inst:resetn]
-	wire         component_dpi_controller_if_loop_3_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_if_loop_3_inst:done_irq
+	wire  [255:0] if_loop_3_inst_avmm_1_rw_readdata;                                                           // mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:avs_readdata -> if_loop_3_inst:avmm_1_rw_readdata
+	wire   [31:0] if_loop_3_inst_avmm_1_rw_address;                                                            // if_loop_3_inst:avmm_1_rw_address -> mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:avs_address
+	wire   [31:0] if_loop_3_inst_avmm_1_rw_byteenable;                                                         // if_loop_3_inst:avmm_1_rw_byteenable -> mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:avs_byteenable
+	wire          if_loop_3_inst_avmm_1_rw_read;                                                               // if_loop_3_inst:avmm_1_rw_read -> mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:avs_read
+	wire          if_loop_3_inst_avmm_1_rw_write;                                                              // if_loop_3_inst:avmm_1_rw_write -> mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:avs_write
+	wire  [255:0] if_loop_3_inst_avmm_1_rw_writedata;                                                          // if_loop_3_inst:avmm_1_rw_writedata -> mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:avs_writedata
+	wire  [255:0] if_loop_3_inst_avmm_4_rw_readdata;                                                           // mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:avs_readdata -> if_loop_3_inst:avmm_4_rw_readdata
+	wire   [31:0] if_loop_3_inst_avmm_4_rw_address;                                                            // if_loop_3_inst:avmm_4_rw_address -> mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:avs_address
+	wire   [31:0] if_loop_3_inst_avmm_4_rw_byteenable;                                                         // if_loop_3_inst:avmm_4_rw_byteenable -> mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:avs_byteenable
+	wire          if_loop_3_inst_avmm_4_rw_read;                                                               // if_loop_3_inst:avmm_4_rw_read -> mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:avs_read
+	wire          if_loop_3_inst_avmm_4_rw_write;                                                              // if_loop_3_inst:avmm_4_rw_write -> mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:avs_write
+	wire  [255:0] if_loop_3_inst_avmm_4_rw_writedata;                                                          // if_loop_3_inst:avmm_4_rw_writedata -> mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:avs_writedata
+	wire          clock_reset_inst_clock_clk;                                                                  // clock_reset_inst:clock -> [component_dpi_controller_if_loop_3_inst:clock, if_loop_3_inst:clock, irq_mapper:clk, main_dpi_controller_inst:clock, mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:clock, mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:clock, stream_source_dpi_bfm_if_loop_3_a_inst:clock, stream_source_dpi_bfm_if_loop_3_b_inst:clock, stream_source_dpi_bfm_if_loop_3_n_inst:clock]
+	wire          clock_reset_inst_clock2x_clk;                                                                // clock_reset_inst:clock2x -> [component_dpi_controller_if_loop_3_inst:clock2x, main_dpi_controller_inst:clock2x, stream_source_dpi_bfm_if_loop_3_a_inst:clock2x, stream_source_dpi_bfm_if_loop_3_b_inst:clock2x, stream_source_dpi_bfm_if_loop_3_n_inst:clock2x]
+	wire          component_dpi_controller_if_loop_3_inst_component_call_valid;                                // component_dpi_controller_if_loop_3_inst:start -> if_loop_3_inst:start
+	wire          if_loop_3_inst_call_stall;                                                                   // if_loop_3_inst:busy -> component_dpi_controller_if_loop_3_inst:busy
+	wire          component_dpi_controller_if_loop_3_inst_component_done_conduit;                              // component_dpi_controller_if_loop_3_inst:component_done -> concatenate_component_done_inst:in_conduit_0
+	wire    [0:0] main_dpi_controller_inst_component_enabled_conduit;                                          // main_dpi_controller_inst:component_enabled -> split_component_start_inst:in_conduit
+	wire          component_dpi_controller_if_loop_3_inst_component_wait_for_stream_writes_conduit;            // component_dpi_controller_if_loop_3_inst:component_wait_for_stream_writes -> concatenate_component_wait_for_stream_writes_inst:in_conduit_0
+	wire          component_dpi_controller_if_loop_3_inst_dpi_control_bind_conduit;                            // component_dpi_controller_if_loop_3_inst:bind_interfaces -> if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:in_conduit
+	wire          component_dpi_controller_if_loop_3_inst_dpi_control_enable_conduit;                          // component_dpi_controller_if_loop_3_inst:enable_interfaces -> if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:in_conduit
+	wire          concatenate_component_done_inst_out_conduit_conduit;                                         // concatenate_component_done_inst:out_conduit -> main_dpi_controller_inst:component_done
+	wire          concatenate_component_wait_for_stream_writes_inst_out_conduit_conduit;                       // concatenate_component_wait_for_stream_writes_inst:out_conduit -> main_dpi_controller_inst:component_wait_for_stream_writes
+	wire          split_component_start_inst_out_conduit_0_conduit;                                            // split_component_start_inst:out_conduit_0 -> component_dpi_controller_if_loop_3_inst:component_enabled
+	wire          if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_if_loop_3_a_inst:do_bind
+	wire          if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_if_loop_3_a_inst:enable
+	wire          if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_0_conduit; // if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_0 -> stream_source_dpi_bfm_if_loop_3_a_inst:source_ready
+	wire          if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_if_loop_3_b_inst:do_bind
+	wire          if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_if_loop_3_b_inst:enable
+	wire          if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_1_conduit; // if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_1 -> stream_source_dpi_bfm_if_loop_3_b_inst:source_ready
+	wire          if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_if_loop_3_n_inst:do_bind
+	wire          if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_if_loop_3_n_inst:enable
+	wire          if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst_out_conduit_2_conduit; // if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:out_conduit_2 -> stream_source_dpi_bfm_if_loop_3_n_inst:source_ready
+	wire          if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:do_bind
+	wire          if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_3 -> mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:enable
+	wire          if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_4_conduit;           // if_loop_3_component_dpi_controller_bind_conduit_fanout_inst:out_conduit_4 -> mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:do_bind
+	wire          if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_4_conduit;         // if_loop_3_component_dpi_controller_enable_conduit_fanout_inst:out_conduit_4 -> mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:enable
+	wire          component_dpi_controller_if_loop_3_inst_read_implicit_streams_conduit;                       // component_dpi_controller_if_loop_3_inst:read_implicit_streams -> if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst:in_conduit
+	wire          main_dpi_controller_inst_reset_ctrl_conduit;                                                 // main_dpi_controller_inst:trigger_reset -> clock_reset_inst:trigger_reset
+	wire          if_loop_3_inst_return_valid;                                                                 // if_loop_3_inst:done -> component_dpi_controller_if_loop_3_inst:done
+	wire          component_dpi_controller_if_loop_3_inst_component_return_stall;                              // component_dpi_controller_if_loop_3_inst:stall -> if_loop_3_inst:stall
+	wire   [31:0] if_loop_3_inst_returndata_data;                                                              // if_loop_3_inst:returndata -> component_dpi_controller_if_loop_3_inst:returndata
+	wire   [63:0] stream_source_dpi_bfm_if_loop_3_a_inst_source_data_data;                                     // stream_source_dpi_bfm_if_loop_3_a_inst:source_data -> if_loop_3_inst:a
+	wire   [63:0] stream_source_dpi_bfm_if_loop_3_b_inst_source_data_data;                                     // stream_source_dpi_bfm_if_loop_3_b_inst:source_data -> if_loop_3_inst:b
+	wire   [31:0] stream_source_dpi_bfm_if_loop_3_n_inst_source_data_data;                                     // stream_source_dpi_bfm_if_loop_3_n_inst:source_data -> if_loop_3_inst:n
+	wire          clock_reset_inst_reset_reset;                                                                // clock_reset_inst:resetn -> [component_dpi_controller_if_loop_3_inst:resetn, if_loop_3_inst:resetn, irq_mapper:reset, main_dpi_controller_inst:resetn, mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst:reset_n, mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst:reset_n, stream_source_dpi_bfm_if_loop_3_a_inst:resetn, stream_source_dpi_bfm_if_loop_3_b_inst:resetn, stream_source_dpi_bfm_if_loop_3_n_inst:resetn]
+	wire          component_dpi_controller_if_loop_3_inst_component_irq_irq;                                   // irq_mapper:sender_irq -> component_dpi_controller_if_loop_3_inst:done_irq
 
 	clock_reset clock_reset_inst (
 		.clock         (clock_reset_inst_clock_clk),                  //  output,  width = 1,      clock.clk
@@ -88,7 +96,8 @@ module tb (
 		.out_conduit_0 (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_3 (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit), //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_4 (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_4_conduit)  //  output,  width = 1, out_conduit_4.conduit
 	);
 
 	if_loop_3_en_cfan if_loop_3_component_dpi_controller_enable_conduit_fanout_inst (
@@ -96,7 +105,8 @@ module tb (
 		.out_conduit_0 (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_0_conduit), //  output,  width = 1, out_conduit_0.conduit
 		.out_conduit_1 (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_1_conduit), //  output,  width = 1, out_conduit_1.conduit
 		.out_conduit_2 (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_2_conduit), //  output,  width = 1, out_conduit_2.conduit
-		.out_conduit_3 (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit)  //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_3 (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //  output,  width = 1, out_conduit_3.conduit
+		.out_conduit_4 (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_4_conduit)  //  output,  width = 1, out_conduit_4.conduit
 	);
 
 	if_loop_3_ir_cfan if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst (
@@ -107,22 +117,28 @@ module tb (
 	);
 
 	if_loop_3 if_loop_3_inst (
-		.clock                (clock_reset_inst_clock_clk),                                     //   input,   width = 1,      clock.clk
-		.resetn               (clock_reset_inst_reset_reset),                                   //   input,   width = 1,      reset.reset_n
-		.start                (component_dpi_controller_if_loop_3_inst_component_call_valid),   //   input,   width = 1,       call.valid
-		.busy                 (if_loop_3_inst_call_stall),                                      //  output,   width = 1,           .stall
-		.done                 (if_loop_3_inst_return_valid),                                    //  output,   width = 1,     return.valid
-		.stall                (component_dpi_controller_if_loop_3_inst_component_return_stall), //   input,   width = 1,           .stall
-		.returndata           (if_loop_3_inst_returndata_data),                                 //  output,  width = 32, returndata.data
-		.a                    (stream_source_dpi_bfm_if_loop_3_a_inst_source_data_data),        //   input,  width = 64,          a.data
-		.b                    (stream_source_dpi_bfm_if_loop_3_b_inst_source_data_data),        //   input,  width = 64,          b.data
-		.n                    (stream_source_dpi_bfm_if_loop_3_n_inst_source_data_data),        //   input,  width = 32,          n.data
-		.avmm_0_rw_address    (if_loop_3_inst_avmm_0_rw_address),                               //  output,  width = 64,  avmm_0_rw.address
-		.avmm_0_rw_byteenable (if_loop_3_inst_avmm_0_rw_byteenable),                            //  output,   width = 8,           .byteenable
-		.avmm_0_rw_read       (if_loop_3_inst_avmm_0_rw_read),                                  //  output,   width = 1,           .read
-		.avmm_0_rw_readdata   (if_loop_3_inst_avmm_0_rw_readdata),                              //   input,  width = 64,           .readdata
-		.avmm_0_rw_write      (if_loop_3_inst_avmm_0_rw_write),                                 //  output,   width = 1,           .write
-		.avmm_0_rw_writedata  (if_loop_3_inst_avmm_0_rw_writedata)                              //  output,  width = 64,           .writedata
+		.clock                (clock_reset_inst_clock_clk),                                     //   input,    width = 1,      clock.clk
+		.resetn               (clock_reset_inst_reset_reset),                                   //   input,    width = 1,      reset.reset_n
+		.start                (component_dpi_controller_if_loop_3_inst_component_call_valid),   //   input,    width = 1,       call.valid
+		.busy                 (if_loop_3_inst_call_stall),                                      //  output,    width = 1,           .stall
+		.done                 (if_loop_3_inst_return_valid),                                    //  output,    width = 1,     return.valid
+		.stall                (component_dpi_controller_if_loop_3_inst_component_return_stall), //   input,    width = 1,           .stall
+		.returndata           (if_loop_3_inst_returndata_data),                                 //  output,   width = 32, returndata.data
+		.a                    (stream_source_dpi_bfm_if_loop_3_a_inst_source_data_data),        //   input,   width = 64,          a.data
+		.b                    (stream_source_dpi_bfm_if_loop_3_b_inst_source_data_data),        //   input,   width = 64,          b.data
+		.n                    (stream_source_dpi_bfm_if_loop_3_n_inst_source_data_data),        //   input,   width = 32,          n.data
+		.avmm_1_rw_address    (if_loop_3_inst_avmm_1_rw_address),                               //  output,   width = 32,  avmm_1_rw.address
+		.avmm_1_rw_byteenable (if_loop_3_inst_avmm_1_rw_byteenable),                            //  output,   width = 32,           .byteenable
+		.avmm_1_rw_read       (if_loop_3_inst_avmm_1_rw_read),                                  //  output,    width = 1,           .read
+		.avmm_1_rw_readdata   (if_loop_3_inst_avmm_1_rw_readdata),                              //   input,  width = 256,           .readdata
+		.avmm_1_rw_write      (if_loop_3_inst_avmm_1_rw_write),                                 //  output,    width = 1,           .write
+		.avmm_1_rw_writedata  (if_loop_3_inst_avmm_1_rw_writedata),                             //  output,  width = 256,           .writedata
+		.avmm_4_rw_address    (if_loop_3_inst_avmm_4_rw_address),                               //  output,   width = 32,  avmm_4_rw.address
+		.avmm_4_rw_byteenable (if_loop_3_inst_avmm_4_rw_byteenable),                            //  output,   width = 32,           .byteenable
+		.avmm_4_rw_read       (if_loop_3_inst_avmm_4_rw_read),                                  //  output,    width = 1,           .read
+		.avmm_4_rw_readdata   (if_loop_3_inst_avmm_4_rw_readdata),                              //   input,  width = 256,           .readdata
+		.avmm_4_rw_write      (if_loop_3_inst_avmm_4_rw_write),                                 //  output,    width = 1,           .write
+		.avmm_4_rw_writedata  (if_loop_3_inst_avmm_4_rw_writedata)                              //  output,  width = 256,           .writedata
 	);
 
 	main_dpi_controller main_dpi_controller_inst (
@@ -135,17 +151,30 @@ module tb (
 		.trigger_reset                    (main_dpi_controller_inst_reset_ctrl_conduit)                            //  output,  width = 1,                       reset_ctrl.conduit
 	);
 
-	mm_agent_if_loop_3_avmm_0_rw mm_agent_dpi_bfm_if_loop_3_avmm_0_rw_inst (
-		.do_bind        (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit),   //   input,   width = 1,   dpi_control_bind.conduit
-		.enable         (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //   input,   width = 1, dpi_control_enable.conduit
-		.clock          (clock_reset_inst_clock_clk),                                                          //   input,   width = 1,              clock.clk
-		.reset_n        (clock_reset_inst_reset_reset),                                                        //   input,   width = 1,              reset.reset_n
-		.avs_writedata  (if_loop_3_inst_avmm_0_rw_writedata),                                                  //   input,  width = 64,                 s0.writedata
-		.avs_readdata   (if_loop_3_inst_avmm_0_rw_readdata),                                                   //  output,  width = 64,                   .readdata
-		.avs_address    (if_loop_3_inst_avmm_0_rw_address),                                                    //   input,  width = 64,                   .address
-		.avs_write      (if_loop_3_inst_avmm_0_rw_write),                                                      //   input,   width = 1,                   .write
-		.avs_read       (if_loop_3_inst_avmm_0_rw_read),                                                       //   input,   width = 1,                   .read
-		.avs_byteenable (if_loop_3_inst_avmm_0_rw_byteenable)                                                  //   input,   width = 8,                   .byteenable
+	mm_agent_if_loop_3_avmm_1_rw mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst (
+		.do_bind        (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_3_conduit),   //   input,    width = 1,   dpi_control_bind.conduit
+		.enable         (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_3_conduit), //   input,    width = 1, dpi_control_enable.conduit
+		.clock          (clock_reset_inst_clock_clk),                                                          //   input,    width = 1,              clock.clk
+		.reset_n        (clock_reset_inst_reset_reset),                                                        //   input,    width = 1,              reset.reset_n
+		.avs_writedata  (if_loop_3_inst_avmm_1_rw_writedata),                                                  //   input,  width = 256,                 s0.writedata
+		.avs_readdata   (if_loop_3_inst_avmm_1_rw_readdata),                                                   //  output,  width = 256,                   .readdata
+		.avs_address    (if_loop_3_inst_avmm_1_rw_address),                                                    //   input,   width = 32,                   .address
+		.avs_write      (if_loop_3_inst_avmm_1_rw_write),                                                      //   input,    width = 1,                   .write
+		.avs_read       (if_loop_3_inst_avmm_1_rw_read),                                                       //   input,    width = 1,                   .read
+		.avs_byteenable (if_loop_3_inst_avmm_1_rw_byteenable)                                                  //   input,   width = 32,                   .byteenable
+	);
+
+	mm_agent_if_loop_3_avmm_4_rw mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst (
+		.do_bind        (if_loop_3_component_dpi_controller_bind_conduit_fanout_inst_out_conduit_4_conduit),   //   input,    width = 1,   dpi_control_bind.conduit
+		.enable         (if_loop_3_component_dpi_controller_enable_conduit_fanout_inst_out_conduit_4_conduit), //   input,    width = 1, dpi_control_enable.conduit
+		.clock          (clock_reset_inst_clock_clk),                                                          //   input,    width = 1,              clock.clk
+		.reset_n        (clock_reset_inst_reset_reset),                                                        //   input,    width = 1,              reset.reset_n
+		.avs_writedata  (if_loop_3_inst_avmm_4_rw_writedata),                                                  //   input,  width = 256,                 s0.writedata
+		.avs_readdata   (if_loop_3_inst_avmm_4_rw_readdata),                                                   //  output,  width = 256,                   .readdata
+		.avs_address    (if_loop_3_inst_avmm_4_rw_address),                                                    //   input,   width = 32,                   .address
+		.avs_write      (if_loop_3_inst_avmm_4_rw_write),                                                      //   input,    width = 1,                   .write
+		.avs_read       (if_loop_3_inst_avmm_4_rw_read),                                                       //   input,    width = 1,                   .read
+		.avs_byteenable (if_loop_3_inst_avmm_4_rw_byteenable)                                                  //   input,   width = 32,                   .byteenable
 	);
 
 	sp_cstart split_component_start_inst (

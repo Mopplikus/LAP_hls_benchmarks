@@ -16,16 +16,17 @@
 
 // SystemVerilog created from i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Thu May  4 08:54:22 2023
+// SystemVerilog created on Fri May  5 14:34:32 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 (
-    output wire [63:0] out_intel_reserved_ffwd_0_0,
+    output wire [0:0] out_intel_reserved_ffwd_0_0,
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
     output wire [63:0] out_intel_reserved_ffwd_1_0,
-    output wire [31:0] out_intel_reserved_ffwd_2_0,
+    output wire [63:0] out_intel_reserved_ffwd_2_0,
+    output wire [32:0] out_intel_reserved_ffwd_3_0,
     input wire [0:0] in_almost_empty_in,
     input wire [0:0] in_c1_eni1_0_tpl,
     input wire [63:0] in_c1_eni1_1_tpl,
@@ -49,9 +50,10 @@ module if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 (
     wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x_out_stall_entry;
     wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x_out_valid_out;
     wire [0:0] i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x_out_data_out_0_tpl;
-    wire [63:0] i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_0_0;
+    wire [0:0] i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_0_0;
     wire [63:0] i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_1_0;
-    wire [31:0] i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_2_0;
+    wire [63:0] i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_2_0;
+    wire [32:0] i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_3_0;
     wire [0:0] i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_o_valid;
     reg [0:0] rst_sync_rst_sclrn;
 
@@ -62,13 +64,14 @@ module if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 (
     // input_accepted_and(LOGICAL,4)
     assign input_accepted_and_q = in_i_valid & VCC_q;
 
-    // i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x(BLACKBOX,11)@76
+    // i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x(BLACKBOX,12)@76
     // out out_intel_reserved_ffwd_0_0@20000000
     // out out_intel_reserved_ffwd_1_0@20000000
     // out out_intel_reserved_ffwd_2_0@20000000
-    // out out_o_valid@77
-    // out out_unnamed_if_loop_36@77
-    // out out_unnamed_if_loop_35_0_tpl@77
+    // out out_intel_reserved_ffwd_3_0@20000000
+    // out out_o_valid@79
+    // out out_unnamed_if_loop_37@79
+    // out out_unnamed_if_loop_36_0_tpl@79
     if_loop_3_i_sfc_logic_s_c1_in_wt_entry_s_c1_enter_if_loop_30 thei_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x (
         .in_i_valid(input_accepted_and_q),
         .in_c1_eni1_0_tpl(in_c1_eni1_0_tpl),
@@ -78,9 +81,10 @@ module if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 (
         .out_intel_reserved_ffwd_0_0(i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_0_0),
         .out_intel_reserved_ffwd_1_0(i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_1_0),
         .out_intel_reserved_ffwd_2_0(i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_2_0),
+        .out_intel_reserved_ffwd_3_0(i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_3_0),
         .out_o_valid(i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_o_valid),
-        .out_unnamed_if_loop_36(),
-        .out_unnamed_if_loop_35_0_tpl(),
+        .out_unnamed_if_loop_37(),
+        .out_unnamed_if_loop_36_0_tpl(),
         .clock(clock),
         .resetn(rst_sync_rst_sclrn[0])
     );
@@ -91,14 +95,14 @@ module if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x(BLACKBOX,10)@77
+    // i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x(BLACKBOX,11)@79
     // in in_mask_valid@20000000
     // in in_stall_in@20000000
-    // out out_almost_empty_out@108
-    // out out_empty_out@108
+    // out out_almost_empty_out@110
+    // out out_empty_out@110
     // out out_stall_entry@20000000
-    // out out_valid_out@108
-    // out out_data_out_0_tpl@108
+    // out out_valid_out@110
+    // out out_data_out_0_tpl@110
     if_loop_3_i_llvm_fpga_sfc_exit_s_c1_out_0000s_c1_exit_if_loop_30 thei_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x (
         .in_input_accepted(input_accepted_and_q),
         .in_mask_valid(GND_q),
@@ -123,13 +127,16 @@ module if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 (
     // dupName_1_regfree_osync_x(GPOUT,9)
     assign out_intel_reserved_ffwd_2_0 = i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_2_0;
 
-    // dupName_0_sync_out_aunroll_x(GPOUT,13)@108
+    // dupName_2_regfree_osync_x(GPOUT,10)
+    assign out_intel_reserved_ffwd_3_0 = i_sfc_logic_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_30_aunroll_x_out_intel_reserved_ffwd_3_0;
+
+    // dupName_0_sync_out_aunroll_x(GPOUT,14)@110
     assign out_almost_empty_out = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x_out_almost_empty_out;
     assign out_c1_exit_0_tpl = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x_out_data_out_0_tpl;
     assign out_empty_out = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x_out_empty_out;
     assign out_o_valid = i_llvm_fpga_sfc_exit_s_c1_out_wt_entry_if_loop_3s_c1_exit_if_loop_31_aunroll_x_out_valid_out;
 
-    // rst_sync(RESETSYNC,14)
+    // rst_sync(RESETSYNC,15)
     acl_reset_handler #(
         .ASYNC_RESET(0),
         .USE_SYNCHRONIZER(1),
