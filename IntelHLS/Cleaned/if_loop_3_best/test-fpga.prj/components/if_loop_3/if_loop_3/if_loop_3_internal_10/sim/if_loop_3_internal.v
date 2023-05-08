@@ -55,7 +55,6 @@ module if_loop_3_internal
    input logic avmm_4_rw_writeack
 );
    genvar __i;
-   logic resetn_extended;
    logic avmm_1_global_avm_enable [1];
    logic avmm_1_global_avm_read [1];
    logic avmm_1_global_avm_write [1];
@@ -83,7 +82,7 @@ module if_loop_3_internal
    if_loop_3_function_wrapper if_loop_3_internal
    (
       .clock(clock),
-      .resetn(resetn_extended),
+      .resetn(resetn),
       .a(a),
       .b(b),
       .n(n),
@@ -116,21 +115,6 @@ module if_loop_3_internal
       .avm_lm22_if_loop_3_readdatavalid(avmm_4_global_avm_readdatavalid[0]),
       .avm_lm22_if_loop_3_burstcount(avmm_4_global_avm_burstcount[0]),
       .avm_lm22_if_loop_3_writeack(avmm_4_global_avm_writeack[0])
-   );
-
-   // INST global_reset_extender_inst of acl_reset_handler
-   acl_reset_handler
-   #(
-      .ASYNC_RESET(0),
-      .USE_SYNCHRONIZER(0),
-      .PULSE_EXTENSION(70),
-      .PIPE_DEPTH(0)
-   )
-   global_reset_extender_inst
-   (
-      .clk(clock),
-      .i_resetn(resetn),
-      .o_sclrn(resetn_extended)
    );
 
    generate
@@ -215,11 +199,11 @@ module if_loop_3_internal
 
       end
 
-      // INST global_icavmm_1_rw of if_loop_3_internal_ic_6064023524357644666
-      if_loop_3_internal_ic_6064023524357644666 global_icavmm_1_rw
+      // INST global_icavmm_1_rw of if_loop_3_internal_ic_6063373438107726033
+      if_loop_3_internal_ic_6063373438107726033 global_icavmm_1_rw
       (
          .clock(clock),
-         .resetn(resetn_extended),
+         .resetn(resetn),
          // ICM m
          .m_arb_request(icm_routedavmm_1_rw_arb_request),
          .m_arb_enable(icm_routedavmm_1_rw_arb_enable),
@@ -277,8 +261,8 @@ module if_loop_3_internal
          .NO_IDLE_STALL(0),
          .ENABLE_WAITREQUEST_ALLOWANCE(0),
          .ID_W(1),
-         .ASYNC_RESET(0),
-         .SYNCHRONIZE_RESET(1)
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
       )
       global_out_ic_to_avmavmm_1_rw
       (
@@ -308,7 +292,7 @@ module if_loop_3_internal
          .avm_burstcount(avmm_1_rw_burstcount),
          .avm_writeack(avmm_1_rw_writeack),
          .clock(clock),
-         .resetn(resetn_extended),
+         .resetn(resetn),
          .avm_waitrequest(1'b0)
       );
 
@@ -397,11 +381,11 @@ module if_loop_3_internal
 
       end
 
-      // INST global_icavmm_4_rw of if_loop_3_internal_ic_6064023524357644666
-      if_loop_3_internal_ic_6064023524357644666 global_icavmm_4_rw
+      // INST global_icavmm_4_rw of if_loop_3_internal_ic_6063373438107726033
+      if_loop_3_internal_ic_6063373438107726033 global_icavmm_4_rw
       (
          .clock(clock),
-         .resetn(resetn_extended),
+         .resetn(resetn),
          // ICM m
          .m_arb_request(icm_routedavmm_4_rw_arb_request),
          .m_arb_enable(icm_routedavmm_4_rw_arb_enable),
@@ -459,8 +443,8 @@ module if_loop_3_internal
          .NO_IDLE_STALL(0),
          .ENABLE_WAITREQUEST_ALLOWANCE(0),
          .ID_W(1),
-         .ASYNC_RESET(0),
-         .SYNCHRONIZE_RESET(1)
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
       )
       global_out_ic_to_avmavmm_4_rw
       (
@@ -490,7 +474,7 @@ module if_loop_3_internal
          .avm_burstcount(avmm_4_rw_burstcount),
          .avm_writeack(avmm_4_rw_writeack),
          .clock(clock),
-         .resetn(resetn_extended),
+         .resetn(resetn),
          .avm_waitrequest(1'b0)
       );
 
@@ -500,9 +484,9 @@ module if_loop_3_internal
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE if_loop_3_internal_ic_6064023524357644666
+// MODULE if_loop_3_internal_ic_6063373438107726033
 /////////////////////////////////////////////////////////////////
-module if_loop_3_internal_ic_6064023524357644666
+module if_loop_3_internal_ic_6063373438107726033
 (
    input logic clock,
    input logic resetn,
@@ -649,8 +633,8 @@ module if_loop_3_internal_ic_6064023524357644666
          .RRP_USE_LL_FIFO(1),
          .AGENT_FIXED_LATENCY(3),
          .SEPARATE_READ_WRITE_STALLS(0),
-         .ASYNC_RESET(0),
-         .SYNCHRONIZE_RESET(1)
+         .ASYNC_RESET(1),
+         .SYNCHRONIZE_RESET(0)
       )
       s_endp
       (
@@ -711,8 +695,8 @@ module if_loop_3_internal_ic_6064023524357644666
             .ADDRESS_W(27),
             .BYTEENA_W(32),
             .ID_W(1),
-            .ASYNC_RESET(0),
-            .SYNCHRONIZE_RESET(1)
+            .ASYNC_RESET(1),
+            .SYNCHRONIZE_RESET(0)
          )
          dp
          (
@@ -754,8 +738,8 @@ module if_loop_3_internal_ic_6064023524357644666
             .ADDRESS_W(27),
             .BYTEENA_W(32),
             .ID_W(1),
-            .ASYNC_RESET(0),
-            .SYNCHRONIZE_RESET(1)
+            .ASYNC_RESET(1),
+            .SYNCHRONIZE_RESET(0)
          )
          sp
          (

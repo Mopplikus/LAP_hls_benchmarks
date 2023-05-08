@@ -16,13 +16,11 @@
 
 // SystemVerilog created from if_loop_3_B0_runOnce_branch
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:34:32 2023
+// SystemVerilog created on Mon May  8 14:21:21 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_B0_runOnce_branch (
-    input wire [0:0] in_almost_empty_in,
-    input wire [0:0] in_empty_in,
     input wire [0:0] in_stall_in_0,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_stall_out,
@@ -31,26 +29,16 @@ module if_loop_3_B0_runOnce_branch (
     input wire resetn
     );
 
-    reg [0:0] rst_sync_rst_sclrn;
+    wire [0:0] stall_out_q;
 
 
-    // out_stall_out(GPOUT,6)
-    assign out_stall_out = in_stall_in_0;
+    // stall_out(LOGICAL,6)
+    assign stall_out_q = in_valid_in & in_stall_in_0;
 
-    // out_valid_out_0(GPOUT,7)
+    // out_stall_out(GPOUT,4)
+    assign out_stall_out = stall_out_q;
+
+    // out_valid_out_0(GPOUT,5)
     assign out_valid_out_0 = in_valid_in;
-
-    // rst_sync(RESETSYNC,8)
-    acl_reset_handler #(
-        .ASYNC_RESET(0),
-        .USE_SYNCHRONIZER(1),
-        .PULSE_EXTENSION(0),
-        .PIPE_DEPTH(3),
-        .DUPLICATE(1)
-    ) therst_sync (
-        .clk(clock),
-        .i_resetn(resetn),
-        .o_sclrn(rst_sync_rst_sclrn)
-    );
 
 endmodule

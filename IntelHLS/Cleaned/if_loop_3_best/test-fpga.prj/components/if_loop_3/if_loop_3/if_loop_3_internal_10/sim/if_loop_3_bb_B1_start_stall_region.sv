@@ -16,28 +16,27 @@
 
 // SystemVerilog created from bb_if_loop_3_B1_start_stall_region
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:58:26 2023
+// SystemVerilog created on Mon May  8 14:15:44 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_bb_B1_start_stall_region (
     input wire [191:0] in_iord_bl_call_if_loop_3_i_fifodata,
     input wire [0:0] in_iord_bl_call_if_loop_3_i_fifovalid,
-    output wire [0:0] out_iord_bl_call_if_loop_3_o_fifoready,
-    output wire [0:0] out_iord_bl_call_if_loop_3_o_fifoalmost_full,
-    input wire [0:0] in_feedback_almost_empty_in_1,
-    input wire [0:0] in_feedback_data_in_1,
-    input wire [0:0] in_feedback_empty_in_1,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_valid_out,
+    output wire [0:0] out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_stall_out,
+    input wire [0:0] in_feedback_in_1,
     output wire [0:0] out_feedback_stall_out_1,
+    input wire [0:0] in_feedback_valid_in_1,
+    input wire [0:0] in_pipeline_stall_in,
+    output wire [0:0] out_pipeline_valid_out,
     output wire [0:0] out_intel_reserved_ffwd_0_0,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
-    input wire [0:0] in_almost_empty_in,
-    input wire [0:0] in_empty_in,
     input wire [0:0] in_valid_in,
+    output wire [0:0] out_iord_bl_call_if_loop_3_o_fifoready,
+    output wire [0:0] out_iord_bl_call_if_loop_3_o_fifoalmost_full,
     output wire [63:0] out_intel_reserved_ffwd_1_0,
-    output wire [0:0] out_almost_empty_out,
-    output wire [0:0] out_empty_out,
     output wire [0:0] out_valid_out,
     output wire [63:0] out_intel_reserved_ffwd_2_0,
     output wire [32:0] out_intel_reserved_ffwd_3_0,
@@ -46,893 +45,631 @@ module if_loop_3_bb_B1_start_stall_region (
     );
 
     wire [0:0] GND_q;
-    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out;
+    wire [0:0] VCC_q;
+    wire [31:0] c_i32_122_q;
+    wire [31:0] c_i32_123_q;
+    wire [32:0] c_i33_124_q;
+    wire [33:0] i_cmp21_if_loop_36_a;
+    wire [33:0] i_cmp21_if_loop_36_b;
+    logic [33:0] i_cmp21_if_loop_36_o;
+    wire [0:0] i_cmp21_if_loop_36_c;
+    wire [0:0] i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_intel_reserved_ffwd_0_0;
+    wire [0:0] i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_stall_out;
+    wire [0:0] i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_valid_out;
+    wire [32:0] i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_intel_reserved_ffwd_3_0;
+    wire [0:0] i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_stall_out;
+    wire [0:0] i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_valid_out;
+    wire [63:0] i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_intel_reserved_ffwd_1_0;
+    wire [0:0] i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_stall_out;
+    wire [0:0] i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_valid_out;
+    wire [63:0] i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_intel_reserved_ffwd_2_0;
+    wire [0:0] i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_stall_out;
+    wire [0:0] i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_valid_out;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out;
-    wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_feedback_stall_out_1;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_stall_out;
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out;
-    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoalmost_full;
-    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoready;
-    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty;
-    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty;
-    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_stall;
-    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid;
-    wire [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl;
-    wire [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl;
-    wire [31:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out;
-    wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out;
+    wire [0:0] i_smax_if_loop_313_s;
+    reg [31:0] i_smax_if_loop_313_q;
+    wire [31:0] i_smax_if_loop_313_vt_join_q;
+    wire [30:0] i_smax_if_loop_313_vt_select_30_b;
+    wire [32:0] i_unnamed_if_loop_314_a;
+    wire [32:0] i_unnamed_if_loop_314_b;
+    logic [32:0] i_unnamed_if_loop_314_o;
+    wire [32:0] i_unnamed_if_loop_314_q;
+    wire [32:0] i_unnamed_if_loop_315_vt_join_q;
+    wire [31:0] i_unnamed_if_loop_315_vt_select_31_b;
+    wire [33:0] i_unnamed_if_loop_316_a;
+    wire [33:0] i_unnamed_if_loop_316_b;
+    logic [33:0] i_unnamed_if_loop_316_o;
+    wire [33:0] i_unnamed_if_loop_316_q;
+    wire [33:0] i_unnamed_if_loop_38_a;
+    wire [33:0] i_unnamed_if_loop_38_b;
+    logic [33:0] i_unnamed_if_loop_38_o;
+    wire [0:0] i_unnamed_if_loop_38_c;
+    wire [0:0] if_loop_3_B1_start_merge_reg_out_stall_out;
+    wire [0:0] if_loop_3_B1_start_merge_reg_out_valid_out;
+    wire [31:0] bgTrunc_i_unnamed_if_loop_314_sel_x_b;
+    wire [32:0] bgTrunc_i_unnamed_if_loop_316_sel_x_b;
+    wire [31:0] c_i32_021_recast_x_q;
+    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoalmost_full;
+    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoready;
+    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_stall;
+    wire [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_valid;
+    wire [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_0_tpl;
+    wire [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_1_tpl;
+    wire [31:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_2_tpl;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_stall_out;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_valid_out;
     wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_stall;
     wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid;
-    wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out;
-    wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out;
-    wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_0_0;
-    wire [63:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_1_0;
-    wire [63:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_2_0;
-    wire [32:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_3_0;
-    wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_stall;
-    wire [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid;
+    wire [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_pipeline_valid_out;
+    wire [32:0] i_unnamed_if_loop_315_sel_x_b;
+    reg [30:0] redist0_i_smax_if_loop_313_vt_select_30_b_1_0_q;
     wire [0:0] bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q;
     wire [0:0] bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_b;
-    wire [159:0] bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q;
-    wire [63:0] bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_b;
-    wire [63:0] bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_c;
-    wire [31:0] bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_d;
-    wire [0:0] merged_in_SE_stall_entry_backStall;
-    wire [0:0] merged_in_SE_stall_entry_V0;
-    wire [0:0] merged_in_SE_stall_entry_V1;
-    wire [0:0] merged_in_SE_stall_entry_V2;
-    wire [0:0] merged_in_SE_stall_entry_temp_back_stall;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_backStall;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V0;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V1;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V2;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_temp_back_stall;
-    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_backStall;
-    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V0;
-    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V1;
-    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V2;
-    wire [0:0] merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_temp_back_stall;
-    wire [0:0] merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_backStall;
-    wire [0:0] merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V0;
-    wire [0:0] merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V1;
-    wire [0:0] merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V2;
-    wire [0:0] merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_temp_back_stall;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_backStall;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V0;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V1;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V2;
-    wire [0:0] merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_temp_back_stall;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg0_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg1_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg1_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg0_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg1_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg0_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg1_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg0_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg1_q;
-    reg [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg0_q;
-    reg [0:0] stall_entry_frontStall_reg0_q;
-    reg [0:0] stall_entry_frontStall_reg1_q;
-    reg [0:0] stall_entry_frontValid_reg1_q;
-    reg [0:0] stall_entry_frontValid_reg0_q;
-    reg [0:0] stall_entry_frontEmpty_reg1_q;
-    reg [0:0] stall_entry_frontEmpty_reg0_q;
-    reg [0:0] stall_entry_frontAlmostEmpty_reg1_q;
-    reg [0:0] stall_entry_frontAlmostEmpty_reg0_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg0_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg1_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg1_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg0_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg1_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg0_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg1_q;
-    reg [0:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg0_q;
-    reg [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg1_q;
-    reg [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg0_q;
-    reg [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg1_q;
-    reg [63:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg0_q;
-    reg [31:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg1_q;
-    reg [31:0] i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg0_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg0_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg1_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg1_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg0_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg1_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg0_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg1_q;
-    reg [0:0] i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg0_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg0_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg1_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg1_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg0_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg1_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg0_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg1_q;
-    reg [0:0] i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg0_q;
-    reg [0:0] rst_sync_rst_sclrn;
+    wire [159:0] bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_q;
+    wire [63:0] bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_b;
+    wire [63:0] bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_c;
+    wire [31:0] bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d;
+    reg [0:0] SE_i_cmp21_if_loop_36_R_v_0;
+    reg [0:0] SE_i_cmp21_if_loop_36_R_v_1;
+    wire [0:0] SE_i_cmp21_if_loop_36_v_s_0;
+    wire [0:0] SE_i_cmp21_if_loop_36_s_tv_0;
+    wire [0:0] SE_i_cmp21_if_loop_36_s_tv_1;
+    wire [0:0] SE_i_cmp21_if_loop_36_backEN;
+    wire [0:0] SE_i_cmp21_if_loop_36_or0;
+    wire [0:0] SE_i_cmp21_if_loop_36_backStall;
+    wire [0:0] SE_i_cmp21_if_loop_36_V0;
+    wire [0:0] SE_i_cmp21_if_loop_36_V1;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_wireValid;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and0;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and1;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and2;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_V0;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_wireValid;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_V0;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_wireValid;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_V0;
+    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_wireValid;
+    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_backStall;
+    wire [0:0] SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V0;
+    wire [0:0] SE_out_if_loop_3_B1_start_merge_reg_wireValid;
+    wire [0:0] SE_out_if_loop_3_B1_start_merge_reg_backStall;
+    wire [0:0] SE_out_if_loop_3_B1_start_merge_reg_V0;
+    wire [0:0] SE_stall_entry_wireValid;
+    wire [0:0] SE_stall_entry_backStall;
+    wire [0:0] SE_stall_entry_V0;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireStall;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_StallValid;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg0;
+    reg [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg0;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed0;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg1;
+    reg [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg1;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed1;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg2;
+    reg [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg2;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed2;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_or0;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_or1;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_backStall;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V0;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V1;
+    wire [0:0] SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V2;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_wireValid;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_backStall;
+    wire [0:0] SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V0;
+    reg [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_R_v_0;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_v_s_0;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_s_tv_0;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_backEN;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_backStall;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_V0;
+    reg [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_R_v_0;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_v_s_0;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_s_tv_0;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_backEN;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_backStall;
+    wire [0:0] bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_V0;
 
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg0(REG,93)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg0_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg1(REG,92)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg1_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg0_q);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg0(REG,95)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg0_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg1(REG,94)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg1_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg0_q);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg0(REG,103)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg0_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg1(REG,102)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg1_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg0_q);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg0(REG,101)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg0_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg1(REG,100)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg1_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg0_q);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg0(REG,99)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg0_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl);
-        end
-    end
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg1(REG,98)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg1_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg0_q);
-        end
-    end
-
-    // bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BITJOIN,39)
-    assign bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q = {i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl_reg1_q, i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl_reg1_q, i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl_reg1_q};
-
-    // bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BITSELECT,40)
-    assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_b = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q[63:0]);
-    assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_c = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q[127:64]);
-    assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_d = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_q[159:128]);
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg0(REG,115)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg0_q <= $unsigned(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out);
-        end
-    end
+    // SE_stall_entry(STALLENABLE,112)
+    // Valid signal propagation
+    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
+    // Backward Stall generation
+    assign SE_stall_entry_backStall = if_loop_3_B1_start_merge_reg_out_stall_out | ~ (SE_stall_entry_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_stall_entry_wireValid = in_valid_in;
 
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg1(REG,114)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg1_q <= $unsigned(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg0_q);
-        end
-    end
-
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg0(REG,117)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg0_q <= $unsigned(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out);
-        end
-    end
-
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg1(REG,116)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg1_q <= $unsigned(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg0_q);
-        end
-    end
-
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg0(REG,119)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg0_q <= $unsigned(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid);
-        end
-    end
-
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg1(REG,118)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg1_q <= $unsigned(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg0_q);
-        end
-    end
-
-    // merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x(STALLENABLE,71)
-    assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_backStall = in_stall_in;
-    assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid_reg1_q;
-    assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V1 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out_reg1_q;
-    assign merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V2 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out_reg1_q;
-
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg0(REG,112)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg0_q <= $unsigned(merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_backStall);
-        end
-    end
-
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg1(REG,113)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg1_q <= $unsigned(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg0_q);
-        end
-    end
-
-    // i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x(BLACKBOX,33)@76
-    // in in_i_stall@20000000
-    // out out_almost_empty_out@110
-    // out out_empty_out@110
-    // out out_intel_reserved_ffwd_0_0@20000000
-    // out out_intel_reserved_ffwd_1_0@20000000
-    // out out_intel_reserved_ffwd_2_0@20000000
-    // out out_intel_reserved_ffwd_3_0@20000000
-    // out out_o_stall@20000000
-    // out out_o_valid@110
-    // out out_c1_exit_0_tpl@110
-    if_loop_3_i_sfc_s_c1_in_wt_entry_s_c1_enter_if_loop_34 thei_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x (
-        .in_almost_empty_in(merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V2),
-        .in_empty_in(merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V1),
-        .in_i_stall(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_in_i_stall_reg1_q),
-        .in_i_valid(merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V0),
-        .in_c1_eni1_0_tpl(GND_q),
-        .in_c1_eni1_1_tpl(bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_b),
-        .in_c1_eni1_2_tpl(bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_c),
-        .in_c1_eni1_3_tpl(bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_d),
-        .out_almost_empty_out(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_almost_empty_out),
-        .out_empty_out(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_empty_out),
-        .out_intel_reserved_ffwd_0_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_0_0),
-        .out_intel_reserved_ffwd_1_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_1_0),
-        .out_intel_reserved_ffwd_2_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_2_0),
-        .out_intel_reserved_ffwd_3_0(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_3_0),
-        .out_o_stall(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_stall),
-        .out_o_valid(i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_valid),
-        .out_c1_exit_0_tpl(),
+    // if_loop_3_B1_start_merge_reg(BLACKBOX,34)@0
+    // in in_stall_in@20000000
+    // out out_data_out@1
+    // out out_stall_out@20000000
+    // out out_valid_out@1
+    if_loop_3_B1_start_merge_reg theif_loop_3_B1_start_merge_reg (
+        .in_data_in(GND_q),
+        .in_stall_in(SE_out_if_loop_3_B1_start_merge_reg_backStall),
+        .in_valid_in(SE_stall_entry_V0),
+        .out_data_out(),
+        .out_stall_out(if_loop_3_B1_start_merge_reg_out_stall_out),
+        .out_valid_out(if_loop_3_B1_start_merge_reg_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg0(REG,97)
-    always @ (posedge clock)
+    // SE_out_if_loop_3_B1_start_merge_reg(STALLENABLE,111)
+    // Valid signal propagation
+    assign SE_out_if_loop_3_B1_start_merge_reg_V0 = SE_out_if_loop_3_B1_start_merge_reg_wireValid;
+    // Backward Stall generation
+    assign SE_out_if_loop_3_B1_start_merge_reg_backStall = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_stall | ~ (SE_out_if_loop_3_B1_start_merge_reg_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_out_if_loop_3_B1_start_merge_reg_wireValid = if_loop_3_B1_start_merge_reg_out_valid_out;
+
+    // SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310(STALLENABLE,97)
+    // Valid signal propagation
+    assign SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_V0 = SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_wireValid;
+    // Backward Stall generation
+    assign SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_backStall = bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_backStall | ~ (SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_wireValid = i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_valid_out;
+
+    // bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg(STALLENABLE,144)
+    // Valid signal propagation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_V0 = bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_R_v_0;
+    // Stall signal propagation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_s_tv_0 = SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_backStall & bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_R_v_0;
+    // Backward Enable generation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_backEN = ~ (bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_s_tv_0);
+    // Determine whether to write valid data into the first register stage
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_v_s_0 = bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_backEN & SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_V0;
+    // Backward Stall generation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_backStall = ~ (bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_v_s_0);
+    always @ (posedge clock or negedge resetn)
     begin
-        if (0)
+        if (!resetn)
         begin
+            bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_R_v_0 <= 1'b0;
         end
         else
         begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg0_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid);
+            if (bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_backEN == 1'b0)
+            begin
+                bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_R_v_0 <= bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_R_v_0 & bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_s_tv_0;
+            end
+            else
+            begin
+                bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_R_v_0 <= bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_v_s_0;
+            end
+
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg1(REG,96)
-    always @ (posedge clock)
+    // c_i32_021_recast_x(CONSTANT,63)
+    assign c_i32_021_recast_x_q = $unsigned(32'b00000000000000000000000000000000);
+
+    // i_cmp21_if_loop_36(COMPARE,17)@2 + 1
+    assign i_cmp21_if_loop_36_a = $unsigned({{2{c_i32_021_recast_x_q[31]}}, c_i32_021_recast_x_q});
+    assign i_cmp21_if_loop_36_b = $unsigned({{2{bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d[31]}}, bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d});
+    always @ (posedge clock or negedge resetn)
     begin
-        if (0)
+        if (!resetn)
         begin
+            i_cmp21_if_loop_36_o <= 34'b0;
+        end
+        else if (SE_i_cmp21_if_loop_36_backEN == 1'b1)
+        begin
+            i_cmp21_if_loop_36_o <= $unsigned($signed(i_cmp21_if_loop_36_a) - $signed(i_cmp21_if_loop_36_b));
+        end
+    end
+    assign i_cmp21_if_loop_36_c[0] = i_cmp21_if_loop_36_o[33];
+
+    // i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312(BLACKBOX,18)@3
+    // in in_stall_in@20000000
+    // out out_intel_reserved_ffwd_0_0@20000000
+    // out out_stall_out@20000000
+    if_loop_3_i_llvm_fpga_ffwd_source_i1_unnamed_5_if_loop_30 thei_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312 (
+        .in_predicate_in(GND_q),
+        .in_src_data_in_0_0(i_cmp21_if_loop_36_c),
+        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_backStall),
+        .in_valid_in(SE_i_cmp21_if_loop_36_V0),
+        .out_intel_reserved_ffwd_0_0(i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_intel_reserved_ffwd_0_0),
+        .out_stall_out(i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_stall_out),
+        .out_valid_out(i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // c_i33_124(CONSTANT,8)
+    assign c_i33_124_q = $unsigned(33'b111111111111111111111111111111111);
+
+    // c_i32_123(CONSTANT,7)
+    assign c_i32_123_q = $unsigned(32'b11111111111111111111111111111111);
+
+    // c_i32_122(CONSTANT,6)
+    assign c_i32_122_q = $unsigned(32'b00000000000000000000000000000001);
+
+    // i_unnamed_if_loop_38(COMPARE,33)@2
+    assign i_unnamed_if_loop_38_a = $unsigned({{2{c_i32_122_q[31]}}, c_i32_122_q});
+    assign i_unnamed_if_loop_38_b = $unsigned({{2{bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d[31]}}, bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d});
+    assign i_unnamed_if_loop_38_o = $unsigned($signed(i_unnamed_if_loop_38_a) - $signed(i_unnamed_if_loop_38_b));
+    assign i_unnamed_if_loop_38_c[0] = i_unnamed_if_loop_38_o[33];
+
+    // VCC(CONSTANT,1)
+    assign VCC_q = $unsigned(1'b1);
+
+    // i_smax_if_loop_313(MUX,23)@2
+    assign i_smax_if_loop_313_s = i_unnamed_if_loop_38_c;
+    always @(i_smax_if_loop_313_s or c_i32_122_q or bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d)
+    begin
+        unique case (i_smax_if_loop_313_s)
+            1'b0 : i_smax_if_loop_313_q = c_i32_122_q;
+            1'b1 : i_smax_if_loop_313_q = bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d;
+            default : i_smax_if_loop_313_q = 32'b0;
+        endcase
+    end
+
+    // i_smax_if_loop_313_vt_select_30(BITSELECT,26)@2
+    assign i_smax_if_loop_313_vt_select_30_b = i_smax_if_loop_313_q[30:0];
+
+    // redist0_i_smax_if_loop_313_vt_select_30_b_1_0(REG,77)
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            redist0_i_smax_if_loop_313_vt_select_30_b_1_0_q <= $unsigned(31'b0000000000000000000000000000000);
+        end
+        else if (SE_i_cmp21_if_loop_36_backEN == 1'b1)
+        begin
+            redist0_i_smax_if_loop_313_vt_select_30_b_1_0_q <= $unsigned(i_smax_if_loop_313_vt_select_30_b);
+        end
+    end
+
+    // i_smax_if_loop_313_vt_join(BITJOIN,25)@3
+    assign i_smax_if_loop_313_vt_join_q = {GND_q, redist0_i_smax_if_loop_313_vt_select_30_b_1_0_q};
+
+    // i_unnamed_if_loop_314(ADD,27)@3
+    assign i_unnamed_if_loop_314_a = {1'b0, i_smax_if_loop_313_vt_join_q};
+    assign i_unnamed_if_loop_314_b = {1'b0, c_i32_123_q};
+    assign i_unnamed_if_loop_314_o = $unsigned(i_unnamed_if_loop_314_a) + $unsigned(i_unnamed_if_loop_314_b);
+    assign i_unnamed_if_loop_314_q = i_unnamed_if_loop_314_o[32:0];
+
+    // bgTrunc_i_unnamed_if_loop_314_sel_x(BITSELECT,61)@3
+    assign bgTrunc_i_unnamed_if_loop_314_sel_x_b = i_unnamed_if_loop_314_q[31:0];
+
+    // i_unnamed_if_loop_315_sel_x(BITSELECT,72)@3
+    assign i_unnamed_if_loop_315_sel_x_b = {1'b0, bgTrunc_i_unnamed_if_loop_314_sel_x_b[31:0]};
+
+    // i_unnamed_if_loop_315_vt_select_31(BITSELECT,31)@3
+    assign i_unnamed_if_loop_315_vt_select_31_b = i_unnamed_if_loop_315_sel_x_b[31:0];
+
+    // i_unnamed_if_loop_315_vt_join(BITJOIN,30)@3
+    assign i_unnamed_if_loop_315_vt_join_q = {GND_q, i_unnamed_if_loop_315_vt_select_31_b};
+
+    // i_unnamed_if_loop_316(ADD,32)@3
+    assign i_unnamed_if_loop_316_a = {1'b0, i_unnamed_if_loop_315_vt_join_q};
+    assign i_unnamed_if_loop_316_b = {1'b0, c_i33_124_q};
+    assign i_unnamed_if_loop_316_o = $unsigned(i_unnamed_if_loop_316_a) + $unsigned(i_unnamed_if_loop_316_b);
+    assign i_unnamed_if_loop_316_q = i_unnamed_if_loop_316_o[33:0];
+
+    // bgTrunc_i_unnamed_if_loop_316_sel_x(BITSELECT,62)@3
+    assign bgTrunc_i_unnamed_if_loop_316_sel_x_b = i_unnamed_if_loop_316_q[32:0];
+
+    // i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317(BLACKBOX,19)@3
+    // in in_stall_in@20000000
+    // out out_intel_reserved_ffwd_3_0@20000000
+    // out out_stall_out@20000000
+    if_loop_3_i_llvm_fpga_ffwd_source_i33_unnamed_6_if_loop_30 thei_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317 (
+        .in_predicate_in(GND_q),
+        .in_src_data_in_3_0(bgTrunc_i_unnamed_if_loop_316_sel_x_b),
+        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_backStall),
+        .in_valid_in(SE_i_cmp21_if_loop_36_V1),
+        .out_intel_reserved_ffwd_3_0(i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_intel_reserved_ffwd_3_0),
+        .out_stall_out(i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_stall_out),
+        .out_valid_out(i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317(STALLENABLE,95)
+    // Valid signal propagation
+    assign SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_V0 = SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_wireValid;
+    // Backward Stall generation
+    assign SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_backStall = in_stall_in | ~ (SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and0 = i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_valid_out;
+    assign SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and1 = i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_valid_out & SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and0;
+    assign SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and2 = bubble_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_1_reg_V0 & SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and1;
+    assign SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_wireValid = bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_V0 & SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_and2;
+
+    // bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg(STALLENABLE,145)
+    // Valid signal propagation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_V0 = bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_R_v_0;
+    // Stall signal propagation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_s_tv_0 = SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_backStall & bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_R_v_0;
+    // Backward Enable generation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_backEN = ~ (bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_s_tv_0);
+    // Determine whether to write valid data into the first register stage
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_v_s_0 = bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_backEN & SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_V0;
+    // Backward Stall generation
+    assign bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_backStall = ~ (bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_v_s_0);
+    always @ (posedge clock or negedge resetn)
+    begin
+        if (!resetn)
+        begin
+            bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_R_v_0 <= 1'b0;
         end
         else
         begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg1_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg0_q);
+            if (bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_backEN == 1'b0)
+            begin
+                bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_R_v_0 <= bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_R_v_0 & bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_s_tv_0;
+            end
+            else
+            begin
+                bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_R_v_0 <= bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_v_s_0;
+            end
+
         end
     end
 
-    // merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(STALLENABLE,70)
-    assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_backStall = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_o_stall;
-    assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V0 = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid_reg1_q;
-    assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V1 = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty_reg1_q;
-    assign merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_V2 = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty_reg1_q;
+    // SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311(STALLENABLE,99)
+    // Valid signal propagation
+    assign SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_V0 = SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_wireValid;
+    // Backward Stall generation
+    assign SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_backStall = bubble_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_1_reg_backStall | ~ (SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_wireValid = i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_valid_out;
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg0(REG,90)
-    always @ (posedge clock)
+    // bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x(BITJOIN,88)
+    assign bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_q = {i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_2_tpl, i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_1_tpl, i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_0_tpl};
+
+    // bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x(BITSELECT,89)
+    assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_b = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_q[63:0]);
+    assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_c = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_q[127:64]);
+    assign bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_d = $unsigned(bubble_join_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_q[159:128]);
+
+    // i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311(BLACKBOX,21)@2
+    // in in_stall_in@20000000
+    // out out_intel_reserved_ffwd_2_0@20000000
+    // out out_stall_out@20000000
+    if_loop_3_i_llvm_fpga_ffwd_source_p1028i32_unnamed_4_if_loop_30 thei_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311 (
+        .in_predicate_in(GND_q),
+        .in_src_data_in_2_0(bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_c),
+        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_backStall),
+        .in_valid_in(SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V2),
+        .out_intel_reserved_ffwd_2_0(i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_intel_reserved_ffwd_2_0),
+        .out_stall_out(i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_stall_out),
+        .out_valid_out(i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310(BLACKBOX,20)@2
+    // in in_stall_in@20000000
+    // out out_intel_reserved_ffwd_1_0@20000000
+    // out out_stall_out@20000000
+    if_loop_3_i_llvm_fpga_ffwd_source_p1025i32_unnamed_3_if_loop_30 thei_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310 (
+        .in_predicate_in(GND_q),
+        .in_src_data_in_1_0(bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_b),
+        .in_stall_in(SE_out_i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_backStall),
+        .in_valid_in(SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V1),
+        .out_intel_reserved_ffwd_1_0(i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_intel_reserved_ffwd_1_0),
+        .out_stall_out(i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_stall_out),
+        .out_valid_out(i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // SE_i_cmp21_if_loop_36(STALLENABLE,91)
+    // Valid signal propagation
+    assign SE_i_cmp21_if_loop_36_V0 = SE_i_cmp21_if_loop_36_R_v_0;
+    assign SE_i_cmp21_if_loop_36_V1 = SE_i_cmp21_if_loop_36_R_v_1;
+    // Stall signal propagation
+    assign SE_i_cmp21_if_loop_36_s_tv_0 = i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_stall_out & SE_i_cmp21_if_loop_36_R_v_0;
+    assign SE_i_cmp21_if_loop_36_s_tv_1 = i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_stall_out & SE_i_cmp21_if_loop_36_R_v_1;
+    // Backward Enable generation
+    assign SE_i_cmp21_if_loop_36_or0 = SE_i_cmp21_if_loop_36_s_tv_0;
+    assign SE_i_cmp21_if_loop_36_backEN = ~ (SE_i_cmp21_if_loop_36_s_tv_1 | SE_i_cmp21_if_loop_36_or0);
+    // Determine whether to write valid data into the first register stage
+    assign SE_i_cmp21_if_loop_36_v_s_0 = SE_i_cmp21_if_loop_36_backEN & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V0;
+    // Backward Stall generation
+    assign SE_i_cmp21_if_loop_36_backStall = ~ (SE_i_cmp21_if_loop_36_v_s_0);
+    always @ (posedge clock or negedge resetn)
     begin
-        if (0)
+        if (!resetn)
         begin
+            SE_i_cmp21_if_loop_36_R_v_0 <= 1'b0;
+            SE_i_cmp21_if_loop_36_R_v_1 <= 1'b0;
         end
         else
         begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg0_q <= $unsigned(merged_in_SE_bubble_select_i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_backStall);
+            if (SE_i_cmp21_if_loop_36_backEN == 1'b0)
+            begin
+                SE_i_cmp21_if_loop_36_R_v_0 <= SE_i_cmp21_if_loop_36_R_v_0 & SE_i_cmp21_if_loop_36_s_tv_0;
+            end
+            else
+            begin
+                SE_i_cmp21_if_loop_36_R_v_0 <= SE_i_cmp21_if_loop_36_v_s_0;
+            end
+
+            if (SE_i_cmp21_if_loop_36_backEN == 1'b0)
+            begin
+                SE_i_cmp21_if_loop_36_R_v_1 <= SE_i_cmp21_if_loop_36_R_v_1 & SE_i_cmp21_if_loop_36_s_tv_1;
+            end
+            else
+            begin
+                SE_i_cmp21_if_loop_36_R_v_1 <= SE_i_cmp21_if_loop_36_v_s_0;
+            end
+
         end
     end
 
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg1(REG,91)
-    always @ (posedge clock)
+    // SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x(STALLENABLE,117)
+    always @ (posedge clock or negedge resetn)
     begin
-        if (0)
+        if (!resetn)
         begin
+            SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg0 <= '0;
+            SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg1 <= '0;
+            SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg2 <= '0;
         end
         else
         begin
-            i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg1_q <= $unsigned(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg0_q);
+            // Successor 0
+            SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg0 <= SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg0;
+            // Successor 1
+            SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg1 <= SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg1;
+            // Successor 2
+            SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg2 <= SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg2;
         end
     end
+    // Input Stall processing
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed0 = (~ (SE_i_cmp21_if_loop_36_backStall) & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid) | SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg0;
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed1 = (~ (i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_stall_out) & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid) | SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg1;
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed2 = (~ (i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_stall_out) & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid) | SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg2;
+    // Consuming
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_StallValid = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_backStall & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid;
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg0 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_StallValid & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed0;
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg1 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_StallValid & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed1;
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_toReg2 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_StallValid & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed2;
+    // Backward Stall generation
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_or0 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed0;
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_or1 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed1 & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_or0;
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireStall = ~ (SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_consumed2 & SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_or1);
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_backStall = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireStall;
+    // Valid signal propagation
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V0 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg0);
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V1 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg1);
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_V2 = SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid & ~ (SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_fromReg2);
+    // Computing multiple Valid(s)
+    assign SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_wireValid = i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_valid;
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg0(REG,72)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg0_q <= $unsigned(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_backStall);
-        end
-    end
+    // bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITJOIN,83)
+    assign bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out;
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg1(REG,73)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg0_q);
-        end
-    end
+    // bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITSELECT,84)
+    assign bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_b = $unsigned(bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q[0:0]);
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg0(REG,104)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg0_q <= $unsigned(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_backStall);
-        end
-    end
-
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg1(REG,105)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg0_q);
-        end
-    end
-
-    // stall_entry_frontAlmostEmpty_reg0(REG,89)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontAlmostEmpty_reg0_q <= $unsigned(in_almost_empty_in);
-        end
-    end
-
-    // stall_entry_frontAlmostEmpty_reg1(REG,88)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontAlmostEmpty_reg1_q <= $unsigned(stall_entry_frontAlmostEmpty_reg0_q);
-        end
-    end
-
-    // stall_entry_frontEmpty_reg0(REG,87)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontEmpty_reg0_q <= $unsigned(in_empty_in);
-        end
-    end
-
-    // stall_entry_frontEmpty_reg1(REG,86)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontEmpty_reg1_q <= $unsigned(stall_entry_frontEmpty_reg0_q);
-        end
-    end
-
-    // stall_entry_frontValid_reg0(REG,85)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontValid_reg0_q <= $unsigned(in_valid_in);
-        end
-    end
-
-    // stall_entry_frontValid_reg1(REG,84)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontValid_reg1_q <= $unsigned(stall_entry_frontValid_reg0_q);
-        end
-    end
-
-    // merged_in_SE_stall_entry(STALLENABLE,67)
-    assign merged_in_SE_stall_entry_backStall = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_stall;
-    assign merged_in_SE_stall_entry_V0 = stall_entry_frontValid_reg1_q;
-    assign merged_in_SE_stall_entry_V1 = stall_entry_frontEmpty_reg1_q;
-    assign merged_in_SE_stall_entry_V2 = stall_entry_frontAlmostEmpty_reg1_q;
-
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(BLACKBOX,32)@0
+    // i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x(BLACKBOX,70)@2
     // in in_i_stall@20000000
-    // out out_almost_empty_out@35
-    // out out_empty_out@35
+    // out out_iord_bl_call_if_loop_3_o_fifoalmost_full@20000000
+    // out out_iord_bl_call_if_loop_3_o_fifoready@20000000
     // out out_o_stall@20000000
-    // out out_o_valid@35
-    // out out_c0_exit_0_tpl@35
-    // out out_c0_exit_1_tpl@35
+    if_loop_3_i_iord_bl_call_unnamed_if_loop_32_if_loop_30 thei_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x (
+        .in_i_dependence(bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_b),
+        .in_i_stall(SE_out_i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_backStall),
+        .in_i_valid(SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V0),
+        .in_iord_bl_call_if_loop_3_i_fifodata(in_iord_bl_call_if_loop_3_i_fifodata),
+        .in_iord_bl_call_if_loop_3_i_fifovalid(in_iord_bl_call_if_loop_3_i_fifovalid),
+        .out_iord_bl_call_if_loop_3_o_fifoalmost_full(i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoalmost_full),
+        .out_iord_bl_call_if_loop_3_o_fifoready(i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoready),
+        .out_o_stall(i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_stall),
+        .out_o_valid(i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_valid),
+        .out_o_data_0_tpl(i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_0_tpl),
+        .out_o_data_1_tpl(i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_1_tpl),
+        .out_o_data_2_tpl(i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_data_2_tpl),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(STALLENABLE,101)
+    // Valid signal propagation
+    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V0 = SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_wireValid;
+    // Backward Stall generation
+    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_backStall = i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_o_stall | ~ (SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_wireValid = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out;
+
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BLACKBOX,22)@1
+    // in in_stall_in@20000000
+    // out out_data_out@2
+    // out out_feedback_stall_out_1@20000000
+    // out out_stall_out@20000000
+    // out out_valid_out@2
+    if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 thei_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31 (
+        .in_data_in(GND_q),
+        .in_dir(GND_q),
+        .in_feedback_in_1(in_feedback_in_1),
+        .in_feedback_valid_in_1(in_feedback_valid_in_1),
+        .in_predicate(GND_q),
+        .in_stall_in(SE_out_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_backStall),
+        .in_valid_in(SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V0),
+        .out_data_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out),
+        .out_feedback_stall_out_1(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_feedback_stall_out_1),
+        .out_stall_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(STALLENABLE,119)
+    // Valid signal propagation
+    assign SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V0 = SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_wireValid;
+    // Backward Stall generation
+    assign SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_backStall = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_stall_out | ~ (SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_wireValid = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid;
+
+    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(BLACKBOX,71)@1
+    // in in_i_stall@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_stall_out@20000000
+    // out out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_valid_out@20000000
+    // out out_o_stall@20000000
+    // out out_pipeline_valid_out@20000000
     if_loop_3_i_sfc_s_c0_in_wt_entry_s_c0_enter1_if_loop_30 thei_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x (
-        .in_almost_empty_in(merged_in_SE_stall_entry_V2),
-        .in_empty_in(merged_in_SE_stall_entry_V1),
-        .in_i_stall(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_in_i_stall_reg1_q),
-        .in_i_valid(merged_in_SE_stall_entry_V0),
+        .in_i_stall(SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_backStall),
+        .in_i_valid(SE_out_if_loop_3_B1_start_merge_reg_V0),
+        .in_pipeline_stall_in(in_pipeline_stall_in),
         .in_unnamed_if_loop_30_0_tpl(GND_q),
-        .out_almost_empty_out(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out),
-        .out_empty_out(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_stall_out(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_stall_out),
+        .out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_valid_out(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_valid_out),
         .out_o_stall(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_stall),
         .out_o_valid(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid),
+        .out_pipeline_valid_out(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_pipeline_valid_out),
         .out_c0_exit_0_tpl(),
         .out_c0_exit_1_tpl(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg0(REG,107)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg0_q <= $unsigned(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out);
-        end
-    end
+    // ext_sig_sync_out(GPOUT,13)
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_valid_out = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_valid_out;
+    assign out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_stall_out = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_aclp_to_limiter_i_llvm_fpga_pipeline_keep_going12_if_loop_31_exiting_stall_out;
 
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg1(REG,106)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg0_q);
-        end
-    end
-
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg0(REG,109)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg0_q <= $unsigned(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out);
-        end
-    end
-
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg1(REG,108)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg0_q);
-        end
-    end
-
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg0(REG,111)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg0_q <= $unsigned(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid);
-        end
-    end
-
-    // i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg1(REG,110)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg1_q <= $unsigned(i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg0_q);
-        end
-    end
-
-    // merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x(STALLENABLE,68)
-    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_backStall = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_stall_out;
-    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V0 = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_o_valid_reg1_q;
-    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V1 = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_empty_out_reg1_q;
-    assign merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V2 = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_almost_empty_out_reg1_q;
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BLACKBOX,12)@35
-    // in in_stall_in@20000000
-    // out out_almost_empty_out@52
-    // out out_data_out@52
-    // out out_empty_out@52
-    // out out_feedback_stall_out_1@20000000
-    // out out_stall_out@20000000
-    // out out_valid_out@52
-    if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 thei_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31 (
-        .in_almost_empty_in(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V2),
-        .in_data_in(GND_q),
-        .in_dir_in(GND_q),
-        .in_empty_in(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V1),
-        .in_feedback_almost_empty_in_1(in_feedback_almost_empty_in_1),
-        .in_feedback_data_in_1(in_feedback_data_in_1),
-        .in_feedback_empty_in_1(in_feedback_empty_in_1),
-        .in_stall_in(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_in_stall_in_reg1_q),
-        .in_valid_in(merged_in_SE_out_i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_V0),
-        .out_almost_empty_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out),
-        .out_data_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out),
-        .out_empty_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out),
-        .out_feedback_stall_out_1(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_feedback_stall_out_1),
-        .out_stall_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out),
-        .clock(clock),
-        .resetn(rst_sync_rst_sclrn[0])
-    );
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg0(REG,77)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out);
-        end
-    end
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg1(REG,76)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg0_q);
-        end
-    end
-
-    // bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITJOIN,35)
-    assign bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_data_out_reg1_q;
-
-    // bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(BITSELECT,36)
-    assign bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_b = $unsigned(bubble_join_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_q[0:0]);
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg0(REG,75)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out);
-        end
-    end
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg1(REG,74)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg0_q);
-        end
-    end
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg0(REG,79)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out);
-        end
-    end
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg1(REG,78)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg0_q);
-        end
-    end
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg0(REG,81)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg0_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out);
-        end
-    end
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg1(REG,80)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg1_q <= $unsigned(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg0_q);
-        end
-    end
-
-    // merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(STALLENABLE,69)
-    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_backStall = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_stall;
-    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V0 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_valid_out_reg1_q;
-    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_empty_out_reg1_q;
-    assign merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V2 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_almost_empty_out_reg1_q;
-
-    // i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x(BLACKBOX,31)@52
-    // in in_i_stall@20000000
-    // out out_iord_bl_call_if_loop_3_o_fifoalmost_full@20000000
-    // out out_iord_bl_call_if_loop_3_o_fifoready@20000000
-    // out out_o_almost_empty@76
-    // out out_o_empty@76
-    // out out_o_stall@20000000
-    // out out_o_valid@76
-    // out out_o_data_0_tpl@76
-    // out out_o_data_1_tpl@76
-    // out out_o_data_2_tpl@76
-    if_loop_3_i_iord_bl_call_unnamed_if_loop_31_if_loop_30 thei_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x (
-        .in_almost_empty_in(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V2),
-        .in_empty_in(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V1),
-        .in_i_dependence(bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_b),
-        .in_i_stall(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_in_i_stall_reg1_q),
-        .in_i_valid(merged_in_SE_bubble_select_i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_V0),
-        .in_iord_bl_call_if_loop_3_i_fifodata(in_iord_bl_call_if_loop_3_i_fifodata),
-        .in_iord_bl_call_if_loop_3_i_fifovalid(in_iord_bl_call_if_loop_3_i_fifovalid),
-        .out_iord_bl_call_if_loop_3_o_fifoalmost_full(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoalmost_full),
-        .out_iord_bl_call_if_loop_3_o_fifoready(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoready),
-        .out_o_almost_empty(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_almost_empty),
-        .out_o_empty(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_empty),
-        .out_o_stall(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_stall),
-        .out_o_valid(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_valid),
-        .out_o_data_0_tpl(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_0_tpl),
-        .out_o_data_1_tpl(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_1_tpl),
-        .out_o_data_2_tpl(i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_o_data_2_tpl),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // ext_sig_sync_out(GPOUT,7)
-    assign out_iord_bl_call_if_loop_3_o_fifoready = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoready;
-    assign out_iord_bl_call_if_loop_3_o_fifoalmost_full = i_iord_bl_call_if_loop_3_unnamed_if_loop_31_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoalmost_full;
-
-    // feedback_stall_out_1_sync(GPOUT,11)
+    // feedback_stall_out_1_sync(GPOUT,15)
     assign out_feedback_stall_out_1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_out_feedback_stall_out_1;
 
-    // regfree_osync(GPOUT,21)
-    assign out_intel_reserved_ffwd_0_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_0_0;
+    // pipeline_valid_out_sync(GPOUT,54)
+    assign out_pipeline_valid_out = i_sfc_s_c0_in_wt_entry_if_loop_3s_c0_enter1_if_loop_30_aunroll_x_out_pipeline_valid_out;
 
-    // stall_entry_frontStall_reg0(REG,82)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontStall_reg0_q <= $unsigned(merged_in_SE_stall_entry_backStall);
-        end
-    end
+    // regfree_osync(GPOUT,55)
+    assign out_intel_reserved_ffwd_0_0 = i_llvm_fpga_ffwd_source_i1_unnamed_if_loop_35_if_loop_312_out_intel_reserved_ffwd_0_0;
 
-    // stall_entry_frontStall_reg1(REG,83)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            stall_entry_frontStall_reg1_q <= $unsigned(stall_entry_frontStall_reg0_q);
-        end
-    end
+    // sync_out(GPOUT,59)@0
+    assign out_stall_out = SE_stall_entry_backStall;
 
-    // sync_out(GPOUT,25)@0
-    assign out_stall_out = stall_entry_frontStall_reg1_q;
+    // dupName_0_ext_sig_sync_out_x(GPOUT,65)
+    assign out_iord_bl_call_if_loop_3_o_fifoready = i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoready;
+    assign out_iord_bl_call_if_loop_3_o_fifoalmost_full = i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_32_aunroll_x_out_iord_bl_call_if_loop_3_o_fifoalmost_full;
 
-    // dupName_0_regfree_osync_x(GPOUT,27)
-    assign out_intel_reserved_ffwd_1_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_1_0;
+    // dupName_0_regfree_osync_x(GPOUT,66)
+    assign out_intel_reserved_ffwd_1_0 = i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_310_out_intel_reserved_ffwd_1_0;
 
-    // dupName_0_sync_out_x(GPOUT,28)@110
-    assign out_almost_empty_out = merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V2;
-    assign out_empty_out = merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V1;
-    assign out_valid_out = merged_in_SE_out_i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_V0;
+    // dupName_0_sync_out_x(GPOUT,67)@3
+    assign out_valid_out = SE_out_i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_V0;
 
-    // dupName_1_regfree_osync_x(GPOUT,29)
-    assign out_intel_reserved_ffwd_2_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_2_0;
+    // dupName_1_regfree_osync_x(GPOUT,68)
+    assign out_intel_reserved_ffwd_2_0 = i_llvm_fpga_ffwd_source_p1028i32_unnamed_if_loop_34_if_loop_311_out_intel_reserved_ffwd_2_0;
 
-    // dupName_2_regfree_osync_x(GPOUT,30)
-    assign out_intel_reserved_ffwd_3_0 = i_sfc_s_c1_in_wt_entry_if_loop_3s_c1_enter_if_loop_34_aunroll_x_out_intel_reserved_ffwd_3_0;
-
-    // rst_sync(RESETSYNC,120)
-    acl_reset_handler #(
-        .ASYNC_RESET(0),
-        .USE_SYNCHRONIZER(1),
-        .PULSE_EXTENSION(0),
-        .PIPE_DEPTH(3),
-        .DUPLICATE(1)
-    ) therst_sync (
-        .clk(clock),
-        .i_resetn(resetn),
-        .o_sclrn(rst_sync_rst_sclrn)
-    );
+    // dupName_2_regfree_osync_x(GPOUT,69)
+    assign out_intel_reserved_ffwd_3_0 = i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_317_out_intel_reserved_ffwd_3_0;
 
 endmodule

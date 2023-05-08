@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:34:33 2023
+// SystemVerilog created on Mon May  8 14:21:22 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -43,7 +43,7 @@ module if_loop_3_i_llvm_fpga_ffwd_dest_i32_acl_8_0 (
     wire i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_valid_out_bitsignaltemp;
 
 
-    // i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31(EXTIFACE,2)@1
+    // i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31(EXTIFACE,2)
     assign i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_data_in = in_intel_reserved_ffwd_4_0;
     assign i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_stall_in = in_stall_in;
     assign i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_valid_in = in_valid_in;
@@ -52,9 +52,9 @@ module if_loop_3_i_llvm_fpga_ffwd_dest_i32_acl_8_0 (
     assign i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_stall_out[0] = i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_stall_out_bitsignaltemp;
     assign i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_valid_out[0] = i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_valid_out_bitsignaltemp;
     acl_ffwddst #(
-        .MAX_LATENCY(0),
-        .MIN_CAPACITY(0),
-        .STALL_FREE(1),
+        .MAX_LATENCY(1),
+        .MIN_CAPACITY(1),
+        .STALL_FREE(0),
         .WIDTH(32)
     ) thei_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31 (
         .data_in(in_intel_reserved_ffwd_4_0),
@@ -67,7 +67,7 @@ module if_loop_3_i_llvm_fpga_ffwd_dest_i32_acl_8_0 (
         .resetn(resetn)
     );
 
-    // sync_out(GPOUT,6)@1
+    // sync_out(GPOUT,6)@20000000
     assign out_stall_out = i_llvm_fpga_ffwd_dest_i32_acl_8_if_loop_31_stall_out;
 
     // dupName_0_sync_out_x(GPOUT,8)@1

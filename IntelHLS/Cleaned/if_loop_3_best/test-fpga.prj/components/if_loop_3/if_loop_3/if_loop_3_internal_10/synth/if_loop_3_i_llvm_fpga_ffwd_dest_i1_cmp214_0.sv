@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:58:26 2023
+// SystemVerilog created on Mon May  8 14:15:44 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -52,7 +52,7 @@ module if_loop_3_i_llvm_fpga_ffwd_dest_i1_cmp214_0 (
     // element_extension2(BITJOIN,4)@20000000
     assign element_extension2_q = {c_i7_03_q, in_intel_reserved_ffwd_0_0};
 
-    // i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31(EXTIFACE,5)@5
+    // i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31(EXTIFACE,5)@12
     assign i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31_data_in = element_extension2_q;
     assign i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31_stall_in = in_stall_in;
     assign i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31_valid_in = in_valid_in;
@@ -76,13 +76,13 @@ module if_loop_3_i_llvm_fpga_ffwd_dest_i1_cmp214_0 (
         .resetn(resetn)
     );
 
-    // sync_out(GPOUT,8)@5
+    // sync_out(GPOUT,8)@12
     assign out_stall_out = i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31_stall_out;
 
-    // adapt_scalar_trunc4_sel_x(BITSELECT,10)@5
+    // adapt_scalar_trunc4_sel_x(BITSELECT,10)@12
     assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31_data_out[0:0];
 
-    // dupName_0_sync_out_x(GPOUT,11)@5
+    // dupName_0_sync_out_x(GPOUT,11)@12
     assign out_dest_data_out_0_0 = adapt_scalar_trunc4_sel_x_b;
     assign out_valid_out = i_llvm_fpga_ffwd_dest_i1_cmp214_if_loop_31_valid_out;
 

@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:58:26 2023
+// SystemVerilog created on Mon May  8 14:15:44 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -26,133 +26,113 @@ module if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000s_c0_exit_if_loop_30 (
     input wire [0:0] in_data_in_0_tpl,
     input wire [0:0] in_data_in_1_tpl,
     input wire [0:0] in_input_accepted,
-    input wire [0:0] in_mask_valid,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_almost_empty_out,
     output wire [0:0] out_data_out_0_tpl,
     output wire [0:0] out_data_out_1_tpl,
-    output wire [0:0] out_empty_out,
+    output wire [0:0] out_enable,
+    output wire [0:0] out_valid_mask,
     output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
-    wire [0:0] VCC_q;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_full_detector_out_full;
-    wire [0:0] masked_valid_q;
-    wire [0:0] not_mask_valid_q;
-    wire [0:0] stall_out_or_q;
-    wire [0:0] valid_and_masked_q;
-    reg [0:0] valid_before_fifo_q;
-    reg [0:0] before_fifo_0_x_q;
-    reg [0:0] before_fifo_1_x_q;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_almost_empty;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_empty;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_stall;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_valid;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_data_0_tpl;
-    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_data_1_tpl;
+    wire [6:0] c_i7_05_q;
+    wire [15:0] dsdk_ip_adapt_bitjoin2_q;
+    wire [7:0] element_extension4_q;
+    wire [7:0] element_extension6_q;
+    wire [15:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_in;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_dec_pipelined_thread;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_dec_pipelined_thread_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_inc_pipelined_thread;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_inc_pipelined_thread_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_input_accepted;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_input_accepted_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_in;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_in_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_in;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_in_bitsignaltemp;
+    wire [15:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_out;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_enable;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_enable_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_entry;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_entry_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_mask;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_mask_bitsignaltemp;
+    wire [0:0] i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_out;
+    wire i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_out_bitsignaltemp;
+    wire [0:0] ip_dsdk_adapt_bitselect11_b;
+    wire [0:0] ip_dsdk_adapt_bitselect9_b;
 
-
-    // before_fifo_1_x(REG,14)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            before_fifo_1_x_q <= in_data_in_1_tpl;
-        end
-    end
-
-    // before_fifo_0_x(REG,13)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            before_fifo_0_x_q <= in_data_in_0_tpl;
-        end
-    end
-
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
-
-    // not_mask_valid(LOGICAL,7)
-    assign not_mask_valid_q = ~ (in_mask_valid);
-
-    // masked_valid(LOGICAL,6)
-    assign masked_valid_q = in_valid_in & not_mask_valid_q;
-
-    // valid_before_fifo(REG,12)
-    always @ (posedge clock)
-    begin
-        if (0)
-        begin
-        end
-        else
-        begin
-            valid_before_fifo_q <= masked_valid_q;
-        end
-    end
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x(BLACKBOX,15)@20000000
-    // out out_o_almost_empty@20000030
-    // out out_o_empty@20000030
-    // out out_o_valid@20000030
-    // out out_o_data_0_tpl@20000030
-    // out out_o_data_1_tpl@20000030
-    if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000if_loop_31_data_fifo thei_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x (
-        .in_almost_empty_in(GND_q),
-        .in_empty_in(GND_q),
-        .in_i_stall(in_stall_in),
-        .in_i_valid(valid_before_fifo_q),
-        .in_i_data_0_tpl(before_fifo_0_x_q),
-        .in_i_data_1_tpl(before_fifo_1_x_q),
-        .out_o_almost_empty(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_almost_empty),
-        .out_o_empty(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_empty),
-        .out_o_stall(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_stall),
-        .out_o_valid(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_valid),
-        .out_o_data_0_tpl(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_data_0_tpl),
-        .out_o_data_1_tpl(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_data_1_tpl),
+    // c_i7_05(CONSTANT,4)
+    assign c_i7_05_q = $unsigned(7'b0000000);
+
+    // element_extension6(BITJOIN,8)
+    assign element_extension6_q = {c_i7_05_q, in_data_in_1_tpl};
+
+    // element_extension4(BITJOIN,7)
+    assign element_extension4_q = {c_i7_05_q, in_data_in_0_tpl};
+
+    // dsdk_ip_adapt_bitjoin2(BITJOIN,6)
+    assign dsdk_ip_adapt_bitjoin2_q = {element_extension6_q, element_extension4_q};
+
+    // i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31(EXTIFACE,9)
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_in = dsdk_ip_adapt_bitjoin2_q;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_dec_pipelined_thread = GND_q;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_inc_pipelined_thread = GND_q;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_input_accepted = in_input_accepted;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_in = in_stall_in;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_in = in_valid_in;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_dec_pipelined_thread_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_dec_pipelined_thread[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_inc_pipelined_thread_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_inc_pipelined_thread[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_input_accepted_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_input_accepted[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_in_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_in[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_in_bitsignaltemp = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_in[0];
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_enable[0] = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_enable_bitsignaltemp;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_entry[0] = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_entry_bitsignaltemp;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_mask[0] = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_mask_bitsignaltemp;
+    assign i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_out[0] = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_out_bitsignaltemp;
+    acl_enable_sink #(
+        .PIPELINE_DEPTH(0),
+        .SCHEDULEII(1),
+        .ASYNC_RESET(1),
+        .DATA_WIDTH(16),
+        .IP_PIPELINE_LATENCY_PLUS1(1),
+        .SYNCHRONIZE_RESET(0)
+    ) thei_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31 (
+        .data_in(dsdk_ip_adapt_bitjoin2_q),
+        .dec_pipelined_thread(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_dec_pipelined_thread_bitsignaltemp),
+        .inc_pipelined_thread(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_inc_pipelined_thread_bitsignaltemp),
+        .input_accepted(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_input_accepted_bitsignaltemp),
+        .stall_in(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_in_bitsignaltemp),
+        .valid_in(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_in_bitsignaltemp),
+        .data_out(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_out),
+        .enable(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_enable_bitsignaltemp),
+        .stall_entry(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_entry_bitsignaltemp),
+        .valid_mask(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_mask_bitsignaltemp),
+        .valid_out(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_out_bitsignaltemp),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // valid_and_masked(LOGICAL,11)
-    assign valid_and_masked_q = in_mask_valid & in_valid_in;
+    // sync_out(GPOUT,13)@20000000
+    assign out_stall_entry = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_stall_entry;
 
-    // i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_full_detector(BLACKBOX,5)@20000000
-    if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000oop_31_full_detector thei_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_full_detector (
-        .in_dec_pipelined_thread(GND_q),
-        .in_decrement(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_valid),
-        .in_decrement2(valid_and_masked_q),
-        .in_inc_pipelined_thread(GND_q),
-        .in_increment(in_input_accepted),
-        .out_full(i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_full_detector_out_full),
-        .out_throttle(),
-        .clock(clock),
-        .resetn(resetn)
-    );
+    // ip_dsdk_adapt_bitselect11(BITSELECT,10)
+    assign ip_dsdk_adapt_bitselect11_b = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_out[8:8];
 
-    // stall_out_or(LOGICAL,9)
-    assign stall_out_or_q = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_full_detector_out_full | i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_stall;
+    // ip_dsdk_adapt_bitselect9(BITSELECT,11)
+    assign ip_dsdk_adapt_bitselect9_b = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_out[0:0];
 
-    // sync_out(GPOUT,10)@20000000
-    assign out_stall_entry = stall_out_or_q;
-
-    // dupName_0_sync_out_aunroll_x(GPOUT,17)@35
-    assign out_almost_empty_out = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_almost_empty;
-    assign out_data_out_0_tpl = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_data_0_tpl;
-    assign out_data_out_1_tpl = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_data_1_tpl;
-    assign out_empty_out = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_empty;
-    assign out_valid_out = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_data_fifo_aunroll_x_out_o_valid;
+    // dupName_0_sync_out_aunroll_x(GPOUT,15)@1
+    assign out_data_out_0_tpl = ip_dsdk_adapt_bitselect9_b;
+    assign out_data_out_1_tpl = ip_dsdk_adapt_bitselect11_b;
+    assign out_enable = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_enable;
+    assign out_valid_mask = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_mask;
+    assign out_valid_out = i_llvm_fpga_sfc_exit_s_c0_out_wt_entry_if_loop_3s_c0_exit_if_loop_31_valid_out;
 
 endmodule

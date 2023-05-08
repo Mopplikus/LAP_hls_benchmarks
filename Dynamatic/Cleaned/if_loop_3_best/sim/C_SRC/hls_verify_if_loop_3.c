@@ -1872,20 +1872,19 @@ extern int getloadavg (double __loadavg[], int __nelem)
 typedef int in_int_t;
 typedef int out_int_t;
 
-int if_loop_3 (in_int_t a[100], in_int_t b[100], in_int_t n, out_int_t sum[100]);
+int if_loop_3 (in_int_t a[100], in_int_t b[100], in_int_t n);
 # 9 "../C_SRC/if_loop_3.cpp.tmp.c" 2
 
 int hlsv_transaction_id = -1;
 
 
-int if_loop_3 (in_int_t a[100], in_int_t b[100], in_int_t n, out_int_t sum[100]) {
+int if_loop_3 (in_int_t a[100], in_int_t b[100], in_int_t n) {
 
 	int hlsv_return;
 	FILE * hlsv_of_return;
 	FILE * hlsv_if_a;
 	FILE * hlsv_if_b;
 	FILE * hlsv_if_n;
-	FILE * hlsv_of_sum;
 
 	int hlsv_i = 0;
 
@@ -1918,30 +1917,21 @@ int if_loop_3 (in_int_t a[100], in_int_t b[100], in_int_t n, out_int_t sum[100])
 
  int i;
   int dist;
- int sum_local = 1000;
+ int sum = 1000;
 
  for (i=0; i<n; i++) {
   dist = a[i] - b[i];
 
   if (dist >= 0){
 
-  sum_local = (sum_local /dist);
-  sum[i] = sum_local;
+  sum = (sum /dist);
 
     }
 
  }
 
 	{
-		hlsv_of_sum = fopen("../C_OUT/output_sum.dat", "a");
-		fprintf(hlsv_of_sum, "[[transaction]] %d\n", hlsv_transaction_id);
-	for(hlsv_i0 = 0; hlsv_i0 < 100; hlsv_i0++){
-			fprintf(hlsv_of_sum, "0x%08llx\n", (long long)sum[hlsv_i0]);
-		}
-		fprintf(hlsv_of_sum, "[[/transaction]]\n");
-		fclose(hlsv_of_sum);
-
-		hlsv_return =  sum_local;
+		hlsv_return =  sum;
 		hlsv_of_return = fopen("../C_OUT/output_end.dat", "a");
 		fprintf(hlsv_of_return, "[[transaction]] %d\n", hlsv_transaction_id);
 		fprintf(hlsv_of_return, "0x%08llx\n", (long long)hlsv_return);
@@ -1959,7 +1949,6 @@ int main(void){
  in_int_t a[1][100];
  in_int_t b[1][100];
  in_int_t n[1];
- out_int_t sum[1][100];
 
  srand(13);
 
@@ -1974,6 +1963,6 @@ int main(void){
 
 
  int i = 0;
- if_loop_3(a[i], b[i], n[i], sum[i]);
+ if_loop_3(a[i], b[i], n[i]);
 
 }

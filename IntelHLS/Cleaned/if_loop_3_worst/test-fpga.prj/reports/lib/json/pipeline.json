@@ -1,61 +1,34 @@
 {
-  "3387260768":
+  "2369084880":
   {
     "nodes":
     [
       {
-        "name":"Loop Orch"
-        , "id":3388349392
-        , "subtype":"default"
-        , "start":"0.00"
-        , "end":"0.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":36
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Exit"
-        , "id":3388598704
-        , "subtype":"exit"
-        , "start":"4.00"
-        , "end":"35.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Start Cycle":"4"
-            , "Latency":"3"
-            , "Exit FIFO Depth":"512"
-            , "Exit FIFO Width":"16"
-            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"Entry"
-        , "id":3389497904
+        , "id":2372456480
         , "subtype":"entry"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Cluster Entry"
-            , "Start Cycle":"0"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Exit"
+        , "id":2377873104
+        , "subtype":"exit"
+        , "start":"1.00"
+        , "end":"1.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Start Cycle":"1"
             , "Latency":"0"
           }
         ]
@@ -64,71 +37,24 @@
     ]
     , "links":
     [
-      {
-        "from":3388349392
-        , "to":3388598704
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
     ]
   }
-  , "3387517952":
+  , "2369727184":
   {
     "nodes":
     [
       {
-        "name":"Exit"
-        , "id":3387332832
-        , "subtype":"exit"
-        , "start":"79.00"
-        , "end":"110.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Start Cycle":"79"
-            , "Latency":"3"
-            , "Exit FIFO Depth":"512"
-            , "Exit FIFO Width":"8"
-            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":3387410320
-        , "subtype":"ffwdSource"
-        , "start":"77.00"
-        , "end":"77.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"77"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Compare"
-        , "id":3388076656
+        "name":"Ptr. Comp."
+        , "id":2369444864
         , "subtype":"default"
-        , "start":"77.00"
-        , "end":"77.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Integer Compare"
-            , "Start Cycle":"77"
+            , "Instruction":"Pointer Computation"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -136,371 +62,8 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":3388282640
-        , "subtype":"default"
-        , "start":"79.00"
-        , "end":"79.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"33-bit Integer Add"
-            , "Constant Operand":"-1 (0x1FFFFFFFF)"
-            , "Start Cycle":"79"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":3388282992
-        , "subtype":"ffwdSource"
-        , "start":"77.00"
-        , "end":"77.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"77"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Entry"
-        , "id":3388584384
-        , "subtype":"entry"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"76"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Compare"
-        , "id":3388760368
-        , "subtype":"default"
-        , "start":"76.00"
-        , "end":"77.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Compare"
-            , "Start Cycle":"76"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Select"
-        , "id":3388760720
-        , "subtype":"select"
-        , "start":"77.00"
-        , "end":"78.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Select"
-            , "Start Cycle":"77"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"+"
-        , "id":3388761072
-        , "subtype":"default"
-        , "start":"78.00"
-        , "end":"78.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"-1 (0xFFFFFFFF)"
-            , "Start Cycle":"78"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":3389508128
-        , "subtype":"ffwdSource"
-        , "start":"79.00"
-        , "end":"79.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"79"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":3398472816
-        , "subtype":"ffwdSource"
-        , "start":"77.00"
-        , "end":"77.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"77"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":3388076656
-        , "to":3388282992
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3388282640
-        , "to":3389508128
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"33"
-          }
-        ]
-      }
-      , {
-        "from":3388584384
-        , "to":3388076656
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"256"
-          }
-        ]
-      }
-      , {
-        "from":3388584384
-        , "to":3388760368
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"256"
-          }
-        ]
-      }
-      , {
-        "from":3388584384
-        , "to":3388760720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"256"
-          }
-        ]
-      }
-      , {
-        "from":3388760368
-        , "to":3388760720
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3388760720
-        , "to":3388761072
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3388761072
-        , "to":3388282640
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-    ]
-  }
-  , "3387670080":
-  {
-    "nodes":
-    [
-      {
-        "name":"Select"
-        , "id":3387282384
-        , "subtype":"select"
-        , "start":"4.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"33-bit Select"
-            , "Start Cycle":"4"
-            , "Latency":"1"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":24
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":3387282736
-        , "subtype":"ffwdDest"
-        , "start":"5.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"5"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Loop Orch"
-        , "id":3387509152
-        , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":28
             }
           ]
         ]
@@ -508,17 +71,17 @@
       }
       , {
         "name":"Xor"
-        , "id":3387719872
+        , "id":2370271184
         , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"1-bit Xor"
             , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"5"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -526,7 +89,7 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":27
             }
           ]
@@ -535,25 +98,25 @@
       }
       , {
         "name":"'i'"
-        , "id":3387720224
+        , "id":2370271536
         , "subtype":"pop"
-        , "start":"4.00"
-        , "end":"5.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Feedback Read"
             , "Variable":"'i'"
-            , "Start Cycle":"4"
-            , "Latency":"1"
+            , "Start Cycle":"12"
+            , "Latency":"0"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":22
             }
           ]
@@ -561,32 +124,17 @@
         , "type":"inst"
       }
       , {
-        "name":"Entry"
-        , "id":3387795760
-        , "subtype":"entry"
+        "name":"Select"
+        , "id":2370450320
+        , "subtype":"select"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"0"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":3388119872
-        , "subtype":"ffwdDest"
-        , "start":"4.00"
-        , "end":"4.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"4"
+            , "Instruction":"33-bit Select"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -594,119 +142,7 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Or"
-        , "id":3388361408
-        , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"1-bit Or"
-            , "Start Cycle":"5"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":3388361760
-        , "subtype":"load/store"
-        , "start":"5.00"
-        , "end":"9.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"5"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":28
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"LD"
-        , "id":3388420448
-        , "subtype":"load/store"
-        , "start":"5.00"
-        , "end":"9.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Load"
-            , "Width":"32 bits"
-            , "LSU Style":"Pipelined never-stall"
-            , "Stall-free":"Yes"
-            , "Global Memory":"Yes"
-            , "Start Cycle":"5"
-            , "Latency":"4"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":28
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Src"
-        , "id":3388425968
-        , "subtype":"ffwdSource"
-        , "start":"55.00"
-        , "end":"55.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Source"
-            , "Start Cycle":"55"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":24
             }
           ]
@@ -714,43 +150,17 @@
         , "type":"inst"
       }
       , {
-        "name":"Ptr. Comp."
-        , "id":3389543152
-        , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Pointer Computation"
-            , "Start Cycle":"5"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":28
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"FFwd Dest"
-        , "id":3389758288
+        , "id":2370450672
         , "subtype":"ffwdDest"
-        , "start":"5.00"
-        , "end":"5.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"FFwd Destination"
-            , "Start Cycle":"5"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -758,7 +168,7 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":27
             }
           ]
@@ -766,25 +176,29 @@
         , "type":"inst"
       }
       , {
-        "name":"-"
-        , "id":3389880464
-        , "subtype":"default"
-        , "start":"9.00"
-        , "end":"9.00"
+        "name":"LD"
+        , "id":2370606656
+        , "subtype":"load/store"
+        , "start":"12.00"
+        , "end":"17.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Integer Subtract"
-            , "Start Cycle":"9"
-            , "Latency":"0"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"Yes"
+            , "Start Cycle":"12"
+            , "Latency":"5"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":28
             }
           ]
@@ -792,44 +206,57 @@
         , "type":"inst"
       }
       , {
-        "name":"Compare"
-        , "id":3389880816
-        , "subtype":"default"
-        , "start":"49.00"
-        , "end":"50.00"
+        "name":"Entry"
+        , "id":2371837728
+        , "subtype":"entry"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Integer Compare"
-            , "Start Cycle":"49"
-            , "Latency":"1"
+            , "Instruction":"Cluster Entry"
+            , "Start Cycle":"1"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Loop Orch"
+        , "id":2371970720
+        , "subtype":"default"
+        , "start":"12.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Loop Orchestration Logic"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":30
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":27
             }
           ]
         ]
         , "type":"inst"
       }
       , {
-        "name":"'sum'"
-        , "id":3389881168
-        , "subtype":"pop"
-        , "start":"43.00"
-        , "end":"43.00"
+        "name":"Xor"
+        , "id":2372547344
+        , "subtype":"default"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Feedback Read"
-            , "Variable":"'sum'"
-            , "Start Cycle":"43"
+            , "Instruction":"1-bit Xor"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -837,7 +264,59 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":27
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"/"
+        , "id":2373627472
+        , "subtype":"default"
+        , "start":"18.00"
+        , "end":"46.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Signed Integer Divide"
+            , "Start Cycle":"18"
+            , "Latency":"28"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":32
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Src"
+        , "id":2373642320
+        , "subtype":"ffwdSource"
+        , "start":"46.00"
+        , "end":"46.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Source"
+            , "Start Cycle":"46"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":24
             }
           ]
@@ -846,15 +325,15 @@
       }
       , {
         "name":"Exit"
-        , "id":3390166944
+        , "id":2374014736
         , "subtype":"exit"
-        , "start":"55.00"
-        , "end":"86.00"
+        , "start":"46.00"
+        , "end":"49.00"
         , "details":
         [
           {
             "type":"table"
-            , "Start Cycle":"55"
+            , "Start Cycle":"46"
             , "Latency":"3"
             , "Exit FIFO Depth":"512"
             , "Exit FIFO Width":"24"
@@ -864,34 +343,17 @@
         , "type":"inst"
       }
       , {
-        "name":"FFwd Dest"
-        , "id":3390208224
-        , "subtype":"ffwdDest"
-        , "start":"5.00"
-        , "end":"5.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"5"
-            , "Latency":"0"
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
         "name":"Ptr. Comp."
-        , "id":3390297536
+        , "id":2374089136
         , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"Pointer Computation"
-            , "Start Cycle":"5"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -899,7 +361,64 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":28
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"+"
+        , "id":2374204256
+        , "subtype":"default"
+        , "start":"12.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Integer Add"
+            , "Constant Operand":"1 (0x1)"
+            , "Start Cycle":"12"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":27
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"LD"
+        , "id":2374344784
+        , "subtype":"load/store"
+        , "start":"12.00"
+        , "end":"17.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"Load"
+            , "Width":"32 bits"
+            , "LSU Style":"Pipelined never-stall"
+            , "Stall-free":"Yes"
+            , "Global Memory":"Yes"
+            , "Start Cycle":"12"
+            , "Latency":"5"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":28
             }
           ]
@@ -908,33 +427,33 @@
       }
       , {
         "name":"FFwd Dest"
-        , "id":3390300896
+        , "id":2374443056
         , "subtype":"ffwdDest"
-        , "start":"5.00"
-        , "end":"5.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"FFwd Destination"
-            , "Start Cycle":"5"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
         , "type":"inst"
       }
       , {
-        "name":"And"
-        , "id":3390322528
-        , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
+        "name":"FFwd Dest"
+        , "id":2375516976
+        , "subtype":"ffwdDest"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"1-bit And"
-            , "Start Cycle":"5"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -942,8 +461,51 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":27
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"FFwd Dest"
+        , "id":2375783616
+        , "subtype":"ffwdDest"
+        , "start":"12.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"12"
+            , "Latency":"0"
+          }
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"Select"
+        , "id":2376054064
+        , "subtype":"select"
+        , "start":"46.00"
+        , "end":"46.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"32-bit Select"
+            , "Start Cycle":"46"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":24
             }
           ]
         ]
@@ -951,16 +513,16 @@
       }
       , {
         "name":"Or"
-        , "id":3390328192
+        , "id":2376116864
         , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
             , "Instruction":"1-bit Or"
-            , "Start Cycle":"5"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -968,7 +530,7 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":27
             }
           ]
@@ -976,43 +538,44 @@
         , "type":"inst"
       }
       , {
-        "name":"/"
-        , "id":3390342352
+        "name":"Compare"
+        , "id":2376724704
         , "subtype":"default"
-        , "start":"10.00"
-        , "end":"55.00"
+        , "start":"41.00"
+        , "end":"42.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Signed Integer Divide"
-            , "Start Cycle":"10"
-            , "Latency":"45"
+            , "Instruction":"32-bit Integer Compare"
+            , "Start Cycle":"41"
+            , "Latency":"1"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":32
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":30
             }
           ]
         ]
         , "type":"inst"
       }
       , {
-        "name":"Select"
-        , "id":3390342704
-        , "subtype":"select"
-        , "start":"55.00"
-        , "end":"55.00"
+        "name":"'sum'"
+        , "id":2376725056
+        , "subtype":"pop"
+        , "start":"36.00"
+        , "end":"36.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Select"
-            , "Start Cycle":"55"
+            , "Instruction":"Feedback Read"
+            , "Variable":"'sum'"
+            , "Start Cycle":"36"
             , "Latency":"0"
           }
         ]
@@ -1020,7 +583,7 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":24
             }
           ]
@@ -1028,18 +591,17 @@
         , "type":"inst"
       }
       , {
-        "name":"+"
-        , "id":3390343056
-        , "subtype":"default"
-        , "start":"5.00"
-        , "end":"5.00"
+        "name":"FFwd Dest"
+        , "id":2376749920
+        , "subtype":"ffwdDest"
+        , "start":"12.00"
+        , "end":"12.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"32-bit Integer Add"
-            , "Constant Operand":"1 (0x1)"
-            , "Start Cycle":"5"
+            , "Instruction":"FFwd Destination"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
@@ -1047,7 +609,7 @@
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":27
             }
           ]
@@ -1055,23 +617,51 @@
         , "type":"inst"
       }
       , {
-        "name":"Loop Orch"
-        , "id":3398444064
+        "name":"-"
+        , "id":2379625520
         , "subtype":"default"
-        , "start":"55.00"
-        , "end":"55.00"
+        , "start":"17.00"
+        , "end":"17.00"
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"Loop Orchestration Logic"
+            , "Instruction":"32-bit Integer Subtract"
+            , "Start Cycle":"17"
+            , "Latency":"0"
           }
         ]
         , "debug":
         [
           [
             {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
+              , "line":28
+            }
+          ]
+        ]
+        , "type":"inst"
+      }
+      , {
+        "name":"And"
+        , "id":2380119648
+        , "subtype":"default"
+        , "start":"12.00"
+        , "end":"12.00"
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Instruction":"1-bit And"
+            , "Start Cycle":"12"
+            , "Latency":"0"
+          }
+        ]
+        , "debug":
+        [
+          [
+            {
+              "filename":"/home/dirren/IntelHLS/Cleaned/if_loop_3_worst/if_loop_3.cpp"
               , "line":27
             }
           ]
@@ -1082,8 +672,63 @@
     , "links":
     [
       {
-        "from":3387282384
-        , "to":3387282384
+        "from":2369444864
+        , "to":2374344784
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2370271184
+        , "to":2376116864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2370271536
+        , "to":2369444864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2370271536
+        , "to":2374089136
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2370271536
+        , "to":2374204256
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2370450320
+        , "to":2370450320
         , "details":
         [
           {
@@ -1093,8 +738,8 @@
         ]
       }
       , {
-        "from":3387282384
-        , "to":3390322528
+        "from":2370450320
+        , "to":2380119648
         , "details":
         [
           {
@@ -1104,8 +749,8 @@
         ]
       }
       , {
-        "from":3387282736
-        , "to":3387719872
+        "from":2370450672
+        , "to":2370271184
         , "details":
         [
           {
@@ -1115,107 +760,8 @@
         ]
       }
       , {
-        "from":3387509152
-        , "to":3387282384
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387509152
-        , "to":3387720224
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387509152
-        , "to":3388361408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387509152
-        , "to":3388425968
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387509152
-        , "to":3389881168
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387509152
-        , "to":3390166944
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387509152
-        , "to":3390328192
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387719872
-        , "to":3388361408
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387719872
-        , "to":3390328192
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3387720224
-        , "to":3389543152
+        "from":2370606656
+        , "to":2379625520
         , "details":
         [
           {
@@ -1225,41 +771,85 @@
         ]
       }
       , {
-        "from":3387720224
-        , "to":3390297536
+        "from":2371837728
+        , "to":2370271536
         , "details":
         [
           {
             "type":"table"
-            , "Width":"32"
+            , "Width":"16"
           }
         ]
       }
       , {
-        "from":3387720224
-        , "to":3390343056
+        "from":2371837728
+        , "to":2370450320
         , "details":
         [
           {
             "type":"table"
-            , "Width":"32"
+            , "Width":"16"
           }
         ]
       }
       , {
-        "from":3388119872
-        , "to":3387282384
+        "from":2371837728
+        , "to":2371970720
         , "details":
         [
           {
             "type":"table"
-            , "Width":"33"
+            , "Width":"16"
           }
         ]
       }
       , {
-        "from":3388361408
-        , "to":3388361760
+        "from":2371837728
+        , "to":2374014736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"16"
+          }
+        ]
+      }
+      , {
+        "from":2371837728
+        , "to":2370271536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"16"
+          }
+        ]
+      }
+      , {
+        "from":2371837728
+        , "to":2376725056
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"16"
+          }
+        ]
+      }
+      , {
+        "from":2371837728
+        , "to":2376725056
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"16"
+          }
+        ]
+      }
+      , {
+        "from":2371970720
+        , "to":2370450320
         , "details":
         [
           {
@@ -1269,8 +859,85 @@
         ]
       }
       , {
-        "from":3388361760
-        , "to":3389880464
+        "from":2371970720
+        , "to":2372547344
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2371970720
+        , "to":2374014736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2371970720
+        , "to":2370271536
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2371970720
+        , "to":2376725056
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2372547344
+        , "to":2371970720
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2372547344
+        , "to":2373642320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2372547344
+        , "to":2376116864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2373627472
+        , "to":2376054064
         , "details":
         [
           {
@@ -1280,19 +947,8 @@
         ]
       }
       , {
-        "from":3388420448
-        , "to":3389880464
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3389543152
-        , "to":3388361760
+        "from":2374089136
+        , "to":2370606656
         , "details":
         [
           {
@@ -1302,155 +958,8 @@
         ]
       }
       , {
-        "from":3389758288
-        , "to":3390322528
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3389880464
-        , "to":3389880816
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3389880464
-        , "to":3390342352
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3389880816
-        , "to":3390342704
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3389881168
-        , "to":3390342352
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3389881168
-        , "to":3390342704
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3390208224
-        , "to":3389543152
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":3390297536
-        , "to":3388420448
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":3390300896
-        , "to":3390297536
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"64"
-          }
-        ]
-      }
-      , {
-        "from":3390322528
-        , "to":3387282384
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3390322528
-        , "to":3387509152
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3390322528
-        , "to":3389881168
-        , "reverse":1
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Feedback Write"
-            , "Variable":"'sum'"
-            , "Start Cycle":"1"
-            , "Latency":"42"
-          }
-        ]
-      }
-      , {
-        "from":3390322528
-        , "to":3390166944
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3390322528
-        , "to":3387720224
+        "from":2374204256
+        , "to":2370271536
         , "reverse":1
         , "details":
         [
@@ -1458,36 +967,16 @@
             "type":"table"
             , "Instruction":"Feedback Write"
             , "Variable":"'i'"
-            , "Start Cycle":"1"
-            , "Latency":"3"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"32"
+            , "Start Cycle":"12"
+            , "Latency":"0"
           }
         ]
       }
       , {
-        "from":3390322528
-        , "to":3398444064
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3390328192
-        , "to":3388420448
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3390342352
-        , "to":3390342704
+        "from":2374344784
+        , "to":2379625520
         , "details":
         [
           {
@@ -1497,8 +986,41 @@
         ]
       }
       , {
-        "from":3390342704
-        , "to":3388425968
+        "from":2374443056
+        , "to":2374089136
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2375516976
+        , "to":2370450320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"33"
+          }
+        ]
+      }
+      , {
+        "from":2375783616
+        , "to":2369444864
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"64"
+          }
+        ]
+      }
+      , {
+        "from":2376054064
+        , "to":2373642320
         , "details":
         [
           {
@@ -1508,8 +1030,8 @@
         ]
       }
       , {
-        "from":3390342704
-        , "to":3389881168
+        "from":2376054064
+        , "to":2376725056
         , "reverse":1
         , "details":
         [
@@ -1517,14 +1039,137 @@
             "type":"table"
             , "Instruction":"Feedback Write"
             , "Variable":"'sum'"
-            , "Start Cycle":"1"
-            , "Latency":"42"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"32"
+            , "Start Cycle":"46"
+            , "Latency":"0"
           }
         ]
       }
       , {
-        "from":3390343056
-        , "to":3387720224
+        "from":2376116864
+        , "to":2370606656
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2376116864
+        , "to":2374344784
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2376724704
+        , "to":2376054064
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2376725056
+        , "to":2373627472
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2376725056
+        , "to":2376054064
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2376749920
+        , "to":2380119648
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2379625520
+        , "to":2373627472
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2379625520
+        , "to":2376724704
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"32"
+          }
+        ]
+      }
+      , {
+        "from":2380119648
+        , "to":2370450320
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2380119648
+        , "to":2371970720
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2380119648
+        , "to":2374014736
+        , "details":
+        [
+          {
+            "type":"table"
+            , "Width":"1"
+          }
+        ]
+      }
+      , {
+        "from":2380119648
+        , "to":2370271536
         , "reverse":1
         , "details":
         [
@@ -1532,173 +1177,27 @@
             "type":"table"
             , "Instruction":"Feedback Write"
             , "Variable":"'i'"
-            , "Start Cycle":"1"
-            , "Latency":"3"
-          }
-        ]
-      }
-      , {
-        "from":3398444064
-        , "to":3390166944
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-    ]
-  }
-  , "3388231216":
-  {
-    "nodes":
-    [
-      {
-        "name":"Exit"
-        , "id":3387508096
-        , "subtype":"exit"
-        , "start":"1.00"
-        , "end":"32.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Start Cycle":"1"
-            , "Latency":"3"
-            , "Exit FIFO Depth":"512"
-            , "Exit FIFO Width":"64"
-            , "Details":"Exit FIFO depth is sized to accommodate all data that may be in-flight in the stall-free cluster; this depth will be equal to or greater than the latency of the cluster.  The width of the FIFO depends on the amount of data that needs to pass from the stall-free logic cluster to the stall-able logic below it."
-          }
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Entry"
-        , "id":3389494784
-        , "subtype":"entry"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"Cluster Entry"
-            , "Start Cycle":"0"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"32"
+            , "Start Cycle":"12"
             , "Latency":"0"
           }
         ]
-        , "type":"inst"
       }
       , {
-        "name":"FFwd Dest"
-        , "id":3389495136
-        , "subtype":"ffwdDest"
-        , "start":"1.00"
-        , "end":"1.00"
+        "from":2380119648
+        , "to":2376725056
+        , "reverse":1
         , "details":
         [
           {
             "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"1"
+            , "Instruction":"Feedback Write"
+            , "Variable":"'sum'"
+            , "Feedback FIFO Depth":"1"
+            , "Feedback FIFO Width":"32"
+            , "Start Cycle":"46"
             , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":27
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"FFwd Dest"
-        , "id":3389818000
-        , "subtype":"ffwdDest"
-        , "start":"1.00"
-        , "end":"1.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"FFwd Destination"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":24
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-      , {
-        "name":"Select"
-        , "id":3389875632
-        , "subtype":"select"
-        , "start":"1.00"
-        , "end":"1.00"
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Instruction":"32-bit Select"
-            , "Start Cycle":"1"
-            , "Latency":"0"
-          }
-        ]
-        , "debug":
-        [
-          [
-            {
-              "filename":"/home/dirren/IntelHLS/if_loop_3_test/if_loop_3.cpp"
-              , "line":24
-            }
-          ]
-        ]
-        , "type":"inst"
-      }
-    ]
-    , "links":
-    [
-      {
-        "from":3389495136
-        , "to":3389875632
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"1"
-          }
-        ]
-      }
-      , {
-        "from":3389818000
-        , "to":3389875632
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
-          }
-        ]
-      }
-      , {
-        "from":3389875632
-        , "to":3387508096
-        , "details":
-        [
-          {
-            "type":"table"
-            , "Width":"32"
           }
         ]
       }

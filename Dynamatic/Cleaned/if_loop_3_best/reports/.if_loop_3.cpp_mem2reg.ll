@@ -4,13 +4,13 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
 ; Function Attrs: noinline nounwind uwtable
-define i32 @_Z9if_loop_3PiS_iS_(i32* %a, i32* %b, i32 %n, i32* %sum) #0 {
+define i32 @_Z9if_loop_3PiS_i(i32* %a, i32* %b, i32 %n) #0 {
 entry:
   br label %for.cond
 
 for.cond:                                         ; preds = %for.inc, %entry
   %i.0 = phi i32 [ 0, %entry ], [ %inc, %for.inc ]
-  %sum_local.0 = phi i32 [ 1000, %entry ], [ %sum_local.1, %for.inc ]
+  %sum.0 = phi i32 [ 1000, %entry ], [ %sum.1, %for.inc ]
   %cmp = icmp slt i32 %i.0, %n
   br i1 %cmp, label %for.body, label %for.end
 
@@ -26,14 +26,11 @@ for.body:                                         ; preds = %for.cond
   br i1 %cmp3, label %if.then, label %if.end
 
 if.then:                                          ; preds = %for.body
-  %div = sdiv i32 %sum_local.0, %sub
-  %idxprom4 = sext i32 %i.0 to i64
-  %arrayidx5 = getelementptr inbounds i32, i32* %sum, i64 %idxprom4
-  store i32 %div, i32* %arrayidx5, align 4
+  %div = sdiv i32 %sum.0, %sub
   br label %if.end
 
 if.end:                                           ; preds = %if.then, %for.body
-  %sum_local.1 = phi i32 [ %div, %if.then ], [ %sum_local.0, %for.body ]
+  %sum.1 = phi i32 [ %div, %if.then ], [ %sum.0, %for.body ]
   br label %for.inc
 
 for.inc:                                          ; preds = %if.end
@@ -41,7 +38,7 @@ for.inc:                                          ; preds = %if.end
   br label %for.cond
 
 for.end:                                          ; preds = %for.cond
-  ret i32 %sum_local.0
+  ret i32 %sum.0
 }
 
 ; Function Attrs: noinline norecurse nounwind uwtable
@@ -50,7 +47,6 @@ entry:
   %a = alloca [1 x [100 x i32]], align 16
   %b = alloca [1 x [100 x i32]], align 16
   %n = alloca [1 x i32], align 4
-  %sum = alloca [1 x [100 x i32]], align 16
   call void @srand(i32 13) #3
   br label %for.cond
 
@@ -108,10 +104,7 @@ for.end15:                                        ; preds = %for.cond
   %idxprom22 = sext i32 0 to i64
   %arrayidx23 = getelementptr inbounds [1 x i32], [1 x i32]* %n, i64 0, i64 %idxprom22
   %0 = load i32, i32* %arrayidx23, align 4
-  %idxprom24 = sext i32 0 to i64
-  %arrayidx25 = getelementptr inbounds [1 x [100 x i32]], [1 x [100 x i32]]* %sum, i64 0, i64 %idxprom24
-  %arraydecay26 = getelementptr inbounds [100 x i32], [100 x i32]* %arrayidx25, i32 0, i32 0
-  %call27 = call i32 @_Z9if_loop_3PiS_iS_(i32* %arraydecay, i32* %arraydecay21, i32 %0, i32* %arraydecay26)
+  %call24 = call i32 @_Z9if_loop_3PiS_i(i32* %arraydecay, i32* %arraydecay21, i32 %0)
   ret i32 0
 }
 

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.4 67 linux 2023.05.05.14:59:09
+# ACDS 21.4 67 linux 2023.05.08.14:16:28
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -96,7 +96,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Intel IP within the design.
 # ----------------------------------------
-# ACDS 21.4 67 linux 2023.05.05.14:59:09
+# ACDS 21.4 67 linux 2023.05.08.14:16:28
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="cat_cwfsw"
@@ -242,12 +242,12 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v $ELAB_OPTIONS $USER_DEF
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/sgate.v \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_mf.v \
   $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_lnsim.sv \
-  $QUARTUS_INSTALL_DIR/eda/sim_lib/fourteennm_atoms.sv \
-  $QUARTUS_INSTALL_DIR/eda/sim_lib/synopsys/fourteennm_atoms_ncrypt.sv \
-  $QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hssi_atoms.sv \
-  $QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hssi_atoms_ncrypt.sv \
-  $QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hip_atoms.sv \
-  $QUARTUS_INSTALL_DIR/eda/sim_lib/ct1_hip_atoms_ncrypt.sv \
+  -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cyclone10gx_atoms.v \
+  -v $QUARTUS_INSTALL_DIR/eda/sim_lib/synopsys/cyclone10gx_atoms_ncrypt.v \
+  -v $QUARTUS_INSTALL_DIR/eda/sim_lib/synopsys/cyclone10gx_hssi_atoms_ncrypt.v \
+  -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cyclone10gx_hssi_atoms.v \
+  -v $QUARTUS_INSTALL_DIR/eda/sim_lib/synopsys/cyclone10gx_hip_atoms_ncrypt.v \
+  -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cyclone10gx_hip_atoms.v \
   $common_design_files \
   $design_files \
   $USER_DEFINED_ELAB_OPTIONS_APPEND \

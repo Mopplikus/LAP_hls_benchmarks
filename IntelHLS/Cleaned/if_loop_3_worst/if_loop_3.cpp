@@ -66,10 +66,10 @@ int main(void){
 	//for(int i = 0; i < AMOUNT_OF_TEST; ++i){
     	n = N;
 		for(int j = 0; j < N; ++j){
-    		a[j] = rand()%10;
-    		b[j] = a[j] + 1;
+    		a[j] = rand()%10 + 1;
+    		b[j] = a[j] - 1;
 			a_cont[j] = a[j];
-			b_cont[j] = a[j] + 1;
+			b_cont[j] = a[j] - 1;
 		}
 	//}
 

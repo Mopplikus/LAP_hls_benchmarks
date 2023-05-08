@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:58:26 2023
+// SystemVerilog created on Mon May  8 14:15:44 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -40,7 +40,7 @@ module if_loop_3_i_llvm_fpga_ffwd_source_p1025i32_unnamed_3_if_loop_30 (
     wire [63:0] i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_31_source_out;
 
 
-    // i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_31(EXTIFACE,2)@77
+    // i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_31(EXTIFACE,2)
     assign i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_31_predicate_in = in_predicate_in;
     assign i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_31_source_in = in_src_data_in_1_0;
     assign i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_31_valid_in = in_valid_in;
@@ -61,10 +61,10 @@ module if_loop_3_i_llvm_fpga_ffwd_source_p1025i32_unnamed_3_if_loop_30 (
     // regfree_osync(GPOUT,4)
     assign out_intel_reserved_ffwd_1_0 = i_llvm_fpga_ffwd_source_p1025i32_unnamed_if_loop_33_if_loop_31_source_out;
 
-    // sync_out(GPOUT,6)@77
+    // sync_out(GPOUT,6)@20000000
     assign out_stall_out = in_stall_in;
 
-    // dupName_0_sync_out_x(GPOUT,8)@77
+    // dupName_0_sync_out_x(GPOUT,8)@2
     assign out_valid_out = in_valid_in;
 
 endmodule

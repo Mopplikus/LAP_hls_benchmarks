@@ -4,20 +4,18 @@ target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
 ; Function Attrs: noinline nounwind uwtable
-define i32 @_Z9if_loop_3PiS_iS_(i32* %a, i32* %b, i32 %n, i32* %sum) #0 {
+define i32 @_Z9if_loop_3PiS_i(i32* %a, i32* %b, i32 %n) #0 {
 entry:
   %a.addr = alloca i32*, align 8
   %b.addr = alloca i32*, align 8
   %n.addr = alloca i32, align 4
-  %sum.addr = alloca i32*, align 8
   %i = alloca i32, align 4
   %dist = alloca i32, align 4
-  %sum_local = alloca i32, align 4
+  %sum = alloca i32, align 4
   store i32* %a, i32** %a.addr, align 8
   store i32* %b, i32** %b.addr, align 8
   store i32 %n, i32* %n.addr, align 4
-  store i32* %sum, i32** %sum.addr, align 8
-  store i32 1000, i32* %sum_local, align 4
+  store i32 1000, i32* %sum, align 4
   store i32 0, i32* %i, align 4
   br label %for.cond
 
@@ -45,30 +43,24 @@ for.body:                                         ; preds = %for.cond
   br i1 %cmp3, label %if.then, label %if.end
 
 if.then:                                          ; preds = %for.body
-  %9 = load i32, i32* %sum_local, align 4
+  %9 = load i32, i32* %sum, align 4
   %10 = load i32, i32* %dist, align 4
   %div = sdiv i32 %9, %10
-  store i32 %div, i32* %sum_local, align 4
-  %11 = load i32, i32* %sum_local, align 4
-  %12 = load i32*, i32** %sum.addr, align 8
-  %13 = load i32, i32* %i, align 4
-  %idxprom4 = sext i32 %13 to i64
-  %arrayidx5 = getelementptr inbounds i32, i32* %12, i64 %idxprom4
-  store i32 %11, i32* %arrayidx5, align 4
+  store i32 %div, i32* %sum, align 4
   br label %if.end
 
 if.end:                                           ; preds = %if.then, %for.body
   br label %for.inc
 
 for.inc:                                          ; preds = %if.end
-  %14 = load i32, i32* %i, align 4
-  %inc = add nsw i32 %14, 1
+  %11 = load i32, i32* %i, align 4
+  %inc = add nsw i32 %11, 1
   store i32 %inc, i32* %i, align 4
   br label %for.cond
 
 for.end:                                          ; preds = %for.cond
-  %15 = load i32, i32* %sum_local, align 4
-  ret i32 %15
+  %12 = load i32, i32* %sum, align 4
+  ret i32 %12
 }
 
 ; Function Attrs: noinline norecurse nounwind uwtable
@@ -78,7 +70,6 @@ entry:
   %a = alloca [1 x [100 x i32]], align 16
   %b = alloca [1 x [100 x i32]], align 16
   %n = alloca [1 x i32], align 4
-  %sum = alloca [1 x [100 x i32]], align 16
   %i = alloca i32, align 4
   %j = alloca i32, align 4
   %value = alloca i32, align 4
@@ -159,13 +150,9 @@ for.end15:                                        ; preds = %for.cond
   %idxprom22 = sext i32 %13 to i64
   %arrayidx23 = getelementptr inbounds [1 x i32], [1 x i32]* %n, i64 0, i64 %idxprom22
   %14 = load i32, i32* %arrayidx23, align 4
-  %15 = load i32, i32* %i16, align 4
-  %idxprom24 = sext i32 %15 to i64
-  %arrayidx25 = getelementptr inbounds [1 x [100 x i32]], [1 x [100 x i32]]* %sum, i64 0, i64 %idxprom24
-  %arraydecay26 = getelementptr inbounds [100 x i32], [100 x i32]* %arrayidx25, i32 0, i32 0
-  %call27 = call i32 @_Z9if_loop_3PiS_iS_(i32* %arraydecay, i32* %arraydecay21, i32 %14, i32* %arraydecay26)
-  %16 = load i32, i32* %retval, align 4
-  ret i32 %16
+  %call24 = call i32 @_Z9if_loop_3PiS_i(i32* %arraydecay, i32* %arraydecay21, i32 %14)
+  %15 = load i32, i32* %retval, align 4
+  ret i32 %15
 }
 
 ; Function Attrs: nounwind

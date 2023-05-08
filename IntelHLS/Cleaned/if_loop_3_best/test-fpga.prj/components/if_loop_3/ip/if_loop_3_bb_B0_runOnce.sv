@@ -16,7 +16,7 @@
 
 // SystemVerilog created from bb_if_loop_3_B0_runOnce
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:58:26 2023
+// SystemVerilog created on Mon May  8 14:15:44 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -29,23 +29,16 @@ module if_loop_3_bb_B0_runOnce (
     input wire resetn
     );
 
-    wire [0:0] bb_if_loop_3_B0_runOnce_stall_region_out_almost_empty_out;
-    wire [0:0] bb_if_loop_3_B0_runOnce_stall_region_out_empty_out;
     wire [0:0] bb_if_loop_3_B0_runOnce_stall_region_out_stall_out;
     wire [0:0] bb_if_loop_3_B0_runOnce_stall_region_out_valid_out;
     wire [0:0] if_loop_3_B0_runOnce_branch_out_stall_out;
     wire [0:0] if_loop_3_B0_runOnce_branch_out_valid_out_0;
-    wire [0:0] if_loop_3_B0_runOnce_merge_out_almost_empty_out;
-    wire [0:0] if_loop_3_B0_runOnce_merge_out_empty_out;
     wire [0:0] if_loop_3_B0_runOnce_merge_out_stall_out_0;
     wire [0:0] if_loop_3_B0_runOnce_merge_out_valid_out;
-    reg [0:0] rst_sync_rst_sclrn;
 
 
     // if_loop_3_B0_runOnce_branch(BLACKBOX,3)
     if_loop_3_B0_runOnce_branch theif_loop_3_B0_runOnce_branch (
-        .in_almost_empty_in(bb_if_loop_3_B0_runOnce_stall_region_out_almost_empty_out),
-        .in_empty_in(bb_if_loop_3_B0_runOnce_stall_region_out_empty_out),
         .in_stall_in_0(in_stall_in_0),
         .in_valid_in(bb_if_loop_3_B0_runOnce_stall_region_out_valid_out),
         .out_stall_out(if_loop_3_B0_runOnce_branch_out_stall_out),
@@ -56,12 +49,8 @@ module if_loop_3_bb_B0_runOnce (
 
     // bb_if_loop_3_B0_runOnce_stall_region(BLACKBOX,2)
     if_loop_3_bb_B0_runOnce_stall_region thebb_if_loop_3_B0_runOnce_stall_region (
-        .in_almost_empty_in(if_loop_3_B0_runOnce_merge_out_almost_empty_out),
-        .in_empty_in(if_loop_3_B0_runOnce_merge_out_empty_out),
         .in_stall_in(if_loop_3_B0_runOnce_branch_out_stall_out),
         .in_valid_in(if_loop_3_B0_runOnce_merge_out_valid_out),
-        .out_almost_empty_out(bb_if_loop_3_B0_runOnce_stall_region_out_almost_empty_out),
-        .out_empty_out(bb_if_loop_3_B0_runOnce_stall_region_out_empty_out),
         .out_stall_out(bb_if_loop_3_B0_runOnce_stall_region_out_stall_out),
         .out_valid_out(bb_if_loop_3_B0_runOnce_stall_region_out_valid_out),
         .clock(clock),
@@ -72,8 +61,6 @@ module if_loop_3_bb_B0_runOnce (
     if_loop_3_B0_runOnce_merge theif_loop_3_B0_runOnce_merge (
         .in_stall_in(bb_if_loop_3_B0_runOnce_stall_region_out_stall_out),
         .in_valid_in_0(in_valid_in_0),
-        .out_almost_empty_out(if_loop_3_B0_runOnce_merge_out_almost_empty_out),
-        .out_empty_out(if_loop_3_B0_runOnce_merge_out_empty_out),
         .out_stall_out_0(if_loop_3_B0_runOnce_merge_out_stall_out_0),
         .out_valid_out(if_loop_3_B0_runOnce_merge_out_valid_out),
         .clock(clock),
@@ -85,18 +72,5 @@ module if_loop_3_bb_B0_runOnce (
 
     // out_valid_out_0(GPOUT,8)
     assign out_valid_out_0 = if_loop_3_B0_runOnce_branch_out_valid_out_0;
-
-    // rst_sync(RESETSYNC,9)
-    acl_reset_handler #(
-        .ASYNC_RESET(0),
-        .USE_SYNCHRONIZER(1),
-        .PULSE_EXTENSION(0),
-        .PIPE_DEPTH(3),
-        .DUPLICATE(1)
-    ) therst_sync (
-        .clk(clock),
-        .i_resetn(resetn),
-        .o_sclrn(rst_sync_rst_sclrn)
-    );
 
 endmodule

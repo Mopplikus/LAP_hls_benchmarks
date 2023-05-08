@@ -16,7 +16,7 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i1_notexitcond_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Fri May  5 14:58:26 2023
+// SystemVerilog created on Mon May  8 14:15:44 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -24,11 +24,10 @@ module if_loop_3_i_llvm_fpga_push_i1_notexitcond_0 (
     input wire [0:0] in_feedback_stall_in_3,
     output wire [0:0] out_feedback_out_3,
     output wire [0:0] out_feedback_valid_out_3,
-    input wire [0:0] in_almost_empty_in,
-    input wire [0:0] in_empty_in,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_data_in,
+    input wire [0:0] in_first_cleanup,
     input wire [0:0] in_valid_in,
     output wire [0:0] out_data_out,
     output wire [0:0] out_valid_out,
@@ -37,7 +36,6 @@ module if_loop_3_i_llvm_fpga_push_i1_notexitcond_0 (
     );
 
     wire [0:0] GND_q;
-    wire [0:0] VCC_q;
     wire [6:0] c_i7_03_q;
     wire [7:0] element_extension2_q;
     wire [0:0] i_llvm_fpga_push_i1_notexitcond_if_loop_31_data_in;
@@ -67,18 +65,15 @@ module if_loop_3_i_llvm_fpga_push_i1_notexitcond_0 (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // VCC(CONSTANT,1)
-    assign VCC_q = $unsigned(1'b1);
-
-    // c_i7_03(CONSTANT,5)
+    // c_i7_03(CONSTANT,4)
     assign c_i7_03_q = $unsigned(7'b0000000);
 
-    // element_extension2(BITJOIN,6)@5
+    // element_extension2(BITJOIN,5)@12
     assign element_extension2_q = {c_i7_03_q, in_data_in};
 
-    // i_llvm_fpga_push_i1_notexitcond_if_loop_31(EXTIFACE,9)@5
+    // i_llvm_fpga_push_i1_notexitcond_if_loop_31(EXTIFACE,8)@12
     assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_data_in = element_extension2_q[0:0];
-    assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_dir = VCC_q;
+    assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_dir = in_first_cleanup;
     assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_feedback_stall_in = in_feedback_stall_in_3;
     assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_predicate = GND_q;
     assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_stall_in = in_stall_in;
@@ -95,12 +90,12 @@ module if_loop_3_i_llvm_fpga_push_i1_notexitcond_0 (
     assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_stall_out[0] = i_llvm_fpga_push_i1_notexitcond_if_loop_31_stall_out_bitsignaltemp;
     assign i_llvm_fpga_push_i1_notexitcond_if_loop_31_valid_out[0] = i_llvm_fpga_push_i1_notexitcond_if_loop_31_valid_out_bitsignaltemp;
     acl_push #(
-        .FIFO_DEPTH(0),
+        .FIFO_DEPTH(3),
         .INF_LOOP(0),
         .INF_LOOP_INITIALIZATION(1'b0),
-        .MIN_FIFO_LATENCY(0),
+        .MIN_FIFO_LATENCY(36),
         .STYLE("REGULAR"),
-        .ASYNC_RESET(0),
+        .ASYNC_RESET(1),
         .DATA_WIDTH(1),
         .ENABLED(0),
         .RAM_FIFO_DEPTH_INC(0),
@@ -122,14 +117,14 @@ module if_loop_3_i_llvm_fpga_push_i1_notexitcond_0 (
         .resetn(resetn)
     );
 
-    // feedback_sync_out(GPOUT,8)
+    // feedback_sync_out(GPOUT,7)
     assign out_feedback_out_3 = i_llvm_fpga_push_i1_notexitcond_if_loop_31_feedback_out;
     assign out_feedback_valid_out_3 = i_llvm_fpga_push_i1_notexitcond_if_loop_31_feedback_valid_out;
 
-    // sync_out(GPOUT,13)@5
+    // sync_out(GPOUT,10)@12
     assign out_stall_out = i_llvm_fpga_push_i1_notexitcond_if_loop_31_stall_out;
 
-    // dupName_0_sync_out_x(GPOUT,16)@5
+    // dupName_0_sync_out_x(GPOUT,13)@12
     assign out_data_out = i_llvm_fpga_push_i1_notexitcond_if_loop_31_data_out;
     assign out_valid_out = i_llvm_fpga_push_i1_notexitcond_if_loop_31_valid_out;
 

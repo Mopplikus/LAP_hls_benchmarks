@@ -1,9 +1,9 @@
 	.text
 	.file	"if_loop_3.cpp"
-	.globl	_Z9if_loop_3PiS_iS_     # -- Begin function _Z9if_loop_3PiS_iS_
+	.globl	_Z9if_loop_3PiS_i       # -- Begin function _Z9if_loop_3PiS_i
 	.p2align	4, 0x90
-	.type	_Z9if_loop_3PiS_iS_,@function
-_Z9if_loop_3PiS_iS_:                    # @_Z9if_loop_3PiS_iS_
+	.type	_Z9if_loop_3PiS_i,@function
+_Z9if_loop_3PiS_i:                      # @_Z9if_loop_3PiS_i
 	.cfi_startproc
 # %bb.0:                                # %entry
 	pushq	%rbp
@@ -13,67 +13,61 @@ _Z9if_loop_3PiS_iS_:                    # @_Z9if_loop_3PiS_iS_
 	.cfi_def_cfa_register %rbp
 	movl	$1000, %eax             # imm = 0x3E8
 	cmpl	$0, %edx
-	movl	%edx, -4(%rbp)          # 4-byte Spill
-	movq	%rsi, -16(%rbp)         # 8-byte Spill
-	movq	%rdi, -24(%rbp)         # 8-byte Spill
-	movq	%rcx, -32(%rbp)         # 8-byte Spill
-	movl	%eax, -36(%rbp)         # 4-byte Spill
+	movq	%rsi, -8(%rbp)          # 8-byte Spill
+	movq	%rdi, -16(%rbp)         # 8-byte Spill
+	movl	%edx, -20(%rbp)         # 4-byte Spill
+	movl	%eax, -24(%rbp)         # 4-byte Spill
 	jle	.LBB0_5
 # %bb.1:                                # %for.body.lr.ph
 	movl	$1000, %eax             # imm = 0x3E8
 	xorl	%ecx, %ecx
-	movl	%eax, -40(%rbp)         # 4-byte Spill
-	movl	%ecx, -44(%rbp)         # 4-byte Spill
+	movl	%eax, -28(%rbp)         # 4-byte Spill
+	movl	%ecx, -32(%rbp)         # 4-byte Spill
 	jmp	.LBB0_2
 .LBB0_2:                                # %for.body
                                         # =>This Inner Loop Header: Depth=1
-	movl	-44(%rbp), %eax         # 4-byte Reload
-	movl	-40(%rbp), %ecx         # 4-byte Reload
+	movl	-32(%rbp), %eax         # 4-byte Reload
+	movl	-28(%rbp), %ecx         # 4-byte Reload
 	movl	%eax, %edx
 	movl	%edx, %esi
-	movq	-24(%rbp), %rdi         # 8-byte Reload
+	movq	-16(%rbp), %rdi         # 8-byte Reload
 	movl	(%rdi,%rsi,4), %edx
 	movl	%eax, %r8d
 	movl	%r8d, %esi
-	movq	-16(%rbp), %r9          # 8-byte Reload
+	movq	-8(%rbp), %r9           # 8-byte Reload
 	subl	(%r9,%rsi,4), %edx
 	cmpl	$-1, %edx
 	movl	%ecx, %r8d
-	movl	%eax, -48(%rbp)         # 4-byte Spill
-	movl	%ecx, -52(%rbp)         # 4-byte Spill
-	movl	%edx, -56(%rbp)         # 4-byte Spill
-	movl	%r8d, -60(%rbp)         # 4-byte Spill
+	movl	%eax, -36(%rbp)         # 4-byte Spill
+	movl	%ecx, -40(%rbp)         # 4-byte Spill
+	movl	%edx, -44(%rbp)         # 4-byte Spill
+	movl	%r8d, -48(%rbp)         # 4-byte Spill
 	jle	.LBB0_4
 # %bb.3:                                # %if.then
                                         #   in Loop: Header=BB0_2 Depth=1
-	movl	-52(%rbp), %eax         # 4-byte Reload
+	movl	-40(%rbp), %eax         # 4-byte Reload
 	cltd
-	movl	-56(%rbp), %ecx         # 4-byte Reload
+	movl	-44(%rbp), %ecx         # 4-byte Reload
 	idivl	%ecx
-	movl	-48(%rbp), %esi         # 4-byte Reload
-	movl	%esi, %edi
-	movl	%edi, %r8d
-	movq	-32(%rbp), %r9          # 8-byte Reload
-	movl	%eax, (%r9,%r8,4)
-	movl	%eax, -60(%rbp)         # 4-byte Spill
+	movl	%eax, -48(%rbp)         # 4-byte Spill
 .LBB0_4:                                # %for.inc
                                         #   in Loop: Header=BB0_2 Depth=1
-	movl	-60(%rbp), %eax         # 4-byte Reload
-	movl	-48(%rbp), %ecx         # 4-byte Reload
+	movl	-48(%rbp), %eax         # 4-byte Reload
+	movl	-36(%rbp), %ecx         # 4-byte Reload
 	addl	$1, %ecx
-	movl	-4(%rbp), %edx          # 4-byte Reload
+	movl	-20(%rbp), %edx         # 4-byte Reload
 	cmpl	%edx, %ecx
 	movl	%eax, %esi
-	movl	%ecx, -44(%rbp)         # 4-byte Spill
-	movl	%esi, -40(%rbp)         # 4-byte Spill
-	movl	%eax, -36(%rbp)         # 4-byte Spill
+	movl	%ecx, -32(%rbp)         # 4-byte Spill
+	movl	%esi, -28(%rbp)         # 4-byte Spill
+	movl	%eax, -24(%rbp)         # 4-byte Spill
 	jl	.LBB0_2
 .LBB0_5:                                # %for.end
-	movl	-36(%rbp), %eax         # 4-byte Reload
+	movl	-24(%rbp), %eax         # 4-byte Reload
 	popq	%rbp
 	retq
 .Lfunc_end0:
-	.size	_Z9if_loop_3PiS_iS_, .Lfunc_end0-_Z9if_loop_3PiS_iS_
+	.size	_Z9if_loop_3PiS_i, .Lfunc_end0-_Z9if_loop_3PiS_i
 	.cfi_endproc
                                         # -- End function
 	.globl	main                    # -- Begin function main
@@ -87,7 +81,7 @@ main:                                   # @main
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$1232, %rsp             # imm = 0x4D0
+	subq	$816, %rsp              # imm = 0x330
 	movl	$13, %edi
 	callq	srand
 .LBB1_1:                                # %for.body
@@ -95,19 +89,19 @@ main:                                   # @main
                                         #     Child Loop BB1_2 Depth 2
 	xorl	%eax, %eax
 	movl	$100, -804(%rbp)
-	movl	%eax, -1220(%rbp)       # 4-byte Spill
+	movl	%eax, -808(%rbp)        # 4-byte Spill
 .LBB1_2:                                # %for.body3
                                         #   Parent Loop BB1_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
-	movl	-1220(%rbp), %eax       # 4-byte Reload
-	movl	%eax, -1224(%rbp)       # 4-byte Spill
+	movl	-808(%rbp), %eax        # 4-byte Reload
+	movl	%eax, -812(%rbp)        # 4-byte Spill
 	callq	rand
 	movl	$10, %ecx
 	cltd
 	idivl	%ecx
 	movl	%edx, %ecx
 	addl	$5, %ecx
-	movl	-1224(%rbp), %esi       # 4-byte Reload
+	movl	-812(%rbp), %esi        # 4-byte Reload
 	movl	%esi, %edi
 	movl	%edi, %r8d
 	movl	%ecx, -400(%rbp,%r8,4)
@@ -117,7 +111,7 @@ main:                                   # @main
 	movl	%edx, -800(%rbp,%r8,4)
 	addl	$1, %esi
 	cmpl	$100, %esi
-	movl	%esi, -1220(%rbp)       # 4-byte Spill
+	movl	%esi, -808(%rbp)        # 4-byte Spill
 	jb	.LBB1_2
 # %bb.3:                                # %for.inc13
                                         #   in Loop: Header=BB1_1 Depth=1
@@ -127,15 +121,14 @@ main:                                   # @main
 	jne	.LBB1_1
 	jmp	.LBB1_4
 .LBB1_4:                                # %for.end15
-	leaq	-1216(%rbp), %rcx
 	leaq	-800(%rbp), %rsi
 	leaq	-400(%rbp), %rdi
 	movl	-804(%rbp), %edx
-	callq	_Z9if_loop_3PiS_iS_
+	callq	_Z9if_loop_3PiS_i
 	xorl	%edx, %edx
-	movl	%eax, -1228(%rbp)       # 4-byte Spill
+	movl	%eax, -816(%rbp)        # 4-byte Spill
 	movl	%edx, %eax
-	addq	$1232, %rsp             # imm = 0x4D0
+	addq	$816, %rsp              # imm = 0x330
 	popq	%rbp
 	retq
 .Lfunc_end1:
