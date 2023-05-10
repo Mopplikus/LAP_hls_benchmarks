@@ -199,8 +199,8 @@ module if_loop_3_internal
 
       end
 
-      // INST global_icavmm_1_rw of if_loop_3_internal_ic_6063373438107726033
-      if_loop_3_internal_ic_6063373438107726033 global_icavmm_1_rw
+      // INST global_icavmm_1_rw of if_loop_3_internal_ic_14599002573275778448
+      if_loop_3_internal_ic_14599002573275778448 global_icavmm_1_rw
       (
          .clock(clock),
          .resetn(resetn),
@@ -381,8 +381,8 @@ module if_loop_3_internal
 
       end
 
-      // INST global_icavmm_4_rw of if_loop_3_internal_ic_6063373438107726033
-      if_loop_3_internal_ic_6063373438107726033 global_icavmm_4_rw
+      // INST global_icavmm_4_rw of if_loop_3_internal_ic_14599002573275778448
+      if_loop_3_internal_ic_14599002573275778448 global_icavmm_4_rw
       (
          .clock(clock),
          .resetn(resetn),
@@ -484,9 +484,9 @@ module if_loop_3_internal
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE if_loop_3_internal_ic_6063373438107726033
+// MODULE if_loop_3_internal_ic_14599002573275778448
 /////////////////////////////////////////////////////////////////
-module if_loop_3_internal_ic_6063373438107726033
+module if_loop_3_internal_ic_14599002573275778448
 (
    input logic clock,
    input logic resetn,
