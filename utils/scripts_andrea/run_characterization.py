@@ -137,7 +137,7 @@ def get_pins_m(comp, conn_type, lib_mixed):
 
 
 def execute_vivado(tcl_file):
-	os.system("vivado-2019.1.1-bt vivado -mode batch -source " + tcl_file + "  >> rpt_"+tcl_file)
+	os.system("vivado -mode batch -source " + tcl_file + "  >> rpt_"+tcl_file)
 
 
 args = sys.argv
