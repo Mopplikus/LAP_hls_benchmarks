@@ -15,13 +15,16 @@ read_vhdl -vhdl2008 vhdl/if_loop_3_optimized.vhd
 #comment line below out if no clock constraints
 read_xdc period_4.xdc
 
+#set_property top if_loop_3 [current_fileset]
+#set_property PART xc7k160tfbg484-1 [current_project]
+
 synth_design -top if_loop_3 -part xc7k160tfbg484-1 -no_iobuf -mode out_of_context
 
-report_utilization > utilization_post_syn.rpt
-report_timing > timing_post_syn.rpt
-opt_design
-place_design
-route_design
-report_utilization > utilization_post_pr.rpt
-report_timing > timing_post_pr.rpt
+#report_utilization > utilization_post_syn.rpt
+#report_timing > timing_post_syn.rpt
+#opt_design
+#place_design
+#route_design
+#report_utilization > utilization_post_pr.rpt
+#report_timing > timing_post_pr.rpt
 
