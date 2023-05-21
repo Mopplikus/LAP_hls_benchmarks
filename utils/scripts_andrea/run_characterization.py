@@ -167,7 +167,7 @@ list_mixed_conn = []
 for comp in list_cmp:
 	cmd = "grep -ir 'ENTITY " + comp  + " IS' vhdl/"
 	output = subprocess.check_output(cmd, shell=True)
-	file_name = output.split(":")[0]
+	file_name = output.decode().split(":")[0]
 	file = open(file_name, "r")	
 	create_subfile(comp, file, "vhdl/pre.vhd", bit_width)
 	file.close()
