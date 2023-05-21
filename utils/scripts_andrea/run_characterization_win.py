@@ -166,9 +166,10 @@ list_mixed_conn = []
 
 for comp in list_cmp:
 	#cmd = "grep -ir 'ENTITY " + comp  + " IS' vhdl/"
-	cmd = "grep -ir 'ENTITY " + comp  + " IS' vhdl/" ############ continue here
+	cmd = 'findstr -irsc:"ENTITY ' + comp  + ' IS" vhdl/*'
 	output = subprocess.check_output(cmd, shell=True)
-	file_name = output.split(":")[0]
+	#file_name = output.split(":")[0]
+	file_name = output.decode().split(":")[0]
 	file = open(file_name, "r")	
 	create_subfile(comp, file, "vhdl/pre.vhd", bit_width)
 	file.close()
@@ -274,7 +275,7 @@ for comp_ind in range(len(list_cmp)):
 
 			out_file = "timing_all_" + conn_type  +  "_" + bit_width  + ".rpt"
 			#cmd = "grep 'Data Path Delay:' "+rpt_file
-			cmd = "findstr 'Data Path Delay:' "+rpt_file
+			cmd = 'findstr "Data Path Delay:" '+rpt_file
 
 			try:
 				delay = subprocess.check_output(cmd, shell=True).split()[3]
