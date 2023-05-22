@@ -5,7 +5,7 @@ USE work.customTypes.all;
 
 entity elasticBuffer is
 Generic (
-  INPUTS: integer:=2; OUTPUTS: integer:=2; DATA_SIZE_IN: integer:=3; DATA_SIZE_OUT: integer:=3 
+  INPUTS: integer:=2; OUTPUTS: integer:=2; DATA_SIZE_IN: integer:=1; DATA_SIZE_OUT: integer:=1 
 );
 port(
     clk, rst : in std_logic;  
