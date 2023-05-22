@@ -245,7 +245,7 @@ for comp_ind in range(len(list_cmp)):
 			os.system("rm " + rpt_file)
 			continue
 
-		os.system("echo '"+comp+"\t\t" + delay  + "' >> " + out_file)
+		os.system("echo '"+comp+"\t\t" + delay.decode()  + "' >> " + out_file)
 
 
 	else:
