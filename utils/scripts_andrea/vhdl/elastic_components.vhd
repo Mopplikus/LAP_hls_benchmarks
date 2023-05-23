@@ -481,19 +481,19 @@ architecture arch of branch is
 begin
 
     j : entity work.join(arch) generic map(2)
-            port map(   (pValidArray(1), pValidArray(0)),
-                        branchReady,
-                        joinValid,
-                        readyArray);
+            port map(   (pValidArray(1), pValidArray(0)),   -- i
+                        branchReady,                        -- s
+                        joinValid,                          -- s
+                        readyArray);                        -- o
 
     br : entity work.branchSimple(arch)
-            port map(   condition(0)(0),
-                        joinValid,
-                        nReadyArray,
-                        validArray,
-                        branchReady);
+            port map(   condition(0)(0),    -- i
+                        joinValid,          -- s
+                        nReadyArray,        -- i   
+                        validArray,         -- o
+                        branchReady);       -- s
 
-    process(dataInArray)
+    process(dataInArray)                    -- i
     begin
         for I in 0 to SIZE - 1 loop
             dataOutArray(I) <= dataInArray(0);

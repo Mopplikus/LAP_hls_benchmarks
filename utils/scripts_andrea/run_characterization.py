@@ -110,27 +110,27 @@ def pins(inp, out):
 
 def get_pins_m(comp, conn_type, lib_mixed):
 	if conn_type == "m":
-		file = open(lib_mixed,"r")
+		file = open(lib_mixed,"r") # Read the mixed filelist
 		found = ""
-		for line in file:
-			tmp = re.split("\\t+", line)
-			lib_comp = tmp[0]
-			if re.search(lib_comp, comp) != None:
-				found = tmp[1]
+		for line in file: # Over each line
+			tmp = re.split("\\t+", line) # Split over tabs
+			lib_comp = tmp[0] # Get the component name
+			if re.search(lib_comp, comp) != None: # If the component is there
+				found = tmp[1] # Add the connections
 		if found == "":
 			found = "vr" #if component not found it is assumed to be an operator
 		file.close()
 
-		conns = re.split("_", found)
+		conns = re.split("_", found) # Split the connections on _ char
 		input = []
 		output = []
 		for ele in conns:
 			if ele == "":
 				continue
-			conn = re.split("=", ele)[0]
-			inp, out = pins(conn[0], conn[1])
-			input.append(inp)
-			output.append(out)
+			conn = re.split("=", ele)[0] # Split over = char
+			inp, out = pins(conn[0], conn[1]) # Build pins, input = output
+			input.append(inp) # Add inputs
+			output.append(out) # Add outputs
 	else:
 		print_error("Connection path not available!")
 	return input, output
