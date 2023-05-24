@@ -1606,7 +1606,8 @@ signal fork_C1_readyArray : STD_LOGIC_VECTOR (0 downto 0);
 signal fork_C1_dataOutArray : data_array(1 downto 0)(0 downto 0);
 signal fork_C1_validArray : STD_LOGIC_VECTOR (1 downto 0);
 
-signal oehb1_valid, oehb1_ready, index : STD_LOGIC;
+signal oehb1_valid, oehb1_ready : std_logic;
+signal index : std_logic_vector(0 downto 0);
 signal oehb1_dataOut : std_logic_vector(DATA_SIZE_IN-1 downto 0);
 
 begin
@@ -1632,9 +1633,9 @@ port map (
 process(pValidArray)
 begin
         if (pValidArray(0) = '1') then
-            index <= '0';
+            index(0) <= '0';
         else
-            index <= '1';
+            index(0) <= '1';
         end if;
 end process;
 
@@ -1648,7 +1649,7 @@ oehb1: entity work.TEHB(arch) generic map (1, 1, 1, 1)
             validArray(0) => oehb1_valid, 
         --outputs
             readyArray(0) => oehb1_ready,   
-            dataInArray(0)(0) => index,
+            dataInArray(0) => index,
             dataOutArray(0) => oehb1_dataOut
         );
 

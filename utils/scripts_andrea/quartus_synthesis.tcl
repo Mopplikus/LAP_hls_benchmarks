@@ -10,7 +10,7 @@ project_open if_loop_3
 # Make assignments
 if {$make_assignments} {
 	set_global_assignment -name FAMILY "Cyclone V"
-	set_global_assignment -name DEVICE 5CGXFC7C7F23C8
+	set_global_assignment -name DEVICE 5CSEMA4U23C7
 	set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 	set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Standard Edition"
 	set_global_assignment -name VHDL_FILE vhdl/sharing_components.vhd
@@ -38,6 +38,9 @@ if {$make_assignments} {
 	set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
 	set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 	set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+
+	# Set all pins as virtual to be able to fit the design instead of mapping everything to I/O 
+	
 
 	# Commit assignments
 	export_assignments

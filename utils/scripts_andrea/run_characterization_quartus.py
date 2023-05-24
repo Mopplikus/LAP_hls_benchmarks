@@ -88,37 +88,37 @@ def quartus_clear_duplicates():
 	for s in quartus_duplicates:
 		overwrite = ""
 
-		os.system("sed -i 's/" + s + "/" + s + "_dynamatic/g' vhdl_work/*")
+		#os.system("sed -i 's/" + s + "/" + s + "_dynamatic/g' vhdl_work/*")
 
-		#cmd = "grep -ir 'ENTITY " + s  + " IS' vhdl_work/"
-		#output = subprocess.check_output(cmd, shell=True)
-		#file_name = output.decode().split(":")[0]
-		#
-		#file = open(file_name, "r")
-		#start = False
-		#end = False
-		#i = 1
-		#for line in file:
-		#	line_d = line
-		#
-		#	if start and not(end):
-		#		if re.match("[Ee][Nn][Tt][Ii][Tt][Yy]*", line)!=None:
-		#			end = True
-		#		else:
-		#			line_d = "-- " + line_d
-		#	
-		#	if not(start) and re.match("entity "+ s  +" is", line)!=None:
-		#		start = True
-		#		line_d = "-- " + line_d
-		#
-		#	overwrite += line_d
-		#	i += 1
-		#
-		#file.close()
-		#
-		#file = open(file_name, "w")
-		#file.write(overwrite)
-		#file.close()
+		cmd = "grep -ir 'ENTITY " + s  + " IS' vhdl_work/"
+		output = subprocess.check_output(cmd, shell=True)
+		file_name = output.decode().split(":")[0]
+		
+		file = open(file_name, "r")
+		start = False
+		end = False
+		i = 1
+		for line in file:
+			line_d = line
+		
+			if start and not(end):
+				if re.match("[Ee][Nn][Tt][Ii][Tt][Yy]*", line)!=None:
+					end = True
+				else:
+					line_d = "-- " + line_d
+			
+			if not(start) and re.match("entity "+ s  +" is", line)!=None:
+				start = True
+				line_d = "-- " + line_d
+		
+			overwrite += line_d
+			i += 1
+		
+		file.close()
+		
+		file = open(file_name, "w")
+		file.write(overwrite)
+		file.close()
 
 
 def characterize_component_in_place(cmp, file_in, bit_width):
@@ -383,8 +383,9 @@ if conn_type == "m":
 
 
 os.system("rm -rf db")
-os.system("rm -rf output_files")
+#os.system("rm -rf output_files")
 os.system("rm *.qpf")
 os.system("rm *.qsf")
-#os.system("rm -rf vhdl_work")
+os.system("rm -rf vhdl_work")
 os.system("rm synthesis_*")
+os.system("rm -rf incremental_db")
