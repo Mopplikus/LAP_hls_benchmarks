@@ -40,13 +40,18 @@ if {$make_assignments} {
 	set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
 
 	# Set all pins as virtual to be able to fit the design instead of mapping everything to I/O 
-	
+	execute_module -tool map
+
+    set name_ids [get_names -filter * -node_type pin]
+
+    foreach_in_collection name_id $name_ids {
+        set pin_name [get_name_info -info full_path $name_id]
+        post_message "Making VIRTUAL_PIN assignment to $pin_name"
+        set_instance_assignment -to $pin_name -name VIRTUAL_PIN ON
+    }
 
 	# Commit assignments
 	export_assignments
 
 	execute_flow -compile
 }
-
-project_clean
-project_close

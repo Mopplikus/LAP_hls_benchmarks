@@ -30,6 +30,30 @@ def print_error(error_msg):
 	print(error_msg)
 	exit()
 
+def get_top_level():
+	file = open("quartus_synthesis.tcl", "r")
+
+	top_level = ""
+
+	for line in file:
+		if re.match("project_new", line) != None:
+			top_level = line.split(" ")[1]
+			break
+
+	file.close()
+	return top_level
+
+def create_timing_report():
+	file = open("timing-gen.tcl", "w")
+	file.write("project_open " + get_top_level() + "\n")
+	file.write("create_timing_netlist\n")
+	file.write("read_sdc\n")
+	file.write("update_timing_netlist\n")
+	file.write("report_timing -setup -npaths 20 -detail full_path -file timing_report.rpt\n")
+	file.close()
+
+	cmd = "quartus_sta -t timing-gen.tcl"
+	output = subprocess.check_output(cmd, shell=True)
 
 def create_subfile(cmp, file_in , file_pre, bit_width): #function to create file of component
 
@@ -322,14 +346,9 @@ for comp_ind in range(len(list_cmp)):
 
 	if conn_type != "m":
 
-		rpt_file = "utilization_post_pr_" + comp + ".rpt"
+		create_timing_report()
 
-		if not(os.path.isfile(rpt_file)) :
-			continue
-
-		#os.system("rm " + rpt_file)
-
-		rpt_file = "timing_post_pr_" + comp + ".rpt"
+		rpt_file = "timing_report.rpt"
 
 		if not(os.path.isfile(rpt_file)) :
 			continue
@@ -381,11 +400,14 @@ if conn_type == "m":
 	for tcl in list_tcls:
 		os.system("rm "+tcl)
 
-
 os.system("rm -rf db")
-#os.system("rm -rf output_files")
+os.system("rm -rf output_files")
 os.system("rm *.qpf")
 os.system("rm *.qsf")
 os.system("rm -rf vhdl_work")
 os.system("rm synthesis_*")
 os.system("rm -rf incremental_db")
+os.system("rm -rf simulation")
+os.system("rm *_pin_model_dump.txt")
+#os.system("rm timing_report.rpt")
+os.system("rm timing-gen.tcl")
