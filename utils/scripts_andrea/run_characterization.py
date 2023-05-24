@@ -81,6 +81,58 @@ def create_subfile(cmp, file_in , file_pre, bit_width): #function to create file
 	file_out.write(component_desc)
 	file_out.close()
 
+def characterize_component_in_place(cmp, file_in, bit_width):
+	component_desc = ""
+
+	file = open(file_in, "r")
+
+	start = False
+	end = False
+	for line in file:
+		line_d = line
+
+		if not(start) and re.match("entity "+ cmp  +" is", line)!=None:
+			start = True
+		if start and not(end):
+			if re.match("[Ll]ibrary(\\s+)*[Ii][Ee][Ee][Ee](\\s+)*;", line)!=None:
+				end = True
+			else:
+				
+				if cmp != "TEHB" and cmp != "OEHB": #with 2 inputs the delay increases way more
+					line_d = re.sub("INPUTS(\\s)*:(\\s)*[iI]nteger","INPUTS: integer:=2", line_d)
+					line_d = re.sub("OUTPUTS(\\s)*:(\\s)*[iI]nteger","OUTPUTS: integer:=2", line_d)
+				else:
+					line_d = re.sub("INPUTS(\\s)*:(\\s)*[iI]nteger","INPUTS: integer:=1", line_d)
+					line_d = re.sub("OUTPUTS(\\s)*:(\\s)*[iI]nteger","OUTPUTS: integer:=1", line_d)
+
+				line_d = re.sub("INPUT_COUNT(\\s)*:(\\s)*[iI]nteger","INPUT_COUNT: integer:=2", line_d)
+				line_d = re.sub("OUTPUT_COUNT(\\s)*:(\\s)*[iI]nteger","OUTPUT_COUNT: integer:=2", line_d)
+				line_d = re.sub("[^_]SIZE(\\s)*:(\\s)*[Ii]nteger","SIZE: integer:=1", line_d)
+				line_d = re.sub("DATA_SIZE_IN(\\s)*:(\\s)*[Ii]nteger","DATA_SIZE_IN: integer:=" + bit_width, line_d)
+				line_d = re.sub("DATA_SIZE_OUT(\\s)*:(\\s)*[Ii]nteger","DATA_SIZE_OUT: integer:=" + bit_width, line_d)
+				line_d = re.sub("INPUT_SIZE(\\s)*:(\\s)*[Ii]nteger","INPUT_SIZE: integer:=" + bit_width, line_d)
+				line_d = re.sub("OUTPUT_SIZE(\\s)*:(\\s)*[Ii]nteger","OUTPUT_SIZE: integer:=" + bit_width, line_d)
+				line_d = re.sub("CONST_SIZE(\\s)*:(\\s)*[Ii]nteger","CONST_SIZE: integer:=1", line_d)
+				line_d = re.sub("COND_SIZE(\\s)*:(\\s)*[Ii]nteger","COND_SIZE: integer:=1", line_d)
+				line_d = re.sub("ADDRESS_SIZE(\\s)*:(\\s)*[Ii]nteger","ADDRESS_SIZE: integer:=" + str(pow(2,int(4))), line_d)
+				line_d = re.sub("FIFO_DEPTH(\\s)*:(\\s)*[Ii]nteger","FIFO_DEPTH: integer:=" + str(pow(2,int(4))), line_d)
+				line_d = re.sub("DATA_SIZE(\\s)*:(\\s)*[Ii]nteger","DATA_SIZE: integer:=" + bit_width, line_d)
+
+				#FOR MEMCONT
+				line_d = re.sub("DATA_SIZE(\\s)*:(\\s)*[Nn]atural","DATA_SIZE: natural:=" + bit_width, line_d)
+				line_d = re.sub("ADDRESS_SIZE(\\s)*:(\\s)*[Nn]atural","ADDRESS_SIZE: natural:=" + str(pow(2,int(4))), line_d)
+				line_d = re.sub("BB_COUNT(\\s)*:(\\s)*[Nn]atural","BB_COUNT: natural:=5", line_d)
+				line_d = re.sub("LOAD_COUNT(\\s)*:(\\s)*[Nn]atural","LOAD_COUNT: natural:=5", line_d)
+				line_d = re.sub("STORE_COUNT(\\s)*:(\\s)*[Nn]atural","STORE_COUNT: natural:=5", line_d)
+
+
+		component_desc += line_d
+
+	file.close()
+	file = open(file_in, "w")
+	file.write(component_desc)
+	file.close()
+
 def pins(inp, out):
 	input = None
 	output = None
@@ -139,6 +191,9 @@ def get_pins_m(comp, conn_type, lib_mixed):
 def execute_vivado(tcl_file):
 	os.system("vivado -mode batch -source " + tcl_file + "  >> rpt_"+tcl_file)
 
+def copy_over_rtl():
+	os.system("cp -r vhdl vhdl_work")
+
 
 args = sys.argv
 
@@ -161,19 +216,20 @@ bit_width = args[3]
 
 lib_mixed = "filelist_mixed.lst"
 
+copy_over_rtl()
+
 list_tcls = []
 list_mixed_conn = []
 
 for comp in list_cmp:
-	cmd = "grep -ir 'ENTITY " + comp  + " IS' vhdl/"
+	cmd = "grep -ir 'ENTITY " + comp  + " IS' vhdl_work/"
 	output = subprocess.check_output(cmd, shell=True)
 	file_name = output.decode().split(":")[0]
-	file = open(file_name, "r")	
-	create_subfile(comp, file, "vhdl/pre.vhd", bit_width)
-	file.close()
+	characterize_component_in_place(comp, file_name, bit_width)
 	syn_comp = "synthesis_" + comp + ".tcl"
 	os.system("cp synthesis.tcl " + syn_comp)
 	os.system("sed -i 's/TOP_DESIGN/"+ comp  +"/g' "+syn_comp)
+	os.system("sed -i 's/vhdl\//vhdl_work\//g' " + syn_comp)
 	
 	if conn_type != "m": #non-mixed case
 		input, output = pins(conn_type, conn_type)
@@ -285,4 +341,8 @@ if conn_type == "m":
 
 
 os.system("rm vivado*")
-#os.system("rm rpt_synthesis_*")
+os.system("rm rpt_synthesis_*")
+os.system("rm timing_post*")
+os.system("rm utilization_post*")
+os.system("rm synthesis_*")
+os.system("rm -rf vhdl_work")

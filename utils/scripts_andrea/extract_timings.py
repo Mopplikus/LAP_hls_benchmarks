@@ -1,6 +1,7 @@
 import re
 
-conn_type=["d", "r", "v", "m"]
+#conn_type=["d", "r", "v", "m"]
+conn_type=["d", "r", "v"]
 
 bit_widths=["1",  "2",  "4",  "8",  "16",  "32",  "64"]
 
