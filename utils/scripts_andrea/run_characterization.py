@@ -306,7 +306,6 @@ for comp_ind in range(len(list_cmp)):
 
 	else:
 		conns = list_mixed_conn[comp_ind]
-		print(conns)
 		for ele in conns:
 			rpt_file = "utilization_post_pr_" + comp + "_" +ele+  ".rpt"
 
