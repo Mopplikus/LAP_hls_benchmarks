@@ -258,7 +258,6 @@ def execute_vivado(tcl_file):
 def copy_over_rtl():
 	os.system("cp -r vhdl vhdl_work")
 
-
 args = sys.argv
 
 if len(args) != 4:
@@ -354,15 +353,18 @@ for comp_ind in range(len(list_cmp)):
 			continue
 
 		out_file = "timing_all_" + conn_type  +  "_" + bit_width  + ".rpt"
-		cmd = "grep 'Data Path Delay:' "+rpt_file
+		
+		delay = 0.0
+		count = 0
+		file = open(rpt_file, "r")
+		for line in file:
+			if "Data Delay" in line and not("Slack" in line):
+				delay += float(line.split(";")[2].strip())
+				count += 1
 
-		try:
-			delay = subprocess.check_output(cmd, shell=True).split()[3]
-		except(subprocess.CalledProcessError): #in case there is no path for this value
-			os.system("rm " + rpt_file)
-			continue
-
-		os.system("echo '"+comp+"\t\t" + delay.decode()  + "' >> " + out_file)
+		file.close()
+		if(count > 0):
+			os.system("echo '"+comp+"\t\t" + str(delay / float(count)) + "' >> " + out_file)
 
 
 	else:
@@ -409,5 +411,5 @@ os.system("rm synthesis_*")
 os.system("rm -rf incremental_db")
 os.system("rm -rf simulation")
 os.system("rm *_pin_model_dump.txt")
-#os.system("rm timing_report.rpt")
+os.system("rm timing_report.rpt")
 os.system("rm timing-gen.tcl")
