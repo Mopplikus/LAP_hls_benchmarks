@@ -13,7 +13,6 @@ project addfile ../hdl/hls_verify_if_loop_3_tb.vhd
 project addfile ../hdl/multipliers.vhd
 project addfile ../hdl/simpackage.vhd
 project addfile ../hdl/two_port_RAM.vhd
-project addfile ../hdl/single_argument.vhd
 project calculateorder
 project compileall
 eval vsim if_loop_3_tb
