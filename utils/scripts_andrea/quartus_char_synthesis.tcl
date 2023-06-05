@@ -13,6 +13,8 @@ if {$make_assignments} {
 	set_global_assignment -name DEVICE TARGET_CODE
 	set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
 	set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Standard Edition"
+	set_global_assignment -name VHDL_FILE vhdl/arithmetic_units.vhd
+	set_global_assignment -name VHDL_FILE vhdl/mul_wrapper.vhd
 	set_global_assignment -name VHDL_FILE vhdl/elastic_components.vhd
 	set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 	set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256

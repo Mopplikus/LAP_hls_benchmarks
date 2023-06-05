@@ -280,17 +280,17 @@ def run_char(width, connector, component):
 		characterize_component_in_place(comp, file_name, bit_width)
 		syn_comp = "synthesis_" + comp + ".tcl"
 		os.system("cp quartus_char_synthesis.tcl " + syn_comp)
-		os.system("sed -i '' 's/TOP_DESIGN/"+ comp  +"/g' "+syn_comp)
-		os.system("sed -i '' 's/COMPONENT_NAME/"+ comp  +"/g' "+syn_comp)
-		os.system("sed -i '' 's/TARGET_FAMILY/"+ target_family  +"/g' "+syn_comp)
-		os.system("sed -i '' 's/TARGET_CODE/"+ target_code  +"/g' "+syn_comp)
-		os.system("sed -i '' 's/vhdl\//vhdl_work\//g' " + syn_comp)
+		os.system("sed -i 's/TOP_DESIGN/"+ comp  +"/g' "+syn_comp)
+		os.system("sed -i 's/COMPONENT_NAME/"+ comp  +"/g' "+syn_comp)
+		os.system("sed -i 's/TARGET_FAMILY/"+ target_family  +"/g' "+syn_comp)
+		os.system("sed -i 's/TARGET_CODE/"+ target_code  +"/g' "+syn_comp)
+		os.system("sed -i 's/vhdl\//vhdl_work\//g' " + syn_comp)
 		
 		if conn_type != "m": #non-mixed case
 			input, output = pins(conn_type, conn_type)
-			os.system("sed -i '' 's/INPUT_PIN/"+ input  +"/g' "+syn_comp)
-			os.system("sed -i '' 's/OUTPUT_PIN/"+ output  +"/g' "+syn_comp)
-			os.system("sed -i '' 's/_CONN//g' "+syn_comp)
+			os.system("sed -i 's/INPUT_PIN/"+ input  +"/g' "+syn_comp)
+			os.system("sed -i 's/OUTPUT_PIN/"+ output  +"/g' "+syn_comp)
+			os.system("sed -i 's/_CONN//g' "+syn_comp)
 			list_tcls.append(syn_comp)
 
 		else: #mixed case
@@ -351,7 +351,9 @@ def run_char(width, connector, component):
 
 		file.close()
 		if(count > 0):
-			os.system("echo '"+comp+"\t\t" + str(delay / float(count)) + "' >> " + out_file)
+			os.system("echo '" + str(delay / float(count)) + "' >> " + out_file)
+
+	clear_files()
 
 def clear_files():
 	os.system("rm -rf db")
@@ -366,7 +368,21 @@ def clear_files():
 	os.system("rm timing_report.rpt")
 	os.system("rm timing-gen.tcl")
 
-connectors = ["r, d, v"]
+def collect_timings():
+	widths_collector = [1, 2, 44, 8, 16, 32, 64]
+	out_file = open("characterization_list.dat", "a+")
+	for w in widths:
+		file = open("timing_all_w_" + str(w) + ".rpt", "r")
+		out_file.write(file.read())
+		file.close()
+		if(w != 64):
+			out_file.write(",")
+	
+	out_file.write("\n")
+	out_file.close()
+
+
+connectors = ["d"]
 widths = [1, 2, 4, 8, 16, 32, 64]
 
 components = [
@@ -377,3 +393,4 @@ for comp in components:
 	for conn in connectors:
 		for w in widths:
 			run_char(w, conn, comp)
+	collect_timings()
