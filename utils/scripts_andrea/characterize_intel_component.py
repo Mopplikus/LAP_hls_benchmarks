@@ -37,12 +37,13 @@ def create_timing_report(component_name):
 	file = open("timing-gen.tcl", "w")
 	file.write("project_open " + component_name + "\n")
 	file.write("create_timing_netlist\n")
+	file.write("create_clock -name {clk} -period 5.000 [get_ports {clk}]")
 	file.write("read_sdc\n")
 	file.write("update_timing_netlist\n")
 	file.write("report_timing -setup -npaths 20 -detail full_path -file timing_report.rpt\n")
 	file.close()
 
-	cmd = "quartus_sta -t timing-gen.tcl"
+	cmd = "quartus_sta -t timing-gen.tcl >> timing_log.log"
 	output = subprocess.check_output(cmd, shell=True)
 
 def create_subfile(cmp, file_in , file_pre, bit_width): #function to create file of component
@@ -365,14 +366,19 @@ def clear_files():
 	os.system("rm -rf incremental_db")
 	os.system("rm -rf simulation")
 	os.system("rm *_pin_model_dump.txt")
-	os.system("rm timing_report.rpt")
+	#os.system("rm timing_report.rpt")
 	os.system("rm timing-gen.tcl")
 
 def collect_timings():
-	widths_collector = [1, 2, 44, 8, 16, 32, 64]
+	widths_collector = [1, 2, 4, 8, 16, 32, 64]
 	out_file = open("characterization_list.dat", "a+")
 	for w in widths:
-		file = open("timing_all_w_" + str(w) + ".rpt", "r")
+		filename = "timing_all_w_" + str(w) + ".rpt"
+		if not(os.path.isfile(filename)):
+			out_file.close()
+			return
+		
+		file = open(filename, "r")
 		out_file.write(file.read())
 		file.close()
 		if(w != 64):
@@ -381,16 +387,18 @@ def collect_timings():
 	out_file.write("\n")
 	out_file.close()
 
-
 connectors = ["d"]
-widths = [1, 2, 4, 8, 16, 32, 64]
+#widths = [1, 2, 4, 8, 16, 32, 64]
+widths = [1]
 
 components = [
 	"icmp_eq_op"
 ]
 
 for comp in components:
+	print("Characterizing component " + comp)
 	for conn in connectors:
 		for w in widths:
+			print("Running width " + str(w))
 			run_char(w, conn, comp)
 	collect_timings()

@@ -573,8 +573,8 @@ end entity;
 architecture arch of icmp_eq_op is
 --eq: yields true if the operands are equal, false otherwise. No sign interpretation is necessary or performed.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
