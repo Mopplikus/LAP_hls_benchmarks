@@ -16,6 +16,8 @@ if {$make_assignments} {
 	set_global_assignment -name VHDL_FILE vhdl/arithmetic_units.vhd
 	set_global_assignment -name VHDL_FILE vhdl/mul_wrapper.vhd
 	set_global_assignment -name VHDL_FILE vhdl/elastic_components.vhd
+	set_global_assignment -name VHDL_FILE vhdl/delay_buffer.vhd
+	set_global_assignment -name VHDL_FILE vhdl/multipliers.vhd
 	set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 	set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 	set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0

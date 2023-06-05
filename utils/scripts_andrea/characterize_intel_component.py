@@ -33,9 +33,9 @@ def get_top_level():
 	file.close()
 	return top_level
 
-def create_timing_report():
+def create_timing_report(component_name):
 	file = open("timing-gen.tcl", "w")
-	file.write("project_open " + get_top_level() + "\n")
+	file.write("project_open " + component_name + "\n")
 	file.write("create_timing_netlist\n")
 	file.write("read_sdc\n")
 	file.write("update_timing_netlist\n")
@@ -257,7 +257,7 @@ def run_char(width, connector, component):
 	target_family = args[1]
 	target_code = args[2]
 
-	file_name="filelist.lst"
+	file_name="filelist_char.lst"
 
 	list_cmp =[component]
 
@@ -282,7 +282,7 @@ def run_char(width, connector, component):
 		os.system("cp quartus_char_synthesis.tcl " + syn_comp)
 		os.system("sed -i 's/TOP_DESIGN/"+ comp  +"/g' "+syn_comp)
 		os.system("sed -i 's/COMPONENT_NAME/"+ comp  +"/g' "+syn_comp)
-		os.system("sed -i 's/TARGET_FAMILY/"+ target_family  +"/g' "+syn_comp)
+		os.system("sed -i 's/TARGET_FAMILY/\""+ target_family  +"\"/g' "+syn_comp)
 		os.system("sed -i 's/TARGET_CODE/"+ target_code  +"/g' "+syn_comp)
 		os.system("sed -i 's/vhdl\//vhdl_work\//g' " + syn_comp)
 		
@@ -332,7 +332,7 @@ def run_char(width, connector, component):
 		synth_file = "synthesis_" + comp + ".tcl"
 		#os.system("rm " + synth_file)
 
-		create_timing_report()
+		create_timing_report(comp)
 
 		rpt_file = "timing_report.rpt"
 
@@ -386,7 +386,7 @@ connectors = ["d"]
 widths = [1, 2, 4, 8, 16, 32, 64]
 
 components = [
-	"elasticBuffer"
+	"icmp_eq_op"
 ]
 
 for comp in components:
