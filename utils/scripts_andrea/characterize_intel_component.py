@@ -300,8 +300,8 @@ def run_char(width, connector, component, voided):
 	out_max_file = "timing_max_" + conn_type + "_" + bit_width + ".rpt"
 
 	if (connector + str(width)) in voided or component == "nil" or "a" in voided:
-		os.system("echo '0.000 >> " + out_file)
-		os.system("echo '0.000 >> " + out_max_file)
+		os.system("echo '0.000' >> " + out_file)
+		os.system("echo '0.000' >> " + out_max_file)
 		return
 
 	args = sys.argv
@@ -426,7 +426,7 @@ def collect_timings():
 	out_file = open("characterization_list.dat", "a+")
 	out_file_max = open("characterization_list_worst.dat", "a+")
 	for c in connectors_collector:
-		for w in widths:
+		for w in widths_collector:
 			filename = "timing_all_" + c + "_" + str(w) + ".rpt"
 			if not(os.path.isfile(filename)):
 				out_file.close()
@@ -459,46 +459,46 @@ def collect_timings():
 connectors = ["d", "v", "r"]
 widths = [1, 2, 4, 8, 16, 32, 64]
 
-#components = [
-#	"icmp_eq_op",		# ICMP
-#	"add_op",			# ADD
-#	"sub_op",			# SUB
-#	"mul_op",			# MUL
-#	"sext_op",			# SEXT
-#	"load_op",			# LOAD
-#	"store_op",			# STORE
-#	"lsq_load_op",		# LSQ_LOAD
-#	"lsq_store_op", 	# LSQ_STORE
-#	"merge",			# MERGE
-#	"getelementptr_op",	# GET_POINTER
-#	"fadd_op",			# FADD
-#	"fsub_op",			# FSUB
-#	"fmul_op",			# FMUL
-#	"udiv_op",			# UDIV
-#	"sdiv_op",			# SDIV
-#	"fdiv_op",			# FDIV
-#	"fcmp_oeq_op",		# FCMP
-#	"CntrlMerge",		# PHIC
-#	"nil",				# ZDL
-#	"fork",				# FORK
-#	"ret_op",			# RETURN
-#	"branch",			# BRANCH
-#	"end_node",			# END
-#	"and_op",			# AND
-#	"or_op",			# OR
-#	"xor_op",			# XOR
-#	"shl_op",			# SHL
-#	"ashr_op",			# ASHR
-#	"lshr_op",			# LSHR
-#	"select_op",		# SELECT
-#	"mux"				# MUX
-#]
+components = [
+	"icmp_eq_op",		# ICMP
+	"add_op",			# ADD
+	"sub_op",			# SUB
+	"mul_op",			# MUL
+	"sext_op",			# SEXT
+	"load_op",			# LOAD
+	"store_op",			# STORE
+	"lsq_load_op",		# LSQ_LOAD
+	"lsq_store_op", 	# LSQ_STORE
+	"merge",			# MERGE
+	"getelementptr_op",	# GET_POINTER
+	"fadd_op",			# FADD
+	"fsub_op",			# FSUB
+	"fmul_op",			# FMUL
+	"udiv_op",			# UDIV
+	"sdiv_op",			# SDIV
+	"fdiv_op",			# FDIV
+	"fcmp_oeq_op",		# FCMP
+	"CntrlMerge",		# PHIC
+	"nil",				# ZDL
+	"fork",				# FORK
+	"ret_op",			# RETURN
+	"branch",			# BRANCH
+	"end_node",			# END
+	"and_op",			# AND
+	"or_op",			# OR
+	"xor_op",			# XOR
+	"shl_op",			# SHL
+	"ashr_op",			# ASHR
+	"lshr_op",			# LSHR
+	"select_op",		# SELECT
+	"mux"				# MUX
+]
 
-components = ["icmp_eq_op"]
+#components = ["icmp_eq_op"]
 
 # Places in the netlist where values should be set to 0
 voids = [
-	["d1", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64", "r1", "r2", "r4", "r8", "r16", "r32", "r64"],		# 1
+	[],		# 1
 	[],
 	[],
 	["a"],
