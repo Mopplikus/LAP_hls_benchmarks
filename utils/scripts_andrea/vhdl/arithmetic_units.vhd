@@ -615,8 +615,8 @@ end entity;
 architecture arch of icmp_ne_op is
 --ne: yields true if the operands are unequal, false otherwise. No sign interpretation is necessary or performed.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -657,8 +657,8 @@ end entity;
 architecture arch of icmp_ugt_op is
 --ugt: interprets the operands as unsigned values and yields true if op1 is greater than op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -699,8 +699,8 @@ end entity;
 architecture arch of icmp_uge_op is
 --uge: interprets the operands as unsigned values and yields true if op1 is greater than or equal to op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -741,8 +741,8 @@ end entity;
 architecture arch of icmp_sgt_op is
 -- sgt: interprets the operands as signed values and yields true if op1 is greater than op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
     signal res: std_logic_vector (0 downto 0);
     signal nready_tmp : std_logic;
 begin 
@@ -784,8 +784,8 @@ end entity;
 architecture arch of icmp_sge_op is
 -- sge: interprets the operands as signed values and yields true if op1 is greater than or equal to op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
     signal res: std_logic_vector (0 downto 0);
     signal nready_tmp : std_logic;
 begin 
@@ -827,8 +827,8 @@ end entity;
 architecture arch of icmp_ult_op is
 --ugt: interprets the operands as unsigned values and yields true if op1 is greater than op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -869,8 +869,8 @@ end entity;
 architecture arch of icmp_ule_op is
 -- ule: interprets the operands as unsigned values and yields true if op1 is less than or equal to op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -911,8 +911,8 @@ end entity;
 architecture arch of icmp_slt_op is
 -- slt: interprets the operands as signed values and yields true if op1 is less than op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -953,8 +953,8 @@ end entity;
 architecture arch of icmp_sle_op is
 -- slt: interprets the operands as signed values and yields true if op1 is less than op2.
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1589,8 +1589,8 @@ end entity;
 architecture arch of fcmp_ord_op is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1632,8 +1632,8 @@ end entity;
 architecture arch of fcmp_uno_op is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1675,8 +1675,8 @@ end entity;
 architecture arch of fcmp_ueq_op is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1718,8 +1718,8 @@ end entity;
 architecture arch of fcmp_uge_op is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1761,8 +1761,8 @@ end entity;
 architecture arch of fcmp_ult_op is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1804,8 +1804,8 @@ end entity;
 architecture arch of fcmp_ule is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1847,8 +1847,8 @@ end entity;
 architecture arch of fcmp_une is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 
@@ -1890,8 +1890,8 @@ end entity;
 architecture arch of fcmp_ugt is
 
     signal join_valid : STD_LOGIC;
-    signal one: std_logic_vector (0 downto 0) := "1";
-    signal zero: std_logic_vector (0 downto 0) := "0";
+    signal one: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '1');
+    signal zero: std_logic_vector (DATA_SIZE_OUT-1 downto 0) := (others => '0');
 
 begin 
 

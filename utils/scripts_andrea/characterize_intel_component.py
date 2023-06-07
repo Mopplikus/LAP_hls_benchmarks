@@ -8,7 +8,7 @@
 #
 #####################################################################################################
 
-import sys, subprocess, re, os
+import sys, subprocess, re, os, time
 from multiprocessing import Process
 
 MAX_THREADS = 15
@@ -291,7 +291,19 @@ def execute_vivado(tcl_file):
 def copy_over_rtl():
 	os.system("cp -r vhdl vhdl_work")
 
-def run_char(width, connector, component):
+def run_char(width, connector, component, voided):
+
+	conn_type = connector
+	bit_width = str(width)
+
+	out_file = "timing_all_" + conn_type  +  "_" + bit_width  + ".rpt"
+	out_max_file = "timing_max_" + conn_type + "_" + bit_width + ".rpt"
+
+	if (connector + str(width)) in voided or component == "nil" or "a" in voided:
+		os.system("echo '0.000 >> " + out_file)
+		os.system("echo '0.000 >> " + out_max_file)
+		return
+
 	args = sys.argv
 
 	if(len(args) != 3):
@@ -303,10 +315,6 @@ def run_char(width, connector, component):
 	file_name="filelist_char.lst"
 
 	list_cmp =[component]
-
-	conn_type = connector
-	bit_width = str(width)
-
 	lib_mixed = "filelist_mixed.lst"
 
 	copy_over_rtl()
@@ -321,7 +329,6 @@ def run_char(width, connector, component):
 		output = subprocess.check_output(cmd, shell=True)
 		file_name = output.decode().split(":")[0]
 		characterize_component_in_place(comp, file_name, bit_width)
-		sys.exit()
 		syn_comp = "synthesis_" + comp + ".tcl"
 		os.system("cp quartus_char_synthesis.tcl " + syn_comp)
 		os.system("sed -i 's/TOP_DESIGN/"+ comp  +"/g' "+syn_comp)
@@ -368,35 +375,32 @@ def run_char(width, connector, component):
 			x.join()
 		num_threads = 0
 
-	for comp_ind in range(len(list_cmp)):
-		comp = list_cmp[comp_ind]
-		comp_file = comp + ".vhd"
-		#os.system("rm " + comp_file)
-
 		synth_file = "synthesis_" + comp + ".tcl"
 		#os.system("rm " + synth_file)
 
-		sys.exit()
 		create_timing_report(comp)
 
 		rpt_file = "timing_report.rpt"
 
 		if not(os.path.isfile(rpt_file)) :
 			continue
-
-		out_file = "timing_all_" + conn_type  +  "_" + bit_width  + ".rpt"
 		
 		delay = 0.0
+		max_delay = 0.0
 		count = 0
 		file = open(rpt_file, "r")
 		for line in file:
 			if "Data Delay" in line and not("Slack" in line):
-				delay += float(line.split(";")[2].strip())
+				read_delay = float(line.split(";")[2].strip())
+				delay += read_delay
+				if(read_delay > max_delay):
+					max_delay = read_delay
 				count += 1
 
 		file.close()
 		if(count > 0):
-			os.system("echo '" + str(delay / float(count)) + "' >> " + out_file)
+			os.system("echo '" + str(round(delay / float(count), 3)) + "' >> " + out_file)
+			os.system("echo '" + str(round(max_delay, 3)) + "' >> " + out_max_file)
 
 	clear_files()
 
@@ -410,40 +414,144 @@ def clear_files():
 	os.system("rm -rf incremental_db")
 	os.system("rm -rf simulation")
 	os.system("rm *_pin_model_dump.txt")
-	#os.system("rm timing_report.rpt")
+	os.system("rm timing_report.rpt")
 	os.system("rm timing-gen.tcl")
 	os.system("rm *.sdc")
+	os.system("rm timing_log.log")
+	os.system("rm quartus_log.log")
 
 def collect_timings():
 	widths_collector = [1, 2, 4, 8, 16, 32, 64]
+	connectors_collector = ["d", "v", "r"]
 	out_file = open("characterization_list.dat", "a+")
-	for w in widths:
-		filename = "timing_all_w_" + str(w) + ".rpt"
-		if not(os.path.isfile(filename)):
-			out_file.close()
-			return
-		
-		file = open(filename, "r")
-		out_file.write(file.read())
-		file.close()
-		if(w != 64):
+	out_file_max = open("characterization_list_worst.dat", "a+")
+	for c in connectors_collector:
+		for w in widths:
+			filename = "timing_all_" + c + "_" + str(w) + ".rpt"
+			if not(os.path.isfile(filename)):
+				out_file.close()
+				return
+			
+			file = open(filename, "r")
+			out_file.write(file.read().strip())
+			file.close()
 			out_file.write(",")
+
+			filename = "timing_max_" + c + "_" + str(w) + ".rpt"
+			if not(os.path.isfile(filename)):
+				out_file.close()
+				return
+			
+			file = open(filename, "r")
+			out_file_max.write(file.read().strip())
+			file.close()
+			out_file_max.write(",")
 	
-	out_file.write("\n")
+	out_file.write("100.000,100.000,100.000,100.000,100.000,100.000\n")
 	out_file.close()
 
-connectors = ["d"]
-#widths = [1, 2, 4, 8, 16, 32, 64]
-widths = [1]
+	out_file_max.write("100.000,100.000,100.000,100.000,100.000,100.000\n")
+	out_file_max.close()
 
-components = [
-	"icmp_eq_op"
+	os.system("rm timing_all_*")
+	os.system("rm timing_max_*")
+
+connectors = ["d", "v", "r"]
+widths = [1, 2, 4, 8, 16, 32, 64]
+
+#components = [
+#	"icmp_eq_op",		# ICMP
+#	"add_op",			# ADD
+#	"sub_op",			# SUB
+#	"mul_op",			# MUL
+#	"sext_op",			# SEXT
+#	"load_op",			# LOAD
+#	"store_op",			# STORE
+#	"lsq_load_op",		# LSQ_LOAD
+#	"lsq_store_op", 	# LSQ_STORE
+#	"merge",			# MERGE
+#	"getelementptr_op",	# GET_POINTER
+#	"fadd_op",			# FADD
+#	"fsub_op",			# FSUB
+#	"fmul_op",			# FMUL
+#	"udiv_op",			# UDIV
+#	"sdiv_op",			# SDIV
+#	"fdiv_op",			# FDIV
+#	"fcmp_oeq_op",		# FCMP
+#	"CntrlMerge",		# PHIC
+#	"nil",				# ZDL
+#	"fork",				# FORK
+#	"ret_op",			# RETURN
+#	"branch",			# BRANCH
+#	"end_node",			# END
+#	"and_op",			# AND
+#	"or_op",			# OR
+#	"xor_op",			# XOR
+#	"shl_op",			# SHL
+#	"ashr_op",			# ASHR
+#	"lshr_op",			# LSHR
+#	"select_op",		# SELECT
+#	"mux"				# MUX
+#]
+
+components = ["icmp_eq_op"]
+
+# Places in the netlist where values should be set to 0
+voids = [
+	["d1", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64", "r1", "r2", "r4", "r8", "r16", "r32", "r64"],		# 1
+	[],
+	[],
+	["a"],
+	[],		# 5
+	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
+	[],
+	["a"],
+	["a"],
+	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],	# 10
+	[],
+	["a"],
+	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64"],
+	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64"],
+	["a"],	# 15
+	["a"],
+	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64"],
+	[],
+	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "r1", "r2", "r4", "r8", "r16", "r32", "r64"],
+	["a"], # 20
+	["d1", "d2", "d4", "d8", "d16", "d32", "d64"],
+	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
+	["d1", "d2", "d4", "d8", "d16", "d32", "d64"],
+	["v1", "v2", "v4", "v8", "v16", "v32", "v64"],
+	[], # 25
+	[],
+	[],
+	[],
+	[],
+	[], # 30
+	[],
+	["r1", "r2", "r4", "r8", "r16", "r32", "r64"] # 32
 ]
 
+acc = 0
+global_start_time = time.time()
 for comp in components:
-	print("Characterizing component " + comp)
+	print("----- Characterizing component " + comp)
+	start_time_comp = time.time()
 	for conn in connectors:
+		print("\tConnector " + conn)
+		start_time_connector = time.time()
 		for w in widths:
-			print("Running width " + str(w))
-			run_char(w, conn, comp)
+			char_time = time.time()
+			print("\t\tRunning width " + str(w), end="")
+			run_char(w, conn, comp, voids[acc])
+			print(" \t(finished after " + str(int(time.time() - char_time)) + " seconds)")
+		
+		print("\tFinished connector in " + str(int(int(time.time() - start_time_connector) / 60)) + " minutes")
+
 	collect_timings()
+	print("----- Component " + comp + " done in " + str(int(int(time.time() - start_time_comp) / 60)) + " minutes")
+	print()
+	acc += 1
+
+print()
+print("----- Finished characterization in " + str(int(int(time.time() - global_start_time) / 60)) + " minutes")

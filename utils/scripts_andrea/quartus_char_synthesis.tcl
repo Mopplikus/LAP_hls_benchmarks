@@ -18,6 +18,13 @@ if {$make_assignments} {
 	set_global_assignment -name VHDL_FILE vhdl/elastic_components.vhd
 	set_global_assignment -name VHDL_FILE vhdl/delay_buffer.vhd
 	set_global_assignment -name VHDL_FILE vhdl/multipliers.vhd
+	set_global_assignment -name VHDL_FILE vhdl/MemCont.vhd
+	set_global_assignment -name VHDL_FILE vhdl/array_RAM_fadd_32bkb.vhd
+	set_global_assignment -name VHDL_FILE vhdl/array_RAM_fcmp_32cud.vhd
+	set_global_assignment -name VHDL_FILE vhdl/array_RAM_fdiv_32ns_32ns_32_30_1.vhd
+	set_global_assignment -name VHDL_FILE vhdl/array_RAM_fmul_32cud.vhd
+	set_global_assignment -name VHDL_FILE vhdl/array_RAM_fsub_32bkb.vhd
+	set_global_assignment -name VHDL_FILE vhdl/array_RAM_sdiv_32ns_32ns_32_36_1.vhd
 	set_global_assignment -name SDC_FILE COMPONENT_NAME.sdc
 	set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 	set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
