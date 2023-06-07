@@ -33,11 +33,28 @@ def get_top_level():
 	file.close()
 	return top_level
 
+def generate_sdc_file(component_name, inputs, outputs):
+	file = open(component_name + ".sdc", "w")
+	file.write("create_clock -name {clk} -period 5.000 [get_ports {clk}]\n")
+
+	input_command = "set_input_delay -clock {clk} 0.1 [get_ports {"
+	for i in inputs:
+		input_command += i + " "
+	input_command += "}]\n"
+	file.write(input_command)
+
+	output_command = "set_output_delay -clock {clk} 0.1 [get_ports {"
+	for o in outputs:
+		output_command += o + " "
+	output_command += "}]"
+	file.write(output_command)
+
+	file.close()
+
 def create_timing_report(component_name):
 	file = open("timing-gen.tcl", "w")
 	file.write("project_open " + component_name + "\n")
 	file.write("create_timing_netlist\n")
-	file.write("create_clock -name {clk} -period 5.000 [get_ports {clk}]")
 	file.write("read_sdc\n")
 	file.write("update_timing_netlist\n")
 	file.write("report_timing -setup -npaths 20 -detail full_path -file timing_report.rpt\n")
@@ -141,6 +158,9 @@ def characterize_component_in_place(cmp, file_in, bit_width):
 
 	file = open(file_in, "r")
 
+	inputs = []
+	outputs = []
+
 	start = False
 	end = False
 	for line in file:
@@ -149,6 +169,26 @@ def characterize_component_in_place(cmp, file_in, bit_width):
 		if not(start) and re.match("entity "+ cmp  +" is", line)!=None:
 			start = True
 		if start and not(end):
+			if " in " in line_d and "clk" not in line_d:
+				inputs_list = line_d.strip().split(':')[0].strip().split(',')
+				for i in inputs_list:
+					if "data_array" in line_d:
+						inputs.append(i.strip() + "[*][*]")
+					elif "std_logic_vector" in line_d:
+						inputs.append(i.strip() + "[*]")
+					else:
+						inputs.append(i.strip())
+
+			elif " out " in line_d:
+				outputs_list = line_d.strip().split(':')[0].strip().split(',')
+				for o in outputs_list:
+					if "data_array" in line_d:
+						outputs.append(o.strip() + "[*][*]")
+					elif "std_logic_vector" in line_d:
+						outputs.append(o.strip() + "[*]")
+					else:
+						outputs.append(o.strip())
+
 			if re.match("[Ll]ibrary(\\s+)*[Ii][Ee][Ee][Ee](\\s+)*;", line)!=None:
 				end = True
 			else:
@@ -187,6 +227,8 @@ def characterize_component_in_place(cmp, file_in, bit_width):
 	file = open(file_in, "w")
 	file.write(component_desc)
 	file.close()
+
+	generate_sdc_file(cmp, inputs, outputs)
 
 def pins(inp, out):
 	input = None
@@ -279,6 +321,7 @@ def run_char(width, connector, component):
 		output = subprocess.check_output(cmd, shell=True)
 		file_name = output.decode().split(":")[0]
 		characterize_component_in_place(comp, file_name, bit_width)
+		sys.exit()
 		syn_comp = "synthesis_" + comp + ".tcl"
 		os.system("cp quartus_char_synthesis.tcl " + syn_comp)
 		os.system("sed -i 's/TOP_DESIGN/"+ comp  +"/g' "+syn_comp)
@@ -333,6 +376,7 @@ def run_char(width, connector, component):
 		synth_file = "synthesis_" + comp + ".tcl"
 		#os.system("rm " + synth_file)
 
+		sys.exit()
 		create_timing_report(comp)
 
 		rpt_file = "timing_report.rpt"
@@ -368,6 +412,7 @@ def clear_files():
 	os.system("rm *_pin_model_dump.txt")
 	#os.system("rm timing_report.rpt")
 	os.system("rm timing-gen.tcl")
+	os.system("rm *.sdc")
 
 def collect_timings():
 	widths_collector = [1, 2, 4, 8, 16, 32, 64]

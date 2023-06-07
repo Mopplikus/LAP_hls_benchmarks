@@ -18,6 +18,7 @@ if {$make_assignments} {
 	set_global_assignment -name VHDL_FILE vhdl/elastic_components.vhd
 	set_global_assignment -name VHDL_FILE vhdl/delay_buffer.vhd
 	set_global_assignment -name VHDL_FILE vhdl/multipliers.vhd
+	set_global_assignment -name SDC_FILE COMPONENT_NAME.sdc
 	set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 	set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 	set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -37,9 +38,9 @@ if {$make_assignments} {
 
 	# Set all pins as virtual to be able to fit the design instead of mapping everything to I/O 
 	execute_module -tool map
-
+	
     set name_ids [get_names -filter * -node_type pin]
-
+	
     foreach_in_collection name_id $name_ids {
         set pin_name [get_name_info -info full_path $name_id]
         post_message "Making VIRTUAL_PIN assignment to $pin_name"
