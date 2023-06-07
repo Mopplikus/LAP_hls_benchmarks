@@ -534,6 +534,13 @@ voids = [
 
 acc = 0
 global_start_time = time.time()
+print("----- Starting characterization")
+print("Components up for characterization:")
+for comp in components:
+	print("\t" + comp)
+
+print()
+
 for comp in components:
 	print("----- Characterizing component " + comp)
 	start_time_comp = time.time()
