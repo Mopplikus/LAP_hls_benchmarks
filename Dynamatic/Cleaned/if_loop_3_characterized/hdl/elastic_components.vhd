@@ -286,7 +286,7 @@ USE work.customTypes.all;
 
 entity elasticBuffer is
 Generic (
-  INPUTS: integer:=2; OUTPUTS: integer:=2; DATA_SIZE_IN: integer:=16; DATA_SIZE_OUT: integer:=16 
+  INPUTS :integer; OUTPUTS :integer; DATA_SIZE_IN: integer; DATA_SIZE_OUT: integer 
 );
 port(
     clk, rst : in std_logic;  
@@ -481,19 +481,19 @@ architecture arch of branch is
 begin
 
     j : entity work.join(arch) generic map(2)
-            port map(   (pValidArray(1), pValidArray(0)),   -- i
-                        branchReady,                        -- s
-                        joinValid,                          -- s
-                        readyArray);                        -- o
+            port map(   (pValidArray(1), pValidArray(0)),
+                        branchReady,
+                        joinValid,
+                        readyArray);
 
     br : entity work.branchSimple(arch)
-            port map(   condition(0)(0),    -- i
-                        joinValid,          -- s
-                        nReadyArray,        -- i   
-                        validArray,         -- o
-                        branchReady);       -- s
+            port map(   condition(0)(0),
+                        joinValid,
+                        nReadyArray,
+                        validArray,
+                        branchReady);
 
-    process(dataInArray)                    -- i
+    process(dataInArray)
     begin
         for I in 0 to SIZE - 1 loop
             dataOutArray(I) <= dataInArray(0);
@@ -1606,8 +1606,7 @@ signal fork_C1_readyArray : STD_LOGIC_VECTOR (0 downto 0);
 signal fork_C1_dataOutArray : data_array(1 downto 0)(0 downto 0);
 signal fork_C1_validArray : STD_LOGIC_VECTOR (1 downto 0);
 
-signal oehb1_valid, oehb1_ready : std_logic;
-signal index : std_logic_vector(0 downto 0);
+signal oehb1_valid, oehb1_ready, index : STD_LOGIC;
 signal oehb1_dataOut : std_logic_vector(DATA_SIZE_IN-1 downto 0);
 
 begin
@@ -1633,9 +1632,9 @@ port map (
 process(pValidArray)
 begin
         if (pValidArray(0) = '1') then
-            index(0) <= '0';
+            index <= '0';
         else
-            index(0) <= '1';
+            index <= '1';
         end if;
 end process;
 
@@ -1649,7 +1648,7 @@ oehb1: entity work.TEHB(arch) generic map (1, 1, 1, 1)
             validArray(0) => oehb1_valid, 
         --outputs
             readyArray(0) => oehb1_ready,   
-            dataInArray(0) => index,
+            dataInArray(0)(0) => index,
             dataOutArray(0) => oehb1_dataOut
         );
 

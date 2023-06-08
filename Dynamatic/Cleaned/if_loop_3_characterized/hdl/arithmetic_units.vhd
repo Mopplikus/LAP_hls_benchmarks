@@ -3241,39 +3241,39 @@ use IEEE.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.customTypes.all;
 
--- entity fabsf_op is
---     Generic (
---      INPUTS: integer; OUTPUTS: integer; DATA_SIZE_IN: integer; DATA_SIZE_OUT: integer
---     );
---     port (
---       clk : IN STD_LOGIC;
---       rst : IN STD_LOGIC;
---       pValidArray : IN std_logic_vector(0 downto 0);
---       nReadyArray : in std_logic_vector(0 downto 0);
---       validArray : out std_logic_vector(0 downto 0);
---       readyArray : OUT std_logic_vector(0 downto 0);
---       dataInArray : in data_array (0 downto 0)(DATA_SIZE_IN-1 downto 0); 
---       dataOutArray : out data_array (0 downto 0)(DATA_SIZE_OUT-1 downto 0));
--- end entity;
---     
--- architecture arch of fabsf_op is
--- 
--- begin 
---     readyArray <= nReadyArray;
---     validArray <= pValidArray;
---     dataOutArray(0) <= '0' & dataInArray(0)(DATA_SIZE_IN - 2 downto 0);
---         
--- end architecture;
--- 
--- -------------------
--- --trunc_op
--- ----------------
--- 
--- Library IEEE;
--- use IEEE.std_logic_1164.all;
--- use ieee.numeric_std.all;
--- use work.customTypes.all;
--- 
+entity fabsf_op is
+    Generic (
+     INPUTS: integer; OUTPUTS: integer; DATA_SIZE_IN: integer; DATA_SIZE_OUT: integer
+    );
+    port (
+      clk : IN STD_LOGIC;
+      rst : IN STD_LOGIC;
+      pValidArray : IN std_logic_vector(0 downto 0);
+      nReadyArray : in std_logic_vector(0 downto 0);
+      validArray : out std_logic_vector(0 downto 0);
+      readyArray : OUT std_logic_vector(0 downto 0);
+      dataInArray : in data_array (0 downto 0)(DATA_SIZE_IN-1 downto 0); 
+      dataOutArray : out data_array (0 downto 0)(DATA_SIZE_OUT-1 downto 0));
+end entity;
+    
+architecture arch of fabsf_op is
+
+begin 
+    readyArray <= nReadyArray;
+    validArray <= pValidArray;
+    dataOutArray(0) <= '0' & dataInArray(0)(DATA_SIZE_IN - 2 downto 0);
+        
+end architecture;
+
+-------------------
+--trunc_op
+----------------
+
+Library IEEE;
+use IEEE.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.customTypes.all;
+
 entity trunc_op is
     Generic (
      INPUTS: integer; OUTPUTS: integer; DATA_SIZE_IN: integer; DATA_SIZE_OUT: integer
