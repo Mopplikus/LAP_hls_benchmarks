@@ -1290,7 +1290,7 @@ port (
     ---interface to memory
     read_enable: out std_logic;
     read_address: out std_logic_vector(ADDRESS_SIZE -1 downto 0);
-    data_from_memory: in std_logic_vector(31 downto 0));
+    data_from_memory: in std_logic_vector(DATA_SIZE-1 downto 0));
 
 end entity;
 

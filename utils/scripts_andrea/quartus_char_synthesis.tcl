@@ -43,6 +43,7 @@ if {$make_assignments} {
 	set_global_assignment -name OPTIMIZATION_MODE "HIGH PERFORMANCE EFFORT"
 	set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 	set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+	set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS "OFF"
 
 	# Set all pins as virtual to be able to fit the design instead of mapping everything to I/O 
 	execute_module -tool map

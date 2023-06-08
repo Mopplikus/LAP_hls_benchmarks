@@ -1035,7 +1035,7 @@ begin
               tmp_const  := tmp_const * to_integer(unsigned(dataInArray(J)));
           end loop;
           tmp_mul := to_integer(unsigned(dataInArray(I))) * tmp_const; 
-          tmp_data_out  := tmp_data_out + to_unsigned(tmp_mul, 32);
+          tmp_data_out  := tmp_data_out + to_unsigned(tmp_mul, INPUT_SIZE);
         end loop;
     dataOutArray(0)  <= std_logic_vector(resize(tmp_data_out, OUTPUT_SIZE));
 
@@ -2116,23 +2116,23 @@ end entity;
 architecture arch of fmul_op is
 
     -- Interface to Vivado component
-    component array_RAM_fmul_32cud is
-        generic (
-            ID         : integer := 1;
-            NUM_STAGE  : integer := 6;
-            din0_WIDTH : integer := 32;
-            din1_WIDTH : integer := 32;
-            dout_WIDTH : integer := 32
-        );
-        port (
-            clk   : in  std_logic;
-            reset : in  std_logic;
-            ce    : in  std_logic;
-            din0  : in  std_logic_vector(din0_WIDTH-1 downto 0);
-            din1  : in  std_logic_vector(din1_WIDTH-1 downto 0);
-            dout  : out std_logic_vector(dout_WIDTH-1 downto 0)
-        );
-    end component;
+    --component array_RAM_fmul_32cud is
+    --    generic (
+    --        ID         : integer := 1;
+    --        NUM_STAGE  : integer := 6;
+    --        din0_WIDTH : integer := 32;
+    --        din1_WIDTH : integer := 32;
+    --        dout_WIDTH : integer := 32
+    --    );
+    --    port (
+    --        clk   : in  std_logic;
+    --        reset : in  std_logic;
+    --        ce    : in  std_logic;
+    --        din0  : in  std_logic_vector(din0_WIDTH-1 downto 0);
+    --        din1  : in  std_logic_vector(din1_WIDTH-1 downto 0);
+    --        dout  : out std_logic_vector(dout_WIDTH-1 downto 0)
+    --    );
+    --end component;
 
         signal join_valid : STD_LOGIC;
 
@@ -2168,7 +2168,7 @@ begin
                     dataOutArray(0) => oehb_dataOut
                 );
 
-    array_RAM_fmul_32ns_32ns_32_6_max_dsp_1_U1 :  component array_RAM_fmul_32cud
+    array_RAM_fmul_32ns_32ns_32_6_max_dsp_1_U1 :  entity work.array_RAM_fmul_32cud(arch)
     port map (
         clk   => clk,
         reset => rst,
@@ -2316,26 +2316,35 @@ end entity;
 architecture arch of sdiv_op is
 
     -- Interface to Vivado component
-    component array_RAM_sdiv_32ns_32ns_32_36_1 is
-        generic (
-            ID : INTEGER;
-            NUM_STAGE : INTEGER;
-            din0_WIDTH : INTEGER;
-            din1_WIDTH : INTEGER;
-            dout_WIDTH : INTEGER);
-        port (
-            clk : IN STD_LOGIC;
-            reset : IN STD_LOGIC;
-            ce : IN STD_LOGIC;
-            din0 : IN STD_LOGIC_VECTOR(din0_WIDTH - 1 DOWNTO 0);
-            din1 : IN STD_LOGIC_VECTOR(din1_WIDTH - 1 DOWNTO 0);
-            dout : OUT STD_LOGIC_VECTOR(dout_WIDTH - 1 DOWNTO 0));
-    end component;
+    --component array_RAM_sdiv_32ns_32ns_32_36_1 is
+    --    generic (
+    --        ID : INTEGER;
+    --        NUM_STAGE : INTEGER;
+    --        din0_WIDTH : INTEGER;
+    --        din1_WIDTH : INTEGER;
+    --        dout_WIDTH : INTEGER);
+    --    port (
+    --        clk : IN STD_LOGIC;
+    --        reset : IN STD_LOGIC;
+    --        ce : IN STD_LOGIC;
+    --        din0 : IN STD_LOGIC_VECTOR(din0_WIDTH - 1 DOWNTO 0);
+    --        din1 : IN STD_LOGIC_VECTOR(din1_WIDTH - 1 DOWNTO 0);
+    --        dout : OUT STD_LOGIC_VECTOR(dout_WIDTH - 1 DOWNTO 0));
+    --end component;
 
     signal join_valid : STD_LOGIC;
 
+    signal data_in_0_resize : std_logic_vector(31 downto 0);
+    signal data_in_1_resize : std_logic_vector(31 downto 0);
+    signal data_out_resize : std_logic_vector(31 downto 0);
+
 begin 
-    array_RAM_sdiv_32ns_32ns_32_36_1_U1 : component array_RAM_sdiv_32ns_32ns_32_36_1
+
+    data_in_0_resize <= std_logic_vector(resize(unsigned(dataInArray(0)), 32));
+    data_in_1_resize <= std_logic_vector(resize(unsigned(dataInArray(1)), 32));
+    dataOutArray(0) <= std_logic_vector(resize(unsigned(data_out_resize), DATA_SIZE_OUT));
+
+    array_RAM_sdiv_32ns_32ns_32_36_1_U1 : entity work.array_RAM_sdiv_32ns_32ns_32_36_1(rtl)
     generic map (
         ID => 1,
         NUM_STAGE => 36,
@@ -2346,9 +2355,9 @@ begin
         clk => clk,
         reset => rst,
         ce => nReadyArray(0),
-        din0 => dataInArray(0),
-        din1 => dataInArray(1),
-        dout => dataOutArray(0));
+        din0 => data_in_0_resize,
+        din1 => data_in_1_resize,
+        dout => data_out_resize);
 
     join_write_temp:   entity work.join(arch) generic map(2)
             port map( pValidArray,  --pValidArray

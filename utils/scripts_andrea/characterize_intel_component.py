@@ -61,7 +61,11 @@ def create_timing_report(component_name):
 	file.close()
 
 	cmd = "quartus_sta -t timing-gen.tcl >> timing_log.log"
-	output = subprocess.check_output(cmd, shell=True)
+	try:
+		output = subprocess.check_output(cmd, shell=True)
+	except:
+		#os.system("open ohno.mp3")
+		sys.exit()
 
 def create_subfile(cmp, file_in , file_pre, bit_width): #function to create file of component
 
@@ -494,9 +498,9 @@ components = [
 	"mux"				# MUX
 ]
 
-#components = ["icmp_eq_op"]
 
 # Places in the netlist where values should be set to 0
+
 voids = [
 	[],		# 1
 	[],
@@ -510,12 +514,12 @@ voids = [
 	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],	# 10
 	[],
 	["a"],
-	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64"],
-	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64"],
-	["a"],	# 15
 	["a"],
-	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "v1", "v2", "v4", "v8", "v16", "v32", "v64"],
+	["a"],
+	["a"],	# 15
 	[],
+	["a"],
+	["a"],
 	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "r1", "r2", "r4", "r8", "r16", "r32", "r64"],
 	["a"], # 20
 	["d1", "d2", "d4", "d8", "d16", "d32", "d64"],
