@@ -64,7 +64,7 @@ def create_timing_report(component_name):
 	try:
 		output = subprocess.check_output(cmd, shell=True)
 	except:
-		#os.system("open ohno.mp3")
+		os.system("open ohno.mp3")
 		sys.exit()
 
 def create_subfile(cmp, file_in , file_pre, bit_width): #function to create file of component
@@ -173,7 +173,7 @@ def characterize_component_in_place(cmp, file_in, bit_width):
 		if not(start) and re.match("entity "+ cmp  +" is", line)!=None:
 			start = True
 		if start and not(end):
-			if " in " in line_d and "clk" not in line_d:
+			if (" IN " in line_d or " in " in line_d) and "clk" not in line_d and "for" not in line_d:
 				inputs_list = line_d.strip().split(':')[0].strip().split(',')
 				for i in inputs_list:
 					if "data_array" in line_d:
@@ -482,7 +482,7 @@ components = [
 	"sdiv_op",			# SDIV
 	"fdiv_op",			# FDIV
 	"fcmp_oeq_op",		# FCMP
-	"CntrlMerge",		# PHIC
+	"cntrlMerge",		# PHIC
 	"nil",				# ZDL
 	"fork",				# FORK
 	"ret_op",			# RETURN
@@ -565,4 +565,4 @@ for comp in components:
 	acc += 1
 
 print()
-print("----- Finished characterization in " + str(int(int(time.time() - global_start_time) / 60)) + " minutes")
+print("----- Finished characterization in " + str(round(int(time.time() - global_start_time) / 3600, 2)) + " hours")

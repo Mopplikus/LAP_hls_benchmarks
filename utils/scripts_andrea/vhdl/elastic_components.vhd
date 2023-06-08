@@ -1594,7 +1594,7 @@ port(
         readyArray : out std_logic_vector(1 downto 0);
         dataInArray   : in  data_array(INPUTS - 1 downto 0)(DATA_SIZE_IN - 1 downto 0);
         dataOutArray  : out data_array(0 downto 0)(DATA_SIZE_OUT - 1 downto 0);
-        condition: out data_array(0 downto 0)(0 downto 0));
+        condition: out data_array(0 downto 0)(DATA_SIZE_OUT-1 downto 0));
 end cntrlMerge;
 architecture arch of cntrlMerge is
 
@@ -1607,7 +1607,7 @@ signal fork_C1_dataOutArray : data_array(1 downto 0)(0 downto 0);
 signal fork_C1_validArray : STD_LOGIC_VECTOR (1 downto 0);
 
 signal oehb1_valid, oehb1_ready : std_logic;
-signal index : std_logic_vector(0 downto 0);
+signal index : std_logic_vector(DATA_SIZE_IN-1 downto 0);
 signal oehb1_dataOut : std_logic_vector(DATA_SIZE_IN-1 downto 0);
 
 begin
@@ -1639,7 +1639,7 @@ begin
         end if;
 end process;
 
-oehb1: entity work.TEHB(arch) generic map (1, 1, 1, 1)
+oehb1: entity work.TEHB(arch) generic map (1, 1, DATA_SIZE_IN, DATA_SIZE_OUT)
         port map (
         --inputspValidArray
             clk => clk, 
