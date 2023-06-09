@@ -463,6 +463,9 @@ def collect_timings():
 connectors = ["d", "v", "r"]
 widths = [1, 2, 4, 8, 16, 32, 64]
 
+# The list of components to be characterized
+# "nil" indicates a zero-delay component
+
 components = [
 	"icmp_eq_op",		# ICMP
 	"add_op",			# ADD
@@ -500,6 +503,7 @@ components = [
 
 
 # Places in the netlist where values should be set to 0
+# "a" indicates all
 
 voids = [
 	[],		# 1
