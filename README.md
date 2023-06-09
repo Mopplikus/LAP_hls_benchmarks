@@ -35,6 +35,7 @@ The benchmarks are divided into four categories:
 ## Characterization script ##
 The characterization script is used to generate the `default_delay.dat` in the `data/targets` folder of Dynamatic. To use the script, simply run it by specifying the device family and part number:
 ```python characterize_intel_component.py "Cyclone V" 5CSEMA4U23C7```
+Be aware that the runtime of this script is very long (>10 hours)
 Note that since a few of the components depend on Vivado's library, these have been largely skipped. If you need them to be synthesized, you will have to:
  - Add the corresponding `.vhd` files to the `vhdl` directory
  - Add them to the synthesis script `quartus_char_synthesis.tcl`
@@ -49,3 +50,5 @@ Note that since a few of the components depend on Vivado's library, these have b
     ...
  ]
  ```
+
+ Note that some of the original components had to be syntactically rewritten a bit to be able to build them in Quartus.

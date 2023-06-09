@@ -1,6 +1,6 @@
 #####################################################################################################
 # code to characterize any intel component. Must be used along with the supplied
-# filelist.lst, quartus_char_synthesis.tcl and vhdl folder
+# quartus_char_synthesis.tcl and vhdl folder
 # 
 # Example usage:
 #	python characterize_intel_component.py "Cyclone V" 5CSEMA4U23C7
