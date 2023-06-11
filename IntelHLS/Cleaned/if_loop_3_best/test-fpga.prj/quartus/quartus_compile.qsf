@@ -16,7 +16,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE quartus_compile.sv
 # Partitions are used to separate the component logic from the project harness when tallying area results
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id component_partition
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id component_partition
-set_instance_assignment -name PARTITION_HIERARCHY component_if_loop_3 -to "if_loop_3:if_loop_3_inst" -section_id component_partition
 
 # No need to generate a bitstream for this compile so save time by skipping the assembler
 set_global_assignment -name FLOW_DISABLE_ASSEMBLER ON
@@ -26,3 +25,10 @@ set_global_assignment -name FLOW_DISABLE_ASSEMBLER ON
 # This assignment configures all component I/Os as virtual pins to more accurately
 # model placement and routing in a larger system
 set_instance_assignment -name VIRTUAL_PIN ON -to *
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.1 Standard Edition"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name PARTITION_COLOR 39423 -section_id component_partition
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY component_if_loop_3 -to "if_loop_3:if_loop_3_inst" -section_id component_partition

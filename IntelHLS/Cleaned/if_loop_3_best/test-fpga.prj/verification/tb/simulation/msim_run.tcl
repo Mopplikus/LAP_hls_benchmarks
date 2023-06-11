@@ -17,6 +17,3 @@ set USER_DEFINED_ELAB_OPTIONS "+nowarnTFMPC -dpioutoftheblue 1 -sv_lib $fname_sv
 elab
 onfinish {stop}
 quietly set StdArithNoWarnings 1
-run -all
-set failed [expr [coverage attribute -name TESTSTATUS -concise] > 1]
-exit -code ${failed}
