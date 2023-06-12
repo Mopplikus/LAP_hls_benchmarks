@@ -30,7 +30,7 @@ if {$make_assignments} {
 	set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 	set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 	set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
-	set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+	set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 	set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (Verilog)"
 	set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 	set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
@@ -44,6 +44,7 @@ if {$make_assignments} {
 	set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 	set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
 	set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS "OFF"
+	set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 
 	# Set all pins as virtual to be able to fit the design instead of mapping everything to I/O 
 	execute_module -tool map

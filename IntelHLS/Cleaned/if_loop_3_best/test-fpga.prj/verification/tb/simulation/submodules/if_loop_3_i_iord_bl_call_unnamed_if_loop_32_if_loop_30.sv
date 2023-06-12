@@ -16,16 +16,11 @@
 
 // SystemVerilog created from i_iord_bl_call_if_loop_3_unnamed_if_loop_32_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:56 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_iord_bl_call_unnamed_if_loop_32_if_loop_30 (
-    output wire [63:0] out_o_data_0_tpl,
-    output wire [63:0] out_o_data_1_tpl,
-    output wire [31:0] out_o_data_2_tpl,
-    output wire [0:0] out_o_valid,
-    output wire [0:0] out_iord_bl_call_if_loop_3_o_fifoready,
     input wire [191:0] in_iord_bl_call_if_loop_3_i_fifodata,
     input wire [0:0] in_iord_bl_call_if_loop_3_i_fifovalid,
     output wire [0:0] out_iord_bl_call_if_loop_3_o_fifoalmost_full,
@@ -33,6 +28,11 @@ module if_loop_3_i_iord_bl_call_unnamed_if_loop_32_if_loop_30 (
     output wire [0:0] out_o_stall,
     input wire [0:0] in_i_dependence,
     input wire [0:0] in_i_valid,
+    output wire [0:0] out_iord_bl_call_if_loop_3_o_fifoready,
+    output wire [63:0] out_o_data_0_tpl,
+    output wire [63:0] out_o_data_1_tpl,
+    output wire [31:0] out_o_data_2_tpl,
+    output wire [0:0] out_o_valid,
     input wire clock,
     input wire resetn
     );
@@ -70,13 +70,13 @@ module if_loop_3_i_iord_bl_call_unnamed_if_loop_32_if_loop_30 (
     wire [31:0] ip_dsdk_adapt_bitselect6_b;
 
 
-    // c32_0(CONSTANT,5)
+    // c32_0(CONSTANT,3)
     assign c32_0_q = $unsigned(32'b00000000000000000000000000000000);
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // iord(EXTIFACE,7)
+    // iord(EXTIFACE,5)
     assign iord_i_fifodata = in_iord_bl_call_if_loop_3_i_fifodata;
     assign iord_i_fifoempty = GND_q;
     assign iord_i_fifoendofpacket = GND_q;
@@ -133,28 +133,28 @@ module if_loop_3_i_iord_bl_call_unnamed_if_loop_32_if_loop_30 (
         .resetn(resetn)
     );
 
-    // ip_dsdk_adapt_bitselect6(BITSELECT,10)
+    // regfree_osync(GPOUT,14)
+    assign out_iord_bl_call_if_loop_3_o_fifoalmost_full = iord_o_fifoalmost_full;
+
+    // sync_out(GPOUT,16)@20000000
+    assign out_o_stall = iord_o_stall;
+
+    // dupName_0_regfree_osync_x(GPOUT,18)
+    assign out_iord_bl_call_if_loop_3_o_fifoready = iord_o_fifoready;
+
+    // ip_dsdk_adapt_bitselect6(BITSELECT,8)
     assign ip_dsdk_adapt_bitselect6_b = iord_o_data[159:128];
 
-    // ip_dsdk_adapt_bitselect4(BITSELECT,9)
+    // ip_dsdk_adapt_bitselect4(BITSELECT,7)
     assign ip_dsdk_adapt_bitselect4_b = iord_o_data[127:64];
 
-    // ip_dsdk_adapt_bitselect2(BITSELECT,8)
+    // ip_dsdk_adapt_bitselect2(BITSELECT,6)
     assign ip_dsdk_adapt_bitselect2_b = iord_o_data[63:0];
 
-    // dupName_0_sync_out_aunroll_x(GPOUT,2)@2
+    // dupName_0_sync_out_aunroll_x(GPOUT,19)@2
     assign out_o_data_0_tpl = ip_dsdk_adapt_bitselect2_b;
     assign out_o_data_1_tpl = ip_dsdk_adapt_bitselect4_b;
     assign out_o_data_2_tpl = ip_dsdk_adapt_bitselect6_b;
     assign out_o_valid = iord_o_valid;
-
-    // dupName_0_regfree_osync_x(GPOUT,3)
-    assign out_iord_bl_call_if_loop_3_o_fifoready = iord_o_fifoready;
-
-    // regfree_osync(GPOUT,16)
-    assign out_iord_bl_call_if_loop_3_o_fifoalmost_full = iord_o_fifoalmost_full;
-
-    // sync_out(GPOUT,18)@20000000
-    assign out_o_stall = iord_o_stall;
 
 endmodule

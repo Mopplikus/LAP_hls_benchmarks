@@ -16,15 +16,15 @@
 
 // SystemVerilog created from bb_if_loop_3_B0_runOnce_stall_region
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:56 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_bb_B0_runOnce_stall_region (
-    output wire [0:0] out_valid_out,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_valid_in,
+    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
@@ -62,26 +62,59 @@ module if_loop_3_bb_B0_runOnce_stall_region (
     wire [0:0] SE_stall_entry_V0;
 
 
-    // SE_stall_entry(STALLENABLE,32)
-    // Valid signal propagation
-    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
+    // SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31(STALLENABLE,29)
     // Backward Stall generation
-    assign SE_stall_entry_backStall = if_loop_3_B0_runOnce_merge_reg_out_stall_out | ~ (SE_stall_entry_wireValid);
+    assign SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_backStall = $unsigned(1'b0);
     // Computing multiple Valid(s)
-    assign SE_stall_entry_wireValid = in_valid_in;
+    assign SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_wireValid = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_valid_out;
 
-    // if_loop_3_B0_runOnce_merge_reg(BLACKBOX,10)@0
+    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31(BLACKBOX,8)@1
     // in in_stall_in@20000000
-    // out out_data_out@1
+    // out out_data_out@2
+    // out out_feedback_out_0@20000000
+    // out out_feedback_valid_out_0@20000000
     // out out_stall_out@20000000
-    // out out_valid_out@1
-    if_loop_3_B0_runOnce_merge_reg theif_loop_3_B0_runOnce_merge_reg (
+    // out out_valid_out@2
+    if_loop_3_i_llvm_fpga_push_token_i1_wt_limpush_0 thei_llvm_fpga_push_token_i1_wt_limpush_if_loop_31 (
         .in_data_in(GND_q),
-        .in_stall_in(SE_out_if_loop_3_B0_runOnce_merge_reg_backStall),
-        .in_valid_in(SE_stall_entry_V0),
+        .in_feedback_stall_in_0(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_feedback_stall_out_0),
+        .in_stall_in(SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_backStall),
+        .in_valid_in(SE_out_if_loop_3_B0_runOnce_merge_reg_V1),
         .out_data_out(),
-        .out_stall_out(if_loop_3_B0_runOnce_merge_reg_out_stall_out),
-        .out_valid_out(if_loop_3_B0_runOnce_merge_reg_out_valid_out),
+        .out_feedback_out_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_out_0),
+        .out_feedback_valid_out_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_valid_out_0),
+        .out_stall_out(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_stall_out),
+        .out_valid_out(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
+
+    // SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30(STALLENABLE,27)
+    // Valid signal propagation
+    assign SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_V0 = SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_wireValid;
+    // Backward Stall generation
+    assign SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_backStall = in_stall_in | ~ (SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_wireValid);
+    // Computing multiple Valid(s)
+    assign SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_wireValid = i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_valid_out;
+
+    // i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30(BLACKBOX,7)@1
+    // in in_stall_in@20000000
+    // out out_data_out@2
+    // out out_feedback_stall_out_0@20000000
+    // out out_stall_out@20000000
+    // out out_valid_out@2
+    if_loop_3_i_llvm_fpga_pop_token_i1_wt_limpop_0 thei_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30 (
+        .in_data_in(GND_q),
+        .in_dir(GND_q),
+        .in_feedback_in_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_out_0),
+        .in_feedback_valid_in_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_valid_out_0),
+        .in_predicate(GND_q),
+        .in_stall_in(SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_backStall),
+        .in_valid_in(SE_out_if_loop_3_B0_runOnce_merge_reg_V0),
+        .out_data_out(),
+        .out_feedback_stall_out_0(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_feedback_stall_out_0),
+        .out_stall_out(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
@@ -119,70 +152,37 @@ module if_loop_3_bb_B0_runOnce_stall_region (
     // Computing multiple Valid(s)
     assign SE_out_if_loop_3_B0_runOnce_merge_reg_wireValid = if_loop_3_B0_runOnce_merge_reg_out_valid_out;
 
-    // SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31(STALLENABLE,29)
-    // Backward Stall generation
-    assign SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_backStall = $unsigned(1'b0);
-    // Computing multiple Valid(s)
-    assign SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_wireValid = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_valid_out;
-
-    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31(BLACKBOX,9)@1
-    // in in_stall_in@20000000
-    // out out_data_out@2
-    // out out_feedback_out_0@20000000
-    // out out_feedback_valid_out_0@20000000
-    // out out_stall_out@20000000
-    // out out_valid_out@2
-    if_loop_3_i_llvm_fpga_push_token_i1_wt_limpush_0 thei_llvm_fpga_push_token_i1_wt_limpush_if_loop_31 (
-        .in_data_in(GND_q),
-        .in_feedback_stall_in_0(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_feedback_stall_out_0),
-        .in_stall_in(SE_out_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_backStall),
-        .in_valid_in(SE_out_if_loop_3_B0_runOnce_merge_reg_V1),
-        .out_data_out(),
-        .out_feedback_out_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_out_0),
-        .out_feedback_valid_out_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_valid_out_0),
-        .out_stall_out(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_stall_out),
-        .out_valid_out(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30(BLACKBOX,8)@1
+    // if_loop_3_B0_runOnce_merge_reg(BLACKBOX,9)@0
     // in in_stall_in@20000000
-    // out out_data_out@2
-    // out out_feedback_stall_out_0@20000000
+    // out out_data_out@1
     // out out_stall_out@20000000
-    // out out_valid_out@2
-    if_loop_3_i_llvm_fpga_pop_token_i1_wt_limpop_0 thei_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30 (
+    // out out_valid_out@1
+    if_loop_3_B0_runOnce_merge_reg theif_loop_3_B0_runOnce_merge_reg (
         .in_data_in(GND_q),
-        .in_dir(GND_q),
-        .in_feedback_in_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_out_0),
-        .in_feedback_valid_in_0(i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_out_feedback_valid_out_0),
-        .in_predicate(GND_q),
-        .in_stall_in(SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_backStall),
-        .in_valid_in(SE_out_if_loop_3_B0_runOnce_merge_reg_V0),
+        .in_stall_in(SE_out_if_loop_3_B0_runOnce_merge_reg_backStall),
+        .in_valid_in(SE_stall_entry_V0),
         .out_data_out(),
-        .out_feedback_stall_out_0(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_feedback_stall_out_0),
-        .out_stall_out(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_valid_out),
+        .out_stall_out(if_loop_3_B0_runOnce_merge_reg_out_stall_out),
+        .out_valid_out(if_loop_3_B0_runOnce_merge_reg_out_valid_out),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30(STALLENABLE,27)
+    // SE_stall_entry(STALLENABLE,32)
     // Valid signal propagation
-    assign SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_V0 = SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_wireValid;
+    assign SE_stall_entry_V0 = SE_stall_entry_wireValid;
     // Backward Stall generation
-    assign SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_backStall = in_stall_in | ~ (SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_wireValid);
+    assign SE_stall_entry_backStall = if_loop_3_B0_runOnce_merge_reg_out_stall_out | ~ (SE_stall_entry_wireValid);
     // Computing multiple Valid(s)
-    assign SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_wireValid = i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_out_valid_out;
+    assign SE_stall_entry_wireValid = in_valid_in;
 
-    // dupName_0_sync_out_x(GPOUT,2)@2
-    assign out_valid_out = SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_V0;
-
-    // sync_out(GPOUT,20)@0
+    // sync_out(GPOUT,19)@0
     assign out_stall_out = SE_stall_entry_backStall;
+
+    // dupName_0_sync_out_x(GPOUT,21)@2
+    assign out_valid_out = SE_out_i_llvm_fpga_pop_token_i1_wt_limpop_if_loop_30_V0;
 
 endmodule

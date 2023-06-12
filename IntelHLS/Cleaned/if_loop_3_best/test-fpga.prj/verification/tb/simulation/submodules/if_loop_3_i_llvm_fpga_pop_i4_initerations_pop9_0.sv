@@ -16,13 +16,11 @@
 
 // SystemVerilog created from i_llvm_fpga_pop_i4_initerations_pop9_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:56 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_pop_i4_initerations_pop9_0 (
-    output wire [3:0] out_data_out,
-    output wire [0:0] out_valid_out,
     input wire [7:0] in_feedback_in_9,
     input wire [0:0] in_feedback_valid_in_9,
     output wire [0:0] out_feedback_stall_out_9,
@@ -32,11 +30,12 @@ module if_loop_3_i_llvm_fpga_pop_i4_initerations_pop9_0 (
     input wire [0:0] in_dir,
     input wire [0:0] in_predicate,
     input wire [0:0] in_valid_in,
+    output wire [3:0] out_data_out,
+    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
-    wire [3:0] adapt_scalar_trunc4_sel_x_b;
     wire [3:0] c_i4_03_q;
     wire [7:0] element_extension2_q;
     wire [7:0] i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_data_in;
@@ -58,15 +57,16 @@ module if_loop_3_i_llvm_fpga_pop_i4_initerations_pop9_0 (
     wire i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_stall_out_bitsignaltemp;
     wire [0:0] i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_valid_out;
     wire i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_valid_out_bitsignaltemp;
+    wire [3:0] adapt_scalar_trunc4_sel_x_b;
 
 
-    // c_i4_03(CONSTANT,5)
+    // c_i4_03(CONSTANT,3)
     assign c_i4_03_q = $unsigned(4'b0000);
 
-    // element_extension2(BITJOIN,6)@12
+    // element_extension2(BITJOIN,4)@24
     assign element_extension2_q = {c_i4_03_q, in_data_in};
 
-    // i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31(EXTIFACE,9)@12
+    // i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31(EXTIFACE,7)@24
     assign i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_data_in = element_extension2_q;
     assign i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_dir = in_dir;
     assign i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_feedback_in = in_feedback_in_9;
@@ -105,17 +105,17 @@ module if_loop_3_i_llvm_fpga_pop_i4_initerations_pop9_0 (
         .resetn(resetn)
     );
 
-    // adapt_scalar_trunc4_sel_x(BITSELECT,2)@12
-    assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_data_out[3:0];
-
-    // dupName_0_sync_out_x(GPOUT,3)@12
-    assign out_data_out = adapt_scalar_trunc4_sel_x_b;
-    assign out_valid_out = i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_valid_out;
-
-    // feedback_sync_out(GPOUT,8)
+    // feedback_sync_out(GPOUT,6)
     assign out_feedback_stall_out_9 = i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_feedback_stall_out;
 
-    // sync_out(GPOUT,11)@12
+    // sync_out(GPOUT,9)@24
     assign out_stall_out = i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_stall_out;
+
+    // adapt_scalar_trunc4_sel_x(BITSELECT,11)@24
+    assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_data_out[3:0];
+
+    // dupName_0_sync_out_x(GPOUT,12)@24
+    assign out_data_out = adapt_scalar_trunc4_sel_x_b;
+    assign out_valid_out = i_llvm_fpga_pop_i4_initerations_pop9_if_loop_31_valid_out;
 
 endmodule

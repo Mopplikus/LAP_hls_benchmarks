@@ -16,17 +16,17 @@
 
 // SystemVerilog created from if_loop_3_B0_runOnce_merge_reg
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:56 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_B0_runOnce_merge_reg (
-    output wire [0:0] out_data_out,
-    output wire [0:0] out_valid_out,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_data_in,
     input wire [0:0] in_valid_in,
+    output wire [0:0] out_data_out,
+    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
@@ -43,16 +43,16 @@ module if_loop_3_B0_runOnce_merge_reg (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // stall_in_not(LOGICAL,8)
+    // stall_in_not(LOGICAL,7)
     assign stall_in_not_q = ~ (in_stall_in);
 
-    // if_loop_3_B0_runOnce_merge_reg_valid_reg_not(LOGICAL,6)
+    // if_loop_3_B0_runOnce_merge_reg_valid_reg_not(LOGICAL,5)
     assign if_loop_3_B0_runOnce_merge_reg_valid_reg_not_q = ~ (if_loop_3_B0_runOnce_merge_reg_valid_reg_q);
 
-    // stall_in_not_or_if_loop_3_B0_runOnce_merge_reg_valid_reg(LOGICAL,9)
+    // stall_in_not_or_if_loop_3_B0_runOnce_merge_reg_valid_reg(LOGICAL,8)
     assign stall_in_not_or_if_loop_3_B0_runOnce_merge_reg_valid_reg_q = if_loop_3_B0_runOnce_merge_reg_valid_reg_not_q | stall_in_not_q;
 
-    // if_loop_3_B0_runOnce_merge_reg_valid_reg(REG,4)
+    // if_loop_3_B0_runOnce_merge_reg_valid_reg(REG,3)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -65,7 +65,13 @@ module if_loop_3_B0_runOnce_merge_reg (
         end
     end
 
-    // if_loop_3_B0_runOnce_merge_reg_data_reg(REG,3)
+    // if_loop_3_B0_runOnce_merge_reg_valid_reg_and_stall_in(LOGICAL,4)
+    assign if_loop_3_B0_runOnce_merge_reg_valid_reg_and_stall_in_q = if_loop_3_B0_runOnce_merge_reg_valid_reg_q & in_stall_in;
+
+    // sync_out(GPOUT,9)@20000000
+    assign out_stall_out = if_loop_3_B0_runOnce_merge_reg_valid_reg_and_stall_in_q;
+
+    // if_loop_3_B0_runOnce_merge_reg_data_reg(REG,2)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -78,14 +84,8 @@ module if_loop_3_B0_runOnce_merge_reg (
         end
     end
 
-    // dupName_0_sync_out_x(GPOUT,2)@1
+    // dupName_0_sync_out_x(GPOUT,11)@1
     assign out_data_out = if_loop_3_B0_runOnce_merge_reg_data_reg_q;
     assign out_valid_out = if_loop_3_B0_runOnce_merge_reg_valid_reg_q;
-
-    // if_loop_3_B0_runOnce_merge_reg_valid_reg_and_stall_in(LOGICAL,5)
-    assign if_loop_3_B0_runOnce_merge_reg_valid_reg_and_stall_in_q = if_loop_3_B0_runOnce_merge_reg_valid_reg_q & in_stall_in;
-
-    // sync_out(GPOUT,10)@20000000
-    assign out_stall_out = if_loop_3_B0_runOnce_merge_reg_valid_reg_and_stall_in_q;
 
 endmodule

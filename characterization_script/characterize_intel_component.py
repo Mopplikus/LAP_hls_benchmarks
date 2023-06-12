@@ -417,12 +417,13 @@ def clear_files():
 	os.system("rm synthesis_*")
 	os.system("rm -rf incremental_db")
 	os.system("rm -rf simulation")
-	os.system("rm *_pin_model_dump.txt")
+	#os.system("rm *_pin_model_dump.txt")
 	os.system("rm timing_report.rpt")
 	os.system("rm timing-gen.tcl")
 	os.system("rm *.sdc")
 	os.system("rm timing_log.log")
 	os.system("rm quartus_log.log")
+	os.system("rm -rf qdb")
 
 def collect_timings():
 	widths_collector = [1, 2, 4, 8, 16, 32, 64]
@@ -466,12 +467,42 @@ widths = [1, 2, 4, 8, 16, 32, 64]
 # The list of components to be characterized
 # "nil" indicates a zero-delay component
 
+#components = [
+#	"icmp_eq_op",		# ICMP
+#	"add_op",			# ADD
+#	"sub_op",			# SUB
+#	"mul_op",			# MUL
+#	"sext_op",			# SEXT
+#	"load_op",			# LOAD
+#	"store_op",			# STORE
+#	"lsq_load_op",		# LSQ_LOAD
+#	"lsq_store_op", 	# LSQ_STORE
+#	"merge",			# MERGE
+#	"getelementptr_op",	# GET_POINTER
+#	"fadd_op",			# FADD
+#	"fsub_op",			# FSUB
+#	"fmul_op",			# FMUL
+#	"udiv_op",			# UDIV
+#	"sdiv_op",			# SDIV
+#	"fdiv_op",			# FDIV
+#	"fcmp_oeq_op",		# FCMP
+#	"cntrlMerge",		# PHIC
+#	"nil",				# ZDL
+#	"fork",				# FORK
+#	"ret_op",			# RETURN
+#	"branch",			# BRANCH
+#	"end_node",			# END
+#	"and_op",			# AND
+#	"or_op",			# OR
+#	"xor_op",			# XOR
+#	"shl_op",			# SHL
+#	"ashr_op",			# ASHR
+#	"lshr_op",			# LSHR
+#	"select_op",		# SELECT
+#	"mux"				# MUX
+#]
+
 components = [
-	"icmp_eq_op",		# ICMP
-	"add_op",			# ADD
-	"sub_op",			# SUB
-	"mul_op",			# MUL
-	"sext_op",			# SEXT
 	"load_op",			# LOAD
 	"store_op",			# STORE
 	"lsq_load_op",		# LSQ_LOAD
@@ -505,12 +536,42 @@ components = [
 # Places in the netlist where values should be set to 0
 # "a" indicates all
 
+#voids = [
+#	[],		# 1
+#	[],
+#	[],
+#	["a"],
+#	[],		# 5
+#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
+#	[],
+#	["a"],
+#	["a"],
+#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],	# 10
+#	[],
+#	["a"],
+#	["a"],
+#	["a"],
+#	["a"],	# 15
+#	[],
+#	["a"],
+#	["a"],
+#	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "r1", "r2", "r4", "r8", "r16", "r32", "r64"],
+#	["a"], # 20
+#	["d1", "d2", "d4", "d8", "d16", "d32", "d64"],
+#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
+#	["d1", "d2", "d4", "d8", "d16", "d32", "d64"],
+#	["v1", "v2", "v4", "v8", "v16", "v32", "v64"],
+#	[], # 25
+#	[],
+#	[],
+#	[],
+#	[],
+#	[], # 30
+#	[],
+#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"] # 32
+#]
+
 voids = [
-	[],		# 1
-	[],
-	[],
-	["a"],
-	[],		# 5
 	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
 	[],
 	["a"],
@@ -539,6 +600,8 @@ voids = [
 	[],
 	["r1", "r2", "r4", "r8", "r16", "r32", "r64"] # 32
 ]
+
+assert len(voids) == len(components)
 
 acc = 0
 global_start_time = time.time()

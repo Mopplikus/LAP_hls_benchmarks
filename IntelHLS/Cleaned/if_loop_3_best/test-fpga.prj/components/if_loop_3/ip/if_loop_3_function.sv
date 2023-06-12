@@ -16,7 +16,7 @@
 
 // SystemVerilog created from if_loop_3_function
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:57 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
@@ -65,11 +65,6 @@ module if_loop_3_function (
 
     wire [0:0] GND_q;
     wire [0:0] VCC_q;
-    wire [0:0] bb_if_loop_3_B2_sr_1_aunroll_x_out_o_data_0_tpl;
-    wire [0:0] bb_if_loop_3_B2_sr_1_aunroll_x_out_o_stall;
-    wire [0:0] bb_if_loop_3_B2_sr_1_aunroll_x_out_o_valid;
-    wire [0:0] bb_if_loop_3_B3_sr_0_aunroll_x_out_o_stall;
-    wire [0:0] bb_if_loop_3_B3_sr_0_aunroll_x_out_o_valid;
     wire [0:0] bb_if_loop_3_B0_runOnce_out_stall_out_0;
     wire [0:0] bb_if_loop_3_B1_start_out_feedback_stall_out_1;
     wire [0:0] bb_if_loop_3_B1_start_out_intel_reserved_ffwd_0_0;
@@ -161,12 +156,17 @@ module if_loop_3_function (
     wire if_loop_3_B2_x_i_valid_succ_bitsignaltemp;
     wire [0:0] loop_limiter_if_loop_30_out_o_stall;
     wire [0:0] loop_limiter_if_loop_30_out_o_valid;
+    wire [0:0] bb_if_loop_3_B2_sr_1_aunroll_x_out_o_stall;
+    wire [0:0] bb_if_loop_3_B2_sr_1_aunroll_x_out_o_valid;
+    wire [0:0] bb_if_loop_3_B2_sr_1_aunroll_x_out_o_data_0_tpl;
+    wire [0:0] bb_if_loop_3_B3_sr_0_aunroll_x_out_o_stall;
+    wire [0:0] bb_if_loop_3_B3_sr_0_aunroll_x_out_o_valid;
 
 
-    // c_i2_010(CONSTANT,20)
+    // c_i2_010(CONSTANT,18)
     assign c_i2_010_q = $unsigned(2'b00);
 
-    // i_llvm_fpga_pipeline_keep_going12_if_loop_31_valid_fifo(BLACKBOX,24)
+    // i_llvm_fpga_pipeline_keep_going12_if_loop_31_valid_fifo(BLACKBOX,22)
     if_loop_3_i_llvm_fpga_pipeline_keep_going12_1_valid_fifo thei_llvm_fpga_pipeline_keep_going12_if_loop_31_valid_fifo (
         .in_data_in(c_i2_010_q),
         .in_stall_in(bb_if_loop_3_B1_start_out_stall_out_0),
@@ -179,7 +179,7 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // i_llvm_fpga_pipeline_keep_going_if_loop_36_valid_fifo(BLACKBOX,26)
+    // i_llvm_fpga_pipeline_keep_going_if_loop_36_valid_fifo(BLACKBOX,24)
     if_loop_3_i_llvm_fpga_pipeline_keep_going_6_valid_fifo thei_llvm_fpga_pipeline_keep_going_if_loop_36_valid_fifo (
         .in_data_in(c_i2_010_q),
         .in_stall_in(bb_if_loop_3_B2_out_stall_out_0),
@@ -192,19 +192,19 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // bb_if_loop_3_B3_sr_0_aunroll_x(BLACKBOX,3)
+    // bb_if_loop_3_B3_sr_0_aunroll_x(BLACKBOX,67)
     if_loop_3_bb_B3_sr_0 thebb_if_loop_3_B3_sr_0_aunroll_x (
-        .in_i_data_0_tpl(GND_q),
         .in_i_stall(bb_if_loop_3_B3_out_stall_out_0),
         .in_i_valid(bb_if_loop_3_B2_out_valid_out_0),
-        .out_o_data_0_tpl(),
+        .in_i_data_0_tpl(GND_q),
         .out_o_stall(bb_if_loop_3_B3_sr_0_aunroll_x_out_o_stall),
         .out_o_valid(bb_if_loop_3_B3_sr_0_aunroll_x_out_o_valid),
+        .out_o_data_0_tpl(),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // i_llvm_fpga_pipeline_keep_going_if_loop_36_sr(BLACKBOX,25)
+    // i_llvm_fpga_pipeline_keep_going_if_loop_36_sr(BLACKBOX,23)
     if_loop_3_i_llvm_fpga_pipeline_keep_going_6_sr thei_llvm_fpga_pipeline_keep_going_if_loop_36_sr (
         .in_i_data(GND_q),
         .in_i_stall(i_llvm_fpga_pipeline_keep_going_if_loop_36_valid_fifo_out_stall_out),
@@ -216,7 +216,7 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // bb_if_loop_3_B2(BLACKBOX,6)
+    // bb_if_loop_3_B2(BLACKBOX,4)
     if_loop_3_bb_B2 thebb_if_loop_3_B2 (
         .in_flush(in_start),
         .in_forked_0(GND_q),
@@ -267,19 +267,19 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // bb_if_loop_3_B2_sr_1_aunroll_x(BLACKBOX,2)
+    // bb_if_loop_3_B2_sr_1_aunroll_x(BLACKBOX,66)
     if_loop_3_bb_B2_sr_1 thebb_if_loop_3_B2_sr_1_aunroll_x (
-        .in_i_data_0_tpl(VCC_q),
         .in_i_stall(bb_if_loop_3_B2_out_stall_out_1),
         .in_i_valid(loop_limiter_if_loop_30_out_o_valid),
-        .out_o_data_0_tpl(bb_if_loop_3_B2_sr_1_aunroll_x_out_o_data_0_tpl),
+        .in_i_data_0_tpl(VCC_q),
         .out_o_stall(bb_if_loop_3_B2_sr_1_aunroll_x_out_o_stall),
         .out_o_valid(bb_if_loop_3_B2_sr_1_aunroll_x_out_o_valid),
+        .out_o_data_0_tpl(bb_if_loop_3_B2_sr_1_aunroll_x_out_o_data_0_tpl),
         .clock(clock),
         .resetn(resetn)
     );
 
-    // loop_limiter_if_loop_30(BLACKBOX,47)
+    // loop_limiter_if_loop_30(BLACKBOX,45)
     if_loop_3_loop_limiter_0 theloop_limiter_if_loop_30 (
         .in_i_stall(bb_if_loop_3_B2_sr_1_aunroll_x_out_o_stall),
         .in_i_stall_exit(bb_if_loop_3_B2_out_exiting_stall_out),
@@ -291,7 +291,7 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // i_llvm_fpga_pipeline_keep_going12_if_loop_31_sr(BLACKBOX,23)
+    // i_llvm_fpga_pipeline_keep_going12_if_loop_31_sr(BLACKBOX,21)
     if_loop_3_i_llvm_fpga_pipeline_keep_going12_1_sr thei_llvm_fpga_pipeline_keep_going12_if_loop_31_sr (
         .in_i_data(GND_q),
         .in_i_stall(i_llvm_fpga_pipeline_keep_going12_if_loop_31_valid_fifo_out_stall_out),
@@ -303,7 +303,7 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // bb_if_loop_3_B1_start(BLACKBOX,5)
+    // bb_if_loop_3_B1_start(BLACKBOX,3)
     if_loop_3_bb_B1_start thebb_if_loop_3_B1_start (
         .in_feedback_in_1(bb_if_loop_3_B3_out_feedback_out_1),
         .in_feedback_valid_in_1(bb_if_loop_3_B3_out_feedback_valid_out_1),
@@ -332,7 +332,7 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // bb_if_loop_3_B3(BLACKBOX,7)
+    // bb_if_loop_3_B3(BLACKBOX,5)
     if_loop_3_bb_B3 thebb_if_loop_3_B3 (
         .in_feedback_stall_in_1(bb_if_loop_3_B1_start_out_feedback_stall_out_1),
         .in_intel_reserved_ffwd_0_0(bb_if_loop_3_B1_start_out_intel_reserved_ffwd_0_0),
@@ -357,7 +357,7 @@ module if_loop_3_function (
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // if_loop_3_B1_start_x(EXTIFACE,27)
+    // if_loop_3_B1_start_x(EXTIFACE,25)
     assign if_loop_3_B1_start_x_i_capture = GND_q;
     assign if_loop_3_B1_start_x_i_clear = GND_q;
     assign if_loop_3_B1_start_x_i_enable = VCC_q;
@@ -392,7 +392,7 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // if_loop_3_B2_x(EXTIFACE,28)
+    // if_loop_3_B2_x(EXTIFACE,26)
     assign if_loop_3_B2_x_i_capture = GND_q;
     assign if_loop_3_B2_x_i_clear = GND_q;
     assign if_loop_3_B2_x_i_enable = VCC_q;
@@ -427,61 +427,61 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // out_iord_bl_call_if_loop_3_o_fifoalmost_full(GPOUT,48)
+    // out_iord_bl_call_if_loop_3_o_fifoalmost_full(GPOUT,46)
     assign out_iord_bl_call_if_loop_3_o_fifoalmost_full = bb_if_loop_3_B1_start_out_iord_bl_call_if_loop_3_o_fifoalmost_full;
 
-    // out_iord_bl_call_if_loop_3_o_fifoready(GPOUT,49)
+    // out_iord_bl_call_if_loop_3_o_fifoready(GPOUT,47)
     assign out_iord_bl_call_if_loop_3_o_fifoready = bb_if_loop_3_B1_start_out_iord_bl_call_if_loop_3_o_fifoready;
 
-    // out_iowr_bl_return_if_loop_3_o_fifodata(GPOUT,50)
+    // out_iowr_bl_return_if_loop_3_o_fifodata(GPOUT,48)
     assign out_iowr_bl_return_if_loop_3_o_fifodata = bb_if_loop_3_B3_out_iowr_bl_return_if_loop_3_o_fifodata;
 
-    // out_iowr_bl_return_if_loop_3_o_fifovalid(GPOUT,51)
+    // out_iowr_bl_return_if_loop_3_o_fifovalid(GPOUT,49)
     assign out_iowr_bl_return_if_loop_3_o_fifovalid = bb_if_loop_3_B3_out_iowr_bl_return_if_loop_3_o_fifovalid;
 
-    // out_lm1_if_loop_3_avm_address(GPOUT,52)
+    // out_lm1_if_loop_3_avm_address(GPOUT,50)
     assign out_lm1_if_loop_3_avm_address = bb_if_loop_3_B2_out_lm1_if_loop_3_avm_address;
 
-    // out_lm1_if_loop_3_avm_burstcount(GPOUT,53)
+    // out_lm1_if_loop_3_avm_burstcount(GPOUT,51)
     assign out_lm1_if_loop_3_avm_burstcount = bb_if_loop_3_B2_out_lm1_if_loop_3_avm_burstcount;
 
-    // out_lm1_if_loop_3_avm_byteenable(GPOUT,54)
+    // out_lm1_if_loop_3_avm_byteenable(GPOUT,52)
     assign out_lm1_if_loop_3_avm_byteenable = bb_if_loop_3_B2_out_lm1_if_loop_3_avm_byteenable;
 
-    // out_lm1_if_loop_3_avm_enable(GPOUT,55)
+    // out_lm1_if_loop_3_avm_enable(GPOUT,53)
     assign out_lm1_if_loop_3_avm_enable = bb_if_loop_3_B2_out_lm1_if_loop_3_avm_enable;
 
-    // out_lm1_if_loop_3_avm_read(GPOUT,56)
+    // out_lm1_if_loop_3_avm_read(GPOUT,54)
     assign out_lm1_if_loop_3_avm_read = bb_if_loop_3_B2_out_lm1_if_loop_3_avm_read;
 
-    // out_lm1_if_loop_3_avm_write(GPOUT,57)
+    // out_lm1_if_loop_3_avm_write(GPOUT,55)
     assign out_lm1_if_loop_3_avm_write = bb_if_loop_3_B2_out_lm1_if_loop_3_avm_write;
 
-    // out_lm1_if_loop_3_avm_writedata(GPOUT,58)
+    // out_lm1_if_loop_3_avm_writedata(GPOUT,56)
     assign out_lm1_if_loop_3_avm_writedata = bb_if_loop_3_B2_out_lm1_if_loop_3_avm_writedata;
 
-    // out_lm22_if_loop_3_avm_address(GPOUT,59)
+    // out_lm22_if_loop_3_avm_address(GPOUT,57)
     assign out_lm22_if_loop_3_avm_address = bb_if_loop_3_B2_out_lm22_if_loop_3_avm_address;
 
-    // out_lm22_if_loop_3_avm_burstcount(GPOUT,60)
+    // out_lm22_if_loop_3_avm_burstcount(GPOUT,58)
     assign out_lm22_if_loop_3_avm_burstcount = bb_if_loop_3_B2_out_lm22_if_loop_3_avm_burstcount;
 
-    // out_lm22_if_loop_3_avm_byteenable(GPOUT,61)
+    // out_lm22_if_loop_3_avm_byteenable(GPOUT,59)
     assign out_lm22_if_loop_3_avm_byteenable = bb_if_loop_3_B2_out_lm22_if_loop_3_avm_byteenable;
 
-    // out_lm22_if_loop_3_avm_enable(GPOUT,62)
+    // out_lm22_if_loop_3_avm_enable(GPOUT,60)
     assign out_lm22_if_loop_3_avm_enable = bb_if_loop_3_B2_out_lm22_if_loop_3_avm_enable;
 
-    // out_lm22_if_loop_3_avm_read(GPOUT,63)
+    // out_lm22_if_loop_3_avm_read(GPOUT,61)
     assign out_lm22_if_loop_3_avm_read = bb_if_loop_3_B2_out_lm22_if_loop_3_avm_read;
 
-    // out_lm22_if_loop_3_avm_write(GPOUT,64)
+    // out_lm22_if_loop_3_avm_write(GPOUT,62)
     assign out_lm22_if_loop_3_avm_write = bb_if_loop_3_B2_out_lm22_if_loop_3_avm_write;
 
-    // out_lm22_if_loop_3_avm_writedata(GPOUT,65)
+    // out_lm22_if_loop_3_avm_writedata(GPOUT,63)
     assign out_lm22_if_loop_3_avm_writedata = bb_if_loop_3_B2_out_lm22_if_loop_3_avm_writedata;
 
-    // bb_if_loop_3_B0_runOnce(BLACKBOX,4)
+    // bb_if_loop_3_B0_runOnce(BLACKBOX,2)
     if_loop_3_bb_B0_runOnce thebb_if_loop_3_B0_runOnce (
         .in_stall_in_0(GND_q),
         .in_valid_in_0(in_valid_in),
@@ -491,10 +491,10 @@ module if_loop_3_function (
         .resetn(resetn)
     );
 
-    // out_stall_out(GPOUT,66)
+    // out_stall_out(GPOUT,64)
     assign out_stall_out = bb_if_loop_3_B0_runOnce_out_stall_out_0;
 
-    // out_valid_out(GPOUT,67)
+    // out_valid_out(GPOUT,65)
     assign out_valid_out = GND_q;
 
 endmodule

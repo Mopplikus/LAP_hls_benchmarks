@@ -16,26 +16,26 @@
 
 // SystemVerilog created from i_iowr_bl_return_if_loop_3_unnamed_if_loop_310_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:57 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_iowr_bl_return_unnamed_if_loop_310_if_loop_30 (
-    output wire [0:0] out_iowr_bl_return_if_loop_3_o_fifovalid,
-    output wire [0:0] out_o_ack,
-    output wire [0:0] out_o_valid,
     input wire [0:0] in_iowr_bl_return_if_loop_3_i_fifoready,
     output wire [31:0] out_iowr_bl_return_if_loop_3_o_fifodata,
     input wire [0:0] in_i_stall,
     output wire [0:0] out_o_stall,
     input wire [31:0] in_i_data,
     input wire [0:0] in_i_valid,
+    output wire [0:0] out_iowr_bl_return_if_loop_3_o_fifovalid,
+    output wire [0:0] out_o_ack,
+    output wire [0:0] out_o_valid,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
-    wire [31:0] dupName_0_const_0_x_q;
+    wire [31:0] c32_0_q;
     wire [31:0] iowr_i_data;
     wire [0:0] iowr_i_endofpacket;
     wire iowr_i_endofpacket_bitsignaltemp;
@@ -64,18 +64,18 @@ module if_loop_3_i_iowr_bl_return_unnamed_if_loop_310_if_loop_30 (
     wire [31:0] iowr_profile_total_fifo_size_incr;
 
 
-    // dupName_0_const_0_x(CONSTANT,2)
-    assign dupName_0_const_0_x_q = $unsigned(32'b00000000000000000000000000000000);
+    // c32_0(CONSTANT,2)
+    assign c32_0_q = $unsigned(32'b00000000000000000000000000000000);
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // iowr(EXTIFACE,8)
+    // iowr(EXTIFACE,5)
     assign iowr_i_data = in_i_data;
     assign iowr_i_endofpacket = GND_q;
     assign iowr_i_fifoready = in_iowr_bl_return_if_loop_3_i_fifoready;
-    assign iowr_i_fifosize = dupName_0_const_0_x_q;
-    assign iowr_i_packetempty = dupName_0_const_0_x_q;
+    assign iowr_i_fifosize = c32_0_q;
+    assign iowr_i_packetempty = c32_0_q;
     assign iowr_i_predicate = GND_q;
     assign iowr_i_stall = in_i_stall;
     assign iowr_i_startofpacket = GND_q;
@@ -109,8 +109,8 @@ module if_loop_3_i_iowr_bl_return_unnamed_if_loop_310_if_loop_30 (
         .i_data(in_i_data),
         .i_endofpacket(iowr_i_endofpacket_bitsignaltemp),
         .i_fifoready(iowr_i_fifoready_bitsignaltemp),
-        .i_fifosize(dupName_0_const_0_x_q),
-        .i_packetempty(dupName_0_const_0_x_q),
+        .i_fifosize(c32_0_q),
+        .i_packetempty(c32_0_q),
         .i_predicate(iowr_i_predicate_bitsignaltemp),
         .i_stall(iowr_i_stall_bitsignaltemp),
         .i_startofpacket(iowr_i_startofpacket_bitsignaltemp),
@@ -126,17 +126,17 @@ module if_loop_3_i_iowr_bl_return_unnamed_if_loop_310_if_loop_30 (
         .resetn(resetn)
     );
 
-    // dupName_0_regfree_osync_x(GPOUT,3)
-    assign out_iowr_bl_return_if_loop_3_o_fifovalid = iowr_o_fifovalid;
-
-    // dupName_0_sync_out_x(GPOUT,4)@1
-    assign out_o_ack = iowr_o_ack;
-    assign out_o_valid = iowr_o_valid;
-
-    // regfree_osync(GPOUT,10)
+    // regfree_osync(GPOUT,7)
     assign out_iowr_bl_return_if_loop_3_o_fifodata = iowr_o_fifodata;
 
-    // sync_out(GPOUT,12)@20000000
+    // sync_out(GPOUT,9)@20000000
     assign out_o_stall = iowr_o_stall;
+
+    // dupName_0_regfree_osync_x(GPOUT,12)
+    assign out_iowr_bl_return_if_loop_3_o_fifovalid = iowr_o_fifovalid;
+
+    // dupName_0_sync_out_x(GPOUT,13)@1
+    assign out_o_ack = iowr_o_ack;
+    assign out_o_valid = iowr_o_valid;
 
 endmodule

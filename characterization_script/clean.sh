@@ -7,3 +7,4 @@ rm *.sdc
 rm quartus_log.log
 rm synthesis_*
 rm timing*
+rm -rf qdb

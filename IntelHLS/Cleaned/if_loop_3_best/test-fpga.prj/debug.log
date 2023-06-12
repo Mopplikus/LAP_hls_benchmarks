@@ -1,0 +1,314 @@
+*******************************************************
+ i++ debug log file                                    
+ This file contains diagnostic information. Any errors 
+ or unexpected behavior encountered when running i++   
+ should be reported as bugs. Thank you.                
+*******************************************************
+
+Compiler Command: i++ if_loop_3.cpp -v -march=5CSEMA4U23C7 -o test-fpga
+
+2023.06.12.11:45:31 Info: Doing: <b>qsys-script --script=if_loop_3.tcl</b>
+2023.06.12.11:45:39 Info: create_system if_loop_3
+2023.06.12.11:45:39 Info: set_project_property HIDE_FROM_IP_CATALOG false
+2023.06.12.11:45:39 Info: set_project_property DEVICE_FAMILY CycloneV
+2023.06.12.11:45:39 Info: set_project_property DEVICE 5CSEMA4U23C7
+2023.06.12.11:45:39 Info: add_instance if_loop_3_internal_inst if_loop_3_internal 
+2023.06.12.11:45:40 Info: set_instance_property if_loop_3_internal_inst AUTO_EXPORT true
+2023.06.12.11:45:40 Info: save_system if_loop_3.qsys
+Generating qsys simulation system: tb
+2023.06.12.11:45:41 Info: Doing: <b>qsys-script --1 --search-path=/home/elija/intelHLS/21.4/hls/ip/,.,../components/**/*,$ --script=/home/elija/intelHLS/21.4/hls/share/lib/tcl/hls_sim_generate_qsys.tcl --cmd=set quartus_pro 0; set num_reset_cycles 4; set sim_qsys tb; set component_list if_loop_3; set component_call_count_filename .</b>
+2023.06.12.11:45:48 Info: create_system tb
+2023.06.12.11:45:48 Info: add_instance clock_reset_inst hls_sim_clock_reset 
+2023.06.12.11:45:49 Info: set_instance_parameter_value clock_reset_inst RESET_CYCLE_HOLD 4
+2023.06.12.11:45:49 Info: add_instance if_loop_3_inst if_loop_3 
+2023.06.12.11:45:50 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.compressed.name
+2023.06.12.11:45:50 Info: add_instance main_dpi_controller_inst hls_sim_main_dpi_controller 
+2023.06.12.11:45:50 Info: set_instance_parameter_value main_dpi_controller_inst NUM_COMPONENTS 1
+2023.06.12.11:45:50 Info: set_instance_parameter_value main_dpi_controller_inst COMPONENT_NAMES_STR if_loop_3
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.clock main_dpi_controller_inst.clock
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.clock2x main_dpi_controller_inst.clock2x
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.reset main_dpi_controller_inst.reset
+2023.06.12.11:45:50 Info: add_connection main_dpi_controller_inst.reset_ctrl clock_reset_inst.reset_ctrl
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.clock if_loop_3_inst.clock
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.reset if_loop_3_inst.reset
+2023.06.12.11:45:50 Info: get_instance_interfaces if_loop_3_inst
+2023.06.12.11:45:50 Info: get_instance_interface_property if_loop_3_inst a DESCRIPTION
+2023.06.12.11:45:50 Info: get_instance_interface_property if_loop_3_inst a CLASS_NAME
+2023.06.12.11:45:50 Info: get_instance_interface_ports if_loop_3_inst a
+2023.06.12.11:45:50 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.compressed.name
+2023.06.12.11:45:50 Info: get_instance_interface_assignment if_loop_3_inst a hls.cosim.name
+2023.06.12.11:45:50 Info: add_instance stream_source_dpi_bfm_if_loop_3_a_inst hls_sim_stream_source_dpi_bfm 
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.clock stream_source_dpi_bfm_if_loop_3_a_inst.clock
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.clock2x stream_source_dpi_bfm_if_loop_3_a_inst.clock2x
+2023.06.12.11:45:50 Info: add_connection clock_reset_inst.reset stream_source_dpi_bfm_if_loop_3_a_inst.reset
+2023.06.12.11:45:50 Info: get_instance_interface_port_property if_loop_3_inst a a WIDTH
+2023.06.12.11:45:50 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_a_inst FORCE_STREAM_CONDUIT 1
+2023.06.12.11:45:50 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_a_inst STREAM_DATAWIDTH 64
+2023.06.12.11:45:50 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_a_inst INTERFACE_NAME a
+2023.06.12.11:45:50 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_a_inst COMPONENT_NAME if_loop_3
+2023.06.12.11:45:50 Info: add_connection stream_source_dpi_bfm_if_loop_3_a_inst.source_data if_loop_3_inst.a
+2023.06.12.11:45:50 Info: get_instance_interface_property if_loop_3_inst avmm_1_rw DESCRIPTION
+2023.06.12.11:45:50 Info: get_instance_interface_property if_loop_3_inst avmm_1_rw CLASS_NAME
+2023.06.12.11:45:50 Info: get_instance_interface_ports if_loop_3_inst avmm_1_rw
+2023.06.12.11:45:50 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.compressed.name
+2023.06.12.11:45:50 Info: add_instance mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst hls_sim_mm_agent_dpi_bfm 
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst avmm_1_rw avmm_1_rw_address WIDTH
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst avmm_1_rw avmm_1_rw_readdata WIDTH
+2023.06.12.11:45:51 Info: get_instance_interface_parameter_value if_loop_3_inst avmm_1_rw readLatency
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst AV_FIX_READ_LATENCY 1
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst avmm_1_rw avmm_1_rw_byteenable WIDTH
+2023.06.12.11:45:51 Info: get_instance_interface_parameter_value if_loop_3_inst avmm_1_rw addressUnits
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst avmm_1_rw
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst INTERFACE_ID 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst COMPONENT_NAME if_loop_3
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst AV_ADDRESS_W 32
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst AV_NUMSYMBOLS 32
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst AV_SYMBOL_W 8
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst ADDRESS_UNITS SYMBOLS
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_WAIT_REQUEST 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_BURSTCOUNT 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_READ_DATA_VALID 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_READ 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_READ_DATA 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_WRITE 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_WRITE_DATA 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst USE_READ_DATA_VALID 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst AV_MAX_PENDING_READS 0
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst.clock
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.reset mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst.reset
+2023.06.12.11:45:51 Info: add_connection if_loop_3_inst.avmm_1_rw mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst.s0
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst avmm_4_rw DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst avmm_4_rw CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst avmm_4_rw
+2023.06.12.11:45:51 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.compressed.name
+2023.06.12.11:45:51 Info: add_instance mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst hls_sim_mm_agent_dpi_bfm 
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst avmm_4_rw avmm_4_rw_address WIDTH
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst avmm_4_rw avmm_4_rw_readdata WIDTH
+2023.06.12.11:45:51 Info: get_instance_interface_parameter_value if_loop_3_inst avmm_4_rw readLatency
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst AV_FIX_READ_LATENCY 1
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst avmm_4_rw avmm_4_rw_byteenable WIDTH
+2023.06.12.11:45:51 Info: get_instance_interface_parameter_value if_loop_3_inst avmm_4_rw addressUnits
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst avmm_4_rw
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst INTERFACE_ID 4
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst COMPONENT_NAME if_loop_3
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst AV_ADDRESS_W 32
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst AV_NUMSYMBOLS 32
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst AV_SYMBOL_W 8
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst ADDRESS_UNITS SYMBOLS
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_WAIT_REQUEST 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_BURSTCOUNT 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_READ_DATA_VALID 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_READ 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_READ_DATA 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_WRITE 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_WRITE_DATA 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst USE_READ_DATA_VALID 0
+2023.06.12.11:45:51 Info: set_instance_parameter_value mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst AV_MAX_PENDING_READS 0
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst.clock
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.reset mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst.reset
+2023.06.12.11:45:51 Info: add_connection if_loop_3_inst.avmm_4_rw mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst.s0
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst b DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst b CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst b
+2023.06.12.11:45:51 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.compressed.name
+2023.06.12.11:45:51 Info: get_instance_interface_assignment if_loop_3_inst b hls.cosim.name
+2023.06.12.11:45:51 Info: add_instance stream_source_dpi_bfm_if_loop_3_b_inst hls_sim_stream_source_dpi_bfm 
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock stream_source_dpi_bfm_if_loop_3_b_inst.clock
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock2x stream_source_dpi_bfm_if_loop_3_b_inst.clock2x
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.reset stream_source_dpi_bfm_if_loop_3_b_inst.reset
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst b b WIDTH
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_b_inst FORCE_STREAM_CONDUIT 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_b_inst STREAM_DATAWIDTH 64
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_b_inst INTERFACE_NAME b
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_b_inst COMPONENT_NAME if_loop_3
+2023.06.12.11:45:51 Info: add_connection stream_source_dpi_bfm_if_loop_3_b_inst.source_data if_loop_3_inst.b
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst call DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst call CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst call
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst clock DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst clock CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst clock
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst n DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst n CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst n
+2023.06.12.11:45:51 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.compressed.name
+2023.06.12.11:45:51 Info: get_instance_interface_assignment if_loop_3_inst n hls.cosim.name
+2023.06.12.11:45:51 Info: add_instance stream_source_dpi_bfm_if_loop_3_n_inst hls_sim_stream_source_dpi_bfm 
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock stream_source_dpi_bfm_if_loop_3_n_inst.clock
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock2x stream_source_dpi_bfm_if_loop_3_n_inst.clock2x
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.reset stream_source_dpi_bfm_if_loop_3_n_inst.reset
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst n n WIDTH
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_n_inst FORCE_STREAM_CONDUIT 1
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_n_inst STREAM_DATAWIDTH 32
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_n_inst INTERFACE_NAME n
+2023.06.12.11:45:51 Info: set_instance_parameter_value stream_source_dpi_bfm_if_loop_3_n_inst COMPONENT_NAME if_loop_3
+2023.06.12.11:45:51 Info: add_connection stream_source_dpi_bfm_if_loop_3_n_inst.source_data if_loop_3_inst.n
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst reset DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst reset CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst reset
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst return DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst return CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst return
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst returndata DESCRIPTION
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst returndata CLASS_NAME
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst returndata
+2023.06.12.11:45:51 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.cosim.name
+2023.06.12.11:45:51 Info: get_composed_instance_assignment if_loop_3_inst if_loop_3_internal_inst hls.compressed.name
+2023.06.12.11:45:51 Info: add_instance component_dpi_controller_if_loop_3_inst hls_sim_component_dpi_controller 
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock component_dpi_controller_if_loop_3_inst.clock
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.clock2x component_dpi_controller_if_loop_3_inst.clock2x
+2023.06.12.11:45:51 Info: add_connection clock_reset_inst.reset component_dpi_controller_if_loop_3_inst.reset
+2023.06.12.11:45:51 Info: add_connection component_dpi_controller_if_loop_3_inst.component_call if_loop_3_inst.call
+2023.06.12.11:45:51 Info: add_connection if_loop_3_inst.return component_dpi_controller_if_loop_3_inst.component_return
+2023.06.12.11:45:51 Info: get_instance_interfaces if_loop_3_inst
+2023.06.12.11:45:51 Info: get_instance_interface_port_property if_loop_3_inst returndata returndata WIDTH
+2023.06.12.11:45:51 Info: set_instance_parameter_value component_dpi_controller_if_loop_3_inst RETURN_DATAWIDTH 32
+2023.06.12.11:45:51 Info: add_connection if_loop_3_inst.returndata component_dpi_controller_if_loop_3_inst.returndata
+2023.06.12.11:45:51 Info: set_instance_parameter_value component_dpi_controller_if_loop_3_inst COMPONENT_NAME if_loop_3
+2023.06.12.11:45:51 Info: set_instance_parameter_value component_dpi_controller_if_loop_3_inst COMPONENT_MANGLED_NAME _Z9if_loop_3RN3ihc7mm_hostIiJNS_6dwidthILi256EEENS_6awidthILi32EEENS_6aspaceILi1EEENS_7latencyILi1EEEEEERNS0_IiJS2_S4_NS5_ILi4EEES8_EEEi
+2023.06.12.11:45:51 Info: add_instance if_loop_3_component_dpi_controller_bind_conduit_fanout_inst avalon_conduit_fanout 
+2023.06.12.11:45:51 Info: set_instance_parameter_value if_loop_3_component_dpi_controller_bind_conduit_fanout_inst numFanOut 5
+2023.06.12.11:45:51 Info: add_instance if_loop_3_component_dpi_controller_enable_conduit_fanout_inst avalon_conduit_fanout 
+2023.06.12.11:45:51 Info: set_instance_parameter_value if_loop_3_component_dpi_controller_enable_conduit_fanout_inst numFanOut 5
+2023.06.12.11:45:51 Info: add_instance if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst avalon_conduit_fanout 
+2023.06.12.11:45:51 Info: set_instance_parameter_value if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst numFanOut 3
+2023.06.12.11:45:51 Info: add_connection component_dpi_controller_if_loop_3_inst.read_implicit_streams if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst.in_conduit
+2023.06.12.11:45:51 Info: add_connection component_dpi_controller_if_loop_3_inst.dpi_control_bind if_loop_3_component_dpi_controller_bind_conduit_fanout_inst.in_conduit
+2023.06.12.11:45:51 Info: add_connection component_dpi_controller_if_loop_3_inst.dpi_control_enable if_loop_3_component_dpi_controller_enable_conduit_fanout_inst.in_conduit
+2023.06.12.11:45:51 Info: get_instance_interfaces if_loop_3_inst
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst a
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst a CLASS_NAME
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_bind_conduit_fanout_inst.out_conduit_0 stream_source_dpi_bfm_if_loop_3_a_inst.dpi_control_bind
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_enable_conduit_fanout_inst.out_conduit_0 stream_source_dpi_bfm_if_loop_3_a_inst.dpi_control_enable
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst.out_conduit_0 stream_source_dpi_bfm_if_loop_3_a_inst.source_ready
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst avmm_1_rw
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst avmm_1_rw CLASS_NAME
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_bind_conduit_fanout_inst.out_conduit_1 mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst.dpi_control_bind
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_enable_conduit_fanout_inst.out_conduit_1 mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst.dpi_control_enable
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst avmm_4_rw
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst avmm_4_rw CLASS_NAME
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_bind_conduit_fanout_inst.out_conduit_2 mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst.dpi_control_bind
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_enable_conduit_fanout_inst.out_conduit_2 mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst.dpi_control_enable
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst b
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst b CLASS_NAME
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_bind_conduit_fanout_inst.out_conduit_3 stream_source_dpi_bfm_if_loop_3_b_inst.dpi_control_bind
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_enable_conduit_fanout_inst.out_conduit_3 stream_source_dpi_bfm_if_loop_3_b_inst.dpi_control_enable
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst.out_conduit_1 stream_source_dpi_bfm_if_loop_3_b_inst.source_ready
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst call
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst clock
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst n
+2023.06.12.11:45:51 Info: get_instance_interface_property if_loop_3_inst n CLASS_NAME
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_bind_conduit_fanout_inst.out_conduit_4 stream_source_dpi_bfm_if_loop_3_n_inst.dpi_control_bind
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_enable_conduit_fanout_inst.out_conduit_4 stream_source_dpi_bfm_if_loop_3_n_inst.dpi_control_enable
+2023.06.12.11:45:51 Info: add_connection if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst.out_conduit_2 stream_source_dpi_bfm_if_loop_3_n_inst.source_ready
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst reset
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst return
+2023.06.12.11:45:51 Info: get_instance_interface_ports if_loop_3_inst returndata
+2023.06.12.11:45:51 Info: add_instance split_component_start_inst avalon_split_multibit_conduit 
+2023.06.12.11:45:51 Info: set_instance_parameter_value split_component_start_inst multibit_width 1
+2023.06.12.11:45:51 Info: add_connection main_dpi_controller_inst.component_enabled split_component_start_inst.in_conduit
+2023.06.12.11:45:51 Info: add_connection split_component_start_inst.out_conduit_0 component_dpi_controller_if_loop_3_inst.component_enabled
+2023.06.12.11:45:51 Info: add_instance concatenate_component_done_inst avalon_concatenate_singlebit_conduits 
+2023.06.12.11:45:51 Info: set_instance_parameter_value concatenate_component_done_inst multibit_width 1
+2023.06.12.11:45:51 Info: add_connection concatenate_component_done_inst.out_conduit main_dpi_controller_inst.component_done
+2023.06.12.11:45:51 Info: add_instance concatenate_component_wait_for_stream_writes_inst avalon_concatenate_singlebit_conduits 
+2023.06.12.11:45:51 Info: set_instance_parameter_value concatenate_component_wait_for_stream_writes_inst multibit_width 1
+2023.06.12.11:45:51 Info: add_connection concatenate_component_wait_for_stream_writes_inst.out_conduit main_dpi_controller_inst.component_wait_for_stream_writes
+2023.06.12.11:45:51 Info: add_connection component_dpi_controller_if_loop_3_inst.component_done concatenate_component_done_inst.in_conduit_0
+2023.06.12.11:45:51 Info: add_connection component_dpi_controller_if_loop_3_inst.component_wait_for_stream_writes concatenate_component_wait_for_stream_writes_inst.in_conduit_0
+2023.06.12.11:45:51 Info: save_system tb.qsys
+/home/elija/intelFPGA/21.1/quartus
+/home/elija/intelFPGA/21.1/quartus/../ip/altera/sopc_builder_ip/verification/
+2023.06.12.11:45:58 Info: Saving generation log to /home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/tb_generation.rpt
+2023.06.12.11:45:58 Info: Starting: <b>Create simulation model</b>
+2023.06.12.11:45:58 Info: qsys-generate /home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation --family="Cyclone V" --part=5CSEMA4U23C7
+2023.06.12.11:45:58 Info: Loading verification/tb.qsys
+2023.06.12.11:45:58 Info: Reading input file
+2023.06.12.11:45:58 Info: Adding clock_reset_inst [hls_sim_clock_reset 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module clock_reset_inst
+2023.06.12.11:45:58 Info: Adding component_dpi_controller_if_loop_3_inst [hls_sim_component_dpi_controller 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module component_dpi_controller_if_loop_3_inst
+2023.06.12.11:45:58 Info: Adding concatenate_component_done_inst [avalon_concatenate_singlebit_conduits 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module concatenate_component_done_inst
+2023.06.12.11:45:58 Info: Adding concatenate_component_wait_for_stream_writes_inst [avalon_concatenate_singlebit_conduits 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module concatenate_component_wait_for_stream_writes_inst
+2023.06.12.11:45:58 Info: Adding if_loop_3_component_dpi_controller_bind_conduit_fanout_inst [avalon_conduit_fanout 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module if_loop_3_component_dpi_controller_bind_conduit_fanout_inst
+2023.06.12.11:45:58 Info: Adding if_loop_3_component_dpi_controller_enable_conduit_fanout_inst [avalon_conduit_fanout 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module if_loop_3_component_dpi_controller_enable_conduit_fanout_inst
+2023.06.12.11:45:58 Info: Adding if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst [avalon_conduit_fanout 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst
+2023.06.12.11:45:58 Info: Adding if_loop_3_inst [if_loop_3 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module if_loop_3_inst
+2023.06.12.11:45:58 Info: Adding main_dpi_controller_inst [hls_sim_main_dpi_controller 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module main_dpi_controller_inst
+2023.06.12.11:45:58 Info: Adding mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst [hls_sim_mm_agent_dpi_bfm 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst
+2023.06.12.11:45:58 Info: Adding mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst [hls_sim_mm_agent_dpi_bfm 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module mm_agent_dpi_bfm_if_loop_3_avmm_4_rw_inst
+2023.06.12.11:45:58 Info: Adding split_component_start_inst [avalon_split_multibit_conduit 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module split_component_start_inst
+2023.06.12.11:45:58 Info: Adding stream_source_dpi_bfm_if_loop_3_a_inst [hls_sim_stream_source_dpi_bfm 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module stream_source_dpi_bfm_if_loop_3_a_inst
+2023.06.12.11:45:58 Info: Adding stream_source_dpi_bfm_if_loop_3_b_inst [hls_sim_stream_source_dpi_bfm 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module stream_source_dpi_bfm_if_loop_3_b_inst
+2023.06.12.11:45:58 Info: Adding stream_source_dpi_bfm_if_loop_3_n_inst [hls_sim_stream_source_dpi_bfm 1.0]
+2023.06.12.11:45:58 Info: Parameterizing module stream_source_dpi_bfm_if_loop_3_n_inst
+2023.06.12.11:45:58 Info: Building connections
+2023.06.12.11:45:58 Info: Parameterizing connections
+2023.06.12.11:45:58 Info: Validating
+2023.06.12.11:45:58 Info: Done reading input file
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst.dpi_control_agents_ready: Interface has no signals
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst.dpi_control_agents_done: Interface has no signals
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst.dpi_control_stream_writes_active: Interface has no signals
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst: <b>component_dpi_controller_if_loop_3_inst.dpi_control_agents_ready</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst: <b>component_dpi_controller_if_loop_3_inst.dpi_control_agents_done</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst: <b>component_dpi_controller_if_loop_3_inst.dpi_control_stream_writes_active</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst: <b>component_dpi_controller_if_loop_3_inst.agent_busy</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:58 Warning: tb.component_dpi_controller_if_loop_3_inst: <b>component_dpi_controller_if_loop_3_inst.readback_from_agents</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:58 Warning: tb.stream_source_dpi_bfm_if_loop_3_a_inst: <b>stream_source_dpi_bfm_if_loop_3_a_inst.source</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:58 Warning: tb.stream_source_dpi_bfm_if_loop_3_b_inst: <b>stream_source_dpi_bfm_if_loop_3_b_inst.source</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:58 Warning: tb.stream_source_dpi_bfm_if_loop_3_n_inst: <b>stream_source_dpi_bfm_if_loop_3_n_inst.source</b> must be exported, or connected to a matching conduit.
+2023.06.12.11:45:59 Info: tb: Generating <b>tb</b> "<b>tb</b>" for SIM_VERILOG
+2023.06.12.11:45:59 Info: clock_reset_inst: "<b>tb</b>" instantiated <b>hls_sim_clock_reset</b> "<b>clock_reset_inst</b>"
+2023.06.12.11:45:59 Info: component_dpi_controller_if_loop_3_inst: "<b>tb</b>" instantiated <b>hls_sim_component_dpi_controller</b> "<b>component_dpi_controller_if_loop_3_inst</b>"
+2023.06.12.11:45:59 Info: concatenate_component_done_inst: "<b>tb</b>" instantiated <b>avalon_concatenate_singlebit_conduits</b> "<b>concatenate_component_done_inst</b>"
+2023.06.12.11:45:59 Info: if_loop_3_component_dpi_controller_bind_conduit_fanout_inst: "<b>tb</b>" instantiated <b>avalon_conduit_fanout</b> "<b>if_loop_3_component_dpi_controller_bind_conduit_fanout_inst</b>"
+2023.06.12.11:45:59 Info: if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst: "<b>tb</b>" instantiated <b>avalon_conduit_fanout</b> "<b>if_loop_3_component_dpi_controller_implicit_ready_conduit_fanout_inst</b>"
+2023.06.12.11:45:59 Info: if_loop_3_inst: "<b>tb</b>" instantiated <b>if_loop_3</b> "<b>if_loop_3_inst</b>"
+2023.06.12.11:45:59 Info: main_dpi_controller_inst: "<b>tb</b>" instantiated <b>hls_sim_main_dpi_controller</b> "<b>main_dpi_controller_inst</b>"
+2023.06.12.11:45:59 Info: mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst: "<b>tb</b>" instantiated <b>hls_sim_mm_agent_dpi_bfm</b> "<b>mm_agent_dpi_bfm_if_loop_3_avmm_1_rw_inst</b>"
+2023.06.12.11:45:59 Info: split_component_start_inst: "<b>tb</b>" instantiated <b>avalon_split_multibit_conduit</b> "<b>split_component_start_inst</b>"
+2023.06.12.11:45:59 Info: stream_source_dpi_bfm_if_loop_3_a_inst: "<b>tb</b>" instantiated <b>hls_sim_stream_source_dpi_bfm</b> "<b>stream_source_dpi_bfm_if_loop_3_a_inst</b>"
+2023.06.12.11:45:59 Info: Reusing file <b>/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/submodules/hls_sim_stream_source_dpi_bfm.sv</b>
+2023.06.12.11:45:59 Info: irq_mapper: "<b>tb</b>" instantiated <b>altera_irq_mapper</b> "<b>irq_mapper</b>"
+2023.06.12.11:46:00 Info: if_loop_3_internal_inst: "<b>if_loop_3_inst</b>" instantiated <b>if_loop_3_internal</b> "<b>if_loop_3_internal_inst</b>"
+2023.06.12.11:46:00 Info: Reusing file <b>/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/submodules/hld_sim_latency_tracker.sv</b>
+2023.06.12.11:46:00 Info: tb: Done "<b>tb</b>" with 13 modules, 189 files
+2023.06.12.11:46:00 Info: qsys-generate succeeded.
+2023.06.12.11:46:00 Info: Finished: <b>Create simulation model</b>
+2023.06.12.11:46:00 Info: Starting: <b>Create Modelsim Project.</b>
+2023.06.12.11:46:00 Info: sim-script-gen --spd=/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/tb.spd --output-directory=/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/ --use-relative-paths=true
+2023.06.12.11:46:00 Info: Doing: <b>ip-make-simscript --spd=/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/tb.spd --output-directory=/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/ --use-relative-paths=true</b>
+2023.06.12.11:46:01 Info: Generating the following file(s) for <b>MODELSIM</b> simulator in <b>/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/</b> directory:
+2023.06.12.11:46:01 Info: 	<b>mentor/msim_setup.tcl</b>
+2023.06.12.11:46:01 Info: Generating the following file(s) for <b>VCS</b> simulator in <b>/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/</b> directory:
+2023.06.12.11:46:01 Info: 	<b>synopsys/vcs/vcs_setup.sh</b>
+2023.06.12.11:46:01 Info: Generating the following file(s) for <b>VCSMX</b> simulator in <b>/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/</b> directory:
+2023.06.12.11:46:01 Info: 	<b>synopsys/vcsmx/synopsys_sim.setup</b>
+2023.06.12.11:46:01 Info: 	<b>synopsys/vcsmx/vcsmx_setup.sh</b>
+2023.06.12.11:46:01 Info: Generating the following file(s) for <b>NCSIM</b> simulator in <b>/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/</b> directory:
+2023.06.12.11:46:01 Info: 	<b>cadence/cds.lib</b>
+2023.06.12.11:46:01 Info: 	<b>cadence/hdl.var</b>
+2023.06.12.11:46:01 Info: 	<b>cadence/ncsim_setup.sh</b>
+2023.06.12.11:46:01 Info: 	<b>13 .cds.lib files</b> in <b>cadence/cds_libs/</b> directory
+2023.06.12.11:46:01 Info: Generating the following file(s) for <b>RIVIERA</b> simulator in <b>/home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/</b> directory:
+2023.06.12.11:46:01 Info: 	<b>aldec/rivierapro_setup.tcl</b>
+2023.06.12.11:46:01 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_3_best/test-fpga.prj/verification/tb/simulation/.
+2023.06.12.11:46:01 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+2023.06.12.11:46:01 Info: Finished: <b>Create Modelsim Project.</b>
+# Errors: 1, Warnings: 0
+Unable to checkout a license. Make sure your license file environment variable (e.g., LM_LICENSE_FILE)
+is set correctly and then run 'lmutil lmdiag' to diagnose the problem.
+Unable to checkout a license.  Vsim is closing.
+** Error: Invalid license environment. Application closing.

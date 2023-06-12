@@ -16,13 +16,11 @@
 
 // SystemVerilog created from i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:56 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_pop_i32_sum_023_pop7_0 (
-    output wire [31:0] out_data_out,
-    output wire [0:0] out_valid_out,
     input wire [31:0] in_feedback_in_7,
     input wire [0:0] in_feedback_valid_in_7,
     output wire [0:0] out_feedback_stall_out_7,
@@ -32,6 +30,8 @@ module if_loop_3_i_llvm_fpga_pop_i32_sum_023_pop7_0 (
     input wire [0:0] in_dir,
     input wire [0:0] in_predicate,
     input wire [0:0] in_valid_in,
+    output wire [31:0] out_data_out,
+    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
@@ -57,7 +57,7 @@ module if_loop_3_i_llvm_fpga_pop_i32_sum_023_pop7_0 (
     wire i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_valid_out_bitsignaltemp;
 
 
-    // i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31(EXTIFACE,5)@44
+    // i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31(EXTIFACE,4)@44
     assign i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_data_in = in_data_in;
     assign i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_dir = in_dir;
     assign i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_feedback_in = in_feedback_in_7;
@@ -96,14 +96,14 @@ module if_loop_3_i_llvm_fpga_pop_i32_sum_023_pop7_0 (
         .resetn(resetn)
     );
 
-    // dupName_0_sync_out_x(GPOUT,2)@44
-    assign out_data_out = i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_data_out;
-    assign out_valid_out = i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_valid_out;
-
-    // feedback_sync_out(GPOUT,4)
+    // feedback_sync_out(GPOUT,3)
     assign out_feedback_stall_out_7 = i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_feedback_stall_out;
 
-    // sync_out(GPOUT,8)@44
+    // sync_out(GPOUT,7)@44
     assign out_stall_out = i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_stall_out;
+
+    // dupName_0_sync_out_x(GPOUT,9)@44
+    assign out_data_out = i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_data_out;
+    assign out_valid_out = i_llvm_fpga_pop_i32_sum_023_pop7_if_loop_31_valid_out;
 
 endmodule

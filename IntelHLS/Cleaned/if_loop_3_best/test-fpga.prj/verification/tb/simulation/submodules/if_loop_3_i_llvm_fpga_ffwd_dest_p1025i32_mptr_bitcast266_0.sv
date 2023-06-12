@@ -16,17 +16,17 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:56 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_0 (
-    output wire [63:0] out_dest_data_out_1_0,
-    output wire [0:0] out_valid_out,
     input wire [63:0] in_intel_reserved_ffwd_1_0,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_valid_in,
+    output wire [63:0] out_dest_data_out_1_0,
+    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
@@ -43,7 +43,7 @@ module if_loop_3_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_0 (
     wire i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_valid_out_bitsignaltemp;
 
 
-    // i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31(EXTIFACE,3)@12
+    // i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31(EXTIFACE,2)@12
     assign i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_data_in = in_intel_reserved_ffwd_1_0;
     assign i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_stall_in = in_stall_in;
     assign i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_valid_in = in_valid_in;
@@ -67,11 +67,11 @@ module if_loop_3_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_0 (
         .resetn(resetn)
     );
 
-    // dupName_0_sync_out_x(GPOUT,2)@12
+    // sync_out(GPOUT,6)@12
+    assign out_stall_out = i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_stall_out;
+
+    // dupName_0_sync_out_x(GPOUT,8)@12
     assign out_dest_data_out_1_0 = i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_data_out;
     assign out_valid_out = i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_valid_out;
-
-    // sync_out(GPOUT,7)@12
-    assign out_stall_out = i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast266_if_loop_31_stall_out;
 
 endmodule

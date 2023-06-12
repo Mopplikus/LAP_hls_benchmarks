@@ -16,13 +16,11 @@
 
 // SystemVerilog created from i_llvm_fpga_push_i4_initerations_push9_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Wed May 10 20:53:56 2023
+// SystemVerilog created on Mon Jun 12 11:45:30 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_push_i4_initerations_push9_0 (
-    output wire [3:0] out_data_out,
-    output wire [0:0] out_valid_out,
     input wire [0:0] in_feedback_stall_in_9,
     output wire [7:0] out_feedback_out_9,
     output wire [0:0] out_feedback_valid_out_9,
@@ -31,12 +29,13 @@ module if_loop_3_i_llvm_fpga_push_i4_initerations_push9_0 (
     input wire [3:0] in_data_in,
     input wire [0:0] in_keep_going,
     input wire [0:0] in_valid_in,
+    output wire [3:0] out_data_out,
+    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
 
     wire [0:0] GND_q;
-    wire [3:0] adapt_scalar_trunc4_sel_x_b;
     wire [3:0] c_i4_03_q;
     wire [7:0] element_extension2_q;
     wire [7:0] i_llvm_fpga_push_i4_initerations_push9_if_loop_31_data_in;
@@ -58,18 +57,19 @@ module if_loop_3_i_llvm_fpga_push_i4_initerations_push9_0 (
     wire i_llvm_fpga_push_i4_initerations_push9_if_loop_31_stall_out_bitsignaltemp;
     wire [0:0] i_llvm_fpga_push_i4_initerations_push9_if_loop_31_valid_out;
     wire i_llvm_fpga_push_i4_initerations_push9_if_loop_31_valid_out_bitsignaltemp;
+    wire [3:0] adapt_scalar_trunc4_sel_x_b;
 
 
     // GND(CONSTANT,0)
     assign GND_q = $unsigned(1'b0);
 
-    // c_i4_03(CONSTANT,6)
+    // c_i4_03(CONSTANT,4)
     assign c_i4_03_q = $unsigned(4'b0000);
 
-    // element_extension2(BITJOIN,7)@12
+    // element_extension2(BITJOIN,5)@24
     assign element_extension2_q = {c_i4_03_q, in_data_in};
 
-    // i_llvm_fpga_push_i4_initerations_push9_if_loop_31(EXTIFACE,10)@12
+    // i_llvm_fpga_push_i4_initerations_push9_if_loop_31(EXTIFACE,8)@24
     assign i_llvm_fpga_push_i4_initerations_push9_if_loop_31_data_in = element_extension2_q;
     assign i_llvm_fpga_push_i4_initerations_push9_if_loop_31_dir = in_keep_going;
     assign i_llvm_fpga_push_i4_initerations_push9_if_loop_31_feedback_stall_in = in_feedback_stall_in_9;
@@ -112,18 +112,18 @@ module if_loop_3_i_llvm_fpga_push_i4_initerations_push9_0 (
         .resetn(resetn)
     );
 
-    // adapt_scalar_trunc4_sel_x(BITSELECT,2)@12
-    assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_push_i4_initerations_push9_if_loop_31_data_out[3:0];
-
-    // dupName_0_sync_out_x(GPOUT,3)@12
-    assign out_data_out = adapt_scalar_trunc4_sel_x_b;
-    assign out_valid_out = i_llvm_fpga_push_i4_initerations_push9_if_loop_31_valid_out;
-
-    // feedback_sync_out(GPOUT,9)
+    // feedback_sync_out(GPOUT,7)
     assign out_feedback_out_9 = i_llvm_fpga_push_i4_initerations_push9_if_loop_31_feedback_out;
     assign out_feedback_valid_out_9 = i_llvm_fpga_push_i4_initerations_push9_if_loop_31_feedback_valid_out;
 
-    // sync_out(GPOUT,12)@12
+    // sync_out(GPOUT,10)@24
     assign out_stall_out = i_llvm_fpga_push_i4_initerations_push9_if_loop_31_stall_out;
+
+    // adapt_scalar_trunc4_sel_x(BITSELECT,12)@24
+    assign adapt_scalar_trunc4_sel_x_b = i_llvm_fpga_push_i4_initerations_push9_if_loop_31_data_out[3:0];
+
+    // dupName_0_sync_out_x(GPOUT,13)@24
+    assign out_data_out = adapt_scalar_trunc4_sel_x_b;
+    assign out_valid_out = i_llvm_fpga_push_i4_initerations_push9_if_loop_31_valid_out;
 
 endmodule
