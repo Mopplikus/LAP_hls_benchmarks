@@ -303,6 +303,9 @@ def run_char(width, connector, component, voided):
 	out_file = "timing_all_" + conn_type  +  "_" + bit_width  + ".rpt"
 	out_max_file = "timing_max_" + conn_type + "_" + bit_width + ".rpt"
 
+	if os.path.exists(out_file) or os.path.exists(out_max_file):
+		return
+
 	if (connector + str(width)) in voided or component == "nil" or "a" in voided:
 		os.system("echo '0.000' >> " + out_file)
 		os.system("echo '0.000' >> " + out_max_file)
