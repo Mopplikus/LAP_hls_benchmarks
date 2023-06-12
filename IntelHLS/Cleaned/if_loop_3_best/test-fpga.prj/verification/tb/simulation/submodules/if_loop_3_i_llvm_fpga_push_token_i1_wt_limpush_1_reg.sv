@@ -16,17 +16,17 @@
 
 // SystemVerilog created from i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Mon Jun 12 11:45:30 2023
+// SystemVerilog created on Mon Jun 12 16:25:26 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_push_token_i1_wt_limpush_1_reg (
+    output wire [0:0] out_data_out,
+    output wire [0:0] out_valid_out,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_data_in,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_data_out,
-    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
@@ -43,16 +43,16 @@ module if_loop_3_i_llvm_fpga_push_token_i1_wt_limpush_1_reg (
     // VCC(CONSTANT,1)
     assign VCC_q = $unsigned(1'b1);
 
-    // stall_in_not(LOGICAL,7)
+    // stall_in_not(LOGICAL,8)
     assign stall_in_not_q = ~ (in_stall_in);
 
-    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_not(LOGICAL,5)
+    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_not(LOGICAL,6)
     assign i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_not_q = ~ (i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_q);
 
-    // stall_in_not_or_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg(LOGICAL,8)
+    // stall_in_not_or_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg(LOGICAL,9)
     assign stall_in_not_or_i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_q = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_not_q | stall_in_not_q;
 
-    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg(REG,3)
+    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg(REG,4)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -65,13 +65,7 @@ module if_loop_3_i_llvm_fpga_push_token_i1_wt_limpush_1_reg (
         end
     end
 
-    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_and_stall_in(LOGICAL,4)
-    assign i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_and_stall_in_q = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_q & in_stall_in;
-
-    // sync_out(GPOUT,9)@20000000
-    assign out_stall_out = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_and_stall_in_q;
-
-    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_data_reg(REG,2)
+    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_data_reg(REG,3)
     always @ (posedge clock or negedge resetn)
     begin
         if (!resetn)
@@ -84,8 +78,14 @@ module if_loop_3_i_llvm_fpga_push_token_i1_wt_limpush_1_reg (
         end
     end
 
-    // dupName_0_sync_out_x(GPOUT,11)@20000001
+    // dupName_0_sync_out_x(GPOUT,2)@20000000
     assign out_data_out = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_data_reg_q;
     assign out_valid_out = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_q;
+
+    // i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_and_stall_in(LOGICAL,5)
+    assign i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_and_stall_in_q = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_q & in_stall_in;
+
+    // sync_out(GPOUT,10)@20000000
+    assign out_stall_out = i_llvm_fpga_push_token_i1_wt_limpush_if_loop_31_reg_valid_reg_and_stall_in_q;
 
 endmodule

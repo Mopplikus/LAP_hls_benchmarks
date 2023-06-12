@@ -14,36 +14,36 @@
 // sole purpose of programming logic devices manufactured by Intel and sold by    
 // Intel or its authorized distributors.  Please refer to the applicable          
 // agreement for further details.                                                 
-
-`default_nettype none
-
-module acl_shift_register_no_reset #(
-    parameter int unsigned WIDTH,
-    parameter int unsigned STAGES
-) (
-    input  wire              clock,
-    input  wire  [WIDTH-1:0] D,
-    output logic [WIDTH-1:0] Q
-);
-    genvar g;
-    generate
-    if (STAGES == 0) begin : NO_STAGES
-        assign Q = D;
-    end
-    else begin : GEN_STAGES
-        logic [WIDTH-1:0] pipe [STAGES-1:0];
-        always_ff @(posedge clock) begin
-            pipe[0] <= D;
-        end
-        for (g=1; g<STAGES; g++) begin : GEN_PIPE
-            always_ff @(posedge clock) begin
-                pipe[g] <= pipe[g-1];
-            end
-        end
-        assign Q = pipe[STAGES-1];
-    end
-    endgenerate
-    
-endmodule
-
-`default_nettype wire
+
+`default_nettype none
+
+module acl_shift_register_no_reset #(
+    parameter int unsigned WIDTH,
+    parameter int unsigned STAGES
+) (
+    input  wire              clock,
+    input  wire  [WIDTH-1:0] D,
+    output logic [WIDTH-1:0] Q
+);
+    genvar g;
+    generate
+    if (STAGES == 0) begin : NO_STAGES
+        assign Q = D;
+    end
+    else begin : GEN_STAGES
+        logic [WIDTH-1:0] pipe [STAGES-1:0];
+        always_ff @(posedge clock) begin
+            pipe[0] <= D;
+        end
+        for (g=1; g<STAGES; g++) begin : GEN_PIPE
+            always_ff @(posedge clock) begin
+                pipe[g] <= pipe[g-1];
+            end
+        end
+        assign Q = pipe[STAGES-1];
+    end
+    endgenerate
+    
+endmodule
+
+`default_nettype wire

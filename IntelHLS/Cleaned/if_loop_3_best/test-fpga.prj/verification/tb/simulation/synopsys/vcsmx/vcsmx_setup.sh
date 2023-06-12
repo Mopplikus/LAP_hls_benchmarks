@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 21.1 842 linux 2023.06.12.11:46:01
+# ACDS 21.1 850 win32 2023.06.12.16:26:02
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,12 +107,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 21.1 842 linux 2023.06.12.11:46:01
+# ACDS 21.1 850 win32 2023.06.12.16:26:02
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="tb"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="/home/elija/intelFPGA/21.1/quartus/"
+QUARTUS_INSTALL_DIR="F:/quartus/quartus/"
 SKIP_FILE_COPY=0
 SKIP_DEV_COM=0
 SKIP_COM=0
@@ -286,6 +286,8 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/acl_reset_wire.v"                                                            -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_function_wrapper.sv"                                               -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_function.sv"                                                       -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B2_sr_1.sv"                                                     -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B3_sr_0.sv"                                                     -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B0_runOnce.sv"                                                  -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B0_runOnce_stall_region.sv"                                     -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_pop_token_i1_wt_limpop_0.sv"                           -work if_loop_3_internal_inst                                              
@@ -297,6 +299,12 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_B0_runOnce_merge.sv"                                               -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B1_start.sv"                                                    -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B1_start_stall_region.sv"                                       -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_iord_bl_call_unnamed_if_loop_32_if_loop_30.sv"                   -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_sfc_s_c0_in_wt_entry_s_c0_enter1_if_loop_30.sv"                  -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000s_c0_exit_if_loop_30.sv"         -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30.sv"            -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_pipeline_keep_going12_0.sv"                            -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_push_i1_notexitcond13_0.sv"                            -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_ffwd_source_i1_unnamed_5_if_loop_30.sv"                -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_ffwd_source_i33_unnamed_6_if_loop_30.sv"               -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_ffwd_source_p1025i32_unnamed_3_if_loop_30.sv"          -work if_loop_3_internal_inst                                              
@@ -304,20 +312,14 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"                     -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"                 -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_B1_start_merge_reg.sv"                                             -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_iord_bl_call_unnamed_if_loop_32_if_loop_30.sv"                   -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_sfc_s_c0_in_wt_entry_s_c0_enter1_if_loop_30.sv"                  -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000s_c0_exit_if_loop_30.sv"         -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_30.sv"            -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_pipeline_keep_going12_0.sv"                            -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_push_i1_notexitcond13_0.sv"                            -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_B1_start_branch.sv"                                                -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_B1_start_merge.sv"                                                 -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B2.sv"                                                          -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B2_stall_region.sv"                                             -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_sfc_s_c0_in_for_body_s_c0_enter152_if_loop_31.sv"                -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000c0_exit17_if_loop_30.sv"         -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000oop_31_full_detector.sv"         -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000if_loop_31_data_fifo.sv"         -work if_loop_3_internal_inst                                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_sfc_exit_s_c0_out_0000oop_31_full_detector.sv"         -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_sfc_logic_s_c0_in_for_body_s_c0_enter152_if_loop_30.sv"          -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_ffwd_dest_i1_cmp214_0.sv"                              -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_ffwd_dest_i1_cmp215_0.sv"                              -work if_loop_3_internal_inst                                              
@@ -357,8 +359,6 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_pipeline_keep_going_6_sr.sv"                           -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_i_llvm_fpga_pipeline_keep_going_6_valid_fifo.sv"                   -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_loop_limiter_0.sv"                                                 -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B2_sr_1.sv"                                                     -work if_loop_3_internal_inst                                              
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/if_loop_3_bb_B3_sr_0.sv"                                                     -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/acl_avm_to_ic.v"                                                             -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/acl_ic_host_endpoint.v"                                                      -work if_loop_3_internal_inst                                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/acl_arb_intf.v"                                                              -work if_loop_3_internal_inst                                              

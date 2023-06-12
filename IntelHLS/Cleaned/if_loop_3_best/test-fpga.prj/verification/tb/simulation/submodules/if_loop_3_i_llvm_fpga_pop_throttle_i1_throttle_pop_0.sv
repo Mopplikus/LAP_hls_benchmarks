@@ -16,11 +16,13 @@
 
 // SystemVerilog created from i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Mon Jun 12 11:45:30 2023
+// SystemVerilog created on Mon Jun 12 16:25:26 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 (
+    output wire [0:0] out_data_out,
+    output wire [0:0] out_valid_out,
     input wire [0:0] in_feedback_in_1,
     input wire [0:0] in_feedback_valid_in_1,
     output wire [0:0] out_feedback_stall_out_1,
@@ -30,8 +32,6 @@ module if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 (
     input wire [0:0] in_dir,
     input wire [0:0] in_predicate,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_data_out,
-    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
@@ -67,31 +67,13 @@ module if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 (
     wire [0:0] i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_valid_out;
 
 
-    // adapt_scalar_trunc4(ROUND,2)
-    assign adapt_scalar_trunc4_in = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_data_out;
-    assign adapt_scalar_trunc4_q = adapt_scalar_trunc4_in[0:0];
-
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg(BLACKBOX,8)@20000000
-    // out out_data_out@20000001
-    // out out_valid_out@20000001
-    if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg thei_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg (
-        .in_data_in(adapt_scalar_trunc4_q),
-        .in_stall_in(in_stall_in),
-        .in_valid_in(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_valid_out),
-        .out_data_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_data_out),
-        .out_stall_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_stall_out),
-        .out_valid_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_valid_out),
-        .clock(clock),
-        .resetn(resetn)
-    );
-
-    // c_i7_03(CONSTANT,3)
+    // c_i7_03(CONSTANT,4)
     assign c_i7_03_q = $unsigned(7'b0000000);
 
-    // element_extension2(BITJOIN,4)
+    // element_extension2(BITJOIN,5)
     assign element_extension2_q = {c_i7_03_q, in_data_in};
 
-    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(EXTIFACE,7)
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31(EXTIFACE,8)
     assign i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_data_in = element_extension2_q[0:0];
     assign i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_dir = in_dir;
     assign i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_feedback_in = in_feedback_in_1;
@@ -133,14 +115,34 @@ module if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_0 (
         .resetn(resetn)
     );
 
-    // feedback_sync_out(GPOUT,6)
-    assign out_feedback_stall_out_1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_feedback_stall_out;
+    // adapt_scalar_trunc4(ROUND,3)
+    assign adapt_scalar_trunc4_in = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_data_out;
+    assign adapt_scalar_trunc4_q = adapt_scalar_trunc4_in[0:0];
 
-    // sync_out(GPOUT,10)@20000000
-    assign out_stall_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_stall_out;
+    // i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg(BLACKBOX,9)@19999999
+    // in in_stall_in@20000000
+    // out out_data_out@20000000
+    // out out_stall_out@20000000
+    // out out_valid_out@20000000
+    if_loop_3_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg thei_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg (
+        .in_data_in(adapt_scalar_trunc4_q),
+        .in_stall_in(in_stall_in),
+        .in_valid_in(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_valid_out),
+        .out_data_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_data_out),
+        .out_stall_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_stall_out),
+        .out_valid_out(i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_valid_out),
+        .clock(clock),
+        .resetn(resetn)
+    );
 
-    // dupName_0_sync_out_x(GPOUT,12)@2
+    // dupName_0_sync_out_x(GPOUT,2)@2
     assign out_data_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_data_out;
     assign out_valid_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_reg_out_valid_out;
+
+    // feedback_sync_out(GPOUT,7)
+    assign out_feedback_stall_out_1 = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_feedback_stall_out;
+
+    // sync_out(GPOUT,11)@20000000
+    assign out_stall_out = i_llvm_fpga_pop_throttle_i1_throttle_pop_if_loop_31_stall_out;
 
 endmodule

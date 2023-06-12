@@ -16,18 +16,18 @@
 
 // SystemVerilog created from i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_30
 // Created for function/kernel if_loop_3
-// SystemVerilog created on Mon Jun 12 11:45:30 2023
+// SystemVerilog created on Mon Jun 12 16:25:26 2023
 
 
 (* altera_attribute = "-name AUTO_SHIFT_REGISTER_RECOGNITION OFF; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 10037; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 15400; -name MESSAGE_DISABLE 14130; -name MESSAGE_DISABLE 10036; -name MESSAGE_DISABLE 12020; -name MESSAGE_DISABLE 12030; -name MESSAGE_DISABLE 12010; -name MESSAGE_DISABLE 12110; -name MESSAGE_DISABLE 14320; -name MESSAGE_DISABLE 13410; -name MESSAGE_DISABLE 113007; -name MESSAGE_DISABLE 10958" *)
 module if_loop_3_i_llvm_fpga_ffwd_source_i33_unnamed_6_if_loop_30 (
+    output wire [0:0] out_valid_out,
     output wire [32:0] out_intel_reserved_ffwd_3_0,
     input wire [0:0] in_stall_in,
     output wire [0:0] out_stall_out,
     input wire [0:0] in_predicate_in,
     input wire [32:0] in_src_data_in_3_0,
     input wire [0:0] in_valid_in,
-    output wire [0:0] out_valid_out,
     input wire clock,
     input wire resetn
     );
@@ -44,13 +44,16 @@ module if_loop_3_i_llvm_fpga_ffwd_source_i33_unnamed_6_if_loop_30 (
     wire [63:0] i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_31_source_out;
 
 
-    // c_i31_03(CONSTANT,3)
+    // dupName_0_sync_out_x(GPOUT,2)@5
+    assign out_valid_out = in_valid_in;
+
+    // c_i31_03(CONSTANT,4)
     assign c_i31_03_q = $unsigned(31'b0000000000000000000000000000000);
 
-    // element_extension2(BITJOIN,4)
+    // element_extension2(BITJOIN,5)
     assign element_extension2_q = {c_i31_03_q, in_src_data_in_3_0};
 
-    // i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_31(EXTIFACE,5)
+    // i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_31(EXTIFACE,6)
     assign i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_31_predicate_in = in_predicate_in;
     assign i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_31_source_in = element_extension2_q;
     assign i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_31_valid_in = in_valid_in;
@@ -68,17 +71,14 @@ module if_loop_3_i_llvm_fpga_ffwd_source_i33_unnamed_6_if_loop_30 (
         .clock(clock)
     );
 
-    // adapt_scalar_trunc4(ROUND,2)
+    // adapt_scalar_trunc4(ROUND,3)
     assign adapt_scalar_trunc4_in = i_llvm_fpga_ffwd_source_i33_unnamed_if_loop_36_if_loop_31_source_out[32:0];
     assign adapt_scalar_trunc4_q = adapt_scalar_trunc4_in[32:0];
 
-    // regfree_osync(GPOUT,6)
+    // regfree_osync(GPOUT,7)
     assign out_intel_reserved_ffwd_3_0 = adapt_scalar_trunc4_q;
 
-    // sync_out(GPOUT,8)@20000000
+    // sync_out(GPOUT,9)@20000000
     assign out_stall_out = in_stall_in;
-
-    // dupName_0_sync_out_x(GPOUT,10)@5
-    assign out_valid_out = in_valid_in;
 
 endmodule
