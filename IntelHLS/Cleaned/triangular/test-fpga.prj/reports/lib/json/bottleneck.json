@@ -1,0 +1,717 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"2908232096"
+      , "dst":"2887465456"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"triangular.B3"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: triangular.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"17"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":2908232096
+          , "start":"8.00"
+          , "parent":"triangular.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"triangular.B4"
+          , "id":2905738288
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2887465456
+          , "end":"1.00"
+          , "parent":"triangular.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2905738288
+          , "to":2905738288
+        }
+        , {
+          "from":2908232096
+          , "to":2905738288
+        }
+        , {
+          "from":2905738288
+          , "to":2887465456
+        }
+        , {
+          "from":2908232096
+          , "to":2887465456
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"?"
+      , "id":4294967295
+      , "src":"2871798800"
+      , "dst":"2887465792"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"triangular.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"triangular.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: triangular.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"17"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: triangular.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"17"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: triangular.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"17"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":2871798800
+          , "start":"1.00"
+          , "parent":"triangular.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":15
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"triangular.B3"
+          , "id":2905735984
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"triangular.B4"
+          , "id":2905738288
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"triangular.B2"
+          , "id":2905722448
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2887465792
+          , "end":"1.00"
+          , "parent":"triangular.B5"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":23
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2905735984
+          , "to":2905738288
+        }
+        , {
+          "from":2905738288
+          , "to":2905738288
+        }
+        , {
+          "from":2905738288
+          , "to":2905722448
+        }
+        , {
+          "from":2871798800
+          , "to":2905735984
+        }
+        , {
+          "from":2905722448
+          , "to":2887465792
+        }
+        , {
+          "from":2871798800
+          , "to":2887465792
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"2908411088"
+      , "dst":"2909961024"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"triangular.B3"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"175.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"Select(%L)"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Select(%L)"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"16"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Select(%L)"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"17"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"17"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":2908411088
+          , "start":"1.00"
+          , "parent":"triangular.B3"
+          , "type":"inst"
+        }
+        , {
+          "name":"Select"
+          , "id":2908417616
+          , "type":"inst"
+        }
+        , {
+          "name":"Select"
+          , "id":2908412048
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2908411856
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":16
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Select"
+          , "id":2908414352
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2909930512
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2909922832
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2909961024
+          , "end":"1.00"
+          , "parent":"triangular.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2908412048
+          , "to":2908411856
+        }
+        , {
+          "from":2908411088
+          , "to":2908414352
+        }
+        , {
+          "from":2908414352
+          , "to":2909930512
+        }
+        , {
+          "from":2908417616
+          , "to":2909922832
+        }
+        , {
+          "from":2908414352
+          , "to":2909961024
+        }
+        , {
+          "from":2909930512
+          , "to":2909961024
+        }
+        , {
+          "from":2908411088
+          , "to":2909961024
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"2908321280"
+      , "dst":"2887461760"
+      , "type":"fMAX/II"
+      , "brief":"Memory dependency"
+      , "loop":"triangular.B4"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Estimated fmax reduced to: ":"240.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"Or(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"ST(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"*(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"-(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"LD(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":2908321280
+          , "start":"77.00"
+          , "parent":"triangular.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Or"
+          , "id":2908327232
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"ST"
+          , "id":2908413392
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"*"
+          , "id":2908415504
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"-"
+          , "id":2908415312
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"LD"
+          , "id":2908323392
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2887461760
+          , "end":"147.00"
+          , "parent":"triangular.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\triangular\\triangular.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2908321280
+          , "to":2908327232
+        }
+        , {
+          "from":2908415504
+          , "to":2908415312
+        }
+        , {
+          "from":2908327232
+          , "to":2908323392
+        }
+        , {
+          "from":2908413392
+          , "to":2887461760
+        }
+        , {
+          "from":2908321280
+          , "to":2887461760
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

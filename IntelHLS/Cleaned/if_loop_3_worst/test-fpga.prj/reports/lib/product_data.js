@@ -1,1 +1,0 @@
-var infoJSON={"compileInfo":{"nodes":[{"command":"i++ -march=5CSEMA4U23C7 if_loop_3.cpp -o test-fpga.exe","family":"CycloneV, 5CSEMA4U23C7","id":1,"name":"./test-fpga","product":"HLS","quartus":"21.1.1 Build 850 Standard","time":"Mon Jun 12 16:31:19 2023","version":"21.4.0 Build 53.1"}]}};

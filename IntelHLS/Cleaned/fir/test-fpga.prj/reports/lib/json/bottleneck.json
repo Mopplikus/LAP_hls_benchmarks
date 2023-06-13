@@ -1,0 +1,235 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"1467046688"
+      , "dst":"1477595232"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"fir.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"194.4"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                  , "line":"21"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":1467046688
+          , "start":"2.00"
+          , "parent":"fir.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                , "line":17
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":1467042080
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":1477634864
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                , "line":21
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":1477595232
+          , "end":"3.00"
+          , "parent":"fir.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":1467046688
+          , "to":1467042080
+        }
+        , {
+          "from":1467042080
+          , "to":1477595232
+        }
+        , {
+          "from":1467046688
+          , "to":1477595232
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"?"
+      , "id":4294967295
+      , "src":"1475070880"
+      , "dst":"1467066192"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"fir.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"fir.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: fir.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                  , "line":"20"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":1475070880
+          , "start":"1.00"
+          , "parent":"fir.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                , "line":16
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"fir.B2"
+          , "id":1476246256
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\fir\\fir.cpp"
+                , "line":20
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":1467066192
+          , "end":"2.00"
+          , "parent":"fir.B3"
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":1476246256
+          , "to":1476246256
+        }
+        , {
+          "from":1475070880
+          , "to":1476246256
+        }
+        , {
+          "from":1476246256
+          , "to":1467066192
+        }
+        , {
+          "from":1475070880
+          , "to":1467066192
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

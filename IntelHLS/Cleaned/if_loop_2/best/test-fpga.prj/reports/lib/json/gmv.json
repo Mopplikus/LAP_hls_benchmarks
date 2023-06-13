@@ -1,0 +1,227 @@
+{
+  "nodes":
+  [
+    {
+      "name":"0"
+      , "id":1
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Interleaving":"Yes"
+          , "Interleave Size":"4095 MBs"
+          , "Channels":"1 channel"
+          , "Maximum bandwidth the BSP can deliver":"0.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+          , "Channel 0_Width (bits)":"64"
+        }
+      ]
+      , "type":"memsys"
+      , "children":
+      [
+        {
+          "name":"0"
+          , "id":3
+          , "type":"bb"
+        }
+      ]
+    }
+    , {
+      "name":"Memory Controller"
+      , "id":2
+      , "parent":"1"
+      , "bw":"0.00"
+      , "num_channels":"1"
+      , "interleave":"1"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Maximum bandwidth the BSP can deliver":"0.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+        }
+      ]
+      , "type":"bb"
+    }
+    , {
+      "name":"Global Memory Interconnect"
+      , "id":4
+      , "parent":"1"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"SHARE"
+          , "id":5
+          , "type":"arb"
+        }
+      ]
+    }
+    , {
+      "name":"1"
+      , "id":6
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Interleaving":"No"
+          , "Channels":"1 channel"
+          , "Maximum bandwidth the BSP can deliver":"0.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+          , "Channel 1_Width (bits)":"32"
+        }
+      ]
+      , "type":"memsys"
+      , "children":
+      [
+        {
+          "name":"1"
+          , "id":8
+          , "type":"bb"
+        }
+      ]
+    }
+    , {
+      "name":"Memory Controller"
+      , "id":7
+      , "parent":"6"
+      , "bw":"0.00"
+      , "num_channels":"1"
+      , "interleave":"0"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Maximum bandwidth the BSP can deliver":"0.00 MB/s<br><small><i> Note: Realistic maximum bandwidth is about 90% of the above due to loss from interconnect and memory controller.</i></small>"
+        }
+      ]
+      , "type":"bb"
+    }
+    , {
+      "name":"Global Memory Interconnect"
+      , "id":9
+      , "parent":"6"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"SHARE"
+          , "id":10
+          , "type":"arb"
+        }
+        , {
+          "name":"Read Interconnect"
+          , "id":11
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Name":"1"
+              , "Interconnect Style":"tree"
+              , "Reads":"1"
+            }
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Read Interconnect Router"
+          , "id":12
+          , "details":
+          [
+            {
+              "type":"table"
+              , "User specified num-reorder flag":"1"
+            }
+          ]
+          , "type":"memsys"
+          , "children":
+          [
+            {
+              "name":"Bus 0"
+              , "id":15
+              , "type":"memsys"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Global Memory Loads"
+      , "id":13
+      , "parent":"6"
+      , "type":"bb"
+      , "children":
+      [
+        {
+          "name":"LD"
+          , "id":14
+          , "kwidth":"32"
+          , "mwidth":"32"
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Start Cycle":"5"
+              , "Latency":"4 cycles"
+              , "Width":"32 bits"
+              , "1_Width":"32 bits"
+              , "Uses Caching":"No"
+              , "LSU Style":"PIPELINED"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":22
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":3
+      , "to":2
+    }
+    , {
+      "from":2
+      , "to":3
+    }
+    , {
+      "from":5
+      , "to":2
+    }
+    , {
+      "from":8
+      , "to":7
+    }
+    , {
+      "from":7
+      , "to":8
+    }
+    , {
+      "from":11
+      , "to":10
+    }
+    , {
+      "from":10
+      , "to":7
+    }
+    , {
+      "from":14
+      , "to":11
+    }
+    , {
+      "from":7
+      , "to":15
+    }
+    , {
+      "from":15
+      , "to":14
+      , "reverse":1
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "bottlenecks":
+  [
+    {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"400587328"
+      , "dst":"400671072"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"if_loop_2.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"175.0"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"Select(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                  , "line":"19"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                  , "line":"21"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":400587328
+          , "start":"3.00"
+          , "parent":"if_loop_2.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":19
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Select"
+          , "id":400581568
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":19
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":400587904
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":21
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":400671072
+          , "end":"3.00"
+          , "parent":"if_loop_2.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":21
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":400587328
+          , "to":400581568
+        }
+        , {
+          "from":400581568
+          , "to":400587904
+        }
+        , {
+          "from":400587904
+          , "to":400671072
+        }
+        , {
+          "from":400587328
+          , "to":400671072
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"?"
+      , "id":4294967295
+      , "src":"385417152"
+      , "dst":"389494512"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"if_loop_2.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"if_loop_2.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: if_loop_2.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                  , "line":"21"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":385417152
+          , "start":"1.00"
+          , "parent":"if_loop_2.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":16
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"if_loop_2.B2"
+          , "id":399153600
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":21
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":389494512
+          , "end":"2.00"
+          , "parent":"if_loop_2.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\if_loop_2\\best\\if_loop_2.cpp"
+                , "line":31
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":399153600
+          , "to":399153600
+        }
+        , {
+          "from":385417152
+          , "to":399153600
+        }
+        , {
+          "from":399153600
+          , "to":389494512
+        }
+        , {
+          "from":385417152
+          , "to":389494512
+          , "reverse":1
+        }
+      ]
+    }
+  ]
+}

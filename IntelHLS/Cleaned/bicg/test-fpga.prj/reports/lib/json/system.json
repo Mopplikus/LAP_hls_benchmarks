@@ -1,0 +1,116 @@
+{
+  "nodes":
+  [
+    {
+      "name":"bicg"
+      , "id":3360961912
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"Stream Read"
+          , "id":3361482848
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"bicg.B1.start"
+              , "Width":"320 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":30
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Write"
+          , "id":3387832544
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"bicg.B5"
+              , "Width":"1 bit"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":48
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"return.bicg"
+      , "id":3360774032
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+    , {
+      "name":"call.bicg"
+      , "id":3360787408
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"320 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"320 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":3387832544
+      , "to":3360774032
+    }
+    , {
+      "from":3360787408
+      , "to":3361482848
+    }
+    , {
+      "from":3361482848
+      , "to":3387832544
+    }
+  ]
+}

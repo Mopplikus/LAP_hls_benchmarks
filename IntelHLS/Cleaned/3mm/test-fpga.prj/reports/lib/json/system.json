@@ -1,0 +1,116 @@
+{
+  "nodes":
+  [
+    {
+      "name":"kernel_3mm"
+      , "id":1036862008
+      , "type":"component"
+      , "children":
+      [
+        {
+          "name":"Stream Write"
+          , "id":1037510208
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"kernel_3mm.B19"
+              , "Width":"1 bit"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\3mm\\kernel_3mm.cpp"
+                , "line":66
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Stream Read"
+          , "id":1037485552
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Basic Block":"kernel_3mm.B1.start"
+              , "Width":"448 bits"
+              , "Depth":"0"
+              , "Stall-free":"No"
+              , "Latency":"0"
+            }
+          ]
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\3mm\\kernel_3mm.cpp"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+    }
+    , {
+      "name":"return.kernel_3mm"
+      , "id":1036883040
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"1 bit"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"1 bit"
+          , "Uses Packets":"No"
+          , "Uses Ready":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+    , {
+      "name":"call.kernel_3mm"
+      , "id":1036883936
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Width":"448 bits"
+          , "Depth":"0"
+          , "Ready Latency":"0"
+          , "Bits per Symbol":"448 bits"
+          , "Uses Packets":"No"
+          , "Uses Valid":"Yes"
+          , "Uses Empty":"No"
+          , "First symbol in high order bits":"No"
+        }
+      ]
+      , "type":"stream"
+    }
+  ]
+  , "links":
+  [
+    {
+      "from":1037510208
+      , "to":1036883040
+    }
+    , {
+      "from":1036883936
+      , "to":1037485552
+    }
+    , {
+      "from":1037485552
+      , "to":1037510208
+    }
+  ]
+}
