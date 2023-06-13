@@ -2,10 +2,621 @@
   "bottlenecks":
   [
     {
+      "name":"?"
+      , "id":4294967295
+      , "src":"220612560"
+      , "dst":"238986256"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Data dependency"
+      , "loop":"bicg.B1.start"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Loop: ":"bicg.B1.start"
+          , "Declared at: ":"Component invocation"
+          , "Dependency: ":"Data dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: bicg.B2(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                  , "line":"36"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: bicg.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                  , "line":"39"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: bicg.B4(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                  , "line":"36"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"?"
+          , "id":220612560
+          , "start":"1.00"
+          , "parent":"bicg.B1.start"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":30
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"bicg.B2"
+          , "id":239572992
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"bicg.B3"
+          , "id":239574432
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":39
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"bicg.B4"
+          , "id":239572704
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"bb"
+        }
+        , {
+          "name":"Feedback"
+          , "id":238986256
+          , "end":"1.00"
+          , "parent":"bicg.B5"
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":239572992
+          , "to":239574432
+        }
+        , {
+          "from":239574432
+          , "to":239574432
+        }
+        , {
+          "from":239574432
+          , "to":239572704
+        }
+        , {
+          "from":220612560
+          , "to":239572992
+        }
+        , {
+          "from":239572704
+          , "to":238986256
+        }
+        , {
+          "from":220612560
+          , "to":238986256
+          , "reverse":1
+        }
+      ]
+    }
+    , {
       "name":"Global variable"
       , "id":4294967295
-      , "src":"3414267760"
-      , "dst":"3426693632"
+      , "src":"203098432"
+      , "dst":"238980544"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"bicg.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: bicg.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                  , "line":"39"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":203098432
+          , "start":"36.00"
+          , "parent":"bicg.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":45
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"bicg.B3"
+          , "id":239574432
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":39
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":238980544
+          , "end":"32.00"
+          , "parent":"bicg.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":45
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":239574432
+          , "to":239574432
+        }
+        , {
+          "from":203098432
+          , "to":239574432
+        }
+        , {
+          "from":239574432
+          , "to":238980544
+        }
+        , {
+          "from":203098432
+          , "to":238980544
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"203098624"
+      , "dst":"238982560"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"bicg.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: bicg.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                  , "line":"39"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":203098624
+          , "start":"36.00"
+          , "parent":"bicg.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":43
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"bicg.B3"
+          , "id":239574432
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":39
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":238982560
+          , "end":"1.00"
+          , "parent":"bicg.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":43
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":239574432
+          , "to":239574432
+        }
+        , {
+          "from":203098624
+          , "to":239574432
+        }
+        , {
+          "from":239574432
+          , "to":238982560
+        }
+        , {
+          "from":203098624
+          , "to":238982560
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"203104576"
+      , "dst":"238988272"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"bicg.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: bicg.B3(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                  , "line":"39"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":203104576
+          , "start":"4.00"
+          , "parent":"bicg.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":42
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"bicg.B3"
+          , "id":239574432
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":39
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":238988272
+          , "end":"1.00"
+          , "parent":"bicg.B4"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":42
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":239574432
+          , "to":239574432
+        }
+        , {
+          "from":203104576
+          , "to":239574432
+        }
+        , {
+          "from":239574432
+          , "to":238988272
+        }
+        , {
+          "from":203104576
+          , "to":238988272
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"224108480"
+      , "dst":"241896592"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"bicg.B2"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"194.4"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                  , "line":"36"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":224108480
+          , "start":"2.00"
+          , "parent":"bicg.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":224109440
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":241896592
+          , "end":"2.00"
+          , "parent":"bicg.B2"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
+                , "line":36
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":224108480
+          , "to":224109440
+        }
+        , {
+          "from":224109440
+          , "to":241896592
+        }
+        , {
+          "from":224108480
+          , "to":241896592
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"Global variable"
+      , "id":4294967295
+      , "src":"224100656"
+      , "dst":"215209440"
       , "type":"fMAX/II"
       , "brief":"Memory dependency"
       , "loop":"bicg.B3"
@@ -105,7 +716,7 @@
       [
         {
           "name":"Global variable"
-          , "id":3414267760
+          , "id":224100656
           , "start":"4.00"
           , "parent":"bicg.B3"
           , "debug":
@@ -121,7 +732,7 @@
         }
         , {
           "name":"Or"
-          , "id":3414267952
+          , "id":224099312
           , "debug":
           [
             [
@@ -135,7 +746,7 @@
         }
         , {
           "name":"LD"
-          , "id":3414272560
+          , "id":224098928
           , "debug":
           [
             [
@@ -149,7 +760,7 @@
         }
         , {
           "name":"*"
-          , "id":3414268144
+          , "id":224097392
           , "debug":
           [
             [
@@ -163,7 +774,7 @@
         }
         , {
           "name":"+"
-          , "id":3414272944
+          , "id":224098160
           , "debug":
           [
             [
@@ -177,7 +788,7 @@
         }
         , {
           "name":"ST"
-          , "id":3414273520
+          , "id":224100464
           , "debug":
           [
             [
@@ -191,7 +802,7 @@
         }
         , {
           "name":"*"
-          , "id":3414269680
+          , "id":224098352
           , "debug":
           [
             [
@@ -205,7 +816,7 @@
         }
         , {
           "name":"Feedback"
-          , "id":3426693632
+          , "id":215209440
           , "end":"74.00"
           , "parent":"bicg.B3"
           , "debug":
@@ -223,36 +834,36 @@
       , "links":
       [
         {
-          "from":3414267760
-          , "to":3414267952
+          "from":224100656
+          , "to":224099312
         }
         , {
-          "from":3414267952
-          , "to":3414272560
+          "from":224099312
+          , "to":224098928
         }
         , {
-          "from":3414272560
-          , "to":3414268144
+          "from":224098928
+          , "to":224097392
         }
         , {
-          "from":3414268144
-          , "to":3414272944
+          "from":224097392
+          , "to":224098160
         }
         , {
-          "from":3414272944
-          , "to":3414273520
+          "from":224098160
+          , "to":224100464
         }
         , {
-          "from":3414272560
-          , "to":3414269680
+          "from":224098928
+          , "to":224098352
         }
         , {
-          "from":3414273520
-          , "to":3426693632
+          "from":224100464
+          , "to":215209440
         }
         , {
-          "from":3414267760
-          , "to":3426693632
+          "from":224100656
+          , "to":215209440
           , "reverse":1
         }
       ]
@@ -260,8 +871,8 @@
     , {
       "name":"Global variable"
       , "id":4294967295
-      , "src":"3414268528"
-      , "dst":"3426690944"
+      , "src":"224099888"
+      , "dst":"215210784"
       , "type":"fMAX/II"
       , "brief":"Memory dependency"
       , "loop":"bicg.B3"
@@ -317,7 +928,7 @@
       [
         {
           "name":"Global variable"
-          , "id":3414268528
+          , "id":224099888
           , "start":"41.00"
           , "parent":"bicg.B3"
           , "debug":
@@ -333,7 +944,7 @@
         }
         , {
           "name":"ST"
-          , "id":3414273520
+          , "id":224100464
           , "debug":
           [
             [
@@ -347,7 +958,7 @@
         }
         , {
           "name":"LD"
-          , "id":3414269488
+          , "id":224102768
           , "debug":
           [
             [
@@ -361,7 +972,7 @@
         }
         , {
           "name":"Feedback"
-          , "id":3426690944
+          , "id":215210784
           , "end":"111.00"
           , "parent":"bicg.B3"
           , "debug":
@@ -379,631 +990,20 @@
       , "links":
       [
         {
-          "from":3414268528
-          , "to":3414273520
+          "from":224099888
+          , "to":224100464
         }
         , {
-          "from":3414273520
-          , "to":3414269488
+          "from":224100464
+          , "to":224102768
         }
         , {
-          "from":3414269488
-          , "to":3426690944
+          "from":224102768
+          , "to":215210784
         }
         , {
-          "from":3414268528
-          , "to":3426690944
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"Global variable"
-      , "id":4294967295
-      , "src":"3426702080"
-      , "dst":"3431724048"
-      , "type":"fMAX/II"
-      , "brief":"Data dependency"
-      , "loop":"bicg.B2"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Data dependency"
-          , "Estimated fmax reduced to: ":"194.4"
-          , "Loop feedback path that lowered II and Fmax: ":
-          [
-            {
-              "type":"text"
-              , "text":"+(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                  , "line":"36"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"Global variable"
-          , "id":3426702080
-          , "start":"2.00"
-          , "parent":"bicg.B2"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":32
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"+"
-          , "id":3426706688
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":36
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Feedback"
-          , "id":3431724048
-          , "end":"2.00"
-          , "parent":"bicg.B2"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":36
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":3426702080
-          , "to":3426706688
-        }
-        , {
-          "from":3426706688
-          , "to":3431724048
-        }
-        , {
-          "from":3426702080
-          , "to":3431724048
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"?"
-      , "id":4294967295
-      , "src":"3409092240"
-      , "dst":"3426696656"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Data dependency"
-      , "loop":"bicg.B1.start"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Loop: ":"bicg.B1.start"
-          , "Declared at: ":"Component invocation"
-          , "Dependency: ":"Data dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: bicg.B2(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                  , "line":"36"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Loop: bicg.B3(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                  , "line":"39"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Basic block: bicg.B4(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                  , "line":"36"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"?"
-          , "id":3409092240
-          , "start":"1.00"
-          , "parent":"bicg.B1.start"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":30
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"bicg.B2"
-          , "id":3427906992
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":36
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"bicg.B3"
-          , "id":3427897488
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":39
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"bicg.B4"
-          , "id":3427914768
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":36
-              }
-            ]
-          ]
-          , "type":"bb"
-        }
-        , {
-          "name":"Feedback"
-          , "id":3426696656
-          , "end":"1.00"
-          , "parent":"bicg.B5"
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":3427897488
-          , "to":3427897488
-        }
-        , {
-          "from":3427906992
-          , "to":3427897488
-        }
-        , {
-          "from":3427897488
-          , "to":3427914768
-        }
-        , {
-          "from":3409092240
-          , "to":3427906992
-        }
-        , {
-          "from":3427914768
-          , "to":3426696656
-        }
-        , {
-          "from":3409092240
-          , "to":3426696656
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"Global variable"
-      , "id":4294967295
-      , "src":"3391354960"
-      , "dst":"3426693296"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Memory dependency"
-      , "loop":"bicg.B2"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: bicg.B3(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                  , "line":"39"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"Global variable"
-          , "id":3391354960
-          , "start":"36.00"
-          , "parent":"bicg.B2"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":43
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"bicg.B3"
-          , "id":3427897488
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":39
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"Feedback"
-          , "id":3426693296
-          , "end":"1.00"
-          , "parent":"bicg.B4"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":43
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":3427897488
-          , "to":3427897488
-        }
-        , {
-          "from":3391354960
-          , "to":3427897488
-        }
-        , {
-          "from":3427897488
-          , "to":3426693296
-        }
-        , {
-          "from":3391354960
-          , "to":3426693296
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"Global variable"
-      , "id":4294967295
-      , "src":"3391361296"
-      , "dst":"3426693968"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Memory dependency"
-      , "loop":"bicg.B2"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: bicg.B3(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                  , "line":"39"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"Global variable"
-          , "id":3391361296
-          , "start":"4.00"
-          , "parent":"bicg.B2"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":42
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"bicg.B3"
-          , "id":3427897488
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":39
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"Feedback"
-          , "id":3426693968
-          , "end":"1.00"
-          , "parent":"bicg.B4"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":42
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":3427897488
-          , "to":3427897488
-        }
-        , {
-          "from":3391361296
-          , "to":3427897488
-        }
-        , {
-          "from":3427897488
-          , "to":3426693968
-        }
-        , {
-          "from":3391361296
-          , "to":3426693968
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"Global variable"
-      , "id":4294967295
-      , "src":"3391353808"
-      , "dst":"3426694304"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Memory dependency"
-      , "loop":"bicg.B2"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: bicg.B3(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                  , "line":"39"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"Global variable"
-          , "id":3391353808
-          , "start":"36.00"
-          , "parent":"bicg.B2"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":45
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"bicg.B3"
-          , "id":3427897488
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":39
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"Feedback"
-          , "id":3426694304
-          , "end":"32.00"
-          , "parent":"bicg.B4"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\bicg\\bicg.cpp"
-                , "line":45
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":3427897488
-          , "to":3427897488
-        }
-        , {
-          "from":3391353808
-          , "to":3427897488
-        }
-        , {
-          "from":3427897488
-          , "to":3426694304
-        }
-        , {
-          "from":3391353808
-          , "to":3426694304
+          "from":224099888
+          , "to":215210784
           , "reverse":1
         }
       ]

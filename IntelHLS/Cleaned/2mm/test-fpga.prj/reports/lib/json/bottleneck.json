@@ -4,8 +4,260 @@
     {
       "name":"Global variable"
       , "id":4294967295
-      , "src":"1437335600"
-      , "dst":"1437781552"
+      , "src":"2340050160"
+      , "dst":"2339421312"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"kernel_2mm.B15"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
+          [
+            {
+              "type":"text"
+              , "text":"Loop: kernel_2mm.B17(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"54"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"Global variable"
+          , "id":2340050160
+          , "start":"46.00"
+          , "parent":"kernel_2mm.B15"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":56
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"kernel_2mm.B17"
+          , "id":2293957712
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":54
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2339421312
+          , "end":"32.00"
+          , "parent":"kernel_2mm.B16"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":56
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2293957712
+          , "to":2293957712
+        }
+        , {
+          "from":2340050160
+          , "to":2293957712
+        }
+        , {
+          "from":2293957712
+          , "to":2339421312
+        }
+        , {
+          "from":2340050160
+          , "to":2339421312
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"tmp"
+      , "id":4294967295
+      , "src":"2341902912"
+      , "dst":"2342230976"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"kernel_2mm.B11"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"tmp"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"30"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"194.4"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"44"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"45"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"tmp"
+          , "id":2341902912
+          , "start":"52.00"
+          , "parent":"kernel_2mm.B11"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":43
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2341895232
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":44
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2341905792
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":45
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2342230976
+          , "end":"53.00"
+          , "parent":"kernel_2mm.B11"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":45
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2341902912
+          , "to":2341905792
+        }
+        , {
+          "from":2341905792
+          , "to":2342230976
+        }
+        , {
+          "from":2341902912
+          , "to":2342230976
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"'k'"
+      , "id":4294967295
+      , "src":"2341882368"
+      , "dst":"2342784944"
       , "type":"fMAX/II"
       , "brief":"Data dependency"
       , "loop":"kernel_2mm.B17"
@@ -13,7 +265,7 @@
       [
         {
           "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
+          , "Variable on critical loop carried feedback path: ":"'k'"
           , "Declared at: ":
           [
             {
@@ -60,24 +312,10 @@
       , "nodes":
       [
         {
-          "name":"Global variable"
-          , "id":1437335600
-          , "start":"48.00"
+          "name":"'k'"
+          , "id":2341882368
+          , "start":"4.00"
           , "parent":"kernel_2mm.B17"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":53
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"+"
-          , "id":1437327344
           , "debug":
           [
             [
@@ -91,110 +329,13 @@
         }
         , {
           "name":"+"
-          , "id":1437338480
+          , "id":2342930480
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":55
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Feedback"
-          , "id":1437781552
-          , "end":"49.00"
-          , "parent":"kernel_2mm.B17"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":55
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":1437335600
-          , "to":1437338480
-        }
-        , {
-          "from":1437338480
-          , "to":1437781552
-        }
-        , {
-          "from":1437335600
-          , "to":1437781552
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"'j'"
-      , "id":4294967295
-      , "src":"1436053392"
-      , "dst":"1436247968"
-      , "type":"fMAX/II"
-      , "brief":"Data dependency"
-      , "loop":"kernel_2mm.B9"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"'j'"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Data dependency"
-          , "Estimated fmax reduced to: ":"194.4"
-          , "Loop feedback path that lowered II and Fmax: ":
-          [
-            {
-              "type":"text"
-              , "text":"+(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"42"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"'j'"
-          , "id":1436053392
-          , "start":"5.00"
-          , "parent":"kernel_2mm.B9"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":42
+                , "line":54
               }
             ]
           ]
@@ -202,13 +343,13 @@
         }
         , {
           "name":"+"
-          , "id":1436048400
+          , "id":2342922416
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":42
+                , "line":55
               }
             ]
           ]
@@ -216,15 +357,15 @@
         }
         , {
           "name":"Feedback"
-          , "id":1436247968
+          , "id":2342784944
           , "end":"5.00"
-          , "parent":"kernel_2mm.B9"
+          , "parent":"kernel_2mm.B17"
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":42
+                , "line":54
               }
             ]
           ]
@@ -234,16 +375,16 @@
       , "links":
       [
         {
-          "from":1436053392
-          , "to":1436048400
+          "from":2341882368
+          , "to":2342930480
         }
         , {
-          "from":1436048400
-          , "to":1436247968
+          "from":2342930480
+          , "to":2342784944
         }
         , {
-          "from":1436053392
-          , "to":1436247968
+          "from":2341882368
+          , "to":2342784944
           , "reverse":1
         }
       ]
@@ -251,8 +392,8 @@
     , {
       "name":"'i'"
       , "id":4294967295
-      , "src":"1436053968"
-      , "dst":"1436226272"
+      , "src":"2340846736"
+      , "dst":"2341579680"
       , "type":"fMAX/II"
       , "brief":"Data dependency"
       , "loop":"kernel_2mm.B7"
@@ -297,7 +438,7 @@
       [
         {
           "name":"'i'"
-          , "id":1436053968
+          , "id":2340846736
           , "start":"2.00"
           , "parent":"kernel_2mm.B7"
           , "debug":
@@ -313,7 +454,7 @@
         }
         , {
           "name":"+"
-          , "id":1436050896
+          , "id":2340848656
           , "debug":
           [
             [
@@ -327,7 +468,7 @@
         }
         , {
           "name":"Feedback"
-          , "id":1436226272
+          , "id":2341579680
           , "end":"3.00"
           , "parent":"kernel_2mm.B7"
           , "debug":
@@ -345,127 +486,16 @@
       , "links":
       [
         {
-          "from":1436053968
-          , "to":1436050896
+          "from":2340846736
+          , "to":2340848656
         }
         , {
-          "from":1436050896
-          , "to":1436226272
+          "from":2340848656
+          , "to":2341579680
         }
         , {
-          "from":1436053968
-          , "to":1436226272
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"'i'"
-      , "id":4294967295
-      , "src":"1436066064"
-      , "dst":"1436968320"
-      , "type":"fMAX/II"
-      , "brief":"Data dependency"
-      , "loop":"kernel_2mm.B12"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"'i'"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Data dependency"
-          , "Estimated fmax reduced to: ":"194.4"
-          , "Loop feedback path that lowered II and Fmax: ":
-          [
-            {
-              "type":"text"
-              , "text":"+(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"50"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"'i'"
-          , "id":1436066064
-          , "start":"2.00"
-          , "parent":"kernel_2mm.B12"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":50
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"+"
-          , "id":1436075280
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":50
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"Feedback"
-          , "id":1436968320
-          , "end":"2.00"
-          , "parent":"kernel_2mm.B12"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":50
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":1436066064
-          , "to":1436075280
-        }
-        , {
-          "from":1436075280
-          , "to":1436968320
-        }
-        , {
-          "from":1436066064
-          , "to":1436968320
+          "from":2340846736
+          , "to":2341579680
           , "reverse":1
         }
       ]
@@ -473,11 +503,12 @@
     , {
       "name":"Global variable"
       , "id":4294967295
-      , "src":"1436077584"
-      , "dst":"1437027456"
-      , "type":"fMAX/II"
-      , "brief":"Data dependency"
-      , "loop":"kernel_2mm.B15"
+      , "src":"2340051888"
+      , "dst":"2339419296"
+      , "concurrency":"1"
+      , "type":"Occupancy limiter"
+      , "brief":"Memory dependency"
+      , "loop":"kernel_2mm.B12"
       , "details":
       [
         {
@@ -497,13 +528,35 @@
               ]
             }
           ]
-          , "Dependency: ":"Data dependency"
-          , "Estimated fmax reduced to: ":"194.4"
-          , "Loop feedback path that lowered II and Fmax: ":
+          , "Dependency: ":"Memory dependency"
+          , "Concurrency value: ":"1"
+          , "Loop feedback path that lowered occupancy: ":
           [
             {
               "type":"text"
-              , "text":"+(%L)"
+              , "text":"Loop: kernel_2mm.B15(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"52"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Loop: kernel_2mm.B17(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"54"
+                }
+              ]
+            }
+            , {
+              "type":"text"
+              , "text":"Basic block: kernel_2mm.B16(%L)"
               , "links":
               [
                 {
@@ -519,23 +572,23 @@
       [
         {
           "name":"Global variable"
-          , "id":1436077584
-          , "start":"2.00"
-          , "parent":"kernel_2mm.B15"
+          , "id":2340051888
+          , "start":"6.00"
+          , "parent":"kernel_2mm.B12"
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":52
+                , "line":56
               }
             ]
           ]
           , "type":"inst"
         }
         , {
-          "name":"+"
-          , "id":1436070288
+          "name":"kernel_2mm.B15"
+          , "id":2293964048
           , "debug":
           [
             [
@@ -545,19 +598,47 @@
               }
             ]
           ]
-          , "type":"inst"
+          , "type":"loop"
+        }
+        , {
+          "name":"kernel_2mm.B17"
+          , "id":2293957712
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":54
+              }
+            ]
+          ]
+          , "type":"loop"
+        }
+        , {
+          "name":"kernel_2mm.B16"
+          , "id":2293956848
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":52
+              }
+            ]
+          ]
+          , "type":"bb"
         }
         , {
           "name":"Feedback"
-          , "id":1437027456
-          , "end":"3.00"
-          , "parent":"kernel_2mm.B15"
+          , "id":2339419296
+          , "end":"1.00"
+          , "parent":"kernel_2mm.B14"
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":52
+                , "line":56
               }
             ]
           ]
@@ -567,127 +648,28 @@
       , "links":
       [
         {
-          "from":1436077584
-          , "to":1436070288
+          "from":2293957712
+          , "to":2293957712
         }
         , {
-          "from":1436070288
-          , "to":1437027456
+          "from":2293964048
+          , "to":2293957712
         }
         , {
-          "from":1436077584
-          , "to":1437027456
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"tmp"
-      , "id":4294967295
-      , "src":"1434779680"
-      , "dst":"1435896528"
-      , "type":"fMAX/II"
-      , "brief":"Data dependency"
-      , "loop":"kernel_2mm.B3"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"tmp"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"30"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Data dependency"
-          , "Estimated fmax reduced to: ":"194.4"
-          , "Loop feedback path that lowered II and Fmax: ":
-          [
-            {
-              "type":"text"
-              , "text":"+(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"32"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"tmp"
-          , "id":1434779680
-          , "start":"2.00"
-          , "parent":"kernel_2mm.B3"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":32
-              }
-            ]
-          ]
-          , "type":"inst"
+          "from":2293957712
+          , "to":2293956848
         }
         , {
-          "name":"+"
-          , "id":1434787552
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":32
-              }
-            ]
-          ]
-          , "type":"inst"
+          "from":2340051888
+          , "to":2293964048
         }
         , {
-          "name":"Feedback"
-          , "id":1435896528
-          , "end":"2.00"
-          , "parent":"kernel_2mm.B3"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":32
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":1434779680
-          , "to":1434787552
+          "from":2293956848
+          , "to":2339419296
         }
         , {
-          "from":1434787552
-          , "to":1435896528
-        }
-        , {
-          "from":1434779680
-          , "to":1435896528
+          "from":2340051888
+          , "to":2339419296
           , "reverse":1
         }
       ]
@@ -695,8 +677,8 @@
     , {
       "name":"?"
       , "id":4294967295
-      , "src":"1433039760"
-      , "dst":"1434357072"
+      , "src":"2339579968"
+      , "dst":"2339424000"
       , "concurrency":"1"
       , "type":"Occupancy limiter"
       , "brief":"Data dependency"
@@ -883,7 +865,7 @@
       [
         {
           "name":"?"
-          , "id":1433039760
+          , "id":2339579968
           , "start":"1.00"
           , "parent":"kernel_2mm.B1.start"
           , "debug":
@@ -899,7 +881,7 @@
         }
         , {
           "name":"kernel_2mm.B3"
-          , "id":1386009584
+          , "id":2293959152
           , "debug":
           [
             [
@@ -913,7 +895,7 @@
         }
         , {
           "name":"kernel_2mm.B5"
-          , "id":1386012176
+          , "id":2293963472
           , "debug":
           [
             [
@@ -927,7 +909,7 @@
         }
         , {
           "name":"kernel_2mm.B4"
-          , "id":1386005840
+          , "id":2293962896
           , "debug":
           [
             [
@@ -941,7 +923,7 @@
         }
         , {
           "name":"kernel_2mm.B2"
-          , "id":1386008720
+          , "id":2293957136
           , "debug":
           [
             [
@@ -955,7 +937,7 @@
         }
         , {
           "name":"kernel_2mm.B7"
-          , "id":1386006416
+          , "id":2293958000
           , "debug":
           [
             [
@@ -969,7 +951,7 @@
         }
         , {
           "name":"kernel_2mm.B9"
-          , "id":1386006128
+          , "id":2293962320
           , "debug":
           [
             [
@@ -983,7 +965,7 @@
         }
         , {
           "name":"kernel_2mm.B11"
-          , "id":1386012464
+          , "id":2293957424
           , "debug":
           [
             [
@@ -997,7 +979,7 @@
         }
         , {
           "name":"kernel_2mm.B10"
-          , "id":1386005552
+          , "id":2293961744
           , "debug":
           [
             [
@@ -1011,7 +993,7 @@
         }
         , {
           "name":"kernel_2mm.B8"
-          , "id":1386009008
+          , "id":2293963760
           , "debug":
           [
             [
@@ -1025,7 +1007,7 @@
         }
         , {
           "name":"kernel_2mm.B6"
-          , "id":1386009872
+          , "id":2293964624
           , "debug":
           [
             [
@@ -1039,7 +1021,7 @@
         }
         , {
           "name":"kernel_2mm.B12"
-          , "id":1386006704
+          , "id":2293963184
           , "debug":
           [
             [
@@ -1053,7 +1035,7 @@
         }
         , {
           "name":"kernel_2mm.B15"
-          , "id":1386006992
+          , "id":2293964048
           , "debug":
           [
             [
@@ -1067,7 +1049,7 @@
         }
         , {
           "name":"kernel_2mm.B17"
-          , "id":1386005264
+          , "id":2293957712
           , "debug":
           [
             [
@@ -1081,7 +1063,7 @@
         }
         , {
           "name":"kernel_2mm.B16"
-          , "id":1386011024
+          , "id":2293956848
           , "debug":
           [
             [
@@ -1095,7 +1077,7 @@
         }
         , {
           "name":"kernel_2mm.B14"
-          , "id":1386010736
+          , "id":2293958288
           , "debug":
           [
             [
@@ -1109,7 +1091,7 @@
         }
         , {
           "name":"Feedback"
-          , "id":1434357072
+          , "id":2339424000
           , "end":"1.00"
           , "parent":"kernel_2mm.B13"
           , "type":"inst"
@@ -1118,374 +1100,84 @@
       , "links":
       [
         {
-          "from":1386009584
-          , "to":1386012176
+          "from":2293959152
+          , "to":2293963472
         }
         , {
-          "from":1386012176
-          , "to":1386012176
+          "from":2293963472
+          , "to":2293963472
         }
         , {
-          "from":1386012176
-          , "to":1386005840
+          "from":2293963472
+          , "to":2293962896
         }
         , {
-          "from":1386005840
-          , "to":1386008720
+          "from":2293962896
+          , "to":2293957136
         }
         , {
-          "from":1386008720
-          , "to":1386006416
+          "from":2293957136
+          , "to":2293958000
         }
         , {
-          "from":1386006416
-          , "to":1386006128
+          "from":2293958000
+          , "to":2293962320
         }
         , {
-          "from":1386006128
-          , "to":1386012464
+          "from":2293957424
+          , "to":2293957424
         }
         , {
-          "from":1386012464
-          , "to":1386012464
+          "from":2293962320
+          , "to":2293957424
         }
         , {
-          "from":1386012464
-          , "to":1386005552
+          "from":2293957424
+          , "to":2293961744
         }
         , {
-          "from":1386005552
-          , "to":1386009008
+          "from":2293961744
+          , "to":2293963760
         }
         , {
-          "from":1386009008
-          , "to":1386009872
+          "from":2293963760
+          , "to":2293964624
         }
         , {
-          "from":1386009872
-          , "to":1386006704
+          "from":2293964624
+          , "to":2293963184
         }
         , {
-          "from":1386006704
-          , "to":1386006992
+          "from":2293963184
+          , "to":2293964048
         }
         , {
-          "from":1386005264
-          , "to":1386005264
+          "from":2293957712
+          , "to":2293957712
         }
         , {
-          "from":1386006992
-          , "to":1386005264
+          "from":2293964048
+          , "to":2293957712
         }
         , {
-          "from":1386005264
-          , "to":1386011024
+          "from":2293957712
+          , "to":2293956848
         }
         , {
-          "from":1386011024
-          , "to":1386010736
+          "from":2293956848
+          , "to":2293958288
         }
         , {
-          "from":1433039760
-          , "to":1386009584
+          "from":2339579968
+          , "to":2293959152
         }
         , {
-          "from":1386010736
-          , "to":1434357072
+          "from":2293958288
+          , "to":2339424000
         }
         , {
-          "from":1433039760
-          , "to":1434357072
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"Global variable"
-      , "id":4294967295
-      , "src":"1434520432"
-      , "dst":"1434349680"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Memory dependency"
-      , "loop":"kernel_2mm.B12"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: kernel_2mm.B15(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"52"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Loop: kernel_2mm.B17(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"54"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"Basic block: kernel_2mm.B16(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"52"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"Global variable"
-          , "id":1434520432
-          , "start":"6.00"
-          , "parent":"kernel_2mm.B12"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":56
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"kernel_2mm.B15"
-          , "id":1386006992
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":52
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"kernel_2mm.B17"
-          , "id":1386005264
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":54
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"kernel_2mm.B16"
-          , "id":1386011024
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":52
-              }
-            ]
-          ]
-          , "type":"bb"
-        }
-        , {
-          "name":"Feedback"
-          , "id":1434349680
-          , "end":"1.00"
-          , "parent":"kernel_2mm.B14"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":56
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":1386005264
-          , "to":1386005264
-        }
-        , {
-          "from":1386006992
-          , "to":1386005264
-        }
-        , {
-          "from":1386005264
-          , "to":1386011024
-        }
-        , {
-          "from":1434520432
-          , "to":1386006992
-        }
-        , {
-          "from":1386011024
-          , "to":1434349680
-        }
-        , {
-          "from":1434520432
-          , "to":1434349680
-          , "reverse":1
-        }
-      ]
-    }
-    , {
-      "name":"Global variable"
-      , "id":4294967295
-      , "src":"1434526384"
-      , "dst":"1434352032"
-      , "concurrency":"1"
-      , "type":"Occupancy limiter"
-      , "brief":"Memory dependency"
-      , "loop":"kernel_2mm.B15"
-      , "details":
-      [
-        {
-          "type":"table"
-          , "Variable on critical loop carried feedback path: ":"Global variable"
-          , "Declared at: ":
-          [
-            {
-              "type":"text"
-              , "text":"%L"
-              , "links":
-              [
-                {
-                  "filename":"Unknown location"
-                  , "line":"0"
-                }
-              ]
-            }
-          ]
-          , "Dependency: ":"Memory dependency"
-          , "Concurrency value: ":"1"
-          , "Loop feedback path that lowered occupancy: ":
-          [
-            {
-              "type":"text"
-              , "text":"Loop: kernel_2mm.B17(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"54"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-      , "nodes":
-      [
-        {
-          "name":"Global variable"
-          , "id":1434526384
-          , "start":"46.00"
-          , "parent":"kernel_2mm.B15"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":56
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"kernel_2mm.B17"
-          , "id":1386005264
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":54
-              }
-            ]
-          ]
-          , "type":"loop"
-        }
-        , {
-          "name":"Feedback"
-          , "id":1434352032
-          , "end":"32.00"
-          , "parent":"kernel_2mm.B16"
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":56
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-      ]
-      , "links":
-      [
-        {
-          "from":1386005264
-          , "to":1386005264
-        }
-        , {
-          "from":1434526384
-          , "to":1386005264
-        }
-        , {
-          "from":1386005264
-          , "to":1434352032
-        }
-        , {
-          "from":1434526384
-          , "to":1434352032
+          "from":2339579968
+          , "to":2339424000
           , "reverse":1
         }
       ]
@@ -1493,8 +1185,341 @@
     , {
       "name":"tmp"
       , "id":4294967295
-      , "src":"1434783904"
-      , "dst":"1436030784"
+      , "src":"2340845968"
+      , "dst":"2341366800"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"kernel_2mm.B3"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"tmp"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"30"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"194.4"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"32"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"tmp"
+          , "id":2340845968
+          , "start":"2.00"
+          , "parent":"kernel_2mm.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2340853840
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2341366800
+          , "end":"2.00"
+          , "parent":"kernel_2mm.B3"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":32
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2340845968
+          , "to":2340853840
+        }
+        , {
+          "from":2340853840
+          , "to":2341366800
+        }
+        , {
+          "from":2340845968
+          , "to":2341366800
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"'j'"
+      , "id":4294967295
+      , "src":"2340858832"
+      , "dst":"2341740592"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"kernel_2mm.B9"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"'j'"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"194.4"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"42"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"'j'"
+          , "id":2340858832
+          , "start":"5.00"
+          , "parent":"kernel_2mm.B9"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":42
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2340857488
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":42
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2341740592
+          , "end":"5.00"
+          , "parent":"kernel_2mm.B9"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":42
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2340858832
+          , "to":2340857488
+        }
+        , {
+          "from":2340857488
+          , "to":2341740592
+        }
+        , {
+          "from":2340858832
+          , "to":2341740592
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"'i'"
+      , "id":4294967295
+      , "src":"2341904256"
+      , "dst":"2342383008"
+      , "type":"fMAX/II"
+      , "brief":"Data dependency"
+      , "loop":"kernel_2mm.B12"
+      , "details":
+      [
+        {
+          "type":"table"
+          , "Variable on critical loop carried feedback path: ":"'i'"
+          , "Declared at: ":
+          [
+            {
+              "type":"text"
+              , "text":"%L"
+              , "links":
+              [
+                {
+                  "filename":"Unknown location"
+                  , "line":"0"
+                }
+              ]
+            }
+          ]
+          , "Dependency: ":"Data dependency"
+          , "Estimated fmax reduced to: ":"194.4"
+          , "Loop feedback path that lowered II and Fmax: ":
+          [
+            {
+              "type":"text"
+              , "text":"+(%L)"
+              , "links":
+              [
+                {
+                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                  , "line":"50"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      , "nodes":
+      [
+        {
+          "name":"'i'"
+          , "id":2341904256
+          , "start":"2.00"
+          , "parent":"kernel_2mm.B12"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":50
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"+"
+          , "id":2341907136
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":50
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+        , {
+          "name":"Feedback"
+          , "id":2342383008
+          , "end":"2.00"
+          , "parent":"kernel_2mm.B12"
+          , "debug":
+          [
+            [
+              {
+                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
+                , "line":50
+              }
+            ]
+          ]
+          , "type":"inst"
+        }
+      ]
+      , "links":
+      [
+        {
+          "from":2341904256
+          , "to":2341907136
+        }
+        , {
+          "from":2341907136
+          , "to":2342383008
+        }
+        , {
+          "from":2341904256
+          , "to":2342383008
+          , "reverse":1
+        }
+      ]
+    }
+    , {
+      "name":"tmp"
+      , "id":4294967295
+      , "src":"2340851728"
+      , "dst":"2341431424"
       , "type":"fMAX/II"
       , "brief":"Data dependency"
       , "loop":"kernel_2mm.B5"
@@ -1539,7 +1564,7 @@
       [
         {
           "name":"tmp"
-          , "id":1434783904
+          , "id":2340851728
           , "start":"5.00"
           , "parent":"kernel_2mm.B5"
           , "debug":
@@ -1555,7 +1580,7 @@
         }
         , {
           "name":"+"
-          , "id":1434786592
+          , "id":2340852112
           , "debug":
           [
             [
@@ -1569,7 +1594,7 @@
         }
         , {
           "name":"Feedback"
-          , "id":1436030784
+          , "id":2341431424
           , "end":"5.00"
           , "parent":"kernel_2mm.B5"
           , "debug":
@@ -1587,33 +1612,33 @@
       , "links":
       [
         {
-          "from":1434783904
-          , "to":1434786592
+          "from":2340851728
+          , "to":2340852112
         }
         , {
-          "from":1434786592
-          , "to":1436030784
+          "from":2340852112
+          , "to":2341431424
         }
         , {
-          "from":1434783904
-          , "to":1436030784
+          "from":2340851728
+          , "to":2341431424
           , "reverse":1
         }
       ]
     }
     , {
-      "name":"tmp"
+      "name":"Global variable"
       , "id":4294967295
-      , "src":"1436062992"
-      , "dst":"1436729088"
+      , "src":"2341904064"
+      , "dst":"2342364528"
       , "type":"fMAX/II"
       , "brief":"Data dependency"
-      , "loop":"kernel_2mm.B11"
+      , "loop":"kernel_2mm.B15"
       , "details":
       [
         {
           "type":"table"
-          , "Variable on critical loop carried feedback path: ":"tmp"
+          , "Variable on critical loop carried feedback path: ":"Global variable"
           , "Declared at: ":
           [
             {
@@ -1622,8 +1647,8 @@
               , "links":
               [
                 {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"30"
+                  "filename":"Unknown location"
+                  , "line":"0"
                 }
               ]
             }
@@ -1639,18 +1664,7 @@
               [
                 {
                   "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"44"
-                }
-              ]
-            }
-            , {
-              "type":"text"
-              , "text":"+(%L)"
-              , "links":
-              [
-                {
-                  "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                  , "line":"45"
+                  , "line":"52"
                 }
               ]
             }
@@ -1660,16 +1674,16 @@
       , "nodes":
       [
         {
-          "name":"tmp"
-          , "id":1436062992
-          , "start":"52.00"
-          , "parent":"kernel_2mm.B11"
+          "name":"Global variable"
+          , "id":2341904064
+          , "start":"2.00"
+          , "parent":"kernel_2mm.B15"
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":43
+                , "line":52
               }
             ]
           ]
@@ -1677,27 +1691,13 @@
         }
         , {
           "name":"+"
-          , "id":1436067216
+          , "id":2341879488
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":44
-              }
-            ]
-          ]
-          , "type":"inst"
-        }
-        , {
-          "name":"+"
-          , "id":1436069136
-          , "debug":
-          [
-            [
-              {
-                "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":45
+                , "line":52
               }
             ]
           ]
@@ -1705,15 +1705,15 @@
         }
         , {
           "name":"Feedback"
-          , "id":1436729088
-          , "end":"53.00"
-          , "parent":"kernel_2mm.B11"
+          , "id":2342364528
+          , "end":"3.00"
+          , "parent":"kernel_2mm.B15"
           , "debug":
           [
             [
               {
                 "filename":"C:\\Users\\Elija\\Documents\\LAP_hls_benchmarks\\IntelHLS\\Cleaned\\2mm\\kernel_2mm.cpp"
-                , "line":45
+                , "line":52
               }
             ]
           ]
@@ -1723,16 +1723,16 @@
       , "links":
       [
         {
-          "from":1436062992
-          , "to":1436069136
+          "from":2341904064
+          , "to":2341879488
         }
         , {
-          "from":1436069136
-          , "to":1436729088
+          "from":2341879488
+          , "to":2342364528
         }
         , {
-          "from":1436062992
-          , "to":1436729088
+          "from":2341904064
+          , "to":2342364528
           , "reverse":1
         }
       ]

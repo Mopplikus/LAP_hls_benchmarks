@@ -113,7 +113,7 @@ int main(void){
             A_ref[y][x] = rand()%100;
             B_ref[y][x] = rand()%100;
             C_ref[y][x] = rand()%100;
-            D_ref[y][x] = 0;
+            D_ref[y][x] = rand()&100;
             A[y * N + x] = A_ref[y][x];
             B[y * N + x] = B_ref[y][x];
             C[y * N + x] = C_ref[y][x];

@@ -78,6 +78,8 @@ int main(void){
     int q_ref[N];
     int p_ref[N];
     int r_ref[N];
+
+    srand(13);
     
     for(int y = 0; y < N; ++y){
         s_ref[y] = rand()%100;
