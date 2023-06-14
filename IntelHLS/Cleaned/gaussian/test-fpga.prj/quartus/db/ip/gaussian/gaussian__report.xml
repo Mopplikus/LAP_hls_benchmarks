@@ -1,0 +1,2278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.06.13.18:42:13"
+ outputDirectory="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA4U23C7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVMM_1_RW_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVMM_1_RW_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="A" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="A" direction="input" role="data" width="64" />
+  </interface>
+  <interface name="avmm_1_rw" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="readLatency" value="1" />
+   <property name="readWaitTime" value="0" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="writeWaitTime" value="0" />
+   <port name="avmm_1_rw_address" direction="output" role="address" width="32" />
+   <port
+       name="avmm_1_rw_byteenable"
+       direction="output"
+       role="byteenable"
+       width="4" />
+   <port name="avmm_1_rw_read" direction="output" role="read" width="1" />
+   <port
+       name="avmm_1_rw_readdata"
+       direction="input"
+       role="readdata"
+       width="32" />
+   <port name="avmm_1_rw_write" direction="output" role="write" width="1" />
+   <port
+       name="avmm_1_rw_writedata"
+       direction="output"
+       role="writedata"
+       width="32" />
+  </interface>
+  <interface name="c" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="c" direction="input" role="data" width="64" />
+  </interface>
+  <interface name="call" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="start" direction="input" role="valid" width="1" />
+   <port name="busy" direction="output" role="stall" width="1" />
+  </interface>
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clock" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="resetn" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="return" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="done" direction="output" role="valid" width="1" />
+   <port name="stall" direction="input" role="stall" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="gaussian:1.0:AUTO_AVMM_1_RW_ADDRESS_MAP=,AUTO_AVMM_1_RW_ADDRESS_WIDTH=AddressWidth = -1,AUTO_CLOCK_CLOCK_DOMAIN=-1,AUTO_CLOCK_CLOCK_RATE=-1,AUTO_CLOCK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA4U23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1686674529,AUTO_UNIQUE_ID=(gaussian_internal:1.0:)"
+   instancePathKey="gaussian"
+   kind="gaussian"
+   version="1.0"
+   name="gaussian">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_AVMM_1_RW_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1686674529" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA4U23C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_AVMM_1_RW_ADDRESS_WIDTH" value="AddressWidth = -1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/gaussian.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/dspba_library_ver.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ecc_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_data_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_altera_syncram_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_scfifo_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ecc_decoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ecc_encoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ll_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ll_ram_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_dspba_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_staging_reg.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_mid_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_latency_one_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_latency_zero_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_fifo_zero_width.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_high_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_low_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_zero_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_fanout_pipeline.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_std_synchronizer_nocut.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_tessellated_incr_decr_threshold.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_tessellated_incr_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_reset_handler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_lfsr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_mlab_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_parameter_assert.svh"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_pop.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_push.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_token_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_pipeline.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_dspba_buffer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_enable_sink.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_memory_depth_quantization_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iord.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iord_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iord_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_shift_register_no_reset.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ffwdsrc.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ffwddst.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iowr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iowr_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iowr_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_full_detector.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_tessellated_incr_decr_decr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_top.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_permute_address.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_pipelined.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_enabled.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_basic_coalescer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_simple.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_streaming.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_burst_host.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_bursting_load_stores.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_non_aligned_write.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_read_cache.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_atomic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_prefetch_block.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_wide_wrapper.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_streaming_prefetch.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_aligned_burst_coalesced_lsu.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_toggle_detect.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_debug_mem.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_burst_coalesced_pipelined_write.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_burst_coalesced_pipelined_read.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_fifo_stall_valid_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_global_load_store.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_burst_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_coalescer_dynamic_timeout.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_data_aligner.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_read_cache.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_read_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_unaligned_controller.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_word_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_write_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_write_kernel_downstream.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_loop_profiler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_sim_latency_tracker.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_loop_limiter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_reset_wire.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_function_wrapper.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_function.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B2_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B3_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B5_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B6_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B7_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B0_runOnce.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B0_runOnce_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B0_runOnce_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_token_i1_wt_limpop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_token_i1_wt_limpop_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_wt_limpush_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_wt_limpush_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B0_runOnce_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B0_runOnce_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B1_start.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B1_start_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_s_c0_in_wt_entry_s_c0_enter6_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_w0000_s_c0_exit_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter6_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going40_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond41_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B1_start_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_p1025i32_unnamed_4_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_p1025s_0000_unnamed_3_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B1_start_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B1_start_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B2_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24528_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000_iv6_replace_phi22_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000_iv8_replace_phi21_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_5_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_6_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B2_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B2_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B3.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B3_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_iowr_bl_return_unnamed_gaussian7_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B3_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B3_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B4_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next719_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next920_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast5418_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i1_unnamed_13_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_10_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_12_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_14_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_9_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i33_unnamed_11_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_p1025i32_unnamed_15_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B4_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B4_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B5.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B5_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B5_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_s_c0_in_for_body4_s_c0_enter607_gaussian1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_c0_exit62_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_gaussian1_data_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000ssian1_full_detector.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_logic_s_c0_in_for_body4_s_c0_enter607_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24527_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_add24_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i33_unnamed_16_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going36_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_add43_pop11_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_i_046_pop9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i33_fpga_indvars_iv10_pop8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond37_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_add43_push11_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_i_046_push9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i33_fpga_indvars_iv10_push8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_3_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B5_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B5_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B6.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B6_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B6_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B6_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B7.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B7_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B7_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24525_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24526_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_mul11_add1429_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast_index30_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_p1025s_class_ihc_mm_hosts_a5917_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_lm1_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_readdata_reg_lm1_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_lm32_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_readdata_reg_lm32_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_lm53_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_readdata_reg_lm53_2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_memdep_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going_4_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop14_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop14_24_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop1047_pop21_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop1047_pop21_21_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_notcmp3546_pop20_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_notcmp3546_pop20_56_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_pop19_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_pop19_54_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_cleanups_pop16_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_cleanups_pop16_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_initerations_pop15_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_initerations_pop15_5_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_add44_pop17_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_add44_pop17_52_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_k_044_pop13_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_k_044_pop13_14_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_mul_add1645_pop18_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_mul_add1645_pop18_15_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop12_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop12_39_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_lastiniteration_9_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push14_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push14_36_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop1047_push21_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop1047_push21_22_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notcmp3546_push20_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notcmp3546_push20_57_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond_47_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_push19_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_push19_55_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_cleanups_push16_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_cleanups_push16_50_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_initerations_push15_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_initerations_push15_7_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_add44_push17_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_add44_push17_53_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_k_044_push13_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_k_044_push13_38_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_mul_add1645_push18_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_mul_add1645_push18_16_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push12_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push12_43_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B7_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B7_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going36_2_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going36_2_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going40_1_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going40_1_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going_4_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_loop_limiter_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_loop_limiter_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_loop_limiter_2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_avm_to_ic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_host_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_arb_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_agent_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_agent_rrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_agent_wrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_arb2.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_to_avm.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_internal.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/components/gaussian/gaussian.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/components/gaussian/gaussian_internal_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="gaussian">queue size: 0 starting:gaussian "gaussian"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="gaussian"><![CDATA["<b>gaussian</b>" reuses <b>gaussian_internal</b> "<b>submodules/gaussian_internal</b>"]]></message>
+   <message level="Debug" culprit="gaussian">queue size: 0 starting:gaussian_internal "submodules/gaussian_internal"</message>
+   <message level="Info" culprit="gaussian_internal_inst"><![CDATA["<b>gaussian</b>" instantiated <b>gaussian_internal</b> "<b>gaussian_internal_inst</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="gaussian_internal:1.0:"
+   instancePathKey="gaussian:.:gaussian_internal_inst"
+   kind="gaussian_internal"
+   version="1.0"
+   name="gaussian_internal">
+  <generatedFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/dspba_library_ver.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ecc_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_data_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_altera_syncram_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_scfifo_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ecc_decoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ecc_encoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ll_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ll_ram_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_dspba_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_staging_reg.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_mid_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_latency_one_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_latency_zero_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_fifo_zero_width.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_high_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_low_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_zero_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_fanout_pipeline.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_std_synchronizer_nocut.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_tessellated_incr_decr_threshold.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_tessellated_incr_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_reset_handler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_lfsr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_mlab_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_parameter_assert.svh"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_pop.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_push.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_token_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_pipeline.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_dspba_buffer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_enable_sink.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_memory_depth_quantization_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iord.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iord_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iord_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_shift_register_no_reset.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ffwdsrc.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ffwddst.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iowr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iowr_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_iowr_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_full_detector.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_tessellated_incr_decr_decr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_top.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_permute_address.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_pipelined.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_enabled.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_basic_coalescer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_simple.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_streaming.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_burst_host.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_bursting_load_stores.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_non_aligned_write.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_read_cache.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_atomic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_prefetch_block.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_wide_wrapper.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_streaming_prefetch.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_aligned_burst_coalesced_lsu.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_toggle_detect.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_debug_mem.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_burst_coalesced_pipelined_write.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/lsu_burst_coalesced_pipelined_read.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_fifo_stall_valid_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_global_load_store.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_burst_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_coalescer_dynamic_timeout.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_data_aligner.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_read_cache.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_read_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_unaligned_controller.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_word_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_write_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_lsu_write_kernel_downstream.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_loop_profiler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/hld_sim_latency_tracker.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_loop_limiter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_reset_wire.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_function_wrapper.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_function.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B2_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B3_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B5_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B6_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B7_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B0_runOnce.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B0_runOnce_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B0_runOnce_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_token_i1_wt_limpop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_token_i1_wt_limpop_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_wt_limpush_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_wt_limpush_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B0_runOnce_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B0_runOnce_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B1_start.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B1_start_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_iord_bl_call_unnamed_gaussian2_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_s_c0_in_wt_entry_s_c0_enter6_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_w0000_s_c0_exit_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter6_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going40_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond41_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B1_start_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_p1025i32_unnamed_4_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_p1025s_0000_unnamed_3_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B1_start_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B1_start_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B2_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24528_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000_iv6_replace_phi22_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_0000_iv8_replace_phi21_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_5_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_6_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B2_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B2_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B3.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B3_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_iowr_bl_return_unnamed_gaussian7_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_token_i1_throttle_push_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B3_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B3_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B4_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B4_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next719_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_fpga_indvars_iv_next920_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast5418_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i1_unnamed_13_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_10_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_12_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_14_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i32_unnamed_9_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_i33_unnamed_11_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_source_p1025i32_unnamed_15_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B4_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B4_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B5.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B5_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B5_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_s_c0_in_for_body4_s_c0_enter607_gaussian1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_c0_exit62_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000_gaussian1_data_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_sfc_exit_s_c0_out_f0000ssian1_full_detector.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_sfc_logic_s_c0_in_for_body4_s_c0_enter607_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24527_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_add24_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i33_unnamed_16_gaussian0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going36_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_add43_pop11_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_i_046_pop9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i33_fpga_indvars_iv10_pop8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond37_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_add43_push11_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_i_046_push9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i33_fpga_indvars_iv10_push8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop10_3_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B5_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B5_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B6.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B6_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_push10_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B6_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B6_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B7.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_bb_B7_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B7_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24525_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i1_cmp24526_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_i32_mul11_add1429_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast_index30_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_ffwd_dest_p1025s_class_ihc_mm_hosts_a5917_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_lm1_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_readdata_reg_lm1_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_lm32_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_readdata_reg_lm32_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_lm53_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_readdata_reg_lm53_2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_mem_memdep_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going_4_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop14_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi4_pop14_24_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop1047_pop21_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_memdep_phi_pop1047_pop21_21_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_notcmp3546_pop20_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_notcmp3546_pop20_56_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_pop19_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i1_pop19_54_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_cleanups_pop16_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_cleanups_pop16_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_initerations_pop15_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i2_initerations_pop15_5_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_add44_pop17_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_add44_pop17_52_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_k_044_pop13_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_k_044_pop13_14_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_mul_add1645_pop18_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i32_mul_add1645_pop18_15_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop12_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pop_i6_fpga_indvars_iv_pop12_39_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_lastiniteration_9_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push14_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi4_push14_36_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop1047_push21_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_memdep_phi_pop1047_push21_22_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notcmp3546_push20_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notcmp3546_push20_57_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_notexitcond_47_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_push19_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i1_push19_55_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_cleanups_push16_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_cleanups_push16_50_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_initerations_push15_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i2_initerations_push15_7_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_add44_push17_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_add44_push17_53_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_k_044_push13_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_k_044_push13_38_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_mul_add1645_push18_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i32_mul_add1645_push18_16_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push12_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_push_i6_fpga_indvars_iv_push12_43_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B7_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_B7_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going36_2_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going36_2_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going40_1_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going40_1_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_i_llvm_fpga_pipeline_keep_going_4_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_loop_limiter_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_loop_limiter_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_loop_limiter_2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_avm_to_ic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_host_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_arb_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_agent_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_agent_rrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_agent_wrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_arb2.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/acl_ic_to_avm.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/quartus/db/ip/gaussian/submodules/gaussian_internal.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/gaussian/test-fpga.prj/components/gaussian/gaussian_internal_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="gaussian" as="gaussian_internal_inst" />
+  <messages>
+   <message level="Debug" culprit="gaussian">queue size: 0 starting:gaussian_internal "submodules/gaussian_internal"</message>
+   <message level="Info" culprit="gaussian_internal_inst"><![CDATA["<b>gaussian</b>" instantiated <b>gaussian_internal</b> "<b>gaussian_internal_inst</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

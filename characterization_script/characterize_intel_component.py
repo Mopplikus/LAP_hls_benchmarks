@@ -470,111 +470,51 @@ widths = [1, 2, 4, 8, 16, 32, 64]
 # The list of components to be characterized
 # "nil" indicates a zero-delay component
 
-#components = [
-#	"icmp_eq_op",		# ICMP
-#	"add_op",			# ADD
-#	"sub_op",			# SUB
-#	"mul_op",			# MUL
-#	"sext_op",			# SEXT
-#	"load_op",			# LOAD
-#	"store_op",			# STORE
-#	"lsq_load_op",		# LSQ_LOAD
-#	"lsq_store_op", 	# LSQ_STORE
-#	"merge",			# MERGE
-#	"getelementptr_op",	# GET_POINTER
-#	"fadd_op",			# FADD
-#	"fsub_op",			# FSUB
-#	"fmul_op",			# FMUL
-#	"udiv_op",			# UDIV
-#	"sdiv_op",			# SDIV
-#	"fdiv_op",			# FDIV
-#	"fcmp_oeq_op",		# FCMP
-#	"cntrlMerge",		# PHIC
-#	"nil",				# ZDL
-#	"fork",				# FORK
-#	"ret_op",			# RETURN
-#	"branch",			# BRANCH
-#	"end_node",			# END
-#	"and_op",			# AND
-#	"or_op",			# OR
-#	"xor_op",			# XOR
-#	"shl_op",			# SHL
-#	"ashr_op",			# ASHR
-#	"lshr_op",			# LSHR
-#	"select_op",		# SELECT
-#	"mux"				# MUX
-#]
-
 components = [
-	"load_op",			# LOAD
-	"store_op",			# STORE
-	"lsq_load_op",		# LSQ_LOAD
-	"lsq_store_op", 	# LSQ_STORE
-	"merge",			# MERGE
-	"getelementptr_op",	# GET_POINTER
-	"fadd_op",			# FADD
-	"fsub_op",			# FSUB
-	"fmul_op",			# FMUL
-	"udiv_op",			# UDIV
-	"sdiv_op",			# SDIV
-	"fdiv_op",			# FDIV
-	"fcmp_oeq_op",		# FCMP
-	"cntrlMerge",		# PHIC
-	"nil",				# ZDL
-	"fork",				# FORK
-	"ret_op",			# RETURN
-	"branch",			# BRANCH
-	"end_node",			# END
-	"and_op",			# AND
-	"or_op",			# OR
-	"xor_op",			# XOR
-	"shl_op",			# SHL
-	"ashr_op",			# ASHR
-	"lshr_op",			# LSHR
-	"select_op",		# SELECT
-	"mux"				# MUX
+	"icmp_eq_op",		# 1  ICMP 
+	"add_op",			# 2  ADD
+	"sub_op",			# 3  SUB
+	"mul_op",			# 4  MUL
+	"sext_op",			# 5  SEXT
+	"load_op",			# 6  LOAD
+	"store_op",			# 7  STORE
+	"lsq_load_op",		# 8  LSQ_LOAD
+	"lsq_store_op", 	# 9  LSQ_STORE
+	"merge",			# 10 MERGE
+	"getelementptr_op",	# 11 GET_POINTER
+	"fadd_op",			# 12 FADD
+	"fsub_op",			# 13 FSUB
+	"fmul_op",			# 14 FMUL
+	"udiv_op",			# 15 UDIV
+	"sdiv_op",			# 16 SDIV
+	"fdiv_op",			# 17 FDIV
+	"fcmp_oeq_op",		# 18 FCMP
+	"cntrlMerge",		# 19 PHIC
+	"nil",				# 20 ZDL
+	"fork",				# 21 FORK
+	"ret_op",			# 22 RETURN
+	"branch",			# 23 BRANCH
+	"end_node",			# 24 END
+	"and_op",			# 25 AND
+	"or_op",			# 26 OR
+	"xor_op",			# 27 XOR
+	"shl_op",			# 28 SHL
+	"ashr_op",			# 29 ASHR
+	"lshr_op",			# 30 LSHR
+	"select_op",		# 31 SELECT
+	"mux"				# 32 MUX
 ]
 
 
-# Places in the netlist where values should be set to 0
+# Places in the delay list where values should be set to 0
 # "a" indicates all
 
-#voids = [
-#	[],		# 1
-#	[],
-#	[],
-#	["a"],
-#	[],		# 5
-#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
-#	[],
-#	["a"],
-#	["a"],
-#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],	# 10
-#	[],
-#	["a"],
-#	["a"],
-#	["a"],
-#	["a"],	# 15
-#	[],
-#	["a"],
-#	["a"],
-#	["d1", "d2", "d4", "d8", "d16", "d32", "d64", "r1", "r2", "r4", "r8", "r16", "r32", "r64"],
-#	["a"], # 20
-#	["d1", "d2", "d4", "d8", "d16", "d32", "d64"],
-#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
-#	["d1", "d2", "d4", "d8", "d16", "d32", "d64"],
-#	["v1", "v2", "v4", "v8", "v16", "v32", "v64"],
-#	[], # 25
-#	[],
-#	[],
-#	[],
-#	[],
-#	[], # 30
-#	[],
-#	["r1", "r2", "r4", "r8", "r16", "r32", "r64"] # 32
-#]
-
 voids = [
+	[],		# 1
+	[],
+	[],
+	["a"],
+	[],		# 5
 	["r1", "r2", "r4", "r8", "r16", "r32", "r64"],
 	[],
 	["a"],

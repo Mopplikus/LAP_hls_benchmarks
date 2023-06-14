@@ -1,0 +1,276 @@
+
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler***********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Version 2.0 - Build 1.0 ************************************
+******************************************************************
+
+synthesis_optimized.tcl
+Done 
+set input file: if_loop_1.cpp
+current input filename: ./src/if_loop_1.cpp
+Done 
+Synthesize
+compile if_loop_1.cpp . Andrea: arg1:  if_loop_1.cpp arg2: . arg3 arg4
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/clang -emit-llvm -S   -c src/if_loop_1.cpp -o .if_loop_1.cpp.ll
+rm: cannot remove '*.s': No such file or directory
+0Time elapsed: 0s.
+; ModuleID = '.if_loop_1.cpp_mem2reg_constprop_simplifycfg_die.ll'
+source_filename = "src/if_loop_1.cpp"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+; Function Attrs: noinline nounwind uwtable
+define i32 @_Z9if_loop_1Pii(i32* %a, i32 %n) #0 {
+block1:
+  %cmp2 = icmp sgt i32 %n, 0
+  br i1 %cmp2, label %block2, label %block4
+
+block2:                                           ; preds = %block1
+  br label %block3
+
+block3:                                           ; preds = %block3, %block2
+  %sum.04 = phi i32 [ 0, %block2 ], [ %spec.select, %block3 ]
+  %i.03 = phi i32 [ 0, %block2 ], [ %inc, %block3 ]
+  %"3" = zext i32 %i.03 to i64
+  %arrayidx = getelementptr inbounds i32, i32* %a, i64 %"3"
+  %"4" = load i32, i32* %arrayidx, align 4
+  %mul = mul nsw i32 %"4", 5
+  %cmp1 = icmp sgt i32 %mul, 10
+  %add = select i1 %cmp1, i32 %mul, i32 0
+  %spec.select = add nsw i32 %sum.04, %add
+  %inc = add nuw nsw i32 %i.03, 1
+  %cmp = icmp slt i32 %inc, %n
+  br i1 %cmp, label %block3, label %block4
+
+block4:                                           ; preds = %block3, %block1
+  %sum.0.lcssa = phi i32 [ 0, %block1 ], [ %spec.select, %block3 ]
+  ret i32 %sum.0.lcssa
+}
+
+; Function Attrs: noinline norecurse nounwind uwtable
+define i32 @main() #1 {
+entry:
+  %a = alloca [1 x [100 x i32]], align 16
+  %n = alloca [1 x i32], align 4
+  call void @srand(i32 13) #3
+  br label %for.body
+
+for.body:                                         ; preds = %for.inc8, %entry
+  %0 = getelementptr inbounds [1 x i32], [1 x i32]* %n, i64 0, i64 0
+  store i32 100, i32* %0, align 4
+  br label %for.body3
+
+for.body3:                                        ; preds = %for.body3, %for.body
+  %j.01 = phi i32 [ 0, %for.body ], [ %inc, %for.body3 ]
+  %call = call i32 @rand() #3
+  %rem = srem i32 %call, 100
+  %add = add nsw i32 %rem, 2
+  %1 = zext i32 %j.01 to i64
+  %2 = getelementptr inbounds [1 x [100 x i32]], [1 x [100 x i32]]* %a, i64 0, i64 0, i64 %1
+  store i32 %add, i32* %2, align 4
+  %inc = add nuw nsw i32 %j.01, 1
+  %cmp2 = icmp ult i32 %inc, 100
+  br i1 %cmp2, label %for.body3, label %for.inc8
+
+for.inc8:                                         ; preds = %for.body3
+  br i1 false, label %for.body, label %for.end10
+
+for.end10:                                        ; preds = %for.inc8
+  %arraydecay = getelementptr inbounds [1 x [100 x i32]], [1 x [100 x i32]]* %a, i64 0, i64 0, i64 0
+  %arrayidx15 = getelementptr inbounds [1 x i32], [1 x i32]* %n, i64 0, i64 0
+  %3 = load i32, i32* %arrayidx15, align 4
+  %call16 = call i32 @_Z9if_loop_1Pii(i32* nonnull %arraydecay, i32 %3)
+  ret i32 0
+}
+
+; Function Attrs: nounwind
+declare void @srand(i32) #2
+
+; Function Attrs: nounwind
+declare i32 @rand() #2
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline norecurse nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 6.0.1 (http://llvm.org/git/clang.git 2f27999df400d17b33cdd412fdd606a88208dfcc) (http://llvm.org/git/llvm.git 5136df4d089a086b70d452160ad5451861269498)"}
+OptimizeBitwidth : Optimization of function _Z9if_loop_1Pii finished in 2 iterations.
+Printing stats (for more details on states for each individual value, use dumpInfos).
+Saved bits during forward passes : 3
+Saved bits during backward passes : 0
+Saved bits in constants : 119
+Used bits after OB : 393, vs. Originaly used bits : 515
+ => Reduction of used bits : 7.631068e+01
+
+
+Done 
+Optimize
+buffers buffers -filename=./reports/if_loop_1 -timeout=60****************************************
+dataflow graph name: ./reports/if_loop_1
+milp solver: cbc
+delay: 0, period: 5
+timeout: 60
+set optimization: true
+first MG optimization: false
+****************************************
+===================
+READING BB DOT FILE
+===================
+Reading graph name...
+Reading set of nodes...
+Reading set of edges between nodes...
+Setting entry and exit BB...
+	Entry: BB1, Exit: BB4
+Setting BB frequencies...
+BB1 : 1
+BB2 : 1
+BB3 : 100
+BB4 : 1
+
+Adding elastic buffers with period=5 and buffer_delay=0
+
+======================
+ADDING ELASTIC BUFFERS
+======================
+Extracting marked graphs
+--------------------------
+Iteration 1
+ILP time: [ms] 10 
+Arcs in the CFDFC:
+	3->3:99
+Updating frequencies...
+Storing CFDFC and corresponding Marked Graph...
+--------------------------
+Iteration 2
+ILP time: [ms] 9 
+Arcs in the CFDFC:
+No new MG can be extracted to increase coverage.
+
+*******************
+Covered Frequency = 99, Total Frequency = 102, Coverage = 0.970588
+*******************
+
+determining buffer from/to MC_LSQ units to/from loads.
+----------------------
+buffers on MG borders
+----------------------
+Adding buffer in branch_2:out1 -> phi_3:in2 | slots: 1, trans: 0 | BB2 -> BB3
+Adding buffer in branch_3:out1 -> phi_4:in2 | slots: 1, trans: 0 | BB2 -> BB3
+Adding buffer in branch_4:out1 -> phi_n1:in1 | slots: 1, trans: 0 | BB2 -> BB3
+Adding buffer in branch_5:out2 -> phi_14:in3 | slots: 1, trans: 0 | BB3 -> BB4
+Adding buffer in branchC_9:out1 -> phiC_3:in1 | slots: 1, trans: 0 | BB2 -> BB3
+Adding buffer in branchC_10:out2 -> phiC_4:in2 | slots: 1, trans: 0 | BB3 -> BB4
+
+Calculating disjoint sets of CFDFCs...
+	initialize
+	union
+	get set of unique dsu numbers
+	merge and get sub-components
+Total number of Extracted Disjoint CFDFCs: 1
+Adding Marked Graphs from CFDFCs...
+
+-------------------------------
+Initiating MILP for MG number 0
+-------------------------------
+ creating throughput vars for sub_mg0
+
+Done 
+Write hdl
+write_hdl  . ./reports/if_loop_1_optimized
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler **********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Dot to VHDL Generator***************************************
+******************************************************************
+Parsing ./reports/if_loop_1_optimized.dot
+
+Report Modules 
++--------------------------------------------------------------------------+
+|   Node_ID|                Name|         Module_type|    Inputs|   Outputs|
++--------------------------------------------------------------------------+
+|         0|                   n|               Entry|         1|         1|
+|         1|               cst_0|            Constant|         1|         1|
+|         2|              icmp_0|            Operator|         2|         1|
+|         3|               cst_7|            Constant|         1|         1|
+|         4|              fork_0|                Fork|         1|         2|
+|         5|            branch_0|              Branch|         2|         2|
+|         6|            branch_1|              Branch|         2|         2|
+|         7|              fork_6|                Fork|         1|         3|
+|         8|             start_0|               Entry|         1|         1|
+|         9|            forkC_10|                Fork|         1|         2|
+|        10|           branchC_8|              Branch|         2|         2|
+|        11|            source_0|              Source|         0|         1|
+|        12|        brCst_block2|            Constant|         1|         1|
+|        13|               cst_1|            Constant|         1|         1|
+|        14|               cst_2|            Constant|         1|         1|
+|        15|              phi_n0|               Merge|         1|         1|
+|        16|            branch_2|              Branch|         2|         2|
+|        17|            branch_3|              Branch|         2|         2|
+|        18|            branch_4|              Branch|         2|         2|
+|        19|              fork_7|                Fork|         1|         4|
+|        20|              phiC_2|               Merge|         1|         1|
+|        21|            forkC_11|                Fork|         1|         4|
+|        22|           branchC_9|              Branch|         2|         2|
+|        23|               phi_3|                 Mux|         3|         1|
+|        24|               phi_4|                 Mux|         3|         1|
+|        25|              load_7|            Operator|         2|         2|
+|        26|               cst_3|            Constant|         1|         1|
+|        27|               mul_8|            Operator|         2|         1|
+|        28|               cst_4|            Constant|         1|         1|
+|        29|              icmp_9|            Operator|         2|         1|
+|        30|               cst_5|            Constant|         1|         1|
+|        31|            select_0|            Operator|         3|         1|
+|        32|              add_10|            Operator|         2|         1|
+|        33|               cst_6|            Constant|         1|         1|
+|        34|              add_11|            Operator|         2|         1|
+|        35|             icmp_12|            Operator|         2|         1|
+|        36|              phi_n1|               Merge|         2|         1|
+|        37|              fork_1|                Fork|         1|         2|
+|        38|              fork_2|                Fork|         1|         2|
+|        39|              fork_4|                Fork|         1|         2|
+|        40|              fork_5|                Fork|         1|         2|
+|        41|            branch_5|              Branch|         2|         2|
+|        42|            branch_6|              Branch|         2|         2|
+|        43|            branch_7|              Branch|         2|         2|
+|        44|              fork_8|                Fork|         1|         4|
+|        45|              phiC_3|          CntrlMerge|         2|         2|
+|        46|          branchC_10|              Branch|         2|         2|
+|        47|            source_1|              Source|         0|         1|
+|        48|            source_2|              Source|         0|         1|
+|        49|            source_3|              Source|         0|         1|
+|        50|            source_4|              Source|         0|         1|
+|        51|             fork_14|                Fork|         1|         2|
+|        52|              phi_14|                 Mux|         3|         1|
+|        53|               ret_0|            Operator|         1|         1|
+|        54|              phiC_4|          CntrlMerge|         2|         2|
+|        55|                MC_a|                  MC|         4|         2|
+|        56|               end_0|                Exit|         2|         1|
+|        57|              sink_0|                Sink|         1|         0|
+|        58|              sink_1|                Sink|         1|         0|
+|        59|              sink_2|                Sink|         1|         0|
+|        60|              sink_3|                Sink|         1|         0|
+|        61|              sink_4|                Sink|         1|         0|
+|        62|              sink_5|                Sink|         1|         0|
+|        63|              sink_6|                Sink|         1|         0|
+|        64|              sink_7|                Sink|         1|         0|
+|        65|              sink_8|                Sink|         1|         0|
++--------------------------------------------------------------------------+
+Generating ./reports/if_loop_1_optimized.vhd
+
+Done
+
+
+
+Done 
+Exit...
+Goodbye!
+
+

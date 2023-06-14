@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2023.06.13.18:24:55"
+ outputDirectory="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA4U23C7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVMM_1_RW_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_AVMM_1_RW_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="a" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="a" direction="input" role="data" width="64" />
+  </interface>
+  <interface name="avmm_1_rw" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="readLatency" value="1" />
+   <property name="readWaitTime" value="0" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="writeWaitTime" value="0" />
+   <port name="avmm_1_rw_address" direction="output" role="address" width="32" />
+   <port
+       name="avmm_1_rw_byteenable"
+       direction="output"
+       role="byteenable"
+       width="4" />
+   <port name="avmm_1_rw_read" direction="output" role="read" width="1" />
+   <port
+       name="avmm_1_rw_readdata"
+       direction="input"
+       role="readdata"
+       width="32" />
+   <port name="avmm_1_rw_write" direction="output" role="write" width="1" />
+   <port
+       name="avmm_1_rw_writedata"
+       direction="output"
+       role="writedata"
+       width="32" />
+  </interface>
+  <interface name="call" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="start" direction="input" role="valid" width="1" />
+   <port name="busy" direction="output" role="stall" width="1" />
+  </interface>
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clock" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="n" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="n" direction="input" role="data" width="32" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="resetn" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="return" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="done" direction="output" role="valid" width="1" />
+   <port name="stall" direction="input" role="stall" width="1" />
+  </interface>
+  <interface name="returndata" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <port name="returndata" direction="output" role="data" width="32" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="if_loop_2:1.0:AUTO_AVMM_1_RW_ADDRESS_MAP=,AUTO_AVMM_1_RW_ADDRESS_WIDTH=AddressWidth = -1,AUTO_CLOCK_CLOCK_DOMAIN=-1,AUTO_CLOCK_CLOCK_RATE=-1,AUTO_CLOCK_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEMA4U23C7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1686673492,AUTO_UNIQUE_ID=(if_loop_2_internal:1.0:)"
+   instancePathKey="if_loop_2"
+   kind="if_loop_2"
+   version="1.0"
+   name="if_loop_2">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_AVMM_1_RW_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1686673492" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA4U23C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_AVMM_1_RW_ADDRESS_WIDTH" value="AddressWidth = -1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/if_loop_2.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/dspba_library_ver.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ecc_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_data_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_altera_syncram_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_scfifo_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ecc_decoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ecc_encoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ll_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ll_ram_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_dspba_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_staging_reg.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_mid_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_latency_one_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_latency_zero_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_fifo_zero_width.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_high_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_low_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_zero_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_fanout_pipeline.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_std_synchronizer_nocut.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_tessellated_incr_decr_threshold.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_tessellated_incr_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_reset_handler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_lfsr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_mlab_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_parameter_assert.svh"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_pop.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_push.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_token_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_pipeline.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_dspba_buffer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_enable_sink.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_memory_depth_quantization_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iord.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iord_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iord_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_shift_register_no_reset.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ffwdsrc.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ffwddst.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_top.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_permute_address.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_pipelined.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_enabled.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_basic_coalescer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_simple.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_streaming.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_burst_host.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_bursting_load_stores.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_non_aligned_write.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_read_cache.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_atomic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_prefetch_block.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_wide_wrapper.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_streaming_prefetch.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_aligned_burst_coalesced_lsu.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_toggle_detect.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_debug_mem.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_burst_coalesced_pipelined_write.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_burst_coalesced_pipelined_read.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_fifo_stall_valid_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_global_load_store.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_burst_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_coalescer_dynamic_timeout.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_data_aligner.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_read_cache.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_read_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_unaligned_controller.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_word_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_write_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_write_kernel_downstream.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_full_detector.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_tessellated_incr_decr_decr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iowr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iowr_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iowr_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_loop_profiler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_sim_latency_tracker.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_loop_limiter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_reset_wire.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_function_wrapper.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_function.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B2_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B3_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B0_runOnce.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B0_runOnce_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_token_i1_wt_limpop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_token_i1_wt_limpop_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_wt_limpush_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_wt_limpush_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B0_runOnce_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B0_runOnce_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B0_runOnce_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B1_start.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B1_start_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_iord_bl_call_unnamed_if_loop_22_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_s_c0_in_wt_entry_s_c0_enter1_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000s_c0_exit_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i1_notexitcond10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_i1_unnamed_4_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_i33_unnamed_5_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_p1025i32_unnamed_3_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B1_start_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B1_start_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B1_start_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B2_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_s_c0_in_for_body_s_c0_enter122_if_loop_21.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000c0_exit14_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000if_loop_21_data_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000oop_21_full_detector.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_logic_s_c0_in_for_body_s_c0_enter122_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i1_cmp113_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i1_cmp114_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i33_unnamed_6_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast145_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_i32_unnamed_8_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_mem_lm1_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i32_i_012_pop8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i32_sum_013_pop7_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i33_fpga_indvars_iv_pop6_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i4_cleanups_pop10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i4_initerations_pop9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i32_i_012_push8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i32_sum_013_push7_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i33_fpga_indvars_iv_push6_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i4_cleanups_push10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i4_initerations_push9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B2_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B2_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B2_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B3.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B3_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_iowr_bl_return_unnamed_if_loop_29_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i1_cmp112_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i32_spec_select6_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_throttle_push_4_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B3_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B3_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going9_1_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going9_1_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going_6_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_loop_limiter_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_avm_to_ic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_host_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_arb_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_agent_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_agent_rrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_agent_wrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_arb2.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_to_avm.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_internal.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/components/if_loop_2/if_loop_2.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/components/if_loop_2/if_loop_2_internal_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="if_loop_2">queue size: 0 starting:if_loop_2 "if_loop_2"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="if_loop_2"><![CDATA["<b>if_loop_2</b>" reuses <b>if_loop_2_internal</b> "<b>submodules/if_loop_2_internal</b>"]]></message>
+   <message level="Debug" culprit="if_loop_2">queue size: 0 starting:if_loop_2_internal "submodules/if_loop_2_internal"</message>
+   <message level="Info" culprit="if_loop_2_internal_inst"><![CDATA["<b>if_loop_2</b>" instantiated <b>if_loop_2_internal</b> "<b>if_loop_2_internal_inst</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="if_loop_2_internal:1.0:"
+   instancePathKey="if_loop_2:.:if_loop_2_internal_inst"
+   kind="if_loop_2_internal"
+   version="1.0"
+   name="if_loop_2_internal">
+  <generatedFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/dspba_library_ver.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ecc_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_data_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_altera_syncram_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_scfifo_wrapped.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ecc_decoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ecc_encoder.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ll_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ll_ram_fifo.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_dspba_valid_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_staging_reg.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_mid_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_latency_one_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_latency_zero_ram_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_fifo_zero_width.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_high_speed_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_low_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_zero_latency_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_fanout_pipeline.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_std_synchronizer_nocut.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_tessellated_incr_decr_threshold.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_tessellated_incr_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_reset_handler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_lfsr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_mlab_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_parameter_assert.svh"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_pop.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_push.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_token_fifo_counter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_pipeline.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_dspba_buffer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_enable_sink.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_memory_depth_quantization_pkg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iord.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iord_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iord_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_shift_register_no_reset.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ffwdsrc.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ffwddst.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_top.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_permute_address.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_pipelined.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_enabled.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_basic_coalescer.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_simple.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_streaming.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_burst_host.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_bursting_load_stores.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_non_aligned_write.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_read_cache.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_atomic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_prefetch_block.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_wide_wrapper.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_streaming_prefetch.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_aligned_burst_coalesced_lsu.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_toggle_detect.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_debug_mem.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_burst_coalesced_pipelined_write.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/lsu_burst_coalesced_pipelined_read.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_fifo_stall_valid_lookahead.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_global_load_store.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_burst_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_coalescer_dynamic_timeout.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_data_aligner.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_read_cache.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_read_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_unaligned_controller.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_word_coalescer.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_write_data_alignment.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_lsu_write_kernel_downstream.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_full_detector.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_tessellated_incr_decr_decr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iowr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iowr_stall_latency.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_iowr_stall_valid.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_loop_profiler.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/hld_sim_latency_tracker.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_loop_limiter.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_reset_wire.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_function_wrapper.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_function.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B2_sr_1.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B3_sr_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B0_runOnce.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B0_runOnce_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_token_i1_wt_limpop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_token_i1_wt_limpop_0_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_wt_limpush_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_wt_limpush_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B0_runOnce_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B0_runOnce_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B0_runOnce_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B1_start.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B1_start_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_iord_bl_call_unnamed_if_loop_22_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_s_c0_in_wt_entry_s_c0_enter1_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000s_c0_exit_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_logic_s_c0_in_wt_entry_s_c0_enter1_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i1_notexitcond10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_i1_unnamed_4_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_i33_unnamed_5_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_p1025i32_unnamed_3_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_throttle_i1_throttle_pop_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_throttle_i1_throttle_pop_1_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B1_start_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B1_start_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B1_start_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B2.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B2_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_s_c0_in_for_body_s_c0_enter122_if_loop_21.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000c0_exit14_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000if_loop_21_data_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_sfc_exit_s_c0_out_0000oop_21_full_detector.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_sfc_logic_s_c0_in_for_body_s_c0_enter122_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i1_cmp113_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i1_cmp114_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i33_unnamed_6_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_p1025i32_mptr_bitcast145_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_source_i32_unnamed_8_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_mem_lm1_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i32_i_012_pop8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i32_sum_013_pop7_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i33_fpga_indvars_iv_pop6_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i4_cleanups_pop10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pop_i4_initerations_pop9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i1_lastiniteration_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i1_notexitcond_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i32_i_012_push8_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i32_sum_013_push7_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i33_fpga_indvars_iv_push6_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i4_cleanups_push10_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_i4_initerations_push9_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B2_merge_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B2_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B2_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B3.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_bb_B3_stall_region.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_iowr_bl_return_unnamed_if_loop_29_if_loop_20.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i1_cmp112_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_ffwd_dest_i32_spec_select6_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_throttle_push_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_push_token_i1_throttle_push_4_reg.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B3_branch.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_B3_merge.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going9_1_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going9_1_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going_6_sr.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_i_llvm_fpga_pipeline_keep_going_6_valid_fifo.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_loop_limiter_0.sv"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_avm_to_ic.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_host_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_arb_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_intf.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_agent_endpoint.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_agent_rrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_agent_wrp.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_arb2.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/acl_ic_to_avm.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/quartus/db/ip/if_loop_2/submodules/if_loop_2_internal.v"
+       type="SYSTEM_VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/Users/Elija/Documents/LAP_hls_benchmarks/IntelHLS/Cleaned/if_loop_2/average/test-fpga.prj/components/if_loop_2/if_loop_2_internal_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="if_loop_2" as="if_loop_2_internal_inst" />
+  <messages>
+   <message level="Debug" culprit="if_loop_2">queue size: 0 starting:if_loop_2_internal "submodules/if_loop_2_internal"</message>
+   <message level="Info" culprit="if_loop_2_internal_inst"><![CDATA["<b>if_loop_2</b>" instantiated <b>if_loop_2_internal</b> "<b>if_loop_2_internal_inst</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

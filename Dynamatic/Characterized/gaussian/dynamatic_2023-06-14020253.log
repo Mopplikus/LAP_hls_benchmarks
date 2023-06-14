@@ -1,0 +1,396 @@
+
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler***********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Version 2.0 - Build 1.0 ************************************
+******************************************************************
+
+synthesis_optimized.tcl
+Done 
+set input file: gaussian.cpp
+current input filename: ./src/gaussian.cpp
+Done 
+Synthesize
+compile gaussian.cpp . Andrea: arg1:  gaussian.cpp arg2: . arg3 arg4
+/home/dynamatic/Dynamatic/etc/llvm-6.0/bin/clang -emit-llvm -S   -c src/gaussian.cpp -o .gaussian.cpp.ll
+rm: cannot remove '*.s': No such file or directory
+0Time elapsed: 1e-06s.
+; ModuleID = '.gaussian.cpp_mem2reg_constprop_simplifycfg_die.ll'
+source_filename = "src/gaussian.cpp"
+target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+; Function Attrs: noinline nounwind uwtable
+define void @_Z8gaussianPiPA20_i(i32* %c, [20 x i32]* %A) #0 {
+block1:
+  br label %block2
+
+block2:                                           ; preds = %block7, %block1
+  %j.04 = phi i32 [ 1, %block1 ], [ %inc23, %block7 ]
+  %add = add nuw nsw i32 %j.04, 1
+  %cmp22 = icmp ult i32 %add, 19
+  br i1 %cmp22, label %block3, label %block7
+
+block3:                                           ; preds = %block2
+  br label %block4
+
+block4:                                           ; preds = %block6, %block3
+  %i.03 = phi i32 [ %add, %block3 ], [ %inc20, %block6 ]
+  br label %block5
+
+block5:                                           ; preds = %block5, %block4
+  %k.01 = phi i32 [ 1, %block4 ], [ %inc, %block5 ]
+  %idxprom = sext i32 %i.03 to i64
+  %"5" = zext i32 %k.01 to i64
+  %arrayidx8 = getelementptr inbounds [20 x i32], [20 x i32]* %A, i64 %idxprom, i64 %"5"
+  %"6" = load i32, i32* %arrayidx8, align 4
+  %"7" = zext i32 %j.04 to i64
+  %arrayidx10 = getelementptr inbounds i32, i32* %c, i64 %"7"
+  %"8" = load i32, i32* %arrayidx10, align 4
+  %"9" = zext i32 %j.04 to i64
+  %"10" = zext i32 %k.01 to i64
+  %arrayidx14 = getelementptr inbounds [20 x i32], [20 x i32]* %A, i64 %"9", i64 %"10"
+  %"11" = load i32, i32* %arrayidx14, align 4
+  %mul = mul nsw i32 %"8", %"11"
+  %sub = sub nsw i32 %"6", %mul
+  %idxprom15 = sext i32 %i.03 to i64
+  %"12" = zext i32 %k.01 to i64
+  %arrayidx18 = getelementptr inbounds [20 x i32], [20 x i32]* %A, i64 %idxprom15, i64 %"12"
+  store i32 %sub, i32* %arrayidx18, align 4
+  %inc = add nuw nsw i32 %k.01, 1
+  %cmp5 = icmp ult i32 %inc, 20
+  br i1 %cmp5, label %block5, label %block6
+
+block6:                                           ; preds = %block5
+  %inc20 = add nsw i32 %i.03, 1
+  %cmp2 = icmp slt i32 %i.03, 18
+  br i1 %cmp2, label %block4, label %block7
+
+block7:                                           ; preds = %block6, %block2
+  %inc23 = add nuw nsw i32 %j.04, 1
+  %cmp = icmp ult i32 %inc23, 19
+  br i1 %cmp, label %block2, label %block8
+
+block8:                                           ; preds = %block7
+  ret void
+}
+
+; Function Attrs: noinline norecurse nounwind uwtable
+define i32 @main() #1 {
+entry:
+  %c = alloca [1 x [20 x i32]], align 16
+  %A = alloca [1 x [20 x [20 x i32]]], align 16
+  call void @srand(i32 13) #3
+  br label %for.body
+
+for.body:                                         ; preds = %for.inc18, %entry
+  br label %for.body3
+
+for.body3:                                        ; preds = %for.inc15, %for.body
+  %y.02 = phi i32 [ 0, %for.body ], [ %inc16, %for.inc15 ]
+  %0 = zext i32 %y.02 to i64
+  %1 = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %c, i64 0, i64 0, i64 %0
+  store i32 1, i32* %1, align 4
+  br label %for.body8
+
+for.body8:                                        ; preds = %for.body8, %for.body3
+  %x.01 = phi i32 [ 0, %for.body3 ], [ %inc, %for.body8 ]
+  %2 = zext i32 %y.02 to i64
+  %3 = zext i32 %x.01 to i64
+  %4 = getelementptr inbounds [1 x [20 x [20 x i32]]], [1 x [20 x [20 x i32]]]* %A, i64 0, i64 0, i64 %2, i64 %3
+  store i32 1, i32* %4, align 4
+  %inc = add nuw nsw i32 %x.01, 1
+  %cmp7 = icmp ult i32 %inc, 20
+  br i1 %cmp7, label %for.body8, label %for.inc15
+
+for.inc15:                                        ; preds = %for.body8
+  %inc16 = add nuw nsw i32 %y.02, 1
+  %cmp2 = icmp ult i32 %inc16, 20
+  br i1 %cmp2, label %for.body3, label %for.inc18
+
+for.inc18:                                        ; preds = %for.inc15
+  br i1 false, label %for.body, label %for.end20
+
+for.end20:                                        ; preds = %for.inc18
+  %arraydecay = getelementptr inbounds [1 x [20 x i32]], [1 x [20 x i32]]* %c, i64 0, i64 0, i64 0
+  %arraydecay26 = getelementptr inbounds [1 x [20 x [20 x i32]]], [1 x [20 x [20 x i32]]]* %A, i64 0, i64 0, i64 0
+  call void @_Z8gaussianPiPA20_i(i32* nonnull %arraydecay, [20 x i32]* nonnull %arraydecay26)
+  ret i32 0
+}
+
+; Function Attrs: nounwind
+declare void @srand(i32) #2
+
+attributes #0 = { noinline nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { noinline norecurse nounwind uwtable "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #2 = { nounwind "correctly-rounded-divide-sqrt-fp-math"="false" "disable-tail-calls"="false" "less-precise-fpmad"="false" "no-frame-pointer-elim"="true" "no-frame-pointer-elim-non-leaf" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="false" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+fxsr,+mmx,+sse,+sse2,+x87" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind }
+
+!llvm.module.flags = !{!0}
+!llvm.ident = !{!1}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{!"clang version 6.0.1 (http://llvm.org/git/clang.git 2f27999df400d17b33cdd412fdd606a88208dfcc) (http://llvm.org/git/llvm.git 5136df4d089a086b70d452160ad5451861269498)"}
+OptimizeBitwidth : Optimization of function _Z8gaussianPiPA20_i finished in 2 iterations.
+Printing stats (for more details on states for each individual value, use dumpInfos).
+Saved bits during forward passes : 377
+Saved bits during backward passes : 0
+Saved bits in constants : 112
+Used bits after OB : 443, vs. Originaly used bits : 932
+ => Reduction of used bits : 4.753219e+01
+
+
+Done 
+Optimize
+buffers buffers -filename=./reports/gaussian -timeout=60****************************************
+dataflow graph name: ./reports/gaussian
+milp solver: cbc
+delay: 0, period: 5
+timeout: 60
+set optimization: true
+first MG optimization: false
+****************************************
+===================
+READING BB DOT FILE
+===================
+Reading graph name...
+Reading set of nodes...
+Reading set of edges between nodes...
+Setting entry and exit BB...
+	Entry: BB1, Exit: BB8
+Setting BB frequencies...
+BB1 : 1
+BB2 : 18
+BB3 : 17
+BB4 : 153
+BB5 : 2907
+BB6 : 153
+BB7 : 18
+BB8 : 1
+
+Adding elastic buffers with period=5 and buffer_delay=0
+
+======================
+ADDING ELASTIC BUFFERS
+======================
+Extracting marked graphs
+--------------------------
+Iteration 1
+ILP time: [ms] 26 
+Arcs in the CFDFC:
+	5->5:2754
+Updating frequencies...
+Storing CFDFC and corresponding Marked Graph...
+--------------------------
+Iteration 2
+ILP time: [ms] 16 
+Arcs in the CFDFC:
+	4->5:153
+	5->6:153
+	6->4:136
+Updating frequencies...
+Storing CFDFC and corresponding Marked Graph...
+--------------------------
+Iteration 3
+ILP time: [ms] 12 
+Arcs in the CFDFC:
+	2->3:17
+	3->4:17
+	4->5:17
+	5->6:17
+	6->7:17
+	7->2:17
+Updating frequencies...
+Storing CFDFC and corresponding Marked Graph...
+--------------------------
+Iteration 4
+ILP time: [ms] 11 
+Arcs in the CFDFC:
+No new MG can be extracted to increase coverage.
+
+*******************
+Covered Frequency = 3264, Total Frequency = 3267, Coverage = 0.999082
+*******************
+
+determining buffer from/to MC_LSQ units to/from loads.
+----------------------
+buffers on MG borders
+----------------------
+Adding buffer in branch_0:out1 -> phi_1:in2 | slots: 1, trans: 0 | BB1 -> BB2
+Adding buffer in branchC_14:out1 -> phiC_8:in1 | slots: 1, trans: 0 | BB1 -> BB2
+Adding buffer in branchC_20:out2 -> phiC_14:in1 | slots: 1, trans: 0 | BB7 -> BB8
+
+Calculating disjoint sets of CFDFCs...
+	initialize
+	union
+	get set of unique dsu numbers
+	merge and get sub-components
+Total number of Extracted Disjoint CFDFCs: 1
+Adding Marked Graphs from CFDFCs...
+
+-------------------------------
+Initiating MILP for MG number 0
+-------------------------------
+ creating throughput vars for sub_mg0
+ creating throughput vars for sub_mg1
+ creating throughput vars for sub_mg2
+
+Done 
+Write hdl
+write_hdl  . ./reports/gaussian_optimized
+
+******************************************************************
+******Dynamic High-Level Synthesis Compiler **********************
+******Andrea Guerrieri - Lana Josipovic - EPFL-LAP 2019 **********
+******Dot to VHDL Generator***************************************
+******************************************************************
+Parsing ./reports/gaussian_optimized.dot
+
+Report Modules 
++--------------------------------------------------------------------------+
+|   Node_ID|                Name|         Module_type|    Inputs|   Outputs|
++--------------------------------------------------------------------------+
+|         0|        brCst_block1|            Constant|         1|         1|
+|         1|               cst_0|            Constant|         1|         1|
+|         2|            branch_0|              Branch|         2|         2|
+|         3|             start_0|               Entry|         1|         1|
+|         4|            forkC_17|                Fork|         1|         3|
+|         5|          branchC_14|              Branch|         2|         2|
+|         6|             fork_18|                Fork|         1|         2|
+|         7|               phi_1|                 Mux|         3|         1|
+|         8|               cst_1|            Constant|         1|         1|
+|         9|               add_2|            Operator|         2|         1|
+|        10|               cst_2|            Constant|         1|         1|
+|        11|              icmp_3|            Operator|         2|         1|
+|        12|              fork_0|                Fork|         1|         2|
+|        13|              fork_1|                Fork|         1|         2|
+|        14|            branch_1|              Branch|         2|         2|
+|        15|            branch_2|              Branch|         2|         2|
+|        16|             fork_10|                Fork|         1|         3|
+|        17|              phiC_8|          CntrlMerge|         2|         2|
+|        18|          branchC_15|              Branch|         2|         2|
+|        19|            source_0|              Source|         0|         1|
+|        20|            source_1|              Source|         0|         1|
+|        21|        brCst_block3|            Constant|         1|         1|
+|        22|              phi_n1|               Merge|         1|         1|
+|        23|              phi_n2|               Merge|         1|         1|
+|        24|            branch_3|              Branch|         2|         2|
+|        25|            branch_4|              Branch|         2|         2|
+|        26|             fork_11|                Fork|         1|         3|
+|        27|              phiC_9|               Merge|         1|         1|
+|        28|            forkC_20|                Fork|         1|         2|
+|        29|          branchC_16|              Branch|         2|         2|
+|        30|               phi_6|                 Mux|         3|         1|
+|        31|        brCst_block4|            Constant|         1|         1|
+|        32|               cst_3|            Constant|         1|         1|
+|        33|              phi_n3|               Merge|         2|         1|
+|        34|            branch_5|              Branch|         2|         2|
+|        35|            branch_6|              Branch|         2|         2|
+|        36|            branch_7|              Branch|         2|         2|
+|        37|             fork_12|                Fork|         1|         4|
+|        38|             phiC_10|          CntrlMerge|         2|         2|
+|        39|            forkC_21|                Fork|         1|         3|
+|        40|          branchC_17|              Branch|         2|         2|
+|        41|               phi_8|                 Mux|         3|         1|
+|        42|              sext_9|            Operator|         1|         1|
+|        43|             zext_10|            Operator|         1|         1|
+|        44|    getelementptr_11|            Operator|         3|         1|
+|        45|             load_12|            Operator|         2|         2|
+|        46|             load_15|            Operator|         2|         2|
+|        47|             zext_16|            Operator|         1|         1|
+|        48|             zext_17|            Operator|         1|         1|
+|        49|    getelementptr_18|            Operator|         3|         1|
+|        50|             load_19|            Operator|         2|         2|
+|        51|              mul_20|            Operator|         2|         1|
+|        52|              sub_21|            Operator|         2|         1|
+|        53|             sext_22|            Operator|         1|         1|
+|        54|             zext_23|            Operator|         1|         1|
+|        55|    getelementptr_24|            Operator|         3|         1|
+|        56|             store_0|            Operator|         2|         2|
+|        57|               cst_4|            Constant|         1|         1|
+|        58|              add_25|            Operator|         2|         1|
+|        59|               cst_5|            Constant|         1|         1|
+|        60|             icmp_26|            Operator|         2|         1|
+|        61|              cst_10|            Constant|         1|         1|
+|        62|              cst_11|            Constant|         1|         1|
+|        63|              cst_12|            Constant|         1|         1|
+|        64|              phi_n6|               Merge|         2|         1|
+|        65|              phi_n7|               Merge|         2|         1|
+|        66|              fork_2|                Fork|         1|         4|
+|        67|              fork_3|                Fork|         1|         2|
+|        68|              fork_7|                Fork|         1|         3|
+|        69|              fork_8|                Fork|         1|         3|
+|        70|            branch_8|              Branch|         2|         2|
+|        71|            branch_9|              Branch|         2|         2|
+|        72|           branch_10|              Branch|         2|         2|
+|        73|             fork_13|                Fork|         1|         4|
+|        74|             phiC_11|          CntrlMerge|         2|         2|
+|        75|            forkC_22|                Fork|         1|         2|
+|        76|          branchC_18|              Branch|         2|         2|
+|        77|            source_2|              Source|         0|         1|
+|        78|            source_3|              Source|         0|         1|
+|        79|            source_8|              Source|         0|         1|
+|        80|            source_9|              Source|         0|         1|
+|        81|           source_10|              Source|         0|         1|
+|        82|               cst_6|            Constant|         1|         1|
+|        83|              add_28|            Operator|         2|         1|
+|        84|               cst_7|            Constant|         1|         1|
+|        85|             icmp_29|            Operator|         2|         1|
+|        86|              phi_n4|               Merge|         1|         1|
+|        87|              phi_n5|               Merge|         1|         1|
+|        88|              fork_5|                Fork|         1|         2|
+|        89|           branch_11|              Branch|         2|         2|
+|        90|           branch_12|              Branch|         2|         2|
+|        91|             fork_14|                Fork|         1|         3|
+|        92|             phiC_12|               Merge|         1|         1|
+|        93|          branchC_19|              Branch|         2|         2|
+|        94|            source_4|              Source|         0|         1|
+|        95|            source_5|              Source|         0|         1|
+|        96|               cst_8|            Constant|         1|         1|
+|        97|              add_31|            Operator|         2|         1|
+|        98|               cst_9|            Constant|         1|         1|
+|        99|             icmp_32|            Operator|         2|         1|
+|       100|              phi_n0|               Merge|         2|         1|
+|       101|              fork_4|                Fork|         1|         2|
+|       102|           branch_13|              Branch|         2|         2|
+|       103|             phiC_13|               Merge|         2|         1|
+|       104|          branchC_20|              Branch|         2|         2|
+|       105|             fork_25|                Fork|         1|         2|
+|       106|            source_6|              Source|         0|         1|
+|       107|            source_7|              Source|         0|         1|
+|       108|               ret_0|            Operator|         1|         1|
+|       109|             phiC_14|               Merge|         1|         1|
+|       110|               LSQ_A|                 LSQ|         5|         3|
+|       111|                MC_c|                  MC|         4|         2|
+|       112|               end_0|                Exit|         3|         1|
+|       113|              sink_0|                Sink|         1|         0|
+|       114|              sink_1|                Sink|         1|         0|
+|       115|              sink_2|                Sink|         1|         0|
+|       116|              sink_3|                Sink|         1|         0|
+|       117|              sink_4|                Sink|         1|         0|
+|       118|              sink_5|                Sink|         1|         0|
+|       119|              sink_6|                Sink|         1|         0|
+|       120|              sink_7|                Sink|         1|         0|
+|       121|              sink_8|                Sink|         1|         0|
+|       122|              sink_9|                Sink|         1|         0|
+|       123|             sink_10|                Sink|         1|         0|
+|       124|             sink_11|                Sink|         1|         0|
+|       125|             sink_12|                Sink|         1|         0|
++--------------------------------------------------------------------------+
+Generating ./reports/gaussian_optimized.vhd
+Generating LSQ 0 component...
+lsq_generate ./reports/gaussian_optimized_lsq0_configuration.json
+[[35minfo[0m] [0.010] Elaborating design...
+[[35minfo[0m] [4.353] Done elaborating.
+Total FIRRTL Compile Time: 21614.3 ms
+
+Done
+
+
+
+Done 
+Exit...
+Goodbye!
+
+
