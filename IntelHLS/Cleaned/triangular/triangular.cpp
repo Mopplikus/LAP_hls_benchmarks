@@ -7,10 +7,10 @@ using namespace ihc;
 
 typedef ihc::mm_host<int, ihc::dwidth<32>,
                           ihc::awidth<32>,
-                          ihc::latency<1> > mem_x;
+                          ihc::latency<2> > mem_x;
 typedef ihc::mm_host<int, ihc::dwidth<32>,
                           ihc::awidth<32>,
-                          ihc::latency<1> > mem_A;
+                          ihc::latency<2> > mem_A;
 
 component void triangular(mem_x &x, mem_A &A, int n) {
     int i;

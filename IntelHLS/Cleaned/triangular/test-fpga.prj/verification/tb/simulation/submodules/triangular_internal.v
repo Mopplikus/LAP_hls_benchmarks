@@ -199,8 +199,8 @@ module triangular_internal
 
       end
 
-      // INST global_icavmm_1_rw of triangular_internal_ic_2279474832706600798
-      triangular_internal_ic_2279474832706600798 global_icavmm_1_rw
+      // INST global_icavmm_1_rw of triangular_internal_ic_1314390693687757908
+      triangular_internal_ic_1314390693687757908 global_icavmm_1_rw
       (
          .clock(clock),
          .resetn(resetn),
@@ -256,7 +256,7 @@ module triangular_internal
          .BURSTCOUNT_W(1),
          .ADDRESS_W(32),
          .BYTEENA_W(4),
-         .LATENCY(1),
+         .LATENCY(2),
          .USE_WRITE_ACK(0),
          .NO_IDLE_STALL(0),
          .ENABLE_WAITREQUEST_ALLOWANCE(0),
@@ -302,9 +302,9 @@ module triangular_internal
 endmodule
 
 /////////////////////////////////////////////////////////////////
-// MODULE triangular_internal_ic_2279474832706600798
+// MODULE triangular_internal_ic_1314390693687757908
 /////////////////////////////////////////////////////////////////
-module triangular_internal_ic_2279474832706600798
+module triangular_internal_ic_1314390693687757908
 (
    input logic clock,
    input logic resetn,
@@ -449,7 +449,7 @@ module triangular_internal_ic_2279474832706600798
          .WRP_FIFO_DEPTH(0),
          .RRP_FIFO_DEPTH(64),
          .RRP_USE_LL_FIFO(1),
-         .AGENT_FIXED_LATENCY(3),
+         .AGENT_FIXED_LATENCY(4),
          .SEPARATE_READ_WRITE_STALLS(0),
          .ASYNC_RESET(1),
          .SYNCHRONIZE_RESET(0)

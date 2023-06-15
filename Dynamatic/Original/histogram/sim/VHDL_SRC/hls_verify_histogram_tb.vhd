@@ -53,7 +53,7 @@ architecture behav of histogram_tb is
 	signal end_mem_ce0 : std_logic;
 	signal end_mem_we0 : std_logic;
 	signal end_mem_dout0 : std_logic_vector(DATA_WIDTH_end - 1 downto 0);
-	signal end_mem_din0 : std_logic_vector(DATA_WIDTH_end - 1 downto 0);
+	signal end_mem_din0 : std_logic_vector(30 downto 0);
 
 
 	signal feature_mem_ce0 : std_logic;

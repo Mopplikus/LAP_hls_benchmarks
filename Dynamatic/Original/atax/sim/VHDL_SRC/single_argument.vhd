@@ -24,7 +24,7 @@ entity single_argument is
 		ce0        : in  std_logic;
 		we0        : in  std_logic;
 		mem_dout0  : out std_logic_vector(DATA_WIDTH - 1 downto 0);
-		mem_din0   : in  std_logic_vector(DATA_WIDTH - 1 downto 0)
+		mem_din0   : in  std_logic_vector(4 downto 0)
 	);
 end single_argument;
 

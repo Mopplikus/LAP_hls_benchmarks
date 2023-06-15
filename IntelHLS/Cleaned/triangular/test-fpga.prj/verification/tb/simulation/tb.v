@@ -56,7 +56,7 @@ module tb (
 
 	hls_sim_component_dpi_controller #(
 		.COMPONENT_NAME               ("triangular"),
-		.COMPONENT_MANGLED_NAME       ("\\3ftriangular@@YAXAEAV\\3f$mm_host@HU\\3f$dwidth@$0CA@@ihc@@U\\3f$awidth@$0CA@@2@U\\3f$latency@$00@2@@ihc@@0H@Z"),
+		.COMPONENT_MANGLED_NAME       ("\\3ftriangular@@YAXAEAV\\3f$mm_host@HU\\3f$dwidth@$0CA@@ihc@@U\\3f$awidth@$0CA@@2@U\\3f$latency@$01@2@@ihc@@0H@Z"),
 		.RETURN_DATAWIDTH             (64),
 		.COMPONENT_NUM_AGENTS         (0),
 		.COMPONENT_HAS_AGENT_RETURN   (0),
@@ -127,7 +127,7 @@ module tb (
 		.AV_BURST_BNDR_ONLY         (1),
 		.AV_MAX_PENDING_READS       (0),
 		.AV_MAX_PENDING_WRITES      (0),
-		.AV_FIX_READ_LATENCY        (1),
+		.AV_FIX_READ_LATENCY        (2),
 		.AV_READ_WAIT_TIME          (0),
 		.AV_WRITE_WAIT_TIME         (0),
 		.REGISTER_WAITREQUEST       (0),

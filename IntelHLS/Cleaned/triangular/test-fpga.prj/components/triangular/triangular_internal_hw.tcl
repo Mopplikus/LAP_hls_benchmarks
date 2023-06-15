@@ -7,7 +7,7 @@ set_module_property DISPLAY_NAME triangular_internal
 set_module_property INSTANTIATE_IN_SYSTEM_MODULE true
 set_module_property EDITABLE true
 set_module_property SUPPORTED_DEVICE_FAMILIES {"Cyclone V"}
-set_module_assignment hls.cosim.name {\3ftriangular@@YAXAEAV\3f$mm_host@HU\3f$dwidth@$0CA@@ihc@@U\3f$awidth@$0CA@@2@U\3f$latency@$00@2@@ihc@@0H@Z}
+set_module_assignment hls.cosim.name {\3ftriangular@@YAXAEAV\3f$mm_host@HU\3f$dwidth@$0CA@@ihc@@U\3f$awidth@$0CA@@2@U\3f$latency@$01@2@@ihc@@0H@Z}
 set_module_assignment hls.compressed.name {triangular}
 
 #### Synthesis fileset
@@ -570,7 +570,7 @@ set_interface_property avmm_1_rw doStreamReads false
 set_interface_property avmm_1_rw doStreamWrites false
 set_interface_property avmm_1_rw linewrapBursts false
 set_interface_property avmm_1_rw readWaitTime 0
-set_interface_property avmm_1_rw readLatency 1
+set_interface_property avmm_1_rw readLatency 2
 add_interface_port avmm_1_rw avmm_1_rw_address address output 32
 add_interface_port avmm_1_rw avmm_1_rw_byteenable byteenable output 4
 add_interface_port avmm_1_rw avmm_1_rw_read read output 1
